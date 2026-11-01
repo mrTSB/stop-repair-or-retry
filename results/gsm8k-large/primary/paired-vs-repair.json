@@ -1,0 +1,242 @@
+[
+  {
+    "policy": "stop",
+    "baseline": "repair",
+    "n": 500,
+    "accuracy_difference": -0.216,
+    "accuracy_difference_ci_95": [
+      -0.256,
+      -0.178
+    ],
+    "token_difference": -837.778,
+    "token_difference_ci_95": [
+      -853.124,
+      -823.278
+    ],
+    "utility_difference": -0.20762222,
+    "utility_difference_ci_95": [
+      -0.24765927999999998,
+      -0.1695418
+    ]
+  },
+  {
+    "policy": "repair",
+    "baseline": "repair",
+    "n": 500,
+    "accuracy_difference": 0,
+    "accuracy_difference_ci_95": [
+      0.0,
+      0.0
+    ],
+    "token_difference": 0,
+    "token_difference_ci_95": [
+      0.0,
+      0.0
+    ],
+    "utility_difference": 0.0,
+    "utility_difference_ci_95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "policy": "retry",
+    "baseline": "repair",
+    "n": 500,
+    "accuracy_difference": -0.226,
+    "accuracy_difference_ci_95": [
+      -0.278,
+      -0.174
+    ],
+    "token_difference": -295.026,
+    "token_difference_ci_95": [
+      -307.222,
+      -283.74
+    ],
+    "utility_difference": -0.22304974,
+    "utility_difference_ci_95": [
+      -0.27500566,
+      -0.17109796
+    ]
+  },
+  {
+    "policy": "schedule",
+    "baseline": "repair",
+    "n": 500,
+    "accuracy_difference": -0.086,
+    "accuracy_difference_ci_95": [
+      -0.134,
+      -0.036
+    ],
+    "token_difference": -153.238,
+    "token_difference_ci_95": [
+      -165.596,
+      -142.106
+    ],
+    "utility_difference": -0.08446762,
+    "utility_difference_ci_95": [
+      -0.13246556,
+      -0.03450756
+    ]
+  },
+  {
+    "policy": "threshold",
+    "baseline": "repair",
+    "n": 500,
+    "accuracy_difference": 0,
+    "accuracy_difference_ci_95": [
+      0.0,
+      0.0
+    ],
+    "token_difference": 0,
+    "token_difference_ci_95": [
+      0.0,
+      0.0
+    ],
+    "utility_difference": 0.0,
+    "utility_difference_ci_95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "policy": "one_step",
+    "baseline": "repair",
+    "n": 500,
+    "accuracy_difference": 0,
+    "accuracy_difference_ci_95": [
+      0.0,
+      0.0
+    ],
+    "token_difference": 0,
+    "token_difference_ci_95": [
+      0.0,
+      0.0
+    ],
+    "utility_difference": 0.0,
+    "utility_difference_ci_95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "policy": "supervised",
+    "baseline": "repair",
+    "n": 500,
+    "accuracy_difference": -0.002,
+    "accuracy_difference_ci_95": [
+      -0.01,
+      0.004
+    ],
+    "token_difference": -6.924,
+    "token_difference_ci_95": [
+      -13.202,
+      -2.456
+    ],
+    "utility_difference": -0.0019307600000000001,
+    "utility_difference_ci_95": [
+      -0.009912500000000001,
+      0.0041024799999999995
+    ]
+  },
+  {
+    "policy": "pomdp",
+    "baseline": "repair",
+    "n": 500,
+    "accuracy_difference": 0,
+    "accuracy_difference_ci_95": [
+      0.0,
+      0.0
+    ],
+    "token_difference": 0,
+    "token_difference_ci_95": [
+      0.0,
+      0.0
+    ],
+    "utility_difference": 0.0,
+    "utility_difference_ci_95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "policy": "judge_full",
+    "baseline": "repair",
+    "n": 500,
+    "accuracy_difference": -0.214,
+    "accuracy_difference_ci_95": [
+      -0.254,
+      -0.176
+    ],
+    "token_difference": -513.566,
+    "token_difference_ci_95": [
+      -528.6,
+      -498.138
+    ],
+    "utility_difference": -0.20886434,
+    "utility_difference_ci_95": [
+      -0.24885627999999999,
+      -0.17081858
+    ]
+  },
+  {
+    "policy": "judge_compact",
+    "baseline": "repair",
+    "n": 500,
+    "accuracy_difference": -0.194,
+    "accuracy_difference_ci_95": [
+      -0.24,
+      -0.15
+    ],
+    "token_difference": -372.294,
+    "token_difference_ci_95": [
+      -405.324,
+      -338.41
+    ],
+    "utility_difference": -0.19027706,
+    "utility_difference_ci_95": [
+      -0.23628262,
+      -0.1461825
+    ]
+  },
+  {
+    "policy": "hybrid",
+    "baseline": "repair",
+    "n": 500,
+    "accuracy_difference": 0,
+    "accuracy_difference_ci_95": [
+      0.0,
+      0.0
+    ],
+    "token_difference": 0,
+    "token_difference_ci_95": [
+      0.0,
+      0.0
+    ],
+    "utility_difference": 0.0,
+    "utility_difference_ci_95": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "policy": "majority",
+    "baseline": "repair",
+    "n": 500,
+    "accuracy_difference": -0.178,
+    "accuracy_difference_ci_95": [
+      -0.222,
+      -0.134
+    ],
+    "token_difference": -295.026,
+    "token_difference_ci_95": [
+      -307.222,
+      -283.74
+    ],
+    "utility_difference": -0.17504974,
+    "utility_difference_ci_95": [
+      -0.219139,
+      -0.1310875
+    ]
+  }
+]

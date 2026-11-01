@@ -1,0 +1,36 @@
+{
+  "questions": 500,
+  "solver_calls": 3500,
+  "invalid_solver_calls": 10,
+  "judge_calls": 3000,
+  "invalid_judge_calls": 9,
+  "cached_generation_seconds": 4388.431691123638,
+  "confidence": {
+    "high": {
+      "n": 2736,
+      "correct": 1130
+    },
+    "medium": {
+      "n": 652,
+      "correct": 373
+    },
+    "low": {
+      "n": 112,
+      "correct": 64
+    }
+  },
+  "action_transitions": {
+    "repair": {
+      "0_to_0": 653,
+      "0_to_1": 200,
+      "1_to_1": 623,
+      "1_to_0": 24
+    },
+    "retry": {
+      "0_to_0": 648,
+      "0_to_1": 205,
+      "1_to_0": 297,
+      "1_to_1": 350
+    }
+  }
+}

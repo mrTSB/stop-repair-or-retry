@@ -1,0 +1,21 @@
+{
+  "purpose": "Freeze scoring and controller code before viewing large-run development or test outcomes",
+  "dataset_split_seed": 20261101,
+  "training_seed": 101,
+  "development_seed": 102,
+  "test_seed": 103,
+  "primary_penalty": 0.01,
+  "code_sha256": {
+    "src/stop_repair_retry/core.py": "af13d354e02f9a88ec0492a75be55ea07083c42307d03bb111f88ab2f5f4d6c3",
+    "src/stop_repair_retry/generate.py": "ebcb52c9cb2b92b30279ec409835ee5c61f70793ec1d351c266757912f17ef2a",
+    "src/stop_repair_retry/policies.py": "42add190d9465ee43154cbc0eb4796724c63ee1fbc3d577b21ba09d5ab3ee6ff",
+    "src/stop_repair_retry/cli.py": "4555c3dfac7151c364e8bd48dfc9b2e2f7cc900900a1da172782b4d4c2b3c544",
+    "scripts/run_gsm8k_large.sh": "c7094da18afb8aa78f972af6146d454579e4c517fde5cfd9c0dea48cd3e56d80",
+    "scripts/evaluate_training_sizes.sh": "7f7f77bd0f9d294a17f33fe0cda48ddfeef0c0741bf5118236bf99465f5f37f5",
+    "scripts/evaluate_seed_stability.sh": "daa905a06c7fcaa1d820574f1b4431c4313328d34e2a941b92ebc02e345e7754",
+    "src/stop_repair_retry/compare_seeds.py": "8731f2276f4460811420f826e4eba023d6c8b882a6a630b72cd122cfc560a211"
+  },
+  "note": "Percent, simple arithmetic expressions, and short unit phrases were added after inspecting training answers only; frozen before development and test generation.",
+  "supplementary_analysis": "Use the first 50 and first 150 training questions as nested sensitivity analyses with the same fixed dev and test sets, in addition to all 300.",
+  "seed_stability_plan": "Repeat generation with seed 104 on the first 50 randomly ordered test questions after completing the primary seed 103 run, using the same fitted train and dev data and policies; compare paired outcomes on those questions as exploratory."
+}

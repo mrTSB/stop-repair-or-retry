@@ -1,0 +1,17 @@
+[project]
+name = "stop-repair-retry"
+version = "0.1.0"
+description = "Cost-aware controllers for reasoning under uncertainty"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+mlx = ["mlx-lm>=0.28"]
+data = ["pyarrow>=20"]
+
+[project.scripts]
+srr = "stop_repair_retry.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

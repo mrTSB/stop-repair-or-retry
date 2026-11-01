@@ -1,0 +1,18 @@
+{
+  "dataset": "openai/gsm8k main",
+  "source": "https://huggingface.co/datasets/openai/gsm8k",
+  "seed": 20261101,
+  "counts": {
+    "train": 300,
+    "dev": 100,
+    "test": 500
+  },
+  "excluded_test_questions": 20,
+  "exclusion_sha256": {
+    "runs/gsm8k-pilot/test.jsonl": "53fb1dd35aefc30751df466af3677c44b6a95fa60c95291b6ebf56f5e0210773"
+  },
+  "source_sha256": {
+    "train": "ea82612ea9582142387730c793eb67d3b12849002bc0b7fa6f8efafa7351419d",
+    "test": "ee7b8da9e381df27b9e3f7758a159ab2bdaa4dbaa910546cbbc47e0cb44e4f59"
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "penalty": 0.01,
+  "results": [
+    {
+      "policy": "stop",
+      "setting_selected_on_dev": null,
+      "n": 500,
+      "accuracy": 0.378,
+      "accuracy_ci_95": [
+        0.334,
+        0.42
+      ],
+      "mean_tokens": 274.652,
+      "mean_input_tokens": 141.676,
+      "mean_output_tokens": 132.976,
+      "mean_solver_latency_seconds": 1.0000651971041226,
+      "mean_judge_latency_seconds": 0,
+      "mean_judge_calls": 0,
+      "wrong_to_right": 0,
+      "right_to_wrong": 0,
+      "mean_utility": 0.37525348,
+      "paired_accuracy_diff_vs_stop": 0,
+      "paired_diff_ci_95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "policy": "repair",
+      "setting_selected_on_dev": null,
+      "n": 500,
+      "accuracy": 0.594,
+      "accuracy_ci_95": [
+        0.55,
+        0.638
+      ],
+      "mean_tokens": 1112.43,
+      "mean_input_tokens": 706.928,
+      "mean_output_tokens": 405.502,
+      "mean_solver_latency_seconds": 3.1896683579641394,
+      "mean_judge_latency_seconds": 0,
+      "mean_judge_calls": 0,
+      "wrong_to_right": 0.236,
+      "right_to_wrong": 0.02,
+      "mean_utility": 0.5828757,
+      "paired_accuracy_diff_vs_stop": 0.216,
+      "paired_diff_ci_95": [
+        0.178,
+        0.256
+      ]
+    },
+    {
+      "policy": "retry",
+      "setting_selected_on_dev": null,
+      "n": 500,
+      "accuracy": 0.368,
+      "accuracy_ci_95": [
+        0.326,
+        0.412
+      ],
+      "mean_tokens": 817.404,
+      "mean_input_tokens": 425.028,
+      "mean_output_tokens": 392.376,
+      "mean_solver_latency_seconds": 3.0366325688399374,
+      "mean_judge_latency_seconds": 0,
+      "mean_judge_calls": 0,
+      "wrong_to_right": 0.152,
+      "right_to_wrong": 0.162,
+      "mean_utility": 0.35982596,
+      "paired_accuracy_diff_vs_stop": -0.01,
+      "paired_diff_ci_95": [
+        -0.058,
+        0.04
+      ]
+    },
+    {
+      "policy": "schedule",
+      "setting_selected_on_dev": [
+        "retry",
+        "repair"
+      ],
+      "n": 500,
+      "accuracy": 0.508,
+      "accuracy_ci_95": [
+        0.466,
+        0.552
+      ],
+      "mean_tokens": 959.192,
+      "mean_input_tokens": 561.052,
+      "mean_output_tokens": 398.14,
+      "mean_solver_latency_seconds": 3.169995532086119,
+      "mean_judge_latency_seconds": 0,
+      "mean_judge_calls": 0,
+      "wrong_to_right": 0.234,
+      "right_to_wrong": 0.104,
+      "mean_utility": 0.49840808,
+      "paired_accuracy_diff_vs_stop": 0.13,
+      "paired_diff_ci_95": [
+        0.08,
+        0.182
+      ]
+    },
+    {
+      "policy": "threshold",
+      "setting_selected_on_dev": [
+        3,
+        "repair"
+      ],
+      "n": 500,
+      "accuracy": 0.594,
+      "accuracy_ci_95": [
+        0.55,
+        0.638
+      ],
+      "mean_tokens": 1112.43,
+      "mean_input_tokens": 706.928,
+      "mean_output_tokens": 405.502,
+      "mean_solver_latency_seconds": 3.1896683579641394,
+      "mean_judge_latency_seconds": 0,
+      "mean_judge_calls": 0,
+      "wrong_to_right": 0.236,
+      "right_to_wrong": 0.02,
+      "mean_utility": 0.5828757,
+      "paired_accuracy_diff_vs_stop": 0.216,
+      "paired_diff_ci_95": [
+        0.178,
+        0.256
+      ]
+    },
+    {
+      "policy": "one_step",
+      "setting_selected_on_dev": null,
+      "n": 500,
+      "accuracy": 0.594,
+      "accuracy_ci_95": [
+        0.55,
+        0.638
+      ],
+      "mean_tokens": 1112.43,
+      "mean_input_tokens": 706.928,
+      "mean_output_tokens": 405.502,
+      "mean_solver_latency_seconds": 3.1896683579641394,
+      "mean_judge_latency_seconds": 0,
+      "mean_judge_calls": 0,
+      "wrong_to_right": 0.236,
+      "right_to_wrong": 0.02,
+      "mean_utility": 0.5828757,
+      "paired_accuracy_diff_vs_stop": 0.216,
+      "paired_diff_ci_95": [
+        0.178,
+        0.256
+      ]
+    },
+    {
+      "policy": "supervised",
+      "setting_selected_on_dev": null,
+      "n": 500,
+      "accuracy": 0.582,
+      "accuracy_ci_95": [
+        0.54,
+        0.626
+      ],
+      "mean_tokens": 1100.212,
+      "mean_input_tokens": 695.972,
+      "mean_output_tokens": 404.24,
+      "mean_solver_latency_seconds": 3.177663388050627,
+      "mean_judge_latency_seconds": 0,
+      "mean_judge_calls": 0,
+      "wrong_to_right": 0.236,
+      "right_to_wrong": 0.032,
+      "mean_utility": 0.57099788,
+      "paired_accuracy_diff_vs_stop": 0.204,
+      "paired_diff_ci_95": [
+        0.164,
+        0.246
+      ]
+    },
+    {
+      "policy": "pomdp",
+      "setting_selected_on_dev": null,
+      "n": 500,
+      "accuracy": 0.594,
+      "accuracy_ci_95": [
+        0.55,
+        0.638
+      ],
+      "mean_tokens": 1112.43,
+      "mean_input_tokens": 706.928,
+      "mean_output_tokens": 405.502,
+      "mean_solver_latency_seconds": 3.1896683579641394,
+      "mean_judge_latency_seconds": 0,
+      "mean_judge_calls": 0,
+      "wrong_to_right": 0.236,
+      "right_to_wrong": 0.02,
+      "mean_utility": 0.5828757,
+      "paired_accuracy_diff_vs_stop": 0.216,
+      "paired_diff_ci_95": [
+        0.178,
+        0.256
+      ]
+    },
+    {
+      "policy": "judge_full",
+      "setting_selected_on_dev": null,
+      "n": 500,
+      "accuracy": 0.38,
+      "accuracy_ci_95": [
+        0.338,
+        0.424
+      ],
+      "mean_tokens": 598.864,
+      "mean_input_tokens": 455.692,
+      "mean_output_tokens": 143.172,
+      "mean_solver_latency_seconds": 1.0200185129405,
+      "mean_judge_latency_seconds": 0.24723633895488456,
+      "mean_judge_calls": 1.01,
+      "wrong_to_right": 0.002,
+      "right_to_wrong": 0,
+      "mean_utility": 0.37401136,
+      "paired_accuracy_diff_vs_stop": 0.002,
+      "paired_diff_ci_95": [
+        0.0,
+        0.006
+      ]
+    },
+    {
+      "policy": "judge_compact",
+      "setting_selected_on_dev": null,
+      "n": 500,
+      "accuracy": 0.4,
+      "accuracy_ci_95": [
+        0.354,
+        0.444
+      ],
+      "mean_tokens": 740.136,
+      "mean_input_tokens": 494.262,
+      "mean_output_tokens": 245.874,
+      "mean_solver_latency_seconds": 1.8382505644182674,
+      "mean_judge_latency_seconds": 0.257918139369227,
+      "mean_judge_calls": 1.534,
+      "wrong_to_right": 0.108,
+      "right_to_wrong": 0.086,
+      "mean_utility": 0.39259864,
+      "paired_accuracy_diff_vs_stop": 0.022,
+      "paired_diff_ci_95": [
+        -0.016,
+        0.062
+      ]
+    },
+    {
+      "policy": "hybrid",
+      "setting_selected_on_dev": 0,
+      "n": 500,
+      "accuracy": 0.594,
+      "accuracy_ci_95": [
+        0.55,
+        0.638
+      ],
+      "mean_tokens": 1112.43,
+      "mean_input_tokens": 706.928,
+      "mean_output_tokens": 405.502,
+      "mean_solver_latency_seconds": 3.1896683579641394,
+      "mean_judge_latency_seconds": 0,
+      "mean_judge_calls": 0,
+      "wrong_to_right": 0.236,
+      "right_to_wrong": 0.02,
+      "mean_utility": 0.5828757,
+      "paired_accuracy_diff_vs_stop": 0.216,
+      "paired_diff_ci_95": [
+        0.178,
+        0.256
+      ]
+    },
+    {
+      "policy": "majority",
+      "setting_selected_on_dev": null,
+      "n": 500,
+      "accuracy": 0.416,
+      "accuracy_ci_95": [
+        0.372,
+        0.458
+      ],
+      "mean_tokens": 817.404,
+      "mean_input_tokens": 425.028,
+      "mean_output_tokens": 392.376,
+      "mean_solver_latency_seconds": 3.0366325688399374,
+      "mean_judge_latency_seconds": 0,
+      "mean_judge_calls": 0,
+      "wrong_to_right": 0.064,
+      "right_to_wrong": 0.026,
+      "mean_utility": 0.40782596,
+      "paired_accuracy_diff_vs_stop": 0.038,
+      "paired_diff_ci_95": [
+        0.012,
+        0.064
+      ]
+    }
+  ]
+}
