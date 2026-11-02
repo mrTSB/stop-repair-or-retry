@@ -8,6 +8,12 @@ dependencies = []
 [project.optional-dependencies]
 mlx = ["mlx-lm>=0.28"]
 data = ["pyarrow>=20"]
+scienceworld = [
+    "scienceworld==1.1.3",
+]
+alfworld = [
+    "alfworld==0.4.2",
+]
 
 [project.scripts]
 srr = "stop_repair_retry.cli:main"

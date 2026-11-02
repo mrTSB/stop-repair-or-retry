@@ -133,4 +133,64 @@ class ControllerTests(unittest.TestCase):
             self.assertEqual({r['policy'] for r in summary['results']}, set(POLICIES))
             self.assertEqual(len((root/'results'/'per_question.jsonl').read_text().splitlines()), 4 * len(POLICIES))
 
+    def test_interactive_episode_nodes_and_metrics(self):
+        from stop_repair_retry.interactive import _node, _simulate
+        root = _node(0, 'medium', 10, 2, .1, 2, 1)
+        repair = _node(100, 'high', 20, 3, .2, 4, 0)
+        retry = _node(0, 'low', 30, 4, .3, 6, 0)
+        sample = {'id': 'interactive-1', 'answer': '1', 'tree': {'': root, 'repair': repair, 'retry': retry}}
+        outcome = _simulate(sample, 'repair', self.model, self.q, .01)
+        self.assertEqual(outcome['correct'], 1)
+        self.assertEqual(outcome['reward'], 1)
+        self.assertEqual(outcome['tokens'], 35)
+        self.assertEqual(outcome['env_steps'], 6)
+
+    def test_interactive_action_prompt_receives_remaining_full_attempt_budget(self):
+        from stop_repair_retry.interactive import _run_steps
+
+        class Adapter:
+            done = False
+            score = 0
+            observation = 'state'
+            task = {'task': 'boil'}
+            def valid_actions(self): return ['go']
+            def task_description(self): return 'task'
+            def step(self, action):
+                self.done = True
+                return 'done', True
+
+        class Backend:
+            def generate(self, prompt):
+                self.prompt = prompt
+                return {'text': '{"action":"go","confidence":"high"}', 'input_tokens': 1, 'output_tokens': 1}
+
+        backend = Backend()
+        _run_steps(backend, Adapter(), [], 1, 'solve', attempt_budget=6, steps_before=0)
+        self.assertIn('Actions remaining in this attempt: 6', backend.prompt)
+        _run_steps(backend, Adapter(), [], 4, 'repair', attempt_budget=6, steps_before=2)
+        self.assertIn('Actions remaining in this attempt: 4', backend.prompt)
+
+    def test_alfworld_goal_extraction_uses_reset_instruction(self):
+        from stop_repair_retry.interactive import _extract_alfworld_goal
+        observation = 'Welcome to TextWorld\nYou are in a room.\n\nYour task is to: put a pencil in shelf.'
+        self.assertEqual(_extract_alfworld_goal(observation), 'Your task is to: put a pencil in shelf.')
+
+    def test_science_state_change_menu_hides_unrelated_focus_actions(self):
+        from stop_repair_retry.interactive import _science_task_actions
+        actions = ['look around', 'go hallway', 'focus on air', 'focus on tin', 'look at tin']
+        filtered = _science_task_actions('boil', 'Your task is to boil tin.', actions)
+        self.assertIn('focus on tin', filtered)
+        self.assertNotIn('focus on air', filtered)
+        self.assertIn('go hallway', filtered)
+        self.assertIn('look at tin', filtered)
+
+    def test_scienceworld_split_sample_is_disjoint_and_stratified(self):
+        from stop_repair_retry.interactive import scienceworld_tasks
+        train = scienceworld_tasks('train', 42, 4)
+        dev = scienceworld_tasks('dev', 42, 4)
+        self.assertEqual(len(train), 4)
+        self.assertEqual(len(dev), 4)
+        self.assertFalse({row['id'] for row in train} & {row['id'] for row in dev})
+        self.assertEqual(len({row['task'] for row in train}), 4)
+
 if __name__ == '__main__': unittest.main()

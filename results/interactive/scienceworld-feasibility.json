@@ -1,0 +1,129 @@
+{
+  "benchmark": "ScienceWorld",
+  "n": 5,
+  "task_ids": [
+    "scienceworld-test-boil-0022",
+    "scienceworld-test-change-the-state-of-matter-of-0025",
+    "scienceworld-test-chemistry-mix-0024",
+    "scienceworld-test-chemistry-mix-paint-secondary-color-0027",
+    "scienceworld-test-chemistry-mix-paint-tertiary-color-0032"
+  ],
+  "task_families": [
+    "boil",
+    "change-the-state-of-matter-of",
+    "chemistry-mix",
+    "chemistry-mix-paint-secondary-color",
+    "chemistry-mix-paint-tertiary-color"
+  ],
+  "retry_reset_match_n": 3,
+  "generation_config": {
+    "benchmark": "scienceworld",
+    "model": ".cache/huggingface/hub/models--mlx-community--Qwen2.5-3B-Instruct-4bit/snapshots/4f83f8f146fdf28b512a06562b671d7af4fab457",
+    "seed": 101,
+    "selection_seed": 20261101,
+    "split": "test",
+    "checkpoint_steps": 6,
+    "episode_steps": 30,
+    "max_tokens": 128,
+    "temperature": 0.7,
+    "judge": true,
+    "penalty": 0.01,
+    "runner_sha256": "ad6917412697ba821bff632100713df9edfb9398d9ca3c123b2abac2ab4de7ea"
+  },
+  "branches": {
+    "stop": {
+      "exact_successes": 0,
+      "n": 5,
+      "mean_reward": 0.082
+    },
+    "repair": {
+      "exact_successes": 0,
+      "n": 5,
+      "mean_reward": 0.082
+    },
+    "retry": {
+      "exact_successes": 0,
+      "n": 5,
+      "mean_reward": 0.082
+    }
+  },
+  "family_scores": {
+    "boil": {
+      "n": 1,
+      "stop": {
+        "exact_successes": 0,
+        "mean_reward": 0.0
+      },
+      "repair": {
+        "exact_successes": 0,
+        "mean_reward": 0.0
+      },
+      "retry": {
+        "exact_successes": 0,
+        "mean_reward": 0.0
+      }
+    },
+    "change-the-state-of-matter-of": {
+      "n": 1,
+      "stop": {
+        "exact_successes": 0,
+        "mean_reward": 0.0
+      },
+      "repair": {
+        "exact_successes": 0,
+        "mean_reward": 0.0
+      },
+      "retry": {
+        "exact_successes": 0,
+        "mean_reward": 0.0
+      }
+    },
+    "chemistry-mix": {
+      "n": 1,
+      "stop": {
+        "exact_successes": 0,
+        "mean_reward": 0.08
+      },
+      "repair": {
+        "exact_successes": 0,
+        "mean_reward": 0.08
+      },
+      "retry": {
+        "exact_successes": 0,
+        "mean_reward": 0.08
+      }
+    },
+    "chemistry-mix-paint-secondary-color": {
+      "n": 1,
+      "stop": {
+        "exact_successes": 0,
+        "mean_reward": 0.2
+      },
+      "repair": {
+        "exact_successes": 0,
+        "mean_reward": 0.2
+      },
+      "retry": {
+        "exact_successes": 0,
+        "mean_reward": 0.2
+      }
+    },
+    "chemistry-mix-paint-tertiary-color": {
+      "n": 1,
+      "stop": {
+        "exact_successes": 0,
+        "mean_reward": 0.13
+      },
+      "repair": {
+        "exact_successes": 0,
+        "mean_reward": 0.13
+      },
+      "retry": {
+        "exact_successes": 0,
+        "mean_reward": 0.13
+      }
+    }
+  },
+  "trajectory_sha256": "3182e26252caf80b63fffd64a13d1ebf6eb3655cfa0c226d3b94dea0e151c0f4",
+  "interpretation": "Feasibility gate only; five tasks and zero exact completions do not support a full baseline comparison."
+}

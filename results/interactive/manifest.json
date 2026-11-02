@@ -1,0 +1,88 @@
+{
+  "benchmarks": {
+    "alfworld": {
+      "train": {
+        "n": 100,
+        "sha256": "4a147a491d5a4e8367a803536eaada0344f091d29e00a2e7e6468c542bc31a0c",
+        "config": {
+          "benchmark": "alfworld",
+          "checkpoint_steps": 6,
+          "episode_steps": 50,
+          "judge": false,
+          "max_tokens": 128,
+          "model": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/.cache/huggingface/hub/models--mlx-community--Qwen2.5-3B-Instruct-4bit/snapshots/4f83f8f146fdf28b512a06562b671d7af4fab457",
+          "penalty": null,
+          "runner_sha256": "ad6917412697ba821bff632100713df9edfb9398d9ca3c123b2abac2ab4de7ea",
+          "seed": 101,
+          "selection_seed": 20261101,
+          "split": "train",
+          "temperature": 0.7
+        },
+        "retry_reset_match_n": 100
+      },
+      "dev": {
+        "n": 50,
+        "sha256": "346764e8b0933382a98772cc8eb282e53201be4d9e6917c40d41c8d57827a5c4",
+        "config": {
+          "benchmark": "alfworld",
+          "checkpoint_steps": 6,
+          "episode_steps": 50,
+          "judge": true,
+          "max_tokens": 128,
+          "model": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/.cache/huggingface/hub/models--mlx-community--Qwen2.5-3B-Instruct-4bit/snapshots/4f83f8f146fdf28b512a06562b671d7af4fab457",
+          "penalty": 0.01,
+          "runner_sha256": "ad6917412697ba821bff632100713df9edfb9398d9ca3c123b2abac2ab4de7ea",
+          "seed": 101,
+          "selection_seed": 20261101,
+          "split": "dev",
+          "temperature": 0.7
+        },
+        "retry_reset_match_n": 50
+      },
+      "test": {
+        "n": 134,
+        "sha256": "8e88ccf169766e84480919da1e743e58cfcd80323596bf4bc78366a6c1ec8015",
+        "config": {
+          "benchmark": "alfworld",
+          "checkpoint_steps": 6,
+          "episode_steps": 50,
+          "judge": true,
+          "max_tokens": 128,
+          "model": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/.cache/huggingface/hub/models--mlx-community--Qwen2.5-3B-Instruct-4bit/snapshots/4f83f8f146fdf28b512a06562b671d7af4fab457",
+          "penalty": 0.01,
+          "runner_sha256": "ad6917412697ba821bff632100713df9edfb9398d9ca3c123b2abac2ab4de7ea",
+          "seed": 101,
+          "selection_seed": 20261101,
+          "split": "test",
+          "temperature": 0.7
+        },
+        "retry_reset_match_n": 134
+      }
+    }
+  },
+  "runner_sha256": "ad6917412697ba821bff632100713df9edfb9398d9ca3c123b2abac2ab4de7ea",
+  "limitations": [
+    "Pilot outputs with fewer than 100 test episodes are smoke tests, not publishable estimates.",
+    "Results use a small local 3B model and should not be interpreted as benchmark-level agent performance.",
+    "Interactive evaluation makes one controller choice per episode at the configured checkpoint; multi-step scheduling and finite-horizon POMDP policies are not reported as distinct methods."
+  ],
+  "scienceworld_feasibility_gate": {
+    "n": 5,
+    "trajectory_sha256": "3182e26252caf80b63fffd64a13d1ebf6eb3655cfa0c226d3b94dea0e151c0f4",
+    "retry_reset_match_n": 3,
+    "config": {
+      "benchmark": "scienceworld",
+      "model": ".cache/huggingface/hub/models--mlx-community--Qwen2.5-3B-Instruct-4bit/snapshots/4f83f8f146fdf28b512a06562b671d7af4fab457",
+      "seed": 101,
+      "selection_seed": 20261101,
+      "split": "test",
+      "checkpoint_steps": 6,
+      "episode_steps": 30,
+      "max_tokens": 128,
+      "temperature": 0.7,
+      "judge": true,
+      "penalty": 0.01,
+      "runner_sha256": "ad6917412697ba821bff632100713df9edfb9398d9ca3c123b2abac2ab4de7ea"
+    }
+  }
+}

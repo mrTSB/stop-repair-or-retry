@@ -1,0 +1,208 @@
+{
+  "penalty": 0.01,
+  "results": [
+    {
+      "policy": "stop",
+      "setting_selected_on_dev": null,
+      "n": 134,
+      "accuracy": 0.029850746268656716,
+      "accuracy_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_reward": 0.029850746268656716,
+      "reward_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_tokens": 3000.373134328358,
+      "mean_env_steps": 5.955223880597015,
+      "mean_invalid_actions": 1.0895522388059702,
+      "mean_latency_seconds": 2.695181369288032,
+      "mean_utility": -0.0001529850746268666
+    },
+    {
+      "policy": "repair",
+      "setting_selected_on_dev": null,
+      "n": 134,
+      "accuracy": 0.05970149253731343,
+      "accuracy_ci_95": [
+        0.022388059701492536,
+        0.1044776119402985
+      ],
+      "mean_reward": 0.05970149253731343,
+      "reward_ci_95": [
+        0.022388059701492536,
+        0.1044776119402985
+      ],
+      "mean_tokens": 28635.305970149253,
+      "mean_env_steps": 47.708955223880594,
+      "mean_invalid_actions": 16.26865671641791,
+      "mean_latency_seconds": 25.64005540678132,
+      "mean_utility": -0.2266515671641791
+    },
+    {
+      "policy": "retry",
+      "setting_selected_on_dev": null,
+      "n": 134,
+      "accuracy": 0.029850746268656716,
+      "accuracy_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_reward": 0.029850746268656716,
+      "reward_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_tokens": 32203.783582089553,
+      "mean_env_steps": 54.95522388059702,
+      "mean_invalid_actions": 14.970149253731343,
+      "mean_latency_seconds": 28.009859730197643,
+      "mean_utility": -0.2921870895522388
+    },
+    {
+      "policy": "tuned_fixed",
+      "setting_selected_on_dev": "stop",
+      "n": 134,
+      "accuracy": 0.029850746268656716,
+      "accuracy_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_reward": 0.029850746268656716,
+      "reward_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_tokens": 3000.373134328358,
+      "mean_env_steps": 5.955223880597015,
+      "mean_invalid_actions": 1.0895522388059702,
+      "mean_latency_seconds": 2.695181369288032,
+      "mean_utility": -0.0001529850746268666
+    },
+    {
+      "policy": "threshold",
+      "setting_selected_on_dev": [
+        0,
+        "repair"
+      ],
+      "n": 134,
+      "accuracy": 0.029850746268656716,
+      "accuracy_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_reward": 0.029850746268656716,
+      "reward_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_tokens": 3000.373134328358,
+      "mean_env_steps": 5.955223880597015,
+      "mean_invalid_actions": 1.0895522388059702,
+      "mean_latency_seconds": 2.695181369288032,
+      "mean_utility": -0.0001529850746268666
+    },
+    {
+      "policy": "one_step",
+      "setting_selected_on_dev": null,
+      "n": 134,
+      "accuracy": 0.029850746268656716,
+      "accuracy_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_reward": 0.029850746268656716,
+      "reward_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_tokens": 3000.373134328358,
+      "mean_env_steps": 5.955223880597015,
+      "mean_invalid_actions": 1.0895522388059702,
+      "mean_latency_seconds": 2.695181369288032,
+      "mean_utility": -0.0001529850746268666
+    },
+    {
+      "policy": "supervised",
+      "setting_selected_on_dev": null,
+      "n": 134,
+      "accuracy": 0.029850746268656716,
+      "accuracy_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_reward": 0.029850746268656716,
+      "reward_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_tokens": 3000.373134328358,
+      "mean_env_steps": 5.955223880597015,
+      "mean_invalid_actions": 1.0895522388059702,
+      "mean_latency_seconds": 2.695181369288032,
+      "mean_utility": -0.0001529850746268666
+    },
+    {
+      "policy": "judge_full",
+      "setting_selected_on_dev": null,
+      "n": 134,
+      "accuracy": 0.029850746268656716,
+      "accuracy_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_reward": 0.029850746268656716,
+      "reward_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_tokens": 5599.9029850746265,
+      "mean_env_steps": 9.044776119402986,
+      "mean_invalid_actions": 2.246268656716418,
+      "mean_latency_seconds": 4.8954285326076725,
+      "mean_utility": -0.026148283582089555
+    },
+    {
+      "policy": "judge_compact",
+      "setting_selected_on_dev": null,
+      "n": 134,
+      "accuracy": 0.05223880597014925,
+      "accuracy_ci_95": [
+        0.014925373134328358,
+        0.08955223880597014
+      ],
+      "mean_reward": 0.05223880597014925,
+      "reward_ci_95": [
+        0.014925373134328358,
+        0.08955223880597014
+      ],
+      "mean_tokens": 27541.66417910448,
+      "mean_env_steps": 46.42537313432836,
+      "mean_invalid_actions": 13.746268656716419,
+      "mean_latency_seconds": 24.411967815101537,
+      "mean_utility": -0.22317783582089554
+    },
+    {
+      "policy": "hybrid",
+      "setting_selected_on_dev": 0,
+      "n": 134,
+      "accuracy": 0.029850746268656716,
+      "accuracy_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_reward": 0.029850746268656716,
+      "reward_ci_95": [
+        0.007462686567164179,
+        0.05970149253731343
+      ],
+      "mean_tokens": 3000.373134328358,
+      "mean_env_steps": 5.955223880597015,
+      "mean_invalid_actions": 1.0895522388059702,
+      "mean_latency_seconds": 2.695181369288032,
+      "mean_utility": -0.0001529850746268666
+    }
+  ]
+}
