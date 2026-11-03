@@ -54,10 +54,10 @@ At a fixed checkpoint, stop submits current progress, repair continues the live 
 
 Per-question artifacts retain task IDs, controller actions, scores, and costs; they exclude free-form observations, prompts, and generations. Raw trajectories remain in the local `runs/` directory.
 
-These runs support pipeline validation and feasibility analysis. The local model has limited task success; larger test samples alone will not make this a useful workshop result. Interpret results only for the benchmark(s) listed above.
+The original 3B ALFWorld run has low absolute success and supports pipeline validation more than a workshop claim. A separate 40-task Qwen3.5 9B fixed-policy follow-up is documented in [`../alfworld-qwen35-9b/report.md`](../alfworld-qwen35-9b/report.md); it shows a stronger exploratory signal but has no train/dev controller evaluation.
 
 ## ScienceWorld feasibility gate
 
-Current-code gate: 5 held-out tasks, 30-action attempt budget, 6-action checkpoint. Exact completions were stop 0/5, repair 0/5, and retry 0/5. Mean normalized progress was 0.082, 0.082, and 0.082, respectively. Retry resets matched the initial observations on 3/5 tasks.
+Earlier 3B feasibility gate, generated before the latest ScienceWorld action-menu refinements: 5 held-out tasks, 30-action attempt budget, 6-action checkpoint. Exact completions were stop 0/5, repair 0/5, and retry 0/5. Mean normalized progress was 0.082, 0.082, and 0.082, respectively. Retry resets matched the initial observations on 3/5 tasks.
 
-This gate did not pass: no branch completed a task, and reset mismatches make two task pairs unsuitable for paired claims. The full ScienceWorld run was therefore not launched with this 3B agent. See `scienceworld-feasibility.json` for task IDs, family scores, configuration, and the trajectory hash.
+This earlier gate did not pass: no branch completed a task, and reset mismatches make two task pairs unsuitable for paired claims. The full ScienceWorld run was not launched with that setup. The latest action-menu refinements have not yet been evaluated on a new ScienceWorld sample. See `scienceworld-feasibility.json` for task IDs, family scores, configuration, and the trajectory hash.

@@ -1,0 +1,227 @@
+{
+  "benchmark": "ALFWorld",
+  "model": "qwen3.5:9b",
+  "backend": "Ollama local; model served from Mac GPU",
+  "test_n": 40,
+  "selection_seed": 20261191,
+  "generation_config": {
+    "benchmark": "alfworld",
+    "backend": "ollama",
+    "model": "qwen3.5:9b",
+    "seed": 101,
+    "selection_seed": 20261191,
+    "split": "test",
+    "checkpoint_steps": 6,
+    "episode_steps": 50,
+    "max_tokens": 128,
+    "temperature": 0.7,
+    "judge": false,
+    "penalty": null,
+    "runner_sha256": "22b11371cacc0722921037029a46192dcb243c70a27848844350e7d82f595220"
+  },
+  "test_ids_sha256": "c1c79e37781cd84ff76ced9f2e678cc73c20ef630960f9be355e3df4dae92c24",
+  "trajectory_sha256": "1cbd7cc084cab1b1f038154c0d43bb6c59fc907fdfea79772320f9c29e38fb32",
+  "pilot_n": 10,
+  "pilot_selection_seed": 20261101,
+  "pilot_ids_sha256": "95d95fec2a561d0b3398cd16ef34eac459205e2d3b7be00f03f8f0656ed93c83",
+  "pilot_trajectory_sha256": "c77c555e80555f206fc95f8797758e55665cc2d26003a4dbf8d74872c7872cbc",
+  "pilot_metrics": {
+    "stop": {
+      "n": 10,
+      "successes": 2,
+      "success_rate": 0.2,
+      "success_rate_bootstrap_95": [
+        0.0,
+        0.5
+      ],
+      "mean_tokens": 3124.4,
+      "mean_actions": 6,
+      "mean_invalid_actions": 0.2
+    },
+    "repair": {
+      "n": 10,
+      "successes": 3,
+      "success_rate": 0.3,
+      "success_rate_bootstrap_95": [
+        0.1,
+        0.6
+      ],
+      "mean_tokens": 25020,
+      "mean_actions": 37.2,
+      "mean_invalid_actions": 5,
+      "paired_difference_vs_stop": 0.1,
+      "paired_difference_bootstrap_95": [
+        0.0,
+        0.3
+      ],
+      "repair_or_retry_wins": 1,
+      "repair_or_retry_losses": 0
+    },
+    "retry": {
+      "n": 10,
+      "successes": 2,
+      "success_rate": 0.2,
+      "success_rate_bootstrap_95": [
+        0.0,
+        0.5
+      ],
+      "mean_tokens": 30113.3,
+      "mean_actions": 47.3,
+      "mean_invalid_actions": 7.3,
+      "paired_difference_vs_stop": 0,
+      "paired_difference_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "repair_or_retry_wins": 0,
+      "repair_or_retry_losses": 0
+    }
+  },
+  "pilot_and_followup_disjoint": true,
+  "retry_reset_matches": 40,
+  "metrics": {
+    "stop": {
+      "n": 40,
+      "successes": 1,
+      "success_rate": 0.025,
+      "success_rate_bootstrap_95": [
+        0.0,
+        0.075
+      ],
+      "mean_tokens": 3027.025,
+      "mean_actions": 6,
+      "mean_invalid_actions": 0.2
+    },
+    "repair": {
+      "n": 40,
+      "successes": 16,
+      "success_rate": 0.4,
+      "success_rate_bootstrap_95": [
+        0.25,
+        0.55
+      ],
+      "mean_tokens": 22368.525,
+      "mean_actions": 34.375,
+      "mean_invalid_actions": 3.475,
+      "paired_difference_vs_stop": 0.375,
+      "paired_difference_bootstrap_95": [
+        0.225,
+        0.525
+      ],
+      "repair_or_retry_wins": 15,
+      "repair_or_retry_losses": 0
+    },
+    "retry": {
+      "n": 40,
+      "successes": 16,
+      "success_rate": 0.4,
+      "success_rate_bootstrap_95": [
+        0.25,
+        0.55
+      ],
+      "mean_tokens": 26716.075,
+      "mean_actions": 42.05,
+      "mean_invalid_actions": 4.475,
+      "paired_difference_vs_stop": 0.375,
+      "paired_difference_bootstrap_95": [
+        0.225,
+        0.525
+      ],
+      "repair_or_retry_wins": 16,
+      "repair_or_retry_losses": 1
+    }
+  },
+  "task_families": {
+    "look_at_obj_in_light": {
+      "n": 4,
+      "repair": {
+        "successes": 3,
+        "n": 4
+      },
+      "retry": {
+        "successes": 1,
+        "n": 4
+      },
+      "stop": {
+        "successes": 1,
+        "n": 4
+      }
+    },
+    "pick_and_place_simple": {
+      "n": 7,
+      "repair": {
+        "successes": 1,
+        "n": 7
+      },
+      "retry": {
+        "successes": 1,
+        "n": 7
+      },
+      "stop": {
+        "successes": 0,
+        "n": 7
+      }
+    },
+    "pick_clean_then_place_in_recep": {
+      "n": 7,
+      "repair": {
+        "successes": 3,
+        "n": 7
+      },
+      "retry": {
+        "successes": 4,
+        "n": 7
+      },
+      "stop": {
+        "successes": 0,
+        "n": 7
+      }
+    },
+    "pick_cool_then_place_in_recep": {
+      "n": 8,
+      "repair": {
+        "successes": 3,
+        "n": 8
+      },
+      "retry": {
+        "successes": 4,
+        "n": 8
+      },
+      "stop": {
+        "successes": 0,
+        "n": 8
+      }
+    },
+    "pick_heat_then_place_in_recep": {
+      "n": 7,
+      "repair": {
+        "successes": 3,
+        "n": 7
+      },
+      "retry": {
+        "successes": 4,
+        "n": 7
+      },
+      "stop": {
+        "successes": 0,
+        "n": 7
+      }
+    },
+    "pick_two_obj_and_place": {
+      "n": 7,
+      "repair": {
+        "successes": 3,
+        "n": 7
+      },
+      "retry": {
+        "successes": 2,
+        "n": 7
+      },
+      "stop": {
+        "successes": 0,
+        "n": 7
+      }
+    }
+  },
+  "interpretation": "Fixed-policy follow-up only. The 10-task pilot is exploratory and reported separately; the 40-task follow-up was selected to be disjoint after the pilot. This is not a train/dev/test adaptive-controller evaluation."
+}

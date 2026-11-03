@@ -67,6 +67,7 @@ def main():
     gen.add_argument('--penalty', type=float, default=.01)
     gen.add_argument('--max-tokens', type=int, default=512)
     gen.add_argument('--temperature', type=float, default=.7)
+    gen.add_argument('--depth', type=int, choices=(1, 2), default=2, help='Decision-tree depth: 1 for one stop/repair/retry checkpoint; 2 for adaptive two-decision trajectories')
     gen.add_argument('--seed', type=int, default=0)
     gen.add_argument('--resume', action='store_true', help='Resume a matching, incrementally saved output')
     ev = sub.add_parser('evaluate', help='Fit on train, tune on dev, evaluate on test')
@@ -78,9 +79,9 @@ def main():
         from . import generate
         from .generate import MLXBackend, OllamaBackend, generate_rows
         backend_type = MLXBackend if args.backend == 'mlx' else OllamaBackend
-        config = {'backend': args.backend, 'model': args.model, 'max_tokens': args.max_tokens, 'temperature': args.temperature, 'seed': args.seed, 'judge': args.judge, 'penalty': args.penalty if args.judge else None, 'generator_sha256': hashlib.sha256(Path(generate.__file__).read_bytes()).hexdigest()}
+        config = {'backend': args.backend, 'model': args.model, 'max_tokens': args.max_tokens, 'temperature': args.temperature, 'seed': args.seed, 'depth': args.depth, 'judge': args.judge, 'penalty': args.penalty if args.judge else None, 'generator_sha256': hashlib.sha256(Path(generate.__file__).read_bytes()).hexdigest()}
         backend = backend_type(args.model, args.max_tokens, args.temperature, args.seed)
-        generate_rows(read_jsonl(args.input), backend, args.output, backend if args.judge else None, args.penalty, args.seed, config, args.resume)
+        generate_rows(read_jsonl(args.input), backend, args.output, backend if args.judge else None, args.penalty, args.seed, config, args.resume, args.depth)
     else: evaluate(args)
 
 if __name__ == '__main__': main()

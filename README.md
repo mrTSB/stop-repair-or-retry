@@ -2,6 +2,8 @@
 
 A reproducible starting point for the CS238 proposal: generate paired solver trajectories, fit lightweight controllers on training questions, select policy parameters on development questions, and evaluate on held-out questions.
 
+Aggregated benchmark reports are indexed in [`results/benchmark-baselines/README.md`](results/benchmark-baselines/README.md).
+
 ## Hardware and credentials
 
 On an Apple Silicon Mac, local inference uses [MLX LM](https://github.com/ml-explore/mlx-lm) and Metal. **No API key, cloud GPU, or paid API is required** for a locally available, openly accessible MLX-compatible model. A first download normally needs internet; gated models may require a Hugging Face account/token and acceptance of the model license. Choose a model that fits unified memory along with its context/KV cache and operating system. Quantized models reduce memory use but can change model behavior. Full experiments can take considerable time: each question has seven solver calls (one initial and six branch calls), plus six judge calls if `--judge` is enabled. There is no hosted API backend in this implementation.
@@ -45,6 +47,20 @@ uv run --no-sync srr evaluate --train runs/train.jsonl --dev runs/dev.jsonl --te
 Select a model compatible with your installed `mlx-lm` version and hardware. `generate` saves complete questions atomically. To continue an interrupted job, repeat the identical command with `--resume`; it checks the question order and generation configuration before proceeding. Each question receives a deterministic seed derived from its ID and the run seed. Existing output cannot be overwritten accidentally. A retry uses the original prompt with a new stochastic generation; repair sees the immediate previous solution. Use a positive temperature for independent samples. All methods replay the same cached branches for paired comparisons. To study generation variability, produce additional complete datasets using independent seeds and analyze them as repeated samples, clustered by question.
 
 The local pilot stored the model under this project's `.cache/huggingface`; prefix generation commands with `HF_HOME="$PWD/.cache/huggingface"` to reuse that copy. On restricted environments, the local GPU or local Ollama server may require sandbox access. Loading model weights happens outside the measured per-call latencies.
+
+## Science benchmark
+
+The hard science baseline uses the official [MMLU-Pro](https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro) release, filtered to biology, chemistry, and physics. The converter samples disjoint controller-train, development, and held-out test question IDs (default 150/60/300, balanced across the three subjects); it excludes the dataset's reference chain-of-thought from every model prompt. Since the official release provides a large test split but only 70 validation items, these are study-specific partitions of its public test questions, not an official MMLU-Pro leaderboard score. The manifest records the source hash, filtering, and counts.
+
+Download the official Parquet files once, then prepare the study splits and run the local one-checkpoint stop/repair/retry comparison:
+
+```sh
+uv run --no-project --python 3.10 --with huggingface_hub hf download TIGER-Lab/MMLU-Pro --repo-type dataset data/test-00000-of-00001.parquet --local-dir .cache/mmlu-pro
+uv run --offline --no-sync python scripts/prepare_mmlu_pro_science.py
+UV_CACHE_DIR=/tmp/codex-uv-cache bash scripts/run_mmlu_pro_science.sh
+```
+
+The runner uses an already running local Ollama model (`qwen3.5:9b` by default), no API key, and saves trajectories under ignored `runs/mmlu-pro-science/`. Set `MODEL` to another local Ollama model and pass an alternate run directory to reproduce with another model. MMLU-Pro is a knowledge benchmark, so it complements the interactive agent benchmarks rather than replacing them.
 
 The complete local large GSM8K workflow uses `scripts/run_full_gsm8k_large.sh`. It resumes the main run, evaluates all implemented controllers, runs the training-size and repeat-seed checks, and packages results. Use `scripts/run_gsm8k_large.sh` to resume only generation and the main evaluation, or `scripts/finish_gsm8k_large.sh` to rerun postprocessing after a completed main run. The test split excludes questions inspected in the pilot. Preserve the data and model snapshot paths and the generator source unchanged when resuming.
 

@@ -92,7 +92,7 @@ def package(run_dir: Path, output: Path, benchmarks: list[str]) -> None:
         "## Method and limitations", "",
         "At a fixed checkpoint, stop submits current progress, repair continues the live attempt, and retry restarts the same task instance. All controller policies use cached paired branch outcomes. Fitted models use train trajectories; tuned settings use dev; test is held out. Confidence intervals and per-task results are in the JSON artifacts.",
         "", "Per-question artifacts retain task IDs, controller actions, scores, and costs; they exclude free-form observations, prompts, and generations. Raw trajectories remain in the local `runs/` directory.", "",
-        "These runs support pipeline validation and feasibility analysis. The local model has limited task success; larger test samples alone will not make this a useful workshop result. Interpret results only for the benchmark(s) listed above.", "",
+        "The original 3B ALFWorld run has low absolute success and supports pipeline validation more than a workshop claim. A separate 40-task Qwen3.5 9B fixed-policy follow-up is documented in `../alfworld-qwen35-9b/report.md`; it shows a stronger exploratory signal but has no train/dev controller evaluation.", "",
     ])
     (output / "report.md").write_text("\n".join(report))
     (output / "README.md").write_text(
@@ -151,8 +151,8 @@ def package_scienceworld_gate(trajectories: Path, output: Path) -> None:
     report_path = output / "report.md"
     report = report_path.read_text() if report_path.exists() else "# Interactive benchmark results\n"
     report += "\n## ScienceWorld feasibility gate\n\n"
-    report += f"Current-code gate: {len(rows)} held-out tasks, 30-action attempt budget, 6-action checkpoint. Exact completions were stop {branches['stop']['exact_successes']}/{len(rows)}, repair {branches['repair']['exact_successes']}/{len(rows)}, and retry {branches['retry']['exact_successes']}/{len(rows)}. Mean normalized progress was {branches['stop']['mean_reward']:.3f}, {branches['repair']['mean_reward']:.3f}, and {branches['retry']['mean_reward']:.3f}, respectively. Retry resets matched the initial observations on {summary['retry_reset_match_n']}/{len(rows)} tasks.\n\n"
-    report += "This gate did not pass: no branch completed a task, and reset mismatches make two task pairs unsuitable for paired claims. The full ScienceWorld run was therefore not launched with this 3B agent. See `scienceworld-feasibility.json` for task IDs, family scores, configuration, and the trajectory hash.\n"
+    report += f"Earlier 3B feasibility gate, generated before the latest ScienceWorld action-menu refinements: {len(rows)} held-out tasks, 30-action attempt budget, 6-action checkpoint. Exact completions were stop {branches['stop']['exact_successes']}/{len(rows)}, repair {branches['repair']['exact_successes']}/{len(rows)}, and retry {branches['retry']['exact_successes']}/{len(rows)}. Mean normalized progress was {branches['stop']['mean_reward']:.3f}, {branches['repair']['mean_reward']:.3f}, and {branches['retry']['mean_reward']:.3f}, respectively. Retry resets matched the initial observations on {summary['retry_reset_match_n']}/{len(rows)} tasks.\n\n"
+    report += "This earlier gate did not pass: no branch completed a task, and reset mismatches make two task pairs unsuitable for paired claims. The full ScienceWorld run was not launched with that setup. The latest action-menu refinements have not yet been evaluated on a new ScienceWorld sample. See `scienceworld-feasibility.json` for task IDs, family scores, configuration, and the trajectory hash.\n"
     report_path.write_text(report)
     readme = output / "README.md"
     if readme.exists():

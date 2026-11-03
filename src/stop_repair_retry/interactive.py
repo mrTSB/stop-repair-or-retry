@@ -21,7 +21,7 @@ from typing import Any
 
 from .cli import bootstrap_interval
 from .core import ACTIONS, Model, confidence, correct, read_jsonl, write_jsonl
-from .generate import MLXBackend, parse_object
+from .generate import MLXBackend, OllamaBackend, parse_object
 from .policies import TabularQ, best, choose
 
 POLICIES = (
@@ -58,10 +58,90 @@ def _science_task_actions(task_name: str, task_description: str, actions: list[s
     ]
 
 
+def _science_action_candidates(actions: list[str], task_description: str,
+                               observation: str) -> list[str]:
+    """Prune ScienceWorld's large legal menu to progress-oriented options.
+
+    Before the requested object is visible, preserve exploration and inspection
+    commands while suppressing legal but unrelated manipulation combinations.
+    Once it is visible, retain commands grounded in that object as well.
+    """
+    task_words = set(re.findall(r"[a-z]+", task_description.lower().split(".", 1)[0]))
+    target_words = task_words - {
+        "your", "task", "is", "to", "the", "of", "a", "an", "and", "or",
+        "on", "in", "matter", "change", "state", "boil", "freeze", "mix",
+        "chemistry", "please", "first", "focus", "substance", "find", "identify",
+    }
+    observed_words = set(re.findall(r"[a-z]+", observation.lower()))
+    target_visible = bool(target_words & observed_words)
+    task_lower = task_description.lower()
+    if not target_visible:
+        kept = []
+        for action in actions:
+            lower = action.lower()
+            words = set(re.findall(r"[a-z]+", lower))
+            navigates = lower == "look around" or lower.startswith(("open ", "go to "))
+            container_inspection = lower.startswith("look in ") and bool(
+                words & {"drawer", "cupboard", "cabinet", "fridge", "refrigerator", "wardrobe", "shelf"}
+            )
+            if navigates or container_inspection:
+                kept.append(action)
+        return list(dict.fromkeys(kept))
+
+    if any(word in task_lower for word in ("boil", "freeze", "state of matter", "temperature")):
+        allowed_prefixes = (
+            "focus on ", "pick up ", "look at ", "look in ", "open ", "go to ",
+            "activate ", "deactivate ", "use ", "heat ", "cool ", "turn ",
+            "put ", "pour ", "dunk ", "wait", "look around",
+        )
+        process_prefixes = ("activate ", "deactivate ", "use ", "heat ", "cool ", "turn ", "wait")
+    elif "mix" in task_lower or "ingredients" in task_lower:
+        allowed_prefixes = (
+            "focus on ", "pick up ", "look at ", "look in ", "open ", "go to ",
+            "mix ", "put ", "pour ", "dunk ", "look around",
+        )
+        process_prefixes = ("mix ", "put ", "pour ", "dunk ")
+    else:
+        allowed_prefixes = (
+            "focus on ", "pick up ", "look at ", "look in ", "open ", "go to ",
+            "activate ", "deactivate ", "use ", "turn ", "put ", "pour ",
+            "move ", "connect ", "disconnect ", "read ", "look around",
+        )
+        process_prefixes = ("use ", "turn ", "put ", "connect ", "read ")
+    candidates = [
+        action for action in actions
+        if action.lower().startswith(allowed_prefixes)
+    ]
+    if not candidates:
+        candidates = actions
+
+    def rank(action: str) -> tuple[float, str]:
+        lower = action.lower()
+        words = set(re.findall(r"[a-z]+", lower))
+        score = 20 * len(target_words & words)
+        if lower.startswith(process_prefixes):
+            score += 8
+        if lower == "look around" or lower.startswith(("open ", "go to ", "look in ")):
+            score += 4
+        if lower.startswith("focus on ") and not (target_words & words):
+            score -= 15
+        if lower == "inventory" or lower.startswith("connect agent to air"):
+            score -= 20
+        return (-score, action)
+
+    return sorted(dict.fromkeys(candidates), key=rank)[:48]
+
+
+def _scienceworld_state_signature(observation: str) -> tuple[str, ...]:
+    """Ignore nondeterministic presentation order of same-state room objects."""
+    return tuple(sorted(line.strip() for line in observation.splitlines() if line.strip()))
+
+
 def _sample_stratified(groups: dict[str, list[Any]], size: int, seed: int) -> list[Any]:
     """Round-robin task families, then sample variation IDs without replacement."""
     rng = random.Random(seed)
-    keys = sorted(groups)
+    keys = list(groups)
+    rng.shuffle(keys)
     shuffled = {key: list(groups[key]) for key in keys}
     for values in shuffled.values():
         rng.shuffle(values)
@@ -213,46 +293,19 @@ class ScienceWorldAdapter:
         self.history = []
 
     def valid_actions(self) -> list[str]:
-        # The wrapper recomputes all legal combinations on every step. Expose
-        # grounded commands from the official grammar and measure invalid calls.
+        # Use the simulator's state-grounded action menu. Building commands
+        # from grammar templates can admit actions that are syntactically legal
+        # but invalid in the current state, and hides exploration actions when
+        # the task target is in another room.
         if self.done:
             return []
-        task_text = self.task_description().lower()
-        obs_text = self.observation.lower()
-        mentioned = [obj for obj in self.objects if obj.lower() in obs_text or obj.lower() in task_text]
-        actions = []
-        for template in self.templates:
-            slots = template.count("OBJ")
-            if slots == 0:
-                actions.append(template)
-            elif slots == 1:
-                actions.extend(template.replace("OBJ", obj) for obj in mentioned[:12])
-            elif slots == 2:
-                for first in mentioned[:8]:
-                    for second in mentioned[:8]:
-                        actions.append(template.replace("OBJ", first, 1).replace("OBJ", second, 1))
-        actions = list(dict.fromkeys(actions))
-        actions = _science_task_actions(self.task["task"], self.task_description(), actions)
-        if len(actions) <= 48:
-            return actions
-        task_words = set(task_text.replace('.', ' ').split())
-        obs_words = set(obs_text.replace('.', ' ').split())
-        relevant = [action for action in actions if sum(word in action.lower() for word in task_words if len(word) > 3)]
-        if len(relevant) < 24:
-            relevant = actions
-        if len(relevant) <= 48:
-            return relevant
-        ranked = sorted(
-            relevant,
-            key=lambda action: (
-                -sum(word in action.lower() for word in task_words if len(word) > 3),
-                -sum(word in action.lower() for word in obs_words if len(word) > 3),
-                action,
-            ),
-        )
-        # Always keep common navigation/information commands.
-        pinned = [a for a in actions if a in ('look around', 'inventory', 'task', 'wait')]
-        return list(dict.fromkeys(pinned + ranked[:48]))[:48]
+        legal = list(dict.fromkeys(
+            item["action"] for item in self.env.getValidActionObjectCombinationsWithTemplates()
+        ))
+        candidates = _science_action_candidates(legal, self.task_description(), self.observation)
+        if not candidates:
+            candidates = [a for a in legal if a in {"look around", "task", "inventory"}]
+        return candidates[:48]
 
     def task_description(self) -> str:
         return self.env.taskdescription()
@@ -364,7 +417,13 @@ def _action_prompt(adapter: Any, history: list[tuple[str, str]], style: str, max
     else:
         task_name = adapter.task.get("task", "")
         if task_name in ("boil", "freeze", "change-the-state-of-matter-of"):
-            task_guide = "Focus on the exact substance named by the task, then use the appropriate heating or cooling equipment to change its state."
+            task_guide = (
+                "Locate the exact named substance first. If it is not in the current room, inspect the room, "
+                "open closed doors, and enter other rooms. Do not repeat look-around, inspect inventory, "
+                "or focus on/manipulate a different object. "
+                "Once you find the named substance, focus on that exact object, then use the appropriate "
+                "heating or cooling equipment to change its state."
+            )
         elif task_name.startswith("chemistry-mix"):
             task_guide = "Use only the exact ingredient names in the task; locate them, bring them together, and mix them in a suitable container."
         elif task_name.startswith("find-"):
@@ -468,7 +527,10 @@ def _generate_science(task: dict[str, Any], split: str, backend: Any, checkpoint
         tree["repair"] = repair
 
         adapter.reset(task)
-        reset_match = adapter.observation == initial_observation
+        reset_match = (
+            _scienceworld_state_signature(adapter.observation)
+            == _scienceworld_state_signature(initial_observation)
+        )
         retry_history: list[tuple[str, str]] = []
         backend.seed(_task_seed(seed ^ 0x5A5A5A5A, task["id"]))
         retry, _ = _run_steps(backend, adapter, retry_history, episode_steps,
@@ -561,7 +623,7 @@ def generate_split(args: argparse.Namespace) -> None:
             task, args.split, data_root, backend, args.checkpoint_steps,
             args.penalty, args.judge, args.seed, episode_steps)
     config = {
-        "benchmark": args.benchmark, "model": args.model, "seed": args.seed,
+        "benchmark": args.benchmark, "backend": args.backend, "model": args.model, "seed": args.seed,
         "selection_seed": args.selection_seed, "split": args.split,
         "checkpoint_steps": args.checkpoint_steps,
         "episode_steps": episode_steps,
@@ -580,7 +642,12 @@ def generate_split(args: argparse.Namespace) -> None:
         raise ValueError("Saved trajectories contain more tasks than selected input")
     if len(rows) == len(tasks):
         return
-    backend = MLXBackend(args.model, args.max_tokens, args.temperature, args.seed)
+    if args.backend == "mlx":
+        backend = MLXBackend(args.model, args.max_tokens, args.temperature, args.seed)
+    else:
+        backend = OllamaBackend(
+            args.model, args.max_tokens, args.temperature, args.seed, args.ollama_url
+        )
     out.parent.mkdir(parents=True, exist_ok=True)
     for task in tasks[len(rows):]:
         row = generate_one(task, backend)
@@ -713,7 +780,9 @@ def main() -> None:
     gen.add_argument("--benchmark", choices=("scienceworld", "alfworld"), required=True)
     gen.add_argument("--split", choices=("train", "dev", "test"), required=True)
     gen.add_argument("--output", required=True)
+    gen.add_argument("--backend", choices=("mlx", "ollama"), default="mlx")
     gen.add_argument("--model", default=MODEL_DEFAULT)
+    gen.add_argument("--ollama-url", default="http://127.0.0.1:11434")
     gen.add_argument("--size", type=int)
     gen.add_argument("--selection-seed", type=int, default=20261101)
     gen.add_argument("--seed", type=int, default=101)

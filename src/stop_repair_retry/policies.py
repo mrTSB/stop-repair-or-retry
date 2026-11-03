@@ -93,7 +93,8 @@ def simulate(row, policy, model, qmodel, penalty, setting=None):
     judge_latency = 0
     judge_calls = 0
     history = []
-    for remaining in (2, 1):
+    horizon = int(row.get('max_depth', 2))
+    for remaining in range(horizon, 0, -1):
         action, judge = choose(policy, tree, path, belief, remaining, model, qmodel, penalty, setting)
         if judge:
             total_input += judge.get('input_tokens', 0)
@@ -113,12 +114,15 @@ def simulate(row, policy, model, qmodel, penalty, setting=None):
         total_input += node.get('input_tokens', 0)
         total_output += node.get('output_tokens', 0)
         solver_latency += node.get('latency_seconds', 0)
+        if not any(path + '/' + child in tree for child in ACTIONS):
+            break
     return {'id': row['id'], 'correct': int(correct(node, gold)), 'initial_correct': int(correct(tree[''], gold)), 'answer': node.get('answer', ''), 'input_tokens': total_input, 'output_tokens': total_output, 'tokens': total_input + total_output, 'solver_latency_seconds': solver_latency, 'judge_latency_seconds': judge_latency, 'judge_calls': judge_calls, 'actions': history, 'path': path}
 
 
 def tune(rows, policy, model, qmodel, penalty):
     if policy == 'schedule':
-        candidates = list(product(('stop', *ACTIONS), repeat=2))
+        horizon = max(int(row.get('max_depth', 2)) for row in rows)
+        candidates = list(product(('stop', *ACTIONS), repeat=horizon))
     elif policy == 'threshold':
         # 0 stops on all bins; 3 stops on none.
         candidates = list(product(range(4), ACTIONS))

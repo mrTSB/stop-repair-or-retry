@@ -1,0 +1,354 @@
+{
+  "dataset": {
+    "dataset": "MMLU-Pro",
+    "source": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro",
+    "paper": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/ad236edc564f3e3156e1b2feafb99a24-Abstract-Datasets_and_Benchmarks_Track.html",
+    "license": "MIT",
+    "source_file_sha256": "0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8",
+    "source_split": "official test; disjoint question IDs partitioned for controller fit, tuning, and held-out evaluation",
+    "categories": [
+      "biology",
+      "chemistry",
+      "physics"
+    ],
+    "question_filter": "biology, chemistry, physics only; cot_content excluded from model input",
+    "seed": 20261102,
+    "counts": {
+      "pilot": 25,
+      "train": 150,
+      "dev": 60,
+      "test": 300
+    },
+    "category_counts": {
+      "pilot": {
+        "physics": 9,
+        "biology": 8,
+        "chemistry": 8
+      },
+      "train": {
+        "biology": 50,
+        "chemistry": 50,
+        "physics": 50
+      },
+      "dev": {
+        "physics": 20,
+        "chemistry": 20,
+        "biology": 20
+      },
+      "test": {
+        "biology": 100,
+        "chemistry": 100,
+        "physics": 100
+      }
+    },
+    "eligible_counts": {
+      "biology": 717,
+      "chemistry": 1132,
+      "physics": 1299
+    }
+  },
+  "generation": {
+    "backend": "ollama",
+    "model": "qwen3.5:9b",
+    "max_tokens": 256,
+    "temperature": 0.2,
+    "seed": 20261102,
+    "depth": 1,
+    "judge": false,
+    "penalty": null,
+    "generator_sha256": "02a6deab517703edb2033af92049ee9eddd4a251897531eb31871c478f1f8575"
+  },
+  "one_decision_per_question": true,
+  "evaluation": {
+    "penalty": 0.01,
+    "results": [
+      {
+        "policy": "stop",
+        "setting_selected_on_dev": null,
+        "n": 300,
+        "accuracy": 0.5633333333333334,
+        "accuracy_ci_95": [
+          0.5066666666666667,
+          0.62
+        ],
+        "mean_tokens": 485.0466666666667,
+        "mean_input_tokens": 291.42333333333335,
+        "mean_output_tokens": 193.62333333333333,
+        "mean_solver_latency_seconds": 4.801575946381005,
+        "mean_judge_latency_seconds": 0,
+        "mean_judge_calls": 0,
+        "wrong_to_right": 0,
+        "right_to_wrong": 0,
+        "mean_utility": 0.5584828666666667,
+        "paired_accuracy_diff_vs_stop": 0,
+        "paired_diff_ci_95": [
+          0.0,
+          0.0
+        ],
+        "paired_accuracy_diff_vs_repair": -0.08666666666666667,
+        "paired_diff_ci_95_vs_repair": [
+          -0.12333333333333334,
+          -0.05333333333333334
+        ],
+        "mean_token_savings_vs_repair": 0.5754787438880655
+      },
+      {
+        "policy": "repair",
+        "setting_selected_on_dev": null,
+        "n": 300,
+        "accuracy": 0.65,
+        "accuracy_ci_95": [
+          0.5966666666666667,
+          0.7
+        ],
+        "mean_tokens": 1142.5733333333333,
+        "mean_input_tokens": 783.8266666666667,
+        "mean_output_tokens": 358.74666666666667,
+        "mean_solver_latency_seconds": 9.271559044955454,
+        "mean_judge_latency_seconds": 0,
+        "mean_judge_calls": 0,
+        "wrong_to_right": 0.1,
+        "right_to_wrong": 0.013333333333333334,
+        "mean_utility": 0.6385742666666666,
+        "paired_accuracy_diff_vs_stop": 0.08666666666666667,
+        "paired_diff_ci_95": [
+          0.05,
+          0.12333333333333334
+        ],
+        "paired_accuracy_diff_vs_repair": 0.0,
+        "paired_diff_ci_95_vs_repair": [
+          0.0,
+          0.0
+        ],
+        "mean_token_savings_vs_repair": 0.0
+      },
+      {
+        "policy": "retry",
+        "setting_selected_on_dev": null,
+        "n": 300,
+        "accuracy": 0.5333333333333333,
+        "accuracy_ci_95": [
+          0.47333333333333333,
+          0.59
+        ],
+        "mean_tokens": 970.6666666666666,
+        "mean_input_tokens": 582.8466666666667,
+        "mean_output_tokens": 387.82,
+        "mean_solver_latency_seconds": 9.613984619554442,
+        "mean_judge_latency_seconds": 0,
+        "mean_judge_calls": 0,
+        "wrong_to_right": 0.023333333333333334,
+        "right_to_wrong": 0.05333333333333334,
+        "mean_utility": 0.5236266666666667,
+        "paired_accuracy_diff_vs_stop": -0.03,
+        "paired_diff_ci_95": [
+          -0.06333333333333334,
+          0.0
+        ],
+        "paired_accuracy_diff_vs_repair": -0.11666666666666667,
+        "paired_diff_ci_95_vs_repair": [
+          -0.15666666666666668,
+          -0.07666666666666666
+        ],
+        "mean_token_savings_vs_repair": 0.15045569649796364
+      },
+      {
+        "policy": "schedule",
+        "setting_selected_on_dev": [
+          "repair"
+        ],
+        "n": 300,
+        "accuracy": 0.65,
+        "accuracy_ci_95": [
+          0.5966666666666667,
+          0.7
+        ],
+        "mean_tokens": 1142.5733333333333,
+        "mean_input_tokens": 783.8266666666667,
+        "mean_output_tokens": 358.74666666666667,
+        "mean_solver_latency_seconds": 9.271559044955454,
+        "mean_judge_latency_seconds": 0,
+        "mean_judge_calls": 0,
+        "wrong_to_right": 0.1,
+        "right_to_wrong": 0.013333333333333334,
+        "mean_utility": 0.6385742666666666,
+        "paired_accuracy_diff_vs_stop": 0.08666666666666667,
+        "paired_diff_ci_95": [
+          0.05,
+          0.12333333333333334
+        ],
+        "paired_accuracy_diff_vs_repair": 0.0,
+        "paired_diff_ci_95_vs_repair": [
+          0.0,
+          0.0
+        ],
+        "mean_token_savings_vs_repair": 0.0
+      },
+      {
+        "policy": "threshold",
+        "setting_selected_on_dev": [
+          1,
+          "repair"
+        ],
+        "n": 300,
+        "accuracy": 0.6633333333333333,
+        "accuracy_ci_95": [
+          0.61,
+          0.7133333333333334
+        ],
+        "mean_tokens": 808.7233333333334,
+        "mean_input_tokens": 524.3833333333333,
+        "mean_output_tokens": 284.34,
+        "mean_solver_latency_seconds": 7.1713736626086755,
+        "mean_judge_latency_seconds": 0,
+        "mean_judge_calls": 0,
+        "wrong_to_right": 0.1,
+        "right_to_wrong": 0,
+        "mean_utility": 0.6552461,
+        "paired_accuracy_diff_vs_stop": 0.1,
+        "paired_diff_ci_95": [
+          0.06666666666666667,
+          0.13333333333333333
+        ],
+        "paired_accuracy_diff_vs_repair": 0.013333333333333334,
+        "paired_diff_ci_95_vs_repair": [
+          0.0033333333333333335,
+          0.02666666666666667
+        ],
+        "mean_token_savings_vs_repair": 0.2921913108421924
+      },
+      {
+        "policy": "one_step",
+        "setting_selected_on_dev": null,
+        "n": 300,
+        "accuracy": 0.65,
+        "accuracy_ci_95": [
+          0.5966666666666667,
+          0.7
+        ],
+        "mean_tokens": 1142.5733333333333,
+        "mean_input_tokens": 783.8266666666667,
+        "mean_output_tokens": 358.74666666666667,
+        "mean_solver_latency_seconds": 9.271559044955454,
+        "mean_judge_latency_seconds": 0,
+        "mean_judge_calls": 0,
+        "wrong_to_right": 0.1,
+        "right_to_wrong": 0.013333333333333334,
+        "mean_utility": 0.6385742666666666,
+        "paired_accuracy_diff_vs_stop": 0.08666666666666667,
+        "paired_diff_ci_95": [
+          0.05,
+          0.12333333333333334
+        ],
+        "paired_accuracy_diff_vs_repair": 0.0,
+        "paired_diff_ci_95_vs_repair": [
+          0.0,
+          0.0
+        ],
+        "mean_token_savings_vs_repair": 0.0
+      },
+      {
+        "policy": "supervised",
+        "setting_selected_on_dev": null,
+        "n": 300,
+        "accuracy": 0.66,
+        "accuracy_ci_95": [
+          0.6066666666666667,
+          0.71
+        ],
+        "mean_tokens": 816.35,
+        "mean_input_tokens": 530.13,
+        "mean_output_tokens": 286.22,
+        "mean_solver_latency_seconds": 7.2225916356655455,
+        "mean_judge_latency_seconds": 0,
+        "mean_judge_calls": 0,
+        "wrong_to_right": 0.1,
+        "right_to_wrong": 0.0033333333333333335,
+        "mean_utility": 0.6518365,
+        "paired_accuracy_diff_vs_stop": 0.09666666666666666,
+        "paired_diff_ci_95": [
+          0.06333333333333334,
+          0.13333333333333333
+        ],
+        "paired_accuracy_diff_vs_repair": 0.01,
+        "paired_diff_ci_95_vs_repair": [
+          0.0,
+          0.023333333333333334
+        ],
+        "mean_token_savings_vs_repair": 0.285516319886105
+      },
+      {
+        "policy": "pomdp",
+        "setting_selected_on_dev": null,
+        "n": 300,
+        "accuracy": 0.65,
+        "accuracy_ci_95": [
+          0.5966666666666667,
+          0.7
+        ],
+        "mean_tokens": 1142.5733333333333,
+        "mean_input_tokens": 783.8266666666667,
+        "mean_output_tokens": 358.74666666666667,
+        "mean_solver_latency_seconds": 9.271559044955454,
+        "mean_judge_latency_seconds": 0,
+        "mean_judge_calls": 0,
+        "wrong_to_right": 0.1,
+        "right_to_wrong": 0.013333333333333334,
+        "mean_utility": 0.6385742666666666,
+        "paired_accuracy_diff_vs_stop": 0.08666666666666667,
+        "paired_diff_ci_95": [
+          0.05,
+          0.12333333333333334
+        ],
+        "paired_accuracy_diff_vs_repair": 0.0,
+        "paired_diff_ci_95_vs_repair": [
+          0.0,
+          0.0
+        ],
+        "mean_token_savings_vs_repair": 0.0
+      }
+    ]
+  },
+  "test_accuracy_by_category": {
+    "stop": {
+      "biology": 0.83,
+      "chemistry": 0.36,
+      "physics": 0.5
+    },
+    "repair": {
+      "biology": 0.86,
+      "chemistry": 0.49,
+      "physics": 0.6
+    },
+    "retry": {
+      "biology": 0.79,
+      "chemistry": 0.35,
+      "physics": 0.46
+    },
+    "schedule": {
+      "biology": 0.86,
+      "chemistry": 0.49,
+      "physics": 0.6
+    },
+    "threshold": {
+      "biology": 0.88,
+      "chemistry": 0.49,
+      "physics": 0.62
+    },
+    "one_step": {
+      "biology": 0.86,
+      "chemistry": 0.49,
+      "physics": 0.6
+    },
+    "supervised": {
+      "biology": 0.87,
+      "chemistry": 0.49,
+      "physics": 0.62
+    },
+    "pomdp": {
+      "biology": 0.86,
+      "chemistry": 0.49,
+      "physics": 0.6
+    }
+  }
+}

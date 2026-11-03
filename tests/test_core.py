@@ -84,6 +84,22 @@ class ControllerTests(unittest.TestCase):
         for policy in ('stop', 'repair', 'retry', 'one_step', 'supervised', 'pomdp', 'judge_full', 'judge_compact'):
             self.assertEqual(simulate(rows[0], policy, model, qmodel, .01)['correct'], 1)
 
+    def test_one_decision_tree_supports_checkpoint_baselines(self):
+        class Backend:
+            def generate(self, prompt):
+                answer = '0' if 'Current solution' in prompt else '1'
+                return {'text': f'{{"answer":"{answer}","confidence":"high"}}', 'input_tokens': 2, 'output_tokens': 1}
+        with tempfile.TemporaryDirectory() as d:
+            rows = generate_rows(
+                [{'id': 'x', 'question': 'test', 'answer': '1'}], Backend(),
+                Path(d) / 'one-step.jsonl', max_depth=1,
+            )
+        self.assertEqual(set(rows[0]['tree']), {'', 'repair', 'retry'})
+        model, qmodel = Model.fit(rows), TabularQ(rows)
+        result = simulate(rows[0], 'repair', model, qmodel, .01)
+        self.assertEqual(result['actions'], ['repair'])
+        self.assertEqual(result['correct'], 0)
+
     def test_resume_preserves_completed_rows_and_rejects_config_changes(self):
         class Backend:
             def seed(self, value): self.value = value
@@ -183,6 +199,41 @@ class ControllerTests(unittest.TestCase):
         self.assertNotIn('focus on air', filtered)
         self.assertIn('go hallway', filtered)
         self.assertIn('look at tin', filtered)
+
+    def test_science_action_candidates_explore_until_target_is_visible(self):
+        from stop_repair_retry.interactive import _science_action_candidates
+        actions = [
+            'look around', 'open door', 'go to hallway', 'look at door',
+            'focus on orange', 'connect agent to air', 'focus on tin', 'pick up tin',
+            'activate blast furnace', 'heat tin',
+        ]
+        hidden = _science_action_candidates(
+            actions, 'Your task is to boil tin.',
+            'This room has a closed door and an orange.',
+        )
+        self.assertIn('open door', hidden)
+        self.assertIn('look around', hidden)
+        self.assertNotIn('connect agent to air', hidden)
+        self.assertNotIn('focus on orange', hidden)
+        self.assertNotIn('focus on tin', hidden)
+
+        visible = _science_action_candidates(
+            actions, 'Your task is to boil tin.',
+            'You see a tin on the table and a closed door.',
+        )
+        self.assertIn('focus on tin', visible)
+        self.assertIn('pick up tin', visible)
+        self.assertIn('activate blast furnace', visible)
+        self.assertIn('heat tin', visible)
+        self.assertNotIn('connect agent to air', visible)
+
+    def test_scienceworld_reset_signature_ignores_object_display_order(self):
+        from stop_repair_retry.interactive import _scienceworld_state_signature
+        first = 'Room\n\ta red cup\n\ta blue cup\nDoor\n'
+        reordered = 'Room\n\ta blue cup\n\ta red cup\nDoor\n'
+        changed = 'Room\n\ta red cup\n\ta green cup\nDoor\n'
+        self.assertEqual(_scienceworld_state_signature(first), _scienceworld_state_signature(reordered))
+        self.assertNotEqual(_scienceworld_state_signature(first), _scienceworld_state_signature(changed))
 
     def test_scienceworld_split_sample_is_disjoint_and_stratified(self):
         from stop_repair_retry.interactive import scienceworld_tasks

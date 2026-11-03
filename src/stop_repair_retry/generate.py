@@ -121,7 +121,9 @@ def judge(backend, row, path, mode, penalty):
     return result
 
 
-def generate_rows(questions, backend, output, judge_backend=None, penalty=0.01, seed=0, config=None, resume=False):
+def generate_rows(questions, backend, output, judge_backend=None, penalty=0.01, seed=0, config=None, resume=False, max_depth=2):
+    if max_depth not in (1, 2):
+        raise ValueError('max_depth must be 1 or 2')
     output = Path(output)
     if output.exists() and not resume:
         raise FileExistsError(f'{output} already exists; use --resume to continue safely')
@@ -137,11 +139,11 @@ def generate_rows(questions, backend, output, judge_backend=None, penalty=0.01, 
             backend.seed(question_seed)
         if judge_backend is not None and judge_backend is not backend and hasattr(judge_backend, 'seed'):
             judge_backend.seed(question_seed ^ 0x5A5A5A5A)
-        row = {'id': question['id'], 'question': question['question'], 'answer': question['answer'], 'tree': {}, 'judge_penalty': penalty if judge_backend else None, 'generation_config': config}
+        row = {'id': question['id'], 'question': question['question'], 'answer': question['answer'], 'tree': {}, 'max_depth': max_depth, 'judge_penalty': penalty if judge_backend else None, 'generation_config': config}
         tree = row['tree']
         tree[''] = solve(backend, row['question'])
         def expand(path, depth):
-            if depth == 2: return
+            if depth == max_depth: return
             for action in ACTIONS:
                 child = path + ('/' if path else '') + action
                 tree[child] = solve(backend, row['question'], tree[path] if action == 'repair' else None)
