@@ -1,0 +1,16 @@
+{
+  "objective": "final_answer_correct - lambda * executed_solver_and_controller_tokens / 1000",
+  "reference_lambda": 0.01,
+  "candidate_lambda_grid": [0, 0.001, 0.01, 0.1, 1],
+  "maximum_additional_solver_calls": 2,
+  "correctness_reward": 1,
+  "incorrectness_reward": 0,
+  "stopping": "Submit the current answer; no additional solver call. A controller request that chose stop still counts.",
+  "repair_or_retry": "Pay the executed solver input/output tokens and replace the current answer; after two extra calls submit the latest answer.",
+  "counted_tokens": "Initial solver call, every executed additional solver call, and every executed LLM-controller call, including its input, output and any reasoning tokens already included in provider completion totals.",
+  "excluded_from_episode_tokens": "Unvisited solver branches, offline dataset collection, other questions, and other experimental runs. Those still contribute to collection billing, reported separately.",
+  "lambda_selection": "Set from a declared cost preference or report a fixed tradeoff grid; do not maximize raw utility across different lambdas or select from test outcomes.",
+  "llm_sweep": "Generate controller decisions separately at each lambda because the objective is included in its prompt. Do not pretend fixed-prompt reweighting is a retuned controller.",
+  "future_pomdp": "Later fit correctness transitions, confidence observations and expected action token costs from training only. No POMDP fitting or evaluation is part of this workflow.",
+  "limitations": "Token counts are a compute proxy, not FLOPs or USD, especially across differently sized models. Provider billing and controller latency are separate measurements. Test outcomes from the current dataset have already been inspected."
+}
