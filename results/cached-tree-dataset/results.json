@@ -1,0 +1,225 @@
+{
+  "scope": "Reproducible cached-tree dataset and empirical characterization using five fixed baselines; no controller contribution claimed or controller outputs used.",
+  "test_questions": 400,
+  "baseline_fitting": "None; all five rules are fixed.",
+  "penalty": 0.01,
+  "summaries": [
+    {
+      "domain": "all",
+      "policy": "stop",
+      "n": 400,
+      "accuracy": 0.3625,
+      "accuracy_ci95": [
+        0.3175,
+        0.41
+      ],
+      "mean_tokens": 340.1075,
+      "mean_utility": 0.359098925,
+      "wrong_to_right_conditional": 0,
+      "right_to_wrong_conditional": 0
+    },
+    {
+      "domain": "all",
+      "policy": "repair_once",
+      "n": 400,
+      "accuracy": 0.5275,
+      "accuracy_ci95": [
+        0.4775,
+        0.5775
+      ],
+      "mean_tokens": 832.95,
+      "mean_utility": 0.5191705,
+      "wrong_to_right_conditional": 0.28627450980392155,
+      "right_to_wrong_conditional": 0.04827586206896552
+    },
+    {
+      "domain": "all",
+      "policy": "repair",
+      "n": 400,
+      "accuracy": 0.5475,
+      "accuracy_ci95": [
+        0.495,
+        0.6
+      ],
+      "mean_tokens": 1358.295,
+      "mean_utility": 0.53391705,
+      "wrong_to_right_conditional": 0.3058823529411765,
+      "right_to_wrong_conditional": 0.027586206896551724
+    },
+    {
+      "domain": "all",
+      "policy": "retry_once",
+      "n": 400,
+      "accuracy": 0.3825,
+      "accuracy_ci95": [
+        0.3325,
+        0.43
+      ],
+      "mean_tokens": 679.5575,
+      "mean_utility": 0.375704425,
+      "wrong_to_right_conditional": 0.18823529411764706,
+      "right_to_wrong_conditional": 0.27586206896551724
+    },
+    {
+      "domain": "all",
+      "policy": "retry",
+      "n": 400,
+      "accuracy": 0.4025,
+      "accuracy_ci95": [
+        0.3575,
+        0.4525
+      ],
+      "mean_tokens": 1020.66,
+      "mean_utility": 0.3922934,
+      "wrong_to_right_conditional": 0.2,
+      "right_to_wrong_conditional": 0.2413793103448276
+    },
+    {
+      "domain": "math",
+      "policy": "stop",
+      "n": 200,
+      "accuracy": 0.38,
+      "accuracy_ci95": [
+        0.31,
+        0.445
+      ],
+      "mean_tokens": 258.645,
+      "mean_utility": 0.37741355,
+      "wrong_to_right_conditional": 0,
+      "right_to_wrong_conditional": 0
+    },
+    {
+      "domain": "math",
+      "policy": "repair_once",
+      "n": 200,
+      "accuracy": 0.655,
+      "accuracy_ci95": [
+        0.59,
+        0.72
+      ],
+      "mean_tokens": 652.185,
+      "mean_utility": 0.64847815,
+      "wrong_to_right_conditional": 0.47580645161290325,
+      "right_to_wrong_conditional": 0.05263157894736842
+    },
+    {
+      "domain": "math",
+      "policy": "repair",
+      "n": 200,
+      "accuracy": 0.685,
+      "accuracy_ci95": [
+        0.62,
+        0.75
+      ],
+      "mean_tokens": 1059.34,
+      "mean_utility": 0.6744066,
+      "wrong_to_right_conditional": 0.5080645161290323,
+      "right_to_wrong_conditional": 0.02631578947368421
+    },
+    {
+      "domain": "math",
+      "policy": "retry_once",
+      "n": 200,
+      "accuracy": 0.4,
+      "accuracy_ci95": [
+        0.33,
+        0.47
+      ],
+      "mean_tokens": 521.335,
+      "mean_utility": 0.39478665,
+      "wrong_to_right_conditional": 0.24193548387096775,
+      "right_to_wrong_conditional": 0.34210526315789475
+    },
+    {
+      "domain": "math",
+      "policy": "retry",
+      "n": 200,
+      "accuracy": 0.47,
+      "accuracy_ci95": [
+        0.4,
+        0.54
+      ],
+      "mean_tokens": 781.62,
+      "mean_utility": 0.4621838,
+      "wrong_to_right_conditional": 0.3064516129032258,
+      "right_to_wrong_conditional": 0.2631578947368421
+    },
+    {
+      "domain": "science",
+      "policy": "stop",
+      "n": 200,
+      "accuracy": 0.345,
+      "accuracy_ci95": [
+        0.285,
+        0.41
+      ],
+      "mean_tokens": 421.57,
+      "mean_utility": 0.3407843,
+      "wrong_to_right_conditional": 0,
+      "right_to_wrong_conditional": 0
+    },
+    {
+      "domain": "science",
+      "policy": "repair_once",
+      "n": 200,
+      "accuracy": 0.4,
+      "accuracy_ci95": [
+        0.335,
+        0.47
+      ],
+      "mean_tokens": 1013.715,
+      "mean_utility": 0.38986285,
+      "wrong_to_right_conditional": 0.10687022900763359,
+      "right_to_wrong_conditional": 0.043478260869565216
+    },
+    {
+      "domain": "science",
+      "policy": "repair",
+      "n": 200,
+      "accuracy": 0.41,
+      "accuracy_ci95": [
+        0.345,
+        0.48
+      ],
+      "mean_tokens": 1657.25,
+      "mean_utility": 0.3934275,
+      "wrong_to_right_conditional": 0.11450381679389313,
+      "right_to_wrong_conditional": 0.028985507246376812
+    },
+    {
+      "domain": "science",
+      "policy": "retry_once",
+      "n": 200,
+      "accuracy": 0.365,
+      "accuracy_ci95": [
+        0.3,
+        0.43
+      ],
+      "mean_tokens": 837.78,
+      "mean_utility": 0.3566222,
+      "wrong_to_right_conditional": 0.13740458015267176,
+      "right_to_wrong_conditional": 0.2028985507246377
+    },
+    {
+      "domain": "science",
+      "policy": "retry",
+      "n": 200,
+      "accuracy": 0.335,
+      "accuracy_ci95": [
+        0.275,
+        0.4
+      ],
+      "mean_tokens": 1259.7,
+      "mean_utility": 0.322403,
+      "wrong_to_right_conditional": 0.09923664122137404,
+      "right_to_wrong_conditional": 0.21739130434782608
+    }
+  ],
+  "source_sha256": {
+    "train": "8ee0c5860e720634b40baf37306ce239ed095795efb0418ff7b4f4f32c736a1c",
+    "dev": "d1ca47fc2c291e4e7e6d2189e8ca51e21f731a1df20c2cc810857b6f2aab5c33",
+    "test": "629ada5e08962d095785a20ee26f1f2c730e70e4b1bfa3dc92280f8e6f40ab7c"
+  },
+  "validation": "All five fixed paths, submitted answers, correctness and token totals verified directly against solver nodes; split sizes, domain balance and question-ID disjointness verified. No controller result files or fitted objects read.",
+  "additional_paid_generation": false
+}

@@ -4,6 +4,8 @@ A reproducible starting point for the CS238 proposal: generate paired solver tra
 
 Aggregated benchmark reports are indexed in [`results/benchmark-baselines/README.md`](results/benchmark-baselines/README.md).
 
+The [cached math/science dataset and characterization](results/cached-tree-dataset/README.md) includes 560 complete solver trees, explicit 100/60/400 train/dev/test splits, and five fixed baseline results. It is a standalone dataset contribution, with no new controller claims.
+
 ## Hardware and credentials
 
 On an Apple Silicon Mac, local inference uses [MLX LM](https://github.com/ml-explore/mlx-lm) and Metal. **No API key, cloud GPU, or paid API is required** for a locally available, openly accessible MLX-compatible model. A first download normally needs internet; gated models may require a Hugging Face account/token and acceptance of the model license. Choose a model that fits unified memory along with its context/KV cache and operating system. Quantized models reduce memory use but can change model behavior. Full experiments can take considerable time: each question has seven solver calls (one initial and six branch calls), plus six judge calls if `--judge` is enabled. There is no hosted API backend in this implementation.

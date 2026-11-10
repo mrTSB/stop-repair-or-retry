@@ -1,0 +1,84 @@
+{
+  "scope": "Dataset and five fixed baseline characterization only",
+  "counts": {
+    "train": 100,
+    "dev": 60,
+    "test": 400
+  },
+  "solver_nodes": 3920,
+  "constants": {
+    "MODEL": "Qwen/Qwen2.5-3B-Instruct",
+    "REVISION": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "SEED": 20261110,
+    "BATCH_SIZE": 16,
+    "MAX_NEW_TOKENS": 768,
+    "PATHS": [
+      "",
+      "repair",
+      "retry",
+      "repair/repair",
+      "repair/retry",
+      "retry/repair",
+      "retry/retry"
+    ],
+    "SOLVER": "Solve the problem carefully. Return a JSON object with keys \"reasoning\", \"answer\", and \"confidence\". The answer must be a short final answer. Confidence must be exactly low, medium, or high. Do not include other text.\n\nProblem: {question}",
+    "REPAIR": "Check the solution below and revise it if needed. Return a JSON object with keys \"reasoning\", \"answer\", and \"confidence\". The answer must be a short final answer. Confidence must be exactly low, medium, or high. Do not include other text.\n\nProblem: {question}\n\nCurrent solution: {solution}"
+  },
+  "decoding": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": 0,
+    "precision": "bfloat16",
+    "attention_implementation": "sdpa"
+  },
+  "packages": {
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "accelerate": "1.6.0"
+  },
+  "hardware": "NVIDIA H100 80GB HBM3",
+  "batch_seed_formula": "int.from_bytes(sha256(f'{SEED}:{phase}:solver:{path}:{batch_ids}'.encode()).digest()[:4], 'big')",
+  "phase": {
+    "train": "calibration",
+    "dev": "calibration",
+    "test": "test"
+  },
+  "calibration_order": "all train questions in file order, followed by all dev questions in file order",
+  "test_order": "test question file order",
+  "sampling_limit": "One sampled tree per question; batch composition, software and hardware can affect sampled responses. Cached data are the reproducible analysis input.",
+  "collection_recovery": "Generation was interrupted and resumed from checkpoints. Saved responses were retained. Missing original batches were generated with identical full ordered batch membership, seeds, settings, H100 hardware and saved parent text. No outcome-based regeneration or filtering.",
+  "grading": "Frozen parse/scoring functions in scoring.py. Missing confidence is independent of answer validity. Science requires one option letter; math uses exact numeric canonicalization.",
+  "export": {
+    "train": {
+      "questions": 100,
+      "solver_nodes": 700,
+      "question_sha256": "9add2802765e4cf80d946bc854ea0d746a260c0d68cd6a5c682c306765975190",
+      "compressed_tree_sha256": "8ee0c5860e720634b40baf37306ce239ed095795efb0418ff7b4f4f32c736a1c"
+    },
+    "dev": {
+      "questions": 60,
+      "solver_nodes": 420,
+      "question_sha256": "971717669ac2bc10eaa351601993243276aa0d00a6dbd983de6a65beb37415fa",
+      "compressed_tree_sha256": "d1ca47fc2c291e4e7e6d2189e8ca51e21f731a1df20c2cc810857b6f2aab5c33"
+    },
+    "test": {
+      "questions": 400,
+      "solver_nodes": 2800,
+      "question_sha256": "c862e506f0385f10d635284fa02ab033b987016dd3bf2b7a112c93da5299bc2e",
+      "compressed_tree_sha256": "629ada5e08962d095785a20ee26f1f2c730e70e4b1bfa3dc92280f8e6f40ab7c"
+    }
+  },
+  "scoring_provenance": {
+    "baseline_commit": "490762fc4621e543ee413ee9e433254744ed38b1",
+    "core_source_sha256": "d3e99222856b3f25c5347e73894ff1eafc23d1f05aec2228eb65cf7420643c4a",
+    "parser_source_sha256": "2c9ff0d97210b47b7bf051d8130c4cb3e25c1556a3b957ee130272136c8624d2"
+  },
+  "excluded_from_bundle": [
+    "judge responses",
+    "fitted controller objects",
+    "controller evaluations",
+    "credentials",
+    "cloud application identifiers",
+    "billing records"
+  ]
+}

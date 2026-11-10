@@ -1,0 +1,73 @@
+{
+  "scope": "Solver-only dataset and five fixed baseline characterization",
+  "files": {
+    "README.md": {
+      "sha256": "5e4b7ba3a949eed88e21ef645a6275c5594bc39a3a232358e7aa03f2d57e58b9",
+      "bytes": 7744
+    },
+    "data/dev-questions.jsonl": {
+      "sha256": "971717669ac2bc10eaa351601993243276aa0d00a6dbd983de6a65beb37415fa",
+      "bytes": 55155
+    },
+    "data/dev-trees.jsonl.gz": {
+      "sha256": "d1ca47fc2c291e4e7e6d2189e8ca51e21f731a1df20c2cc810857b6f2aab5c33",
+      "bytes": 73022
+    },
+    "data/test-questions.jsonl": {
+      "sha256": "c862e506f0385f10d635284fa02ab033b987016dd3bf2b7a112c93da5299bc2e",
+      "bytes": 360646
+    },
+    "data/test-trees.jsonl.gz": {
+      "sha256": "629ada5e08962d095785a20ee26f1f2c730e70e4b1bfa3dc92280f8e6f40ab7c",
+      "bytes": 509085
+    },
+    "data/train-questions.jsonl": {
+      "sha256": "9add2802765e4cf80d946bc854ea0d746a260c0d68cd6a5c682c306765975190",
+      "bytes": 89016
+    },
+    "data/train-trees.jsonl.gz": {
+      "sha256": "8ee0c5860e720634b40baf37306ce239ed095795efb0418ff7b4f4f32c736a1c",
+      "bytes": 122799
+    },
+    "licenses/GSM8K-MIT.txt": {
+      "sha256": "86bbb73e855821d7c401912fd4bf82e34313e6e3b6fd6f909f2b6cc9e209a53b",
+      "bytes": 1062
+    },
+    "licenses/MMLU-Pro-source-Apache-2.0.txt": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    "per-question.jsonl": {
+      "sha256": "b51393bc620c567377c945c9b0a279a842a3806e04693f967ee1e413c50316cb",
+      "bytes": 575470
+    },
+    "provenance/generation.json": {
+      "sha256": "fdcf0ce97cb7502f96ed5fbc91c7c16a46e2db332c70b51504d8bc2cd5b8dba2",
+      "bytes": 3698
+    },
+    "provenance/selection-manifest.json": {
+      "sha256": "60f697cdf1efc6fbb2ac493125da9d968ec635f6f176e31bcdfc29c543354c1b",
+      "bytes": 50876
+    },
+    "report.md": {
+      "sha256": "187c4c92a1c63b1a540160f60c606f59f53bdf89ef45b2d35ab51460ba72a1c3",
+      "bytes": 5265
+    },
+    "results.json": {
+      "sha256": "698744ef1341e53582bc7c729f85707cbef9083e21b4a882dc6fda6d78b4e9a3",
+      "bytes": 5879
+    },
+    "run_baselines.py": {
+      "sha256": "a47cebb359b64ebd41178a2e0d6017324021bd58babba32b47f18bd81b8fd17f",
+      "bytes": 8939
+    },
+    "scoring.py": {
+      "sha256": "357e5f659b6bf3011e32c190ea79e5793fbfd3b42919c8274a0b56c7d3f849fa",
+      "bytes": 3489
+    },
+    "validate.py": {
+      "sha256": "4013a4a85fbe02ee20a1f96bdc66cebbbbd3f956f1d636e9a0067645ea8c2473",
+      "bytes": 5278
+    }
+  }
+}

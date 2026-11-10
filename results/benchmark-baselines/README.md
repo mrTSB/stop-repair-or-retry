@@ -1,5 +1,7 @@
 # Benchmark baseline index
 
+- [Cached math/science dataset and five fixed baseline characterization](../cached-tree-dataset/report.md)
+
 - [Large GSM8K baseline](../gsm8k-large/report.md)
 - [Interactive ALFWorld baseline and ScienceWorld feasibility gate](../interactive/report.md)
 - [MMLU-Pro science baseline](../mmlu-pro-science/report.md)
