@@ -1,0 +1,50 @@
+[
+  {
+    "states": 2,
+    "lambda": 0.01,
+    "n": 100,
+    "correct": 57,
+    "accuracy": 0.57,
+    "mean_tokens": 1304.77,
+    "action_sequences": {
+      "retry -> repair": 3,
+      "repair -> repair": 97
+    }
+  },
+  {
+    "states": 2,
+    "lambda": 0.248,
+    "n": 100,
+    "correct": 50,
+    "accuracy": 0.5,
+    "mean_tokens": 750.04,
+    "action_sequences": {
+      "repair -> stop": 86,
+      "stop": 14
+    }
+  },
+  {
+    "states": 4,
+    "lambda": 0.01,
+    "n": 100,
+    "correct": 57,
+    "accuracy": 0.57,
+    "mean_tokens": 1316.53,
+    "action_sequences": {
+      "repair -> repair": 100
+    }
+  },
+  {
+    "states": 4,
+    "lambda": 0.248,
+    "n": 100,
+    "correct": 46,
+    "accuracy": 0.46,
+    "mean_tokens": 477.22,
+    "action_sequences": {
+      "repair -> repair": 6,
+      "stop": 82,
+      "repair -> stop": 12
+    }
+  }
+]

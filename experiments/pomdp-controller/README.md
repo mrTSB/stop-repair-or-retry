@@ -1,6 +1,6 @@
 # Controller B: two-state POMDP
 
-Read [DESIGN.md](DESIGN.md) first. It records the user's selected scope, the assistant's declared defaults, and the final-project extensions that are deliberately deferred. The four-state design is a future experiment, not a current result.
+Read [DESIGN.md](DESIGN.md) first. It records the user's selected scope, the assistant's declared defaults, and the final-project extensions that are deliberately deferred. The original design is preserved; a separate four-state diagnostic is now available below.
 
 This standalone workflow uses only the published cached math/science dataset. It fits a new two-state model on 100 training questions, evaluates all 60 dev questions, freezes the model and evidence, and then replays all 400 test questions. No Modal account, router, API key, model inference, or older fitted controller is used. No additional one-step baseline is included.
 
@@ -48,3 +48,7 @@ A [train/dev-only context-conditioned candidate](../../results/pomdp-context-dia
 ## Calibration cross-validation
 
 A [five-fold training diagnostic](../../results/pomdp-calibration-cv/report.md) compares pooled, context, and unsupported-category-calibrated models, then evaluates one training-selected variant on dev. Calibration does not yield a new accuracy gain; no answer-change features or test run were added. Fold models are fitted only on80 questions, with every question's branches kept together. This diagnostic motivates a separately authorized richer-observation experiment rather than more lambda tuning.
+
+## Four-state latent-model diagnostic
+
+The user requested additional hidden states. A [separate train-CV diagnostic](../../results/pomdp-latent-state-cv/report.md) compares one correct plus three latent incorrect types with a matched two-state control, keeping confidence/validity observations. Four states show no accuracy gain. Only the training-selected two-state candidate is evaluated on dev; no new test evaluation or inference spending is added. The report records initialization, weak state support, fixed iterations, model assumptions and deferred observation improvements.

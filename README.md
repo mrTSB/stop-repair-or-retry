@@ -12,7 +12,7 @@ The [LLM controller workflow](experiments/llm-controller/README.md) replays the 
 
 ## Controller B: two-state POMDP milestone
 
-The [Controller B decision record](experiments/pomdp-controller/DESIGN.md) separates user-selected scope from implementation defaults and deferred final-project work. The milestone uses two correctness states, confidence/validity observations, pooled dynamics, and two-step planning. A four-state extension is planned for investigation, not implemented or assumed to improve performance.
+The [Controller B decision record](experiments/pomdp-controller/DESIGN.md) separates user-selected scope from implementation defaults and deferred final-project work. The milestone uses two correctness states, confidence/validity observations, pooled dynamics, and two-step planning. A separate four-state extension is investigated below; it does not replace the frozen milestone.
 
 The [frozen two-state results](results/pomdp-two-state/README.md) use train-only fitting, full dev checks, and cached test evaluation with no new inference spending. At the primary penalty, the model selects repair twice on every question and exactly matches that baseline (54.75% test accuracy, 1,358 mean tokens). This is not an adaptive-controller advantage. No one-step ablation was added.
 
@@ -23,6 +23,8 @@ A [separate frozen lambda 0.248 test experiment](results/pomdp-lambda-0248/READM
 A [known-context train/dev diagnostic](results/pomdp-context-diagnostic/report.md) investigates further improvement without changing frozen results. It highlights diminishing repair returns and a limitation in smoothing unseen confidence categories; the candidate has not been run on test.
 
 A [question-level calibration cross-validation diagnostic](results/pomdp-calibration-cv/report.md) tests unsupported-observation handling without new features or test evaluation. It reproduces the repair-twice dev result and documents why calibration alone has not improved accuracy.
+
+A [four-state latent-model diagnostic](results/pomdp-latent-state-cv/report.md) compares extra hidden states with a matched two-state control on question-grouped training folds. It finds no accuracy improvement, retains the existing observations, and adds no new test result.
 
 ## Hardware and credentials
 
