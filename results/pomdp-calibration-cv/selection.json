@@ -1,0 +1,17 @@
+{
+  "selected_utc": "2026-11-11T16:52:39.007888+00:00",
+  "candidate": {
+    "variant": "context",
+    "lambda": 0.01,
+    "n": 100,
+    "correct": 57,
+    "accuracy": 0.57,
+    "mean_tokens": 1302.75,
+    "action_sequences": {
+      "retry -> repair": 3,
+      "repair -> repair": 96,
+      "repair -> retry": 1
+    }
+  },
+  "note": "Selection completed before dev loading."
+}

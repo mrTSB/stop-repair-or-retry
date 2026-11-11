@@ -44,3 +44,7 @@ The user selected lambda0.248 from the dev-only diagnostic. The [separate frozen
 ## Known-context improvement diagnostic
 
 A [train/dev-only context-conditioned candidate](../../results/pomdp-context-diagnostic/report.md) keeps two states and existing observations but separates dynamics by prior action. It matches repair-once dev accuracy with a small token saving at0.248; no test evaluation is performed. The report preserves the diagnostic evidence, fixed shrinkage choice, and the caveat that early stops involve unseen confidence bins. Confidence backoff and history-aware answer-change observations remain future experiments, not silent milestone changes.
+
+## Calibration cross-validation
+
+A [five-fold training diagnostic](../../results/pomdp-calibration-cv/report.md) compares pooled, context, and unsupported-category-calibrated models, then evaluates one training-selected variant on dev. Calibration does not yield a new accuracy gain; no answer-change features or test run were added. Fold models are fitted only on80 questions, with every question's branches kept together. This diagnostic motivates a separately authorized richer-observation experiment rather than more lambda tuning.

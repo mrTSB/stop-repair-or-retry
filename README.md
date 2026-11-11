@@ -22,6 +22,8 @@ A [separate frozen lambda 0.248 test experiment](results/pomdp-lambda-0248/READM
 
 A [known-context train/dev diagnostic](results/pomdp-context-diagnostic/report.md) investigates further improvement without changing frozen results. It highlights diminishing repair returns and a limitation in smoothing unseen confidence categories; the candidate has not been run on test.
 
+A [question-level calibration cross-validation diagnostic](results/pomdp-calibration-cv/report.md) tests unsupported-observation handling without new features or test evaluation. It reproduces the repair-twice dev result and documents why calibration alone has not improved accuracy.
+
 ## Hardware and credentials
 
 On an Apple Silicon Mac, local inference uses [MLX LM](https://github.com/ml-explore/mlx-lm) and Metal. **No API key, cloud GPU, or paid API is required** for a locally available, openly accessible MLX-compatible model. A first download normally needs internet; gated models may require a Hugging Face account/token and acceptance of the model license. Choose a model that fits unified memory along with its context/KV cache and operating system. Quantized models reduce memory use but can change model behavior. Full experiments can take considerable time: each question has seven solver calls (one initial and six branch calls), plus six judge calls if `--judge` is enabled. The original solver-generation workflow below uses local backends; the separate prepared LLM-controller workflow above supports a configurable hosted endpoint.

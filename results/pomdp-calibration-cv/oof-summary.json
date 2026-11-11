@@ -1,0 +1,75 @@
+[
+  {
+    "variant": "pooled",
+    "lambda": 0.01,
+    "n": 100,
+    "correct": 57,
+    "accuracy": 0.57,
+    "mean_tokens": 1316.53,
+    "action_sequences": {
+      "repair -> repair": 100
+    }
+  },
+  {
+    "variant": "pooled",
+    "lambda": 0.248,
+    "n": 100,
+    "correct": 50,
+    "accuracy": 0.5,
+    "mean_tokens": 777.69,
+    "action_sequences": {
+      "repair -> repair": 15,
+      "repair -> stop": 55,
+      "stop": 30
+    }
+  },
+  {
+    "variant": "context",
+    "lambda": 0.01,
+    "n": 100,
+    "correct": 57,
+    "accuracy": 0.57,
+    "mean_tokens": 1302.75,
+    "action_sequences": {
+      "retry -> repair": 3,
+      "repair -> repair": 96,
+      "repair -> retry": 1
+    }
+  },
+  {
+    "variant": "context",
+    "lambda": 0.248,
+    "n": 100,
+    "correct": 50,
+    "accuracy": 0.5,
+    "mean_tokens": 750.04,
+    "action_sequences": {
+      "repair -> stop": 86,
+      "stop": 14
+    }
+  },
+  {
+    "variant": "context_calibrated",
+    "lambda": 0.01,
+    "n": 100,
+    "correct": 57,
+    "accuracy": 0.57,
+    "mean_tokens": 1304.77,
+    "action_sequences": {
+      "retry -> repair": 3,
+      "repair -> repair": 97
+    }
+  },
+  {
+    "variant": "context_calibrated",
+    "lambda": 0.248,
+    "n": 100,
+    "correct": 50,
+    "accuracy": 0.5,
+    "mean_tokens": 750.04,
+    "action_sequences": {
+      "repair -> stop": 86,
+      "stop": 14
+    }
+  }
+]

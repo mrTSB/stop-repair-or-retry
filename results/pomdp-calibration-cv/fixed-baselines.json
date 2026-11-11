@@ -1,0 +1,32 @@
+{
+  "stop": {
+    "train_accuracy": 0.4,
+    "train_tokens": 334.94,
+    "dev_accuracy": 0.4166666666666667,
+    "dev_tokens": 325.56666666666666
+  },
+  "repair_once": {
+    "train_accuracy": 0.54,
+    "train_tokens": 812.92,
+    "dev_accuracy": 0.55,
+    "dev_tokens": 779.2166666666667
+  },
+  "repair_twice": {
+    "train_accuracy": 0.57,
+    "train_tokens": 1316.53,
+    "dev_accuracy": 0.5333333333333333,
+    "dev_tokens": 1253.0333333333333
+  },
+  "retry_once": {
+    "train_accuracy": 0.31,
+    "train_tokens": 669.96,
+    "dev_accuracy": 0.4166666666666667,
+    "dev_tokens": 650.7833333333333
+  },
+  "retry_twice": {
+    "train_accuracy": 0.32,
+    "train_tokens": 1010.58,
+    "dev_accuracy": 0.4,
+    "dev_tokens": 975.3833333333333
+  }
+}

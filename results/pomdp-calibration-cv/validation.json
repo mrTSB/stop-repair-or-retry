@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "folds": 5,
+  "fit_questions_per_fold": 80,
+  "held_questions_per_fold": 20,
+  "selected": {
+    "variant": "context",
+    "lambda": 0.01,
+    "n": 100,
+    "correct": 57,
+    "accuracy": 0.57,
+    "mean_tokens": 1302.75,
+    "action_sequences": {
+      "retry -> repair": 3,
+      "repair -> repair": 96,
+      "repair -> retry": 1
+    }
+  },
+  "selected_dev": {
+    "n": 60,
+    "correct": 32,
+    "accuracy": 0.5333333333333333,
+    "mean_tokens": 1253.0333333333333,
+    "action_sequences": {
+      "repair -> repair": 60
+    }
+  },
+  "checks": [
+    "Reviewed code loads train only before OOF selection; dev loaded only for selected candidate; no test reads/inference",
+    "All question IDs and normalized training stems unique; folds disjoint, balanced, and all branches stay with question",
+    "All15 fold models refitted on80questions, pooled counts independently verified,30 held-out path sets reproduced",
+    "All six OOF summaries cover each training question exactly once; selection rule reproduced",
+    "100-question pooled estimator matches original model; selected full fit and dev paths reproduced",
+    "Four analytic tests cover unsupported-likelihood prior/prediction invariance, normalization, grouped folds and invalid fitting rows"
+  ],
+  "limitations": [
+    "Exploratory diagnostics were motivated by previously viewed dev/test outcomes; OOF estimates are not fresh confirmation.",
+    "The selected candidate shows no improvement over repair twice on dev.",
+    "Equal-likelihood safeguard covers globally unsupported root/action symbols; it is not a general confidence-calibration guarantee."
+  ],
+  "reproduce": "python3 -B experiments/pomdp-controller/verify_calibration_cv.py --output results/pomdp-calibration-cv/validation.json"
+}

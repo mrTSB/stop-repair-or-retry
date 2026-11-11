@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-11-11T16:52:38.747321+00:00",
+  "variants": [
+    "pooled",
+    "context",
+    "context_calibrated"
+  ],
+  "lambdas": [
+    0.01,
+    0.248
+  ],
+  "shrinkage_strength": 10,
+  "folds": 5,
+  "fold_assignment": "Deterministic hashed question IDs, round-robin within domain. Every branch stays with its question.",
+  "selection": "Maximize out-of-fold training accuracy, then minimize mean tokens, then prefer earlier variant in declared order, then smaller lambda. Do not select using dev or test.",
+  "calibration": "Symbols absent from all fit questions at the relevant root/action distribution receive identical positive likelihood in every hidden state. Preserve the prior/predicted belief on an unseen symbol; renormalize supported symbols. Context emissions use globally unsupported action symbols for this safeguard.",
+  "scope": "Training-only cross-validation, then evaluate only selected candidate on dev. No new observation feature, no test evaluation, no paid calls. Prior dev/test results have already informed diagnostic direction.",
+  "script_sha256": "b8b47ddf6610c2a681f47388f34f109e330bf8ac9b32d35b5ed43bf501de9e8b",
+  "context_script_sha256": "fde896d67e10b4898503e82f7f77c2a5453c34c7d68375a62b2de4518b3fc8c5",
+  "core_sha256": "c3e839be7da34587d782ee77318aa8d970a87ca7ec1e29cc2cec77d030e412ab",
+  "dataset_manifest_sha256": "2cfe00e3db0e343cdb09d7a0bb5d1dc5ce5458ca68ed2116861188a5b56f5956"
+}
