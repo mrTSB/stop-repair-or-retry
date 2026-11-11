@@ -1,0 +1,25 @@
+{
+  "questions": 60,
+  "requests": 86,
+  "pending": 0,
+  "invalid_actions": 0,
+  "action_sequences": {
+    "stop": 34,
+    "repair -> stop": 25,
+    "repair -> retry": 1
+  },
+  "token_totals": {
+    "solver_input": 21812,
+    "solver_output": 9564,
+    "controller_input": 60771,
+    "controller_output": 516
+  },
+  "accuracy": 0.5,
+  "first_request_utc": "2026-11-11T00:31:40.770475+00:00",
+  "last_response_utc": "2026-11-11T00:32:31.013453+00:00",
+  "status": "pass",
+  "split": "dev",
+  "freeze_utc": "2026-11-11T00:32:31.420042+00:00",
+  "verified_utc": "2026-11-11T00:33:23.165081+00:00",
+  "note": "Full60development only; no test outcomes inspected for this validation."
+}

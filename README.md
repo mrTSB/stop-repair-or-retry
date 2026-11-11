@@ -6,9 +6,9 @@ Aggregated benchmark reports are indexed in [`results/benchmark-baselines/README
 
 The [cached math/science dataset and characterization](results/cached-tree-dataset/README.md) includes 560 complete solver trees, explicit 100/60/400 train/dev/test splits, and five fixed baseline results. It is a standalone dataset contribution, with no new controller claims.
 
-## Prepared LLM controller experiment
+## LLM controller experiment
 
-The [provider-configurable LLM controller workflow](experiments/llm-controller/README.md) replays the published cached dataset and compares only the five fixed baselines. It includes an offline smoke test, development/test freeze, token accounting, and a training-only reward-landscape diagnostic. No POMDP is fitted by this workflow; live provider/model selection and inference are still pending.
+The [LLM controller workflow](experiments/llm-controller/README.md) replays the published cached dataset and compares the five fixed baselines. The [full frozen evaluation](results/llm-controller-full-evaluation/README.md) includes all 60 dev and 400 test questions, real Qwen2.5-14B-Instruct decisions on private Modal compute, exact raw evidence, token accounting, and independent offline verification. On test, the LLM controller achieved 44.25% accuracy at 1,616 mean tokens, compared with 52.75% at 833 tokens for repair once. No POMDP was fitted or evaluated. Older benchmark reports above are separate historical artifacts and were not used as controller evidence in this experiment.
 
 ## Hardware and credentials
 

@@ -2,7 +2,7 @@
 
 This workflow adds an initial full-history LLM controller to the published cached-tree dataset. It is independent of the older experiment/evaluation CLI: it does not load or fit a POMDP, import old controller results, regenerate solver responses, or use Tanvir's earlier benchmark results. The comparison has exactly five fixed baselines: submit initial, repair once, repair twice, retry once and retry twice.
 
-**Status: a ten-question development pilot completed using private Modal compute.** See [results and full walkthroughs](../../results/llm-controller-dev-pilot/README.md). The pilot uses pinned Qwen2.5-14B-Instruct on ten development questions; it is separate from final evaluation and does not freeze a controller for test. The generic HTTP example deliberately leaves endpoint, model and billing unset. Mock output is transport/testing data, not LLM performance.
+**Status: full development and test collection completed.** The unchanged Qwen2.5-14B-Instruct controller ran on all 60 dev questions, was frozen, and then ran on all 400 test questions. See [full results and verification](../../results/llm-controller-full-evaluation/README.md) and the earlier [ten-question pilot](../../results/llm-controller-dev-pilot/README.md). The generic HTTP example still leaves endpoint, model, and billing unset; actual collection used private Modal RPC. Mock output is not LLM performance.
 
 ## Run without a provider or key
 
@@ -59,6 +59,14 @@ The driver pins Qwen2.5-14B-Instruct revision `cf98f3b3bbb457ad9e2bb7baf9a0125b6
 Before another paid run, inspect prior project charges (including failed startups), recalculate the conservative reservation using current prices, and select the intended account explicitly. The driver refuses existing output directories; do not automatically replay an interrupted run. Its dollar reservation is not a provider-enforced account spending limit. No command here should be run merely to reproduce an already collected result; replay/evaluation is offline.
 
 The run directory retains the frozen protocol, selected IDs, model/backend metadata, request/response journal, token usage including chat-template and EOS tokens, and completion status. Research token cost includes every visited solver response and every controller decision, including stopping. RPC latency includes transport; GPU generation time is retained separately, and loading time is not per-decision latency.
+
+### Full dev → freeze → test collection
+
+`modal_full_evaluation.py` collects all 60 development questions, evaluates them offline, saves the freeze evidence, and then collects all 400 test questions using the exact same config and controller. It does not choose settings from the development scores. The model backend is identical to the pilot; only operational limits and the descriptive app address differ.
+
+Both phases share one temporary GPU app. The global maximum is 920 controller decisions (120 dev + 800 test), and a separate watchdog process requests app shutdown after 1,800 seconds. This watchdog survives parent-process interruption; confirm actual shutdown with Modal afterward. The watchdog and request limits are operational protections, not a provider-enforced dollar cap. An initial prior-spend reservation plus the entire new compute/fees reservation must be below $20 before the app is created. The driver requires `MODAL_PROFILE=gancone`, an explicit `--execute`, a fresh output directory, and a reconciled `--prior-reserved-usd` value.
+
+Do not execute the collector to reproduce archived results: use offline evaluation or the portable verification script. Raw evidence binds dev and test to a freeze and preserves all decisions, usage, and failures. Original absolute paths remain in manifests for provenance; the portable verifier resolves archived dev/test/freeze files within the bundle and checks their original hashes.
 
 ### Spending controls
 

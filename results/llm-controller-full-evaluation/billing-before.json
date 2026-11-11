@@ -1,0 +1,327 @@
+{
+  "retrieved_utc": "2026-11-11T00:30:34.643205+00:00",
+  "profile": "gancone",
+  "prior_app_ids": [
+    "ap-1OghDogGRa0UON7s9oEwSs",
+    "ap-1sOSulfMXDWe6gpe6EJQyh",
+    "ap-Bj8ADXCzpHIlpLI7QIiGYr",
+    "ap-UK0NBq0msCaOaV5GZpxHFL",
+    "ap-YQ7mZhsrCUxDK9DzMvFNCJ",
+    "ap-jL07HPbiE65AHGerWAgB9S",
+    "ap-joqDBxKSp6IglYXUtUc2rl",
+    "ap-kfCD5HfQYM5X1EsKIEZbHv",
+    "ap-mVEULfIIZaT4Ygj8tlCCPc",
+    "ap-n1MvuxVoX9DfEcFsK4MJV4",
+    "ap-yECRtlYHaQFlepfjfXgtTC"
+  ],
+  "reported_project_usd": 3.00059499,
+  "prior_unposted_reservation_usd": 1.5,
+  "prior_total_reserved_usd": 4.50059499,
+  "note": "Earlier successful pilot charge not posted at launch. Its full1.50contingency retained. Failedpilot reportedzero. Includes all known project apps, excludes unrelated account workload.",
+  "resources": [
+    {
+      "object_id": "ap-1OghDogGRa0UON7s9oEwSs",
+      "description": "cs238-frozen-final-evaluation",
+      "environment": "main",
+      "interval_start": "2026-11-10T15:00:00",
+      "resource": "Memory",
+      "cost": "0.03171557"
+    },
+    {
+      "object_id": "ap-1OghDogGRa0UON7s9oEwSs",
+      "description": "cs238-frozen-final-evaluation",
+      "environment": "main",
+      "interval_start": "2026-11-10T15:00:00",
+      "resource": "H100",
+      "cost": "0.48936135"
+    },
+    {
+      "object_id": "ap-1OghDogGRa0UON7s9oEwSs",
+      "description": "cs238-frozen-final-evaluation",
+      "environment": "main",
+      "interval_start": "2026-11-10T15:00:00",
+      "resource": "Network Egress",
+      "cost": "0.00196813"
+    },
+    {
+      "object_id": "ap-1OghDogGRa0UON7s9oEwSs",
+      "description": "cs238-frozen-final-evaluation",
+      "environment": "main",
+      "interval_start": "2026-11-10T15:00:00",
+      "resource": "CPU",
+      "cost": "0.02343979"
+    },
+    {
+      "object_id": "ap-joqDBxKSp6IglYXUtUc2rl",
+      "description": "cs238-four-question-tree-pilot",
+      "environment": "main",
+      "interval_start": "2026-11-10T15:00:00",
+      "resource": "Memory",
+      "cost": "0.00007762"
+    },
+    {
+      "object_id": "ap-joqDBxKSp6IglYXUtUc2rl",
+      "description": "cs238-four-question-tree-pilot",
+      "environment": "main",
+      "interval_start": "2026-11-10T15:00:00",
+      "resource": "Network Egress",
+      "cost": "0.00039092"
+    },
+    {
+      "object_id": "ap-joqDBxKSp6IglYXUtUc2rl",
+      "description": "cs238-four-question-tree-pilot",
+      "environment": "main",
+      "interval_start": "2026-11-10T15:00:00",
+      "resource": "CPU",
+      "cost": "0.00300505"
+    },
+    {
+      "object_id": "ap-mVEULfIIZaT4Ygj8tlCCPc",
+      "description": "cs238-four-question-tree-pilot",
+      "environment": "main",
+      "interval_start": "2026-11-10T15:00:00",
+      "resource": "Memory",
+      "cost": "0.00661333"
+    },
+    {
+      "object_id": "ap-mVEULfIIZaT4Ygj8tlCCPc",
+      "description": "cs238-four-question-tree-pilot",
+      "environment": "main",
+      "interval_start": "2026-11-10T15:00:00",
+      "resource": "A10G",
+      "cost": "0.05683328"
+    },
+    {
+      "object_id": "ap-mVEULfIIZaT4Ygj8tlCCPc",
+      "description": "cs238-four-question-tree-pilot",
+      "environment": "main",
+      "interval_start": "2026-11-10T15:00:00",
+      "resource": "Network Egress",
+      "cost": "0.00203767"
+    },
+    {
+      "object_id": "ap-mVEULfIIZaT4Ygj8tlCCPc",
+      "description": "cs238-four-question-tree-pilot",
+      "environment": "main",
+      "interval_start": "2026-11-10T15:00:00",
+      "resource": "CPU",
+      "cost": "0.00488766"
+    },
+    {
+      "object_id": "ap-1sOSulfMXDWe6gpe6EJQyh",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "Memory",
+      "cost": "0.01379562"
+    },
+    {
+      "object_id": "ap-1sOSulfMXDWe6gpe6EJQyh",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "H100",
+      "cost": "0.21286209"
+    },
+    {
+      "object_id": "ap-1sOSulfMXDWe6gpe6EJQyh",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "Network Egress",
+      "cost": "0.00681069"
+    },
+    {
+      "object_id": "ap-1sOSulfMXDWe6gpe6EJQyh",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "CPU",
+      "cost": "0.01020027"
+    },
+    {
+      "object_id": "ap-Bj8ADXCzpHIlpLI7QIiGYr",
+      "description": "cs238-final-evaluation-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "Memory",
+      "cost": "0.02147562"
+    },
+    {
+      "object_id": "ap-Bj8ADXCzpHIlpLI7QIiGYr",
+      "description": "cs238-final-evaluation-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "H100",
+      "cost": "0.33136217"
+    },
+    {
+      "object_id": "ap-Bj8ADXCzpHIlpLI7QIiGYr",
+      "description": "cs238-final-evaluation-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "Network Egress",
+      "cost": "0.00665062"
+    },
+    {
+      "object_id": "ap-Bj8ADXCzpHIlpLI7QIiGYr",
+      "description": "cs238-final-evaluation-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "CPU",
+      "cost": "0.01587183"
+    },
+    {
+      "object_id": "ap-UK0NBq0msCaOaV5GZpxHFL",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "Memory",
+      "cost": "0.01411284"
+    },
+    {
+      "object_id": "ap-UK0NBq0msCaOaV5GZpxHFL",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "H100",
+      "cost": "0.21775671"
+    },
+    {
+      "object_id": "ap-UK0NBq0msCaOaV5GZpxHFL",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "Network Egress",
+      "cost": "0.00280359"
+    },
+    {
+      "object_id": "ap-UK0NBq0msCaOaV5GZpxHFL",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "CPU",
+      "cost": "0.01043027"
+    },
+    {
+      "object_id": "ap-YQ7mZhsrCUxDK9DzMvFNCJ",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "Memory",
+      "cost": "0.01407997"
+    },
+    {
+      "object_id": "ap-YQ7mZhsrCUxDK9DzMvFNCJ",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "H100",
+      "cost": "0.21724948"
+    },
+    {
+      "object_id": "ap-YQ7mZhsrCUxDK9DzMvFNCJ",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "Network Egress",
+      "cost": "0.00679046"
+    },
+    {
+      "object_id": "ap-YQ7mZhsrCUxDK9DzMvFNCJ",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "CPU",
+      "cost": "0.01041079"
+    },
+    {
+      "object_id": "ap-kfCD5HfQYM5X1EsKIEZbHv",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "Memory",
+      "cost": "0.01263330"
+    },
+    {
+      "object_id": "ap-kfCD5HfQYM5X1EsKIEZbHv",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "H100",
+      "cost": "0.19492794"
+    },
+    {
+      "object_id": "ap-kfCD5HfQYM5X1EsKIEZbHv",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "Network Egress",
+      "cost": "0.00214083"
+    },
+    {
+      "object_id": "ap-kfCD5HfQYM5X1EsKIEZbHv",
+      "description": "cs238-final-evaluation-leaf-recovery",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "CPU",
+      "cost": "0.00933680"
+    },
+    {
+      "object_id": "ap-yECRtlYHaQFlepfjfXgtTC",
+      "description": "cs238-frozen-final-evaluation",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "Memory",
+      "cost": "0.06087117"
+    },
+    {
+      "object_id": "ap-yECRtlYHaQFlepfjfXgtTC",
+      "description": "cs238-frozen-final-evaluation",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "H100",
+      "cost": "0.93922311"
+    },
+    {
+      "object_id": "ap-yECRtlYHaQFlepfjfXgtTC",
+      "description": "cs238-frozen-final-evaluation",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "Network Egress",
+      "cost": "0.00348085"
+    },
+    {
+      "object_id": "ap-yECRtlYHaQFlepfjfXgtTC",
+      "description": "cs238-frozen-final-evaluation",
+      "environment": "main",
+      "interval_start": "2026-11-10T16:00:00",
+      "resource": "CPU",
+      "cost": "0.04498760"
+    },
+    {
+      "object_id": "ap-n1MvuxVoX9DfEcFsK4MJV4",
+      "description": "cs238-llm-controller-dev-pilot",
+      "environment": "main",
+      "interval_start": "2026-11-10T22:00:00",
+      "resource": "Memory",
+      "cost": "0E-8"
+    },
+    {
+      "object_id": "ap-n1MvuxVoX9DfEcFsK4MJV4",
+      "description": "cs238-llm-controller-dev-pilot",
+      "environment": "main",
+      "interval_start": "2026-11-10T22:00:00",
+      "resource": "A100-80GB",
+      "cost": "0E-8"
+    },
+    {
+      "object_id": "ap-n1MvuxVoX9DfEcFsK4MJV4",
+      "description": "cs238-llm-controller-dev-pilot",
+      "environment": "main",
+      "interval_start": "2026-11-10T22:00:00",
+      "resource": "CPU",
+      "cost": "0E-8"
+    }
+  ]
+}
