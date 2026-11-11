@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "questions": 400,
+  "planning_lambda": 0.248,
+  "overall": {
+    "method": "pomdp_lambda_0.248",
+    "domain": "all",
+    "n": 400,
+    "correct": 212,
+    "accuracy": 0.53,
+    "accuracy_ci95": [
+      0.48,
+      0.58
+    ],
+    "mean_tokens": 913.4875,
+    "mean_utility_lambda_0.248": 0.3034551,
+    "mean_utility_reference_0.01": 0.520865125
+  },
+  "action_sequences": {
+    "repair -> stop": 332,
+    "repair -> repair": 61,
+    "stop": 7
+  },
+  "checks": [
+    "Source review confirms durable freeze and dev verification before loading test",
+    "Frozen source/model/dev selection hashes and chronological ordering verified",
+    "Original model/design/core and original dev freeze integrity verified",
+    "All400 question IDs and replayed paths/beliefs verified",
+    "Terminal correctness and visited solver-token accounting independently recomputed",
+    "All21 method/domain summaries and six paired comparisons at both utility penalties independently recomputed",
+    "Accuracy and paired bootstrap endpoints reproduced with declared2000 resamples and seed"
+  ],
+  "limitations": [
+    "Exploratory lambda selected on60dev after earlier test exposure; no fresh confirmatory set.",
+    "Frozen LLM decisions retain original .01 prompt; .248 utility is reweighting, not retuning.",
+    "Bootstrap arithmetic reproduced; selection uncertainty, model-fit uncertainty and multiple comparisons are not accounted for."
+  ],
+  "reproduce": "python3 -B experiments/pomdp-controller/verify_frozen_lambda.py --output results/pomdp-lambda-0248/validation.json"
+}

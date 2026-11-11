@@ -18,6 +18,8 @@ The [frozen two-state results](results/pomdp-two-state/README.md) use train-only
 
 A [fine train/dev lambda diagnostic](results/pomdp-lambda-diagnostic/report.md) finds eight policies: near lambda 0.248 the POMDP reduces dev tokens by 34.5% while keeping 53.33% accuracy, but remains below repair once. This follow-up does not change the frozen primary experiment or re-evaluate test.
 
+A [separate frozen lambda 0.248 test experiment](results/pomdp-lambda-0248/README.md) reports 53.00% accuracy at 913 mean tokens, compared with Controller A at 44.25%/1,616 and repair once at 52.75%/833. It preserves the original primary experiment and documents dev selection and prior test exposure.
+
 ## Hardware and credentials
 
 On an Apple Silicon Mac, local inference uses [MLX LM](https://github.com/ml-explore/mlx-lm) and Metal. **No API key, cloud GPU, or paid API is required** for a locally available, openly accessible MLX-compatible model. A first download normally needs internet; gated models may require a Hugging Face account/token and acceptance of the model license. Choose a model that fits unified memory along with its context/KV cache and operating system. Quantized models reduce memory use but can change model behavior. Full experiments can take considerable time: each question has seven solver calls (one initial and six branch calls), plus six judge calls if `--judge` is enabled. The original solver-generation workflow below uses local backends; the separate prepared LLM-controller workflow above supports a configurable hosted endpoint.

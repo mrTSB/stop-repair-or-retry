@@ -36,3 +36,7 @@ The [frozen milestone archive](../../results/pomdp-two-state/README.md) contains
 ## Follow-up lambda diagnostic
 
 A [separate train/dev-only analysis](../../results/pomdp-lambda-diagnostic/report.md) refines the sweep to 602 points and checks model-derived switch points. It finds mixed policies and lower token cost, but no dev accuracy gain. It does not replace the frozen primary result or add a new test result. Independent offline checks are available in `verify_lambda_sweep.py` and `verify_policy_regions.py`.
+
+## Separately frozen lambda 0.248 follow-up
+
+The user selected lambda0.248 from the dev-only diagnostic. The [separate frozen test experiment](../../results/pomdp-lambda-0248/README.md) obtains 53.00% accuracy at 913.49 mean tokens. It beats Controller A on these metrics but exceeds repair once by only one correct answer with more tokens; it remains below repair-twice accuracy. Its freeze, raw paths, both utility weightings, audit, and prior-test-exposure caveat are preserved separately. Use `frozen_lambda.py verify` for offline reproduction.

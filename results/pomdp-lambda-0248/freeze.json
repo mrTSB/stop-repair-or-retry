@@ -1,0 +1,46 @@
+{
+  "frozen_utc": "2026-11-11T16:17:27.747659+00:00",
+  "planning_lambda": 0.248,
+  "state_model": "unchanged two-state training fit",
+  "source_hashes": {
+    "experiments/pomdp-controller/frozen_lambda.py": "960c320be82ba4b7774262eb7d0d614f66b5ff09952aa5839d4616c79ceeb20e",
+    "src/stop_repair_retry/pomdp_experiment.py": "c3e839be7da34587d782ee77318aa8d970a87ca7ec1e29cc2cec77d030e412ab",
+    "src/stop_repair_retry/llm_experiment.py": "675b403f0365f49e2f1ea10fb44fbbc650d7311c91fb94058ec704a4a0fdcfa5",
+    "experiments/pomdp-controller/DESIGN.md": "3af61f854d273b6144e496b18778172e70d8e8e12036e157395ede077064d96a",
+    "results/cached-tree-dataset/FILE_MANIFEST.json": "2cfe00e3db0e343cdb09d7a0bb5d1dc5ce5458ca68ed2116861188a5b56f5956",
+    "results/pomdp-two-state/model.json": "6d505b4a65a274a1656f9658aef535364ac2278709d89d6ee10299170b4a08c5",
+    "results/pomdp-two-state/frozen.json": "9cb549197f9dda7df8bb3b262a9abab09d547d770d44145d25740f1d29eb502e",
+    "results/pomdp-lambda-diagnostic/protocol.json": "eb5d37266877330ff5d2b272ef34e4e9c5e9da0d09fed945593f2e57d4c0dc82",
+    "results/pomdp-lambda-diagnostic/dev-sweep.json": "6f2910ea98608efacd775336847d3447daac440044b2b29a11e63fe1cdeec4f5",
+    "results/pomdp-lambda-diagnostic/dev-candidate.json": "bfe1043f9aa2ef0d735f4df596d11250343fd7592fc044a71ec8294f5ad8928b",
+    "results/pomdp-lambda-diagnostic/dev-candidate-paths.json": "3c4472abf460063211007b1e05ff9625a69908b18fa0c77592b421b2245a4e55",
+    "results/llm-controller-full-evaluation/artifact-sha256.json": "6479a15c024b1fe6a6c07805b101d778902b28fe7afea6993b0950ed0ac93d76"
+  },
+  "model_sha256": "6d505b4a65a274a1656f9658aef535364ac2278709d89d6ee10299170b4a08c5",
+  "dev_evidence_sha256": "3c4472abf460063211007b1e05ff9625a69908b18fa0c77592b421b2245a4e55",
+  "selected_candidate": {
+    "lambda": 0.248,
+    "n": 60,
+    "accuracy": 0.5333333333333333,
+    "mean_tokens": 820.55,
+    "utility_at_this_lambda": 0.3298369333333333,
+    "utility_at_reference_lambda_0.01": 0.5251278333333333,
+    "policy_signature": "15e638a38dd114858b633bf961228006de5d830ff63bcf3ac708316cabe4104d",
+    "action_sequences": {
+      "repair -> stop": 52,
+      "repair -> repair": 6,
+      "stop": 2
+    }
+  },
+  "user_choice": "Explicitly freeze lambda0.248 and evaluate the full test set as a separate experiment.",
+  "selection": "602-point train/dev sweep; maximize dev accuracy, then minimize mean tokens, then minimize lambda. No new primary replacement.",
+  "prior_test_exposure": true,
+  "new_paid_calls": 0,
+  "comparison_utilities": [
+    0.248,
+    0.01
+  ],
+  "llm_policy_lambda": 0.01,
+  "no_model_refitting": true,
+  "test_question_count": 400
+}
