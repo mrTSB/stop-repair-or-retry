@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-11-11T16:30:51.877478+00:00",
+  "splits": [
+    "train",
+    "dev"
+  ],
+  "lambdas": [
+    0.01,
+    0.248
+  ],
+  "shrinkage_strength": 10.0,
+  "changes": "Condition transitions, successor observation distributions, and expected costs on known context: initial, after repair, after retry. Keep two hidden states, confidence/validity observations, pooled domains, root prior, and two-call planning.",
+  "shrinkage": "Each probability row adds10 pseudo-observations distributed according to the pooled training estimate; each cost mean adds10 pooled-mean pseudo-samples. Pooled estimate overlaps context samples; this is regularization, not independent Bayesian evidence.",
+  "selection": "One fixed model variant and two existing lambda values, no hyperparameter search. Dev-only exploration; no test evaluation or new primary result.",
+  "answer_change": "Descriptive train/dev diagnostic only; NOT supplied to this policy or fitted into observations.",
+  "script_sha256": "fde896d67e10b4898503e82f7f77c2a5453c34c7d68375a62b2de4518b3fc8c5",
+  "core_sha256": "c3e839be7da34587d782ee77318aa8d970a87ca7ec1e29cc2cec77d030e412ab",
+  "helper_sha256": "675b403f0365f49e2f1ea10fb44fbbc650d7311c91fb94058ec704a4a0fdcfa5",
+  "design_sha256": "3af61f854d273b6144e496b18778172e70d8e8e12036e157395ede077064d96a",
+  "dataset_manifest_sha256": "2cfe00e3db0e343cdb09d7a0bb5d1dc5ce5458ca68ed2116861188a5b56f5956",
+  "paid_calls": 0
+}

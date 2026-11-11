@@ -1,0 +1,179 @@
+{
+  "split": "dev",
+  "lambda": 0.248,
+  "summaries": [
+    {
+      "method": "context_pomdp",
+      "domain": "all",
+      "n": 60,
+      "accuracy": 0.55,
+      "mean_tokens": 760.85,
+      "mean_utility": 0.3613092
+    },
+    {
+      "method": "context_pomdp",
+      "domain": "math",
+      "n": 30,
+      "accuracy": 0.7666666666666667,
+      "mean_tokens": 609,
+      "mean_utility": 0.6156346666666667
+    },
+    {
+      "method": "context_pomdp",
+      "domain": "science",
+      "n": 30,
+      "accuracy": 0.3333333333333333,
+      "mean_tokens": 912.7,
+      "mean_utility": 0.10698373333333333
+    },
+    {
+      "method": "pooled_pomdp",
+      "domain": "all",
+      "n": 60,
+      "accuracy": 0.5333333333333333,
+      "mean_tokens": 820.55,
+      "mean_utility": 0.32983693333333336
+    },
+    {
+      "method": "pooled_pomdp",
+      "domain": "math",
+      "n": 30,
+      "accuracy": 0.7666666666666667,
+      "mean_tokens": 622.2333333333333,
+      "mean_utility": 0.6123528
+    },
+    {
+      "method": "pooled_pomdp",
+      "domain": "science",
+      "n": 30,
+      "accuracy": 0.3,
+      "mean_tokens": 1018.8666666666667,
+      "mean_utility": 0.047321066666666675
+    },
+    {
+      "method": "stop",
+      "domain": "all",
+      "n": 60,
+      "accuracy": 0.4166666666666667,
+      "mean_tokens": 325.56666666666666,
+      "mean_utility": 0.3359261333333333
+    },
+    {
+      "method": "stop",
+      "domain": "math",
+      "n": 30,
+      "accuracy": 0.5,
+      "mean_tokens": 243.66666666666666,
+      "mean_utility": 0.43957066666666667
+    },
+    {
+      "method": "stop",
+      "domain": "science",
+      "n": 30,
+      "accuracy": 0.3333333333333333,
+      "mean_tokens": 407.46666666666664,
+      "mean_utility": 0.2322816
+    },
+    {
+      "method": "repair_once",
+      "domain": "all",
+      "n": 60,
+      "accuracy": 0.55,
+      "mean_tokens": 779.2166666666667,
+      "mean_utility": 0.35675426666666665
+    },
+    {
+      "method": "repair_once",
+      "domain": "math",
+      "n": 30,
+      "accuracy": 0.7666666666666667,
+      "mean_tokens": 609,
+      "mean_utility": 0.6156346666666667
+    },
+    {
+      "method": "repair_once",
+      "domain": "science",
+      "n": 30,
+      "accuracy": 0.3333333333333333,
+      "mean_tokens": 949.4333333333333,
+      "mean_utility": 0.09787386666666667
+    },
+    {
+      "method": "repair_twice",
+      "domain": "all",
+      "n": 60,
+      "accuracy": 0.5333333333333333,
+      "mean_tokens": 1253.0333333333333,
+      "mean_utility": 0.22258106666666666
+    },
+    {
+      "method": "repair_twice",
+      "domain": "math",
+      "n": 30,
+      "accuracy": 0.7666666666666667,
+      "mean_tokens": 990.1333333333333,
+      "mean_utility": 0.5211136
+    },
+    {
+      "method": "repair_twice",
+      "domain": "science",
+      "n": 30,
+      "accuracy": 0.3,
+      "mean_tokens": 1515.9333333333334,
+      "mean_utility": -0.07595146666666665
+    },
+    {
+      "method": "retry_once",
+      "domain": "all",
+      "n": 60,
+      "accuracy": 0.4166666666666667,
+      "mean_tokens": 650.7833333333333,
+      "mean_utility": 0.2552724
+    },
+    {
+      "method": "retry_once",
+      "domain": "math",
+      "n": 30,
+      "accuracy": 0.5333333333333333,
+      "mean_tokens": 488.3666666666667,
+      "mean_utility": 0.4122184
+    },
+    {
+      "method": "retry_once",
+      "domain": "science",
+      "n": 30,
+      "accuracy": 0.3,
+      "mean_tokens": 813.2,
+      "mean_utility": 0.0983264
+    },
+    {
+      "method": "retry_twice",
+      "domain": "all",
+      "n": 60,
+      "accuracy": 0.4,
+      "mean_tokens": 975.3833333333333,
+      "mean_utility": 0.15810493333333334
+    },
+    {
+      "method": "retry_twice",
+      "domain": "math",
+      "n": 30,
+      "accuracy": 0.43333333333333335,
+      "mean_tokens": 721.5,
+      "mean_utility": 0.2544013333333333
+    },
+    {
+      "method": "retry_twice",
+      "domain": "science",
+      "n": 30,
+      "accuracy": 0.36666666666666664,
+      "mean_tokens": 1229.2666666666667,
+      "mean_utility": 0.06180853333333334
+    }
+  ],
+  "action_sequences": {
+    "repair -> stop": 58,
+    "stop": 2
+  },
+  "controller_cpu_seconds": 0.01786550134420395
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "context": "initial",
+    "action": "repair",
+    "wrong_parents": 60,
+    "fixed": 15,
+    "fix_rate": 0.25,
+    "correct_parents": 40,
+    "broken": 1,
+    "harm_rate": 0.025,
+    "net_correct_gain": 14
+  },
+  {
+    "context": "initial",
+    "action": "retry",
+    "wrong_parents": 60,
+    "fixed": 6,
+    "fix_rate": 0.1,
+    "correct_parents": 40,
+    "broken": 15,
+    "harm_rate": 0.375,
+    "net_correct_gain": -9
+  },
+  {
+    "context": "after_repair",
+    "action": "repair",
+    "wrong_parents": 46,
+    "fixed": 3,
+    "fix_rate": 0.06521739130434782,
+    "correct_parents": 54,
+    "broken": 0,
+    "harm_rate": 0,
+    "net_correct_gain": 3
+  },
+  {
+    "context": "after_repair",
+    "action": "retry",
+    "wrong_parents": 46,
+    "fixed": 3,
+    "fix_rate": 0.06521739130434782,
+    "correct_parents": 54,
+    "broken": 30,
+    "harm_rate": 0.5555555555555556,
+    "net_correct_gain": -27
+  },
+  {
+    "context": "after_retry",
+    "action": "repair",
+    "wrong_parents": 69,
+    "fixed": 22,
+    "fix_rate": 0.3188405797101449,
+    "correct_parents": 31,
+    "broken": 1,
+    "harm_rate": 0.03225806451612903,
+    "net_correct_gain": 21
+  },
+  {
+    "context": "after_retry",
+    "action": "retry",
+    "wrong_parents": 69,
+    "fixed": 9,
+    "fix_rate": 0.13043478260869565,
+    "correct_parents": 31,
+    "broken": 8,
+    "harm_rate": 0.25806451612903225,
+    "net_correct_gain": 1
+  }
+]

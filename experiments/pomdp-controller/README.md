@@ -40,3 +40,7 @@ A [separate train/dev-only analysis](../../results/pomdp-lambda-diagnostic/repor
 ## Separately frozen lambda 0.248 follow-up
 
 The user selected lambda0.248 from the dev-only diagnostic. The [separate frozen test experiment](../../results/pomdp-lambda-0248/README.md) obtains 53.00% accuracy at 913.49 mean tokens. It beats Controller A on these metrics but exceeds repair once by only one correct answer with more tokens; it remains below repair-twice accuracy. Its freeze, raw paths, both utility weightings, audit, and prior-test-exposure caveat are preserved separately. Use `frozen_lambda.py verify` for offline reproduction.
+
+## Known-context improvement diagnostic
+
+A [train/dev-only context-conditioned candidate](../../results/pomdp-context-diagnostic/report.md) keeps two states and existing observations but separates dynamics by prior action. It matches repair-once dev accuracy with a small token saving at0.248; no test evaluation is performed. The report preserves the diagnostic evidence, fixed shrinkage choice, and the caveat that early stops involve unseen confidence bins. Confidence backoff and history-aware answer-change observations remain future experiments, not silent milestone changes.

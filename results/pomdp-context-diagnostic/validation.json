@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "splits": [
+    "train",
+    "dev"
+  ],
+  "hidden_states": 2,
+  "shrinkage_strength": 10,
+  "lambdas": [
+    0.01,
+    0.248
+  ],
+  "checks": [
+    "Source review: no test loading/inference; fitting uses100train only",
+    "All context transition/emission probabilities and conditional costs independently recounted with kappa10 pooled shrinkage",
+    "Root prior and observations exactly original pooled model",
+    "Analytic tests confirm parent-context likelihood and child-context continuation",
+    "All train/dev paths, beliefs, terminal labels and visited token charges replayed",
+    "All84 summary rows independently reconstructed",
+    "Dynamics and canonical answer-change descriptive diagnostics reproduced; answer change not used by policy"
+  ],
+  "dev_results": {
+    "0.01": {
+      "overall": {
+        "method": "context_pomdp",
+        "domain": "all",
+        "n": 60,
+        "accuracy": 0.5333333333333333,
+        "mean_tokens": 1253.0333333333333,
+        "mean_utility": 0.520803
+      },
+      "actions": {
+        "repair -> repair": 60
+      }
+    },
+    "0.248": {
+      "overall": {
+        "method": "context_pomdp",
+        "domain": "all",
+        "n": 60,
+        "accuracy": 0.55,
+        "mean_tokens": 760.85,
+        "mean_utility": 0.3613092
+      },
+      "actions": {
+        "repair -> stop": 58,
+        "stop": 2
+      }
+    }
+  },
+  "limitations": [
+    "Post-result train/dev exploratory diagnostic; no new held-out generalization result.",
+    "Shrinkage toward overlapping pooled samples is regularization, not independent Bayesian evidence.",
+    "At .248,55% dev accuracy matches repair once while saving18.3667tokens/question on60dev; this is a modest descriptive result."
+  ],
+  "reproduce": "python3 -B experiments/pomdp-controller/verify_context.py --output results/pomdp-context-diagnostic/validation.json"
+}
