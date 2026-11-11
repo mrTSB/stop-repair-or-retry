@@ -10,6 +10,12 @@ The [cached math/science dataset and characterization](results/cached-tree-datas
 
 The [LLM controller workflow](experiments/llm-controller/README.md) replays the published cached dataset and compares the five fixed baselines. The [full frozen evaluation](results/llm-controller-full-evaluation/README.md) includes all 60 dev and 400 test questions, real Qwen2.5-14B-Instruct decisions on private Modal compute, exact raw evidence, token accounting, and independent offline verification. On test, the LLM controller achieved 44.25% accuracy at 1,616 mean tokens, compared with 52.75% at 833 tokens for repair once. No POMDP was fitted or evaluated. Older benchmark reports above are separate historical artifacts and were not used as controller evidence in this experiment.
 
+## Controller B: two-state POMDP milestone
+
+The [Controller B decision record](experiments/pomdp-controller/DESIGN.md) separates user-selected scope from implementation defaults and deferred final-project work. The milestone uses two correctness states, confidence/validity observations, pooled dynamics, and two-step planning. A four-state extension is planned for investigation, not implemented or assumed to improve performance.
+
+The [frozen two-state results](results/pomdp-two-state/README.md) use train-only fitting, full dev checks, and cached test evaluation with no new inference spending. At the primary penalty, the model selects repair twice on every question and exactly matches that baseline (54.75% test accuracy, 1,358 mean tokens). This is not an adaptive-controller advantage. No one-step ablation was added.
+
 ## Hardware and credentials
 
 On an Apple Silicon Mac, local inference uses [MLX LM](https://github.com/ml-explore/mlx-lm) and Metal. **No API key, cloud GPU, or paid API is required** for a locally available, openly accessible MLX-compatible model. A first download normally needs internet; gated models may require a Hugging Face account/token and acceptance of the model license. Choose a model that fits unified memory along with its context/KV cache and operating system. Quantized models reduce memory use but can change model behavior. Full experiments can take considerable time: each question has seven solver calls (one initial and six branch calls), plus six judge calls if `--judge` is enabled. The original solver-generation workflow below uses local backends; the separate prepared LLM-controller workflow above supports a configurable hosted endpoint.

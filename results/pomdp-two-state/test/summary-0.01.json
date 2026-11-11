@@ -1,0 +1,312 @@
+{
+  "split": "test",
+  "penalty": 0.01,
+  "summaries": [
+    {
+      "policy": "pomdp_two_state",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.5475,
+      "mean_tokens": 1358.295,
+      "mean_utility": 0.53391705,
+      "accuracy_ci95": [
+        0.495,
+        0.6
+      ]
+    },
+    {
+      "policy": "pomdp_two_state",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.685,
+      "mean_tokens": 1059.34,
+      "mean_utility": 0.6744066,
+      "accuracy_ci95": [
+        0.62,
+        0.75
+      ]
+    },
+    {
+      "policy": "pomdp_two_state",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.41,
+      "mean_tokens": 1657.25,
+      "mean_utility": 0.3934275,
+      "accuracy_ci95": [
+        0.345,
+        0.48
+      ]
+    },
+    {
+      "policy": "stop",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.3625,
+      "mean_tokens": 340.1075,
+      "mean_utility": 0.359098925,
+      "accuracy_ci95": [
+        0.3175,
+        0.41
+      ]
+    },
+    {
+      "policy": "stop",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.38,
+      "mean_tokens": 258.645,
+      "mean_utility": 0.37741355,
+      "accuracy_ci95": [
+        0.31,
+        0.445
+      ]
+    },
+    {
+      "policy": "stop",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.345,
+      "mean_tokens": 421.57,
+      "mean_utility": 0.3407843,
+      "accuracy_ci95": [
+        0.285,
+        0.41
+      ]
+    },
+    {
+      "policy": "repair_once",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.5275,
+      "mean_tokens": 832.95,
+      "mean_utility": 0.5191705,
+      "accuracy_ci95": [
+        0.4775,
+        0.5775
+      ]
+    },
+    {
+      "policy": "repair_once",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.655,
+      "mean_tokens": 652.185,
+      "mean_utility": 0.64847815,
+      "accuracy_ci95": [
+        0.59,
+        0.72
+      ]
+    },
+    {
+      "policy": "repair_once",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.4,
+      "mean_tokens": 1013.715,
+      "mean_utility": 0.38986285,
+      "accuracy_ci95": [
+        0.335,
+        0.47
+      ]
+    },
+    {
+      "policy": "repair_twice",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.5475,
+      "mean_tokens": 1358.295,
+      "mean_utility": 0.53391705,
+      "accuracy_ci95": [
+        0.495,
+        0.6
+      ]
+    },
+    {
+      "policy": "repair_twice",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.685,
+      "mean_tokens": 1059.34,
+      "mean_utility": 0.6744066,
+      "accuracy_ci95": [
+        0.62,
+        0.75
+      ]
+    },
+    {
+      "policy": "repair_twice",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.41,
+      "mean_tokens": 1657.25,
+      "mean_utility": 0.3934275,
+      "accuracy_ci95": [
+        0.345,
+        0.48
+      ]
+    },
+    {
+      "policy": "retry_once",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.3825,
+      "mean_tokens": 679.5575,
+      "mean_utility": 0.375704425,
+      "accuracy_ci95": [
+        0.3325,
+        0.43
+      ]
+    },
+    {
+      "policy": "retry_once",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.4,
+      "mean_tokens": 521.335,
+      "mean_utility": 0.39478665,
+      "accuracy_ci95": [
+        0.33,
+        0.47
+      ]
+    },
+    {
+      "policy": "retry_once",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.365,
+      "mean_tokens": 837.78,
+      "mean_utility": 0.3566222,
+      "accuracy_ci95": [
+        0.3,
+        0.43
+      ]
+    },
+    {
+      "policy": "retry_twice",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.4025,
+      "mean_tokens": 1020.66,
+      "mean_utility": 0.3922934,
+      "accuracy_ci95": [
+        0.3575,
+        0.4525
+      ]
+    },
+    {
+      "policy": "retry_twice",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.47,
+      "mean_tokens": 781.62,
+      "mean_utility": 0.4621838,
+      "accuracy_ci95": [
+        0.4,
+        0.54
+      ]
+    },
+    {
+      "policy": "retry_twice",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.335,
+      "mean_tokens": 1259.7,
+      "mean_utility": 0.322403,
+      "accuracy_ci95": [
+        0.275,
+        0.4
+      ]
+    },
+    {
+      "policy": "llm_controller_A",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.4425,
+      "mean_tokens": 1615.9675,
+      "mean_utility": 0.426340325,
+      "accuracy_ci95": [
+        0.3925,
+        0.4925
+      ]
+    },
+    {
+      "policy": "llm_controller_A",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.525,
+      "mean_tokens": 1334.09,
+      "mean_utility": 0.5116591,
+      "accuracy_ci95": [
+        0.455,
+        0.59
+      ]
+    },
+    {
+      "policy": "llm_controller_A",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.36,
+      "mean_tokens": 1897.845,
+      "mean_utility": 0.34102155,
+      "accuracy_ci95": [
+        0.295,
+        0.43
+      ]
+    }
+  ],
+  "paired_utility": [
+    {
+      "comparator": "stop",
+      "mean_utility_difference": 0.174818125,
+      "ci95": [
+        0.13261775,
+        0.21524227499999998
+      ]
+    },
+    {
+      "comparator": "repair_once",
+      "mean_utility_difference": 0.014746549999999999,
+      "ci95": [
+        -0.00024774999999999987,
+        0.03210135
+      ]
+    },
+    {
+      "comparator": "repair_twice",
+      "mean_utility_difference": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "comparator": "retry_once",
+      "mean_utility_difference": 0.158212625,
+      "ci95": [
+        0.105698225,
+        0.2107795
+      ]
+    },
+    {
+      "comparator": "retry_twice",
+      "mean_utility_difference": 0.14162365,
+      "ci95": [
+        0.08924732500000002,
+        0.1893729
+      ]
+    },
+    {
+      "comparator": "llm_controller_A",
+      "mean_utility_difference": 0.107576725,
+      "ci95": [
+        0.07534305,
+        0.1419607
+      ]
+    }
+  ],
+  "controller_cpu_seconds": 0.17080887593328953,
+  "action_sequences": {
+    "repair -> repair": 400
+  }
+}

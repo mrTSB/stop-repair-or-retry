@@ -1,0 +1,155 @@
+{
+  "split": "test",
+  "penalty": 1,
+  "summaries": [
+    {
+      "policy": "pomdp_two_state",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.3625,
+      "mean_tokens": 340.1075,
+      "mean_utility": 0.0223925
+    },
+    {
+      "policy": "pomdp_two_state",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.38,
+      "mean_tokens": 258.645,
+      "mean_utility": 0.121355
+    },
+    {
+      "policy": "pomdp_two_state",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.345,
+      "mean_tokens": 421.57,
+      "mean_utility": -0.07657
+    },
+    {
+      "policy": "stop",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.3625,
+      "mean_tokens": 340.1075,
+      "mean_utility": 0.0223925
+    },
+    {
+      "policy": "stop",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.38,
+      "mean_tokens": 258.645,
+      "mean_utility": 0.121355
+    },
+    {
+      "policy": "stop",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.345,
+      "mean_tokens": 421.57,
+      "mean_utility": -0.07657
+    },
+    {
+      "policy": "repair_once",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.5275,
+      "mean_tokens": 832.95,
+      "mean_utility": -0.30545
+    },
+    {
+      "policy": "repair_once",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.655,
+      "mean_tokens": 652.185,
+      "mean_utility": 0.002815
+    },
+    {
+      "policy": "repair_once",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.4,
+      "mean_tokens": 1013.715,
+      "mean_utility": -0.613715
+    },
+    {
+      "policy": "repair_twice",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.5475,
+      "mean_tokens": 1358.295,
+      "mean_utility": -0.810795
+    },
+    {
+      "policy": "repair_twice",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.685,
+      "mean_tokens": 1059.34,
+      "mean_utility": -0.37434
+    },
+    {
+      "policy": "repair_twice",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.41,
+      "mean_tokens": 1657.25,
+      "mean_utility": -1.24725
+    },
+    {
+      "policy": "retry_once",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.3825,
+      "mean_tokens": 679.5575,
+      "mean_utility": -0.29705750000000003
+    },
+    {
+      "policy": "retry_once",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.4,
+      "mean_tokens": 521.335,
+      "mean_utility": -0.121335
+    },
+    {
+      "policy": "retry_once",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.365,
+      "mean_tokens": 837.78,
+      "mean_utility": -0.47278
+    },
+    {
+      "policy": "retry_twice",
+      "domain": "all",
+      "n": 400,
+      "accuracy": 0.4025,
+      "mean_tokens": 1020.66,
+      "mean_utility": -0.61816
+    },
+    {
+      "policy": "retry_twice",
+      "domain": "math",
+      "n": 200,
+      "accuracy": 0.47,
+      "mean_tokens": 781.62,
+      "mean_utility": -0.31162
+    },
+    {
+      "policy": "retry_twice",
+      "domain": "science",
+      "n": 200,
+      "accuracy": 0.335,
+      "mean_tokens": 1259.7,
+      "mean_utility": -0.9247
+    }
+  ],
+  "paired_utility": [],
+  "controller_cpu_seconds": 0.15618567587807775,
+  "action_sequences": {
+    "stop": 400
+  }
+}
