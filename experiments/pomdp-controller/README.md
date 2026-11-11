@@ -32,3 +32,7 @@ Each path file records observations, beliefs, action values, chosen actions, fin
 ## Milestone run
 
 The [frozen milestone archive](../../results/pomdp-two-state/README.md) contains the model, full dev/test replay, sensitivity sweep, validation, and design snapshot. At the primary penalty the policy coincides with repair twice on every evaluated question. This is documented as a limitation, not an adaptive improvement.
+
+## Follow-up lambda diagnostic
+
+A [separate train/dev-only analysis](../../results/pomdp-lambda-diagnostic/report.md) refines the sweep to 602 points and checks model-derived switch points. It finds mixed policies and lower token cost, but no dev accuracy gain. It does not replace the frozen primary result or add a new test result. Independent offline checks are available in `verify_lambda_sweep.py` and `verify_policy_regions.py`.

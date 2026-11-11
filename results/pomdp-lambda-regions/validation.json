@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "boundaries": 64,
+  "probes": 253,
+  "action_value_checks": 128928,
+  "unique_dev_policies": 8,
+  "candidate": {
+    "lambda": 0.2471708609286736,
+    "n": 60,
+    "accuracy": 0.5333333333333333,
+    "mean_tokens": 820.55,
+    "utility_at_this_lambda": 0.3305172833983102,
+    "utility_at_reference_lambda_0.01": 0.5251278333333333,
+    "policy_signature": "15e638a38dd114858b633bf961228006de5d830ff63bcf3ac708316cabe4104d",
+    "action_sequences": {
+      "repair -> stop": 52,
+      "repair -> repair": 6,
+      "stop": 2
+    }
+  },
+  "checks": [
+    "Reviewed piecewise linear intercept/cost construction: posterior probabilities independent of lambda; child optimum is envelope of three affine values; root action values affine within child-policy intervals.",
+    "Every root/action line matches frozen horizon-two planner at boundaries, midpoints, +/-1e-9 and deterministic interior probes.",
+    "Every reachable child/action line matches frozen horizon-one planner at same probes.",
+    "All dev paths, costs, scores and candidate selection recomputed; eight signatures equal fine-grid policies.",
+    "Reviewed code loads only frozen model and dev; no test evaluation or paid calls."
+  ],
+  "limitations": [
+    "Floating-point intersections and 1e-12 tie tolerance mean these probes are not a formal exact-arithmetic certificate of every microscopic tolerance region.",
+    "Observed best dev accuracy does not exceed original dev accuracy; no claim of improving held-out test accuracy.",
+    "Exploratory post-result diagnostic, not a replacement primary experiment."
+  ],
+  "reproduce": "python3 -B experiments/pomdp-controller/verify_policy_regions.py --output results/pomdp-lambda-regions/validation.json"
+}

@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "checked_splits": [
+    "train",
+    "dev"
+  ],
+  "grid_points": 602,
+  "candidate": {
+    "lambda": 0.248,
+    "n": 60,
+    "accuracy": 0.5333333333333333,
+    "mean_tokens": 820.55,
+    "utility_at_this_lambda": 0.3298369333333333,
+    "utility_at_reference_lambda_0.01": 0.5251278333333333,
+    "policy_signature": "15e638a38dd114858b633bf961228006de5d830ff63bcf3ac708316cabe4104d",
+    "action_sequences": {
+      "repair -> stop": 52,
+      "repair -> repair": 6,
+      "stop": 2
+    }
+  },
+  "checks": [
+    "No test-data or test-outcome reads in reviewed sweep code",
+    "Original frozen model/code hashes match; independently confirmed train fit",
+    "All 602 penalties on both splits replayed with exact paths, scores, costs and summaries",
+    "All distinct-policy records and candidate paths verified",
+    "Candidate exactly follows highest dev accuracy, lowest tokens, lowest lambda rule",
+    "Dev fixed baselines recomputed"
+  ],
+  "limitations": [
+    "Exploratory selection over 602 correlated grid points on only 60 dev questions can overfit.",
+    "No held-out test re-evaluation; cannot claim a test accuracy improvement or compare dev accuracy directly to 54.75% test accuracy.",
+    "Original frozen primary results remain unchanged."
+  ],
+  "reproduce": "python3 -B experiments/pomdp-controller/verify_lambda_sweep.py --output results/pomdp-lambda-diagnostic/validation.json"
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "policy": "stop",
+    "accuracy": 0.4166666666666667,
+    "mean_tokens": 325.56666666666666
+  },
+  {
+    "policy": "repair_once",
+    "accuracy": 0.55,
+    "mean_tokens": 779.2166666666667
+  },
+  {
+    "policy": "repair_twice",
+    "accuracy": 0.5333333333333333,
+    "mean_tokens": 1253.0333333333333
+  },
+  {
+    "policy": "retry_once",
+    "accuracy": 0.4166666666666667,
+    "mean_tokens": 650.7833333333333
+  },
+  {
+    "policy": "retry_twice",
+    "accuracy": 0.4,
+    "mean_tokens": 975.3833333333333
+  }
+]
