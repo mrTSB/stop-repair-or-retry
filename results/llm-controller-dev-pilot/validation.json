@@ -1,0 +1,66 @@
+{
+  "status": "pass",
+  "audit_utc": "2026-11-11T00:12:50.929164+00:00",
+  "scope": "Independent completed pilot replay and provenance validation; no live calls by auditor. Provider billing/shutdown checked separately by parent.",
+  "questions": 10,
+  "split": "dev",
+  "selection": "exact first10 original ordered dev IDs",
+  "domain_counts": {
+    "math": 5,
+    "science": 5
+  },
+  "requests": 15,
+  "accepted_responses": 15,
+  "pending_requests": 0,
+  "invalid_actions": 0,
+  "finish_reasons": {
+    "stop": 15
+  },
+  "action_sequences": {
+    "stop": 5,
+    "repair -> stop": 5
+  },
+  "token_totals": {
+    "solver_input": 3743,
+    "solver_output": 1880,
+    "controller_input": 10860,
+    "controller_output": 90
+  },
+  "controller_accuracy": 0.8,
+  "controller_mean_tokens": 1657.3,
+  "repair_once_accuracy": 0.8,
+  "repair_once_mean_tokens": 793.6,
+  "paired_utility_vs_repair_once": -0.008637,
+  "model": "Qwen/Qwen2.5-14B-Instruct@cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "precision": "bfloat16",
+  "checks": [
+    "code/prompt/reward/data fingerprints",
+    "frozen driver hash",
+    "selected dev IDs and balance",
+    "request-before-response journal order and uniqueness",
+    "raw response equality",
+    "explicit observation allowlist and exact visited history",
+    "pinned model identity and revision",
+    "all reported usage totals and outputcaps",
+    "independent path/correctness/solver+controller cost reconstruction including stop",
+    "all domain summaries and bootstrap/paired utility summaries"
+  ],
+  "artifact_sha256": {
+    "events.jsonl": "abb8e1de3f96d9289ce46f727474eca7d08b4e4450552f04f982b18d9b35dbb5",
+    "manifest.json": "d50e7bb83c9dbfb3d90b2efb4606124bb11aca520179b7bd2c920face6cc6f70",
+    "collection-protocol.json": "1a63267d81bb65f3b5ed5634712bcd07ee3a5a9a08746d7d13abe9ad905c9802",
+    "backend.json": "7768f132303a5205f3e87d42d0e8acf678cf439a397a6520417bea4fbf398032",
+    "summary.json": "88101088a104b27528ae3219047e8f464a5b83bbedeca468b358c1562dfaae0c",
+    "controller-results.json": "a52dc246d7be83f7b81e8a161ac5581f89cefca3c98ea95b00a022b69be92b10",
+    "modal_pilot.frozen.py": "6347e583b68c83e2bc1cb4ad934c970fb115fa6246fda7a8ce11c8c1e826e32a"
+  },
+  "limitations": [
+    "Ten development questions are a pipeline pilot, not a held-out performance result.",
+    "No statistically established general advantage; repair-once matches accuracy with fewer tokens on this sample.",
+    "Native private Modal RPC was tested; generic HTTPS provider compatibility remains untested.",
+    "Token usage is verified against backend-reported totals and reviewed tokenizer implementation; output token IDs are not separately stored for retokenization audit.",
+    "Token penalty is a proxy across the3B solver and14B controller, not FLOPs or dollars.",
+    "Actual dollar cost and all-app shutdown require provider ledger/operational confirmation."
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "reported_prior_project_usd": 3.00059499,
+  "additional_failed_startup_reservation_usd": 0.5,
+  "driver_prior_spend_argument_is_conservative_reservation_usd": 3.50059499,
+  "failed_app_id": "ap-n1MvuxVoX9DfEcFsK4MJV4",
+  "failed_attempt": "Remote module path error before model initialization or controller decisions; app confirmed stopped. No charge visible at restart; reserve retained for billing lag."
+}

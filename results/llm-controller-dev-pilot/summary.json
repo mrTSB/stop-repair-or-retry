@@ -1,0 +1,292 @@
+{
+  "mode": "live",
+  "split": "dev",
+  "n": 10,
+  "penalty": 0.01,
+  "summaries": [
+    {
+      "domain": "all",
+      "policy": "llm_controller",
+      "n": 10,
+      "accuracy": 0.8,
+      "accuracy_ci95": [
+        0.5,
+        1.0
+      ],
+      "mean_tokens": 1657.3,
+      "mean_utility": 0.783427,
+      "mean_controller_calls": 1.5
+    },
+    {
+      "domain": "all",
+      "policy": "stop",
+      "n": 10,
+      "accuracy": 0.5,
+      "accuracy_ci95": [
+        0.2,
+        0.8
+      ],
+      "mean_tokens": 326.5,
+      "mean_utility": 0.496735,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "all",
+      "policy": "repair_once",
+      "n": 10,
+      "accuracy": 0.8,
+      "accuracy_ci95": [
+        0.5,
+        1.0
+      ],
+      "mean_tokens": 793.6,
+      "mean_utility": 0.792064,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "all",
+      "policy": "repair_twice",
+      "n": 10,
+      "accuracy": 0.8,
+      "accuracy_ci95": [
+        0.5,
+        1.0
+      ],
+      "mean_tokens": 1279.8,
+      "mean_utility": 0.787202,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "all",
+      "policy": "retry_once",
+      "n": 10,
+      "accuracy": 0.3,
+      "accuracy_ci95": [
+        0.0,
+        0.6
+      ],
+      "mean_tokens": 678.6,
+      "mean_utility": 0.293214,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "all",
+      "policy": "retry_twice",
+      "n": 10,
+      "accuracy": 0.6,
+      "accuracy_ci95": [
+        0.3,
+        0.9
+      ],
+      "mean_tokens": 1011.6,
+      "mean_utility": 0.589884,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "math",
+      "policy": "llm_controller",
+      "n": 5,
+      "accuracy": 0.8,
+      "accuracy_ci95": [
+        0.4,
+        1.0
+      ],
+      "mean_tokens": 1325.8,
+      "mean_utility": 0.786742,
+      "mean_controller_calls": 1.4
+    },
+    {
+      "domain": "math",
+      "policy": "stop",
+      "n": 5,
+      "accuracy": 0.4,
+      "accuracy_ci95": [
+        0.0,
+        0.8
+      ],
+      "mean_tokens": 268.4,
+      "mean_utility": 0.397316,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "math",
+      "policy": "repair_once",
+      "n": 5,
+      "accuracy": 0.8,
+      "accuracy_ci95": [
+        0.4,
+        1.0
+      ],
+      "mean_tokens": 679,
+      "mean_utility": 0.79321,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "math",
+      "policy": "repair_twice",
+      "n": 5,
+      "accuracy": 0.8,
+      "accuracy_ci95": [
+        0.4,
+        1.0
+      ],
+      "mean_tokens": 1101,
+      "mean_utility": 0.78899,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "math",
+      "policy": "retry_once",
+      "n": 5,
+      "accuracy": 0.2,
+      "accuracy_ci95": [
+        0.0,
+        0.6
+      ],
+      "mean_tokens": 548.2,
+      "mean_utility": 0.194518,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "math",
+      "policy": "retry_twice",
+      "n": 5,
+      "accuracy": 0.4,
+      "accuracy_ci95": [
+        0.0,
+        0.8
+      ],
+      "mean_tokens": 779.2,
+      "mean_utility": 0.392208,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "science",
+      "policy": "llm_controller",
+      "n": 5,
+      "accuracy": 0.8,
+      "accuracy_ci95": [
+        0.4,
+        1.0
+      ],
+      "mean_tokens": 1988.8,
+      "mean_utility": 0.780112,
+      "mean_controller_calls": 1.6
+    },
+    {
+      "domain": "science",
+      "policy": "stop",
+      "n": 5,
+      "accuracy": 0.6,
+      "accuracy_ci95": [
+        0.2,
+        1.0
+      ],
+      "mean_tokens": 384.6,
+      "mean_utility": 0.596154,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "science",
+      "policy": "repair_once",
+      "n": 5,
+      "accuracy": 0.8,
+      "accuracy_ci95": [
+        0.4,
+        1.0
+      ],
+      "mean_tokens": 908.2,
+      "mean_utility": 0.790918,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "science",
+      "policy": "repair_twice",
+      "n": 5,
+      "accuracy": 0.8,
+      "accuracy_ci95": [
+        0.4,
+        1.0
+      ],
+      "mean_tokens": 1458.6,
+      "mean_utility": 0.7854140000000001,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "science",
+      "policy": "retry_once",
+      "n": 5,
+      "accuracy": 0.4,
+      "accuracy_ci95": [
+        0.0,
+        0.8
+      ],
+      "mean_tokens": 809,
+      "mean_utility": 0.39191,
+      "mean_controller_calls": 0
+    },
+    {
+      "domain": "science",
+      "policy": "retry_twice",
+      "n": 5,
+      "accuracy": 0.8,
+      "accuracy_ci95": [
+        0.4,
+        1.0
+      ],
+      "mean_tokens": 1244,
+      "mean_utility": 0.78756,
+      "mean_controller_calls": 0
+    }
+  ],
+  "paired_utility_differences": [
+    {
+      "baseline": "stop",
+      "mean_utility_difference": 0.286692,
+      "ci95": [
+        -0.006672,
+        0.5849979999999999
+      ]
+    },
+    {
+      "baseline": "repair_once",
+      "mean_utility_difference": -0.008637,
+      "ci95": [
+        -0.01278,
+        -0.004544
+      ]
+    },
+    {
+      "baseline": "repair_twice",
+      "mean_utility_difference": -0.003775,
+      "ci95": [
+        -0.007643,
+        0.000128
+      ]
+    },
+    {
+      "baseline": "retry_once",
+      "mean_utility_difference": 0.490213,
+      "ci95": [
+        0.191994,
+        0.7883570000000001
+      ]
+    },
+    {
+      "baseline": "retry_twice",
+      "mean_utility_difference": 0.193543,
+      "ci95": [
+        -0.20447200000000004,
+        0.591466
+      ]
+    }
+  ],
+  "invalid_actions": 0,
+  "reported_models": [
+    "Qwen/Qwen2.5-14B-Instruct@cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8"
+  ],
+  "estimated_controller_usd": null,
+  "latency_note": "Only actual controller request latency is measured. Cached solver batch times are not serial serving latency.",
+  "cost_note": "Token-price estimates are not invoices. Compute/idle/startup charges require the provider ledger. Budgets are per run, not account-wide.",
+  "test_note": "Existing test baseline outcomes have been inspected; use fresh data if those outcomes informed redesign."
+}

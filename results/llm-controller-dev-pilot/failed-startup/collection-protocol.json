@@ -1,0 +1,45 @@
+{
+  "status": "frozen_before_inference",
+  "split": "dev",
+  "question_ids": [
+    "mmlu-pro-biology-03272",
+    "gsm8k-train-05034",
+    "gsm8k-train-00787",
+    "gsm8k-train-01476",
+    "mmlu-pro-physics-09594",
+    "gsm8k-train-04277",
+    "gsm8k-train-05236",
+    "mmlu-pro-chemistry-04300",
+    "mmlu-pro-physics-10213",
+    "mmlu-pro-physics-10218"
+  ],
+  "selection": "first 10 development questions in existing file order, no outcome selection",
+  "domain_counts": {
+    "math": 5,
+    "science": 5
+  },
+  "max_controller_calls": 20,
+  "model": "Qwen/Qwen2.5-14B-Instruct",
+  "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "driver_sha256": "24b5126d8c114a4e8d08d4f8c85ceefaad78da6af913ae5485df17f341777e74",
+  "prompt_sha256": "d0785b16fed9e5d10eac510aad9506cbf7607f710a961141a41a2058ad3c575d",
+  "prior_reported_project_usd": 3.00059499,
+  "user_total_cap_usd": 20,
+  "resource_bound": {
+    "gpu": "A100-80GB",
+    "containers": 1,
+    "cpu_cores": 4,
+    "ram_gib": 48,
+    "startup_timeout_seconds": 600,
+    "call_timeout_seconds": 120,
+    "scaledown_seconds": 10,
+    "automatic_function_retries": 0,
+    "rate_usd_per_second": 0.0008529599999999999,
+    "pessimistic_compute_usd": 13.0758768,
+    "image_egress_reserve_usd": 1
+  },
+  "transport": "private authenticated Modal RPC; endpoint field is descriptive, not an HTTP address used for inference",
+  "latency": "Experiment latency records end-to-end RPC time. Returned measurement also records GPU generation time. Model loading is recorded as collection startup, not per-call inference.",
+  "billing": "standard Modal compute billed on gancone; provider ledger checked before/after; no Shared Endpoint token billing",
+  "created_utc": "2026-11-10T22:49:20.941338+00:00"
+}

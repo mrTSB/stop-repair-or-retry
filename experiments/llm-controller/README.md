@@ -2,7 +2,7 @@
 
 This workflow adds an initial full-history LLM controller to the published cached-tree dataset. It is independent of the older experiment/evaluation CLI: it does not load or fit a POMDP, import old controller results, regenerate solver responses, or use Tanvir's earlier benchmark results. The comparison has exactly five fixed baselines: submit initial, repair once, repair twice, retry once and retry twice.
 
-**Status: preparation and offline tests only.** No live model has been selected or called. Router availability, model capabilities, credentials and billing must be verified before a paid run. Example configuration deliberately leaves the endpoint, model and billing unset. Mock output is transport/testing data, not LLM performance.
+**Status: a ten-question development pilot completed using private Modal compute.** See [results and full walkthroughs](../../results/llm-controller-dev-pilot/README.md). The pilot uses pinned Qwen2.5-14B-Instruct on ten development questions; it is separate from final evaluation and does not freeze a controller for test. The generic HTTP example deliberately leaves endpoint, model and billing unset. Mock output is transport/testing data, not LLM performance.
 
 ## Run without a provider or key
 
@@ -49,6 +49,16 @@ The endpoint must be HTTPS, with no credentials or query parameters in the URL. 
 Modal offers [OpenAI-compatible Endpoints](https://modal.com/docs/guide/endpoints). Dedicated Endpoints bill for [compute resources](https://modal.com/docs/guide/dedicated-endpoints), so they are the route to investigate for compute credits; confirm your particular credit eligibility before deployment. [Shared Endpoints](https://modal.com/docs/guide/shared-endpoints) are billed per token, and Modal states that plan-included credits cannot cover their usage. These details were checked on November 10, 2026 and must be rechecked before spending.
 
 For a Modal Endpoint, copy the URL and served model name from its dashboard request example. Use its **proxy token** as the API credential; this is different from the account token used by the Modal CLI. Keep authentication enabled. The client does not create, resize, stop or deploy an endpoint. Creating a dedicated endpoint can incur compute/startup/idle charges even before this client sends its first request.
+
+### Private Modal pilot
+
+`modal_pilot.py` runs ten development questions (the first ten in existing file order, five math and five science) using private authenticated Modal RPC. It does not need a router key, deploy a public endpoint, or use Shared Endpoint token billing. The client configuration endpoint is descriptive; it is not used for HTTP inference.
+
+The driver pins Qwen2.5-14B-Instruct revision `cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8`, bfloat16, greedy decoding, and a 128-token output cap. It uses at most one A100-80GB, four CPU cores, and 48 GiB RAM. At most twenty controller decisions and one metadata call are allowed. Function retries are disabled; startup and call timeouts are 600 and 120 seconds. The temporary app exits after collection. Verify shutdown and billing independently afterward.
+
+Before another paid run, inspect prior project charges (including failed startups), recalculate the conservative reservation using current prices, and select the intended account explicitly. The driver refuses existing output directories; do not automatically replay an interrupted run. Its dollar reservation is not a provider-enforced account spending limit. No command here should be run merely to reproduce an already collected result; replay/evaluation is offline.
+
+The run directory retains the frozen protocol, selected IDs, model/backend metadata, request/response journal, token usage including chat-template and EOS tokens, and completion status. Research token cost includes every visited solver response and every controller decision, including stopping. RPC latency includes transport; GPU generation time is retained separately, and loading time is not per-decision latency.
 
 ### Spending controls
 

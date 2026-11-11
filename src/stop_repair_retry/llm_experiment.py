@@ -321,7 +321,7 @@ def evaluate(directory):
     report={'mode':m['experiment']['mode'],'split':m['split'],'n':len(rows),'penalty':penalty,'summaries':summaries,'paired_utility_differences':paired,
             'invalid_actions':sum(v['invalid_actions'] for v in details),'reported_models':sorted({str(v['reported_model']) for v in res.values()}),
             'estimated_controller_usd':sum(v['estimated_usd'] for v in res.values()) if m['experiment']['config']['billing_mode']=='token' and m['experiment']['mode']=='live' else None,
-            'latency_note':'Only actual controller HTTP latency is measured. Cached solver batch times are not serial serving latency.',
+            'latency_note':'Only actual controller request latency is measured. Cached solver batch times are not serial serving latency.',
             'cost_note':'Token-price estimates are not invoices. Compute/idle/startup charges require the provider ledger. Budgets are per run, not account-wide.',
             'test_note':'Existing test baseline outcomes have been inspected; use fresh data if those outcomes informed redesign.'}
     d=Path(directory);save(d/'summary.json',report);save(d/'controller-results.json',details)
