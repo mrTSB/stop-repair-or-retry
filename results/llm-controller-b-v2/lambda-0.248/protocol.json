@@ -1,0 +1,45 @@
+{
+  "created_utc": "2026-11-12T20:42:57.065424+00:00",
+  "controller": "Controller B v2 (LLM), proposal naming",
+  "penalty": 0.248,
+  "model": "Qwen/Qwen2.5-14B-Instruct@cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "dry_run": false,
+  "changes_from_v1": [
+    "States lambda and the estimated additional cost of repair/retry in tokens and objective units, by remaining calls",
+    "States the controller's own per-decision token cost",
+    "Two-sided stop/continue guidance replaces the one-sided \"do not stop solely because the solver sounds confident\" nudge"
+  ],
+  "unchanged_from_v1": "GPU worker, model revision, decoding, 128-token cap, request schema, action parser, replay and scoring",
+  "cost_provenance": {
+    "solver_mean_tokens_train": {
+      "repair_with_2_remaining": 477.98,
+      "repair_with_1_remaining": 492.18,
+      "retry_with_2_remaining": 335.02,
+      "retry_with_1_remaining": 340.25
+    },
+    "controller_mean_tokens_per_decision_v1_dev": 712.6395348837209,
+    "rendered_values": {
+      "repair2_tokens": 1191,
+      "repair2_cost": "0.295",
+      "retry2_tokens": 1048,
+      "retry2_cost": "0.260",
+      "repair1_tokens": 492,
+      "repair1_cost": "0.122",
+      "retry1_tokens": 340,
+      "retry1_cost": "0.084",
+      "lam": "0.248",
+      "controller_tokens": 713
+    }
+  },
+  "cost_sources": "Solver tokens: training trees only. Controller tokens: v1 archived dev run (dev is the tuning split). No test data.",
+  "sequence": [
+    "phase dev: all 60 dev, evaluate, freeze",
+    "review dev",
+    "phase test: all 400 test under the freeze, evaluate"
+  ],
+  "driver_sha256": "c09c336fbc0b15494ed37a031aab5b947bd998c1d3657c78fbcf31fe766912de",
+  "template_sha256": "6a58a39e8f20eac6a28f6f96de5d75e35e0b7aa205425e61472e84c479132cb3",
+  "rendered_prompt_sha256": "c7dc6e9376cfd17f910123f1c9050b6106cf67343aac84d03049ec9435119d69",
+  "worker_sha256": "562d5cdaf0a0a02090e3e8194231f2faedca92521dc6c60f93686c67dbb68535",
+  "split_note": "Existing test outcomes have been viewed previously; not an unseen confirmation set."
+}

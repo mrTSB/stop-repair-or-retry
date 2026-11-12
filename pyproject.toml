@@ -17,6 +17,7 @@ alfworld = [
 
 [project.scripts]
 srr = "stop_repair_retry.cli:main"
+srr-llm = "stop_repair_retry.llm_experiment:main"
 
 [build-system]
 requires = ["hatchling"]

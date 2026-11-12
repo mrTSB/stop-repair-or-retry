@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-11-11T00:29:39.399914+00:00",
+  "sequence": [
+    "all 60 dev",
+    "evaluate dev",
+    "freeze unchanged settings",
+    "all 400 test",
+    "evaluate test"
+  ],
+  "model": "Qwen/Qwen2.5-14B-Instruct@cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "driver_sha256": "562d5cdaf0a0a02090e3e8194231f2faedca92521dc6c60f93686c67dbb68535",
+  "prompt_sha256": "d0785b16fed9e5d10eac510aad9506cbf7607f710a961141a41a2058ad3c575d",
+  "max_decisions": 920,
+  "max_metadata_calls": 1,
+  "wall_watchdog_seconds": 1800,
+  "prior_reserved_usd": 4.50059499,
+  "new_reservation_usd": 3.1494592,
+  "cumulative_reserved_usd": 7.65005419,
+  "user_cap_usd": 20,
+  "resources": {
+    "gpu": "A100-80GB",
+    "containers": 1,
+    "cpu": 4,
+    "memory_gib": 48,
+    "startup_timeout_seconds": 600,
+    "call_timeout_seconds": 120,
+    "retries": 0,
+    "rate_usd_per_second": 0.0008529599999999999
+  },
+  "changes_from_pilot": "Operational request/runtime limits and descriptive endpoint only. Same weights, prompt, reward, precision, decoding, action parser and visited-history inputs. No tuning from pilot or full dev outcomes.",
+  "split_note": "Project splits, not source benchmark split names. Ten dev questions overlap earlier pilot and are recollected once here; no response selection. Existing fixed-baseline test outcomes have been viewed previously.",
+  "transport": "private authenticated Modal RPC; descriptive endpoint not used for HTTP",
+  "latency_note": "End-to-end controller RPC measured; solver responses replayed from cache."
+}

@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-11-12T07:02:12.175954+00:00",
+  "controller": "Controller B (LLM), proposal naming",
+  "penalty": 1.0,
+  "penalty_on_predeclared_grid": true,
+  "penalty_note": "On the predeclared grid in reward_design.json.",
+  "sequence": [
+    "all 60 dev",
+    "evaluate dev",
+    "freeze unchanged settings",
+    "all 400 test",
+    "evaluate test"
+  ],
+  "model": "Qwen/Qwen2.5-14B-Instruct@cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "dry_run": false,
+  "driver_sha256": "609aa81f1d1b73031005cdcb41ea05732b87c26d497eb246f55b7d0f98471a23",
+  "worker_sha256": "562d5cdaf0a0a02090e3e8194231f2faedca92521dc6c60f93686c67dbb68535",
+  "prompt_sha256": "d0785b16fed9e5d10eac510aad9506cbf7607f710a961141a41a2058ad3c575d",
+  "changes_from_lambda_0.01_run": "Penalty (shown to the controller and used in utility), Modal profile and spending reservation only. Same worker code, weights, prompt, decoding, parser and visited-history inputs.",
+  "max_decisions": 920,
+  "wall_watchdog_seconds": 1800,
+  "prior_reserved_usd": 6.3,
+  "new_reservation_usd": 3.1494592,
+  "cumulative_reserved_usd": 9.4494592,
+  "user_cap_usd": 20.0,
+  "rate_usd_per_second": 0.0008529599999999999,
+  "split_note": "Existing fixed-baseline and controller test outcomes have been viewed previously; not an unseen confirmation set."
+}

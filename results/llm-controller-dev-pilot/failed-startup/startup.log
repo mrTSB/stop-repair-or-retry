@@ -1,0 +1,231 @@
+✓ Initialized. View run at 
+https://modal.com/apps/gancone/main/ap-n1MvuxVoX9DfEcFsK4MJV4
+✓ Created objects.
+├── ✓ Uploaded /Users/giaancone/Documents/ChatGPT/CS 238 Final 
+│   Project/repository/experiments/llm-controller/modal_pilot.py
+└── ✓ Created Function Controller.*.
+Traceback (most recent call last):
+Function fu-n4iZOJfjqMH0QY4SddkVnI failed during startup.
+Runner failed with exception: IndexError(2)
+  File "/pkg/modal/_runtime/task_lifecycle_manager.py", line 84, in handle_task_lifecycle_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 360, in hydrate_function
+    service = get_class_service(container_args, function_def, _client)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_container_entrypoint.py", line 325, in get_class_service
+    service = import_class_service(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/user_code_imports.py", line 590, in import_class_service
+    _get_cls_or_user_cls(function_def, ser_user_cls),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/user_code_imports.py", line 551, in _get_cls_or_user_cls
+    module = importlib.import_module(function_def.module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/root/modal_pilot.py", line 10, in <module>
+    ROOT=Path(__file__).resolve().parents[2]
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 282, in __getitem__
+    raise IndexError(idx)
+IndexError: 2
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/task_lifecycle_manager.py", line 84, in handle_task_lifecycle_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 360, in hydrate_function
+    service = get_class_service(container_args, function_def, _client)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_container_entrypoint.py", line 325, in get_class_service
+    service = import_class_service(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/user_code_imports.py", line 590, in import_class_service
+    _get_cls_or_user_cls(function_def, ser_user_cls),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/user_code_imports.py", line 551, in _get_cls_or_user_cls
+    module = importlib.import_module(function_def.module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/root/modal_pilot.py", line 10, in <module>
+    ROOT=Path(__file__).resolve().parents[2]
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 282, in __getitem__
+    raise IndexError(idx)
+IndexError: 2
+Function fu-n4iZOJfjqMH0QY4SddkVnI failed during startup.
+Runner failed with exception: IndexError(2)
+[modal-client] 2026-11-10T14:54:30-0800 Loop attempt for _run_app.<locals>.heartbeat failed
+Traceback (most recent call last):
+  File "/Users/giaancone/Documents/ChatGPT/CS 238 Final Project/.venv-pilot/lib/python3.12/site-packages/modal/_utils/async_utils.py", line 590, in loop_coro
+    await asyncio.wait_for(async_f(), timeout=timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/giaancone/Documents/ChatGPT/CS 238 Final Project/.venv-pilot/lib/python3.12/site-packages/modal/runner.py", line 68, in _heartbeat
+    await client._stub.AppHeartbeat(request, retry=Retry(attempt_timeout=HEARTBEAT_TIMEOUT))
+modal.exception.ConflictError: App state is APP_STATE_STOPPED
+Traceback (most recent call last):
+Function fu-n4iZOJfjqMH0QY4SddkVnI failed during startup.
+  File "/pkg/modal/_runtime/task_lifecycle_manager.py", line 84, in handle_task_lifecycle_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 360, in hydrate_function
+    service = get_class_service(container_args, function_def, _client)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_container_entrypoint.py", line 325, in get_class_service
+    service = import_class_service(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/user_code_imports.py", line 590, in import_class_service
+    _get_cls_or_user_cls(function_def, ser_user_cls),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/user_code_imports.py", line 551, in _get_cls_or_user_cls
+    module = importlib.import_module(function_def.module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/root/modal_pilot.py", line 10, in <module>
+    ROOT=Path(__file__).resolve().parents[2]
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 282, in __getitem__
+    raise IndexError(idx)
+IndexError: 2
+Runner failed with exception: IndexError(2)
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/task_lifecycle_manager.py", line 84, in handle_task_lifecycle_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 360, in hydrate_function
+    service = get_class_service(container_args, function_def, _client)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_container_entrypoint.py", line 325, in get_class_service
+    service = import_class_service(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/user_code_imports.py", line 590, in import_class_service
+    _get_cls_or_user_cls(function_def, ser_user_cls),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/user_code_imports.py", line 551, in _get_cls_or_user_cls
+    module = importlib.import_module(function_def.module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/root/modal_pilot.py", line 10, in <module>
+    ROOT=Path(__file__).resolve().parents[2]
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 282, in __getitem__
+    raise IndexError(idx)
+IndexError: 2
+Function fu-n4iZOJfjqMH0QY4SddkVnI failed during startup.
+Runner failed with exception: IndexError(2)
+Traceback (most recent call last):
+Function fu-n4iZOJfjqMH0QY4SddkVnI failed during startup.
+Runner failed with exception: IndexError(2)
+  File "/pkg/modal/_runtime/task_lifecycle_manager.py", line 84, in handle_task_lifecycle_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 360, in hydrate_function
+    service = get_class_service(container_args, function_def, _client)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_container_entrypoint.py", line 325, in get_class_service
+    service = import_class_service(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/user_code_imports.py", line 590, in import_class_service
+    _get_cls_or_user_cls(function_def, ser_user_cls),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/user_code_imports.py", line 551, in _get_cls_or_user_cls
+    module = importlib.import_module(function_def.module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/root/modal_pilot.py", line 10, in <module>
+    ROOT=Path(__file__).resolve().parents[2]
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 282, in __getitem__
+    raise IndexError(idx)
+IndexError: 2
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/task_lifecycle_manager.py", line 84, in handle_task_lifecycle_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 360, in hydrate_function
+    service = get_class_service(container_args, function_def, _client)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_container_entrypoint.py", line 325, in get_class_service
+    service = import_class_service(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/user_code_imports.py", line 590, in import_class_service
+    _get_cls_or_user_cls(function_def, ser_user_cls),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/user_code_imports.py", line 551, in _get_cls_or_user_cls
+    module = importlib.import_module(function_def.module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/root/modal_pilot.py", line 10, in <module>
+    ROOT=Path(__file__).resolve().parents[2]
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 282, in __getitem__
+    raise IndexError(idx)
+IndexError: 2
+Function fu-n4iZOJfjqMH0QY4SddkVnI failed during startup.
+Runner failed with exception: IndexError(2)
+Stopping app - local client disconnected. Use `modal run --detach` to keep apps running even if your local client disconnects.
+Traceback (most recent call last):
+  File "/Users/giaancone/Documents/ChatGPT/CS 238 Final Project/repository/experiments/llm-controller/modal_pilot.py", line 107, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/giaancone/Documents/ChatGPT/CS 238 Final Project/repository/experiments/llm-controller/modal_pilot.py", line 93, in main
+    worker=Controller();metadata=worker.metadata.remote()
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/giaancone/Documents/ChatGPT/CS 238 Final Project/.venv-pilot/lib/python3.12/site-packages/modal/_object.py", line 49, in wrapped
+    return await method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/giaancone/Documents/ChatGPT/CS 238 Final Project/.venv-pilot/lib/python3.12/site-packages/modal/_functions.py", line 2081, in remote
+    return await self._call_function(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/giaancone/Documents/ChatGPT/CS 238 Final Project/.venv-pilot/lib/python3.12/site-packages/modal/_functions.py", line 2018, in _call_function
+    return await invocation.run_function()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/giaancone/Documents/ChatGPT/CS 238 Final Project/.venv-pilot/lib/python3.12/site-packages/modal/_functions.py", line 498, in run_function
+    return await _process_result(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/giaancone/Documents/ChatGPT/CS 238 Final Project/.venv-pilot/lib/python3.12/site-packages/modal/_utils/function_utils.py", line 574, in _process_result
+    raise RemoteError(result.exception)
+modal.exception.RemoteError

@@ -1,0 +1,19 @@
+{
+  "endpoint": "https://modal.com/apps/gancone/main/cs238-llm-controller-full-evaluation",
+  "model": "Qwen/Qwen2.5-14B-Instruct@cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "api_key_env": "LLM_CONTROLLER_API_KEY",
+  "temperature": 0,
+  "max_output_tokens": 128,
+  "output_limit_parameter": "max_tokens",
+  "response_format": "none",
+  "penalty": 0.01,
+  "timeout_seconds": 120,
+  "max_requests": 800,
+  "max_run_seconds": 1200,
+  "billing_mode": "compute",
+  "input_usd_per_million": null,
+  "output_usd_per_million": null,
+  "spend_limit_usd": null,
+  "request_reserve_usd": null,
+  "compute_budget_confirmed": true
+}

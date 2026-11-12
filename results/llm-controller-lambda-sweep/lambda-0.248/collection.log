@@ -1,0 +1,68 @@
+✓ Initialized. View run at 
+https://modal.com/apps/cayleigh/main/ap-z7n5RgDnQni48A34SQfIj4
+✓ Created objects.
+├── ✓ Uploaded 
+│   /Users/cayleigh/stop-repair-or-retry-lambda-sweep/experiments/llm-controller
+│   /modal_full_evaluation.py
+└── ✓ Created Function Controller.*.
+
+[1AFetching 8 files:   0%|          | 0/8 [00:00<?, ?it/s]
+[1AFetching 8 files:  12%|█▎        | 1/8 [00:18<02:11, 18.83s/it]
+[1AFetching 8 files:  25%|██▌       | 2/8 [00:30<01:32, 15.41s/it]
+[1AFetching 8 files:  38%|███▊      | 3/8 [00:41<01:09, 13.95s/it]
+[1AFetching 8 files:  75%|███████▌  | 6/8 [00:42<00:14,  7.03s/it]Fetching 8 files: 100%|██████████| 8/8 [00:42<00:00,  5.30s/it]
+Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+
+[1ALoading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]
+[1ALoading checkpoint shards:  12%|█▎        | 1/8 [00:00<00:05,  1.38it/s]
+[1ALoading checkpoint shards:  25%|██▌       | 2/8 [00:01<00:03,  1.65it/s]
+[1ALoading checkpoint shards:  38%|███▊      | 3/8 [00:01<00:02,  1.78it/s]
+[1ALoading checkpoint shards:  50%|█████     | 4/8 [00:02<00:02,  1.85it/s]
+[1ALoading checkpoint shards:  62%|██████▎   | 5/8 [00:02<00:01,  1.86it/s]
+[1ALoading checkpoint shards:  75%|███████▌  | 6/8 [00:03<00:01,  1.88it/s]
+[1ALoading checkpoint shards:  88%|████████▊ | 7/8 [00:03<00:00,  1.87it/s]
+[1ALoading checkpoint shards: 100%|██████████| 8/8 [00:04<00:00,  2.30it/s]
+[1ALoading checkpoint shards: 100%|██████████| 8/8 [00:04<00:00,  1.96it/s]
+/usr/local/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:631: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:636: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:653: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+Controller decisions received: 20/920
+Controller decisions received: 40/920
+Controller decisions received: 60/920
+Controller decisions received: 80/920
+All 60 dev complete; settings frozen. Starting test without changing settings.
+Controller decisions received: 100/920
+Controller decisions received: 120/920
+Controller decisions received: 140/920
+Controller decisions received: 160/920
+Controller decisions received: 180/920
+Controller decisions received: 200/920
+Controller decisions received: 220/920
+Controller decisions received: 240/920
+Controller decisions received: 260/920
+Controller decisions received: 280/920
+Controller decisions received: 300/920
+Controller decisions received: 320/920
+Controller decisions received: 340/920
+Controller decisions received: 360/920
+Controller decisions received: 380/920
+Controller decisions received: 400/920
+Controller decisions received: 420/920
+Controller decisions received: 440/920
+Controller decisions received: 460/920
+Controller decisions received: 480/920
+Controller decisions received: 500/920
+Controller decisions received: 520/920
+Controller decisions received: 540/920
+Controller decisions received: 560/920
+Controller decisions received: 580/920
+Controller decisions received: 600/920
+Controller decisions received: 620/920
+Controller decisions received: 640/920
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/cayleigh/main/ap-z7n5RgDnQni48A34SQfIj4
+{"status": "complete", "penalty": 0.248, "controller_calls": 645, "output": "/Users/cayleigh/stop-repair-or-retry-lambda-sweep/runs/llm-controller-lambda-sweep/lambda-0.248"}
