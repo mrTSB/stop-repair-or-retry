@@ -1,0 +1,43 @@
+✓ Initialized. View run at 
+https://modal.com/apps/cayleigh/main/ap-2VN04NFEURIefkuVWUL1b9
+✓ Created objects.
+├── ✓ Uploaded 
+│   /Users/cayleigh/stop-repair-or-retry-b-v2/experiments/llm-controller/modal_f
+│   ull_evaluation.py
+└── ✓ Created Function Controller.*.
+
+[1AFetching 8 files:   0%|          | 0/8 [00:00<?, ?it/s]
+[1AFetching 8 files:  12%|█▎        | 1/8 [01:01<07:10, 61.56s/it]
+[1AFetching 8 files:  25%|██▌       | 2/8 [01:15<03:47, 37.88s/it]
+[1AFetching 8 files:  38%|███▊      | 3/8 [01:38<02:43, 32.76s/it]
+[1AFetching 8 files:  50%|█████     | 4/8 [01:38<01:38, 24.62s/it]
+[1AFetching 8 files:  62%|██████▎   | 5/8 [01:38<00:59, 19.76s/it]
+[1AFetching 8 files:  75%|███████▌  | 6/8 [01:39<00:33, 16.53s/it]
+[1AFetching 8 files: 100%|██████████| 8/8 [01:39<00:00, 12.40s/it]
+Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+
+[1ALoading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]
+[1ALoading checkpoint shards:  12%|█▎        | 1/8 [00:01<00:07,  1.08s/it]
+[1ALoading checkpoint shards:  25%|██▌       | 2/8 [00:01<00:04,  1.23it/s]
+[1ALoading checkpoint shards:  38%|███▊      | 3/8 [00:02<00:03,  1.40it/s]
+[1ALoading checkpoint shards:  50%|█████     | 4/8 [00:02<00:02,  1.51it/s]
+[1ALoading checkpoint shards:  62%|██████▎   | 5/8 [00:03<00:01,  1.58it/s]
+[1ALoading checkpoint shards:  75%|███████▌  | 6/8 [00:04<00:01,  1.62it/s]
+[1ALoading checkpoint shards:  88%|████████▊ | 7/8 [00:04<00:00,  1.64it/s]
+[1ALoading checkpoint shards: 100%|██████████| 8/8 [00:04<00:00,  2.04it/s]
+[1ALoading checkpoint shards: 100%|██████████| 8/8 [00:04<00:00,  1.64it/s]
+/usr/local/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:631: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:636: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/usr/local/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:653: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+Controller decisions received: 20
+Controller decisions received: 40
+Controller decisions received: 60
+Controller decisions received: 80
+Stopping app - local entrypoint completed.
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/cayleigh/main/ap-2VN04NFEURIefkuVWUL1b9
+{"status": "complete", "phase": "dev", "penalty": 0.1, "controller_calls": 90, "output": "/Users/cayleigh/stop-repair-or-retry-b-v2/runs/llm-controller-b-v2/lambda-0.1"}

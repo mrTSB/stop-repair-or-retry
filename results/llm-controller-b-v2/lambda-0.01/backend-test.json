@@ -1,0 +1,15 @@
+{
+  "transport": "authenticated private Modal RPC, not HTTP",
+  "model": "Qwen/Qwen2.5-14B-Instruct",
+  "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "reported_model": "Qwen/Qwen2.5-14B-Instruct@cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "precision": "bfloat16",
+  "decoding": "greedy do_sample=False; no constrained decoding or JSON repair",
+  "output_token_limit": 128,
+  "packages": {
+    "torch": "2.6.0",
+    "transformers": "4.51.3",
+    "accelerate": "1.6.0"
+  }
+}
