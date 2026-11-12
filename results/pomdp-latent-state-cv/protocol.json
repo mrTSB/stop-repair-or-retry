@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-11-11T17:29:20.088131+00:00",
+  "state_counts": [
+    2,
+    4
+  ],
+  "lambdas": [
+    0.01,
+    0.248
+  ],
+  "iterations": 20,
+  "context_shrinkage": 10.0,
+  "scope": "Five-fold training comparison, then only one training-selected candidate evaluated on dev. No test evaluation, no new observations, no paid calls.",
+  "state_semantics": "Correct plus one or three latent incorrect types. Nonleaf cached repair/retry outcomes initialize incorrect types only. Leaves start uniform over incorrect types. All incorrect types can change during fitting; no true repairability label is claimed.",
+  "training": "Correctness-constrained tree sum-product expected counts across all seven nodes and six edges. Gold masks used only on fitting questions. Conditioned on parent state, child branches are assumed independent; this is an approximation for same-question responses.",
+  "selection": "Maximize OOF training accuracy, then minimize tokens, then fewer states, then smaller lambda. Declared before results; only selected candidate evaluated on dev.",
+  "regularization": "Same total correct/incorrect Dirichlet pseudomass in priors and transition rows across state counts. Observation Laplace1 per symbol, context shrinkage10, globally unseen emissions equal across states. Empirical priors are re-estimated each iteration; no monotonicity/global-optimum guarantee.",
+  "fold_rule": "Reuse deterministic question-grouped domain-balanced fold assignment; every branch stays with its question.",
+  "script_sha256": "5468a9345fbc5ba0a9b9d666d17d6680ea7e58321598aca35ee48fdd65c037e7",
+  "context_sha256": "fde896d67e10b4898503e82f7f77c2a5453c34c7d68375a62b2de4518b3fc8c5",
+  "calibration_sha256": "b8b47ddf6610c2a681f47388f34f109e330bf8ac9b32d35b5ed43bf501de9e8b",
+  "core_sha256": "c3e839be7da34587d782ee77318aa8d970a87ca7ec1e29cc2cec77d030e412ab",
+  "dataset_manifest_sha256": "2cfe00e3db0e343cdb09d7a0bb5d1dc5ce5458ca68ed2116861188a5b56f5956"
+}

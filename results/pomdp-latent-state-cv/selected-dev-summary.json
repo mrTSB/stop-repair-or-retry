@@ -1,0 +1,9 @@
+{
+  "n": 60,
+  "correct": 32,
+  "accuracy": 0.5333333333333333,
+  "mean_tokens": 1253.0333333333333,
+  "action_sequences": {
+    "repair -> repair": 60
+  }
+}

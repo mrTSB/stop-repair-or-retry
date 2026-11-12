@@ -1,0 +1,982 @@
+[
+  {
+    "id": "gsm8k-train-00808",
+    "domain": "math",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.6907569683426992,
+          0.3092430316573009
+        ],
+        "observation": "medium:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.44520933734301554,
+        "action_values": {
+          "stop": 0.3092430316573009,
+          "repair": 0.44520933734301554,
+          "retry": 0.2621279869973764
+        }
+      }
+    ],
+    "final_belief": [
+      0.505349544552173,
+      0.49465045544782704
+    ],
+    "correct": 1,
+    "tokens": 1404,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.000331374816596508
+  },
+  {
+    "id": "gsm8k-train-02883",
+    "domain": "math",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 1,
+    "tokens": 765,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.000340042170137167
+  },
+  {
+    "id": "mmlu-pro-biology-03444",
+    "domain": "science",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 1,
+    "tokens": 1322,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.0003121667541563511
+  },
+  {
+    "id": "gsm8k-train-00772",
+    "domain": "math",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.7768595041322314,
+          0.22314049586776863
+        ],
+        "observation": "medium:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.4975381418126622,
+        "action_values": {
+          "stop": 0.22314049586776863,
+          "repair": 0.4975381418126622,
+          "retry": 0.3761531501255402
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.5718882981600644,
+          0.4281117018399357
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.5352504261308602,
+        "action_values": {
+          "stop": 0.4281117018399357,
+          "repair": 0.5352504261308602,
+          "retry": 0.3213353445015289
+        }
+      }
+    ],
+    "final_belief": [
+      0.4160005509085891,
+      0.5839994490914109
+    ],
+    "correct": 1,
+    "tokens": 905,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.00029695872217416763
+  },
+  {
+    "id": "gsm8k-train-00216",
+    "domain": "math",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.7768595041322314,
+          0.22314049586776863
+        ],
+        "observation": "medium:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.4975381418126622,
+        "action_values": {
+          "stop": 0.22314049586776863,
+          "repair": 0.4975381418126622,
+          "retry": 0.3761531501255402
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.5718882981600644,
+          0.4281117018399357
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.5352504261308602,
+        "action_values": {
+          "stop": 0.4281117018399357,
+          "repair": 0.5352504261308602,
+          "retry": 0.3213353445015289
+        }
+      }
+    ],
+    "final_belief": [
+      0.4160005509085891,
+      0.5839994490914109
+    ],
+    "correct": 1,
+    "tokens": 1395,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.00030308403074741364
+  },
+  {
+    "id": "mmlu-pro-chemistry-04396",
+    "domain": "science",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 0,
+    "tokens": 2043,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.0003081671893596649
+  },
+  {
+    "id": "gsm8k-train-02753",
+    "domain": "math",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 1,
+    "tokens": 897,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.00030391570180654526
+  },
+  {
+    "id": "gsm8k-train-05223",
+    "domain": "math",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 1,
+    "tokens": 802,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.00029579224064946175
+  },
+  {
+    "id": "mmlu-pro-chemistry-04661",
+    "domain": "science",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 1,
+    "tokens": 1815,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.0002999580465257168
+  },
+  {
+    "id": "gsm8k-train-06999",
+    "domain": "math",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 0,
+    "tokens": 1027,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.00029637478291988373
+  },
+  {
+    "id": "mmlu-pro-chemistry-04621",
+    "domain": "science",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 0,
+    "tokens": 1373,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.00029579224064946175
+  },
+  {
+    "id": "mmlu-pro-chemistry-03726",
+    "domain": "science",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 0,
+    "tokens": 1361,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.00030512502416968346
+  },
+  {
+    "id": "gsm8k-train-01373",
+    "domain": "math",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 1,
+    "tokens": 827,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.00029908306896686554
+  },
+  {
+    "id": "mmlu-pro-physics-09242",
+    "domain": "science",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.7768595041322314,
+          0.22314049586776863
+        ],
+        "observation": "medium:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.4975381418126622,
+        "action_values": {
+          "stop": 0.22314049586776863,
+          "repair": 0.4975381418126622,
+          "retry": 0.3761531501255402
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.8284306691989589,
+          0.17156933080104106
+        ],
+        "observation": "medium:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.3409237429681188,
+        "action_values": {
+          "stop": 0.17156933080104106,
+          "repair": 0.3409237429681188,
+          "retry": 0.19355402202416405
+        }
+      }
+    ],
+    "final_belief": [
+      0.8510444597496112,
+      0.14895554025038882
+    ],
+    "correct": 0,
+    "tokens": 2138,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.0002977503463625908
+  },
+  {
+    "id": "mmlu-pro-physics-09423",
+    "domain": "science",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 0,
+    "tokens": 1088,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.00029633287340402603
+  },
+  {
+    "id": "mmlu-pro-biology-03331",
+    "domain": "science",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 0,
+    "tokens": 1056,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.0002950839698314667
+  },
+  {
+    "id": "gsm8k-train-03921",
+    "domain": "math",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 0,
+    "tokens": 982,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.0002981671132147312
+  },
+  {
+    "id": "mmlu-pro-physics-09169",
+    "domain": "science",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 0,
+    "tokens": 1276,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.0003064167685806751
+  },
+  {
+    "id": "mmlu-pro-physics-09861",
+    "domain": "science",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.5255591054313099,
+          0.4744408945686901
+        ],
+        "observation": "high:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.6418012771451148,
+        "action_values": {
+          "stop": 0.4744408945686901,
+          "repair": 0.6418012771451148,
+          "retry": 0.47102493802252765
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.3819391556321038,
+          0.6180608443678962
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.6791338193012968,
+        "action_values": {
+          "stop": 0.6180608443678962,
+          "repair": 0.6791338193012968,
+          "retry": 0.41594721129519924
+        }
+      }
+    ],
+    "final_belief": [
+      0.27895786533190386,
+      0.7210421346680962
+    ],
+    "correct": 0,
+    "tokens": 1772,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.000313041266053915
+  },
+  {
+    "id": "gsm8k-train-03300",
+    "domain": "math",
+    "path": "repair/repair",
+    "steps": [
+      {
+        "path": "",
+        "context": "initial",
+        "belief": [
+          0.7768595041322314,
+          0.22314049586776863
+        ],
+        "observation": "medium:valid",
+        "remaining": 2,
+        "action": "repair",
+        "value": 0.4975381418126622,
+        "action_values": {
+          "stop": 0.22314049586776863,
+          "repair": 0.4975381418126622,
+          "retry": 0.3761531501255402
+        }
+      },
+      {
+        "path": "repair",
+        "context": "after_repair",
+        "belief": [
+          0.5718882981600644,
+          0.4281117018399357
+        ],
+        "observation": "high:valid",
+        "remaining": 1,
+        "action": "repair",
+        "value": 0.5352504261308602,
+        "action_values": {
+          "stop": 0.4281117018399357,
+          "repair": 0.5352504261308602,
+          "retry": 0.3213353445015289
+        }
+      }
+    ],
+    "final_belief": [
+      0.4160005509085891,
+      0.5839994490914109
+    ],
+    "correct": 1,
+    "tokens": 749,
+    "controller_tokens": 0,
+    "controller_cpu_seconds": 0.0003000004217028618
+  }
+]

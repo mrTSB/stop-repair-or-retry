@@ -1,0 +1,50 @@
+[
+  {
+    "previous_action": "repair",
+    "answer_change": "same",
+    "n": 42,
+    "current_correct": 24,
+    "next_repair_correct": 23,
+    "next_retry_correct": 23
+  },
+  {
+    "previous_action": "repair",
+    "answer_change": "changed",
+    "n": 17,
+    "current_correct": 9,
+    "next_repair_correct": 9,
+    "next_retry_correct": 3
+  },
+  {
+    "previous_action": "repair",
+    "answer_change": "unavailable",
+    "n": 1,
+    "current_correct": 0,
+    "next_repair_correct": 0,
+    "next_retry_correct": 0
+  },
+  {
+    "previous_action": "retry",
+    "answer_change": "same",
+    "n": 27,
+    "current_correct": 19,
+    "next_repair_correct": 20,
+    "next_retry_correct": 18
+  },
+  {
+    "previous_action": "retry",
+    "answer_change": "changed",
+    "n": 32,
+    "current_correct": 6,
+    "next_repair_correct": 13,
+    "next_retry_correct": 6
+  },
+  {
+    "previous_action": "retry",
+    "answer_change": "unavailable",
+    "n": 1,
+    "current_correct": 0,
+    "next_repair_correct": 0,
+    "next_retry_correct": 0
+  }
+]

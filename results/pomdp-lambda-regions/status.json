@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "boundary_count": 64,
+  "probes": 253,
+  "unique_dev_policies": 8,
+  "best_observed_dev": {
+    "lambda": 0.2471708609286736,
+    "n": 60,
+    "accuracy": 0.5333333333333333,
+    "mean_tokens": 820.55,
+    "utility_at_this_lambda": 0.3305172833983102,
+    "utility_at_reference_lambda_0.01": 0.5251278333333333,
+    "policy_signature": "15e638a38dd114858b633bf961228006de5d830ff63bcf3ac708316cabe4104d",
+    "action_sequences": {
+      "repair -> stop": 52,
+      "repair -> repair": 6,
+      "stop": 2
+    }
+  },
+  "finished_utc": "2026-11-11T13:22:04.362784+00:00"
+}

@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "folds": 5,
+  "fold_models_refitted": 10,
+  "heldout_path_sets_replayed": 20,
+  "selected": {
+    "states": 2,
+    "lambda": 0.01,
+    "n": 100,
+    "correct": 57,
+    "accuracy": 0.57,
+    "mean_tokens": 1304.77,
+    "action_sequences": {
+      "retry -> repair": 3,
+      "repair -> repair": 97
+    }
+  },
+  "selected_dev": {
+    "n": 60,
+    "correct": 32,
+    "accuracy": 0.5333333333333333,
+    "mean_tokens": 1253.0333333333333,
+    "action_sequences": {
+      "repair -> repair": 60
+    }
+  },
+  "maximum_two_state_control_parameter_error": 2.220446049250313e-16,
+  "four_state_last_likelihood_increases": [
+    1.2747774992167251,
+    1.158306809413375,
+    0.22760679965762165,
+    0.6743746126935548,
+    0.9698194092330823
+  ],
+  "checks": [
+    "Exact enumeration unit test verifies three-node four-state likelihood, node marginals and edge marginals",
+    "Held-out correctness-label changes leave decisions and beliefs invariant",
+    "Two-state fits agree with calibrated context control after reversing state order",
+    "All deterministic fold fits and selected100question fit exactly reproduced",
+    "Each training question held out once/configuration; fit80/held20 domain-balanced and branch-grouped",
+    "All four OOF summaries and declared selection rule reproduced; only selected candidate evaluated on dev",
+    "Source review confirms no test reads, unvisited-policy inputs or inference calls"
+  ],
+  "limitations": [
+    "One deterministic initialization and20iterations; four-state last-iteration likelihood increments show convergence is not established.",
+    "Empirical shrinkage and calibration are regularized updates, not guaranteed monotone maximum-likelihood EM.",
+    "Latent incorrect types have no established repairability semantics.",
+    "Prior observed outcomes informed diagnostic direction; not untouched confirmation; no four-state accuracy gain demonstrated."
+  ],
+  "reproduce": "python3 -B experiments/pomdp-controller/verify_latent_states.py --output results/pomdp-latent-state-cv/validation.json"
+}

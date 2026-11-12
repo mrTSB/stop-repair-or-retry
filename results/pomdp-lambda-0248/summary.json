@@ -1,0 +1,444 @@
+{
+  "split": "test",
+  "n": 400,
+  "planning_lambda": 0.248,
+  "summaries": [
+    {
+      "method": "pomdp_lambda_0.248",
+      "domain": "all",
+      "n": 400,
+      "correct": 212,
+      "accuracy": 0.53,
+      "accuracy_ci95": [
+        0.48,
+        0.58
+      ],
+      "mean_tokens": 913.4875,
+      "mean_utility_lambda_0.248": 0.3034551,
+      "mean_utility_reference_0.01": 0.520865125
+    },
+    {
+      "method": "pomdp_lambda_0.248",
+      "domain": "math",
+      "n": 200,
+      "correct": 132,
+      "accuracy": 0.66,
+      "accuracy_ci95": [
+        0.595,
+        0.725
+      ],
+      "mean_tokens": 705.885,
+      "mean_utility_lambda_0.248": 0.48494052,
+      "mean_utility_reference_0.01": 0.65294115
+    },
+    {
+      "method": "pomdp_lambda_0.248",
+      "domain": "science",
+      "n": 200,
+      "correct": 80,
+      "accuracy": 0.4,
+      "accuracy_ci95": [
+        0.335,
+        0.47
+      ],
+      "mean_tokens": 1121.09,
+      "mean_utility_lambda_0.248": 0.12196968,
+      "mean_utility_reference_0.01": 0.3887891
+    },
+    {
+      "method": "stop",
+      "domain": "all",
+      "n": 400,
+      "correct": 145,
+      "accuracy": 0.3625,
+      "accuracy_ci95": [
+        0.3175,
+        0.41
+      ],
+      "mean_tokens": 340.1075,
+      "mean_utility_lambda_0.248": 0.27815334,
+      "mean_utility_reference_0.01": 0.359098925
+    },
+    {
+      "method": "stop",
+      "domain": "math",
+      "n": 200,
+      "correct": 76,
+      "accuracy": 0.38,
+      "accuracy_ci95": [
+        0.31,
+        0.445
+      ],
+      "mean_tokens": 258.645,
+      "mean_utility_lambda_0.248": 0.31585604,
+      "mean_utility_reference_0.01": 0.37741355
+    },
+    {
+      "method": "stop",
+      "domain": "science",
+      "n": 200,
+      "correct": 69,
+      "accuracy": 0.345,
+      "accuracy_ci95": [
+        0.285,
+        0.41
+      ],
+      "mean_tokens": 421.57,
+      "mean_utility_lambda_0.248": 0.24045064,
+      "mean_utility_reference_0.01": 0.3407843
+    },
+    {
+      "method": "repair_once",
+      "domain": "all",
+      "n": 400,
+      "correct": 211,
+      "accuracy": 0.5275,
+      "accuracy_ci95": [
+        0.4775,
+        0.5775
+      ],
+      "mean_tokens": 832.95,
+      "mean_utility_lambda_0.248": 0.3209284,
+      "mean_utility_reference_0.01": 0.5191705
+    },
+    {
+      "method": "repair_once",
+      "domain": "math",
+      "n": 200,
+      "correct": 131,
+      "accuracy": 0.655,
+      "accuracy_ci95": [
+        0.59,
+        0.72
+      ],
+      "mean_tokens": 652.185,
+      "mean_utility_lambda_0.248": 0.49325812,
+      "mean_utility_reference_0.01": 0.64847815
+    },
+    {
+      "method": "repair_once",
+      "domain": "science",
+      "n": 200,
+      "correct": 80,
+      "accuracy": 0.4,
+      "accuracy_ci95": [
+        0.335,
+        0.47
+      ],
+      "mean_tokens": 1013.715,
+      "mean_utility_lambda_0.248": 0.14859868,
+      "mean_utility_reference_0.01": 0.38986285
+    },
+    {
+      "method": "repair_twice",
+      "domain": "all",
+      "n": 400,
+      "correct": 219,
+      "accuracy": 0.5475,
+      "accuracy_ci95": [
+        0.495,
+        0.6
+      ],
+      "mean_tokens": 1358.295,
+      "mean_utility_lambda_0.248": 0.21064284,
+      "mean_utility_reference_0.01": 0.53391705
+    },
+    {
+      "method": "repair_twice",
+      "domain": "math",
+      "n": 200,
+      "correct": 137,
+      "accuracy": 0.685,
+      "accuracy_ci95": [
+        0.62,
+        0.75
+      ],
+      "mean_tokens": 1059.34,
+      "mean_utility_lambda_0.248": 0.42228368,
+      "mean_utility_reference_0.01": 0.6744066
+    },
+    {
+      "method": "repair_twice",
+      "domain": "science",
+      "n": 200,
+      "correct": 82,
+      "accuracy": 0.41,
+      "accuracy_ci95": [
+        0.345,
+        0.48
+      ],
+      "mean_tokens": 1657.25,
+      "mean_utility_lambda_0.248": -0.0009979999999999972,
+      "mean_utility_reference_0.01": 0.3934275
+    },
+    {
+      "method": "retry_once",
+      "domain": "all",
+      "n": 400,
+      "correct": 153,
+      "accuracy": 0.3825,
+      "accuracy_ci95": [
+        0.3325,
+        0.43
+      ],
+      "mean_tokens": 679.5575,
+      "mean_utility_lambda_0.248": 0.21396974,
+      "mean_utility_reference_0.01": 0.375704425
+    },
+    {
+      "method": "retry_once",
+      "domain": "math",
+      "n": 200,
+      "correct": 80,
+      "accuracy": 0.4,
+      "accuracy_ci95": [
+        0.33,
+        0.47
+      ],
+      "mean_tokens": 521.335,
+      "mean_utility_lambda_0.248": 0.27070892,
+      "mean_utility_reference_0.01": 0.39478665
+    },
+    {
+      "method": "retry_once",
+      "domain": "science",
+      "n": 200,
+      "correct": 73,
+      "accuracy": 0.365,
+      "accuracy_ci95": [
+        0.3,
+        0.43
+      ],
+      "mean_tokens": 837.78,
+      "mean_utility_lambda_0.248": 0.15723056,
+      "mean_utility_reference_0.01": 0.3566222
+    },
+    {
+      "method": "retry_twice",
+      "domain": "all",
+      "n": 400,
+      "correct": 161,
+      "accuracy": 0.4025,
+      "accuracy_ci95": [
+        0.3575,
+        0.4525
+      ],
+      "mean_tokens": 1020.66,
+      "mean_utility_lambda_0.248": 0.14937632,
+      "mean_utility_reference_0.01": 0.3922934
+    },
+    {
+      "method": "retry_twice",
+      "domain": "math",
+      "n": 200,
+      "correct": 94,
+      "accuracy": 0.47,
+      "accuracy_ci95": [
+        0.4,
+        0.54
+      ],
+      "mean_tokens": 781.62,
+      "mean_utility_lambda_0.248": 0.27615824,
+      "mean_utility_reference_0.01": 0.4621838
+    },
+    {
+      "method": "retry_twice",
+      "domain": "science",
+      "n": 200,
+      "correct": 67,
+      "accuracy": 0.335,
+      "accuracy_ci95": [
+        0.275,
+        0.4
+      ],
+      "mean_tokens": 1259.7,
+      "mean_utility_lambda_0.248": 0.022594400000000004,
+      "mean_utility_reference_0.01": 0.322403
+    },
+    {
+      "method": "llm_controller_A",
+      "domain": "all",
+      "n": 400,
+      "correct": 177,
+      "accuracy": 0.4425,
+      "accuracy_ci95": [
+        0.3925,
+        0.4925
+      ],
+      "mean_tokens": 1615.9675,
+      "mean_utility_lambda_0.248": 0.04174006,
+      "mean_utility_reference_0.01": 0.426340325
+    },
+    {
+      "method": "llm_controller_A",
+      "domain": "math",
+      "n": 200,
+      "correct": 105,
+      "accuracy": 0.525,
+      "accuracy_ci95": [
+        0.455,
+        0.59
+      ],
+      "mean_tokens": 1334.09,
+      "mean_utility_lambda_0.248": 0.19414568,
+      "mean_utility_reference_0.01": 0.5116591
+    },
+    {
+      "method": "llm_controller_A",
+      "domain": "science",
+      "n": 200,
+      "correct": 72,
+      "accuracy": 0.36,
+      "accuracy_ci95": [
+        0.295,
+        0.43
+      ],
+      "mean_tokens": 1897.845,
+      "mean_utility_lambda_0.248": -0.11066556,
+      "mean_utility_reference_0.01": 0.34102155
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "comparator": "stop",
+      "accuracy_difference": 0.1675,
+      "accuracy_difference_ci95": [
+        0.125,
+        0.2075
+      ],
+      "utility_difference_lambda_0.248": {
+        "mean": 0.02530176,
+        "ci95": [
+          -0.01679432,
+          0.06636428
+        ]
+      },
+      "utility_difference_lambda_0.01": {
+        "mean": 0.1617662,
+        "ci95": [
+          0.1194455,
+          0.201972025
+        ]
+      }
+    },
+    {
+      "comparator": "repair_once",
+      "accuracy_difference": 0.0025,
+      "accuracy_difference_ci95": [
+        0.0,
+        0.0075
+      ],
+      "utility_difference_lambda_0.248": {
+        "mean": -0.0174733,
+        "ci95": [
+          -0.02433438,
+          -0.0092662
+        ]
+      },
+      "utility_difference_lambda_0.01": {
+        "mean": 0.001694625,
+        "ci95": [
+          -0.00096915,
+          0.00688465
+        ]
+      }
+    },
+    {
+      "comparator": "repair_twice",
+      "accuracy_difference": -0.0175,
+      "accuracy_difference_ci95": [
+        -0.0325,
+        -0.0025
+      ],
+      "utility_difference_lambda_0.248": {
+        "mean": 0.09281226,
+        "ci95": [
+          0.07581246,
+          0.10843396
+        ]
+      },
+      "utility_difference_lambda_0.01": {
+        "mean": -0.013051924999999999,
+        "ci95": [
+          -0.028162074999999998,
+          0.00165255
+        ]
+      }
+    },
+    {
+      "comparator": "retry_once",
+      "accuracy_difference": 0.1475,
+      "accuracy_difference_ci95": [
+        0.095,
+        0.2
+      ],
+      "utility_difference_lambda_0.248": {
+        "mean": 0.08948536,
+        "ci95": [
+          0.03500942,
+          0.14241254
+        ]
+      },
+      "utility_difference_lambda_0.01": {
+        "mean": 0.1451607,
+        "ci95": [
+          0.0924903,
+          0.19756225
+        ]
+      }
+    },
+    {
+      "comparator": "retry_twice",
+      "accuracy_difference": 0.1275,
+      "accuracy_difference_ci95": [
+        0.0775,
+        0.175
+      ],
+      "utility_difference_lambda_0.248": {
+        "mean": 0.15407878,
+        "ci95": [
+          0.1044015,
+          0.20131558000000002
+        ]
+      },
+      "utility_difference_lambda_0.01": {
+        "mean": 0.128571725,
+        "ci95": [
+          0.07852805,
+          0.17606155
+        ]
+      }
+    },
+    {
+      "comparator": "llm_controller_A",
+      "accuracy_difference": 0.0875,
+      "accuracy_difference_ci95": [
+        0.0575,
+        0.12
+      ],
+      "utility_difference_lambda_0.248": {
+        "mean": 0.26171504,
+        "ci95": [
+          0.22951464000000002,
+          0.29622444000000003
+        ]
+      },
+      "utility_difference_lambda_0.01": {
+        "mean": 0.09452479999999999,
+        "ci95": [
+          0.06432302499999999,
+          0.127084025
+        ]
+      }
+    }
+  ],
+  "action_sequences": {
+    "repair -> stop": 332,
+    "repair -> repair": 61,
+    "stop": 7
+  },
+  "controller_cpu_seconds": 0.16702066268771887,
+  "interpretation": "Lambda selected on 60 dev questions after viewing earlier test results. Descriptive follow-up on an already inspected test set, not a fresh confirmatory evaluation.",
+  "llm_note": "Controller A decisions remain frozen from its lambda0.01 prompt. Utility at0.248 reweights that existing policy; it is not a lambda0.248-tuned LLM.",
+  "uncertainty_note": "2000 paired question bootstrap resamples conditional on fixed cache/model; no selection/model-fit uncertainty; no multiple-comparison correction."
+}

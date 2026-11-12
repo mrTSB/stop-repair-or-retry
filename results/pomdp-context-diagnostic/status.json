@@ -1,0 +1,61 @@
+{
+  "status": "complete",
+  "finished_utc": "2026-11-11T16:30:52.159143+00:00",
+  "new_paid_calls": 0,
+  "test_evaluated": false,
+  "results": {
+    "train/0.01": {
+      "overall": {
+        "method": "context_pomdp",
+        "domain": "all",
+        "n": 100,
+        "accuracy": 0.57,
+        "mean_tokens": 1316.53,
+        "mean_utility": 0.5568347
+      },
+      "actions": {
+        "repair -> repair": 100
+      }
+    },
+    "train/0.248": {
+      "overall": {
+        "method": "context_pomdp",
+        "domain": "all",
+        "n": 100,
+        "accuracy": 0.54,
+        "mean_tokens": 812.92,
+        "mean_utility": 0.33839584
+      },
+      "actions": {
+        "repair -> stop": 100
+      }
+    },
+    "dev/0.01": {
+      "overall": {
+        "method": "context_pomdp",
+        "domain": "all",
+        "n": 60,
+        "accuracy": 0.5333333333333333,
+        "mean_tokens": 1253.0333333333333,
+        "mean_utility": 0.520803
+      },
+      "actions": {
+        "repair -> repair": 60
+      }
+    },
+    "dev/0.248": {
+      "overall": {
+        "method": "context_pomdp",
+        "domain": "all",
+        "n": 60,
+        "accuracy": 0.55,
+        "mean_tokens": 760.85,
+        "mean_utility": 0.3613092
+      },
+      "actions": {
+        "repair -> stop": 58,
+        "stop": 2
+      }
+    }
+  }
+}

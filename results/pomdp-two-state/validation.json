@@ -1,0 +1,165 @@
+{
+  "status": "PASS",
+  "scope": "Offline verification; no inference or cloud calls",
+  "checks": [
+    "Published split IDs disjoint and complete",
+    "Train-only independently recounted prior, transitions, joint observations and conditional costs",
+    "Frozen module/helper/design/data/A hashes and model reconstruction",
+    "Complete dev before freeze before test",
+    "All five penalties replay identically",
+    "Actual visited tokens and terminal correctness independently recomputed",
+    "All summary means and primary bootstrap endpoints independently reproduced"
+  ],
+  "splits": {
+    "dev": {
+      "0": {
+        "overall": {
+          "policy": "pomdp_two_state",
+          "domain": "all",
+          "n": 60,
+          "accuracy": 0.5333333333333333,
+          "mean_tokens": 1253.0333333333333,
+          "mean_utility": 0.5333333333333333
+        },
+        "action_sequences": {
+          "repair -> repair": 60
+        }
+      },
+      "0.001": {
+        "overall": {
+          "policy": "pomdp_two_state",
+          "domain": "all",
+          "n": 60,
+          "accuracy": 0.5333333333333333,
+          "mean_tokens": 1253.0333333333333,
+          "mean_utility": 0.5320803
+        },
+        "action_sequences": {
+          "repair -> repair": 60
+        }
+      },
+      "0.01": {
+        "overall": {
+          "policy": "pomdp_two_state",
+          "domain": "all",
+          "n": 60,
+          "accuracy": 0.5333333333333333,
+          "mean_tokens": 1253.0333333333333,
+          "mean_utility": 0.520803,
+          "accuracy_ci95": [
+            0.4166666666666667,
+            0.65
+          ]
+        },
+        "action_sequences": {
+          "repair -> repair": 60
+        }
+      },
+      "0.1": {
+        "overall": {
+          "policy": "pomdp_two_state",
+          "domain": "all",
+          "n": 60,
+          "accuracy": 0.5333333333333333,
+          "mean_tokens": 1253.0333333333333,
+          "mean_utility": 0.40803
+        },
+        "action_sequences": {
+          "repair -> repair": 60
+        }
+      },
+      "1": {
+        "overall": {
+          "policy": "pomdp_two_state",
+          "domain": "all",
+          "n": 60,
+          "accuracy": 0.4166666666666667,
+          "mean_tokens": 325.56666666666666,
+          "mean_utility": 0.0911
+        },
+        "action_sequences": {
+          "stop": 60
+        }
+      }
+    },
+    "test": {
+      "0": {
+        "overall": {
+          "policy": "pomdp_two_state",
+          "domain": "all",
+          "n": 400,
+          "accuracy": 0.5475,
+          "mean_tokens": 1358.295,
+          "mean_utility": 0.5475
+        },
+        "action_sequences": {
+          "repair -> repair": 400
+        }
+      },
+      "0.001": {
+        "overall": {
+          "policy": "pomdp_two_state",
+          "domain": "all",
+          "n": 400,
+          "accuracy": 0.5475,
+          "mean_tokens": 1358.295,
+          "mean_utility": 0.546141705
+        },
+        "action_sequences": {
+          "repair -> repair": 400
+        }
+      },
+      "0.01": {
+        "overall": {
+          "policy": "pomdp_two_state",
+          "domain": "all",
+          "n": 400,
+          "accuracy": 0.5475,
+          "mean_tokens": 1358.295,
+          "mean_utility": 0.53391705,
+          "accuracy_ci95": [
+            0.495,
+            0.6
+          ]
+        },
+        "action_sequences": {
+          "repair -> repair": 400
+        }
+      },
+      "0.1": {
+        "overall": {
+          "policy": "pomdp_two_state",
+          "domain": "all",
+          "n": 400,
+          "accuracy": 0.5475,
+          "mean_tokens": 1358.295,
+          "mean_utility": 0.4116705
+        },
+        "action_sequences": {
+          "repair -> repair": 400
+        }
+      },
+      "1": {
+        "overall": {
+          "policy": "pomdp_two_state",
+          "domain": "all",
+          "n": 400,
+          "accuracy": 0.3625,
+          "mean_tokens": 340.1075,
+          "mean_utility": 0.0223925
+        },
+        "action_sequences": {
+          "stop": 400
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Bootstrap endpoints reproduce declared arithmetic; this does not establish interval coverage.",
+    "Correctness-only dynamics, pooled depth/domain and within-question correlated branches remain modeling approximations.",
+    "Test outcomes were previously inspected; not an untouched confirmation set.",
+    "Observed primary policy selects repair twice for all 60 dev and 400 test questions, exactly matching that fixed baseline; no adaptive benefit is demonstrated.",
+    "Four-state planner interface is unit-tested; no four-state estimator/model is fitted."
+  ],
+  "reproduce": "python3 -B experiments/pomdp-controller/verify.py --run results/pomdp-two-state --output results/pomdp-two-state/validation.json"
+}
