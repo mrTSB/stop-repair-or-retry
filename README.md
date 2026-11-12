@@ -6,19 +6,21 @@ Aggregated benchmark reports are indexed in [`results/benchmark-baselines/README
 
 The [cached math/science dataset and characterization](results/cached-tree-dataset/README.md) includes 560 complete solver trees, explicit 100/60/400 train/dev/test splits, and five fixed baseline results. It is a standalone dataset contribution, with no new controller claims.
 
-## LLM controller experiment
+Controller naming follows the project proposal: **Controller A** is the two-state POMDP planner and **Controller B** is the prompted LLM controller. Frozen archives under `results/pomdp-*`, `experiments/pomdp-controller/DESIGN.md`, and code identifiers (for example `llm_controller_A`, `controller_A_archive_sha256`) predate this convention and use the swapped labels; they are left unchanged because they are hash-locked by the freeze records.
+
+## Controller B: LLM controller experiment
 
 The [LLM controller workflow](experiments/llm-controller/README.md) replays the published cached dataset and compares the five fixed baselines. The [full frozen evaluation](results/llm-controller-full-evaluation/README.md) includes all 60 dev and 400 test questions, real Qwen2.5-14B-Instruct decisions on private Modal compute, exact raw evidence, token accounting, and independent offline verification. On test, the LLM controller achieved 44.25% accuracy at 1,616 mean tokens, compared with 52.75% at 833 tokens for repair once. No POMDP was fitted or evaluated. Older benchmark reports above are separate historical artifacts and were not used as controller evidence in this experiment.
 
-## Controller B: two-state POMDP milestone
+## Controller A: two-state POMDP milestone
 
-The [Controller B decision record](experiments/pomdp-controller/DESIGN.md) separates user-selected scope from implementation defaults and deferred final-project work. The milestone uses two correctness states, confidence/validity observations, pooled dynamics, and two-step planning. A separate four-state extension is investigated below; it does not replace the frozen milestone.
+The [Controller A decision record](experiments/pomdp-controller/DESIGN.md) separates user-selected scope from implementation defaults and deferred final-project work. The milestone uses two correctness states, confidence/validity observations, pooled dynamics, and two-step planning. A separate four-state extension is investigated below; it does not replace the frozen milestone.
 
 The [frozen two-state results](results/pomdp-two-state/README.md) use train-only fitting, full dev checks, and cached test evaluation with no new inference spending. At the primary penalty, the model selects repair twice on every question and exactly matches that baseline (54.75% test accuracy, 1,358 mean tokens). This is not an adaptive-controller advantage. No one-step ablation was added.
 
 A [fine train/dev lambda diagnostic](results/pomdp-lambda-diagnostic/report.md) finds eight policies: near lambda 0.248 the POMDP reduces dev tokens by 34.5% while keeping 53.33% accuracy, but remains below repair once. This follow-up does not change the frozen primary experiment or re-evaluate test.
 
-A [separate frozen lambda 0.248 test experiment](results/pomdp-lambda-0248/README.md) reports 53.00% accuracy at 913 mean tokens, compared with Controller A at 44.25%/1,616 and repair once at 52.75%/833. It preserves the original primary experiment and documents dev selection and prior test exposure.
+A [separate frozen lambda 0.248 test experiment](results/pomdp-lambda-0248/README.md) reports 53.00% accuracy at 913 mean tokens, compared with Controller B at 44.25%/1,616 and repair once at 52.75%/833. It preserves the original primary experiment and documents dev selection and prior test exposure.
 
 A [known-context train/dev diagnostic](results/pomdp-context-diagnostic/report.md) investigates further improvement without changing frozen results. It highlights diminishing repair returns and a limitation in smoothing unseen confidence categories; the candidate has not been run on test.
 

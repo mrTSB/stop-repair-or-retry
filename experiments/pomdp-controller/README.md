@@ -1,4 +1,6 @@
-# Controller B: two-state POMDP
+# Controller A: two-state POMDP
+
+Naming follows the project proposal: Controller A is this POMDP and Controller B is the LLM controller. The frozen `DESIGN.md`, archived results, and code identifiers predate this convention and use the swapped labels; they are hash-locked and left unchanged.
 
 Read [DESIGN.md](DESIGN.md) first. It records the user's selected scope, the assistant's declared defaults, and the final-project extensions that are deliberately deferred. The original design is preserved; a separate four-state diagnostic is now available below.
 
@@ -25,9 +27,9 @@ PYTHONPATH=src python3 -m stop_repair_retry.pomdp_experiment test --run runs/pom
 PYTHONPATH=src python3 -m unittest discover -s tests -p test_pomdp_experiment.py
 ```
 
-The primary penalty is 0.01. All five predeclared penalties [0, 0.001, 0.01, 0.1, 1] are evaluated separately. The five fixed baselines appear throughout. Controller A appears only at its original 0.01 penalty; it was not re-prompted for this sweep. CPU time is recorded separately from research tokens. No extra LLM-token cost is assigned to the POMDP's arithmetic.
+The primary penalty is 0.01. All five predeclared penalties [0, 0.001, 0.01, 0.1, 1] are evaluated separately. The five fixed baselines appear throughout. Controller B appears only at its original 0.01 penalty; it was not re-prompted for this sweep. CPU time is recorded separately from research tokens. No extra LLM-token cost is assigned to the POMDP's arithmetic.
 
-Each path file records observations, beliefs, action values, chosen actions, final path, actual tokens, scores, and CPU timing. The freeze binds dev evidence to model, configuration, source/helper, design record, dataset, and Controller A hashes. Full dev replay and summary reconstruction are required before freezing. Do not edit the frozen design or code and present a later run as the same experiment; create a new version when extending it.
+Each path file records observations, beliefs, action values, chosen actions, final path, actual tokens, scores, and CPU timing. The freeze binds dev evidence to model, configuration, source/helper, design record, dataset, and Controller B hashes. Full dev replay and summary reconstruction are required before freezing. Do not edit the frozen design or code and present a later run as the same experiment; create a new version when extending it.
 
 ## Milestone run
 
@@ -39,7 +41,7 @@ A [separate train/dev-only analysis](../../results/pomdp-lambda-diagnostic/repor
 
 ## Separately frozen lambda 0.248 follow-up
 
-The user selected lambda0.248 from the dev-only diagnostic. The [separate frozen test experiment](../../results/pomdp-lambda-0248/README.md) obtains 53.00% accuracy at 913.49 mean tokens. It beats Controller A on these metrics but exceeds repair once by only one correct answer with more tokens; it remains below repair-twice accuracy. Its freeze, raw paths, both utility weightings, audit, and prior-test-exposure caveat are preserved separately. Use `frozen_lambda.py verify` for offline reproduction.
+The user selected lambda0.248 from the dev-only diagnostic. The [separate frozen test experiment](../../results/pomdp-lambda-0248/README.md) obtains 53.00% accuracy at 913.49 mean tokens. It beats Controller B on these metrics but exceeds repair once by only one correct answer with more tokens; it remains below repair-twice accuracy. Its freeze, raw paths, both utility weightings, audit, and prior-test-exposure caveat are preserved separately. Use `frozen_lambda.py verify` for offline reproduction.
 
 ## Known-context improvement diagnostic
 
