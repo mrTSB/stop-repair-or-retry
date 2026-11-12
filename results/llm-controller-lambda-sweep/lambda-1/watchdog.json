@@ -1,0 +1,6 @@
+{
+  "pid": 94081,
+  "deadline_seconds": 1800,
+  "action": "modal app stop --yes",
+  "independent_process": true
+}
