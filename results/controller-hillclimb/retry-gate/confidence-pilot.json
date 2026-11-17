@@ -1,0 +1,172 @@
+{
+  "audit": {
+    "train": {
+      "n": 160,
+      "exact_archive_matches": 160,
+      "answer_confidence_observed": 121,
+      "answer_confidence_auc": 0.7373595505617978
+    },
+    "dev": {
+      "n": 60,
+      "exact_archive_matches": 60,
+      "answer_confidence_observed": 54,
+      "answer_confidence_auc": 0.7849624060150376
+    }
+  },
+  "without_confidence": {
+    "compact_first": {
+      "config": {
+        "parsing": "invalid",
+        "kind": "threshold",
+        "strength": 160,
+        "margin": 0.06,
+        "first_short": 0.0,
+        "front_price": 0.32,
+        "credit": 0.6,
+        "minimum": 0.035,
+        "opportunity": 0.45
+      },
+      "train_oof": {
+        "accuracy": 0.64375,
+        "tokens": 266.94375,
+        "accuracy_gain": -0.01875,
+        "tokens_saved": 11.94375,
+        "retry_count": 16,
+        "short_first_count": 0
+      },
+      "dev": {
+        "accuracy": 0.6166666666666667,
+        "tokens": 260.65,
+        "accuracy_gain": 0.0,
+        "tokens_saved": 12.2,
+        "retry_count": 7,
+        "short_first_count": 0
+      }
+    },
+    "routed_first": {
+      "config": {
+        "parsing": "original",
+        "kind": "linear",
+        "strength": 48,
+        "margin": -0.02,
+        "first_short": 0.12,
+        "front_price": 0.12,
+        "credit": 0.78,
+        "minimum": 0.035,
+        "opportunity": 0.0
+      },
+      "train_oof": {
+        "accuracy": 0.64375,
+        "tokens": 263.73125,
+        "accuracy_gain": -0.01875,
+        "tokens_saved": 15.15625,
+        "retry_count": 20,
+        "short_first_count": 19
+      },
+      "dev": {
+        "accuracy": 0.6166666666666667,
+        "tokens": 259.2,
+        "accuracy_gain": 0.0,
+        "tokens_saved": 13.65,
+        "retry_count": 4,
+        "short_first_count": 7
+      }
+    }
+  },
+  "with_confidence": {
+    "compact_first": {
+      "config": {
+        "parsing": "original",
+        "kind": "context",
+        "strength": 12,
+        "margin": -0.02,
+        "first_short": 0.0,
+        "front_price": 0.32,
+        "credit": 0.6,
+        "minimum": 0.0,
+        "opportunity": 0.0
+      },
+      "train_oof": {
+        "accuracy": 0.65,
+        "tokens": 267.3,
+        "accuracy_gain": -0.0125,
+        "tokens_saved": 11.5875,
+        "retry_count": 19,
+        "short_first_count": 0
+      },
+      "dev": {
+        "accuracy": 0.6166666666666667,
+        "tokens": 262.3833333333333,
+        "accuracy_gain": 0.0,
+        "tokens_saved": 10.466666666666667,
+        "retry_count": 5,
+        "short_first_count": 0
+      }
+    },
+    "routed_first": {
+      "config": {
+        "parsing": "original",
+        "kind": "context",
+        "strength": 12,
+        "margin": -0.02,
+        "first_short": 0.12,
+        "front_price": 0.12,
+        "credit": 0.6,
+        "minimum": 0.0,
+        "opportunity": 0.0
+      },
+      "train_oof": {
+        "accuracy": 0.65,
+        "tokens": 257.35,
+        "accuracy_gain": -0.0125,
+        "tokens_saved": 21.5375,
+        "retry_count": 22,
+        "short_first_count": 19
+      },
+      "dev": {
+        "accuracy": 0.6,
+        "tokens": 256.31666666666666,
+        "accuracy_gain": -0.016666666666666666,
+        "tokens_saved": 16.533333333333335,
+        "retry_count": 6,
+        "short_first_count": 7
+      }
+    }
+  },
+  "guarded_confidence": {
+    "compact_first": {
+      "config": {
+        "parsing": "invalid",
+        "kind": "context",
+        "strength": 16,
+        "margin": -0.02,
+        "first_short": 0.0,
+        "front_price": 0.32,
+        "credit": 0.8,
+        "minimum": 0.0,
+        "quantile": 0.15,
+        "cutoffs": {
+          "math": 0.9980321350972022,
+          "science": 0.6486741863977115
+        },
+        "invalid_bonus": 0.12
+      },
+      "train_oof": {
+        "accuracy": 0.65625,
+        "tokens": 272.7375,
+        "accuracy_gain": -0.00625,
+        "tokens_saved": 6.15,
+        "retry_count": 21,
+        "short_first_count": 0
+      },
+      "dev": {
+        "accuracy": 0.6333333333333333,
+        "tokens": 266.8833333333333,
+        "accuracy_gain": 0.016666666666666666,
+        "tokens_saved": 5.966666666666667,
+        "retry_count": 4,
+        "short_first_count": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "methods": {
+    "tight_budget_gate": {
+      "all": {
+        "n": 600,
+        "correct": 404,
+        "accuracy": 0.6733333333333333,
+        "mean_total_tokens": 262.02166666666665,
+        "mean_solver_equivalent_tokens": 339.1866235167206,
+        "queries": 57,
+        "invalid_queries": 22,
+        "valid_queries": 35,
+        "submissions_from_retry": 44,
+        "fixes": 16,
+        "regressions": 0,
+        "possible_fixes_queried": 16
+      },
+      "math": {
+        "n": 300,
+        "correct": 224,
+        "accuracy": 0.7466666666666667,
+        "mean_total_tokens": 179.12,
+        "mean_solver_equivalent_tokens": 231.87055016181233,
+        "queries": 35,
+        "invalid_queries": 0,
+        "valid_queries": 35,
+        "submissions_from_retry": 22,
+        "fixes": 12,
+        "regressions": 0,
+        "possible_fixes_queried": 12
+      },
+      "science": {
+        "n": 300,
+        "correct": 180,
+        "accuracy": 0.6,
+        "mean_total_tokens": 344.92333333333335,
+        "mean_solver_equivalent_tokens": 446.502696871629,
+        "queries": 22,
+        "invalid_queries": 22,
+        "valid_queries": 0,
+        "submissions_from_retry": 22,
+        "fixes": 4,
+        "regressions": 0,
+        "possible_fixes_queried": 4
+      }
+    }
+  },
+  "paired_vs_controls": {
+    "retry_on_invalid": {
+      "accuracy_delta_pp": 1.1666666666666667,
+      "accuracy_delta_pp_ci95": [
+        -0.16666666666666669,
+        2.5
+      ],
+      "work_delta": -12.42502696871629,
+      "work_delta_ci95": [
+        -22.198759439050704,
+        -3.6025889967637603
+      ],
+      "work_savings_pct": 3.533735856466158,
+      "paired_wins": 12,
+      "paired_losses": 5
+    },
+    "previous_gate": {
+      "accuracy_delta_pp": -0.33333333333333337,
+      "accuracy_delta_pp_ci95": [
+        -1.1666666666666667,
+        0.5
+      ],
+      "work_delta": -9.704422869471415,
+      "work_delta_ci95": [
+        -16.658953613807984,
+        -3.535868392664514
+      ],
+      "work_savings_pct": 2.7815052779341043,
+      "paired_wins": 2,
+      "paired_losses": 4
+    },
+    "new_gate_without_arithmetic": {
+      "accuracy_delta_pp": -0.33333333333333337,
+      "accuracy_delta_pp_ci95": [
+        -1.1666666666666667,
+        0.5
+      ],
+      "work_delta": -8.91693635382956,
+      "work_delta_ci95": [
+        -16.371089536138083,
+        -2.532686084142399
+      ],
+      "work_savings_pct": 2.5615757440531683,
+      "paired_wins": 2,
+      "paired_losses": 4
+    }
+  },
+  "test_plan_sha256": "5b777ffa05978a6390fac1d7f04dba81f8a1eabae3c573b41e848a6c85667774",
+  "primary_scores_sha256": "b854c2f57cf839182d8d475a4f37486efff93c3486247ae26b6fa77c12c51195",
+  "extra_retry_responses_sha256": "b3d740a7101ba8a5ba3f868d9e03daac78286d76cad86fecc9bc3a4edaf7e324"
+}

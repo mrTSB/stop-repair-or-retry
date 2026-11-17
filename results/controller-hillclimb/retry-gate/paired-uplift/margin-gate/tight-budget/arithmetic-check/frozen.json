@@ -1,0 +1,7 @@
+{
+  "evidence": {
+    "tight_gate_sha256": "d533dc2afd5ec736c54da56b74773a825ad383c6745c91f714b2f529fe7047d5",
+    "code_sha256": "3fb5cacd50c8af54a7bc9825199a1f459e10812916ca5412bb565b0d2379f88c"
+  },
+  "rule": "Submit an exact correction and skip any scheduled retry for that question."
+}

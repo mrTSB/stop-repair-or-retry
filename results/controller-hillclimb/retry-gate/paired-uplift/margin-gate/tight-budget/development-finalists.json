@@ -1,0 +1,830 @@
+[
+  {
+    "design": [
+      "linear",
+      64,
+      0.44
+    ],
+    "settings": {
+      "credit": 0.55,
+      "invalid_weight": 0.9,
+      "harm_weight": 1
+    },
+    "direct": false,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 246.48333333333332,
+      "tokens_saved": 8.105555555555556,
+      "queries": 11,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6677631578947368,
+      "accuracy_gain": -0.003289473684210526,
+      "tokens": 256.5671052631579,
+      "tokens_saved": 9.688815789473685,
+      "queries": 103,
+      "actual_fixes_queried": 25,
+      "successful_fixes": 25,
+      "regressions": 2
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6566666666666666,
+      "accuracy_gain": 0.0033333333333333335,
+      "tokens": 256.42,
+      "tokens_saved": 9.246666666666666,
+      "queries": 21,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 2
+    }
+  },
+  {
+    "design": [
+      "linear",
+      64,
+      0.44
+    ],
+    "settings": {
+      "credit": 0.55,
+      "invalid_weight": 0.9,
+      "harm_weight": 1
+    },
+    "direct": true,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 246.48333333333332,
+      "tokens_saved": 8.105555555555556,
+      "queries": 11,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6690789473684211,
+      "accuracy_gain": -0.001973684210526316,
+      "tokens": 256.59473684210525,
+      "tokens_saved": 9.661184210526315,
+      "queries": 101,
+      "actual_fixes_queried": 27,
+      "successful_fixes": 27,
+      "regressions": 2
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6633333333333333,
+      "accuracy_gain": 0.01,
+      "tokens": 256.3066666666667,
+      "tokens_saved": 9.36,
+      "queries": 21,
+      "actual_fixes_queried": 8,
+      "successful_fixes": 8,
+      "regressions": 1
+    }
+  },
+  {
+    "design": [
+      "linear",
+      20,
+      0.35
+    ],
+    "settings": {
+      "credit": 0.65,
+      "invalid_weight": 0.9,
+      "harm_weight": 1
+    },
+    "direct": false,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 247.99444444444444,
+      "tokens_saved": 6.594444444444444,
+      "queries": 13,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6703947368421053,
+      "accuracy_gain": -0.0006578947368421052,
+      "tokens": 258.45723684210526,
+      "tokens_saved": 7.798684210526316,
+      "queries": 119,
+      "actual_fixes_queried": 31,
+      "successful_fixes": 31,
+      "regressions": 4
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6633333333333333,
+      "accuracy_gain": 0.01,
+      "tokens": 258.05,
+      "tokens_saved": 7.616666666666666,
+      "queries": 25,
+      "actual_fixes_queried": 9,
+      "successful_fixes": 9,
+      "regressions": 2
+    }
+  },
+  {
+    "design": [
+      "linear",
+      64,
+      0.35
+    ],
+    "settings": {
+      "credit": 0.65,
+      "invalid_weight": 0.9,
+      "harm_weight": 1
+    },
+    "direct": false,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 247.99444444444444,
+      "tokens_saved": 6.594444444444444,
+      "queries": 13,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6710526315789473,
+      "accuracy_gain": 0.0,
+      "tokens": 258.50986842105266,
+      "tokens_saved": 7.746052631578947,
+      "queries": 121,
+      "actual_fixes_queried": 30,
+      "successful_fixes": 30,
+      "regressions": 2
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.66,
+      "accuracy_gain": 0.006666666666666667,
+      "tokens": 258.14666666666665,
+      "tokens_saved": 7.52,
+      "queries": 25,
+      "actual_fixes_queried": 8,
+      "successful_fixes": 8,
+      "regressions": 2
+    }
+  },
+  {
+    "design": [
+      "context",
+      64,
+      0.66
+    ],
+    "settings": {
+      "credit": 0.65,
+      "invalid_weight": 0.9,
+      "harm_weight": 1.6
+    },
+    "direct": false,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 248.21666666666667,
+      "tokens_saved": 6.372222222222222,
+      "queries": 11,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6717105263157894,
+      "accuracy_gain": 0.0006578947368421052,
+      "tokens": 258.6460526315789,
+      "tokens_saved": 7.6098684210526315,
+      "queries": 108,
+      "actual_fixes_queried": 31,
+      "successful_fixes": 31,
+      "regressions": 2
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.66,
+      "accuracy_gain": 0.006666666666666667,
+      "tokens": 258.28,
+      "tokens_saved": 7.386666666666667,
+      "queries": 24,
+      "actual_fixes_queried": 8,
+      "successful_fixes": 8,
+      "regressions": 2
+    }
+  },
+  {
+    "design": [
+      "linear",
+      20,
+      0.35
+    ],
+    "settings": {
+      "credit": 0.65,
+      "invalid_weight": 0.9,
+      "harm_weight": 1.6
+    },
+    "direct": true,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 248.2888888888889,
+      "tokens_saved": 6.3,
+      "queries": 11,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6730263157894737,
+      "accuracy_gain": 0.001973684210526316,
+      "tokens": 258.5578947368421,
+      "tokens_saved": 7.698026315789473,
+      "queries": 111,
+      "actual_fixes_queried": 33,
+      "successful_fixes": 33,
+      "regressions": 2
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.67,
+      "accuracy_gain": 0.016666666666666666,
+      "tokens": 258.06666666666666,
+      "tokens_saved": 7.6,
+      "queries": 24,
+      "actual_fixes_queried": 10,
+      "successful_fixes": 10,
+      "regressions": 1
+    }
+  },
+  {
+    "design": [
+      "context",
+      64,
+      0.35
+    ],
+    "settings": {
+      "credit": 0.65,
+      "invalid_weight": 1.5,
+      "harm_weight": 1
+    },
+    "direct": true,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 248.3388888888889,
+      "tokens_saved": 6.25,
+      "queries": 11,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6717105263157894,
+      "accuracy_gain": 0.0006578947368421052,
+      "tokens": 258.5967105263158,
+      "tokens_saved": 7.65921052631579,
+      "queries": 110,
+      "actual_fixes_queried": 32,
+      "successful_fixes": 32,
+      "regressions": 3
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6666666666666666,
+      "accuracy_gain": 0.013333333333333334,
+      "tokens": 258.1766666666667,
+      "tokens_saved": 7.49,
+      "queries": 24,
+      "actual_fixes_queried": 9,
+      "successful_fixes": 9,
+      "regressions": 1
+    }
+  },
+  {
+    "design": [
+      "context",
+      64,
+      0.35
+    ],
+    "settings": {
+      "credit": 0.65,
+      "invalid_weight": 1.5,
+      "harm_weight": 1.6
+    },
+    "direct": false,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 248.3388888888889,
+      "tokens_saved": 6.25,
+      "queries": 11,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6730263157894737,
+      "accuracy_gain": 0.001973684210526316,
+      "tokens": 258.6296052631579,
+      "tokens_saved": 7.626315789473685,
+      "queries": 110,
+      "actual_fixes_queried": 34,
+      "successful_fixes": 34,
+      "regressions": 3
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6633333333333333,
+      "accuracy_gain": 0.01,
+      "tokens": 258.19,
+      "tokens_saved": 7.476666666666667,
+      "queries": 25,
+      "actual_fixes_queried": 9,
+      "successful_fixes": 9,
+      "regressions": 2
+    }
+  },
+  {
+    "design": [
+      "linear",
+      64,
+      0.35
+    ],
+    "settings": {
+      "credit": 0.75,
+      "invalid_weight": 0.9,
+      "harm_weight": 1
+    },
+    "direct": false,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 249.65555555555557,
+      "tokens_saved": 4.933333333333334,
+      "queries": 14,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6730263157894737,
+      "accuracy_gain": 0.001973684210526316,
+      "tokens": 260.5026315789474,
+      "tokens_saved": 5.753289473684211,
+      "queries": 136,
+      "actual_fixes_queried": 33,
+      "successful_fixes": 33,
+      "regressions": 2
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.66,
+      "accuracy_gain": 0.006666666666666667,
+      "tokens": 260.08,
+      "tokens_saved": 5.586666666666667,
+      "queries": 28,
+      "actual_fixes_queried": 8,
+      "successful_fixes": 8,
+      "regressions": 2
+    }
+  },
+  {
+    "design": [
+      "linear",
+      64,
+      0.35
+    ],
+    "settings": {
+      "credit": 0.75,
+      "invalid_weight": 0.9,
+      "harm_weight": 1
+    },
+    "direct": true,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 249.65555555555557,
+      "tokens_saved": 4.933333333333334,
+      "queries": 14,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6730263157894737,
+      "accuracy_gain": 0.001973684210526316,
+      "tokens": 260.59013157894736,
+      "tokens_saved": 5.66578947368421,
+      "queries": 130,
+      "actual_fixes_queried": 33,
+      "successful_fixes": 33,
+      "regressions": 2
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6666666666666666,
+      "accuracy_gain": 0.013333333333333334,
+      "tokens": 260.0966666666667,
+      "tokens_saved": 5.57,
+      "queries": 27,
+      "actual_fixes_queried": 9,
+      "successful_fixes": 9,
+      "regressions": 1
+    }
+  },
+  {
+    "design": [
+      "linear",
+      64,
+      0.35
+    ],
+    "settings": {
+      "credit": 0.75,
+      "invalid_weight": 0.9,
+      "harm_weight": 1.6
+    },
+    "direct": false,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 249.65555555555557,
+      "tokens_saved": 4.933333333333334,
+      "queries": 14,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6717105263157894,
+      "accuracy_gain": 0.0006578947368421052,
+      "tokens": 260.57894736842104,
+      "tokens_saved": 5.676973684210527,
+      "queries": 132,
+      "actual_fixes_queried": 31,
+      "successful_fixes": 31,
+      "regressions": 2
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6566666666666666,
+      "accuracy_gain": 0.0033333333333333335,
+      "tokens": 260.1,
+      "tokens_saved": 5.566666666666666,
+      "queries": 28,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 2
+    }
+  },
+  {
+    "design": [
+      "linear",
+      64,
+      0.44
+    ],
+    "settings": {
+      "credit": 0.75,
+      "invalid_weight": 0.9,
+      "harm_weight": 1
+    },
+    "direct": true,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 249.65555555555557,
+      "tokens_saved": 4.933333333333334,
+      "queries": 14,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6723684210526316,
+      "accuracy_gain": 0.0013157894736842105,
+      "tokens": 260.5671052631579,
+      "tokens_saved": 5.688815789473685,
+      "queries": 131,
+      "actual_fixes_queried": 32,
+      "successful_fixes": 32,
+      "regressions": 2
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6666666666666666,
+      "accuracy_gain": 0.013333333333333334,
+      "tokens": 260.05333333333334,
+      "tokens_saved": 5.613333333333333,
+      "queries": 27,
+      "actual_fixes_queried": 9,
+      "successful_fixes": 9,
+      "regressions": 1
+    }
+  },
+  {
+    "design": [
+      "linear",
+      20,
+      0.35
+    ],
+    "settings": {
+      "credit": 0.75,
+      "invalid_weight": 0.9,
+      "harm_weight": 1
+    },
+    "direct": true,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 249.71666666666667,
+      "tokens_saved": 4.872222222222222,
+      "queries": 13,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6723684210526316,
+      "accuracy_gain": 0.0013157894736842105,
+      "tokens": 260.475,
+      "tokens_saved": 5.780921052631579,
+      "queries": 130,
+      "actual_fixes_queried": 34,
+      "successful_fixes": 34,
+      "regressions": 4
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6666666666666666,
+      "accuracy_gain": 0.013333333333333334,
+      "tokens": 259.97333333333336,
+      "tokens_saved": 5.693333333333333,
+      "queries": 28,
+      "actual_fixes_queried": 10,
+      "successful_fixes": 10,
+      "regressions": 2
+    }
+  },
+  {
+    "design": [
+      "linear",
+      20,
+      0.35
+    ],
+    "settings": {
+      "credit": 0.75,
+      "invalid_weight": 0.9,
+      "harm_weight": 1.6
+    },
+    "direct": false,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 249.71666666666667,
+      "tokens_saved": 4.872222222222222,
+      "queries": 13,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6730263157894737,
+      "accuracy_gain": 0.001973684210526316,
+      "tokens": 260.52763157894736,
+      "tokens_saved": 5.72828947368421,
+      "queries": 128,
+      "actual_fixes_queried": 33,
+      "successful_fixes": 33,
+      "regressions": 2
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6666666666666666,
+      "accuracy_gain": 0.013333333333333334,
+      "tokens": 259.88666666666666,
+      "tokens_saved": 5.78,
+      "queries": 28,
+      "actual_fixes_queried": 10,
+      "successful_fixes": 10,
+      "regressions": 2
+    }
+  },
+  {
+    "design": [
+      "linear",
+      20,
+      0.35
+    ],
+    "settings": {
+      "credit": 0.75,
+      "invalid_weight": 0.9,
+      "harm_weight": 1.6
+    },
+    "direct": true,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 249.71666666666667,
+      "tokens_saved": 4.872222222222222,
+      "queries": 13,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6730263157894737,
+      "accuracy_gain": 0.001973684210526316,
+      "tokens": 260.57105263157894,
+      "tokens_saved": 5.684868421052632,
+      "queries": 125,
+      "actual_fixes_queried": 33,
+      "successful_fixes": 33,
+      "regressions": 2
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.67,
+      "accuracy_gain": 0.016666666666666666,
+      "tokens": 259.9633333333333,
+      "tokens_saved": 5.703333333333333,
+      "queries": 28,
+      "actual_fixes_queried": 10,
+      "successful_fixes": 10,
+      "regressions": 1
+    }
+  },
+  {
+    "design": [
+      "context",
+      64,
+      0.66
+    ],
+    "settings": {
+      "credit": 0.75,
+      "invalid_weight": 0.9,
+      "harm_weight": 1
+    },
+    "direct": false,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 249.7888888888889,
+      "tokens_saved": 4.8,
+      "queries": 13,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6743421052631579,
+      "accuracy_gain": 0.003289473684210526,
+      "tokens": 260.6065789473684,
+      "tokens_saved": 5.649342105263158,
+      "queries": 124,
+      "actual_fixes_queried": 36,
+      "successful_fixes": 35,
+      "regressions": 2
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6666666666666666,
+      "accuracy_gain": 0.013333333333333334,
+      "tokens": 260.06666666666666,
+      "tokens_saved": 5.6,
+      "queries": 28,
+      "actual_fixes_queried": 10,
+      "successful_fixes": 10,
+      "regressions": 2
+    }
+  },
+  {
+    "design": [
+      "context",
+      64,
+      0.35
+    ],
+    "settings": {
+      "credit": 0.75,
+      "invalid_weight": 0.9,
+      "harm_weight": 1.6
+    },
+    "direct": true,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 249.91666666666666,
+      "tokens_saved": 4.6722222222222225,
+      "queries": 13,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6730263157894737,
+      "accuracy_gain": 0.001973684210526316,
+      "tokens": 260.55394736842106,
+      "tokens_saved": 5.701973684210526,
+      "queries": 128,
+      "actual_fixes_queried": 35,
+      "successful_fixes": 35,
+      "regressions": 4
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6666666666666666,
+      "accuracy_gain": 0.013333333333333334,
+      "tokens": 259.95666666666665,
+      "tokens_saved": 5.71,
+      "queries": 28,
+      "actual_fixes_queried": 9,
+      "successful_fixes": 9,
+      "regressions": 1
+    }
+  },
+  {
+    "design": [
+      "context",
+      64,
+      0.57
+    ],
+    "settings": {
+      "credit": 0.75,
+      "invalid_weight": 0.9,
+      "harm_weight": 1
+    },
+    "direct": false,
+    "dev": {
+      "n": 180,
+      "accuracy": 0.6944444444444444,
+      "accuracy_gain": 0.022222222222222223,
+      "tokens": 249.91666666666666,
+      "tokens_saved": 4.6722222222222225,
+      "queries": 13,
+      "actual_fixes_queried": 7,
+      "successful_fixes": 7,
+      "regressions": 0
+    },
+    "archive_out_of_fold": {
+      "n": 1520,
+      "accuracy": 0.6743421052631579,
+      "accuracy_gain": 0.003289473684210526,
+      "tokens": 260.4848684210526,
+      "tokens_saved": 5.771052631578947,
+      "queries": 133,
+      "actual_fixes_queried": 37,
+      "successful_fixes": 37,
+      "regressions": 4
+    },
+    "completed_out_of_fold": {
+      "n": 300,
+      "accuracy": 0.6633333333333333,
+      "accuracy_gain": 0.01,
+      "tokens": 260.00333333333333,
+      "tokens_saved": 5.663333333333333,
+      "queries": 28,
+      "actual_fixes_queried": 9,
+      "successful_fixes": 9,
+      "regressions": 2
+    }
+  }
+]

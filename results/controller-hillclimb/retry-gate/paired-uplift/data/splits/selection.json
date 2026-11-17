@@ -1,0 +1,40 @@
+{
+  "seed": 2026111703,
+  "source_sha256": {
+    "math_train": "6146bca074f4c6c5e07de7e96cc968adab3833dbdafeda21830f27558eea3d9b",
+    "math_test": "45965b000311d1550e5619b60b5bf31cf76edebfd8b8eddc62a876fbf8c9be95",
+    "science": "0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8"
+  },
+  "splits": {
+    "test": {
+      "n": 300,
+      "subjects": {
+        "math": 150,
+        "chemistry": 50,
+        "biology": 50,
+        "physics": 50
+      },
+      "sha256": "91aa43c55a1fe8306e3ac87c0fb3cde7b5fda23cf81bf255f73ff888792bb29d"
+    },
+    "dev": {
+      "n": 120,
+      "subjects": {
+        "math": 60,
+        "biology": 20,
+        "physics": 20,
+        "chemistry": 20
+      },
+      "sha256": "4e607b29635720d8373330013d3f5b0664101d3571b053af9b636cb95bdf6b98"
+    },
+    "train": {
+      "n": 480,
+      "subjects": {
+        "math": 240,
+        "physics": 80,
+        "biology": 80,
+        "chemistry": 80
+      },
+      "sha256": "d39c9711fe171d39711a0823b5f942e53f57d4dbfe940eb004592d58c38f7a70"
+    }
+  }
+}

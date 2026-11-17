@@ -1,0 +1,7 @@
+{
+  "frozen_sha256": "cd1f8abbd4b4258c9ba9c6934df0d010f92efbc671e280fd499ad15b108ac365",
+  "test_trees_sha256": "629ada5e08962d095785a20ee26f1f2c730e70e4b1bfa3dc92280f8e6f40ab7c",
+  "test_signals_sha256": {
+    "4b": "33b18490b1a4bc26bd888f4358cd295ad6acb8650695393e5256386848dee07c"
+  }
+}
