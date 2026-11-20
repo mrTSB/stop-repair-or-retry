@@ -1,0 +1,100 @@
+{
+  "evaluation": "post-score descriptive analysis; no further policy selection",
+  "by_subject": {
+    "math": {
+      "Repair twice": {
+        "n": 400,
+        "correct": 357,
+        "accuracy": 0.8925,
+        "mean_compute": 1075.0582524271845
+      },
+      "A": {
+        "n": 400,
+        "correct": 357,
+        "accuracy": 0.8925,
+        "mean_compute": 627.0776699029127
+      },
+      "B": {
+        "n": 400,
+        "correct": 377,
+        "accuracy": 0.9425,
+        "mean_compute": 832.4320388349515
+      },
+      "C": {
+        "n": 400,
+        "correct": 372,
+        "accuracy": 0.93,
+        "mean_compute": 756.5275080906149
+      }
+    },
+    "chemistry": {
+      "Repair twice": {
+        "n": 200,
+        "correct": 96,
+        "accuracy": 0.48,
+        "mean_compute": 2168.9838187702267
+      },
+      "A": {
+        "n": 200,
+        "correct": 98,
+        "accuracy": 0.49,
+        "mean_compute": 1859.4498381877024
+      },
+      "B": {
+        "n": 200,
+        "correct": 142,
+        "accuracy": 0.71,
+        "mean_compute": 2375.186084142395
+      },
+      "C": {
+        "n": 200,
+        "correct": 136,
+        "accuracy": 0.68,
+        "mean_compute": 2127.1003236245956
+      }
+    },
+    "physics": {
+      "Repair twice": {
+        "n": 200,
+        "correct": 111,
+        "accuracy": 0.555,
+        "mean_compute": 1836.2912621359224
+      },
+      "A": {
+        "n": 200,
+        "correct": 123,
+        "accuracy": 0.615,
+        "mean_compute": 1404.1747572815534
+      },
+      "B": {
+        "n": 200,
+        "correct": 163,
+        "accuracy": 0.815,
+        "mean_compute": 1783.3155339805826
+      },
+      "C": {
+        "n": 200,
+        "correct": 157,
+        "accuracy": 0.785,
+        "mean_compute": 1596.1294498381876
+      }
+    }
+  },
+  "C_correct_B_wrong": 5,
+  "B_correct_C_wrong": 22,
+  "B_only_success_C_actions": {
+    "('retry', ())": 3,
+    "('retry/repair', ('',))": 6,
+    "('retry', ('retry',))": 3,
+    "('guided/repair', ('',))": 6,
+    "('guided/retry', ('',))": 1,
+    "('guided/repair', ('', 'guided'))": 1,
+    "('retry/retry', ('',))": 1,
+    "('retry/retry', ('', 'retry'))": 1
+  },
+  "C_only_success_C_actions": {
+    "('', ('',))": 1,
+    "('guided/repair', ('',))": 2,
+    "('retry', ('retry',))": 2
+  }
+}

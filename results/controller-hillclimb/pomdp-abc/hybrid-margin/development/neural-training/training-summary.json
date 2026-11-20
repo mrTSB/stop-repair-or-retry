@@ -1,0 +1,9 @@
+{
+  "examples": 9408,
+  "questions": 672,
+  "question_grouped_folds": 3,
+  "oof_binary_accuracy_valid": 0.8449851778656127,
+  "oof_brier_valid": 0.12062689150716548,
+  "parameters": 22776324,
+  "fresh_holdout_used": false
+}

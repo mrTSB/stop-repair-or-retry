@@ -1,0 +1,9 @@
+{
+  "data_sha256": "e127ceae69768b76c61bc300f61a685f9735799ba9a36876f82f40a6d0b8b3f4",
+  "model_source_sha256": "f17fdd23759f48a4589da03c698989b6eee5090a0a75141e620300410d4c2bcb",
+  "questions_sha256": "ca132b6399d372044d6089db8c023733499774d101965cd98b5b92a8d422ca97",
+  "stage_review": true,
+  "late_feedback": false,
+  "numpy": "2.5.4",
+  "scikit_learn": "1.8.0"
+}

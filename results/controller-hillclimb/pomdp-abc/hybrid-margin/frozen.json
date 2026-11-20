@@ -1,0 +1,215 @@
+{
+  "selected": {
+    "A": {
+      "family": "A",
+      "model": "leaf32-smooth32-late1",
+      "settings": {
+        "penalty": 0.0,
+        "science_weight": 0.7,
+        "reuse_review": true,
+        "late_feedback": true
+      },
+      "dev": {
+        "n": 240,
+        "correct": 183,
+        "accuracy": 0.7625,
+        "mean_compute": 1109.940668824164,
+        "mean_solver_tokens": 857.4291666666667,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.404166666666667,
+        "mean_total_parameter_compute": 1109.940668824164
+      },
+      "probe": "runs/controller-hillclimb/pomdp-abc/hybrid-margin/late-routing-probe",
+      "protocol": "late"
+    },
+    "B": {
+      "family": "B",
+      "model": null,
+      "settings": {
+        "judge_stop": "agreement",
+        "reuse_review": true
+      },
+      "dev": {
+        "n": 240,
+        "correct": 198,
+        "accuracy": 0.825,
+        "mean_compute": 1503.089266450917,
+        "mean_solver_tokens": 636.1083333333333,
+        "mean_judge_tokens": 700.0375,
+        "mean_judge_calls": 1.1208333333333333,
+        "mean_solver_calls": 1.5416666666666667,
+        "mean_total_parameter_compute": 8752.668554476808
+      },
+      "probe": "runs/controller-hillclimb/pomdp-abc/hybrid-margin/late-routing-probe",
+      "protocol": "late"
+    },
+    "C": {
+      "family": "C",
+      "model": "leaf32-smooth32-late0",
+      "settings": {
+        "penalty": 0.06,
+        "science_weight": 0.7,
+        "reuse_review": true,
+        "late_feedback": false,
+        "contextual_transitions": true,
+        "context_weight": 0.7,
+        "threshold": 0.03,
+        "plan_reviews": false
+      },
+      "dev": {
+        "n": 240,
+        "correct": 200,
+        "accuracy": 0.8333333333333334,
+        "mean_compute": 1347.4689859762677,
+        "mean_solver_tokens": 661.0416666666666,
+        "mean_judge_tokens": 506.50416666666666,
+        "mean_judge_calls": 0.7833333333333333,
+        "mean_solver_calls": 1.8208333333333333,
+        "mean_total_parameter_compute": 6592.819579288026
+      },
+      "probe": "runs/controller-hillclimb/pomdp-abc/hybrid-margin/contextual-probe",
+      "protocol": "original"
+    }
+  },
+  "models": {
+    "A": {
+      "file": "models/A.pkl",
+      "sha256": "591252cd74866ae17f5b9dc1cf561e146022d8f5a13e9a6c1b74bf1bf58608fe",
+      "probe_model_sha256": "a69c4dfa939b90152068783af9237e8d68a84f18c42085db870d129804b5af0e"
+    },
+    "C": {
+      "file": "models/C.pkl",
+      "sha256": "0add3bc332d93d8385f21f5fc3301fb684278796f620da32c0cc617f136a5a8e",
+      "probe_model_sha256": "2a291fe3546799e01970f94462f0c012fb8e100481a2fc338a3dead49f9ef544"
+    }
+  },
+  "evidence": {
+    "code/experiments/controller-hillclimb/cascade.py": "f86085e3d1d93a927f23695c20aad4ac5e9d9ed162983cf7d802feab9b951505",
+    "code/experiments/controller-hillclimb/collect.py": "b00b8586c3cacc7fc70a927bd2f48d4972676ea84b6cca94aebb03d1a678c1a2",
+    "code/experiments/controller-hillclimb/compact.py": "df664ac74b9561b5be5e3b23c6b9f2c1a9aa6fe4a635a6b951ee4b409b2dc27b",
+    "code/experiments/controller-hillclimb/hillclimb.py": "fbe68f11fa1ea635eb22f440ffb26fd9eef0acedc400060eec3b0c2dab81002a",
+    "code/experiments/controller-hillclimb/observations.py": "cf38cd588ae71f5a3ef41869db865b6aa027f737ae92737d829e4977978cf9d3",
+    "code/experiments/controller-hillclimb/planner.py": "afc74facd21bca29f1ed671abadce36f73d005ffc60c0e99e2ef93c3a5f9aeaa",
+    "code/experiments/controller-hillclimb/pomdp-abc/acquire.py": "5c7f270df30ff6418edd92cd88cd4abcb93cf5f9a4ac37379997b9405d18cda9",
+    "code/experiments/controller-hillclimb/pomdp-abc/belief.py": "2c47ce11804173d115029a9f89804223ed7c538fdee82ccfe936a42c12381588",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/audit.py": "63648fcdf5a4cce9b82149afc4a7dd947517592b293b4e0a28283d3d3997bb37",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/context_pomdp.py": "f1a46f106cc363f0545af260ec0d9de5791a58b7c8f47778f06b5f8a4925aa9c",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/extended_acquire.py": "2a67ac22a015017fad53f463c94510d3f42b0a15c347dfdaaf485ccc39501a0a",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/extended_study.py": "ab8f5b65015b99b0f68ff5124b85e66199fcd68fa7a7ec645941a7fba447843e",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/guided_solver.py": "2bc5ed5b90ba47344b8b7da91b787e1eb4907653476772da023b2f9a9517f0e9",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/modal_ollama.py": "e0c42359a89109ffcd961d98535f0ec806393c7fafed6058098a9c82453049a9",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/pack.py": "a769bb926f1679aa07629561457d3893b80ee90de7d3f215d2d1a58e3c5061af",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/review_pilot.py": "1e4b7330618f087d4bdf5c69a5869ef72131254bdf4747328003e665d40719cc",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/test_context_pomdp.py": "420cc537d79e53affa195cf6ed7c67bd31a06127ec47e09e51ecc09ee7040de7",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/calibration_probe.py": "32d2973e7d65ac74a845682d2b8b01b313ae05220e2b5e71ba52ac1fe93f69b3",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/complete_pairs.py": "8824ae66c7e8b704c07d040a10d57fdad0ac0c15e91cee3262ee89c7013ae3da",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/context_probe.py": "c96c48b43adfc9b2bbc45a65003f5946c376ca6e13c407fec0e8072dfc84323f",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/contextual_pomdp.py": "d7be8cde5208dd3284165cbd40e021d47ae0cf319d389d6d20639ee8b579ab96",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/difficulty_pomdp.py": "f17fdd23759f48a4589da03c698989b6eee5090a0a75141e620300410d4c2bcb",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/fresh_collect.py": "f8e715a4bd3996ff1d78599002ce405a24376cd4af52869eef33a8a050e607b5",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/fresh_study.py": "a6c0a027bbc9a46968b4afc78f7c67ac645297e38c00cb3e142d23024f116516",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/late_pairs.py": "b58fb2bedfe05c164ad9b96b199d28235c7b6bd30f6950db76afff1e97d69387",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/margin_audit.py": "1924b97cd28d3a687b2df4aba6bdbd0d67395501f207c508a89fd9183d38d173",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/margin_data.py": "5fc53b8febe04f6488772ef1690b80968628e5802fac663937781f68f15cfbd7",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/modal_worker.py": "010865fea8489f5ffeb79becdd092a4f93acd8cc965e923bba5110d3ffc86635",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/neural_pomdp.py": "413768200040f9cf81581392424c34029de268ec222e049efe473f4c7425be0f",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/neural_probe.py": "94fd067275fec5c267829443bb0f8fae9aa8da7d0bf3f0dbc1836ca05578ff8a",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/neural_verifier.py": "c4cd47b8083c0e651617206a01587aa9d4cfbcc2870e6832540d7ee6e0279313",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/pack_results.py": "7fd594980300ebb7381243b857e6f25ddb42c3a3766b72357667fe5d230e9a70",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/review_calibration.py": "9a552ca5d8e18b425e4db7105102d0f99d4524309eb1b50ed71045366dba5b05",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/review_fields.py": "0146c920093b9b7f491d67a76f93a7ad24a843c33f818ca929a7a484c7414793",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/review_pilot.py": "5f1da0f4e5686caf809c09d89443e92279d4d5d2fdeb00e70d5daa3e42dea2d4",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/routing_probe.py": "1508f1e14db463bc1a8bf1ee63606541099d39a0af0f91e258bd1be4b2b123ec",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/study_common.py": "a4d6039fef613db997839d400a0457de0336edf09a328e7298f5da8159d4f57c",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/test_difficulty_pomdp.py": "2cdb1bcb94f028f78f390a4b18af8c7e0dbfe38d7d294a6b8e0110d8c94cff92",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/test_late_pairs.py": "a9b1c659768a158dcb71f00b3ae691c30225d3794f5320d35ccaf899262fe56b",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/test_margin_statistics.py": "ecc4916ff681ccbeb9578e061ed6933b9ae468c5bd5c62897ddaa4849d732424",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/test_review_calibration.py": "8efe330ce59a380e1aa33ab22d4df9627031096cb23bde60d7c14bfc0172ade6",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/test_review_fields.py": "1510ee77fd380c3f7a54b3c1c1edbc2fe8331b8422aeca05abea804a0af183f5",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/test_transport.py": "e751b130ff73e0975663db889fe236f596fd19a822c37357f04aa79002d304f5",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/train_verifier.py": "b5e029d976973246a4ecc91036d5b5839bcf27d167c5bfdd721dd34dc06a7d3f",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/transport.py": "2aaa91cfe8e18af245e371330aa1d175cecf0a7ebaccefe82572450384472341",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/verify_development.py": "79019b8d51c81d14db3a397acfdf8708f7c676074e048a5b49fe9cd0cd03db23",
+    "code/experiments/controller-hillclimb/pomdp-abc/study.py": "231da6ed9ba48635bc8b207b56c987450f9caf804caa364c573257067cd7fc18",
+    "code/experiments/controller-hillclimb/pomdp-abc/test_belief.py": "2b98b74617d2ebf8d30d6e3506eb125777ab48b7c5b352a73581905623d6c2d6",
+    "code/experiments/controller-hillclimb/retry-gate/choice_retry.py": "361e648baf93269f9e481060d7497e965ec95cbff6e695872251e590caab9057",
+    "code/experiments/controller-hillclimb/retry-gate/collect_pairs.py": "2bc008fc7d631bd78f2197fd2de8eb539213fd0cf47603636262340718850791",
+    "code/experiments/controller-hillclimb/retry-gate/evaluate.py": "4aa16dfc91d45b952c535cbc4367a03b7090c6e0d94ce6c870cb317ec7f7e181",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/data.py": "708c16ad9f65b72c8f53a47436c901d5e68056911e6c3d072d9dc580d97bac6b",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/experiment.py": "ecd831d88bcfefa17c17352a3f6fc4f9cb8a58097bf8fa69fc77c76cb9098d86",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/features.py": "7049ff318734cb544d52593f4ea90d832e1768d2b21bfad8aeac2f1f31b05c2f",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/gate.py": "491c979ce4228d860ffd8ced1ec451da73f84219080704276d2dc4aaa87e03af",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/arithmetic.py": "0eae768cf952c580e72cbc93eb8bf3fd4d4502caf681235219bb033bd3567f2b",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/margin_model.py": "775dff9ba79a247a173034bf0f293d51759f61f47984a975f428b32ed5b23dab",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/margin_study.py": "a28b033beed8678920146c3d372740b36b34c9f50171d5255cacc1d201b47a35",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/study_data.py": "7917177651685c9488b86cf88a255375b5761587211dc9145676e48bf115b3ad",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/test_margin_gate.py": "afc2cef439a57c073ada563e96b62a5f23e73080de475bc6fe9284e54d700108",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/tight-budget/arithmetic_check.py": "3fb5cacd50c8af54a7bc9825199a1f459e10812916ca5412bb565b0d2379f88c",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/tight-budget/study.py": "0868b13c42c6dc1b277bf629425b236c60e3f6d578d082d66614ddf577384205",
+    "code/experiments/controller-hillclimb/retry-gate/policy.py": "934ddf70ee0e9efc7013cb1537d732b725ec7e60701b54c33cfe7962019fbb1a",
+    "code/experiments/controller-hillclimb/retry-gate/signals.py": "68efe57857af9da612844ee660fcd6b93693622f92657d31f355a00a7185469a",
+    "code/experiments/controller-hillclimb/retry-gate/token-confidence/pilot.py": "33f2f46b29a82cc94c97fd9ddefb90fdbd4ed93744f1ca6bf5c09d84cbc30673",
+    "code/experiments/controller-hillclimb/retry-gate/token-confidence/probe.py": "2272399c9473d177c59cb56a6d45fa42960ca1be882382012c7b167ffd00f37c",
+    "splits/dev-questions.jsonl": "123e972b16524067732c78c97e366d3b6d4a39b73eba8fe877a5224947c3f789",
+    "splits/selection.json": "d8b48f16f0f5e1441910cc890677ce6ae4c87f6446d9a3bb35d0bfea41c65c76",
+    "splits/test-questions.jsonl": "a007da94bdb3d3197c70017791a3f4c572d42d7f41b625045b179fad4b782d3e",
+    "splits/train-questions.jsonl": "ca132b6399d372044d6089db8c023733499774d101965cd98b5b92a8d422ca97",
+    "provenance/historical-exclusions.json": "bc2d76feca2eb0e6c9de9681de7adfc371d9d6229fe76934bdd505671d369db3",
+    "data/train-observations.jsonl": "e127ceae69768b76c61bc300f61a685f9735799ba9a36876f82f40a6d0b8b3f4",
+    "data/train-late-observations.jsonl": "f54a2bedc4a427e5323f1f55d12e684b800f4f44e2339c7e3d8ed78329f07862",
+    "data/train-neural-observations.jsonl": "7ce9b45d74f1d35027d3ce186ce03227e2b05cbc4c8f383693c9b93a75065c53",
+    "data/dev-observations.jsonl": "25161dbceeaa1b72c298f0dc618a8139d0c579d987bacc0380830ee3bd7e9790",
+    "data/dev-late-observations.jsonl": "4c4eebc0fc6ed37765dce42e80f8b65b139c6c2da93409816767d2f68701a94c"
+  },
+  "observer_assets": {},
+  "baselines": {
+    "Stop": [
+      "stop",
+      0
+    ],
+    "Repair once": [
+      "repair",
+      1
+    ],
+    "Repair twice": [
+      "repair",
+      2
+    ],
+    "Retry once": [
+      "retry",
+      1
+    ],
+    "Retry twice": [
+      "retry",
+      2
+    ]
+  },
+  "test_questions": 800,
+  "train_questions": 672,
+  "dev_questions": 240,
+  "targets": {
+    "interpretation": "percentage points",
+    "A_B_above_highest_baseline": 0.1,
+    "C_above_highest_A_B": 0.1,
+    "C_stretch_above_highest_A_B": 0.15,
+    "C_compute_below_B": true,
+    "clear_C_B_accuracy_and_compute_ci95": true
+  },
+  "development_validation_lead": 0.0,
+  "development_targets": {
+    "A_plus_10_points": false,
+    "B_plus_10_points": false,
+    "C_plus_10_points": false
+  },
+  "validation_context": "Validate the best available development-selected policies once on all 800 questions. Lowering the optional development lead guard does not lower any final target or turn a missed target into a success.",
+  "selection": "A and B independently maximize development accuracy, then minimize compute. C maximizes development accuracy among hybrids cheaper than the strongest selected B.",
+  "roles": {
+    "A": "Four-state POMDP; no LLM reviewer acquired.",
+    "B": "LLM policy; no POMDP supplied.",
+    "C": "POMDP plus acquired LLM observations and finite-horizon review planning."
+  },
+  "budget": "Same frozen compact solver, original initial prompt/cap, at most two additional solver calls, and at most one review at each decision checkpoint.",
+  "compute": "Full input/output tokens: (4*solver + 3*reviewer + verifier_parameter_billions*verifier_padded_token_slots)/3.09. Proxy only; also report raw tokens, calls, and total-parameter sensitivity.",
+  "bootstrap": "5000 paired subject-stratified resamples; highest baseline/controller recomputed within each resample."
+}

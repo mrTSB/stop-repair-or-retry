@@ -1,0 +1,19 @@
+{
+  "base_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "examples_sha256": "8ce33400a95831c4be2b27ef72309eea2884f44c70fc882423d15627df67c2a2",
+  "epochs": 2,
+  "folds": 3,
+  "max_length": 384,
+  "batch": 16,
+  "encoder_lr": 2e-05,
+  "head_lr": 0.0003,
+  "seed": 2026112013,
+  "train_questions": 672,
+  "source_sha256": "b5e029d976973246a4ecc91036d5b5839bcf27d167c5bfdd721dd34dc06a7d3f",
+  "network_source_sha256": "c4cd47b8083c0e651617206a01587aa9d4cfbcc2870e6832540d7ee6e0279313",
+  "fold": 0,
+  "numeric_width": 98,
+  "parameters": 22776324,
+  "weights_sha256": "afdf15d6260916fd4dc22c38e8ef20c6250287ceaf30bc725e59549bbceceb43"
+}

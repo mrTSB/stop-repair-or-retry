@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "frozen_python_source_unchanged": true,
+  "freeze_sha256": "3106a1b55ddb94a8b8bc03e949e9d9fb540ab6fd7386a43e72882c5c7eceef4c",
+  "byte_identical_result_files": {
+    "test/summary.json": "3c9cf8f80e2f88304996869c4bf40d7f74dddebaf9b9ad800ef4035952e9db5e",
+    "test/per_question.jsonl": "beff2891b22574122faba7ad0fe80faa51d08885ab1af7e2363bd9329a6583d5"
+  },
+  "independent_refit_receipt_identical": true,
+  "compressed_audit_identical": true,
+  "unit_tests": 29,
+  "development_refitted_outcomes": 480,
+  "development_blind_paid_replays": 720,
+  "fresh_outcome_charge_checks": 6400,
+  "fresh_blind_paid_replays": 4800,
+  "gpu_app_stopped": true,
+  "running_gpu_containers": 0
+}

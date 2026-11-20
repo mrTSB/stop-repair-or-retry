@@ -1,0 +1,163 @@
+{
+  "methods": {
+    "Stop": {
+      "n": 800,
+      "correct": 486,
+      "accuracy": 0.6075,
+      "mean_compute": 332.1343042071197,
+      "mean_solver_tokens": 256.57375,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 1.0,
+      "mean_total_parameter_compute": 332.1343042071197,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Repair once": {
+      "n": 800,
+      "correct": 550,
+      "accuracy": 0.6875,
+      "mean_compute": 884.6440129449838,
+      "mean_solver_tokens": 683.3875,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_total_parameter_compute": 884.6440129449838,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Repair twice": {
+      "n": 800,
+      "correct": 564,
+      "accuracy": 0.705,
+      "mean_compute": 1538.8478964401295,
+      "mean_solver_tokens": 1188.76,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_total_parameter_compute": 1538.8478964401295,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Retry once": {
+      "n": 800,
+      "correct": 526,
+      "accuracy": 0.6575,
+      "mean_compute": 786.831715210356,
+      "mean_solver_tokens": 607.8275,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_total_parameter_compute": 786.831715210356,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Retry twice": {
+      "n": 800,
+      "correct": 521,
+      "accuracy": 0.65125,
+      "mean_compute": 1241.6650485436894,
+      "mean_solver_tokens": 959.18625,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_total_parameter_compute": 1241.6650485436894,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "A": {
+      "n": 800,
+      "correct": 578,
+      "accuracy": 0.7225,
+      "mean_compute": 1129.4449838187702,
+      "mean_solver_tokens": 872.49625,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 2.3675,
+      "mean_total_parameter_compute": 1129.4449838187702,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "B": {
+      "n": 800,
+      "correct": 682,
+      "accuracy": 0.8525,
+      "mean_compute": 1455.84142394822,
+      "mean_solver_tokens": 601.8425,
+      "mean_judge_tokens": 697.06,
+      "mean_judge_calls": 1.1,
+      "mean_solver_calls": 1.46375,
+      "mean_total_parameter_compute": 8674.5857605178,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "C": {
+      "n": 800,
+      "correct": 665,
+      "accuracy": 0.83125,
+      "mean_compute": 1309.0711974110031,
+      "mean_solver_tokens": 634.31125,
+      "mean_judge_tokens": 502.595,
+      "mean_judge_calls": 0.76,
+      "mean_solver_calls": 1.73,
+      "mean_total_parameter_compute": 6513.938511326863,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    }
+  },
+  "margins": {
+    "A_above_highest_baseline": {
+      "point": 0.01750000000000007,
+      "ci95": [
+        -0.0024999999999999467,
+        0.03749999999999998
+      ]
+    },
+    "B_above_highest_baseline": {
+      "point": 0.14750000000000008,
+      "ci95": [
+        0.12125000000000008,
+        0.1725
+      ]
+    },
+    "C_above_highest_A_B": {
+      "point": -0.02124999999999999,
+      "ci95": [
+        -0.03375000000000006,
+        -0.008750000000000036
+      ]
+    },
+    "C_above_B": {
+      "point": -0.02124999999999999,
+      "ci95": [
+        -0.03375000000000006,
+        -0.008750000000000036
+      ]
+    },
+    "C_compute_saved_vs_B": {
+      "point": 146.7702265372168,
+      "ci95": [
+        116.16364279935294,
+        178.94791666666546
+      ]
+    }
+  },
+  "criteria": {
+    "A_plus_10_points": false,
+    "B_plus_10_points": true,
+    "C_plus_10_points": false,
+    "C_plus_15_points_stretch": false,
+    "C_accuracy_clearly_above_B": false,
+    "C_compute_clearly_below_B": true
+  },
+  "highest_baseline": "Repair twice",
+  "all_required_passed": false
+}

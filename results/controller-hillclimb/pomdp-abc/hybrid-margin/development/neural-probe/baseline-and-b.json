@@ -1,0 +1,96 @@
+{
+  "baselines": {
+    "Stop": {
+      "n": 240,
+      "correct": 132,
+      "accuracy": 0.55,
+      "mean_compute": 326.898597626753,
+      "mean_solver_tokens": 252.52916666666667,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 1.0,
+      "mean_total_parameter_compute": 326.898597626753,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Repair once": {
+      "n": 240,
+      "correct": 162,
+      "accuracy": 0.675,
+      "mean_compute": 864.7626752966559,
+      "mean_solver_tokens": 668.0291666666667,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_total_parameter_compute": 864.7626752966559,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Repair twice": {
+      "n": 240,
+      "correct": 179,
+      "accuracy": 0.7458333333333333,
+      "mean_compute": 1498.5544768069042,
+      "mean_solver_tokens": 1157.6333333333334,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_total_parameter_compute": 1498.5544768069042,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Retry once": {
+      "n": 240,
+      "correct": 159,
+      "accuracy": 0.6625,
+      "mean_compute": 772.8748651564185,
+      "mean_solver_tokens": 597.0458333333333,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_total_parameter_compute": 772.8748651564185,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Retry twice": {
+      "n": 240,
+      "correct": 167,
+      "accuracy": 0.6958333333333333,
+      "mean_compute": 1216.5480043149946,
+      "mean_solver_tokens": 939.7833333333333,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_total_parameter_compute": 1216.5480043149946,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    }
+  },
+  "B": {
+    "family": "B",
+    "model": null,
+    "settings": {
+      "judge_stop": "agreement",
+      "reuse_review": true
+    },
+    "dev": {
+      "n": 240,
+      "correct": 195,
+      "accuracy": 0.8125,
+      "mean_compute": 1466.1218985976268,
+      "mean_solver_tokens": 608.6666666666666,
+      "mean_judge_tokens": 698.55,
+      "mean_judge_calls": 1.1208333333333333,
+      "mean_solver_calls": 1.5375,
+      "mean_total_parameter_compute": 8700.296655879181,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    }
+  }
+}

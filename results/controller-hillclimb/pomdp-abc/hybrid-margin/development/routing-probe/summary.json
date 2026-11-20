@@ -1,0 +1,176 @@
+{
+  "selected": {
+    "A": {
+      "family": "A",
+      "model": "leaf32-smooth32-late0",
+      "settings": {
+        "penalty": 0.0,
+        "science_weight": 0.7,
+        "reuse_review": true,
+        "late_feedback": false
+      },
+      "dev": {
+        "n": 240,
+        "correct": 182,
+        "accuracy": 0.7583333333333333,
+        "mean_compute": 1123.7270765911542,
+        "mean_solver_tokens": 868.0791666666667,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.4208333333333334,
+        "mean_total_parameter_compute": 1123.7270765911542
+      }
+    },
+    "B": {
+      "family": "B",
+      "model": null,
+      "settings": {
+        "judge_stop": "agreement",
+        "reuse_review": true
+      },
+      "dev": {
+        "n": 240,
+        "correct": 195,
+        "accuracy": 0.8125,
+        "mean_compute": 1466.1218985976268,
+        "mean_solver_tokens": 608.6666666666666,
+        "mean_judge_tokens": 698.55,
+        "mean_judge_calls": 1.1208333333333333,
+        "mean_solver_calls": 1.5375,
+        "mean_total_parameter_compute": 8700.296655879181
+      }
+    },
+    "C": {
+      "family": "C",
+      "model": "leaf12-smooth32-late0",
+      "settings": {
+        "penalty": 0.0,
+        "science_weight": 0.7,
+        "reuse_review": false,
+        "late_feedback": false,
+        "threshold": 0.0,
+        "plan_reviews": false
+      },
+      "dev": {
+        "n": 240,
+        "correct": 198,
+        "accuracy": 0.825,
+        "mean_compute": 1738.0501618122978,
+        "mean_solver_tokens": 643.125,
+        "mean_judge_tokens": 932.6916666666667,
+        "mean_judge_calls": 1.4666666666666666,
+        "mean_solver_calls": 1.6375,
+        "mean_total_parameter_compute": 11396.992988133767
+      }
+    },
+    "C cheaper than B": {
+      "family": "C",
+      "model": "leaf32-smooth32-late0",
+      "settings": {
+        "penalty": 0.06,
+        "science_weight": 0.7,
+        "reuse_review": true,
+        "late_feedback": false,
+        "threshold": 0.0,
+        "plan_reviews": true
+      },
+      "dev": {
+        "n": 240,
+        "correct": 196,
+        "accuracy": 0.8166666666666667,
+        "mean_compute": 1360.292610571737,
+        "mean_solver_tokens": 610.7666666666667,
+        "mean_judge_tokens": 586.7458333333333,
+        "mean_judge_calls": 0.9791666666666666,
+        "mean_solver_calls": 1.6625,
+        "mean_total_parameter_compute": 7436.624865156419
+      }
+    }
+  },
+  "baselines": {
+    "Stop": {
+      "n": 240,
+      "correct": 132,
+      "accuracy": 0.55,
+      "mean_compute": 326.898597626753,
+      "mean_solver_tokens": 252.52916666666667,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 1.0,
+      "mean_total_parameter_compute": 326.898597626753
+    },
+    "Repair once": {
+      "n": 240,
+      "correct": 162,
+      "accuracy": 0.675,
+      "mean_compute": 864.7626752966559,
+      "mean_solver_tokens": 668.0291666666667,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_total_parameter_compute": 864.7626752966559
+    },
+    "Repair twice": {
+      "n": 240,
+      "correct": 179,
+      "accuracy": 0.7458333333333333,
+      "mean_compute": 1498.5544768069042,
+      "mean_solver_tokens": 1157.6333333333334,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_total_parameter_compute": 1498.5544768069042
+    },
+    "Retry once": {
+      "n": 240,
+      "correct": 159,
+      "accuracy": 0.6625,
+      "mean_compute": 772.8748651564185,
+      "mean_solver_tokens": 597.0458333333333,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_total_parameter_compute": 772.8748651564185
+    },
+    "Retry twice": {
+      "n": 240,
+      "correct": 167,
+      "accuracy": 0.6958333333333333,
+      "mean_compute": 1216.5480043149946,
+      "mean_solver_tokens": 939.7833333333333,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_total_parameter_compute": 1216.5480043149946
+    }
+  },
+  "targets_percentage_points": {
+    "A_B_minimum": 0.8458333333333333,
+    "C_minimum_if_A_B_qualify": 0.9458333333333333
+  },
+  "source_sha256": {
+    "routing_probe.py": "1508f1e14db463bc1a8bf1ee63606541099d39a0af0f91e258bd1be4b2b123ec",
+    "review_pilot.py": "5f1da0f4e5686caf809c09d89443e92279d4d5d2fdeb00e70d5daa3e42dea2d4",
+    "pack_results.py": "e7165bfa86573af642706c1703709a4ea8c558665d455e2a440c517929e941da",
+    "margin_data.py": "1b81e2725e92c2f9cf332baa875a5a75a3c2542838f4f142e5a098715ba5760e",
+    "late_pairs.py": "bbe4aa9e248658fae39c18f0c72a0e9fe218cdee7ec367f1284fd40d3f041875",
+    "transport.py": "2aaa91cfe8e18af245e371330aa1d175cecf0a7ebaccefe82572450384472341",
+    "fresh_study.py": "bdb565cca01b538fbb764ac5a0d72419a0fc5344e9100708f44f8614a9699994",
+    "test_review_fields.py": "1510ee77fd380c3f7a54b3c1c1edbc2fe8331b8422aeca05abea804a0af183f5",
+    "context_probe.py": "c96c48b43adfc9b2bbc45a65003f5946c376ca6e13c407fec0e8072dfc84323f",
+    "review_fields.py": "0146c920093b9b7f491d67a76f93a7ad24a843c33f818ca929a7a484c7414793",
+    "difficulty_pomdp.py": "56ff98c4f38d44c2573b1021413046630fc457fe3d21b038780515bb32941c27",
+    "modal_worker.py": "010865fea8489f5ffeb79becdd092a4f93acd8cc965e923bba5110d3ffc86635",
+    "test_transport.py": "e751b130ff73e0975663db889fe236f596fd19a822c37357f04aa79002d304f5",
+    "study_common.py": "812b8e4b690a670c03af57d0070a462712ba0d5673d193a6dd52e9f0aa8524dd",
+    "complete_pairs.py": "8824ae66c7e8b704c07d040a10d57fdad0ac0c15e91cee3262ee89c7013ae3da",
+    "test_difficulty_pomdp.py": "5d9989221bcf3940e4118f4aec8c06b1dd1e3842aa6f44b37c7573a0cf145ee7",
+    "test_margin_statistics.py": "ecc4916ff681ccbeb9578e061ed6933b9ae468c5bd5c62897ddaa4849d732424",
+    "fresh_collect.py": "6256be23a2e19d1f294cc67e4de90371366b6a7406736f9d8722ff88ac2444ed",
+    "test_late_pairs.py": "a9b1c659768a158dcb71f00b3ae691c30225d3794f5320d35ccaf899262fe56b",
+    "contextual_pomdp.py": "a4a6bc59e73d6ce61f4315b00c93e8c4cad1cc4532c04c5520ff11705157d833",
+    "margin_audit.py": "5dab20ab35a15c49a504a7a1daf77406222f4fec40f52454866cbd23a3fdda64"
+  },
+  "fresh_holdout_used": false,
+  "note": "Development-only architecture probe; not a final freeze or fresh result."
+}

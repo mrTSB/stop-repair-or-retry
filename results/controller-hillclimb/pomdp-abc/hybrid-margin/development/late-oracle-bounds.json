@@ -1,0 +1,15 @@
+{
+  "split": "development",
+  "n": 240,
+  "highest_fixed_correct": 179,
+  "A_B_required_correct": 203,
+  "oracle_correct": {
+    "plain_seven_paths": 204,
+    "all_thirteen_paths": 220
+  },
+  "fresh_holdout_used": false,
+  "limitation": "Perfect reference-aware routing upper bound on this cached bank only; does not bound all possible future prompts or generations.",
+  "minimum_C_required_correct_if_A_B_qualify": 227,
+  "C_required_correct_above_selected_development_B": 222,
+  "interpretation": "At the observed selected development B accuracy (198/240), C needs 222 correct for +10 points. If both A/B reach the baseline-plus10 requirement (203/240), C needs227. Both exceed the all13-path oracle220."
+}

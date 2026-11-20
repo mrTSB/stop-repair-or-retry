@@ -1,0 +1,75 @@
+{
+  "cohort": "96 training questions; not fresh evaluation",
+  "original_review": {
+    "correct": 84,
+    "mean_tokens": 607.1979166666666
+  },
+  "variants": {
+    "independent": {
+      "review": {
+        "correct": 83,
+        "mean_tokens": 603.1875,
+        "truncated": 8
+      },
+      "repair": {
+        "correct": 82,
+        "mean_tokens": 675.7604166666666,
+        "truncated": 8
+      },
+      "additional_prior_review_tokens": 0
+    },
+    "thorough": {
+      "review": {
+        "correct": 83,
+        "mean_tokens": 635.0,
+        "truncated": 9
+      },
+      "repair": {
+        "correct": 76,
+        "mean_tokens": 627.5520833333334,
+        "truncated": 12
+      },
+      "additional_prior_review_tokens": 0
+    },
+    "brief": {
+      "review": {
+        "correct": 77,
+        "mean_tokens": 485.7916666666667,
+        "truncated": 0
+      },
+      "repair": {
+        "correct": 71,
+        "mean_tokens": 546.5833333333334,
+        "truncated": 10
+      },
+      "additional_prior_review_tokens": 0
+    },
+    "answer-first": {
+      "review": {
+        "correct": 62,
+        "mean_tokens": 456.6875,
+        "truncated": 4
+      },
+      "repair": {
+        "correct": 75,
+        "mean_tokens": 524.1458333333334,
+        "truncated": 16
+      },
+      "additional_prior_review_tokens": 0
+    },
+    "challenge": {
+      "review": {
+        "correct": 85,
+        "mean_tokens": 802.8645833333334,
+        "truncated": 3
+      },
+      "repair": {
+        "correct": 78,
+        "mean_tokens": 654.4166666666666,
+        "truncated": 10
+      },
+      "additional_prior_review_tokens": 607.1979166666666
+    }
+  },
+  "note": "Independent/thorough/challenge pilot continuations use variant seeds. Brief and answer-first use the original repair seed. Final policies share their declared action/path seeds. Challenge additionally pays for its prior original review."
+}

@@ -1,0 +1,7 @@
+{
+  "weights_sha256": "923b40b57ec08ef70d711481eb435493e678c5ff82381b019af4657258bdecbb",
+  "predictions_sha256": "4f3329e96c77504a24db34d2b8fa4da6e47ac2411bb6a6a8693bcff80d1fe214",
+  "contextual": false,
+  "context_weight": 0.7,
+  "transition_leaf": 24
+}

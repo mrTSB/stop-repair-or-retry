@@ -1,0 +1,6 @@
+{
+  "real_training_questions": 24,
+  "role_and_blinded_pruned_replays": 48,
+  "passed": true,
+  "fresh_holdout_used": false
+}

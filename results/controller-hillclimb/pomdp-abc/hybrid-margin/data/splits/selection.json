@@ -1,0 +1,44 @@
+{
+  "seed": 2026111921,
+  "sources": {
+    "math": "6146bca074f4c6c5e07de7e96cc968adab3833dbdafeda21830f27558eea3d9b",
+    "science": "0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8"
+  },
+  "retirement": "All preceding study tests are training/development only.",
+  "unused_pool_before_reservation": {
+    "math": 5975,
+    "physics": 379,
+    "chemistry": 248
+  },
+  "splits": {
+    "train": {
+      "n": 672,
+      "subjects": {
+        "physics": 164,
+        "chemistry": 164,
+        "math": 336,
+        "biology": 8
+      },
+      "sha256": "ca132b6399d372044d6089db8c023733499774d101965cd98b5b92a8d422ca97"
+    },
+    "dev": {
+      "n": 240,
+      "subjects": {
+        "chemistry": 60,
+        "math": 120,
+        "physics": 60
+      },
+      "sha256": "123e972b16524067732c78c97e366d3b6d4a39b73eba8fe877a5224947c3f789"
+    },
+    "test": {
+      "n": 800,
+      "subjects": {
+        "math": 400,
+        "physics": 200,
+        "chemistry": 200
+      },
+      "sha256": "a007da94bdb3d3197c70017791a3f4c572d42d7f41b625045b179fad4b782d3e"
+    }
+  },
+  "history_sha256": "bc2d76feca2eb0e6c9de9681de7adfc371d9d6229fe76934bdd505671d369db3"
+}

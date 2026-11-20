@@ -1,0 +1,2 @@
+{"split": "train", "id": "mmlu-pro-physics-09519", "kind": "solver", "path": "guided/repair", "error_type": "ConnectionError", "error": "Deadline exceeded"}
+{"split": "train", "id": "mmlu-pro-chemistry-04024", "kind": "judge", "path": "retry", "error_type": "ConnectionError", "error": "Deadline exceeded"}

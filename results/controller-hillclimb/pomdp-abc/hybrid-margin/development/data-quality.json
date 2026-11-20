@@ -1,0 +1,38 @@
+{
+  "train": {
+    "questions": 672,
+    "observations": 13440,
+    "groups": {
+      "solver": {
+        "n": 8736,
+        "empty_parsed_answers": 1380,
+        "output_cap_reached": 1351
+      },
+      "judge": {
+        "n": 4704,
+        "empty_parsed_answers": 174,
+        "output_cap_reached": 157,
+        "invalid_review_parse": 164
+      }
+    }
+  },
+  "dev": {
+    "questions": 240,
+    "observations": 4800,
+    "groups": {
+      "solver": {
+        "n": 3120,
+        "empty_parsed_answers": 481,
+        "output_cap_reached": 472
+      },
+      "judge": {
+        "n": 1680,
+        "empty_parsed_answers": 78,
+        "output_cap_reached": 68,
+        "invalid_review_parse": 69
+      }
+    }
+  },
+  "fresh_holdout_used": false,
+  "retention": "No completed response excluded for correctness, truncation or parsing failures."
+}

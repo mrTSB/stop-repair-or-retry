@@ -1,0 +1,7 @@
+{
+  "real_training_questions": 24,
+  "blinded_paid_replays": 48,
+  "stochastic_transition_checks": 96,
+  "passed": true,
+  "fresh_holdout_used": false
+}

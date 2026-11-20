@@ -1,0 +1,9 @@
+{
+  "questions": 800,
+  "independent_graded_charge_checks": 6400,
+  "blinded_pruned_policy_replays": 4800,
+  "feature_caches_cleared": true,
+  "historical_disjointness": true,
+  "passed": true,
+  "freeze_sha256": "3106a1b55ddb94a8b8bc03e949e9d9fb540ab6fd7386a43e72882c5c7eceef4c"
+}

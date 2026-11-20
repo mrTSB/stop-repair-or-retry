@@ -1,0 +1,216 @@
+{
+  "selected": {
+    "A": {
+      "family": "A",
+      "model": "leaf0-smooth16-late0",
+      "settings": {
+        "penalty": 0.0,
+        "science_weight": 0.7,
+        "reuse_review": true,
+        "late_feedback": false,
+        "neural_observer": true,
+        "contextual_transitions": false,
+        "context_weight": 0.7
+      },
+      "dev": {
+        "n": 240,
+        "correct": 176,
+        "accuracy": 0.7333333333333333,
+        "mean_compute": 1092.448029844574,
+        "mean_solver_tokens": 840.3083333333333,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.3333333333333335,
+        "mean_total_parameter_compute": 1092.448029844574,
+        "mean_verifier_tokens": 243.54583333333332,
+        "mean_verifier_token_slots": 633.6,
+        "mean_verifier_calls": 1.65
+      }
+    },
+    "B": {
+      "family": "B",
+      "model": null,
+      "settings": {
+        "judge_stop": "agreement",
+        "reuse_review": true
+      },
+      "dev": {
+        "n": 240,
+        "correct": 195,
+        "accuracy": 0.8125,
+        "mean_compute": 1466.1218985976268,
+        "mean_solver_tokens": 608.6666666666666,
+        "mean_judge_tokens": 698.55,
+        "mean_judge_calls": 1.1208333333333333,
+        "mean_solver_calls": 1.5375,
+        "mean_total_parameter_compute": 8700.296655879181,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      }
+    },
+    "C": {
+      "family": "C",
+      "model": "leaf0-smooth16-late0",
+      "settings": {
+        "penalty": 0.025,
+        "science_weight": 0.7,
+        "reuse_review": true,
+        "late_feedback": false,
+        "neural_observer": true,
+        "contextual_transitions": false,
+        "context_weight": 0.7,
+        "threshold": -0.03,
+        "plan_reviews": true
+      },
+      "dev": {
+        "n": 240,
+        "correct": 196,
+        "accuracy": 0.8166666666666667,
+        "mean_compute": 2000.6616042728804,
+        "mean_solver_tokens": 739.0,
+        "mean_judge_tokens": 1071.1208333333334,
+        "mean_judge_calls": 1.6875,
+        "mean_solver_calls": 1.8541666666666667,
+        "mean_total_parameter_compute": 13093.175088631024,
+        "mean_verifier_tokens": 217.70416666666668,
+        "mean_verifier_token_slots": 556.8,
+        "mean_verifier_calls": 1.45
+      }
+    },
+    "C cheaper than B": {
+      "family": "C",
+      "model": "leaf0-smooth16-late0",
+      "settings": {
+        "penalty": 0.025,
+        "science_weight": 1.4,
+        "reuse_review": true,
+        "late_feedback": false,
+        "neural_observer": true,
+        "contextual_transitions": false,
+        "context_weight": 0.7,
+        "threshold": 0.03,
+        "plan_reviews": true
+      },
+      "dev": {
+        "n": 240,
+        "correct": 194,
+        "accuracy": 0.8083333333333333,
+        "mean_compute": 1374.327547431629,
+        "mean_solver_tokens": 646.9833333333333,
+        "mean_judge_tokens": 549.1958333333333,
+        "mean_judge_calls": 0.9125,
+        "mean_solver_calls": 1.6833333333333333,
+        "mean_total_parameter_compute": 7061.792488100454,
+        "mean_verifier_tokens": 186.12916666666666,
+        "mean_verifier_token_slots": 489.6,
+        "mean_verifier_calls": 1.275
+      }
+    }
+  },
+  "baselines": {
+    "Stop": {
+      "n": 240,
+      "correct": 132,
+      "accuracy": 0.55,
+      "mean_compute": 326.898597626753,
+      "mean_solver_tokens": 252.52916666666667,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 1.0,
+      "mean_total_parameter_compute": 326.898597626753,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Repair once": {
+      "n": 240,
+      "correct": 162,
+      "accuracy": 0.675,
+      "mean_compute": 864.7626752966559,
+      "mean_solver_tokens": 668.0291666666667,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_total_parameter_compute": 864.7626752966559,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Repair twice": {
+      "n": 240,
+      "correct": 179,
+      "accuracy": 0.7458333333333333,
+      "mean_compute": 1498.5544768069042,
+      "mean_solver_tokens": 1157.6333333333334,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_total_parameter_compute": 1498.5544768069042,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Retry once": {
+      "n": 240,
+      "correct": 159,
+      "accuracy": 0.6625,
+      "mean_compute": 772.8748651564185,
+      "mean_solver_tokens": 597.0458333333333,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_total_parameter_compute": 772.8748651564185,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Retry twice": {
+      "n": 240,
+      "correct": 167,
+      "accuracy": 0.6958333333333333,
+      "mean_compute": 1216.5480043149946,
+      "mean_solver_tokens": 939.7833333333333,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_total_parameter_compute": 1216.5480043149946,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    }
+  },
+  "targets_percentage_points": {
+    "A_B_minimum": 0.8458333333333333,
+    "C_minimum_if_A_B_qualify": 0.9458333333333333
+  },
+  "source_sha256": {
+    "routing_probe.py": "1508f1e14db463bc1a8bf1ee63606541099d39a0af0f91e258bd1be4b2b123ec",
+    "review_pilot.py": "5f1da0f4e5686caf809c09d89443e92279d4d5d2fdeb00e70d5daa3e42dea2d4",
+    "pack_results.py": "33e3c618ae8ee28acff0da53c7742a350802475e12157fbfb4c81baa2b9bd7e5",
+    "margin_data.py": "1b81e2725e92c2f9cf332baa875a5a75a3c2542838f4f142e5a098715ba5760e",
+    "late_pairs.py": "b58fb2bedfe05c164ad9b96b199d28235c7b6bd30f6950db76afff1e97d69387",
+    "transport.py": "2aaa91cfe8e18af245e371330aa1d175cecf0a7ebaccefe82572450384472341",
+    "fresh_study.py": "78a76077c3e7c2e8daf28c7c5257f1b8f45361321f09d7e33613b3d31e8e0eef",
+    "test_review_fields.py": "1510ee77fd380c3f7a54b3c1c1edbc2fe8331b8422aeca05abea804a0af183f5",
+    "train_verifier.py": "b5e029d976973246a4ecc91036d5b5839bcf27d167c5bfdd721dd34dc06a7d3f",
+    "context_probe.py": "c96c48b43adfc9b2bbc45a65003f5946c376ca6e13c407fec0e8072dfc84323f",
+    "review_fields.py": "0146c920093b9b7f491d67a76f93a7ad24a843c33f818ca929a7a484c7414793",
+    "difficulty_pomdp.py": "cc4ccf01296d66737c81d63e83285897734cd6775d71f57808264952115d789d",
+    "modal_worker.py": "010865fea8489f5ffeb79becdd092a4f93acd8cc965e923bba5110d3ffc86635",
+    "test_transport.py": "e751b130ff73e0975663db889fe236f596fd19a822c37357f04aa79002d304f5",
+    "study_common.py": "a4d6039fef613db997839d400a0457de0336edf09a328e7298f5da8159d4f57c",
+    "neural_pomdp.py": "413768200040f9cf81581392424c34029de268ec222e049efe473f4c7425be0f",
+    "complete_pairs.py": "8824ae66c7e8b704c07d040a10d57fdad0ac0c15e91cee3262ee89c7013ae3da",
+    "test_difficulty_pomdp.py": "2cdb1bcb94f028f78f390a4b18af8c7e0dbfe38d7d294a6b8e0110d8c94cff92",
+    "test_margin_statistics.py": "ecc4916ff681ccbeb9578e061ed6933b9ae468c5bd5c62897ddaa4849d732424",
+    "neural_verifier.py": "c4cd47b8083c0e651617206a01587aa9d4cfbcc2870e6832540d7ee6e0279313",
+    "fresh_collect.py": "6256be23a2e19d1f294cc67e4de90371366b6a7406736f9d8722ff88ac2444ed",
+    "test_late_pairs.py": "a9b1c659768a158dcb71f00b3ae691c30225d3794f5320d35ccaf899262fe56b",
+    "neural_probe.py": "94fd067275fec5c267829443bb0f8fae9aa8da7d0bf3f0dbc1836ca05578ff8a",
+    "contextual_pomdp.py": "c7bca29d0f3135defbed73a78dfd03b49919cce87ad2f7480e8910460efbc238",
+    "margin_audit.py": "b96328f1c87e498e2cd9e54ebdefadb46de7cfb893eeb8eeb71fbe8b3d922d86"
+  },
+  "fresh_holdout_used": false,
+  "note": "Development-only architecture probe; not a final freeze or fresh result."
+}

@@ -1,0 +1,6 @@
+{
+  "review_leaf": 24,
+  "transition_leaf": 24,
+  "context_weight": 0.7,
+  "review_source_sha256": "9a552ca5d8e18b425e4db7105102d0f99d4524309eb1b50ed71045366dba5b05"
+}

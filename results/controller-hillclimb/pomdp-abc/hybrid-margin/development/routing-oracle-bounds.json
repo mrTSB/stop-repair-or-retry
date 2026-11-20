@@ -1,0 +1,55 @@
+{
+  "train": {
+    "n": 672,
+    "best_baseline_correct": 474,
+    "required_A_B_correct": 541.2,
+    "plain_path_oracle_correct": 577,
+    "any_current_path_oracle_correct": 603,
+    "by_subject": {
+      "biology": {
+        "n": 8,
+        "plain_oracle": 7,
+        "all_oracle": 7
+      },
+      "chemistry": {
+        "n": 164,
+        "plain_oracle": 126,
+        "all_oracle": 136
+      },
+      "math": {
+        "n": 336,
+        "plain_oracle": 323,
+        "all_oracle": 328
+      },
+      "physics": {
+        "n": 164,
+        "plain_oracle": 121,
+        "all_oracle": 132
+      }
+    }
+  },
+  "dev": {
+    "n": 240,
+    "best_baseline_correct": 179,
+    "required_A_B_correct": 203.0,
+    "plain_path_oracle_correct": 204,
+    "any_current_path_oracle_correct": 211,
+    "by_subject": {
+      "chemistry": {
+        "n": 60,
+        "plain_oracle": 46,
+        "all_oracle": 48
+      },
+      "math": {
+        "n": 120,
+        "plain_oracle": 116,
+        "all_oracle": 117
+      },
+      "physics": {
+        "n": 60,
+        "plain_oracle": 42,
+        "all_oracle": 46
+      }
+    }
+  }
+}
