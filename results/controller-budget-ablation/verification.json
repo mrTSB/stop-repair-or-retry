@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "primary_frozen_source_and_data_unchanged": true,
+  "primary_archive_files_unchanged": 81,
+  "full_strength_development_references_reproduced": true,
+  "masked_reviewer_answer_solution_confidence_replays": 480,
+  "restricted_outcome_charge_checks": 480,
+  "restricted_blind_paid_replays": 960,
+  "new_inference_calls": 0,
+  "fresh_validation": false,
+  "source_sha256": "f09d504deeb0dffd929e0daf38d76af7fba920f0c32e27801fd7b32470b07d9e"
+}

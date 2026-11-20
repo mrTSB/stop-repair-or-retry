@@ -1,0 +1,11 @@
+This separate, exploratory development experiment tests the user's request for weaker B/baseline variants without changing the primary frozen study. It is outside `experiments/controller-hillclimb` because that study hashes every Python file under that directory; adding a later experiment there would invalidate its source manifest.
+
+The completed cached-development ablation does not meet the requested margins: the strongest one-continuation baseline scores 67.500%, A 76.250%, action-only two-continuation B 70.000%, and C 83.333%. A/B would need 77.500%, and C would need 86.250%. The one-continuation B variant scores 67.917% and is cheaper than C. Full outcomes and all strong references are in [the ablation report](../../results/controller-budget-ablation/README.md).
+
+The five full fixed baselines and frozen A/B/C remain visible. The restricted baseline panel permits one continuation (Stop, Repair once, Retry once). Restricted B follows only the LLM's Stop/Repair/Retry action, uses plain compact-solver continuations without the reviewer's proposed solution, and is evaluated with one and two continuation budgets. A/C retain two continuation slots. These are explicitly unequal-budget/information ablations, not an equal-budget comparison.
+
+The cached reviewer produced its original full JSON output. Its full input/output cost is charged even when B discards the solution fields. No artificial answer corruption, grading changes, question exclusions, or post-hoc response truncation is used. Policies read only acquired observations; reference-swapped and paid-only replays verify this for every new B outcome.
+
+This analysis uses the already-used 240-question development split. The previously exposed 800-question summary supplies only algebraic bounds on the requested handicaps; it is not rebranded as fresh validation. No new inference is needed. Every defined variant is reported, with no worst-performing variant selected to force an ordering.
+
+Run from the repository root with `uv run --with numpy==2.5.4 --with scikit-learn==1.8.0 --no-project python experiments/controller-budget-ablation/run.py --output results/controller-budget-ablation`. The output must not already exist.

@@ -1,0 +1,199 @@
+{
+  "split": "previously used development",
+  "questions": 240,
+  "fresh_validation": false,
+  "exploratory_after_primary_test": true,
+  "interpretation": "percentage points",
+  "methods": {
+    "Stop": {
+      "n": 240,
+      "correct": 132,
+      "accuracy": 0.55,
+      "mean_compute": 326.898597626753,
+      "mean_solver_tokens": 252.52916666666667,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 1.0,
+      "mean_total_parameter_compute": 326.898597626753,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Repair once": {
+      "n": 240,
+      "correct": 162,
+      "accuracy": 0.675,
+      "mean_compute": 864.7626752966559,
+      "mean_solver_tokens": 668.0291666666667,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_total_parameter_compute": 864.7626752966559,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Repair twice": {
+      "n": 240,
+      "correct": 179,
+      "accuracy": 0.7458333333333333,
+      "mean_compute": 1498.5544768069042,
+      "mean_solver_tokens": 1157.6333333333334,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_total_parameter_compute": 1498.5544768069042,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Retry once": {
+      "n": 240,
+      "correct": 159,
+      "accuracy": 0.6625,
+      "mean_compute": 772.8748651564185,
+      "mean_solver_tokens": 597.0458333333333,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_total_parameter_compute": 772.8748651564185,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "Retry twice": {
+      "n": 240,
+      "correct": 167,
+      "accuracy": 0.6958333333333333,
+      "mean_compute": 1216.5480043149946,
+      "mean_solver_tokens": 939.7833333333333,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_total_parameter_compute": 1216.5480043149946,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "A": {
+      "n": 240,
+      "correct": 183,
+      "accuracy": 0.7625,
+      "mean_compute": 1109.940668824164,
+      "mean_solver_tokens": 857.4291666666667,
+      "mean_judge_tokens": 0.0,
+      "mean_judge_calls": 0.0,
+      "mean_solver_calls": 2.404166666666667,
+      "mean_total_parameter_compute": 1109.940668824164,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "B": {
+      "n": 240,
+      "correct": 198,
+      "accuracy": 0.825,
+      "mean_compute": 1503.089266450917,
+      "mean_solver_tokens": 636.1083333333333,
+      "mean_judge_tokens": 700.0375,
+      "mean_judge_calls": 1.1208333333333333,
+      "mean_solver_calls": 1.5416666666666667,
+      "mean_total_parameter_compute": 8752.668554476808,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "C": {
+      "n": 240,
+      "correct": 200,
+      "accuracy": 0.8333333333333334,
+      "mean_compute": 1347.4689859762677,
+      "mean_solver_tokens": 661.0416666666666,
+      "mean_judge_tokens": 506.50416666666666,
+      "mean_judge_calls": 0.7833333333333333,
+      "mean_solver_calls": 1.8208333333333333,
+      "mean_total_parameter_compute": 6592.819579288026,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "B action-only, 1 continuation(s)": {
+      "n": 240,
+      "correct": 163,
+      "accuracy": 0.6791666666666667,
+      "mean_compute": 1131.2028047464942,
+      "mean_solver_tokens": 433.8666666666667,
+      "mean_judge_tokens": 586.65,
+      "mean_judge_calls": 1.0,
+      "mean_solver_calls": 1.3791666666666667,
+      "mean_total_parameter_compute": 7206.542610571737,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    },
+    "B action-only, 2 continuation(s)": {
+      "n": 240,
+      "correct": 168,
+      "accuracy": 0.7,
+      "mean_compute": 1497.606526429342,
+      "mean_solver_tokens": 500.2916666666667,
+      "mean_judge_tokens": 875.4791666666666,
+      "mean_judge_calls": 1.3791666666666667,
+      "mean_solver_calls": 1.5083333333333333,
+      "mean_total_parameter_compute": 10564.057443365695,
+      "mean_verifier_tokens": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_calls": 0.0
+    }
+  },
+  "restricted_baselines": [
+    "Stop",
+    "Repair once",
+    "Retry once"
+  ],
+  "scenarios": {
+    "B action-only, 1 continuation(s)": {
+      "highest_restricted_baseline": "Repair once",
+      "A_B_required": 0.775,
+      "C_required": 0.8624999999999999,
+      "criteria": {
+        "A_plus_10_points": false,
+        "B_plus_10_points": false,
+        "C_plus_10_points": false,
+        "C_compute_below_B": false
+      },
+      "all_required_passed": false
+    },
+    "B action-only, 2 continuation(s)": {
+      "highest_restricted_baseline": "Repair once",
+      "A_B_required": 0.775,
+      "C_required": 0.8624999999999999,
+      "criteria": {
+        "A_plus_10_points": false,
+        "B_plus_10_points": false,
+        "C_plus_10_points": false,
+        "C_compute_below_B": true
+      },
+      "all_required_passed": false
+    }
+  },
+  "exposed_result_feasibility": {
+    "source": "Already exposed 800-question result; algebra only, not new validation.",
+    "maximum_highest_baseline_with_fixed_A": 0.6225,
+    "maximum_B_with_fixed_C": 0.7312500000000001,
+    "minimum_baseline_accuracy_reduction": 0.0824999999999999,
+    "minimum_B_accuracy_reduction": 0.12124999999999997
+  },
+  "primary_freeze_sha256": "3106a1b55ddb94a8b8bc03e949e9d9fb540ab6fd7386a43e72882c5c7eceef4c",
+  "primary_evidence_unchanged": true,
+  "source_sha256": "f09d504deeb0dffd929e0daf38d76af7fba920f0c32e27801fd7b32470b07d9e",
+  "restricted_outcome_charge_checks": 480,
+  "restricted_blind_paid_replays": 960,
+  "new_inference_calls": 0,
+  "limitations": [
+    "Restricted baselines have one additional solver call; A/C retain two.",
+    "Restricted B ignores reviewer solutions and proposed answers; full cached review tokens are charged.",
+    "These are unequal-budget/information ablations, not replacements for strong references.",
+    "No candidate is selected to manufacture an accuracy ordering."
+  ]
+}
