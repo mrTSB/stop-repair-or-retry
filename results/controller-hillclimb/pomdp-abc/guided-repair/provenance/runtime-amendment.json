@@ -1,0 +1,15 @@
+{
+  "at_utc": "2026-11-20T01:24:50.679820+00:00",
+  "original_freeze_sha256": "ec832e2a255d991b0031351b8c62fb2f065d049e41d5122e2c9938390aa5ca05",
+  "locked_policy_sha256": "77e57d3bc8f7cc1055c8e73581d61ae0f3af62c5565eb7f8d46b7e47c21a570c",
+  "changed_source_files": [
+    "code/modal_ollama.py"
+  ],
+  "runtime_from": "0.19.0",
+  "runtime_to": "0.40.16",
+  "reason": "The old GPU runtime omitted completion and token-count metadata on a solver request in both streamed and non-streamed modes. The newer runtime returns complete receipts with the identical verified model digests.",
+  "policy_change": false,
+  "test_scores_examined": false,
+  "initial_unscored_cases_archived": 7,
+  "evaluation_restart": "All 600 questions are recollected on one runtime; no model, threshold, prompt, decoding budget, or split is selected again."
+}

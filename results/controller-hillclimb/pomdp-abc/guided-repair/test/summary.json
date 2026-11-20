@@ -1,0 +1,1071 @@
+{
+  "methods": {
+    "Stop": {
+      "all": {
+        "n": 600,
+        "correct": 338,
+        "accuracy": 0.5633333333333334,
+        "mean_compute": 328.4185544768069,
+        "mean_solver_tokens": 253.70333333333335,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.0,
+        "mean_total_parameter_compute": 328.4185544768069
+      },
+      "math": {
+        "n": 300,
+        "correct": 209,
+        "accuracy": 0.6966666666666667,
+        "mean_compute": 210.95577130528588,
+        "mean_solver_tokens": 162.96333333333334,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.0
+      },
+      "science": {
+        "n": 300,
+        "correct": 129,
+        "accuracy": 0.43,
+        "mean_compute": 445.88133764832804,
+        "mean_solver_tokens": 344.4433333333333,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.0
+      },
+      "chemistry": {
+        "n": 150,
+        "correct": 58,
+        "accuracy": 0.38666666666666666,
+        "mean_compute": 474.51995685005386,
+        "mean_solver_tokens": 366.56666666666666,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.0
+      },
+      "physics": {
+        "n": 150,
+        "correct": 71,
+        "accuracy": 0.47333333333333333,
+        "mean_compute": 417.24271844660194,
+        "mean_solver_tokens": 322.32,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.0
+      }
+    },
+    "Repair once": {
+      "all": {
+        "n": 600,
+        "correct": 389,
+        "accuracy": 0.6483333333333333,
+        "mean_compute": 875.0140237324704,
+        "mean_solver_tokens": 675.9483333333334,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0,
+        "mean_total_parameter_compute": 875.0140237324704
+      },
+      "math": {
+        "n": 300,
+        "correct": 247,
+        "accuracy": 0.8233333333333334,
+        "mean_compute": 592.8198489751888,
+        "mean_solver_tokens": 457.9533333333333,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0
+      },
+      "science": {
+        "n": 300,
+        "correct": 142,
+        "accuracy": 0.47333333333333333,
+        "mean_compute": 1157.208198489752,
+        "mean_solver_tokens": 893.9433333333334,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0
+      },
+      "chemistry": {
+        "n": 150,
+        "correct": 69,
+        "accuracy": 0.46,
+        "mean_compute": 1229.0485436893205,
+        "mean_solver_tokens": 949.44,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0
+      },
+      "physics": {
+        "n": 150,
+        "correct": 73,
+        "accuracy": 0.4866666666666667,
+        "mean_compute": 1085.3678532901836,
+        "mean_solver_tokens": 838.4466666666667,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0
+      }
+    },
+    "Repair twice": {
+      "all": {
+        "n": 600,
+        "correct": 423,
+        "accuracy": 0.705,
+        "mean_compute": 1524.2934196332255,
+        "mean_solver_tokens": 1177.5166666666667,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0,
+        "mean_total_parameter_compute": 1524.2934196332255
+      },
+      "math": {
+        "n": 300,
+        "correct": 264,
+        "accuracy": 0.88,
+        "mean_compute": 1047.8015102481122,
+        "mean_solver_tokens": 809.4266666666666,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0
+      },
+      "science": {
+        "n": 300,
+        "correct": 159,
+        "accuracy": 0.53,
+        "mean_compute": 2000.7853290183389,
+        "mean_solver_tokens": 1545.6066666666666,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0
+      },
+      "chemistry": {
+        "n": 150,
+        "correct": 78,
+        "accuracy": 0.52,
+        "mean_compute": 2120.310679611651,
+        "mean_solver_tokens": 1637.94,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0
+      },
+      "physics": {
+        "n": 150,
+        "correct": 81,
+        "accuracy": 0.54,
+        "mean_compute": 1881.259978425027,
+        "mean_solver_tokens": 1453.2733333333333,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0
+      }
+    },
+    "Retry once": {
+      "all": {
+        "n": 600,
+        "correct": 398,
+        "accuracy": 0.6633333333333333,
+        "mean_compute": 781.3959007551241,
+        "mean_solver_tokens": 603.6283333333333,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0,
+        "mean_total_parameter_compute": 781.3959007551241
+      },
+      "math": {
+        "n": 300,
+        "correct": 265,
+        "accuracy": 0.8833333333333333,
+        "mean_compute": 510.74002157497307,
+        "mean_solver_tokens": 394.5466666666667,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0
+      },
+      "science": {
+        "n": 300,
+        "correct": 133,
+        "accuracy": 0.44333333333333336,
+        "mean_compute": 1052.0517799352751,
+        "mean_solver_tokens": 812.71,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0
+      },
+      "chemistry": {
+        "n": 150,
+        "correct": 63,
+        "accuracy": 0.42,
+        "mean_compute": 1113.8381877022655,
+        "mean_solver_tokens": 860.44,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0
+      },
+      "physics": {
+        "n": 150,
+        "correct": 70,
+        "accuracy": 0.4666666666666667,
+        "mean_compute": 990.2653721682848,
+        "mean_solver_tokens": 764.98,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0
+      }
+    },
+    "Retry twice": {
+      "all": {
+        "n": 600,
+        "correct": 401,
+        "accuracy": 0.6683333333333333,
+        "mean_compute": 1231.946062567422,
+        "mean_solver_tokens": 951.6783333333333,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0,
+        "mean_total_parameter_compute": 1231.946062567422
+      },
+      "math": {
+        "n": 300,
+        "correct": 261,
+        "accuracy": 0.87,
+        "mean_compute": 808.0215749730313,
+        "mean_solver_tokens": 624.1966666666667,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0
+      },
+      "science": {
+        "n": 300,
+        "correct": 140,
+        "accuracy": 0.4666666666666667,
+        "mean_compute": 1655.8705501618124,
+        "mean_solver_tokens": 1279.16,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0
+      },
+      "chemistry": {
+        "n": 150,
+        "correct": 67,
+        "accuracy": 0.44666666666666666,
+        "mean_compute": 1745.5879180151026,
+        "mean_solver_tokens": 1348.4666666666667,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0
+      },
+      "physics": {
+        "n": 150,
+        "correct": 73,
+        "accuracy": 0.4866666666666667,
+        "mean_compute": 1566.1531823085222,
+        "mean_solver_tokens": 1209.8533333333332,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0
+      }
+    },
+    "A": {
+      "all": {
+        "n": 600,
+        "correct": 435,
+        "accuracy": 0.725,
+        "mean_compute": 960.0560949298813,
+        "mean_solver_tokens": 741.6433333333333,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.07,
+        "mean_total_parameter_compute": 960.0560949298813
+      },
+      "math": {
+        "n": 300,
+        "correct": 265,
+        "accuracy": 0.8833333333333333,
+        "mean_compute": 539.5857605177995,
+        "mean_solver_tokens": 416.83,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.9533333333333334
+      },
+      "science": {
+        "n": 300,
+        "correct": 170,
+        "accuracy": 0.5666666666666667,
+        "mean_compute": 1380.5264293419634,
+        "mean_solver_tokens": 1066.4566666666667,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.1866666666666665
+      },
+      "chemistry": {
+        "n": 150,
+        "correct": 86,
+        "accuracy": 0.5733333333333334,
+        "mean_compute": 1461.782092772384,
+        "mean_solver_tokens": 1129.2266666666667,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.2
+      },
+      "physics": {
+        "n": 150,
+        "correct": 84,
+        "accuracy": 0.56,
+        "mean_compute": 1299.2707659115429,
+        "mean_solver_tokens": 1003.6866666666666,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.1733333333333333
+      }
+    },
+    "B": {
+      "all": {
+        "n": 600,
+        "correct": 494,
+        "accuracy": 0.8233333333333334,
+        "mean_compute": 1464.2928802588997,
+        "mean_solver_tokens": 604.715,
+        "mean_judge_tokens": 701.935,
+        "mean_judge_calls": 1.1133333333333333,
+        "mean_solver_calls": 1.5133333333333334,
+        "mean_total_parameter_compute": 8733.522653721682
+      },
+      "math": {
+        "n": 300,
+        "correct": 283,
+        "accuracy": 0.9433333333333334,
+        "mean_compute": 842.5264293419634,
+        "mean_solver_tokens": 301.21666666666664,
+        "mean_judge_tokens": 466.18,
+        "mean_judge_calls": 1.02,
+        "mean_solver_calls": 1.31
+      },
+      "science": {
+        "n": 300,
+        "correct": 211,
+        "accuracy": 0.7033333333333334,
+        "mean_compute": 2086.0593311758357,
+        "mean_solver_tokens": 908.2133333333334,
+        "mean_judge_tokens": 937.69,
+        "mean_judge_calls": 1.2066666666666668,
+        "mean_solver_calls": 1.7166666666666666
+      },
+      "chemistry": {
+        "n": 150,
+        "correct": 107,
+        "accuracy": 0.7133333333333334,
+        "mean_compute": 2358.0107874865153,
+        "mean_solver_tokens": 1052.6333333333334,
+        "mean_judge_tokens": 1025.24,
+        "mean_judge_calls": 1.26,
+        "mean_solver_calls": 1.8533333333333333
+      },
+      "physics": {
+        "n": 150,
+        "correct": 104,
+        "accuracy": 0.6933333333333334,
+        "mean_compute": 1814.1078748651562,
+        "mean_solver_tokens": 763.7933333333333,
+        "mean_judge_tokens": 850.14,
+        "mean_judge_calls": 1.1533333333333333,
+        "mean_solver_calls": 1.58
+      }
+    },
+    "C": {
+      "all": {
+        "n": 600,
+        "correct": 490,
+        "accuracy": 0.8166666666666667,
+        "mean_compute": 1357.8522114347359,
+        "mean_solver_tokens": 638.2733333333333,
+        "mean_judge_tokens": 547.5566666666666,
+        "mean_judge_calls": 0.875,
+        "mean_solver_calls": 1.585,
+        "mean_total_parameter_compute": 7028.341963322548
+      },
+      "math": {
+        "n": 300,
+        "correct": 283,
+        "accuracy": 0.9433333333333334,
+        "mean_compute": 743.9277238403453,
+        "mean_solver_tokens": 325.69666666666666,
+        "mean_judge_tokens": 331.98333333333335,
+        "mean_judge_calls": 0.7066666666666667,
+        "mean_solver_calls": 1.3766666666666667
+      },
+      "science": {
+        "n": 300,
+        "correct": 207,
+        "accuracy": 0.69,
+        "mean_compute": 1971.7766990291266,
+        "mean_solver_tokens": 950.85,
+        "mean_judge_tokens": 763.13,
+        "mean_judge_calls": 1.0433333333333332,
+        "mean_solver_calls": 1.7933333333333332
+      },
+      "chemistry": {
+        "n": 150,
+        "correct": 104,
+        "accuracy": 0.6933333333333334,
+        "mean_compute": 2186.286947141316,
+        "mean_solver_tokens": 1089.1066666666666,
+        "mean_judge_tokens": 799.7333333333333,
+        "mean_judge_calls": 1.0466666666666666,
+        "mean_solver_calls": 1.9266666666666667
+      },
+      "physics": {
+        "n": 150,
+        "correct": 103,
+        "accuracy": 0.6866666666666666,
+        "mean_compute": 1757.2664509169363,
+        "mean_solver_tokens": 812.5933333333334,
+        "mean_judge_tokens": 726.5266666666666,
+        "mean_judge_calls": 1.04,
+        "mean_solver_calls": 1.66
+      }
+    },
+    "C without review": {
+      "all": {
+        "n": 600,
+        "correct": 427,
+        "accuracy": 0.7116666666666667,
+        "mean_compute": 817.8770226537217,
+        "mean_solver_tokens": 631.81,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.8383333333333334,
+        "mean_total_parameter_compute": 817.8770226537217
+      },
+      "math": {
+        "n": 300,
+        "correct": 268,
+        "accuracy": 0.8933333333333333,
+        "mean_compute": 521.5016181229773,
+        "mean_solver_tokens": 402.86,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.8566666666666667
+      },
+      "science": {
+        "n": 300,
+        "correct": 159,
+        "accuracy": 0.53,
+        "mean_compute": 1114.2524271844661,
+        "mean_solver_tokens": 860.76,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.82
+      },
+      "chemistry": {
+        "n": 150,
+        "correct": 81,
+        "accuracy": 0.54,
+        "mean_compute": 1144.0776699029127,
+        "mean_solver_tokens": 883.8,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.8
+      },
+      "physics": {
+        "n": 150,
+        "correct": 78,
+        "accuracy": 0.52,
+        "mean_compute": 1084.4271844660193,
+        "mean_solver_tokens": 837.72,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.84
+      }
+    },
+    "C always reviews": {
+      "all": {
+        "n": 600,
+        "correct": 490,
+        "accuracy": 0.8166666666666667,
+        "mean_compute": 1711.2788565264295,
+        "mean_solver_tokens": 618.9966666666667,
+        "mean_judge_tokens": 937.2883333333333,
+        "mean_judge_calls": 1.4616666666666667,
+        "mean_solver_calls": 1.575,
+        "mean_total_parameter_compute": 11417.824703344122
+      },
+      "math": {
+        "n": 300,
+        "correct": 284,
+        "accuracy": 0.9466666666666667,
+        "mean_compute": 1062.5339805825242,
+        "mean_solver_tokens": 331.22,
+        "mean_judge_tokens": 652.7833333333333,
+        "mean_judge_calls": 1.3666666666666667,
+        "mean_solver_calls": 1.3933333333333333
+      },
+      "science": {
+        "n": 300,
+        "correct": 206,
+        "accuracy": 0.6866666666666666,
+        "mean_compute": 2360.0237324703344,
+        "mean_solver_tokens": 906.7733333333333,
+        "mean_judge_tokens": 1221.7933333333333,
+        "mean_judge_calls": 1.5566666666666666,
+        "mean_solver_calls": 1.7566666666666666
+      },
+      "chemistry": {
+        "n": 150,
+        "correct": 104,
+        "accuracy": 0.6933333333333334,
+        "mean_compute": 2646.862998921251,
+        "mean_solver_tokens": 1046.1466666666668,
+        "mean_judge_tokens": 1331.4066666666668,
+        "mean_judge_calls": 1.64,
+        "mean_solver_calls": 1.9
+      },
+      "physics": {
+        "n": 150,
+        "correct": 102,
+        "accuracy": 0.68,
+        "mean_compute": 2073.184466019417,
+        "mean_solver_tokens": 767.4,
+        "mean_judge_tokens": 1112.18,
+        "mean_judge_calls": 1.4733333333333334,
+        "mean_solver_calls": 1.6133333333333333
+      }
+    },
+    "Random reviews": {
+      "all": {
+        "n": 600,
+        "correct": 470,
+        "accuracy": 0.7833333333333333,
+        "mean_compute": 1348.8209277238404,
+        "mean_solver_tokens": 613.0766666666667,
+        "mean_judge_tokens": 571.85,
+        "mean_judge_calls": 0.91,
+        "mean_solver_calls": 1.6433333333333333,
+        "mean_total_parameter_compute": 7270.892125134844
+      },
+      "math": {
+        "n": 300,
+        "correct": 278,
+        "accuracy": 0.9266666666666666,
+        "mean_compute": 890.5480043149945,
+        "mean_solver_tokens": 349.0133333333333,
+        "mean_judge_tokens": 451.91333333333336,
+        "mean_judge_calls": 0.93,
+        "mean_solver_calls": 1.5233333333333334
+      },
+      "science": {
+        "n": 300,
+        "correct": 192,
+        "accuracy": 0.64,
+        "mean_compute": 1807.0938511326863,
+        "mean_solver_tokens": 877.14,
+        "mean_judge_tokens": 691.7866666666666,
+        "mean_judge_calls": 0.89,
+        "mean_solver_calls": 1.7633333333333334
+      },
+      "chemistry": {
+        "n": 150,
+        "correct": 96,
+        "accuracy": 0.64,
+        "mean_compute": 1969.8317152103564,
+        "mean_solver_tokens": 964.34,
+        "mean_judge_tokens": 743.14,
+        "mean_judge_calls": 0.92,
+        "mean_solver_calls": 1.8266666666666667
+      },
+      "physics": {
+        "n": 150,
+        "correct": 96,
+        "accuracy": 0.64,
+        "mean_compute": 1644.3559870550162,
+        "mean_solver_tokens": 789.94,
+        "mean_judge_tokens": 640.4333333333333,
+        "mean_judge_calls": 0.86,
+        "mean_solver_calls": 1.7
+      }
+    }
+  },
+  "paired": {
+    "A": {
+      "Stop": {
+        "accuracy_delta_pp": 16.166666666666664,
+        "accuracy_delta_pp_ci95": [
+          12.666666666666668,
+          19.666666666666664
+        ],
+        "work_delta": 631.6375404530744,
+        "work_delta_ci95": [
+          579.9085221143475,
+          685.7053937432578
+        ],
+        "work_savings_pct": -192.3269960978045,
+        "paired_wins": 114,
+        "paired_losses": 17
+      },
+      "Repair once": {
+        "accuracy_delta_pp": 7.666666666666666,
+        "accuracy_delta_pp_ci95": [
+          4.666666666666667,
+          10.83749999999994
+        ],
+        "work_delta": 85.042071197411,
+        "work_delta_ci95": [
+          44.63468176914779,
+          126.53408845738943
+        ],
+        "work_savings_pct": -9.718938084518292,
+        "paired_wins": 70,
+        "paired_losses": 24
+      },
+      "Repair twice": {
+        "accuracy_delta_pp": 2.0,
+        "accuracy_delta_pp_ci95": [
+          -0.8333333333333334,
+          5.0
+        ],
+        "work_delta": -564.2373247033441,
+        "work_delta_ci95": [
+          -600.0308522114348,
+          -529.1592233009709
+        ],
+        "work_savings_pct": 37.01631965577275,
+        "paired_wins": 47,
+        "paired_losses": 35
+      },
+      "Retry once": {
+        "accuracy_delta_pp": 6.166666666666667,
+        "accuracy_delta_pp_ci95": [
+          3.166666666666667,
+          9.333333333333334
+        ],
+        "work_delta": 178.6601941747573,
+        "work_delta_ci95": [
+          136.6705501618123,
+          220.42389428263212
+        ],
+        "work_savings_pct": -22.864234890674993,
+        "paired_wins": 62,
+        "paired_losses": 25
+      },
+      "Retry twice": {
+        "accuracy_delta_pp": 5.666666666666666,
+        "accuracy_delta_pp_ci95": [
+          2.833333333333333,
+          8.670833333333274
+        ],
+        "work_delta": -271.8899676375405,
+        "work_delta_ci95": [
+          -309.1371628910464,
+          -234.55124056094934
+        ],
+        "work_savings_pct": 22.069957110858553,
+        "paired_wins": 61,
+        "paired_losses": 27
+      },
+      "B": {
+        "accuracy_delta_pp": -9.833333333333332,
+        "accuracy_delta_pp_ci95": [
+          -12.833333333333332,
+          -7.000000000000001
+        ],
+        "work_delta": -504.2367853290184,
+        "work_delta_ci95": [
+          -566.2562971952535,
+          -444.2116909385114
+        ],
+        "work_savings_pct": 34.435514378780894,
+        "paired_wins": 12,
+        "paired_losses": 71
+      },
+      "C": {
+        "accuracy_delta_pp": -9.166666666666666,
+        "accuracy_delta_pp_ci95": [
+          -12.0,
+          -6.5
+        ],
+        "work_delta": -397.7961165048544,
+        "work_delta_ci95": [
+          -447.03449298813376,
+          -350.8628640776699
+        ],
+        "work_savings_pct": 29.295980310297143,
+        "paired_wins": 11,
+        "paired_losses": 66
+      },
+      "C without review": {
+        "accuracy_delta_pp": 1.3333333333333335,
+        "accuracy_delta_pp_ci95": [
+          -0.8333333333333334,
+          3.6666666666666665
+        ],
+        "work_delta": 142.17907227615967,
+        "work_delta_ci95": [
+          108.10987055016183,
+          176.39498381877027
+        ],
+        "work_savings_pct": -17.383918161050516,
+        "paired_wins": 28,
+        "paired_losses": 20
+      },
+      "C always reviews": {
+        "accuracy_delta_pp": -9.166666666666666,
+        "accuracy_delta_pp_ci95": [
+          -12.0,
+          -6.5
+        ],
+        "work_delta": -751.222761596548,
+        "work_delta_ci95": [
+          -816.3419363538296,
+          -687.9115560949299
+        ],
+        "work_savings_pct": 43.898325438402686,
+        "paired_wins": 12,
+        "paired_losses": 67
+      },
+      "Random reviews": {
+        "accuracy_delta_pp": -5.833333333333333,
+        "accuracy_delta_pp_ci95": [
+          -8.5,
+          -3.166666666666667
+        ],
+        "work_delta": -388.76483279395904,
+        "work_delta_ci95": [
+          -447.82986785329024,
+          -329.4297599784251
+        ],
+        "work_savings_pct": 28.822568274500814,
+        "paired_wins": 18,
+        "paired_losses": 53
+      }
+    },
+    "B": {
+      "Stop": {
+        "accuracy_delta_pp": 26.0,
+        "accuracy_delta_pp_ci95": [
+          22.333333333333332,
+          29.666666666666668
+        ],
+        "work_delta": 1135.874325782093,
+        "work_delta_ci95": [
+          1049.4638349514564,
+          1226.1798678532903
+        ],
+        "work_savings_pct": -345.86180052817593,
+        "paired_wins": 165,
+        "paired_losses": 9
+      },
+      "Repair once": {
+        "accuracy_delta_pp": 17.5,
+        "accuracy_delta_pp_ci95": [
+          14.333333333333334,
+          20.833333333333336
+        ],
+        "work_delta": 589.2788565264293,
+        "work_delta_ci95": [
+          518.2927858683927,
+          668.459223300971
+        ],
+        "work_savings_pct": -67.3450756837924,
+        "paired_wins": 110,
+        "paired_losses": 5
+      },
+      "Repair twice": {
+        "accuracy_delta_pp": 11.833333333333334,
+        "accuracy_delta_pp_ci95": [
+          8.833333333333334,
+          14.833333333333334
+        ],
+        "work_delta": -60.00053937432578,
+        "work_delta_ci95": [
+          -125.12857335490831,
+          3.188079827400201
+        ],
+        "work_savings_pct": 3.9362854028959338,
+        "paired_wins": 82,
+        "paired_losses": 11
+      },
+      "Retry once": {
+        "accuracy_delta_pp": 16.0,
+        "accuracy_delta_pp_ci95": [
+          12.666666666666668,
+          19.166666666666668
+        ],
+        "work_delta": 682.8969795037757,
+        "work_delta_ci95": [
+          610.4335625674219,
+          759.1863133764832
+        ],
+        "work_savings_pct": -87.3944921958048,
+        "paired_wins": 105,
+        "paired_losses": 9
+      },
+      "Retry twice": {
+        "accuracy_delta_pp": 15.5,
+        "accuracy_delta_pp_ci95": [
+          12.333333333333334,
+          18.666666666666668
+        ],
+        "work_delta": 232.34681769147792,
+        "work_delta_ci95": [
+          162.72154800431505,
+          300.91146170442266
+        ],
+        "work_savings_pct": -18.86014532221145,
+        "paired_wins": 104,
+        "paired_losses": 11
+      },
+      "A": {
+        "accuracy_delta_pp": 9.833333333333332,
+        "accuracy_delta_pp_ci95": [
+          6.833333333333333,
+          12.833333333333332
+        ],
+        "work_delta": 504.2367853290184,
+        "work_delta_ci95": [
+          441.9238538295577,
+          567.3484358144552
+        ],
+        "work_savings_pct": -52.52159618504852,
+        "paired_wins": 71,
+        "paired_losses": 12
+      },
+      "C": {
+        "accuracy_delta_pp": 0.6666666666666667,
+        "accuracy_delta_pp_ci95": [
+          -0.5,
+          1.8333333333333333
+        ],
+        "work_delta": 106.44066882416398,
+        "work_delta_ci95": [
+          69.36182578209278,
+          143.31321467098164
+        ],
+        "work_savings_pct": -7.838899397725796,
+        "paired_wins": 8,
+        "paired_losses": 4
+      },
+      "C without review": {
+        "accuracy_delta_pp": 11.166666666666666,
+        "accuracy_delta_pp_ci95": [
+          8.329166666666667,
+          14.004166666666606
+        ],
+        "work_delta": 646.4158576051781,
+        "work_delta_ci95": [
+          577.5043149946064,
+          717.8105582524272
+        ],
+        "work_savings_pct": -79.0358256437853,
+        "paired_wins": 76,
+        "paired_losses": 9
+      },
+      "C always reviews": {
+        "accuracy_delta_pp": 0.6666666666666667,
+        "accuracy_delta_pp_ci95": [
+          -0.5,
+          1.8333333333333333
+        ],
+        "work_delta": -246.98597626752968,
+        "work_delta_ci95": [
+          -289.69239482200646,
+          -206.5359492988134
+        ],
+        "work_savings_pct": 14.432830472110458,
+        "paired_wins": 8,
+        "paired_losses": 4
+      },
+      "Random reviews": {
+        "accuracy_delta_pp": 4.0,
+        "accuracy_delta_pp_ci95": [
+          2.0,
+          6.0
+        ],
+        "work_delta": 115.47195253505934,
+        "work_delta_ci95": [
+          51.159897518878104,
+          182.2599919093851
+        ],
+        "work_savings_pct": -8.560954991254487,
+        "paired_wins": 31,
+        "paired_losses": 7
+      }
+    },
+    "C": {
+      "Stop": {
+        "accuracy_delta_pp": 25.333333333333336,
+        "accuracy_delta_pp_ci95": [
+          21.5,
+          29.166666666666668
+        ],
+        "work_delta": 1029.4336569579286,
+        "work_delta_ci95": [
+          956.959048004315,
+          1102.9688781014027
+        ],
+        "work_savings_pct": -313.45173496603655,
+        "paired_wins": 161,
+        "paired_losses": 9
+      },
+      "Repair once": {
+        "accuracy_delta_pp": 16.833333333333332,
+        "accuracy_delta_pp_ci95": [
+          13.666666666666666,
+          20.166666666666664
+        ],
+        "work_delta": 482.8381877022654,
+        "work_delta_ci95": [
+          420.63429072276165,
+          544.9227211434735
+        ],
+        "work_savings_pct": -55.18062277935445,
+        "paired_wins": 109,
+        "paired_losses": 8
+      },
+      "Repair twice": {
+        "accuracy_delta_pp": 11.166666666666666,
+        "accuracy_delta_pp_ci95": [
+          8.166666666666666,
+          14.333333333333334
+        ],
+        "work_delta": -166.44120819848973,
+        "work_delta_ci95": [
+          -215.50303398058256,
+          -117.38183656957933
+        ],
+        "work_savings_pct": 10.919236811934718,
+        "paired_wins": 82,
+        "paired_losses": 15
+      },
+      "Retry once": {
+        "accuracy_delta_pp": 15.333333333333332,
+        "accuracy_delta_pp_ci95": [
+          12.0,
+          18.666666666666668
+        ],
+        "work_delta": 576.4563106796118,
+        "work_delta_ci95": [
+          513.5268473570658,
+          640.7478964401294
+        ],
+        "work_savings_pct": -73.77263050939182,
+        "paired_wins": 103,
+        "paired_losses": 11
+      },
+      "Retry twice": {
+        "accuracy_delta_pp": 14.833333333333334,
+        "accuracy_delta_pp_ci95": [
+          11.666666666666666,
+          18.166666666666668
+        ],
+        "work_delta": 125.90614886731392,
+        "work_delta_ci95": [
+          71.14660194174756,
+          180.66465749730312
+        ],
+        "work_savings_pct": -10.220102380531237,
+        "paired_wins": 101,
+        "paired_losses": 12
+      },
+      "A": {
+        "accuracy_delta_pp": 9.166666666666666,
+        "accuracy_delta_pp_ci95": [
+          6.5,
+          12.0
+        ],
+        "work_delta": 397.7961165048544,
+        "work_delta_ci95": [
+          350.3228829557713,
+          446.1287081984897
+        ],
+        "work_savings_pct": -41.43467434930539,
+        "paired_wins": 66,
+        "paired_losses": 11
+      },
+      "B": {
+        "accuracy_delta_pp": -0.6666666666666667,
+        "accuracy_delta_pp_ci95": [
+          -1.8333333333333333,
+          0.5
+        ],
+        "work_delta": -106.44066882416398,
+        "work_delta_ci95": [
+          -141.72992179072276,
+          -69.4578074433657
+        ],
+        "work_savings_pct": 7.269083272831612,
+        "paired_wins": 4,
+        "paired_losses": 8
+      },
+      "C without review": {
+        "accuracy_delta_pp": 10.5,
+        "accuracy_delta_pp_ci95": [
+          7.833333333333334,
+          13.166666666666666
+        ],
+        "work_delta": 539.9751887810141,
+        "work_delta_ci95": [
+          483.2558656957929,
+          599.7038700107876
+        ],
+        "work_savings_pct": -66.02156238953695,
+        "paired_wins": 70,
+        "paired_losses": 7
+      },
+      "C always reviews": {
+        "accuracy_delta_pp": 0.0,
+        "accuracy_delta_pp_ci95": [
+          -0.8333333333333334,
+          0.8333333333333334
+        ],
+        "work_delta": -353.4266450916937,
+        "work_delta_ci95": [
+          -383.1766046386192,
+          -323.2760517799353
+        ],
+        "work_savings_pct": 20.65277927929774,
+        "paired_wins": 3,
+        "paired_losses": 3
+      },
+      "Random reviews": {
+        "accuracy_delta_pp": 3.3333333333333335,
+        "accuracy_delta_pp_ci95": [
+          1.6666666666666667,
+          5.004166666666606
+        ],
+        "work_delta": 9.031283710895371,
+        "work_delta_ci95": [
+          -41.73116235167206,
+          62.675795577130486
+        ],
+        "work_savings_pct": -0.6695687711589571,
+        "paired_wins": 24,
+        "paired_losses": 4
+      }
+    }
+  },
+  "targets": {
+    "A": {
+      "target": 0.65,
+      "accuracy": 0.725,
+      "passed": true,
+      "accuracy_above_primary_baseline": true,
+      "compute_below_primary_baseline": true
+    },
+    "B": {
+      "target": 0.65,
+      "accuracy": 0.8233333333333334,
+      "passed": true,
+      "accuracy_above_primary_baseline": true,
+      "compute_below_primary_baseline": true
+    },
+    "C": {
+      "target": 0.75,
+      "accuracy": 0.8166666666666667,
+      "passed": true,
+      "accuracy_above_primary_baseline": true,
+      "compute_below_primary_baseline": true
+    }
+  },
+  "primary_baseline": "Repair twice",
+  "highest_test_accuracy_fixed_baseline": "Repair twice",
+  "comparison_note": "The primary baseline was selected on development. The highest test-accuracy fixed baseline is a descriptive comparison; no policy is changed after scoring."
+}

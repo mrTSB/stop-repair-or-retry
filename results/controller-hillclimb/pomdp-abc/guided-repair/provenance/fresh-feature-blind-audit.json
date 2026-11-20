@@ -1,0 +1,9 @@
+{
+  "questions": 600,
+  "adaptive_policy_outcomes": 3600,
+  "reference_replacement_replays": 7200,
+  "feature_caches_cleared_before_each_run": true,
+  "unvisited_solver_and_unacquired_review_nodes_removed": true,
+  "policy_sha256": "77e57d3bc8f7cc1055c8e73581d61ae0f3af62c5565eb7f8d46b7e47c21a570c",
+  "passed": true
+}

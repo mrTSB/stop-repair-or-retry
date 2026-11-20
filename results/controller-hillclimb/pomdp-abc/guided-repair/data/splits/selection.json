@@ -1,0 +1,40 @@
+{
+  "seed": 2026111908,
+  "sources": {
+    "math_train": "6146bca074f4c6c5e07de7e96cc968adab3833dbdafeda21830f27558eea3d9b",
+    "science": "0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8"
+  },
+  "train": "48 earlier training pilots and 144 retired study-test questions.",
+  "dev": "120 disjoint retired study-test questions; no longer a test panel.",
+  "test": "600 unused question IDs and normalized stems. GSM8K training-source questions and MMLU-Pro chemistry/physics. Biology pool exhausted.",
+  "splits": {
+    "train": {
+      "n": 192,
+      "subjects": {
+        "physics": 44,
+        "chemistry": 44,
+        "math": 96,
+        "biology": 8
+      },
+      "sha256": "beec992fe9931397c350c29049ccc5b08963da23ddcae331177ea95da0c07d04"
+    },
+    "dev": {
+      "n": 120,
+      "subjects": {
+        "math": 60,
+        "physics": 30,
+        "chemistry": 30
+      },
+      "sha256": "25c9a21e27724ecc9bd1f49aa79271e4490e1da01f79ccf02cae251056c06adc"
+    },
+    "test": {
+      "n": 600,
+      "subjects": {
+        "math": 300,
+        "chemistry": 150,
+        "physics": 150
+      },
+      "sha256": "87872f54fd21882289c348ab28f5c6664137b285839e2e7b48ff0e1114a7cc66"
+    }
+  }
+}

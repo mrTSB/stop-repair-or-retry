@@ -1,0 +1,42 @@
+{
+  "seed": 2026111905,
+  "math_source": "Unused official GSM8K training questions form the study holdout.",
+  "science_source": "Unused MMLU-Pro public test questions.",
+  "dev_source": "120 prior development questions.",
+  "source_sha256": {
+    "math_train": "6146bca074f4c6c5e07de7e96cc968adab3833dbdafeda21830f27558eea3d9b",
+    "science": "0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8"
+  },
+  "splits": {
+    "train": {
+      "n": 144,
+      "subjects": {
+        "physics": 24,
+        "biology": 24,
+        "chemistry": 24,
+        "math": 72
+      },
+      "sha256": "fc24ce265c0a81ff6c3b243f2b02c5a1aedd2dd28d937b4422c79d85c576fd10"
+    },
+    "dev": {
+      "n": 120,
+      "subjects": {
+        "math": 60,
+        "chemistry": 20,
+        "physics": 20,
+        "biology": 20
+      },
+      "sha256": "4467bf30def8d91e18d054f1101e0d29a9740678ef711f5660d6fc0d84090ef4"
+    },
+    "test": {
+      "n": 420,
+      "subjects": {
+        "math": 210,
+        "biology": 28,
+        "chemistry": 91,
+        "physics": 91
+      },
+      "sha256": "b9aed14f36469c177c4f61e31bdbb102a69794dde75ed787a5a29faead4d38e1"
+    }
+  }
+}
