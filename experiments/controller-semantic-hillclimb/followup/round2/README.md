@@ -122,3 +122,29 @@ Its 64 math cases reuse exact ordinary repairs; the 64 science cases acquire
 new compact responses. This is an added controller feedback channel, beyond
 gate tuning. Solver weights, decoding, seeds and output cap stay fixed; all
 feedback input tokens are charged and CPU retrieval time is reported.
+
+The textbook pilot completed with 65/128 correct versus 67/128 for matched
+ordinary Repair once, at higher compute. It is not selected. The correlated
+binary-forecast/IPF POMDP also completed: 140/256 development answers correct,
+below the continuous joint-state candidate's 142/256.
+
+Additional registered work includes an option-proposal pilot on 64 new science
+training questions. After auxiliary training, it scores every official option
+and supplies the highest-scored option through the existing repair feedback
+field. All candidate encoder passes are charged; this is another new feedback
+channel, not a completed controller result.
+
+`crossfit_mentor_emissions.py` refines the hybrid's emission estimates with
+question-excluded calibration predictions. It preserves the original runtime
+calibration, transition dynamics, costs and belief transfer. Its separate
+development replay reuses complete original responses without outcome
+filtering. `matched_review_b.py` supplies an independent LLM-only control with
+the same strong retained-review protocol as C. Final comparisons retain the
+higher accuracy of ordinary and matched-review B.
+
+`prospective_freeze.py` and `prospective_audit.py` provide a staged freeze and
+paid-prefix audit, not a complete test collector/scorer. The freeze requires
+all development gaps, C's compute advantage, and completed matched-review B;
+it rejects choosing a weaker completed A to ease C's target. The audit reports
+logical reviews and physical API phases separately. Neither tool has opened
+test outcomes or established a fresh-data success.

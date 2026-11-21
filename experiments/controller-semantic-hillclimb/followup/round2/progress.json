@@ -119,7 +119,79 @@
     "science_questions_with_all_seven_wrong": 160
   },
   "new_test_reserved_questions": 1024,
-  "tests_passed": 24,
+  "tests_passed": 47,
   "primary_912_confirmation": "../artifacts/confirmation-912-v1/REPORT.md",
-  "interpretation": "Development-selected results are not fresh confirmation; old912test remains retired."
+  "interpretation": "Development-selected results are not fresh confirmation; old912test remains retired.",
+  "completed_followups": {
+    "factorized_A": {
+      "model": "binaryC0.1-smooth32",
+      "settings": {
+        "by_subject": {
+          "math": {
+            "penalty": 0.01,
+            "posterior_weight": 0.0
+          },
+          "chemistry": {
+            "penalty": 0.24,
+            "posterior_weight": 0.0
+          },
+          "physics": {
+            "penalty": 0.04,
+            "posterior_weight": 0.0
+          }
+        }
+      },
+      "dev": {
+        "n": 256,
+        "correct": 140,
+        "accuracy": 0.546875,
+        "mean_compute": 847.948266907944,
+        "mean_solver_tokens": 607.48046875,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.7890625,
+        "mean_total_parameter_compute": 847.948266907944,
+        "mean_verifier_tokens": 438.02734375,
+        "mean_verifier_token_slots": 438.02734375,
+        "mean_verifier_calls": 1.62890625
+      }
+    },
+    "textbook_training_pilot": {
+      "methods": {
+        "Stop": {
+          "n": 128,
+          "correct": 54,
+          "accuracy": 0.421875,
+          "mean_solver_tokens": 301.640625,
+          "mean_compute": 390.4733009708738
+        },
+        "Repair once": {
+          "n": 128,
+          "correct": 67,
+          "accuracy": 0.5234375,
+          "mean_solver_tokens": 778.3828125,
+          "mean_compute": 1007.615291262136
+        },
+        "Repair twice": {
+          "n": 128,
+          "correct": 72,
+          "accuracy": 0.5625,
+          "mean_solver_tokens": 1333.875,
+          "mean_compute": 1726.6990291262136
+        },
+        "Textbook repair": {
+          "n": 128,
+          "correct": 65,
+          "accuracy": 0.5078125,
+          "mean_solver_tokens": 880.96875,
+          "mean_compute": 1140.4126213592233
+        }
+      },
+      "wins_vs_repair_once": 2,
+      "losses_vs_repair_once": 4,
+      "mean_extra_input_tokens_vs_plain_repair": 100.4765625,
+      "mean_cpu_retrieval_seconds": 0.0008890872395568294
+    }
+  },
+  "matched_review_B": "Required before any final gap claim; independent LLM control with same strong review as C."
 }
