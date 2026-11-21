@@ -17,15 +17,17 @@ The targets remain unmet. These are current **development** results on the same
 | Repair twice | 69.17 | 1,548.59 |
 | Retry once | 65.42 | 786.64 |
 | Retry twice | 65.00 | 1,244.51 |
-| Best A so far | 75.83 | 739.59 |
+| Best A so far | 78.33 | 901.64 |
 | Strong ordinary B | 86.25 | 1,624.98 |
-| Best C so far below B's compute | 87.92 | 1,461.19 |
+| Best C so far below B's compute | 88.75 | 1,487.28 |
 
 The retained-mentor POMDP has reached 91.25% on development data at a compute
 proxy of 3,012.90. That candidate fails the compute target; its cheaper settings
 also fail to improve the retained hybrid. Larger ensembles, action-specific
 calibration, and deeper root/late reviews have not displaced the best eligible
-C. Development and training pilot gains cannot establish a fresh-test win.
+C among the uniform-penalty candidates. Subject-specific budget allocation has
+since improved the eligible hybrid. Development and training pilot gains cannot
+establish a fresh-test win.
 
 ## Data and protocol
 
@@ -99,6 +101,27 @@ already-labeled solver outputs, with low-weight terminal responses and equal
 question weight; its three question-grouped folds remain unchanged. None of
 these variants may be selected using confirmation outcomes.
 
+The all-solver refinement completed using 17,483 labeled nodes from the same
+1,472 training questions. It improved the best cost-eligible C to 213/240 on
+development data after subject-specific budget selection; it did not improve A.
+
+`subject_policy_pomdp.py` uses the same observer, learned dynamics, finite
+Bellman backups, and accounting, with cost penalties and review thresholds
+selected separately for math, chemistry, and physics. Subject is observed
+before inference. `development_subject_policy.py` chooses a policy for each
+subject and checks the resulting joint C cost against B; it does not fit a
+different setting for individual questions. All groups are included in final
+validation.
+
+`full_packet_pilot.py` tests a cheaper repair format without dropping the brief
+review's worked solution. On the same 192 matched training questions it yields
+159 correct repairs versus 150 for the original guided repair (12 paired wins,
+3 losses), with 469.90 versus 574.07 compact-solver tokens. `packet_pairs.py`
+collects every follow-up action for the eight-state retained-mentor POMDP in
+`packet_pomdp.py`. Its review is the exact ordinary brief review; there is no
+deeper LLM call. These training-format gains require development selection and
+fresh confirmation before any performance claim.
+
 ## Validation
 
 `fixed_cache.py` precomputes the same five fixed-policy responses for every
@@ -121,6 +144,11 @@ refit comparisons, and 51 regenerated neural observations. A new final selection
 must receive its own audit before fresh controller replay. `pack_confirmation.py`
 publishes only audited, explicitly allowed numeric outcomes and provenance;
 it never copies the raw question banks or neural caches.
+
+The separate engineering audit of the eight-state retained-review protocol
+also passed 1,920 charge checks, 1,440 blinded replays, 480 independent refit
+comparisons, and 48 regenerated observations. It is a development protocol
+check, not an additional fresh result or a reason to select that variant.
 
 The compute proxy includes all solver input/output tokens, all physical review
 phases, and actual unpadded encoder token slots:

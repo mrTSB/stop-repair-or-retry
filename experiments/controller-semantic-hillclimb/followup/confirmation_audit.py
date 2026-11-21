@@ -26,10 +26,13 @@ def refit(configuration, frozen_model, data, medium, examples, variants, supplem
     module = importlib.import_module(configuration['module'])
     kwargs = {'smoothing': frozen_model.fit_receipt['smoothing'],
               'semantic_review': frozen_model.review_observer is not None}
-    if configuration['protocol'] in ('root-medium', 'mentor-reuse'):
+    if configuration['protocol'] in ('root-medium', 'mentor-reuse', 'full-packet'):
         from root_bank import view
         from banks import committed
-        if configuration['protocol'] == 'mentor-reuse':
+        if configuration['protocol'] == 'full-packet':
+            trees, reviews = module.view(rows, trees, original, committed(medium / 'train.jsonl'), validate=True)
+            training_observations = module.training_observations
+        elif configuration['protocol'] == 'mentor-reuse':
             from mentor_pomdp import reuse_view
             trees, reviews = reuse_view(rows, trees, committed(medium / 'train.jsonl'),
                                         committed(Path(configuration['reuse_directory']) / 'train.jsonl'), validate=True)
@@ -94,7 +97,7 @@ def run(args):
     for family in (*BASELINES, 'A', 'B', 'C'):
         model = planners.get(family)
         config = frozen['selected'].get(family)
-        is_medium = config is not None and config['protocol'] in ('medium', 'root-medium', 'mentor-reuse')
+        is_medium = config is not None and config['protocol'] in ('medium', 'root-medium', 'mentor-reuse', 'full-packet')
         bank = deeper if is_medium else trees
         reviews = deep_reviews if is_medium else late if config and config['protocol'] == 'late' else original
         items = []

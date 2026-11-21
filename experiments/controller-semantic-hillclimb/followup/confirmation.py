@@ -29,7 +29,8 @@ def freeze(args):
     candidates = []
     baselines = None
     modules = ('dynamic_grounded_pomdp', 'binary_pomdp', 'calibrated_pomdp', 'root_medium_pomdp',
-               'fusion_pomdp', 'subject_fusion_pomdp', 'mentor_pomdp')
+               'fusion_pomdp', 'subject_fusion_pomdp', 'mentor_pomdp', 'subject_policy_pomdp',
+               'packet_pomdp', 'subject_packet_pomdp')
     for probe in args.probe:
         summary = json.loads((probe / 'summary.json').read_bytes())
         if summary['fresh_data_used']:
@@ -50,7 +51,8 @@ def freeze(args):
             current = candidate.get('module', module)
             if current not in (*modules, 'medium_pomdp'):
                 raise ValueError('Unknown policy implementation')
-            protocol = ('mentor-reuse' if current == 'mentor_pomdp' else
+            protocol = ('full-packet' if current in ('packet_pomdp', 'subject_packet_pomdp') else
+                        'mentor-reuse' if current == 'mentor_pomdp' else
                         'root-medium' if current == 'root_medium_pomdp' else
                         'medium' if current == 'medium_pomdp' else 'late' if candidate['late'] else 'original')
             candidates.append({**candidate, 'module': current, 'protocol': protocol, 'probe': str(probe)})
@@ -62,7 +64,8 @@ def freeze(args):
     if not hybrids:
         raise ValueError('No hybrid fits the compute target on development data')
     c = best(hybrids)
-    special = args.root if c['protocol'] in ('root-medium', 'mentor-reuse') else args.medium
+    special = (args.packet if c['protocol'] == 'full-packet' else
+               args.root if c['protocol'] in ('root-medium', 'mentor-reuse') else args.medium)
     if special is None:
         raise ValueError('Supply the selected root-hybrid training bank with --root')
     selected = {'A': a, 'B': b, 'C': c}
@@ -83,6 +86,8 @@ def freeze(args):
                            'private_volume': 'srr-semantic-training-20261120',
                            'remote': None if recipe.get('components') else '/' + folder.parent.name + '/full',
                            'components': recipe.get('components'),
+                           'fit_inputs': {str(p): sha(p) for name in ('contract.json', 'oof.npz', 'training-summary.json')
+                                          if (p := folder.parent / name).exists()},
                            'files': {str(p.relative_to(folder)): sha(p) for p in folder.rglob('*') if p.is_file()},
                            'recipe': recipe}
         model.classifier.directory = relative
@@ -111,10 +116,14 @@ def freeze(args):
                'roles': {'A': 'Finite-horizon POMDP with discriminative observations, no LLM reviews.',
                          'B': 'Independent ordinary LLM judge policy; strongest development configuration retained.',
                          'C': 'Finite-horizon POMDP acquiring paid LLM observations by information value.'},
-               'budget': 'Same frozen4Bsolver, same initial call, at most two further solver calls. Five unchanged fixed baselines. Medium C, if selected, declares its deeper late review and128token answer-first guided format.',
+               'budget': 'Same frozen4Bsolver, same initial call, at most two further solver calls. Five unchanged fixed baselines. Full-packet C, if selected, retains one ordinary brief review with128token answer-first repairs. Medium variants explicitly declare their deeper review budget.',
                'raw_data': 'GPQA text/options/reference answers and model rationales remain private in ignored runtime files. Publish only code, hashes, metrics, and sanitized costs/correctness.',
                'validation': 'All912reserved questions and each192/720source panel; paired subject-by-panel bootstrap with best baseline/A/B recomputed each draw.',
                'compute': '(4*all solver tokens +3*all physical LLM review tokens +encoder billions*actual token slots)/3.09. Also report raw tokens/calls and35Btotal-parameter sensitivity.'}
+    payload['training_observations'] = {'path': str(args.examples / 'train.jsonl'),
+                                        'sha256': sha(args.examples / 'train.jsonl')}
+    payload['selected_fit_provenance'] = {family: json.loads((Path(selected[family]['probe']) / 'identity.json').read_bytes())
+                                         for family in ('A', 'C')}
     if c['protocol'] == 'mentor-reuse':
         reuse = Path(c['reuse_directory'])
         payload['reuse_bank'] = {'directory': str(reuse),
@@ -185,5 +194,7 @@ if __name__ == '__main__':
         p.add_argument('--' + name, type=Path, required=True)
     p.add_argument('--probe', type=Path, nargs='+')
     p.add_argument('--root', type=Path)
+    p.add_argument('--packet', type=Path)
+    p.add_argument('--examples', type=Path, default=Path('runs/controller-semantic-hillclimb/grounded-examples'))
     args = p.parse_args()
     (freeze if args.phase == 'freeze' else score)(args)

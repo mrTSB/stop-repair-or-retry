@@ -22,7 +22,8 @@ from banks import ordinary, medium_view, committed
 
 RUNTIME = ('banks.py', 'binary_core.py', 'binary_pomdp.py', 'calibrated_pomdp.py', 'medium_pomdp.py',
            'root_bank.py', 'root_pairs.py', 'root_medium_pomdp.py', 'fusion_pomdp.py', 'subject_fusion_pomdp.py',
-           'mentor_pomdp.py', 'reuse_pairs.py',
+           'mentor_pomdp.py', 'reuse_pairs.py', 'subject_policy_pomdp.py',
+           'packet_pomdp.py', 'packet_bank.py', 'full_packet_pilot.py', 'subject_packet_pomdp.py',
            'medium_late_pairs.py', 'transfer_variants.py', 'confirmation_common.py',
            'confirmation.py', 'confirmation_collect.py', 'confirmation_audit.py')
 
@@ -60,7 +61,10 @@ def evidence(data):
 
 def load_banks(data, split, medium, protocol='medium', reuse=None):
     rows, trees, original, late = ordinary(data, split)
-    if protocol == 'mentor-reuse':
+    if protocol == 'full-packet':
+        from packet_bank import view
+        deeper, reviews = view(rows, trees, original, committed(medium / (split + '.jsonl')), validate=True)
+    elif protocol == 'mentor-reuse':
         from mentor_pomdp import reuse_view
         if reuse is None:
             raise ValueError('Supply the frozen mentor-reuse bank')
@@ -88,6 +92,14 @@ def clear(model):
 def models(frozen, output, load_cache=True):
     result = {}
     shared = {}
+    if 'training_observations' in frozen:
+        receipt = frozen['training_observations']
+        if sha(receipt['path']) != receipt['sha256']:
+            raise ValueError('Changed training observation metadata')
+    for receipt in frozen['observer_assets'].values():
+        for path, digest in receipt.get('fit_inputs', {}).items():
+            if sha(path) != digest:
+                raise ValueError('Changed excluded-question fitting evidence')
     for family, descriptor in frozen['models'].items():
         path = output / descriptor['file']
         if sha(path) != descriptor['sha256']:
@@ -129,14 +141,14 @@ def models(frozen, output, load_cache=True):
 def run_policy(family, row, tree, original, late, deeper, deeper_reviews, model, configuration):
     protocol = configuration['protocol']
     if family == 'B':
-        if model is not None or protocol in ('medium', 'root-medium', 'mentor-reuse'):
+        if model is not None or protocol in ('medium', 'root-medium', 'mentor-reuse', 'full-packet'):
             raise ValueError('Strong ordinary B stays an independent LLM-only reference')
         function = llm_policy if protocol == 'late' else evaluate_llm
         reviews = late if protocol == 'late' else original
         result = function(row, tree, reviews, configuration['settings'])
     else:
         module = importlib.import_module(configuration['module'])
-        special = protocol in ('medium', 'root-medium', 'mentor-reuse')
+        special = protocol in ('medium', 'root-medium', 'mentor-reuse', 'full-packet')
         reviews = deeper_reviews if special else late if protocol == 'late' else original
         result = module.evaluate(row, deeper if special else tree, reviews,
                                  model, configuration['settings'], family)

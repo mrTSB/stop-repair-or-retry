@@ -16,6 +16,8 @@ from long_review_pilot import review as deeper_review
 from transfer_variants import actor
 from root_pairs import PROTOCOL as ROOT_PROTOCOL
 from reuse_pairs import PROTOCOL as REUSE_PROTOCOL
+from full_packet_pilot import prompt as packet_prompt, PROTOCOL as PACKET_PROTOCOL
+from packet_bank import PLAIN_PROTOCOL as PACKET_PLAIN_PROTOCOL
 from reasoning_pilot import inference as root_actor
 from late_pairs import judge_prompt, sanitized
 from review_pilot import inference
@@ -44,7 +46,7 @@ def run(args):
         raise ValueError('Changed fresh panel')
     planners = models(frozen, args.output)
     root_protocol = frozen['selected']['C']['protocol']
-    root_mode = root_protocol in ('root-medium', 'mentor-reuse')
+    root_mode = root_protocol in ('root-medium', 'mentor-reuse', 'full-packet')
     reuse_mode = root_protocol == 'mentor-reuse'
     identity = {'freeze_sha256': sha(args.output / 'frozen.json'), 'questions': 912,
                 'rule': 'All references removed; no test correctness or question selection is consulted.'}
@@ -119,8 +121,9 @@ def run(args):
                     deeper[p] = node
 
             def acquire(kind, path, protocol):
-                special = protocol in ('medium', 'root-medium', 'mentor-reuse')
-                current_root = protocol in ('root-medium', 'mentor-reuse')
+                special = protocol in ('medium', 'root-medium', 'mentor-reuse', 'full-packet')
+                current_root = protocol in ('root-medium', 'mentor-reuse', 'full-packet')
+                copied = False
                 current = deeper if special else tree
                 if kind == 'judge' and path not in current:
                     acquire('solver', path, protocol)
@@ -138,7 +141,30 @@ def run(args):
                         reviews = deep_reviews if protocol == 'medium' else late
                         if (row['id'], parent) not in reviews:
                             acquire('judge', parent, protocol)
-                if current_root and kind == 'judge':
+                if protocol == 'full-packet' and kind == 'judge':
+                    if path:
+                        raise ValueError('Full-packet C has one ordinary root review')
+                    if (row['id'], '') not in original:
+                        acquire('judge', '', 'original')
+                    node = original[row['id'], '']
+                    deep_reviews[row['id'], ''] = node
+                    storage = 'medium'
+                    copied = True
+                elif protocol == 'full-packet' and kind == 'solver' and (path == 'guided' or path.endswith('/reuse')):
+                    parent = path.rsplit('/', 1)[0] if '/' in path else ''
+                    formatted = packet_prompt(row, deeper[parent], deep_reviews[row['id'], ''])
+                    logical = path.replace('guided', 'repair').replace('reuse', 'repair')
+                    seed = int(hashlib.sha256(f'{old.SEED}:{row["id"]}:{logical}'.encode()).hexdigest()[:8], 16) % 2**31
+                    node = actor(request, row, formatted, seed, 128)
+                    node['protocol'] = PACKET_PROTOCOL
+                    deeper[path] = node
+                    storage = 'medium'
+                elif protocol == 'full-packet' and kind == 'solver' and path == 'guided/retry':
+                    node = old.call(row, path, deeper, deep_reviews, False)
+                    node['protocol'] = PACKET_PLAIN_PROTOCOL
+                    deeper[path] = node
+                    storage = 'medium'
+                elif current_root and kind == 'judge':
                     if path != '':
                         raise ValueError('The root hybrid cannot acquire a late LLM review')
                     node = deeper_review(request, row, deeper[''], 1024, 512)
@@ -211,7 +237,7 @@ def run(args):
                             late[row['id'], path] = node
                             if not root_mode:
                                 deep_reviews[row['id'], path] = node
-                assert node['backend']['app'] == APP
+                assert copied or node['backend']['app'] == APP
                 append(row, storage, kind, path, node)
 
             for family in ('A', 'B', 'C'):

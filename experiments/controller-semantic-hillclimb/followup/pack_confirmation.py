@@ -56,6 +56,13 @@ def table(report):
 def report_text(summary, frozen):
     joint = summary['joint']
     target = 'met' if joint['all_required_passed'] else 'not met'
+    protocol = frozen['selected']['C']['protocol']
+    design = ('C retains the exact ordinary brief root review and its worked solution for '
+              '128-token answer-first repairs; its hidden state includes mentor correctness.'
+              if protocol == 'full-packet' else
+              'The selected medium-review variant declares its deeper reasoning budget and '
+              '128-token answer-first guided format.' if protocol in ('medium', 'root-medium', 'mentor-reuse') else
+              'C uses the ordinary review and guided-repair protocols, with every acquired review charged.')
     lines = ['# Frozen controller confirmation', '',
              f'The requested joint accuracy and compute targets are **{target}** on all 912 reserved questions.', '',
              table(joint), '',
@@ -95,15 +102,18 @@ def report_text(summary, frozen):
               'and the additional 720 panel are reported separately as well as jointly. Bootstrap draws '
               'preserve the subject-by-source composition and recompute the highest baseline and higher '
               'A/B score inside every paired draw.', '',
+              'Fresh means unused in this study\'s fitting and model selection. Pretraining '
+              'contamination has not been measured.', '',
               'Average LLM tokens include every solver and physical review input/output phase. The '
               'compute proxy additionally charges each actual encoder token slot at its parameter count: '
               '`(4*solver_tokens +3*review_tokens +encoder_billions*actual_slots)/3.09`. '
               'Offline training and response collection are outside this per-question inference proxy. '
               'Raw tokens/calls and the 35B total parameter sensitivity are retained in the JSON metrics.', '',
-              f'Selected C protocol: `{frozen["selected"]["C"]["protocol"]}`. '
-              'A medium-review variant includes its deeper reasoning budget and a 128-token answer-first '
-              'guided response format. These are parts of the controller design. The original fixed '
+              f'Selected C protocol: `{protocol}`. ' + design + ' The original fixed '
               'references and strongest ordinary B are retained.', '',
+              'Where the frozen settings include `by_subject`, the POMDP cost penalty and '
+              'review threshold were selected separately by observed subject on development '
+              'data; individual questions never select their own setting.', '',
               'The audit checks independent cost accounting, blinded replay using paid prefixes only, '
               'training-only model reconstruction, frozen source and weight hashes, and regenerated '
               'neural observations. The fixed baseline response prefix remains unchanged.', '',
