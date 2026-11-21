@@ -170,3 +170,46 @@ development replay remain required before use. Some early A studies lack
 historical pickle digests; current archival and replay cannot establish that
 missing historical byte identity. No confirmation run has started and no new
 fresh-data success has been established.
+
+The auxiliary science observer finished its fixed two epochs. On its separate
+160-question calibration set it ranks the correct option first on 27 questions
+(16.875%); balanced binary cross-entropy is 0.69247. This is a weak calibration
+result, not project accuracy. Its subject-routed POMDP nevertheless reaches
+144/256 (56.25%) on development, at 856.54 compute units. The two-observer fusion
+does not improve this result and retains it. The gap above the best fixed
+baseline is 4.69 percentage points, still below target.
+
+`nonlinear_repairability.py` fits four small gradient-boosted state forecasters
+from the same training observations, retaining the eight-state POMDP dynamics
+and actions. Nested question-grouped temperature calibration supplies its
+emission forecasts. A fixed development preview also reaches 144/256, but at
+892.93 compute units; the final comparison waits for the remaining registered
+A references. The preview is not a fresh-test result or final selection.
+
+`audit_a_refit.py` reconstructs selected A forecasters, transitions, emissions
+and costs from training-only paired responses and saved neural observations.
+The continuous, original repairability, factorized, science and retained-fusion
+artifacts have passed exact numerical reconstruction. This binds their current
+inputs and artifacts; it neither reconstructs neural training nor supplies
+missing historical pickle identities. The scheduled audit uses no neural calls
+or development/test question records.
+
+The 64-question science critical-review pilot reached 34 correct final answers,
+versus 32 for retained second repair and 31 for the first guided answer. It adds
+only two correct cases to the union of all previously available paths, while
+substantially increasing compute. Its fitted 16-state extension is retained as
+an experiment; development collection has not been launched for it.
+
+`format_fixed_controls.py` checks a potential comparison confound: many science
+continuations hit their output cap before a usable final answer, whereas guided
+repairs ask for the answer first. The new training-only control changes exactly
+that formatting sentence for all four continuation branches on 128 prespecified
+questions. It preserves the compact solver, original roots, seeds, temperature
+and 256-token caps, uses no reviewer, and grades only after all 512 new responses
+are complete. It does not overwrite the original baseline banks.
+
+The option-proposal pilot completed with 7/64 correct answers, versus 13/64
+for plain Repair once, at higher compute. It is not promoted. A separate
+32-question auxiliary training diagnostic also shows weak option learning
+(5/32 top-ranked answers correct), motivating a grouped training objective
+before spending further compute on that feedback channel.

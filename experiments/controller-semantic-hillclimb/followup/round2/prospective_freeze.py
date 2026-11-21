@@ -25,7 +25,7 @@ from study_common import BASELINES
 import extended_acquire as old
 
 A_MODULES = {'repairability_pomdp': ('development_repairability',),
-             'continuous_repairability': ('development_continuous', 'development_factorized', 'development_refined_observer'),
+             'continuous_repairability': ('development_continuous', 'development_factorized', 'development_refined_observer', 'development_nonlinear'),
              'subject_science_pomdp': ('development_science_option',),
              'science_fusion_pomdp': ('development_science_fusion',)}
 C_MODULES = {'hybrid_repairability': ('development_mixed_mentor',),
@@ -172,6 +172,8 @@ def validate_role(model, family, module):
             raise ValueError('A cannot acquire LLM observations')
         if set(model.dynamics) != {'math', 'chemistry', 'physics'} and module != 'continuous_repairability':
             raise ValueError('A dynamics do not cover all subjects')
+        if model.fit_receipt.get('fit_module') == 'nonlinear_repairability':
+            validate_nonlinear_forecaster(model)
     elif family == 'C':
         if model.fit_receipt.get('state_count') != 16 or model.fit_receipt.get('maximum_reviews') != 1:
             raise ValueError('C must be the declared two-mode POMDP with one optional root LLM review')
@@ -179,6 +181,97 @@ def validate_role(model, family, module):
             validate_role(model.base, 'A', model.base_module)
             if not model.fit_receipt.get('parent_transfer_unchanged'):
                 raise ValueError('Stronger-base C changed the training-only mentor transfer')
+
+
+def validate_nonlinear_forecaster(model):
+    """Check the added CPU forecaster without changing any paid encoder rules."""
+    from nonlinear_repairability import Forecaster, ConstantModel, LEAVES, SEED, TEMPERATURES
+    from sklearn.ensemble import HistGradientBoostingClassifier
+    forecast, receipt = model.forecaster, model.fit_receipt
+    if not isinstance(forecast, Forecaster) or receipt.get('state_count') != 8:
+        raise ValueError('Nonlinear A must retain its declared eight-state forecaster')
+    parameters = receipt['forecaster_hyperparameters']
+    expected = {'max_leaf_nodes': parameters['max_leaf_nodes'], 'max_iter': 100, 'learning_rate': .1,
+                'l2_regularization': 5., 'min_samples_leaf': 30, 'max_bins': 255,
+                'early_stopping': False, 'random_state': SEED, 'categorical_features': None}
+    if parameters != expected or parameters['max_leaf_nodes'] not in LEAVES:
+        raise ValueError('Nonlinear A differs from its prespecified model family')
+    if isinstance(forecast.estimator, HistGradientBoostingClassifier):
+        actual = forecast.estimator.get_params(deep=False)
+        if any(actual[k] != value for k, value in expected.items()):
+            raise ValueError('Saved nonlinear estimator differs from its fitting receipt')
+    elif not isinstance(forecast.estimator, ConstantModel):
+        raise ValueError('Unknown nonlinear state forecaster')
+    calibration = receipt['calibration']
+    if (receipt['temperature_grid'] != list(TEMPERATURES)
+            or forecast.temperature != calibration['final_temperature']
+            or forecast.temperature not in TEMPERATURES
+            or not receipt.get('forecaster_and_temperature_exclude_own_question_in_emission_fit')
+            or not receipt.get('structural_transitions_and_costs_unchanged')
+            or not calibration.get('emission_temperature_excludes_own_question')
+            or not calibration.get('final_temperature_fits_only_training_OOF_labels')):
+        raise ValueError('Missing training-only nonlinear calibration contract')
+    folds = calibration['outer_folds']
+    if len(folds) != 3 or {r['fold'] for r in folds} != {0, 1, 2}:
+        raise ValueError('Nonlinear emission forecasts require three outer question folds')
+    for fold in folds:
+        inner = fold['inner_folds']
+        if (fold['question_overlap'] != 0 or fold['fit_questions'] + fold['held_questions'] != receipt['paired_questions']
+                or fold['temperature'] not in TEMPERATURES or len(inner) != 3
+                or {r['fold'] for r in inner} != {0, 1, 2}
+                or any(r['outer_held_overlap'] != 0 or r['fit_questions'] + r['calibration_questions'] != fold['fit_questions'] for r in inner)):
+            raise ValueError('Nonlinear temperature fitting overlaps its held-out emission questions')
+
+
+def nonlinear_fitting_evidence(directory, candidate, identity, data, model_path, summary):
+    """Bind the immutable CPU fit, exact saved features, and development cache."""
+    if candidate.get('fit_module') != 'nonlinear_repairability':
+        raise ValueError('Nonlinear A selection omits its fitting family')
+    complete = read_json(directory / 'fit-complete.json')
+    registration = read_json(directory / 'fitting-registration.json')
+    if (complete['identity_sha256'] != sha(directory / 'identity.json')
+            or complete['models'] != identity['model_sha256']
+            or any(complete.get(k) is not True for k in ('training_only', 'no_neural_inference'))
+            or complete.get('test_used') is not False):
+        raise ValueError('Completed nonlinear fitting receipt changed')
+    if registration != {k: v for k, v in identity.items() if k not in ('model_sha256', 'training_alignment_sha256')}:
+        raise ValueError('Nonlinear search/fitting registration was rewritten after fitting')
+    if (identity['fitting_questions'], identity['decision_nodes']) != (512, 1536):
+        raise ValueError('Nonlinear fitting must use every registered training question')
+    if identity['train_questions_sha256'] != sha(data / 'splits/train-questions.jsonl') or identity['dev_questions_sha256'] != sha(data / 'splits/dev-questions.jsonl'):
+        raise ValueError('Nonlinear fit uses a different registered panel')
+    if identity['training_alignment_sha256'] != sha(directory / 'training-alignment.json'):
+        raise ValueError('Nonlinear exact-input training alignment changed')
+    names = {f'nonlinear-leaf{leaves}-smooth{smoothing}.pkl' for leaves in (7, 15) for smoothing in (8, 32)}
+    if set(complete['models']) != names or model_path.name not in names:
+        raise ValueError('Preserve the four prespecified nonlinear candidates')
+    files = [directory / name for name in ('identity.json', 'fit-complete.json', 'fitting-registration.json', 'training-alignment.json')]
+    for name, digest in complete['models'].items():
+        path = directory / name
+        if sha(path) != digest:
+            raise ValueError('Registered nonlinear model changed')
+        files.append(path)
+    base = Path(identity['base_directory'])
+    for key, name in (('base_identity_sha256', 'identity.json'), ('training_neural_sha256', 'training-neural.npz'),
+                       ('training_neural_metadata_sha256', 'training-neural.jsonl')):
+        path = base / name
+        if sha(path) != identity[key]:
+            raise ValueError('Nonlinear cached fitting input changed')
+        files.append(path)
+    features = Path(summary['development_feature_directory'])
+    if sha(features / 'complete.json') != summary['development_feature_complete_sha256']:
+        raise ValueError('Nonlinear development feature completion changed')
+    cache = read_json(features / 'complete.json')
+    if (cache['dev_questions_sha256'] != identity['dev_questions_sha256']
+            or cache['encoder_recipe_sha256'] != identity['encoder_recipe_sha256']
+            or cache['nodes'] != 768 or cache.get('test_used') is not False):
+        raise ValueError('Nonlinear development cache belongs to another experiment')
+    files.append(features / 'complete.json')
+    for field, name in (('neural_sha256', 'neural.npz'), ('metadata_sha256', 'metadata.jsonl')):
+        if sha(features / name) != cache[field]:
+            raise ValueError('Nonlinear development observation cache changed')
+        files.append(features / name)
+    return files
 
 
 def verify_weight_folder(folder):
@@ -466,6 +559,7 @@ def select_inputs(args):
             if name in identities[family] and identities[family][name] != sha(expected_module.__file__):
                 raise ValueError('Selected policy source differs from its development evaluation')
         for name, filename in (('factorized_sha256', 'factorized_repairability.py'),
+                               ('nonlinear_sha256', 'nonlinear_repairability.py'),
                                ('core_sha256', 'repairability_pomdp.py'),
                                ('numeric_consistency_sha256', 'numeric_consistency.py'),
                                ('fusion_sha256', 'science_fusion_pomdp.py'),
@@ -473,6 +567,12 @@ def select_inputs(args):
             if name in identities[family] and identities[family][name] != sha(HERE / filename):
                 raise ValueError('Selected development dependency changed: ' + filename)
     a_path = resolve_a_model(a, identities['A'], args.a_summary, args.a_models, args.data.parent)
+    if 'nonlinear_sha256' in identities['A']:
+        nonlinear_files = nonlinear_fitting_evidence(args.a_summary.parent, a, identities['A'], args.data, a_path, summaries['A'])
+        registry['evidence_files'].extend(str(p.resolve()) for p in nonlinear_files)
+        registry['nonlinear_A_fit'] = {'module': 'nonlinear_repairability', 'identity_sha256': sha(args.a_summary.parent / 'identity.json'),
+            'complete_sha256': sha(args.a_summary.parent / 'fit-complete.json'),
+            'neural_inference_during_fit': False, 'runtime_uses_same_paid_observer': True}
     model_paths = {'A': a_path,
                    'C': args.c_models / (c['model'] + '.pkl')}
     c_fitting, fit_files = fitting_chain(args.c_models, args.data.parent)

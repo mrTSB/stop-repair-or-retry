@@ -3,37 +3,89 @@
   "status": "Targets not met; experiments active",
   "development_A": {
     "selected_A": {
-      "model": "C0.1-smooth32",
-      "settings": {
-        "by_subject": {
-          "math": {
+      "dev": {
+        "n": 256,
+        "correct": 144,
+        "accuracy": 0.5625,
+        "mean_compute": 856.5434598089403,
+        "mean_solver_tokens": 627.23046875,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.80078125,
+        "mean_total_parameter_compute": 856.5434598089403,
+        "mean_verifier_tokens": 317.28125,
+        "mean_verifier_token_slots": 317.28125,
+        "mean_verifier_calls": 1.609375
+      },
+      "subject_choices": {
+        "math": {
+          "observer": "old-semantic-v1",
+          "model": "runs/controller-semantic-followup/round2/development-repairability-v1/C0.1-smooth32.pkl",
+          "settings": {
             "penalty": 0.02,
             "posterior_weight": 0.5
           },
-          "chemistry": {
+          "dev": {
+            "n": 128,
+            "correct": 117,
+            "accuracy": 0.9140625,
+            "mean_compute": 587.8927766796521,
+            "mean_solver_tokens": 428.8046875,
+            "mean_judge_tokens": 0.0,
+            "mean_judge_calls": 0.0,
+            "mean_solver_calls": 2.0078125,
+            "mean_total_parameter_compute": 587.8927766796521,
+            "mean_verifier_tokens": 233.40625,
+            "mean_verifier_token_slots": 233.40625,
+            "mean_verifier_calls": 1.859375
+          }
+        },
+        "chemistry": {
+          "observer": "auxiliary-science-option-v1",
+          "model": "runs/controller-semantic-followup/round2/development-science-option-v1/science-C1-smooth8.pkl",
+          "settings": {
             "penalty": 0.02,
-            "posterior_weight": 0.5
+            "posterior_weight": 0.0
           },
-          "physics": {
+          "dev": {
+            "n": 64,
+            "correct": 14,
+            "accuracy": 0.21875,
+            "mean_compute": 1598.446842226416,
+            "mean_solver_tokens": 1183.25,
+            "mean_judge_tokens": 0.0,
+            "mean_judge_calls": 0.0,
+            "mean_solver_calls": 2.15625,
+            "mean_total_parameter_compute": 1598.446842226416,
+            "mean_verifier_tokens": 474.78125,
+            "mean_verifier_token_slots": 474.78125,
+            "mean_verifier_calls": 1.6875
+          }
+        },
+        "physics": {
+          "observer": "auxiliary-science-option-v1",
+          "model": "runs/controller-semantic-followup/round2/development-science-option-v1/science-C0.1-smooth32.pkl",
+          "settings": {
             "penalty": 0.24,
             "posterior_weight": 0.0
+          },
+          "dev": {
+            "n": 64,
+            "correct": 13,
+            "accuracy": 0.203125,
+            "mean_compute": 651.9414436500404,
+            "mean_solver_tokens": 468.0625,
+            "mean_judge_tokens": 0.0,
+            "mean_judge_calls": 0.0,
+            "mean_solver_calls": 1.03125,
+            "mean_total_parameter_compute": 651.9414436500404,
+            "mean_verifier_tokens": 327.53125,
+            "mean_verifier_token_slots": 327.53125,
+            "mean_verifier_calls": 1.03125
           }
         }
       },
-      "dev": {
-        "n": 256,
-        "correct": 142,
-        "accuracy": 0.5546875,
-        "mean_compute": 888.8319960846532,
-        "mean_solver_tokens": 637.640625,
-        "mean_judge_tokens": 0.0,
-        "mean_judge_calls": 0.0,
-        "mean_solver_calls": 1.83984375,
-        "mean_total_parameter_compute": 888.8319960846532,
-        "mean_verifier_tokens": 451.12890625,
-        "mean_verifier_token_slots": 451.12890625,
-        "mean_verifier_calls": 1.62890625
-      }
+      "pickle": "selected-A.pkl"
     },
     "baselines": {
       "Stop": {
@@ -109,8 +161,10 @@
     },
     "test_used": false,
     "development_questions": 256,
-    "A_above_highest_baseline": 0.0390625,
-    "approximation": "Discriminative history posterior blend; future planning uses finite POMDP observation distribution."
+    "A_above_highest_baseline": 0.046875,
+    "A_plus_10_points": false,
+    "source": "development-science-option-v1",
+    "final_comparison_still_pending": true
   },
   "training_only_headroom": {
     "n": 512,
@@ -119,7 +173,7 @@
     "science_questions_with_all_seven_wrong": 160
   },
   "new_test_reserved_questions": 1024,
-  "tests_passed": 73,
+  "tests_passed": 109,
   "primary_912_confirmation": "../artifacts/confirmation-912-v1/REPORT.md",
   "interpretation": "Development-selected results are not fresh confirmation; old912test remains retired.",
   "completed_followups": {
@@ -506,6 +560,152 @@
       },
       "tokens": "Node-only diagnostic, not total trajectory or controller compute",
       "test_used": false
+    },
+    "nonlinear_A_preview": {
+      "model": "nonlinear-leaf7-smooth8",
+      "model_path": "runs/controller-semantic-followup/round2/development-nonlinear-v1/nonlinear-leaf7-smooth8.pkl",
+      "policy_module": "continuous_repairability",
+      "fit_module": "nonlinear_repairability",
+      "settings": {
+        "by_subject": {
+          "math": {
+            "penalty": 0.04,
+            "posterior_weight": 1.0
+          },
+          "chemistry": {
+            "penalty": 0.04,
+            "posterior_weight": 0.0
+          },
+          "physics": {
+            "penalty": 0.16,
+            "posterior_weight": 0.0
+          }
+        }
+      },
+      "dev": {
+        "n": 256,
+        "correct": 144,
+        "accuracy": 0.5625,
+        "mean_compute": 892.9345268764057,
+        "mean_solver_tokens": 641.55078125,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.90625,
+        "mean_total_parameter_compute": 892.9345268764057,
+        "mean_verifier_tokens": 444.3046875,
+        "mean_verifier_token_slots": 444.3046875,
+        "mean_verifier_calls": 1.625
+      },
+      "final_selection_performed": false
+    },
+    "science_calibration": {
+      "questions": 160,
+      "options": 1534,
+      "ranking_correct": 27,
+      "ranking_accuracy": 0.16875,
+      "balanced_bce": 0.6924691684420662,
+      "balanced_brier": 0.249658112742916,
+      "temperature": 3.0
+    },
+    "second_review_training": {
+      "methods": {
+        "root_review_guided": {
+          "n": 64,
+          "student_correct": 31,
+          "student_accuracy": 0.484375,
+          "last_teacher_correct": 31,
+          "last_teacher_accuracy": 0.484375,
+          "mean_solver_tokens": 1122.0,
+          "mean_review_tokens": 3280.703125,
+          "mean_solver_calls": 2,
+          "mean_logical_reviews": 1,
+          "mean_physical_review_calls": 2.0,
+          "mean_compute": 4637.575849514564,
+          "mean_total_parameter_compute": 38612.494943365695
+        },
+        "second_review_guided": {
+          "n": 64,
+          "student_correct": 34,
+          "student_accuracy": 0.53125,
+          "last_teacher_correct": 33,
+          "last_teacher_accuracy": 0.515625,
+          "mean_solver_tokens": 1724.21875,
+          "mean_review_tokens": 8922.84375,
+          "mean_solver_calls": 3,
+          "mean_logical_reviews": 2,
+          "mean_physical_review_calls": 4.0,
+          "mean_compute": 10894.953478964402,
+          "mean_total_parameter_compute": 103299.80784789645
+        }
+      },
+      "student_wins": 3,
+      "student_losses": 0
+    },
+    "second_review_oracle_diagnostic": {
+      "n": 64,
+      "retained_second_correct": 32,
+      "critical_second_correct": 34,
+      "wins_vs_retained": 3,
+      "losses_vs_retained": 1,
+      "all_available_paths_oracle_before": 39,
+      "all_available_paths_oracle_after": 41
+    },
+    "deterministic_A_refits": {
+      "passed": [
+        "repairability",
+        "continuous",
+        "factorized",
+        "science-option",
+        "retained-fusion"
+      ],
+      "exact_numeric_equality": true,
+      "neural_inference": false,
+      "historical_identity_claim": false
+    },
+    "option_proposal_training": {
+      "training_questions": 64,
+      "methods": {
+        "Stop": {
+          "n": 64,
+          "correct": 11,
+          "mean_solver_tokens": 388.609375,
+          "mean_compute": 503.05420711974114,
+          "mean_encoder_calls": 0.0,
+          "mean_encoder_token_slots": 0.0,
+          "accuracy": 0.171875
+        },
+        "Repair once": {
+          "n": 64,
+          "correct": 13,
+          "mean_solver_tokens": 992.828125,
+          "mean_compute": 1285.2144012944984,
+          "mean_encoder_calls": 0.0,
+          "mean_encoder_token_slots": 0.0,
+          "accuracy": 0.203125
+        },
+        "Repair twice": {
+          "n": 64,
+          "correct": 13,
+          "mean_solver_tokens": 1704.296875,
+          "mean_compute": 2206.2095469255664,
+          "mean_encoder_calls": 0.0,
+          "mean_encoder_token_slots": 0.0,
+          "accuracy": 0.203125
+        },
+        "Option-proposal repair": {
+          "n": 64,
+          "correct": 7,
+          "mean_solver_tokens": 1104.53125,
+          "mean_compute": 1791.6660030038836,
+          "mean_encoder_calls": 9.65625,
+          "mean_encoder_token_slots": 2574.5,
+          "accuracy": 0.109375
+        }
+      },
+      "bank_sha256": "bf8606a4ae8e39ee58cce59e3ff1f1792c42986e1d5a599840b0d6ebf15a6fc5",
+      "fresh_data_used": false,
+      "scope": "Training-only action pilot; not fresh validation or a controller result",
+      "action_change": "Existing repair_prompt optional feedback now receives a non-LLM discriminative option proposal."
     }
   },
   "matched_review_B": "Required before any final gap claim; independent LLM control with same strong review as C."
