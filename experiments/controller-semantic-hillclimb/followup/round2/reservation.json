@@ -1,0 +1,57 @@
+{
+  "registered_at_utc": "2026-11-21T07:51:35.291228+00:00",
+  "seed": 2026112103,
+  "source_extension": "New SuperGPQA chemistry/physics, unused GSM8K math; separate from the retired912 study.",
+  "selection": "Fixed hashes before inference; 50/25/25 mix; test reserved first. No model results used.",
+  "science": {
+    "repo": "m-a-p/SuperGPQA",
+    "revision": "4430d4458112c7d4497fdcf94d7cc223313d6acf",
+    "sha256": "28b998e70205ee95e540317b5adc06a06552a3961fb50b153df126b833f7a910",
+    "license": "ODC-BY; original referenced-source licenses also apply",
+    "url": "https://huggingface.co/datasets/m-a-p/SuperGPQA",
+    "option_order": "Preserved official order and labeled option; no distractors removed."
+  },
+  "math_sha256": "6146bca074f4c6c5e07de7e96cc968adab3833dbdafeda21830f27558eea3d9b",
+  "deduplication": "Recorded IDs, archived normalized stems, and >=85% word-fivegram overlap with comparable length.",
+  "exclusions": {
+    "historical_or_within_pool_duplicate": 2604
+  },
+  "unused_pool": {
+    "chemistry": 1682,
+    "physics": 2683,
+    "math": 5118
+  },
+  "splits": {
+    "test": {
+      "n": 1024,
+      "sha256": "424ea00684a055ba5409f75acf11a4209b3665bb2b0afbf30f0daf0ef91ae7b7",
+      "subjects": {
+        "math": 512,
+        "chemistry": 256,
+        "physics": 256
+      }
+    },
+    "dev": {
+      "n": 256,
+      "sha256": "68ae92907236b4f831bb14ca5c87a457e5a33dcaa984e6d42063bf0e257b5f31",
+      "subjects": {
+        "physics": 64,
+        "chemistry": 64,
+        "math": 128
+      }
+    },
+    "train": {
+      "n": 512,
+      "sha256": "b153cf02a000f4f96c2d22194092a3f852140debdcd72b74c6de288b8c44397b",
+      "subjects": {
+        "chemistry": 128,
+        "math": 256,
+        "physics": 128
+      }
+    }
+  },
+  "reservation_code_sha256": "81775d1e6c2149bd91541d844070e7336cf6d4f67d8a35da2096ec9676618289",
+  "private_manifest_sha256": "5e46de84fd30dfdd7f81d098dc9fa952fffd0c29fb38f826a969d9d46c785885",
+  "raw_examples_present": false,
+  "fresh_test_inference_started": false
+}

@@ -1,0 +1,125 @@
+{
+  "test_inference_started": false,
+  "status": "Targets not met; experiments active",
+  "development_A": {
+    "selected_A": {
+      "model": "C0.1-smooth32",
+      "settings": {
+        "by_subject": {
+          "math": {
+            "penalty": 0.02,
+            "posterior_weight": 0.5
+          },
+          "chemistry": {
+            "penalty": 0.02,
+            "posterior_weight": 0.5
+          },
+          "physics": {
+            "penalty": 0.24,
+            "posterior_weight": 0.0
+          }
+        }
+      },
+      "dev": {
+        "n": 256,
+        "correct": 142,
+        "accuracy": 0.5546875,
+        "mean_compute": 888.8319960846532,
+        "mean_solver_tokens": 637.640625,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.83984375,
+        "mean_total_parameter_compute": 888.8319960846532,
+        "mean_verifier_tokens": 451.12890625,
+        "mean_verifier_token_slots": 451.12890625,
+        "mean_verifier_calls": 1.62890625
+      }
+    },
+    "baselines": {
+      "Stop": {
+        "n": 256,
+        "correct": 110,
+        "accuracy": 0.4296875,
+        "mean_compute": 381.39158576051784,
+        "mean_solver_tokens": 294.625,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.0,
+        "mean_total_parameter_compute": 381.39158576051784,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "Repair once": {
+        "n": 256,
+        "correct": 129,
+        "accuracy": 0.50390625,
+        "mean_compute": 990.2103559870551,
+        "mean_solver_tokens": 764.9375,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0,
+        "mean_total_parameter_compute": 990.2103559870551,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "Repair twice": {
+        "n": 256,
+        "correct": 132,
+        "accuracy": 0.515625,
+        "mean_compute": 1711.205501618123,
+        "mean_solver_tokens": 1321.90625,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0,
+        "mean_total_parameter_compute": 1711.205501618123,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "Retry once": {
+        "n": 256,
+        "correct": 127,
+        "accuracy": 0.49609375,
+        "mean_compute": 886.5594660194175,
+        "mean_solver_tokens": 684.8671875,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0,
+        "mean_total_parameter_compute": 886.5594660194175,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "Retry twice": {
+        "n": 256,
+        "correct": 123,
+        "accuracy": 0.48046875,
+        "mean_compute": 1394.6905339805826,
+        "mean_solver_tokens": 1077.3984375,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0,
+        "mean_total_parameter_compute": 1394.6905339805826,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      }
+    },
+    "test_used": false,
+    "development_questions": 256,
+    "A_above_highest_baseline": 0.0390625,
+    "approximation": "Discriminative history posterior blend; future planning uses finite POMDP observation distribution."
+  },
+  "training_only_headroom": {
+    "n": 512,
+    "best_fixed_correct": 271,
+    "all_seven_plain_hindsight_oracle_correct": 343,
+    "science_questions_with_all_seven_wrong": 160
+  },
+  "new_test_reserved_questions": 1024,
+  "tests_passed": 24,
+  "primary_912_confirmation": "../artifacts/confirmation-912-v1/REPORT.md",
+  "interpretation": "Development-selected results are not fresh confirmation; old912test remains retired."
+}
