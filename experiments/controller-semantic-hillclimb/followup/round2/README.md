@@ -245,3 +245,44 @@ singleflight requests, serialized observer access, and complete-grid checks
 support resumable collection. It requires a full development replay through
 that runner before any test collection. Nine synthetic tests and an independent
 review passed; no actual prospective run has started.
+
+The formatting control is complete on all 128 training questions. Asking for
+the answer first reduced Repair once from 70 to 51 correct, Repair twice from
+72 to 57, Retry once from 53 to 30, and Retry twice from 60 to 22. The reductions
+were concentrated in math. This formatting change is not selected, and the
+original baselines remain intact.
+
+The independent second-review pilot finished at 34/64 science answers correct,
+versus 32/64 for retained second repair, at about 90% more compute. It contributes
+three correct answers beyond the union of all earlier plain, retained-review,
+and critical-review paths. That union reaches 44/64, but it uses hindsight and
+does not measure attainable controller accuracy. This expensive action is not
+promoted to a development controller on its average gain alone.
+
+A separate training-only diagnostic predicts paid-review correctness using
+32 fixed metadata features. All review variants from a question remain in the
+same outer fold; inner question-grouped folds calibrate probabilities without
+access to outer held labels. On the 64 new science root reviews, logistic
+metadata features improve Brier score from 0.2903 for confidence/agreement
+features to 0.2363, and AUROC from 0.5132 to 0.6745. This motivates a new paid
+observation model for C; it is not a controller or fresh-test accuracy result.
+
+The metadata-review POMDP variants are now fitted for both the mixed and
+new-source cohorts. They rebuild review likelihoods and review-conditioned
+transitions, preserve child observations and terminal dynamics, and replace
+the review encoder with a logistic metadata observer. All teacher calls and
+child encoder passes remain charged. Their explicit runtime must be used;
+the original semantic-review dispatch cannot evaluate these models correctly.
+Development evaluation is pending.
+
+Sparse word features improved question-excluded training state forecasts but
+did not improve the resulting POMDP on development: 142/256 correct at 926.40
+compute units. The retained A stays at 144/256 and 856.54. This experiment used
+all 256 development questions and cached neural observations, with no new
+neural or cloud calls. No further word-feature parameter search is selected.
+
+The existing development panel has a perfect-hindsight ceiling of 165/256
+(64.45%) over its seven plain paths: 123 math, 21 chemistry and 21 physics
+questions have any correct path. A needs at least 158/256 to exceed the best
+fixed baseline by ten points. This ceiling is an availability diagnostic,
+not an attainable policy score or an independent test result.
