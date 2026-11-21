@@ -90,7 +90,7 @@ it does not claim an exact continuous-likelihood Bayesian update.
 On all 256 new development questions, the first repairability model achieved
 141/256 (55.08%), and the continuous variant achieved 142/256 (55.47%). The
 strongest fixed baseline, Repair twice, achieved 132/256 (51.56%). Thus the
-best A development margin is 3.91 percentage points, below the ten-point goal.
+initial A development margin is 3.91 percentage points, below the ten-point goal.
 These development results are used for selection and are not fresh test
 confirmation. The reserved 1,024-question test bank remains empty.
 
@@ -213,3 +213,35 @@ for plain Repair once, at higher compute. It is not promoted. A separate
 32-question auxiliary training diagnostic also shows weak option learning
 (5/32 top-ranked answers correct), motivating a grouped training objective
 before spending further compute on that feedback channel.
+
+`train_science_listwise.py` tests a question-grouped objective: cross-entropy
+over every official option plus balanced binary correctness loss. A fixed
+four-question training sanity check improved top-ranked correctness from one
+to four questions in 32 updates; this establishes learnability on those four
+examples, not generalization. A separately registered continuation uses the
+same 1,440 auxiliary training questions for three epochs, keeps only the final
+checkpoint, and calibrates it after archive reload. The previous weights and
+their development result remain available for comparison.
+
+`fit_new_source_mentor.py` adds a source-matched hybrid fit using all 512 new
+training questions and exactly the 128 new strong-review pairs. It uniformly
+excludes the 64 old pairs, reuses 4,224 verified neural observations, and makes
+no new model calls. Both original-emission and question-excluded-emission
+variants are archived separately. Fitting is complete; development comparison
+and prospective provenance checks are still required before selection.
+
+`audit_train_source_alignment.py` found matching source references for all
+512 training questions, matching official option text/order for all 256 science
+questions, and matching prompt hashes for all 3,584 plain solver nodes. It found
+no context-window pressure under the returned token counts. A separate manual
+review identified two training questions that require absent diagrams; these
+are recorded without changing the frozen data. The audit checks source
+alignment and parsing, not independent scientific verification of every label.
+
+`prospective_parallel.py` provides a separately registered four-question runner
+for future confirmation, retaining all eight policies' sequential decisions
+within each question and the two-GPU cap. Durable physical-response journals,
+singleflight requests, serialized observer access, and complete-grid checks
+support resumable collection. It requires a full development replay through
+that runner before any test collection. Nine synthetic tests and an independent
+review passed; no actual prospective run has started.

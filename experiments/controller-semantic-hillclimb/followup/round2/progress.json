@@ -173,7 +173,7 @@
     "science_questions_with_all_seven_wrong": 160
   },
   "new_test_reserved_questions": 1024,
-  "tests_passed": 109,
+  "tests_passed": 135,
   "primary_912_confirmation": "../artifacts/confirmation-912-v1/REPORT.md",
   "interpretation": "Development-selected results are not fresh confirmation; old912test remains retired.",
   "completed_followups": {
@@ -706,7 +706,46 @@
       "fresh_data_used": false,
       "scope": "Training-only action pilot; not fresh validation or a controller result",
       "action_change": "Existing repair_prompt optional feedback now receives a non-LLM discriminative option proposal."
+    },
+    "science_grouped_training_sanity": {
+      "training_questions": 4,
+      "steps": 32,
+      "rank_correct_before": 1,
+      "rank_correct_after": 4,
+      "joint_loss_before": 2.99346,
+      "joint_loss_after": 1.94504,
+      "generalization_claim": false,
+      "full_1440_question_training": "Running; no completed development result"
+    },
+    "new_source_mentor_fit": {
+      "training_questions": 512,
+      "paired_reviews": 128,
+      "excluded_old_pairs": 64,
+      "reused_neural_rows": 4224,
+      "new_neural_calls": 0,
+      "new_cloud_calls": 0,
+      "models": 8,
+      "development_evaluated": false,
+      "test_used": false
+    },
+    "source_alignment_audit": {
+      "training_questions": 512,
+      "reference_source_mismatches": 0,
+      "science_option_order_mismatches": 0,
+      "science_questions": 256,
+      "plain_prompt_hashes_verified": 3584,
+      "context_window_risks_from_returned_token_counts": 0,
+      "missing_essential_diagram_training_questions": 2,
+      "frozen_banks_changed": false,
+      "gold_scientific_accuracy_independently_verified": false
     }
   },
-  "matched_review_B": "Required before any final gap claim; independent LLM control with same strong review as C."
+  "matched_review_B": "Required before any final gap claim; independent LLM control with same strong review as C.",
+  "prospective_parallel": {
+    "synthetic_tests": 9,
+    "independent_review_passed": true,
+    "actual_run_started": false,
+    "workers": 4,
+    "maximum_cloud_gpus": 2
+  }
 }
