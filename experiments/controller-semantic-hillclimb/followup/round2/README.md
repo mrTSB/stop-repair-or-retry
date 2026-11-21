@@ -325,3 +325,41 @@ advance only with at least seven net correct answers over the stronger
 one-step control, no greater average compute than Repair once, and four newly
 correct cases beyond the seven-path hindsight union. Neither staged collection
 uses reserved test questions or authorizes a fresh-test success claim.
+
+The matched strong-review B comparison is complete and improves B to 177/256
+(69.14%), at 3,772.86 active-parameter compute units. The source-matched C
+reaches 175/256 (68.36%); its cross-fitted version uses 3,241.68 units, saving
+14.08% against that B. All 36 matched B rules were replayed independently and
+the stronger B was retained. The two metadata-review C cohorts obtain 171 and
+174 correct answers, so neither displaces the 175-answer C. A still needs at
+least 158 correct answers and C now needs at least 203; both accuracy targets
+remain unmet on development. The reserved fresh panel remains unopened.
+
+`second_review_value_diagnostic.py` checks whether paid-prefix metadata can
+selectively justify an independent second review. Its fixed three-fold joint
+correctness and cost forecasters use all 64 earlier science training questions,
+without held-question labels, held future costs or unpaid review text in the
+decision. All five prespecified penalties produce 29–31 correct answers,
+versus 32 for retained repair. This training-only diagnostic does not justify
+promoting the expensive second-review action or searching more thresholds.
+
+The Finish pilot completed all 128 physical calls and failed all promotion
+criteria: 59 correct versus 70 for Repair once, 2.03% greater compute, and zero
+newly correct questions beyond the original seven-path union. The three
+validity heuristics also remain reported; no two-step expansion is selected.
+
+The next metadata comparison inherits the strongest completed A across seven
+registered families, retaining a completed science-v3 result if available.
+`stronger_metadata_review.py` preserves the learned mentor, transfer, and
+metadata adapter while changing the unqueried A component. Its staged
+development run compares all four fitted metadata parents on the same 256
+questions; each distinct observer's actual token slots remain charged.
+
+`prospective_metadata_freeze.py`, `prospective_metadata_parallel.py`, and
+`metadata_paid_audit.py` add an explicit prospective route for metadata C.
+They verify the saved training/calibration chain, preserve strongest-A/B and
+accuracy/compute gates, and independently recompute metadata probabilities
+from paid inputs. Metadata CPU timings are recorded separately from the
+inference compute proxy. The full 2,048-decision development replay and
+8,192-decision blind confirmation remain required. Independent synthetic
+and saved-model provenance checks passed; no real freeze or test run occurred.
