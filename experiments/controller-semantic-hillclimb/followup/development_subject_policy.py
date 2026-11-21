@@ -60,6 +60,9 @@ def run(args):
                 'model_sha256': {p.name: sha(p) for p in model_paths},
                 'train_sha256': sha(args.data / 'train-observations.jsonl'),
                 'selection': 'One fixed settings tuple per observed subject, one observer/planner per controller; joint C compute below strongest ordinary B. No test outcomes.'}
+    identity['future_review_flags'] = args.future_reviews
+    identity['families'] = args.families
+    identity['context_weights'] = args.context_weights
     if args.packet:
         identity['packet_training_sha256'] = sha(args.packet / 'train.jsonl')
     receipt = args.output / 'identity.json'
@@ -180,11 +183,17 @@ def run(args):
             destination = args.output / path.name
             if not destination.exists():
                 shutil.copy2(path, destination)
-            families = ('C',) if args.packet else ('A', 'C')
+            families = ('C',) if args.packet else tuple(args.families)
             options = {family: {s: [] for s in ('math', 'chemistry', 'physics')} for family in families}
-            for penalty, continuous in product((0., .01, .02, .04, .06, .08, .10, .16, .24), (False, True)):
-                base = {'context_weight': 0., 'penalty': penalty, 'science_weight': 1.,
-                        'reuse_review': True, 'late_feedback': True, 'plan_reviews': False,
+            for penalty, continuous, planned, weight in product((0., .01, .02, .04, .06, .08, .10, .16, .24),
+                                                                 (False, True), [v == 'on' for v in args.future_reviews],
+                                                                 args.context_weights):
+                if planned and (continuous or args.packet):
+                    # The exact future-review backup is implemented for the
+                    # finite ordinary observation model, not these alternatives.
+                    continue
+                base = {'context_weight': weight, 'penalty': penalty, 'science_weight': 1.,
+                        'reuse_review': True, 'late_feedback': True, 'plan_reviews': planned,
                         ('continuous_root' if args.packet else 'continuous_filter'): continuous}
                 for family in families:
                     for threshold in ((0.,) if family == 'A' else (0., .03, .08)):
@@ -229,4 +238,7 @@ if __name__ == '__main__':
         p.add_argument('--' + name, type=Path, required=True)
     p.add_argument('--device', choices=('cpu', 'mps'), default='mps')
     p.add_argument('--packet', type=Path)
+    p.add_argument('--future-reviews', choices=('off', 'on'), nargs='+', default=['off'])
+    p.add_argument('--families', choices=('A', 'C'), nargs='+', default=['A', 'C'])
+    p.add_argument('--context-weights', type=float, nargs='+', default=[0.])
     run(p.parse_args())

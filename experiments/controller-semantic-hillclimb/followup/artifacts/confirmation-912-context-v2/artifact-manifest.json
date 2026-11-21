@@ -1,0 +1,20 @@
+{
+  "raw_question_text_present": false,
+  "answer_strings_present": false,
+  "rationales_present": false,
+  "neural_cache_present": false,
+  "source_freeze_sha256": "902adfd1327599db5454bbb9da4698f5e0872da13bcca35c610df2fabbd9ff85",
+  "packager_sha256": "3a4a34a6f1ae6c0c3ccb6ad8e44135fa449025d3dda510270d1a886263c1ab3e",
+  "files": {
+    "summary.json": "ab5e20593b25a1c5c206579da1c8ee9d40b91abb0e0fefa97b140137464e0be2",
+    "test-audit.json": "5cb458c5ac8ba0f8706b7d53f4d5f7f34d89b4dcedade8a830ae35a7ceb2437f",
+    "frozen.json": "902adfd1327599db5454bbb9da4698f5e0872da13bcca35c610df2fabbd9ff85",
+    "per-question.jsonl": "4790809a93ec92320c90a707faa742fc36a5b78a7adc0ea37553a7359381416b",
+    "REPORT.md": "78a9a50353bf2be773ebb03ee359ceaa981ab592b7c9142237453291ea051f3d",
+    "neural-cache-import.json": "2f7eba64f55c5b113ecde1ebc50c6a69cd7d27bc90693ab379d770400803350f",
+    "development-audit.json": "1f88900db5f56404d366360b2526e8a4bda0f3295e9d8952f5994f45ac507288",
+    "encoder-panel-audit.json": "1d062bf2220238bcb72dc3f7fae0a976a4481c822f7fd90bfd924c00f79e7d71",
+    "selection.json": "3948bce1291d4fe79efb1c87f423ef6d0f79252ba40407d5b1fd3071a17ca0be",
+    "error-analysis.json": "6ac68e8bda1cd04383f9e138b2b449b2ef341ec1b4c5678bb1b6190c0ae2b330"
+  }
+}

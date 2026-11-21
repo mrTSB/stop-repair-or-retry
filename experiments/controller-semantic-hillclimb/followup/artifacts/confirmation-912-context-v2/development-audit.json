@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "split": "dev",
+  "questions": 240,
+  "freeze_sha256": "902adfd1327599db5454bbb9da4698f5e0872da13bcca35c610df2fabbd9ff85",
+  "independent_charge_checks": 1920,
+  "blind_pruned_replays": 1440,
+  "training_only_refitted_outcomes": 480,
+  "independent_encoder_regenerations": 51
+}

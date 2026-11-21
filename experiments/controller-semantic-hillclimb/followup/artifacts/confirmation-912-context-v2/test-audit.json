@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "split": "test",
+  "questions": 912,
+  "freeze_sha256": "902adfd1327599db5454bbb9da4698f5e0872da13bcca35c610df2fabbd9ff85",
+  "independent_charge_checks": 7296,
+  "blind_pruned_replays": 5472,
+  "training_only_refitted_outcomes": 0,
+  "independent_encoder_regenerations": 50,
+  "scored_summary_sha256": "ab5e20593b25a1c5c206579da1c8ee9d40b91abb0e0fefa97b140137464e0be2",
+  "scored_outcomes_sha256": "4790809a93ec92320c90a707faa742fc36a5b78a7adc0ea37553a7359381416b"
+}

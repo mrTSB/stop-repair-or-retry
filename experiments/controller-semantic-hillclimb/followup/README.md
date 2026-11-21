@@ -7,33 +7,69 @@ twice, Retry once, and Retry twice. The requested accuracy gaps are percentage
 points: A and B each exceed the strongest fixed reference by 10 points, and C
 exceeds the higher of A/B by 10 points while using less compute than B.
 
-The targets remain unmet. These are current **development** results on the same
-240 retired questions; the 912-question confirmation has not been graded:
+The requested accuracy margins are **not achieved**. The original prospective
+confirmation, frozen before its replay and grading, gives these results on all
+912 reserved questions:
 
-| Method | Accuracy (%) | Weighted token compute proxy |
-|---|---:|---:|
-| Stop | 62.08 | 330.81 |
-| Repair once | 70.00 | 887.21 |
-| Repair twice | 69.17 | 1,548.59 |
-| Retry once | 65.42 | 786.64 |
-| Retry twice | 65.00 | 1,244.51 |
-| Best A so far | 78.33 | 901.64 |
-| Strong ordinary B | 86.25 | 1,624.98 |
-| Best C so far below B's compute | 88.75 | 1,487.28 |
+| Method | Accuracy (%) | Avg. LLM tokens | Compute proxy |
+|---|---:|---:|---:|
+| Stop | 50.66 | 247.4 | 320.3 |
+| Repair once | 56.80 | 670.6 | 868.0 |
+| **Repair twice** | **61.29** | 1,178.1 | 1,525.1 |
+| Retry once | 54.06 | 593.2 | 768.0 |
+| Retry twice | 54.61 | 939.9 | 1,216.7 |
+| Controller A (POMDP) | 62.94 | 639.1 | 890.3 |
+| Controller B (LLM) | 75.77 | 1,612.3 | 1,782.1 |
+| Controller C (hybrid) | 75.11 | 1,424.6 | 1,640.8 |
 
-The retained-mentor POMDP has reached 91.25% on development data at a compute
-proxy of 3,012.90. That candidate fails the compute target; its cheaper settings
-also fail to improve the retained hybrid. Larger ensembles, action-specific
-calibration, and deeper root/late reviews have not displaced the best eligible
-C among the uniform-penalty candidates. Subject-specific budget allocation has
-since improved the eligible hybrid. Development and training pilot gains cannot
-establish a fresh-test win.
+B exceeds the strongest fixed baseline by 14.47 percentage points. A's gap is
+1.64 points. C is 0.66 points below B, with a paired 95% interval of
+[-2.08, +0.77] points. C saves 7.93% compute versus B [5.97%, 9.94%]. The
+evidence supports a compute reduction, not an accuracy improvement over B.
+
+At these observed reference scores, the requested minimum is 71.29% for both
+A and B, and 85.77% for C. The original run's failure audit found that 188 of
+C's 227 errors had paid reviews that were all wrong; 37 had a correct paid
+review available, and two acquired no review. These hindsight counts suggest
+that better expert observations matter alongside gate selection. They do not
+estimate gains an implementable controller could recover.
+
+The same-source panel (192 questions) gives B and C exactly 82.29% accuracy;
+C uses 6.50% less compute. On the additional transfer panel (720 questions),
+B scores 74.03% and C 73.19%, with C using 8.24% less compute. Neither panel
+supports the requested ten-point advantage for C.
+
+A separately registered follow-up was selected only on the retired development
+data and frozen before its own replay and **before any test grades were opened**.
+Its development gain did not transfer: A scores 62.72%, B 75.77%, and C 74.89%
+on the same 912 questions; C saves 8.22% compute versus B. The original frozen
+run is retained. These are two controller versions on **one shared 912-question
+panel**, not 1,824 independent test examples.
+
+The [original audited report](artifacts/confirmation-912-v1/REPORT.md) includes
+all fixed references, both source panels, paired intervals, target flags, and
+aggregate failure counts. The [follow-up report](artifacts/confirmation-912-context-v2/REPORT.md)
+preserves the separately frozen comparison and exact cache-reuse provenance.
+
+Both A and C use a four-state difficulty/correctness POMDP with learned
+discriminative observations and a two-call planning horizon. A acquires no LLM
+reviews. B uses the independent frozen LLM judge. C buys LLM observations by
+their estimated value and updates its belief before acting. The observation
+models and subject-specific settings for A and C were selected independently
+on development data. All final answers come from the same frozen compact solver.
+
+Development scores were substantially more optimistic: the original selection
+gave A 78.33%, B 86.25%, and C 88.75%; the follow-up gave A 78.75%, B 86.25%,
+and C 88.75%. Larger observers, richer forecasts, and more paired labels did
+not establish the requested held-out accuracy hierarchy. A deeper-review
+prototype reached 91.25% on development data at a compute proxy of 3,012.90,
+exceeding B's compute budget and therefore failing selection.
 
 ## Data and protocol
 
 Only the existing 1,472 training questions fit models, and only the existing
 240 development questions select settings. The earlier 800-question panel is
-retired. A prospective 912-question confirmation combines the still-ungraded
+retired. The prospective 912-question confirmation combined the previously ungraded
 192-question same-source panel with 720 additional questions: 360 unused GSM8K
 questions, 180 GPQA-main chemistry questions, and 180 GPQA-main physics
 questions. Both constituent panels and the joint result must be reported. The
@@ -111,7 +147,11 @@ selected separately for math, chemistry, and physics. Subject is observed
 before inference. `development_subject_policy.py` chooses a policy for each
 subject and checks the resulting joint C cost against B; it does not fit a
 different setting for individual questions. All groups are included in final
-validation.
+validation. Later planning checks used a separate copy of the retired fitting
+banks, preserving the running original freeze. `snapshot_ungraded_cache.py`
+registered the follow-up before any grading and copied every exact ungraded
+response without outcome filtering; compatible encoder predictions were reused
+only when their complete model recipe hashes matched.
 
 `full_packet_pilot.py` tests a cheaper repair format without dropping the brief
 review's worked solution. On the same 192 matched training questions it yields
@@ -138,10 +178,13 @@ preserves each subject-by-source stratum and recomputes the highest baseline
 and higher A/B accuracy inside every draw. Every target gets its own pass/fail
 flag.
 
-The development audit has independently reconstructed both selected planners
-and passed 1,920 charge checks, 1,440 blinded paid-prefix replays, 480 training-only
-refit comparisons, and 51 regenerated neural observations. A new final selection
-must receive its own audit before fresh controller replay. `pack_confirmation.py`
+Each version's development audit independently reconstructed both selected
+planners and passed 1,920 charge checks, 1,440 blinded paid-prefix replays, and
+480 training-only refit comparisons before replay. Each held-out audit checks
+7,296 charges and 5,472 blinded paid-prefix replays. `audit_encoder_panels.py`
+also regenerates observations for fixed-hash samples in every source-by-subject
+stratum, including GPQA. `error_causes.py` produces post-grading aggregate
+diagnostics, never a policy or an achievable-gain estimate. `pack_confirmation.py`
 publishes only audited, explicitly allowed numeric outcomes and provenance;
 it never copies the raw question banks or neural caches.
 

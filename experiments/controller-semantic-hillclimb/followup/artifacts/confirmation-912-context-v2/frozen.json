@@ -1,0 +1,2992 @@
+{
+  "selected": {
+    "A": {
+      "family": "A",
+      "module": "subject_policy_pomdp",
+      "model": "smooth32-review0-late1",
+      "late": true,
+      "settings": {
+        "by_subject": {
+          "math": {
+            "context_weight": 0.0,
+            "penalty": 0.02,
+            "science_weight": 1.0,
+            "reuse_review": true,
+            "late_feedback": true,
+            "plan_reviews": false,
+            "continuous_filter": true
+          },
+          "chemistry": {
+            "context_weight": 0.5,
+            "penalty": 0.16,
+            "science_weight": 1.0,
+            "reuse_review": true,
+            "late_feedback": true,
+            "plan_reviews": false,
+            "continuous_filter": false
+          },
+          "physics": {
+            "context_weight": 0.0,
+            "penalty": 0.08,
+            "science_weight": 1.0,
+            "reuse_review": true,
+            "late_feedback": true,
+            "plan_reviews": false,
+            "continuous_filter": false
+          }
+        }
+      },
+      "dev": {
+        "n": 240,
+        "correct": 189,
+        "accuracy": 0.7875,
+        "mean_compute": 882.8148348199677,
+        "mean_solver_tokens": 632.8625,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.9916666666666667,
+        "mean_total_parameter_compute": 882.8148348199677,
+        "mean_verifier_tokens": 452.325,
+        "mean_verifier_token_slots": 452.325,
+        "mean_verifier_calls": 1.7333333333333334
+      },
+      "protocol": "late",
+      "probe": "runs/controller-semantic-followup/development-context-subject-a-v1"
+    },
+    "B": {
+      "family": "B",
+      "model": null,
+      "settings": {
+        "judge_stop": "agreement",
+        "reuse_review": false
+      },
+      "late": true,
+      "dev": {
+        "n": 240,
+        "correct": 207,
+        "accuracy": 0.8625,
+        "mean_compute": 1624.9757281553398,
+        "mean_solver_tokens": 597.8875,
+        "mean_judge_tokens": 876.5416666666666,
+        "mean_judge_calls": 1.3625,
+        "mean_solver_calls": 1.4708333333333334,
+        "mean_total_parameter_compute": 10702.429881337648,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "module": "dynamic_grounded_pomdp",
+      "protocol": "late",
+      "probe": "runs/controller-semantic-hillclimb/development-dynamic-grounded"
+    },
+    "C": {
+      "family": "C",
+      "module": "subject_policy_pomdp",
+      "model": "smooth32-review1-late1",
+      "late": true,
+      "settings": {
+        "by_subject": {
+          "math": {
+            "context_weight": 0.75,
+            "penalty": 0.08,
+            "science_weight": 1.0,
+            "reuse_review": true,
+            "late_feedback": true,
+            "plan_reviews": false,
+            "continuous_filter": false,
+            "threshold": 0.0
+          },
+          "chemistry": {
+            "context_weight": 0.0,
+            "penalty": 0.06,
+            "science_weight": 1.0,
+            "reuse_review": true,
+            "late_feedback": true,
+            "plan_reviews": false,
+            "continuous_filter": true,
+            "threshold": 0.03
+          },
+          "physics": {
+            "context_weight": 0.0,
+            "penalty": 0.08,
+            "science_weight": 1.0,
+            "reuse_review": true,
+            "late_feedback": true,
+            "plan_reviews": false,
+            "continuous_filter": true,
+            "threshold": 0.0
+          }
+        }
+      },
+      "dev": {
+        "n": 240,
+        "correct": 213,
+        "accuracy": 0.8875,
+        "mean_compute": 1462.0045545483817,
+        "mean_solver_tokens": 545.0375,
+        "mean_judge_tokens": 677.7916666666666,
+        "mean_judge_calls": 1.075,
+        "mean_solver_calls": 1.4583333333333333,
+        "mean_total_parameter_compute": 8481.206280546225,
+        "mean_verifier_tokens": 700.125,
+        "mean_verifier_token_slots": 700.125,
+        "mean_verifier_calls": 2.433333333333333
+      },
+      "protocol": "late",
+      "probe": "runs/controller-semantic-followup/development-context-subject-c-v3"
+    }
+  },
+  "models": {
+    "A": {
+      "file": "models/A.pkl",
+      "sha256": "28e0175497f2fa81f27daf9793bfb89bf3111d47a46c4c06cfd6f7c7a9592465",
+      "probe_model_sha256": "008d2ee6e406211be32815b4bff5715962e2f85a80b593948715fd7b42d558b3",
+      "observer": "dd25638b28ec631e",
+      "observer_directory": "observers/dd25638b28ec631e"
+    },
+    "C": {
+      "file": "models/C.pkl",
+      "sha256": "897f047fb9e6b6fdcd3b76991709c18fc61106512e0520618597db3499cecf64",
+      "probe_model_sha256": "461511d0c010a2fb5e9ad86a6fe31106a6ff0c59a6994525f8cb3bbf6e7c9842",
+      "observer": "2582105a3f85e282",
+      "observer_directory": "observers/2582105a3f85e282"
+    }
+  },
+  "observer_assets": {
+    "dd25638b28ec631e": {
+      "directory": "observers/dd25638b28ec631e",
+      "source_directory": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/verifier-large-v1/full",
+      "private_volume": "srr-semantic-training-20261120",
+      "remote": "/verifier-large-v1/full",
+      "components": null,
+      "fit_inputs": {
+        "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/verifier-large-v1/contract.json": "51c9d874e5322fa27c777a9d7bde3b6151fe2584d32922eece4d63ade2dca4cd",
+        "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/verifier-large-v1/oof.npz": "4d0ed9e881fcda01c955a1cf2cdc284bf5ca55afb16db27f3dd8f689e2b14d2d",
+        "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/verifier-large-v1/training-summary.json": "f151dc35c71709383643e47bff1255675b47dd2e0ccd81613a82ca53b5a5f65d"
+      },
+      "files": {
+        "weights-08.safetensors": "10b6cf4f4dad53651a9973e0c0ae536beec3cdee2ac2c1c8d6ae1895f78a00ac",
+        "weights-01.safetensors": "a43cd03230c85c5236cf2ffc7a1a7ac57593e771ab6174909a4c519fe41e89a3",
+        "added_tokens.json": "dc046d04c9b0ada7ae6f1dc89c465801799acdf0c9a6aab8c15a1b2d5ca4e91f",
+        "weights-04.safetensors": "19f42f15abd683f20d0c7fd9428a0733d93335e8ee7bc0045b3394855c67d477",
+        "weights-11.safetensors": "5ca824e712b46c19283320c0071bc42e11a8eac8b39069e0649a705684be9a61",
+        "tokenizer_config.json": "b0c2c34bed428b1850a777ba56e4d4f18e2f7e31e0a6d69917968b8e4842bdf2",
+        "special_tokens_map.json": "63cd5b53789b3b5ae2c3d7aa377bcba1557ff0b41dc69ce07b94350ea32291c2",
+        "config.json": "8fb0f623c03d48d6d788513eaddb2ac4132f55bcd8d97221174f18969871abde",
+        "weights-12.safetensors": "7b8a1e50740be41486e3ba4d1e4cb98c41ec4c4aeb357eb4af2534758e309c86",
+        "weights-07.safetensors": "1de8d11c3269fff2bc48fb45663e4c4e272556b57be7bfc07dd27e17a09f3b83",
+        "recipe.json": "dd25638b28ec631ec8a65bcaba028b2a11c763a1e72af1ed3f1be0ff98242e02",
+        "weights-02.safetensors": "443078d11a774b486f0f1b7da4b9d3d29fc0064b84615b379cdc909c8d279c3d",
+        "spm.model": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+        "weights-10.safetensors": "c45dbc03630e2396f8ebef6527311955f716217426f9df9cb1ebcd52bd747e76",
+        "weights-05.safetensors": "b82b79bac399db4e958c5ff308f1bb79b67efa32e18de5ee134025fecb6b0902",
+        "weights-00.safetensors": "e5903cf072f248a75bbaeb2734f82234cdfddd318f1d92c40fab439aa1e984d7",
+        "weights-09.safetensors": "b2f1a072282676316851137275ba9d0c7c18d77ba8c0e49f2faa94e497388551",
+        "weights-03.safetensors": "8f16c041435edae8ae635889874b8f61ee61aeb1f97316f365441af2615069ae",
+        "weights-06.safetensors": "4e67edf8b0d9986bbd0fa559ad66e39f1f58398da0c5cd89222e93cc8fc092d9"
+      },
+      "recipe": {
+        "model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+        "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+        "data_sha256": "20fff545b012aa2fa6cde3b8d8d86f8722be36cffb12ae2cf1ed593ec42e491b",
+        "network_sha256": "312378e5209031330833ea574b8a127b426a9383b381cce0dd5feab800253e23",
+        "trainer_sha256": "6e418281492e2a095f8ace7bd0c9bf2086c8277b66a9ff7f2aceeb9d0c724836",
+        "max_length": 512,
+        "epochs": 2,
+        "batch": 16,
+        "seed": 2026112051,
+        "folds": 3,
+        "encoder_lr": 5e-06,
+        "head_lr": 0.0003,
+        "input_profile": "full-options-openstax-v1",
+        "corpus_sha256": "795997f4016c8ded6ce291655f2a58627b1dfb3576d6cc314d55d836683ed8f2",
+        "freeze_word_embeddings": true,
+        "transition_loss_weight": 0.35,
+        "fold": "full",
+        "numeric_width": 98,
+        "parameters": 434306836,
+        "tensor_parts": {
+          "numeric_mean": [
+            "numeric_mean__part_0"
+          ],
+          "numeric_std": [
+            "numeric_std__part_0"
+          ],
+          "encoder.embeddings.word_embeddings.weight": [
+            "encoder.embeddings.word_embeddings.weight__part_0",
+            "encoder.embeddings.word_embeddings.weight__part_1",
+            "encoder.embeddings.word_embeddings.weight__part_2",
+            "encoder.embeddings.word_embeddings.weight__part_3"
+          ],
+          "encoder.embeddings.LayerNorm.weight": [
+            "encoder.embeddings.LayerNorm.weight__part_0"
+          ],
+          "encoder.embeddings.LayerNorm.bias": [
+            "encoder.embeddings.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.0.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.0.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.0.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.0.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.0.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.0.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.output.dense.weight": [
+            "encoder.encoder.layer.0.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.output.dense.bias": [
+            "encoder.encoder.layer.0.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.0.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.0.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.intermediate.dense.weight": [
+            "encoder.encoder.layer.0.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.intermediate.dense.bias": [
+            "encoder.encoder.layer.0.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.output.dense.weight": [
+            "encoder.encoder.layer.0.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.output.dense.bias": [
+            "encoder.encoder.layer.0.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.output.LayerNorm.weight": [
+            "encoder.encoder.layer.0.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.output.LayerNorm.bias": [
+            "encoder.encoder.layer.0.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.1.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.1.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.1.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.1.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.1.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.1.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.output.dense.weight": [
+            "encoder.encoder.layer.1.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.output.dense.bias": [
+            "encoder.encoder.layer.1.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.1.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.1.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.intermediate.dense.weight": [
+            "encoder.encoder.layer.1.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.intermediate.dense.bias": [
+            "encoder.encoder.layer.1.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.output.dense.weight": [
+            "encoder.encoder.layer.1.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.output.dense.bias": [
+            "encoder.encoder.layer.1.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.output.LayerNorm.weight": [
+            "encoder.encoder.layer.1.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.output.LayerNorm.bias": [
+            "encoder.encoder.layer.1.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.2.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.2.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.2.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.2.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.2.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.2.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.output.dense.weight": [
+            "encoder.encoder.layer.2.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.output.dense.bias": [
+            "encoder.encoder.layer.2.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.2.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.2.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.intermediate.dense.weight": [
+            "encoder.encoder.layer.2.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.intermediate.dense.bias": [
+            "encoder.encoder.layer.2.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.output.dense.weight": [
+            "encoder.encoder.layer.2.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.output.dense.bias": [
+            "encoder.encoder.layer.2.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.output.LayerNorm.weight": [
+            "encoder.encoder.layer.2.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.output.LayerNorm.bias": [
+            "encoder.encoder.layer.2.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.3.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.3.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.3.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.3.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.3.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.3.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.output.dense.weight": [
+            "encoder.encoder.layer.3.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.output.dense.bias": [
+            "encoder.encoder.layer.3.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.3.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.3.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.intermediate.dense.weight": [
+            "encoder.encoder.layer.3.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.intermediate.dense.bias": [
+            "encoder.encoder.layer.3.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.output.dense.weight": [
+            "encoder.encoder.layer.3.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.output.dense.bias": [
+            "encoder.encoder.layer.3.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.output.LayerNorm.weight": [
+            "encoder.encoder.layer.3.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.output.LayerNorm.bias": [
+            "encoder.encoder.layer.3.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.4.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.4.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.4.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.4.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.4.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.4.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.output.dense.weight": [
+            "encoder.encoder.layer.4.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.output.dense.bias": [
+            "encoder.encoder.layer.4.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.4.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.4.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.intermediate.dense.weight": [
+            "encoder.encoder.layer.4.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.intermediate.dense.bias": [
+            "encoder.encoder.layer.4.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.output.dense.weight": [
+            "encoder.encoder.layer.4.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.output.dense.bias": [
+            "encoder.encoder.layer.4.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.output.LayerNorm.weight": [
+            "encoder.encoder.layer.4.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.output.LayerNorm.bias": [
+            "encoder.encoder.layer.4.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.5.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.5.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.5.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.5.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.5.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.5.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.output.dense.weight": [
+            "encoder.encoder.layer.5.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.output.dense.bias": [
+            "encoder.encoder.layer.5.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.5.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.5.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.intermediate.dense.weight": [
+            "encoder.encoder.layer.5.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.intermediate.dense.bias": [
+            "encoder.encoder.layer.5.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.output.dense.weight": [
+            "encoder.encoder.layer.5.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.output.dense.bias": [
+            "encoder.encoder.layer.5.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.output.LayerNorm.weight": [
+            "encoder.encoder.layer.5.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.output.LayerNorm.bias": [
+            "encoder.encoder.layer.5.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.6.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.6.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.6.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.6.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.6.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.6.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.output.dense.weight": [
+            "encoder.encoder.layer.6.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.output.dense.bias": [
+            "encoder.encoder.layer.6.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.6.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.6.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.intermediate.dense.weight": [
+            "encoder.encoder.layer.6.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.intermediate.dense.bias": [
+            "encoder.encoder.layer.6.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.output.dense.weight": [
+            "encoder.encoder.layer.6.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.output.dense.bias": [
+            "encoder.encoder.layer.6.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.output.LayerNorm.weight": [
+            "encoder.encoder.layer.6.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.output.LayerNorm.bias": [
+            "encoder.encoder.layer.6.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.7.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.7.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.7.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.7.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.7.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.7.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.output.dense.weight": [
+            "encoder.encoder.layer.7.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.output.dense.bias": [
+            "encoder.encoder.layer.7.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.7.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.7.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.intermediate.dense.weight": [
+            "encoder.encoder.layer.7.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.intermediate.dense.bias": [
+            "encoder.encoder.layer.7.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.output.dense.weight": [
+            "encoder.encoder.layer.7.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.output.dense.bias": [
+            "encoder.encoder.layer.7.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.output.LayerNorm.weight": [
+            "encoder.encoder.layer.7.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.output.LayerNorm.bias": [
+            "encoder.encoder.layer.7.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.8.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.8.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.8.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.8.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.8.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.8.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.output.dense.weight": [
+            "encoder.encoder.layer.8.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.output.dense.bias": [
+            "encoder.encoder.layer.8.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.8.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.8.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.intermediate.dense.weight": [
+            "encoder.encoder.layer.8.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.intermediate.dense.bias": [
+            "encoder.encoder.layer.8.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.output.dense.weight": [
+            "encoder.encoder.layer.8.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.output.dense.bias": [
+            "encoder.encoder.layer.8.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.output.LayerNorm.weight": [
+            "encoder.encoder.layer.8.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.output.LayerNorm.bias": [
+            "encoder.encoder.layer.8.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.9.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.9.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.9.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.9.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.9.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.9.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.output.dense.weight": [
+            "encoder.encoder.layer.9.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.output.dense.bias": [
+            "encoder.encoder.layer.9.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.9.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.9.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.intermediate.dense.weight": [
+            "encoder.encoder.layer.9.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.intermediate.dense.bias": [
+            "encoder.encoder.layer.9.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.output.dense.weight": [
+            "encoder.encoder.layer.9.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.output.dense.bias": [
+            "encoder.encoder.layer.9.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.output.LayerNorm.weight": [
+            "encoder.encoder.layer.9.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.output.LayerNorm.bias": [
+            "encoder.encoder.layer.9.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.10.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.10.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.10.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.10.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.10.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.10.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.output.dense.weight": [
+            "encoder.encoder.layer.10.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.output.dense.bias": [
+            "encoder.encoder.layer.10.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.10.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.10.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.intermediate.dense.weight": [
+            "encoder.encoder.layer.10.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.intermediate.dense.bias": [
+            "encoder.encoder.layer.10.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.output.dense.weight": [
+            "encoder.encoder.layer.10.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.output.dense.bias": [
+            "encoder.encoder.layer.10.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.output.LayerNorm.weight": [
+            "encoder.encoder.layer.10.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.output.LayerNorm.bias": [
+            "encoder.encoder.layer.10.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.11.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.11.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.11.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.11.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.11.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.11.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.output.dense.weight": [
+            "encoder.encoder.layer.11.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.output.dense.bias": [
+            "encoder.encoder.layer.11.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.11.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.11.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.intermediate.dense.weight": [
+            "encoder.encoder.layer.11.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.intermediate.dense.bias": [
+            "encoder.encoder.layer.11.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.output.dense.weight": [
+            "encoder.encoder.layer.11.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.output.dense.bias": [
+            "encoder.encoder.layer.11.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.output.LayerNorm.weight": [
+            "encoder.encoder.layer.11.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.output.LayerNorm.bias": [
+            "encoder.encoder.layer.11.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.12.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.12.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.12.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.12.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.12.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.12.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.output.dense.weight": [
+            "encoder.encoder.layer.12.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.output.dense.bias": [
+            "encoder.encoder.layer.12.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.12.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.12.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.intermediate.dense.weight": [
+            "encoder.encoder.layer.12.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.intermediate.dense.bias": [
+            "encoder.encoder.layer.12.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.output.dense.weight": [
+            "encoder.encoder.layer.12.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.output.dense.bias": [
+            "encoder.encoder.layer.12.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.output.LayerNorm.weight": [
+            "encoder.encoder.layer.12.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.output.LayerNorm.bias": [
+            "encoder.encoder.layer.12.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.13.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.13.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.13.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.13.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.13.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.13.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.output.dense.weight": [
+            "encoder.encoder.layer.13.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.output.dense.bias": [
+            "encoder.encoder.layer.13.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.13.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.13.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.intermediate.dense.weight": [
+            "encoder.encoder.layer.13.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.intermediate.dense.bias": [
+            "encoder.encoder.layer.13.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.output.dense.weight": [
+            "encoder.encoder.layer.13.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.output.dense.bias": [
+            "encoder.encoder.layer.13.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.output.LayerNorm.weight": [
+            "encoder.encoder.layer.13.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.output.LayerNorm.bias": [
+            "encoder.encoder.layer.13.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.14.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.14.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.14.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.14.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.14.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.14.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.output.dense.weight": [
+            "encoder.encoder.layer.14.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.output.dense.bias": [
+            "encoder.encoder.layer.14.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.14.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.14.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.intermediate.dense.weight": [
+            "encoder.encoder.layer.14.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.intermediate.dense.bias": [
+            "encoder.encoder.layer.14.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.output.dense.weight": [
+            "encoder.encoder.layer.14.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.output.dense.bias": [
+            "encoder.encoder.layer.14.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.output.LayerNorm.weight": [
+            "encoder.encoder.layer.14.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.output.LayerNorm.bias": [
+            "encoder.encoder.layer.14.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.15.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.15.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.15.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.15.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.15.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.15.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.output.dense.weight": [
+            "encoder.encoder.layer.15.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.output.dense.bias": [
+            "encoder.encoder.layer.15.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.15.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.15.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.intermediate.dense.weight": [
+            "encoder.encoder.layer.15.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.intermediate.dense.bias": [
+            "encoder.encoder.layer.15.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.output.dense.weight": [
+            "encoder.encoder.layer.15.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.output.dense.bias": [
+            "encoder.encoder.layer.15.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.output.LayerNorm.weight": [
+            "encoder.encoder.layer.15.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.output.LayerNorm.bias": [
+            "encoder.encoder.layer.15.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.16.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.16.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.16.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.16.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.16.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.16.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.output.dense.weight": [
+            "encoder.encoder.layer.16.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.output.dense.bias": [
+            "encoder.encoder.layer.16.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.16.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.16.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.intermediate.dense.weight": [
+            "encoder.encoder.layer.16.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.intermediate.dense.bias": [
+            "encoder.encoder.layer.16.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.output.dense.weight": [
+            "encoder.encoder.layer.16.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.output.dense.bias": [
+            "encoder.encoder.layer.16.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.output.LayerNorm.weight": [
+            "encoder.encoder.layer.16.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.output.LayerNorm.bias": [
+            "encoder.encoder.layer.16.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.17.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.17.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.17.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.17.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.17.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.17.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.output.dense.weight": [
+            "encoder.encoder.layer.17.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.output.dense.bias": [
+            "encoder.encoder.layer.17.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.17.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.17.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.intermediate.dense.weight": [
+            "encoder.encoder.layer.17.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.intermediate.dense.bias": [
+            "encoder.encoder.layer.17.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.output.dense.weight": [
+            "encoder.encoder.layer.17.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.output.dense.bias": [
+            "encoder.encoder.layer.17.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.output.LayerNorm.weight": [
+            "encoder.encoder.layer.17.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.output.LayerNorm.bias": [
+            "encoder.encoder.layer.17.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.18.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.18.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.18.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.18.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.18.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.18.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.output.dense.weight": [
+            "encoder.encoder.layer.18.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.output.dense.bias": [
+            "encoder.encoder.layer.18.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.18.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.18.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.intermediate.dense.weight": [
+            "encoder.encoder.layer.18.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.intermediate.dense.bias": [
+            "encoder.encoder.layer.18.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.output.dense.weight": [
+            "encoder.encoder.layer.18.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.output.dense.bias": [
+            "encoder.encoder.layer.18.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.output.LayerNorm.weight": [
+            "encoder.encoder.layer.18.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.output.LayerNorm.bias": [
+            "encoder.encoder.layer.18.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.19.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.19.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.19.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.19.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.19.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.19.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.output.dense.weight": [
+            "encoder.encoder.layer.19.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.output.dense.bias": [
+            "encoder.encoder.layer.19.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.19.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.19.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.intermediate.dense.weight": [
+            "encoder.encoder.layer.19.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.intermediate.dense.bias": [
+            "encoder.encoder.layer.19.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.output.dense.weight": [
+            "encoder.encoder.layer.19.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.output.dense.bias": [
+            "encoder.encoder.layer.19.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.output.LayerNorm.weight": [
+            "encoder.encoder.layer.19.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.output.LayerNorm.bias": [
+            "encoder.encoder.layer.19.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.20.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.20.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.20.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.20.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.20.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.20.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.output.dense.weight": [
+            "encoder.encoder.layer.20.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.output.dense.bias": [
+            "encoder.encoder.layer.20.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.20.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.20.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.intermediate.dense.weight": [
+            "encoder.encoder.layer.20.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.intermediate.dense.bias": [
+            "encoder.encoder.layer.20.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.output.dense.weight": [
+            "encoder.encoder.layer.20.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.output.dense.bias": [
+            "encoder.encoder.layer.20.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.output.LayerNorm.weight": [
+            "encoder.encoder.layer.20.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.output.LayerNorm.bias": [
+            "encoder.encoder.layer.20.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.21.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.21.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.21.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.21.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.21.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.21.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.output.dense.weight": [
+            "encoder.encoder.layer.21.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.output.dense.bias": [
+            "encoder.encoder.layer.21.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.21.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.21.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.intermediate.dense.weight": [
+            "encoder.encoder.layer.21.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.intermediate.dense.bias": [
+            "encoder.encoder.layer.21.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.output.dense.weight": [
+            "encoder.encoder.layer.21.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.output.dense.bias": [
+            "encoder.encoder.layer.21.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.output.LayerNorm.weight": [
+            "encoder.encoder.layer.21.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.output.LayerNorm.bias": [
+            "encoder.encoder.layer.21.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.22.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.22.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.22.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.22.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.22.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.22.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.output.dense.weight": [
+            "encoder.encoder.layer.22.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.output.dense.bias": [
+            "encoder.encoder.layer.22.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.22.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.22.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.intermediate.dense.weight": [
+            "encoder.encoder.layer.22.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.intermediate.dense.bias": [
+            "encoder.encoder.layer.22.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.output.dense.weight": [
+            "encoder.encoder.layer.22.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.output.dense.bias": [
+            "encoder.encoder.layer.22.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.output.LayerNorm.weight": [
+            "encoder.encoder.layer.22.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.output.LayerNorm.bias": [
+            "encoder.encoder.layer.22.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.23.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.23.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.23.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.23.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.23.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.23.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.output.dense.weight": [
+            "encoder.encoder.layer.23.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.output.dense.bias": [
+            "encoder.encoder.layer.23.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.23.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.23.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.intermediate.dense.weight": [
+            "encoder.encoder.layer.23.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.intermediate.dense.bias": [
+            "encoder.encoder.layer.23.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.output.dense.weight": [
+            "encoder.encoder.layer.23.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.output.dense.bias": [
+            "encoder.encoder.layer.23.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.output.LayerNorm.weight": [
+            "encoder.encoder.layer.23.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.output.LayerNorm.bias": [
+            "encoder.encoder.layer.23.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.rel_embeddings.weight": [
+            "encoder.encoder.rel_embeddings.weight__part_0"
+          ],
+          "encoder.encoder.LayerNorm.weight": [
+            "encoder.encoder.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.LayerNorm.bias": [
+            "encoder.encoder.LayerNorm.bias__part_0"
+          ],
+          "norm.weight": [
+            "norm.weight__part_0"
+          ],
+          "norm.bias": [
+            "norm.bias__part_0"
+          ],
+          "project.0.weight": [
+            "project.0.weight__part_0"
+          ],
+          "project.0.bias": [
+            "project.0.bias__part_0"
+          ],
+          "state.weight": [
+            "state.weight__part_0"
+          ],
+          "state.bias": [
+            "state.bias__part_0"
+          ],
+          "plain.weight": [
+            "plain.weight__part_0"
+          ],
+          "plain.bias": [
+            "plain.bias__part_0"
+          ],
+          "guided.weight": [
+            "guided.weight__part_0"
+          ],
+          "guided.bias": [
+            "guided.bias__part_0"
+          ]
+        },
+        "weights": {
+          "weights-00.safetensors": "e5903cf072f248a75bbaeb2734f82234cdfddd318f1d92c40fab439aa1e984d7",
+          "weights-01.safetensors": "a43cd03230c85c5236cf2ffc7a1a7ac57593e771ab6174909a4c519fe41e89a3",
+          "weights-02.safetensors": "443078d11a774b486f0f1b7da4b9d3d29fc0064b84615b379cdc909c8d279c3d",
+          "weights-03.safetensors": "8f16c041435edae8ae635889874b8f61ee61aeb1f97316f365441af2615069ae",
+          "weights-04.safetensors": "19f42f15abd683f20d0c7fd9428a0733d93335e8ee7bc0045b3394855c67d477",
+          "weights-05.safetensors": "b82b79bac399db4e958c5ff308f1bb79b67efa32e18de5ee134025fecb6b0902",
+          "weights-06.safetensors": "4e67edf8b0d9986bbd0fa559ad66e39f1f58398da0c5cd89222e93cc8fc092d9",
+          "weights-07.safetensors": "1de8d11c3269fff2bc48fb45663e4c4e272556b57be7bfc07dd27e17a09f3b83",
+          "weights-08.safetensors": "10b6cf4f4dad53651a9973e0c0ae536beec3cdee2ac2c1c8d6ae1895f78a00ac",
+          "weights-09.safetensors": "b2f1a072282676316851137275ba9d0c7c18d77ba8c0e49f2faa94e497388551",
+          "weights-10.safetensors": "c45dbc03630e2396f8ebef6527311955f716217426f9df9cb1ebcd52bd747e76",
+          "weights-11.safetensors": "5ca824e712b46c19283320c0071bc42e11a8eac8b39069e0649a705684be9a61",
+          "weights-12.safetensors": "7b8a1e50740be41486e3ba4d1e4cb98c41ec4c4aeb357eb4af2534758e309c86"
+        }
+      }
+    },
+    "2582105a3f85e282": {
+      "directory": "observers/2582105a3f85e282",
+      "source_directory": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/verifier-large-all-v3/full",
+      "private_volume": "srr-semantic-training-20261120",
+      "remote": "/verifier-large-all-v3/full",
+      "components": null,
+      "fit_inputs": {
+        "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/verifier-large-all-v3/contract.json": "bfbadfa018f874a08556a07e32aa5872359d3fc6bb76a54745adfffe406aba4a",
+        "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/verifier-large-all-v3/oof.npz": "428f3bbdbab3ebcb36d2d453e03308ec9281cd5ea827a47d7c8bb73f54230be0",
+        "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/verifier-large-all-v3/training-summary.json": "cfa9778c0ad1ff3a4274b19fb1351e7abcc163c7ab878f214569f651337f8ef3"
+      },
+      "files": {
+        "weights-08.safetensors": "10b6cf4f4dad53651a9973e0c0ae536beec3cdee2ac2c1c8d6ae1895f78a00ac",
+        "weights-01.safetensors": "a43cd03230c85c5236cf2ffc7a1a7ac57593e771ab6174909a4c519fe41e89a3",
+        "added_tokens.json": "dc046d04c9b0ada7ae6f1dc89c465801799acdf0c9a6aab8c15a1b2d5ca4e91f",
+        "weights-04.safetensors": "19f42f15abd683f20d0c7fd9428a0733d93335e8ee7bc0045b3394855c67d477",
+        "weights-11.safetensors": "db675a5b19b251a19e99cd4defc4961826629f163e7a38d89777cc53a90dd684",
+        "tokenizer_config.json": "b0c2c34bed428b1850a777ba56e4d4f18e2f7e31e0a6d69917968b8e4842bdf2",
+        "special_tokens_map.json": "63cd5b53789b3b5ae2c3d7aa377bcba1557ff0b41dc69ce07b94350ea32291c2",
+        "config.json": "8fb0f623c03d48d6d788513eaddb2ac4132f55bcd8d97221174f18969871abde",
+        "weights-12.safetensors": "4dd08b29e549781b719f8c565dff22861053dedc30d0f2b62ae0c175f94e12da",
+        "weights-07.safetensors": "1de8d11c3269fff2bc48fb45663e4c4e272556b57be7bfc07dd27e17a09f3b83",
+        "recipe.json": "2582105a3f85e2825575687af91f8255afb4ba8be4447124396a8766018f140c",
+        "weights-02.safetensors": "443078d11a774b486f0f1b7da4b9d3d29fc0064b84615b379cdc909c8d279c3d",
+        "spm.model": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+        "weights-10.safetensors": "5c8b2e474308eca2a87921338b40cca3ff57526a65635d3280718d28edd8c339",
+        "weights-05.safetensors": "b82b79bac399db4e958c5ff308f1bb79b67efa32e18de5ee134025fecb6b0902",
+        "weights-00.safetensors": "e5903cf072f248a75bbaeb2734f82234cdfddd318f1d92c40fab439aa1e984d7",
+        "weights-09.safetensors": "b2f1a072282676316851137275ba9d0c7c18d77ba8c0e49f2faa94e497388551",
+        "weights-03.safetensors": "8f16c041435edae8ae635889874b8f61ee61aeb1f97316f365441af2615069ae",
+        "weights-06.safetensors": "4e67edf8b0d9986bbd0fa559ad66e39f1f58398da0c5cd89222e93cc8fc092d9"
+      },
+      "recipe": {
+        "model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+        "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+        "data_sha256": "20fff545b012aa2fa6cde3b8d8d86f8722be36cffb12ae2cf1ed593ec42e491b",
+        "max_length": 512,
+        "input_profile": "full-options-openstax-v1",
+        "corpus_sha256": "795997f4016c8ded6ce291655f2a58627b1dfb3576d6cc314d55d836683ed8f2",
+        "seed": 2026112079,
+        "folds": 3,
+        "epochs": 1,
+        "batch": 16,
+        "unfrozen_last_layers": 6,
+        "encoder_lr": 2e-06,
+        "head_lr": 0.0001,
+        "root_weight": 2.0,
+        "teacher_weight": 0.2,
+        "invalid_weight": 0.2,
+        "correctness_auxiliary_weight": 0.5,
+        "balanced_correctness_weights": true,
+        "transition_loss_weight": 0.35,
+        "training_mask": "All solver nodes plus originally selected teacher nodes; question-grouped folds unchanged",
+        "terminal_solver_weight": 0.35,
+        "question_normalized_weights": true,
+        "trainer_sha256": "f71f1125f0b60573ffca257f7f46b0998bd4c04d74f5169307d4abf91b0f0513",
+        "network_sha256": "312378e5209031330833ea574b8a127b426a9383b381cce0dd5feab800253e23",
+        "initial_recipes": {
+          "0": "05e05bc026535707f4f0035338408353adbbdf3235a8015bf249a5fe9dd8c0d6",
+          "1": "5a137d98d6c5572f1e82b8074366ecb36ee339cd88f145a79d9c928ddbf4429b",
+          "2": "f2f96f4fa09f7ebb18e12df01236aff7c3b2d961d2016bb279ccd70f69deb597",
+          "full": "b8a06ebdd73a87cb86b6248552020e6b835f1ec17293b9d5bcd8d628b4668130"
+        },
+        "fold": "full",
+        "numeric_width": 98,
+        "parameters": 434306836,
+        "tensor_parts": {
+          "numeric_mean": [
+            "numeric_mean__part_0"
+          ],
+          "numeric_std": [
+            "numeric_std__part_0"
+          ],
+          "encoder.embeddings.word_embeddings.weight": [
+            "encoder.embeddings.word_embeddings.weight__part_0",
+            "encoder.embeddings.word_embeddings.weight__part_1",
+            "encoder.embeddings.word_embeddings.weight__part_2",
+            "encoder.embeddings.word_embeddings.weight__part_3"
+          ],
+          "encoder.embeddings.LayerNorm.weight": [
+            "encoder.embeddings.LayerNorm.weight__part_0"
+          ],
+          "encoder.embeddings.LayerNorm.bias": [
+            "encoder.embeddings.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.0.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.0.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.0.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.0.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.0.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.0.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.output.dense.weight": [
+            "encoder.encoder.layer.0.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.output.dense.bias": [
+            "encoder.encoder.layer.0.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.0.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.0.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.intermediate.dense.weight": [
+            "encoder.encoder.layer.0.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.intermediate.dense.bias": [
+            "encoder.encoder.layer.0.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.output.dense.weight": [
+            "encoder.encoder.layer.0.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.output.dense.bias": [
+            "encoder.encoder.layer.0.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.0.output.LayerNorm.weight": [
+            "encoder.encoder.layer.0.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.0.output.LayerNorm.bias": [
+            "encoder.encoder.layer.0.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.1.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.1.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.1.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.1.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.1.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.1.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.output.dense.weight": [
+            "encoder.encoder.layer.1.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.output.dense.bias": [
+            "encoder.encoder.layer.1.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.1.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.1.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.intermediate.dense.weight": [
+            "encoder.encoder.layer.1.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.intermediate.dense.bias": [
+            "encoder.encoder.layer.1.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.output.dense.weight": [
+            "encoder.encoder.layer.1.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.output.dense.bias": [
+            "encoder.encoder.layer.1.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.1.output.LayerNorm.weight": [
+            "encoder.encoder.layer.1.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.1.output.LayerNorm.bias": [
+            "encoder.encoder.layer.1.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.2.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.2.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.2.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.2.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.2.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.2.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.output.dense.weight": [
+            "encoder.encoder.layer.2.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.output.dense.bias": [
+            "encoder.encoder.layer.2.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.2.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.2.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.intermediate.dense.weight": [
+            "encoder.encoder.layer.2.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.intermediate.dense.bias": [
+            "encoder.encoder.layer.2.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.output.dense.weight": [
+            "encoder.encoder.layer.2.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.output.dense.bias": [
+            "encoder.encoder.layer.2.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.2.output.LayerNorm.weight": [
+            "encoder.encoder.layer.2.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.2.output.LayerNorm.bias": [
+            "encoder.encoder.layer.2.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.3.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.3.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.3.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.3.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.3.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.3.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.output.dense.weight": [
+            "encoder.encoder.layer.3.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.output.dense.bias": [
+            "encoder.encoder.layer.3.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.3.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.3.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.intermediate.dense.weight": [
+            "encoder.encoder.layer.3.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.intermediate.dense.bias": [
+            "encoder.encoder.layer.3.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.output.dense.weight": [
+            "encoder.encoder.layer.3.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.output.dense.bias": [
+            "encoder.encoder.layer.3.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.3.output.LayerNorm.weight": [
+            "encoder.encoder.layer.3.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.3.output.LayerNorm.bias": [
+            "encoder.encoder.layer.3.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.4.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.4.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.4.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.4.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.4.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.4.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.output.dense.weight": [
+            "encoder.encoder.layer.4.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.output.dense.bias": [
+            "encoder.encoder.layer.4.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.4.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.4.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.intermediate.dense.weight": [
+            "encoder.encoder.layer.4.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.intermediate.dense.bias": [
+            "encoder.encoder.layer.4.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.output.dense.weight": [
+            "encoder.encoder.layer.4.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.output.dense.bias": [
+            "encoder.encoder.layer.4.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.4.output.LayerNorm.weight": [
+            "encoder.encoder.layer.4.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.4.output.LayerNorm.bias": [
+            "encoder.encoder.layer.4.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.5.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.5.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.5.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.5.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.5.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.5.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.output.dense.weight": [
+            "encoder.encoder.layer.5.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.output.dense.bias": [
+            "encoder.encoder.layer.5.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.5.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.5.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.intermediate.dense.weight": [
+            "encoder.encoder.layer.5.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.intermediate.dense.bias": [
+            "encoder.encoder.layer.5.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.output.dense.weight": [
+            "encoder.encoder.layer.5.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.output.dense.bias": [
+            "encoder.encoder.layer.5.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.5.output.LayerNorm.weight": [
+            "encoder.encoder.layer.5.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.5.output.LayerNorm.bias": [
+            "encoder.encoder.layer.5.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.6.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.6.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.6.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.6.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.6.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.6.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.output.dense.weight": [
+            "encoder.encoder.layer.6.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.output.dense.bias": [
+            "encoder.encoder.layer.6.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.6.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.6.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.intermediate.dense.weight": [
+            "encoder.encoder.layer.6.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.intermediate.dense.bias": [
+            "encoder.encoder.layer.6.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.output.dense.weight": [
+            "encoder.encoder.layer.6.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.output.dense.bias": [
+            "encoder.encoder.layer.6.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.6.output.LayerNorm.weight": [
+            "encoder.encoder.layer.6.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.6.output.LayerNorm.bias": [
+            "encoder.encoder.layer.6.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.7.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.7.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.7.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.7.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.7.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.7.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.output.dense.weight": [
+            "encoder.encoder.layer.7.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.output.dense.bias": [
+            "encoder.encoder.layer.7.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.7.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.7.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.intermediate.dense.weight": [
+            "encoder.encoder.layer.7.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.intermediate.dense.bias": [
+            "encoder.encoder.layer.7.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.output.dense.weight": [
+            "encoder.encoder.layer.7.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.output.dense.bias": [
+            "encoder.encoder.layer.7.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.7.output.LayerNorm.weight": [
+            "encoder.encoder.layer.7.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.7.output.LayerNorm.bias": [
+            "encoder.encoder.layer.7.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.8.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.8.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.8.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.8.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.8.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.8.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.output.dense.weight": [
+            "encoder.encoder.layer.8.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.output.dense.bias": [
+            "encoder.encoder.layer.8.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.8.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.8.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.intermediate.dense.weight": [
+            "encoder.encoder.layer.8.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.intermediate.dense.bias": [
+            "encoder.encoder.layer.8.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.output.dense.weight": [
+            "encoder.encoder.layer.8.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.output.dense.bias": [
+            "encoder.encoder.layer.8.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.8.output.LayerNorm.weight": [
+            "encoder.encoder.layer.8.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.8.output.LayerNorm.bias": [
+            "encoder.encoder.layer.8.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.9.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.9.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.9.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.9.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.9.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.9.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.output.dense.weight": [
+            "encoder.encoder.layer.9.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.output.dense.bias": [
+            "encoder.encoder.layer.9.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.9.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.9.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.intermediate.dense.weight": [
+            "encoder.encoder.layer.9.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.intermediate.dense.bias": [
+            "encoder.encoder.layer.9.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.output.dense.weight": [
+            "encoder.encoder.layer.9.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.output.dense.bias": [
+            "encoder.encoder.layer.9.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.9.output.LayerNorm.weight": [
+            "encoder.encoder.layer.9.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.9.output.LayerNorm.bias": [
+            "encoder.encoder.layer.9.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.10.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.10.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.10.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.10.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.10.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.10.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.output.dense.weight": [
+            "encoder.encoder.layer.10.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.output.dense.bias": [
+            "encoder.encoder.layer.10.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.10.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.10.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.intermediate.dense.weight": [
+            "encoder.encoder.layer.10.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.intermediate.dense.bias": [
+            "encoder.encoder.layer.10.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.output.dense.weight": [
+            "encoder.encoder.layer.10.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.output.dense.bias": [
+            "encoder.encoder.layer.10.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.10.output.LayerNorm.weight": [
+            "encoder.encoder.layer.10.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.10.output.LayerNorm.bias": [
+            "encoder.encoder.layer.10.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.11.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.11.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.11.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.11.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.11.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.11.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.output.dense.weight": [
+            "encoder.encoder.layer.11.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.output.dense.bias": [
+            "encoder.encoder.layer.11.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.11.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.11.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.intermediate.dense.weight": [
+            "encoder.encoder.layer.11.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.intermediate.dense.bias": [
+            "encoder.encoder.layer.11.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.output.dense.weight": [
+            "encoder.encoder.layer.11.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.output.dense.bias": [
+            "encoder.encoder.layer.11.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.11.output.LayerNorm.weight": [
+            "encoder.encoder.layer.11.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.11.output.LayerNorm.bias": [
+            "encoder.encoder.layer.11.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.12.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.12.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.12.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.12.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.12.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.12.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.output.dense.weight": [
+            "encoder.encoder.layer.12.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.output.dense.bias": [
+            "encoder.encoder.layer.12.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.12.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.12.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.intermediate.dense.weight": [
+            "encoder.encoder.layer.12.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.intermediate.dense.bias": [
+            "encoder.encoder.layer.12.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.output.dense.weight": [
+            "encoder.encoder.layer.12.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.output.dense.bias": [
+            "encoder.encoder.layer.12.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.12.output.LayerNorm.weight": [
+            "encoder.encoder.layer.12.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.12.output.LayerNorm.bias": [
+            "encoder.encoder.layer.12.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.13.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.13.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.13.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.13.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.13.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.13.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.output.dense.weight": [
+            "encoder.encoder.layer.13.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.output.dense.bias": [
+            "encoder.encoder.layer.13.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.13.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.13.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.intermediate.dense.weight": [
+            "encoder.encoder.layer.13.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.intermediate.dense.bias": [
+            "encoder.encoder.layer.13.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.output.dense.weight": [
+            "encoder.encoder.layer.13.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.output.dense.bias": [
+            "encoder.encoder.layer.13.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.13.output.LayerNorm.weight": [
+            "encoder.encoder.layer.13.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.13.output.LayerNorm.bias": [
+            "encoder.encoder.layer.13.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.14.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.14.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.14.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.14.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.14.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.14.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.output.dense.weight": [
+            "encoder.encoder.layer.14.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.output.dense.bias": [
+            "encoder.encoder.layer.14.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.14.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.14.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.intermediate.dense.weight": [
+            "encoder.encoder.layer.14.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.intermediate.dense.bias": [
+            "encoder.encoder.layer.14.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.output.dense.weight": [
+            "encoder.encoder.layer.14.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.output.dense.bias": [
+            "encoder.encoder.layer.14.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.14.output.LayerNorm.weight": [
+            "encoder.encoder.layer.14.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.14.output.LayerNorm.bias": [
+            "encoder.encoder.layer.14.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.15.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.15.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.15.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.15.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.15.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.15.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.output.dense.weight": [
+            "encoder.encoder.layer.15.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.output.dense.bias": [
+            "encoder.encoder.layer.15.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.15.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.15.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.intermediate.dense.weight": [
+            "encoder.encoder.layer.15.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.intermediate.dense.bias": [
+            "encoder.encoder.layer.15.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.output.dense.weight": [
+            "encoder.encoder.layer.15.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.output.dense.bias": [
+            "encoder.encoder.layer.15.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.15.output.LayerNorm.weight": [
+            "encoder.encoder.layer.15.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.15.output.LayerNorm.bias": [
+            "encoder.encoder.layer.15.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.16.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.16.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.16.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.16.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.16.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.16.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.output.dense.weight": [
+            "encoder.encoder.layer.16.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.output.dense.bias": [
+            "encoder.encoder.layer.16.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.16.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.16.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.intermediate.dense.weight": [
+            "encoder.encoder.layer.16.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.intermediate.dense.bias": [
+            "encoder.encoder.layer.16.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.output.dense.weight": [
+            "encoder.encoder.layer.16.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.output.dense.bias": [
+            "encoder.encoder.layer.16.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.16.output.LayerNorm.weight": [
+            "encoder.encoder.layer.16.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.16.output.LayerNorm.bias": [
+            "encoder.encoder.layer.16.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.17.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.17.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.17.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.17.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.17.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.17.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.output.dense.weight": [
+            "encoder.encoder.layer.17.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.output.dense.bias": [
+            "encoder.encoder.layer.17.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.17.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.17.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.intermediate.dense.weight": [
+            "encoder.encoder.layer.17.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.intermediate.dense.bias": [
+            "encoder.encoder.layer.17.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.output.dense.weight": [
+            "encoder.encoder.layer.17.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.output.dense.bias": [
+            "encoder.encoder.layer.17.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.17.output.LayerNorm.weight": [
+            "encoder.encoder.layer.17.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.17.output.LayerNorm.bias": [
+            "encoder.encoder.layer.17.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.18.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.18.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.18.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.18.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.18.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.18.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.output.dense.weight": [
+            "encoder.encoder.layer.18.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.output.dense.bias": [
+            "encoder.encoder.layer.18.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.18.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.18.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.intermediate.dense.weight": [
+            "encoder.encoder.layer.18.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.intermediate.dense.bias": [
+            "encoder.encoder.layer.18.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.output.dense.weight": [
+            "encoder.encoder.layer.18.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.output.dense.bias": [
+            "encoder.encoder.layer.18.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.18.output.LayerNorm.weight": [
+            "encoder.encoder.layer.18.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.18.output.LayerNorm.bias": [
+            "encoder.encoder.layer.18.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.19.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.19.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.19.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.19.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.19.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.19.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.output.dense.weight": [
+            "encoder.encoder.layer.19.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.output.dense.bias": [
+            "encoder.encoder.layer.19.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.19.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.19.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.intermediate.dense.weight": [
+            "encoder.encoder.layer.19.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.intermediate.dense.bias": [
+            "encoder.encoder.layer.19.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.output.dense.weight": [
+            "encoder.encoder.layer.19.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.output.dense.bias": [
+            "encoder.encoder.layer.19.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.19.output.LayerNorm.weight": [
+            "encoder.encoder.layer.19.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.19.output.LayerNorm.bias": [
+            "encoder.encoder.layer.19.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.20.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.20.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.20.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.20.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.20.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.20.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.output.dense.weight": [
+            "encoder.encoder.layer.20.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.output.dense.bias": [
+            "encoder.encoder.layer.20.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.20.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.20.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.intermediate.dense.weight": [
+            "encoder.encoder.layer.20.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.intermediate.dense.bias": [
+            "encoder.encoder.layer.20.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.output.dense.weight": [
+            "encoder.encoder.layer.20.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.output.dense.bias": [
+            "encoder.encoder.layer.20.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.20.output.LayerNorm.weight": [
+            "encoder.encoder.layer.20.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.20.output.LayerNorm.bias": [
+            "encoder.encoder.layer.20.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.21.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.21.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.21.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.21.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.21.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.21.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.output.dense.weight": [
+            "encoder.encoder.layer.21.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.output.dense.bias": [
+            "encoder.encoder.layer.21.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.21.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.21.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.intermediate.dense.weight": [
+            "encoder.encoder.layer.21.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.intermediate.dense.bias": [
+            "encoder.encoder.layer.21.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.output.dense.weight": [
+            "encoder.encoder.layer.21.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.output.dense.bias": [
+            "encoder.encoder.layer.21.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.21.output.LayerNorm.weight": [
+            "encoder.encoder.layer.21.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.21.output.LayerNorm.bias": [
+            "encoder.encoder.layer.21.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.22.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.22.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.22.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.22.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.22.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.22.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.output.dense.weight": [
+            "encoder.encoder.layer.22.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.output.dense.bias": [
+            "encoder.encoder.layer.22.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.22.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.22.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.intermediate.dense.weight": [
+            "encoder.encoder.layer.22.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.intermediate.dense.bias": [
+            "encoder.encoder.layer.22.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.output.dense.weight": [
+            "encoder.encoder.layer.22.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.output.dense.bias": [
+            "encoder.encoder.layer.22.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.22.output.LayerNorm.weight": [
+            "encoder.encoder.layer.22.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.22.output.LayerNorm.bias": [
+            "encoder.encoder.layer.22.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.self.query_proj.weight": [
+            "encoder.encoder.layer.23.attention.self.query_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.self.query_proj.bias": [
+            "encoder.encoder.layer.23.attention.self.query_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.self.key_proj.weight": [
+            "encoder.encoder.layer.23.attention.self.key_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.self.key_proj.bias": [
+            "encoder.encoder.layer.23.attention.self.key_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.self.value_proj.weight": [
+            "encoder.encoder.layer.23.attention.self.value_proj.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.self.value_proj.bias": [
+            "encoder.encoder.layer.23.attention.self.value_proj.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.output.dense.weight": [
+            "encoder.encoder.layer.23.attention.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.output.dense.bias": [
+            "encoder.encoder.layer.23.attention.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.output.LayerNorm.weight": [
+            "encoder.encoder.layer.23.attention.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.attention.output.LayerNorm.bias": [
+            "encoder.encoder.layer.23.attention.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.intermediate.dense.weight": [
+            "encoder.encoder.layer.23.intermediate.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.intermediate.dense.bias": [
+            "encoder.encoder.layer.23.intermediate.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.output.dense.weight": [
+            "encoder.encoder.layer.23.output.dense.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.output.dense.bias": [
+            "encoder.encoder.layer.23.output.dense.bias__part_0"
+          ],
+          "encoder.encoder.layer.23.output.LayerNorm.weight": [
+            "encoder.encoder.layer.23.output.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.layer.23.output.LayerNorm.bias": [
+            "encoder.encoder.layer.23.output.LayerNorm.bias__part_0"
+          ],
+          "encoder.encoder.rel_embeddings.weight": [
+            "encoder.encoder.rel_embeddings.weight__part_0"
+          ],
+          "encoder.encoder.LayerNorm.weight": [
+            "encoder.encoder.LayerNorm.weight__part_0"
+          ],
+          "encoder.encoder.LayerNorm.bias": [
+            "encoder.encoder.LayerNorm.bias__part_0"
+          ],
+          "norm.weight": [
+            "norm.weight__part_0"
+          ],
+          "norm.bias": [
+            "norm.bias__part_0"
+          ],
+          "project.0.weight": [
+            "project.0.weight__part_0"
+          ],
+          "project.0.bias": [
+            "project.0.bias__part_0"
+          ],
+          "state.weight": [
+            "state.weight__part_0"
+          ],
+          "state.bias": [
+            "state.bias__part_0"
+          ],
+          "plain.weight": [
+            "plain.weight__part_0"
+          ],
+          "plain.bias": [
+            "plain.bias__part_0"
+          ],
+          "guided.weight": [
+            "guided.weight__part_0"
+          ],
+          "guided.bias": [
+            "guided.bias__part_0"
+          ]
+        },
+        "weights": {
+          "weights-00.safetensors": "e5903cf072f248a75bbaeb2734f82234cdfddd318f1d92c40fab439aa1e984d7",
+          "weights-01.safetensors": "a43cd03230c85c5236cf2ffc7a1a7ac57593e771ab6174909a4c519fe41e89a3",
+          "weights-02.safetensors": "443078d11a774b486f0f1b7da4b9d3d29fc0064b84615b379cdc909c8d279c3d",
+          "weights-03.safetensors": "8f16c041435edae8ae635889874b8f61ee61aeb1f97316f365441af2615069ae",
+          "weights-04.safetensors": "19f42f15abd683f20d0c7fd9428a0733d93335e8ee7bc0045b3394855c67d477",
+          "weights-05.safetensors": "b82b79bac399db4e958c5ff308f1bb79b67efa32e18de5ee134025fecb6b0902",
+          "weights-06.safetensors": "4e67edf8b0d9986bbd0fa559ad66e39f1f58398da0c5cd89222e93cc8fc092d9",
+          "weights-07.safetensors": "1de8d11c3269fff2bc48fb45663e4c4e272556b57be7bfc07dd27e17a09f3b83",
+          "weights-08.safetensors": "10b6cf4f4dad53651a9973e0c0ae536beec3cdee2ac2c1c8d6ae1895f78a00ac",
+          "weights-09.safetensors": "b2f1a072282676316851137275ba9d0c7c18d77ba8c0e49f2faa94e497388551",
+          "weights-10.safetensors": "5c8b2e474308eca2a87921338b40cca3ff57526a65635d3280718d28edd8c339",
+          "weights-11.safetensors": "db675a5b19b251a19e99cd4defc4961826629f163e7a38d89777cc53a90dd684",
+          "weights-12.safetensors": "4dd08b29e549781b719f8c565dff22861053dedc30d0f2b62ae0c175f94e12da"
+        }
+      }
+    }
+  },
+  "evidence": {
+    "code/experiments/controller-hillclimb/cascade.py": "f86085e3d1d93a927f23695c20aad4ac5e9d9ed162983cf7d802feab9b951505",
+    "code/experiments/controller-hillclimb/collect.py": "b00b8586c3cacc7fc70a927bd2f48d4972676ea84b6cca94aebb03d1a678c1a2",
+    "code/experiments/controller-hillclimb/compact.py": "df664ac74b9561b5be5e3b23c6b9f2c1a9aa6fe4a635a6b951ee4b409b2dc27b",
+    "code/experiments/controller-hillclimb/hillclimb.py": "fbe68f11fa1ea635eb22f440ffb26fd9eef0acedc400060eec3b0c2dab81002a",
+    "code/experiments/controller-hillclimb/observations.py": "cf38cd588ae71f5a3ef41869db865b6aa027f737ae92737d829e4977978cf9d3",
+    "code/experiments/controller-hillclimb/planner.py": "afc74facd21bca29f1ed671abadce36f73d005ffc60c0e99e2ef93c3a5f9aeaa",
+    "code/experiments/controller-hillclimb/pomdp-abc/acquire.py": "5c7f270df30ff6418edd92cd88cd4abcb93cf5f9a4ac37379997b9405d18cda9",
+    "code/experiments/controller-hillclimb/pomdp-abc/belief.py": "2c47ce11804173d115029a9f89804223ed7c538fdee82ccfe936a42c12381588",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/audit.py": "63648fcdf5a4cce9b82149afc4a7dd947517592b293b4e0a28283d3d3997bb37",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/context_pomdp.py": "f1a46f106cc363f0545af260ec0d9de5791a58b7c8f47778f06b5f8a4925aa9c",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/extended_acquire.py": "2a67ac22a015017fad53f463c94510d3f42b0a15c347dfdaaf485ccc39501a0a",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/extended_study.py": "ab8f5b65015b99b0f68ff5124b85e66199fcd68fa7a7ec645941a7fba447843e",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/guided_solver.py": "2bc5ed5b90ba47344b8b7da91b787e1eb4907653476772da023b2f9a9517f0e9",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/modal_ollama.py": "e0c42359a89109ffcd961d98535f0ec806393c7fafed6058098a9c82453049a9",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/pack.py": "a769bb926f1679aa07629561457d3893b80ee90de7d3f215d2d1a58e3c5061af",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/review_pilot.py": "1e4b7330618f087d4bdf5c69a5869ef72131254bdf4747328003e665d40719cc",
+    "code/experiments/controller-hillclimb/pomdp-abc/guided-repair/test_context_pomdp.py": "420cc537d79e53affa195cf6ed7c67bd31a06127ec47e09e51ecc09ee7040de7",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/calibration_probe.py": "32d2973e7d65ac74a845682d2b8b01b313ae05220e2b5e71ba52ac1fe93f69b3",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/complete_pairs.py": "8824ae66c7e8b704c07d040a10d57fdad0ac0c15e91cee3262ee89c7013ae3da",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/context_probe.py": "c96c48b43adfc9b2bbc45a65003f5946c376ca6e13c407fec0e8072dfc84323f",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/contextual_pomdp.py": "d7be8cde5208dd3284165cbd40e021d47ae0cf319d389d6d20639ee8b579ab96",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/difficulty_pomdp.py": "f17fdd23759f48a4589da03c698989b6eee5090a0a75141e620300410d4c2bcb",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/fresh_collect.py": "f8e715a4bd3996ff1d78599002ce405a24376cd4af52869eef33a8a050e607b5",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/fresh_study.py": "a6c0a027bbc9a46968b4afc78f7c67ac645297e38c00cb3e142d23024f116516",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/late_pairs.py": "b58fb2bedfe05c164ad9b96b199d28235c7b6bd30f6950db76afff1e97d69387",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/margin_audit.py": "1924b97cd28d3a687b2df4aba6bdbd0d67395501f207c508a89fd9183d38d173",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/margin_data.py": "5fc53b8febe04f6488772ef1690b80968628e5802fac663937781f68f15cfbd7",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/modal_worker.py": "010865fea8489f5ffeb79becdd092a4f93acd8cc965e923bba5110d3ffc86635",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/neural_pomdp.py": "413768200040f9cf81581392424c34029de268ec222e049efe473f4c7425be0f",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/neural_probe.py": "94fd067275fec5c267829443bb0f8fae9aa8da7d0bf3f0dbc1836ca05578ff8a",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/neural_verifier.py": "c4cd47b8083c0e651617206a01587aa9d4cfbcc2870e6832540d7ee6e0279313",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/pack_results.py": "7fd594980300ebb7381243b857e6f25ddb42c3a3766b72357667fe5d230e9a70",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/review_calibration.py": "9a552ca5d8e18b425e4db7105102d0f99d4524309eb1b50ed71045366dba5b05",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/review_fields.py": "0146c920093b9b7f491d67a76f93a7ad24a843c33f818ca929a7a484c7414793",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/review_pilot.py": "5f1da0f4e5686caf809c09d89443e92279d4d5d2fdeb00e70d5daa3e42dea2d4",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/routing_probe.py": "1508f1e14db463bc1a8bf1ee63606541099d39a0af0f91e258bd1be4b2b123ec",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/study_common.py": "a4d6039fef613db997839d400a0457de0336edf09a328e7298f5da8159d4f57c",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/test_difficulty_pomdp.py": "2cdb1bcb94f028f78f390a4b18af8c7e0dbfe38d7d294a6b8e0110d8c94cff92",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/test_late_pairs.py": "a9b1c659768a158dcb71f00b3ae691c30225d3794f5320d35ccaf899262fe56b",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/test_margin_statistics.py": "ecc4916ff681ccbeb9578e061ed6933b9ae468c5bd5c62897ddaa4849d732424",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/test_review_calibration.py": "8efe330ce59a380e1aa33ab22d4df9627031096cb23bde60d7c14bfc0172ade6",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/test_review_fields.py": "1510ee77fd380c3f7a54b3c1c1edbc2fe8331b8422aeca05abea804a0af183f5",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/test_transport.py": "e751b130ff73e0975663db889fe236f596fd19a822c37357f04aa79002d304f5",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/train_verifier.py": "b5e029d976973246a4ecc91036d5b5839bcf27d167c5bfdd721dd34dc06a7d3f",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/transport.py": "2aaa91cfe8e18af245e371330aa1d175cecf0a7ebaccefe82572450384472341",
+    "code/experiments/controller-hillclimb/pomdp-abc/hybrid-margin/verify_development.py": "79019b8d51c81d14db3a397acfdf8708f7c676074e048a5b49fe9cd0cd03db23",
+    "code/experiments/controller-hillclimb/pomdp-abc/study.py": "231da6ed9ba48635bc8b207b56c987450f9caf804caa364c573257067cd7fc18",
+    "code/experiments/controller-hillclimb/pomdp-abc/test_belief.py": "2b98b74617d2ebf8d30d6e3506eb125777ab48b7c5b352a73581905623d6c2d6",
+    "code/experiments/controller-hillclimb/retry-gate/choice_retry.py": "361e648baf93269f9e481060d7497e965ec95cbff6e695872251e590caab9057",
+    "code/experiments/controller-hillclimb/retry-gate/collect_pairs.py": "2bc008fc7d631bd78f2197fd2de8eb539213fd0cf47603636262340718850791",
+    "code/experiments/controller-hillclimb/retry-gate/evaluate.py": "4aa16dfc91d45b952c535cbc4367a03b7090c6e0d94ce6c870cb317ec7f7e181",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/data.py": "708c16ad9f65b72c8f53a47436c901d5e68056911e6c3d072d9dc580d97bac6b",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/experiment.py": "ecd831d88bcfefa17c17352a3f6fc4f9cb8a58097bf8fa69fc77c76cb9098d86",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/features.py": "7049ff318734cb544d52593f4ea90d832e1768d2b21bfad8aeac2f1f31b05c2f",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/gate.py": "491c979ce4228d860ffd8ced1ec451da73f84219080704276d2dc4aaa87e03af",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/arithmetic.py": "0eae768cf952c580e72cbc93eb8bf3fd4d4502caf681235219bb033bd3567f2b",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/margin_model.py": "775dff9ba79a247a173034bf0f293d51759f61f47984a975f428b32ed5b23dab",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/margin_study.py": "a28b033beed8678920146c3d372740b36b34c9f50171d5255cacc1d201b47a35",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/study_data.py": "7917177651685c9488b86cf88a255375b5761587211dc9145676e48bf115b3ad",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/test_margin_gate.py": "afc2cef439a57c073ada563e96b62a5f23e73080de475bc6fe9284e54d700108",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/tight-budget/arithmetic_check.py": "3fb5cacd50c8af54a7bc9825199a1f459e10812916ca5412bb565b0d2379f88c",
+    "code/experiments/controller-hillclimb/retry-gate/paired-uplift/margin-gate/tight-budget/study.py": "0868b13c42c6dc1b277bf629425b236c60e3f6d578d082d66614ddf577384205",
+    "code/experiments/controller-hillclimb/retry-gate/policy.py": "934ddf70ee0e9efc7013cb1537d732b725ec7e60701b54c33cfe7962019fbb1a",
+    "code/experiments/controller-hillclimb/retry-gate/signals.py": "68efe57857af9da612844ee660fcd6b93693622f92657d31f355a00a7185469a",
+    "code/experiments/controller-hillclimb/retry-gate/token-confidence/pilot.py": "33f2f46b29a82cc94c97fd9ddefb90fdbd4ed93744f1ca6bf5c09d84cbc30673",
+    "code/experiments/controller-hillclimb/retry-gate/token-confidence/probe.py": "2272399c9473d177c59cb56a6d45fa42960ca1be882382012c7b167ffd00f37c",
+    "splits/dev-questions.jsonl": "0e83364f3df300efb07332fdf20709d5f1bbd7f982dde65b5d93c7697afd8e1d",
+    "splits/selection.json": "3948bce1291d4fe79efb1c87f423ef6d0f79252ba40407d5b1fd3071a17ca0be",
+    "splits/test-questions.jsonl": "d5619e64dbc8ac4c9a95b59912d789f6da4cc391e6ec1a93dfbc326c195794fe",
+    "splits/train-questions.jsonl": "871782ea53dd030f43b76977bf76f995c6f88cd4099da230b8115c8ed29ecc26",
+    "provenance/historical-exclusions.json": "0a2184b7627d280c02117e142ba3fcbdf014da037bfc7cc5374f19f670a98552",
+    "provenance/secondary-ungraded-cache.json": "4cd47682758b9b6f7c6f61bd349390af1cce89e82da7bd1f9376843a25b1dd22",
+    "data/train-observations.jsonl": "d4dcf305d9b786920130cc72df419311aa4f4716746d9af8d8e248e79a5475fc",
+    "data/train-late-observations.jsonl": "64da545ac4bf44397089cf310e102005cacee4a0c10f0a669f78f97abbe879f5",
+    "data/dev-observations.jsonl": "dd73bd442cadedcd15fad55cb39651fc96625a0111750b4c9089542f0636d6c0",
+    "data/dev-late-observations.jsonl": "ca8ddcef5181c95fda3306e2290808dfefb7ae00c81cf3c54426298c521397b5",
+    "semantic-code/budget_review.py": "15a622dfb9493b93e767010a72ce69b22d21e3b80e48103985924b852ff4a92c",
+    "semantic-code/calibrated_review_pomdp.py": "5e87d67065272c0cdcde6314e535a3065a627aee335b7b37245f29b5719cdba8",
+    "semantic-code/development.py": "24a41d7112ee1f10618928c6b90acba7a3304c29023cc0994eca9e74012ec327",
+    "semantic-code/development_audit.py": "fe60c11b7364c8ab10ae4494be0111b0e88837fb6a524c12bd6bd195fad87313",
+    "semantic-code/development_calibrated_review.py": "3d160f5baebdb0d4810c95d5e0224b12ae2abf3579c84edcf2d5dc52fafeb159",
+    "semantic-code/development_dynamic_grounded.py": "93fc8a5b97e14e365ea8a671bc67da75b7b8b3e185dc1ced09b89ebe4366be7d",
+    "semantic-code/development_efficient_stacked.py": "bb68d7ee9bb32834f4ab6c1f83a43010711cd67e3eca0600c43e7d6d2c4cab47",
+    "semantic-code/development_grounded.py": "de18622c0ea851589d79e2e2ecdf2005155e09883b1fc9e50586d985117e39b5",
+    "semantic-code/development_stable.py": "7ae7820df163f3ec71bb8043bc3fe8ee3e702be7c608eb508ca623b35f123ddf",
+    "semantic-code/development_stacked.py": "ffbc75766f57dfcf6afb395baab598c983c3fab4a5427bc72f388682416439ee",
+    "semantic-code/development_tree.py": "1bd404341332035d56c181ebe01cc8b85339856ddfd9581959bb7204332db1bb",
+    "semantic-code/dynamic_grounded_pomdp.py": "21e7def856e192a9827fb729053af7a936d39a0f6244c344d5def4481fb02a32",
+    "semantic-code/efficient_stacked_pomdp.py": "db7581c9182d6ea0011002825cc1d6bde8b8d38fd3b5dbd5824a5acb65e8cf4e",
+    "semantic-code/evidence.py": "97e1b03110c1b04d05d18d9563504fb5972abd283d786d181f3fd2ef68932e03",
+    "semantic-code/examples.py": "f09deb161049fa4797b1c68aa1d5edf3568d7483aa05988a6a4acc2a251a2b44",
+    "semantic-code/fetch_verifier.py": "f7377135b70b6e5d2756fb0a42816e36d3a393ed72d2ee8cde7ba1af84cced7d",
+    "semantic-code/fresh_audit.py": "f599436b678d2b748ce847009061e4961a58c87c578fc3e531b2321d23a14237",
+    "semantic-code/fresh_collect.py": "ff1bd6e462d2482ad7b131d414a9bff5c08d9571661b4e2a9d8319024e13b99b",
+    "semantic-code/fresh_study.py": "d0867019b1659566601fcb3d6376ebf84ad130a42acf62b7d82ffc23cb7bc36c",
+    "semantic-code/grounded_examples.py": "93d2d05428c6fca82a919520aa133f0c4e422e8193849a94298794bd7c9205f1",
+    "semantic-code/grounded_pomdp.py": "6de92f2820053d84b5ff0b0f48409f1b5626e18df740dd0381eb6a66d88ec4ca",
+    "semantic-code/grounded_review_pilot.py": "4d375a443c1f37e219158f7dd9b812c597ab5102489745593718e1e02b000800",
+    "semantic-code/long_review_pilot.py": "da0f47ca5243131f2109bf2cc182e8f529359cb80e7e22ba4b2af36666eeb313",
+    "semantic-code/modal_grounded_solver.py": "0486569d897f3f51bd9400f8a7126f024a9887d959dc7d28b4ef2cc6768a7398",
+    "semantic-code/modal_grounded_solver_training.py": "5a177cf50cce8bff6a5333d9fb6d42cb36d7607de47ec8523e8b12c8c8441c23",
+    "semantic-code/modal_grounded_train.py": "2243f0f208defe4421412962ba3bfa4e5ad8e0b73419ad0dc15ec764f7899fc4",
+    "semantic-code/modal_predict.py": "dab25ceb5b9c6ccfa806d8d1af10e430f3555b4f8ec3fdfb36db826bd646be0d",
+    "semantic-code/modal_solver.py": "a2c707f6792c3405d8cb023f94d310daedd5010bba8d4eb01f4a0e2eb369e5c3",
+    "semantic-code/modal_train.py": "f9a8e701ca47786a26ac65b5ea35d9e3f7a7a3983532b73b5cef61998518bc80",
+    "semantic-code/network.py": "6fd9213e95698602dbe7162765db134f6869c853a01e3a298597fe69b0525d8e",
+    "semantic-code/network_grounded.py": "f43b3ccc5ab4728208b2e50074444d36bd43af64c110c37534ce6daa4b0b3be8",
+    "semantic-code/pack_results.py": "841880dd969da1007b62f95ad370e77807bff4105c22b7591256b4b6b63b47b8",
+    "semantic-code/reasoning_pilot.py": "df2beee1d2d663fc8a924d70c56244bb69ca373b1b9ed77c5dac0b3bfa174d35",
+    "semantic-code/semantic_data.py": "a062e9a1a9369da04266edd026629dbb9454ef2a568265939f6ff118ad8e0b7d",
+    "semantic-code/semantic_pomdp.py": "28ec07134fde55406ba3a88a2c1f552443216e36e10d80b9bde11dd8fe7925e3",
+    "semantic-code/semantic_study_common.py": "de53c572920690047a9d1704f57ac394cf85d7aa038172611a5cdd21bba4126c",
+    "semantic-code/stable_pomdp.py": "76010d67338ea140ef15e00f529927ec77e0acd2293dbd1df8ed01de7bb05ac3",
+    "semantic-code/stacked_pomdp.py": "2684016f1e2709d969df7a8f44dbb6f6ffd286076a500bc14856863fafd03ba9",
+    "semantic-code/test_budget_review.py": "88c26b4e21d0b22c2ed89f1b270f579a929bbeb0c57e0386ab6288f213192406",
+    "semantic-code/test_dynamic_padding.py": "b1edff4b578703084b8e8aded8d2bbe2f86d4537756ef85571e123c85a5da1c6",
+    "semantic-code/test_grounded_inputs.py": "a835fafc04eaa912a2db4bd227074a1eb3551e214f15bd3b502717fc35dd3e59",
+    "semantic-code/test_neural_receipts.py": "191136f6afa461d2f16fe4ea9a14a402def8080c92d46bbc26fdad37bd92cd98",
+    "semantic-code/test_paired_forecasts.py": "24f367ec10ab7de1b0fc3e193bd0d6e361dc90fe5c32153ba7626d6d3c7dd28d",
+    "semantic-code/test_review_roundoff.py": "58c7dd9c870a16b2dfa0bce6a06e03411631b4fccaebde9ab727cdaefa2205a9",
+    "semantic-code/test_semantic_pomdp.py": "314e36550883e15a22e5e7d7d01c40dcc23552780dcdbba46e76b4bc94b2674f",
+    "semantic-code/test_textbook_corpus.py": "50132bad726acb0f485e444e6758cc81adf2f410c9ec8a1b7e762c867715aed5",
+    "semantic-code/textbook_corpus.py": "9c65ee9f5a5a2340694c7b9f2f88b72878cafaa74d1596c8a159965ebca731a1",
+    "semantic-code/train.py": "46dc4cf31d684abba28855695376c2e5a323c61aa11155aa6629a602d3e7f315",
+    "semantic-code/train_grounded.py": "b72ed55211bc71455e0998d9d6a51effde74bd4fa767b4286f0448badf3cca77",
+    "semantic-code/tree_context_pomdp.py": "acf34593b100a322f6bcd49b801715dd645d24be15300f125f3b581999935896",
+    "semantic-code/verify_development.py": "30990ccc80ec3e4204cc6b8e89047fb5858525538a84e75512bf51c74a630fb0",
+    "textbook/manifest.json": "e125d49465f95d4f4e4d47507f76fe2f3f25d30bba82ead5fa95ef43a9524361",
+    "textbook/passages.jsonl": "795997f4016c8ded6ce291655f2a58627b1dfb3576d6cc314d55d836683ed8f2",
+    "textbook/tfidf.pkl": "ff9ff20571182d17c9ac75b0e97319921cb875c8a25bdd7fa23ff1b704d528af",
+    "followup-code/banks.py": "e6faf474c0f2b669680e0874fc16074d78fb0cbb609815c038bb280af30ce041",
+    "followup-code/binary_core.py": "3db3b598670ca122c1f963f4c012d8d52e444a31fab56a1ae5048b8a494e3877",
+    "followup-code/binary_pomdp.py": "422e7078c93521140f4b49a5fc8ab64e13d5e174ba73203184f5131d841a46b3",
+    "followup-code/calibrated_pomdp.py": "f616a6d3b245b4da20421367aa7377c31aa574b42f452e90d72aafaaf394d424",
+    "followup-code/medium_pomdp.py": "74421792a96782476ac4378496f44d768b47aaa45390f62228b23aec30c55b91",
+    "followup-code/root_bank.py": "a1b43965194575f170dd49050ec90bc0c9b5f7d4bbe2e5c29f950891e2308cd8",
+    "followup-code/root_pairs.py": "f24a503ba02e869d06545e5f5d34f053878ae28e2dcb7495e758b0c12548c910",
+    "followup-code/root_medium_pomdp.py": "3bdbe77b3b1aa6044e6b0a0dd58b1cb819f8f170fc653d99270f6ade5f8325f4",
+    "followup-code/fusion_pomdp.py": "19648105394c4c9a64444536b21c396e0f9a6b1e5b2c056c70a6f422d38bd913",
+    "followup-code/subject_fusion_pomdp.py": "e393f8dc48741637836a2a1da86086a6f8cd305b7fc6c233572281b8a6253907",
+    "followup-code/mentor_pomdp.py": "5dd591748f73d392cc670fff5017968cca75833268fec34efb429ccd25090ecf",
+    "followup-code/reuse_pairs.py": "619fee2abe3b888b1afa9935708a4a050e8ae35d5b8d3f533e9dd783f0f972bd",
+    "followup-code/subject_policy_pomdp.py": "5fd16cef60de43e67d302f9800bec5e60b81a7401e82a20161c923505eb1d17b",
+    "followup-code/packet_pomdp.py": "0630ef20e33f52ff3cc22ee5f5e57796ca4378c6103ff6f9cca894d3b6a2bcfa",
+    "followup-code/packet_bank.py": "a0cd076a3f7d9ae11be8257b7608e1812ac82449705f09d3ef5cc4cdcc2e6566",
+    "followup-code/full_packet_pilot.py": "bd84e3d685f86d3dbe95c26cc155949984658ec7a5855374639b67cdc64cfdc3",
+    "followup-code/subject_packet_pomdp.py": "b9dfa0981464ed0631e3595d4c2c3d302860dcb1bfbab1cdbc2c6c4e4db0bd54",
+    "followup-code/medium_late_pairs.py": "e6ba06682b3e61a66cf55f0553b1dedd0ab1a9238b9719b074d3601addee5d99",
+    "followup-code/transfer_variants.py": "ab0c2f2ccc5ebb905ceb344ecd689ae0f37715aa2e62233d138df9ccc448c6a0",
+    "followup-code/confirmation_common.py": "b79ae2d1a80f615507f89bed74486512d8c2ba7f834eacfd8495e8c27a776ab3",
+    "followup-code/confirmation.py": "d196443e36c9d50d4b9cd7df64c91e07e968aba6fe1ef1f51a18fdaf04902403",
+    "followup-code/confirmation_collect.py": "add06628691f3e0204586d395d723cb4ff29472095e92be7857274b24e6c8796",
+    "followup-code/confirmation_audit.py": "e6961233004e604026167cbb78d203948c4463c71214cf9b4867823d4d2dd6c9"
+  },
+  "data_directory": "runs/controller-semantic-followup/context-confirmation-data",
+  "medium_directory": "runs/controller-semantic-followup/medium-late",
+  "medium_training_contract_sha256": "90357aef0314ec488cddd48b72e50144a2a7f61436af70efc492216836260641",
+  "medium_training_bank_sha256": "3bdc8d744896a515d66ff0079e68050e73ab93c2180fef87d60c4057ded9ad88",
+  "medium_development_bank_sha256": "09ea65f4abd12fcad2a905cdfc7f4e386993aa15b3ddb7fc20c99d6c52250a2e",
+  "questions": 912,
+  "baselines": {
+    "Stop": [
+      "stop",
+      0
+    ],
+    "Repair once": [
+      "repair",
+      1
+    ],
+    "Repair twice": [
+      "repair",
+      2
+    ],
+    "Retry once": [
+      "retry",
+      1
+    ],
+    "Retry twice": [
+      "retry",
+      2
+    ]
+  },
+  "fixed_cache_contract_sha256": "ef663b8f17f4c48d44a1b4bdb09ca2efd0423ab7e1a3688f2f1c261893dba209",
+  "fixed_cache_bank_bytes": 8421758,
+  "fixed_cache_bank_sha256": "cc54374fe4d9383b48aff51b92557d0d7781625429f38e1dc63c2fc377278aa5",
+  "targets": {
+    "interpretation": "percentage points",
+    "A_B_above_highest_baseline": 0.1,
+    "C_above_highest_A_B": 0.1,
+    "C_stretch": 0.15,
+    "C_compute_below_B": true
+  },
+  "development_targets": {
+    "A_plus_10_points": false,
+    "B_plus_10_points": true,
+    "C_plus_10_points": false
+  },
+  "selection": "Independent maximum development accuracy A and strongest ordinary B; maximum accuracy C among hybrids cheaper than B. Ties minimize compute. No test outcomes used.",
+  "roles": {
+    "A": "Finite-horizon POMDP with discriminative observations, no LLM reviews.",
+    "B": "Independent ordinary LLM judge policy; strongest development configuration retained.",
+    "C": "Finite-horizon POMDP acquiring paid LLM observations by information value."
+  },
+  "budget": "Same frozen4Bsolver, same initial call, at most two further solver calls. Five unchanged fixed baselines. Full-packet C, if selected, retains one ordinary brief review with128token answer-first repairs. Medium variants explicitly declare their deeper review budget.",
+  "raw_data": "GPQA text/options/reference answers and model rationales remain private in ignored runtime files. Publish only code, hashes, metrics, and sanitized costs/correctness.",
+  "validation": "All912reserved questions and each192/720source panel; paired subject-by-panel bootstrap with best baseline/A/B recomputed each draw.",
+  "compute": "(4*all solver tokens +3*all physical LLM review tokens +encoder billions*actual token slots)/3.09. Also report raw tokens/calls and35Btotal-parameter sensitivity.",
+  "training_observations": {
+    "path": "runs/controller-semantic-hillclimb/grounded-examples/train.jsonl",
+    "sha256": "20fff545b012aa2fa6cde3b8d8d86f8722be36cffb12ae2cf1ed593ec42e491b"
+  },
+  "selected_fit_provenance": {
+    "A": {
+      "semantic_code": "5fd16cef60de43e67d302f9800bec5e60b81a7401e82a20161c923505eb1d17b",
+      "probe": "runs/controller-semantic-followup/development-large-v1",
+      "model_sha256": {
+        "smooth32-review0-late1.pkl": "008d2ee6e406211be32815b4bff5715962e2f85a80b593948715fd7b42d558b3",
+        "smooth32-review1-late1.pkl": "6a891dd953eec1a93b49c455f22ec68b0af09f4bf485a3375ad9b58c0394df7d"
+      },
+      "train_sha256": "d4dcf305d9b786920130cc72df419311aa4f4716746d9af8d8e248e79a5475fc",
+      "selection": "One fixed settings tuple per observed subject, one observer/planner per controller; joint C compute below strongest ordinary B. No test outcomes.",
+      "future_review_flags": [
+        "off"
+      ],
+      "families": [
+        "A"
+      ],
+      "context_weights": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    "C": {
+      "semantic_code": "5fd16cef60de43e67d302f9800bec5e60b81a7401e82a20161c923505eb1d17b",
+      "probe": "runs/controller-semantic-followup/development-large-all-v3",
+      "model_sha256": {
+        "smooth32-review0-late1.pkl": "b5b78178e55b115ccf2d789a3be239aa4f43921443cba9784d2b38401f2bc6fe",
+        "smooth32-review1-late1.pkl": "461511d0c010a2fb5e9ad86a6fe31106a6ff0c59a6994525f8cb3bbf6e7c9842"
+      },
+      "train_sha256": "d4dcf305d9b786920130cc72df419311aa4f4716746d9af8d8e248e79a5475fc",
+      "selection": "One fixed settings tuple per observed subject, one observer/planner per controller; joint C compute below strongest ordinary B. No test outcomes.",
+      "future_review_flags": [
+        "off",
+        "on"
+      ],
+      "families": [
+        "C"
+      ],
+      "context_weights": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ]
+    }
+  }
+}

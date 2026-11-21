@@ -1,0 +1,19 @@
+{
+  "raw_question_text_present": false,
+  "answer_strings_present": false,
+  "rationales_present": false,
+  "neural_cache_present": false,
+  "source_freeze_sha256": "c6ac7c70938d3c05575d681c82c9f16b0c9e5a305d3d37d98406eccf2db74264",
+  "packager_sha256": "3a4a34a6f1ae6c0c3ccb6ad8e44135fa449025d3dda510270d1a886263c1ab3e",
+  "files": {
+    "summary.json": "41af467f368036956c902f0401c23815136a8a00efff89cddd8fda110d601309",
+    "test-audit.json": "e5dcf3bbee005b0e7c8b8f13a0a07e05fd309f0284bd21817c9a503217724dab",
+    "frozen.json": "c6ac7c70938d3c05575d681c82c9f16b0c9e5a305d3d37d98406eccf2db74264",
+    "per-question.jsonl": "55479f180fe7c8453448db787190257317791a05dd4f79c0e2c22c6b3abf8b83",
+    "REPORT.md": "0b4c566a22c49ab280721bae3011bab8563e1eb0a769227e1e543df51bd8f6ff",
+    "development-audit.json": "49e8a080e5ba660cbf5175af5ad9688ba4b99bf0519bebe2cd04e0d08efeeb27",
+    "encoder-panel-audit.json": "0a52f07c7599f460d2f4dfce76539320280288013224a37f2dad1b81abcf58bf",
+    "selection.json": "7f581a69d7eedfcea1bad4e9dc8c55e7810a1a5c224e2847710a808e652276aa",
+    "error-analysis.json": "edf06dd94c63d7bd9ad58b81f5b690927e0bcd70f23dd0a27408ffdb71fe3021"
+  }
+}

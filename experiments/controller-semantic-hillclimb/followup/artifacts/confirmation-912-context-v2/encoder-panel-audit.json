@@ -1,0 +1,441 @@
+{
+  "passed": true,
+  "freeze_sha256": "902adfd1327599db5454bbb9da4698f5e0872da13bcca35c610df2fabbd9ff85",
+  "source_sha256": "6801b357a59128e144e967576ffd59660896e2a84fcf892b7e1f64895434c7cc",
+  "neural_cache_sha256": "ccde2803c7fc009feb3e324a6e5dc2296ed62f8ef323e22b6c6d2a72e7c6bf1c",
+  "sampling": "Fixed SHA256 ordering per source-by-subject stratum, no outcomes consulted",
+  "per_stratum": 2,
+  "sampled_questions": 12,
+  "strata": {
+    "same-source/math": 2,
+    "same-source/chemistry": 2,
+    "same-source/physics": 2,
+    "transfer/math": 2,
+    "transfer/physics": 2,
+    "transfer/chemistry": 2
+  },
+  "independent_encoder_regenerations": 42,
+  "references_provided_to_policy": false,
+  "checks": [
+    {
+      "family": "A",
+      "id": "mmlu-pro-chemistry-04515",
+      "panel": "same-source",
+      "subject": "chemistry",
+      "path": "",
+      "kind": "solver",
+      "tokens": 512,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "mmlu-pro-chemistry-03814",
+      "panel": "same-source",
+      "subject": "chemistry",
+      "path": "",
+      "kind": "solver",
+      "tokens": 373,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gsm8k-train-04308",
+      "panel": "same-source",
+      "subject": "math",
+      "path": "",
+      "kind": "solver",
+      "tokens": 56,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gsm8k-train-04308",
+      "panel": "same-source",
+      "subject": "math",
+      "path": "repair",
+      "kind": "solver",
+      "tokens": 103,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gsm8k-train-03651",
+      "panel": "same-source",
+      "subject": "math",
+      "path": "",
+      "kind": "solver",
+      "tokens": 67,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gsm8k-train-03651",
+      "panel": "same-source",
+      "subject": "math",
+      "path": "repair",
+      "kind": "solver",
+      "tokens": 283,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "mmlu-pro-physics-09408",
+      "panel": "same-source",
+      "subject": "physics",
+      "path": "",
+      "kind": "solver",
+      "tokens": 477,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "mmlu-pro-physics-09941",
+      "panel": "same-source",
+      "subject": "physics",
+      "path": "",
+      "kind": "solver",
+      "tokens": 287,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "mmlu-pro-physics-09941",
+      "panel": "same-source",
+      "subject": "physics",
+      "path": "repair",
+      "kind": "solver",
+      "tokens": 336,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gpqa-main-9aa58830fd79da970f23",
+      "panel": "transfer",
+      "subject": "chemistry",
+      "path": "",
+      "kind": "solver",
+      "tokens": 372,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gpqa-main-3f5cef6e0b4384b6e3d0",
+      "panel": "transfer",
+      "subject": "chemistry",
+      "path": "",
+      "kind": "solver",
+      "tokens": 512,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gsm8k-train-04659",
+      "panel": "transfer",
+      "subject": "math",
+      "path": "",
+      "kind": "solver",
+      "tokens": 77,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gsm8k-train-04659",
+      "panel": "transfer",
+      "subject": "math",
+      "path": "retry",
+      "kind": "solver",
+      "tokens": 114,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gsm8k-train-00247",
+      "panel": "transfer",
+      "subject": "math",
+      "path": "",
+      "kind": "solver",
+      "tokens": 133,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gsm8k-train-00247",
+      "panel": "transfer",
+      "subject": "math",
+      "path": "retry",
+      "kind": "solver",
+      "tokens": 183,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gpqa-main-fa0d88aea09d9f015902",
+      "panel": "transfer",
+      "subject": "physics",
+      "path": "",
+      "kind": "solver",
+      "tokens": 384,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gpqa-main-fa0d88aea09d9f015902",
+      "panel": "transfer",
+      "subject": "physics",
+      "path": "repair",
+      "kind": "solver",
+      "tokens": 402,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gpqa-main-1a4a6d0004f132a00e52",
+      "panel": "transfer",
+      "subject": "physics",
+      "path": "",
+      "kind": "solver",
+      "tokens": 410,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "A",
+      "id": "gpqa-main-1a4a6d0004f132a00e52",
+      "panel": "transfer",
+      "subject": "physics",
+      "path": "repair",
+      "kind": "solver",
+      "tokens": 512,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "mmlu-pro-chemistry-04515",
+      "panel": "same-source",
+      "subject": "chemistry",
+      "path": "",
+      "kind": "solver",
+      "tokens": 512,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "mmlu-pro-chemistry-03814",
+      "panel": "same-source",
+      "subject": "chemistry",
+      "path": "",
+      "kind": "solver",
+      "tokens": 373,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "mmlu-pro-chemistry-03814",
+      "panel": "same-source",
+      "subject": "chemistry",
+      "path": "",
+      "kind": "review",
+      "tokens": 349,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gsm8k-train-04308",
+      "panel": "same-source",
+      "subject": "math",
+      "path": "",
+      "kind": "solver",
+      "tokens": 56,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gsm8k-train-04308",
+      "panel": "same-source",
+      "subject": "math",
+      "path": "",
+      "kind": "review",
+      "tokens": 84,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gsm8k-train-03651",
+      "panel": "same-source",
+      "subject": "math",
+      "path": "",
+      "kind": "solver",
+      "tokens": 67,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gsm8k-train-03651",
+      "panel": "same-source",
+      "subject": "math",
+      "path": "",
+      "kind": "review",
+      "tokens": 92,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "mmlu-pro-physics-09408",
+      "panel": "same-source",
+      "subject": "physics",
+      "path": "",
+      "kind": "solver",
+      "tokens": 477,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "mmlu-pro-physics-09408",
+      "panel": "same-source",
+      "subject": "physics",
+      "path": "",
+      "kind": "review",
+      "tokens": 512,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "mmlu-pro-physics-09941",
+      "panel": "same-source",
+      "subject": "physics",
+      "path": "",
+      "kind": "solver",
+      "tokens": 287,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "mmlu-pro-physics-09941",
+      "panel": "same-source",
+      "subject": "physics",
+      "path": "",
+      "kind": "review",
+      "tokens": 324,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gpqa-main-9aa58830fd79da970f23",
+      "panel": "transfer",
+      "subject": "chemistry",
+      "path": "",
+      "kind": "solver",
+      "tokens": 372,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gpqa-main-9aa58830fd79da970f23",
+      "panel": "transfer",
+      "subject": "chemistry",
+      "path": "",
+      "kind": "review",
+      "tokens": 512,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gpqa-main-3f5cef6e0b4384b6e3d0",
+      "panel": "transfer",
+      "subject": "chemistry",
+      "path": "",
+      "kind": "solver",
+      "tokens": 512,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gpqa-main-3f5cef6e0b4384b6e3d0",
+      "panel": "transfer",
+      "subject": "chemistry",
+      "path": "",
+      "kind": "review",
+      "tokens": 512,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gsm8k-train-04659",
+      "panel": "transfer",
+      "subject": "math",
+      "path": "",
+      "kind": "solver",
+      "tokens": 77,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gsm8k-train-04659",
+      "panel": "transfer",
+      "subject": "math",
+      "path": "",
+      "kind": "review",
+      "tokens": 101,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gsm8k-train-00247",
+      "panel": "transfer",
+      "subject": "math",
+      "path": "",
+      "kind": "solver",
+      "tokens": 133,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gsm8k-train-00247",
+      "panel": "transfer",
+      "subject": "math",
+      "path": "guided",
+      "kind": "solver",
+      "tokens": 190,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gsm8k-train-00247",
+      "panel": "transfer",
+      "subject": "math",
+      "path": "",
+      "kind": "review",
+      "tokens": 183,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gpqa-main-fa0d88aea09d9f015902",
+      "panel": "transfer",
+      "subject": "physics",
+      "path": "",
+      "kind": "solver",
+      "tokens": 384,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gpqa-main-fa0d88aea09d9f015902",
+      "panel": "transfer",
+      "subject": "physics",
+      "path": "",
+      "kind": "review",
+      "tokens": 397,
+      "maximum_logit_difference": 0.0
+    },
+    {
+      "family": "C",
+      "id": "gpqa-main-1a4a6d0004f132a00e52",
+      "panel": "transfer",
+      "subject": "physics",
+      "path": "",
+      "kind": "solver",
+      "tokens": 410,
+      "maximum_logit_difference": 0.0
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "freeze_sha256": "c6ac7c70938d3c05575d681c82c9f16b0c9e5a305d3d37d98406eccf2db74264",
+  "scored_outcomes_sha256": "55479f180fe7c8453448db787190257317791a05dd4f79c0e2c22c6b3abf8b83",
+  "source_sha256": "49f3f9cc8e896a5e252dd891c302ac75bcffb66b52742f8377a176ff05fe0f69",
+  "raw_examples_present": false,
+  "interpretation": "Post-grading hindsight diagnosis only. A correct earlier answer or review is not an achievable policy gain estimate. The three review-error categories partition errors; the other flags overlap.",
+  "panels": {
+    "joint": {
+      "questions": 912,
+      "families": {
+        "A": {
+          "errors": 338,
+          "errors_without_a_paid_review": 338,
+          "errors_with_a_correct_paid_review": 0,
+          "errors_with_paid_reviews_all_wrong": 0,
+          "errors_with_a_correct_earlier_visited_answer": 33,
+          "errors_where_initial_answer_was_correct": 28
+        },
+        "B": {
+          "errors": 221,
+          "errors_without_a_paid_review": 0,
+          "errors_with_a_correct_paid_review": 34,
+          "errors_with_paid_reviews_all_wrong": 187,
+          "errors_with_a_correct_earlier_visited_answer": 30,
+          "errors_where_initial_answer_was_correct": 24
+        },
+        "C": {
+          "errors": 227,
+          "errors_without_a_paid_review": 2,
+          "errors_with_a_correct_paid_review": 37,
+          "errors_with_paid_reviews_all_wrong": 188,
+          "errors_with_a_correct_earlier_visited_answer": 22,
+          "errors_where_initial_answer_was_correct": 21
+        }
+      },
+      "C_vs_B": {
+        "C_only_correct": 20,
+        "B_only_correct": 26,
+        "both_correct": 665,
+        "both_wrong": 201
+      }
+    },
+    "same-source": {
+      "questions": 192,
+      "families": {
+        "A": {
+          "errors": 57,
+          "errors_without_a_paid_review": 57,
+          "errors_with_a_correct_paid_review": 0,
+          "errors_with_paid_reviews_all_wrong": 0,
+          "errors_with_a_correct_earlier_visited_answer": 7,
+          "errors_where_initial_answer_was_correct": 6
+        },
+        "B": {
+          "errors": 34,
+          "errors_without_a_paid_review": 0,
+          "errors_with_a_correct_paid_review": 6,
+          "errors_with_paid_reviews_all_wrong": 28,
+          "errors_with_a_correct_earlier_visited_answer": 3,
+          "errors_where_initial_answer_was_correct": 3
+        },
+        "C": {
+          "errors": 34,
+          "errors_without_a_paid_review": 0,
+          "errors_with_a_correct_paid_review": 7,
+          "errors_with_paid_reviews_all_wrong": 27,
+          "errors_with_a_correct_earlier_visited_answer": 2,
+          "errors_where_initial_answer_was_correct": 2
+        }
+      },
+      "C_vs_B": {
+        "C_only_correct": 2,
+        "B_only_correct": 2,
+        "both_correct": 156,
+        "both_wrong": 32
+      }
+    },
+    "transfer": {
+      "questions": 720,
+      "families": {
+        "A": {
+          "errors": 281,
+          "errors_without_a_paid_review": 281,
+          "errors_with_a_correct_paid_review": 0,
+          "errors_with_paid_reviews_all_wrong": 0,
+          "errors_with_a_correct_earlier_visited_answer": 26,
+          "errors_where_initial_answer_was_correct": 22
+        },
+        "B": {
+          "errors": 187,
+          "errors_without_a_paid_review": 0,
+          "errors_with_a_correct_paid_review": 28,
+          "errors_with_paid_reviews_all_wrong": 159,
+          "errors_with_a_correct_earlier_visited_answer": 27,
+          "errors_where_initial_answer_was_correct": 21
+        },
+        "C": {
+          "errors": 193,
+          "errors_without_a_paid_review": 2,
+          "errors_with_a_correct_paid_review": 30,
+          "errors_with_paid_reviews_all_wrong": 161,
+          "errors_with_a_correct_earlier_visited_answer": 20,
+          "errors_where_initial_answer_was_correct": 19
+        }
+      },
+      "C_vs_B": {
+        "C_only_correct": 18,
+        "B_only_correct": 24,
+        "both_correct": 509,
+        "both_wrong": 169
+      }
+    }
+  }
+}

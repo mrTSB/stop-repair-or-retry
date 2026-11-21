@@ -1,0 +1,10 @@
+{
+  "source_freeze_sha256": "c6ac7c70938d3c05575d681c82c9f16b0c9e5a305d3d37d98406eccf2db74264",
+  "target_freeze_sha256": "902adfd1327599db5454bbb9da4698f5e0872da13bcca35c610df2fabbd9ff85",
+  "source_cache_sha256": "2ffcd6edb2e1f33a75d1516750d1c043957518c41a564683c1657e1839e5013d",
+  "target_cache_sha256": "2ffcd6edb2e1f33a75d1516750d1c043957518c41a564683c1657e1839e5013d",
+  "compatible_observations": 2877,
+  "target_cache_bytes": 2758579,
+  "rule": "Exact full observer recipe hashes must match; raw predictions reused without outcome filtering. Every model pass is charged per policy.",
+  "grades_opened": false
+}
