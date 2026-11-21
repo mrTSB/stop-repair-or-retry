@@ -164,7 +164,8 @@
     "A_above_highest_baseline": 0.046875,
     "A_plus_10_points": false,
     "source": "development-science-option-v1",
-    "final_comparison_still_pending": true
+    "final_comparison_still_pending": true,
+    "pending_family": "science-listwise-v3 only; other seven completed"
   },
   "training_only_headroom": {
     "n": 512,
@@ -173,7 +174,7 @@
     "science_questions_with_all_seven_wrong": 160
   },
   "new_test_reserved_questions": 1024,
-  "tests_passed": 259,
+  "tests_passed": 350,
   "primary_912_confirmation": "../artifacts/confirmation-912-v1/REPORT.md",
   "interpretation": "Development-selected results are not fresh confirmation; old912test remains retired.",
   "completed_followups": {
@@ -2454,6 +2455,226 @@
       "neural_calls": 0,
       "cloud_calls": 0,
       "test_used": false
+    },
+    "refined_V4_A": {
+      "refined_A": {
+        "model": "v4-C1-smooth8",
+        "settings": {
+          "by_subject": {
+            "math": {
+              "penalty": 0.08,
+              "posterior_weight": 0.5
+            },
+            "chemistry": {
+              "penalty": 0.02,
+              "posterior_weight": 0.0
+            },
+            "physics": {
+              "penalty": 0.24,
+              "posterior_weight": 0.0
+            }
+          }
+        },
+        "dev": {
+          "n": 256,
+          "correct": 143,
+          "accuracy": 0.55859375,
+          "mean_compute": 885.1708969382585,
+          "mean_solver_tokens": 633.58203125,
+          "mean_judge_tokens": 0.0,
+          "mean_judge_calls": 0.0,
+          "mean_solver_calls": 1.80859375,
+          "mean_total_parameter_compute": 885.1708969382585,
+          "mean_verifier_tokens": 462.4609375,
+          "mean_verifier_token_slots": 462.4609375,
+          "mean_verifier_calls": 1.62890625
+        },
+        "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-refined-observer-v1/v4-C1-smooth8.pkl",
+        "policy_module": "continuous_repairability"
+      },
+      "selected_A": {
+        "dev": {
+          "n": 256,
+          "correct": 144,
+          "accuracy": 0.5625,
+          "mean_compute": 856.5434598089403,
+          "mean_solver_tokens": 627.23046875,
+          "mean_judge_tokens": 0.0,
+          "mean_judge_calls": 0.0,
+          "mean_solver_calls": 1.80078125,
+          "mean_total_parameter_compute": 856.5434598089403,
+          "mean_verifier_tokens": 317.28125,
+          "mean_verifier_token_slots": 317.28125,
+          "mean_verifier_calls": 1.609375
+        },
+        "subject_choices": {
+          "math": {
+            "observer": "old-semantic-v1",
+            "model": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-repairability-v1/C0.1-smooth32.pkl",
+            "settings": {
+              "penalty": 0.02,
+              "posterior_weight": 0.5
+            },
+            "dev": {
+              "n": 128,
+              "correct": 117,
+              "accuracy": 0.9140625,
+              "mean_compute": 587.8927766796521,
+              "mean_solver_tokens": 428.8046875,
+              "mean_judge_tokens": 0.0,
+              "mean_judge_calls": 0.0,
+              "mean_solver_calls": 2.0078125,
+              "mean_total_parameter_compute": 587.8927766796521,
+              "mean_verifier_tokens": 233.40625,
+              "mean_verifier_token_slots": 233.40625,
+              "mean_verifier_calls": 1.859375
+            }
+          },
+          "chemistry": {
+            "observer": "auxiliary-science-option-v1",
+            "model": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-science-option-v1/science-C1-smooth8.pkl",
+            "settings": {
+              "penalty": 0.02,
+              "posterior_weight": 0.0
+            },
+            "dev": {
+              "n": 64,
+              "correct": 14,
+              "accuracy": 0.21875,
+              "mean_compute": 1598.446842226416,
+              "mean_solver_tokens": 1183.25,
+              "mean_judge_tokens": 0.0,
+              "mean_judge_calls": 0.0,
+              "mean_solver_calls": 2.15625,
+              "mean_total_parameter_compute": 1598.446842226416,
+              "mean_verifier_tokens": 474.78125,
+              "mean_verifier_token_slots": 474.78125,
+              "mean_verifier_calls": 1.6875
+            }
+          },
+          "physics": {
+            "observer": "auxiliary-science-option-v1",
+            "model": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-science-option-v1/science-C0.1-smooth32.pkl",
+            "settings": {
+              "penalty": 0.24,
+              "posterior_weight": 0.0
+            },
+            "dev": {
+              "n": 64,
+              "correct": 13,
+              "accuracy": 0.203125,
+              "mean_compute": 651.9414436500404,
+              "mean_solver_tokens": 468.0625,
+              "mean_judge_tokens": 0.0,
+              "mean_judge_calls": 0.0,
+              "mean_solver_calls": 1.03125,
+              "mean_total_parameter_compute": 651.9414436500404,
+              "mean_verifier_tokens": 327.53125,
+              "mean_verifier_token_slots": 327.53125,
+              "mean_verifier_calls": 1.03125
+            }
+          }
+        },
+        "pickle": "selected-A.pkl",
+        "source_summary": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-science-option-v1/summary.json",
+        "source_summary_sha256": "949a71f7a2388d20f616aa62afdeedea8fb68c4f87d48a75828109f9244f244a"
+      },
+      "development_questions": 256,
+      "test_used": false,
+      "crossfit_limitation": "Every neural feature comes from the checkpoint excluding its question hash-fold. The forecaster separately cross-fits by the same question groups. This is not nested CV: held-out forecaster labels may have trained neural models producing other folds features. Training OOF metrics are diagnostics; only held-out development/test assess the final policy."
+    },
+    "development-stronger-base-v2": {
+      "development_questions": 256,
+      "selected_C": {
+        "model": "strongbase-smooth32-review0",
+        "policy_module": "stronger_base_hybrid",
+        "settings": {
+          "by_subject": {
+            "math": {
+              "penalty": 0.0,
+              "threshold": 0.0
+            },
+            "chemistry": {
+              "penalty": 0.0,
+              "threshold": 0.0
+            },
+            "physics": {
+              "penalty": 0.04,
+              "threshold": 0.08
+            }
+          }
+        },
+        "selection_utility_penalty": 0.0,
+        "dev": {
+          "n": 256,
+          "correct": 173,
+          "accuracy": 0.67578125,
+          "mean_compute": 3577.5257038284794,
+          "mean_solver_tokens": 660.5078125,
+          "mean_judge_tokens": 2745.54296875,
+          "mean_judge_calls": 0.953125,
+          "mean_solver_calls": 1.703125,
+          "mean_total_parameter_compute": 32010.33314719418,
+          "mean_verifier_tokens": 405.0,
+          "mean_verifier_token_slots": 405.0,
+          "mean_verifier_calls": 1.58203125,
+          "mean_judge_physical_calls": 1.90234375
+        }
+      },
+      "test_used": false,
+      "C_above_higher_A_B": -0.015625,
+      "C_compute_saved_vs_B": 0.05177379648995262,
+      "summary_sha256": "22a92cf4bb7ed4fb5b941d89694c3ddd432db85b23084a626c2212c84af2167f"
+    },
+    "development-metadata-strongest-A-v1": {
+      "development_questions": 256,
+      "selected_C": {
+        "model": "newsource-metadata-smooth32",
+        "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-metadata-strongest-A-v1/models/newsource-metadata-smooth32.pkl",
+        "policy_module": "metadata_review_hybrid",
+        "builder_module": "stronger_metadata_review",
+        "cohort": "newsource",
+        "smoothing": 32.0,
+        "settings": {
+          "by_subject": {
+            "math": {
+              "penalty": 0.0,
+              "threshold": 0.0
+            },
+            "chemistry": {
+              "penalty": 0.0,
+              "threshold": 0.0
+            },
+            "physics": {
+              "penalty": 0.02,
+              "threshold": 0.03
+            }
+          }
+        },
+        "dev": {
+          "n": 256,
+          "correct": 174,
+          "accuracy": 0.6796875,
+          "mean_compute": 3644.5155899882484,
+          "mean_solver_tokens": 794.28125,
+          "mean_judge_tokens": 2634.66015625,
+          "mean_judge_calls": 0.91015625,
+          "mean_solver_calls": 1.9609375,
+          "mean_total_parameter_compute": 30929.02206248016,
+          "mean_verifier_tokens": 415.484375,
+          "mean_verifier_token_slots": 415.484375,
+          "mean_verifier_calls": 1.6171875,
+          "mean_metadata_calls": 0.91015625,
+          "mean_metadata_cpu_ms": 0.33865282875922276,
+          "mean_judge_physical_calls": 1.81640625,
+          "mean_review_neural_calls": 0.0
+        },
+        "selection_utility_penalty": 0.0
+      },
+      "test_used": false,
+      "C_above_higher_A_B": -0.01171875,
+      "C_compute_saved_vs_B": 0.03401807069352558,
+      "summary_sha256": "bb8787fc34c020259fc9bdb443af5e8848080308b7aedec31df39ec1f3523dcf"
     }
   },
   "matched_review_B": "Required before any final gap claim; independent LLM control with same strong review as C.",
@@ -3056,14 +3277,15 @@
     "science_strong_review_expansion": {
       "questions": 192,
       "scope": "All remaining new TRAIN science questions; no outcome selection",
-      "registration_sha256": "54d4cdd7b908d5d211a34bda5272b85bf5aed2611dd16c4ada820704814bbb4c"
+      "registration_sha256": "54d4cdd7b908d5d211a34bda5272b85bf5aed2611dd16c4ada820704814bbb4c",
+      "status": "complete; all192 additional TRAIN science questions retained"
     },
     "finish_once_pilot": {
       "questions": 128,
       "scope": "Separate continuation-style repair prompt study; original controls retained",
-      "registration_sha256": "8a56ba90118c0b5cb1e5cad5b525e84bbc74eaa9568485da9d4f479af2769d56"
-    },
-    "waits_for": "Completed matched B and final metadata-newsource C replay seal"
+      "registration_sha256": "8a56ba90118c0b5cb1e5cad5b525e84bbc74eaa9568485da9d4f479af2769d56",
+      "status": "complete; all three promotion screens failed; no expansion"
+    }
   },
   "development_metadata_review": {
     "cohorts": 2,
@@ -3227,11 +3449,1038 @@
     "comparison": "Preserve highest independent B accuracy for every final A/B/C gap; no C results altered."
   },
   "strongest_A_metadata_C": {
-    "status": "staged after seven required A families",
+    "status": "completed;174/256; retained C remains175/256",
     "optional_A": "science-v3, rechecked at final selection",
     "variants": 4,
     "development_questions": 256,
     "registration_sha256": "e1a74f5a7ebd878431c0bf2705797e4c431f0040e2e490d26cf5204fee412663",
     "test_used": false
+  },
+  "observer_v4_completed": {
+    "temperature_selected_on_training_oof": 2.0,
+    "questions": 1984,
+    "nodes": 30804,
+    "question_grouped_folds": 3,
+    "fresh_data_used": false,
+    "development_data_used": false,
+    "oof_binary_accuracy_valid": 0.8068852459016393,
+    "oof_brier_valid": 0.13291738512974793,
+    "source_summary_sha256": "c523cc6cd20837f478c70033fa98a738417ad247625bb4e3a21122f207cfe9b4",
+    "nested_neural_forecaster_crossfit": false
+  },
+  "development_single_strong_review_headroom": {
+    "scope": "Hindsight answer availability on existing development only; not controller accuracy, a learned policy, or fresh validation.",
+    "development_questions": 256,
+    "science_questions": 128,
+    "subjects": {
+      "math": {
+        "questions": 128,
+        "known_union_correct": 126,
+        "all_ten_paths_complete": false
+      },
+      "chemistry": {
+        "questions": 64,
+        "known_union_correct": 32,
+        "all_ten_paths_complete": true
+      },
+      "physics": {
+        "questions": 64,
+        "known_union_correct": 32,
+        "all_ten_paths_complete": true
+      }
+    },
+    "complete_science_union_correct": 64,
+    "known_total_union_correct": 190,
+    "optimistic_total_correct_allowing_all128math": 192,
+    "optimistic_accuracy_upper_bound": 0.75,
+    "current_strongest_B_correct": 177,
+    "minimum_C_correct_above_current_B": 203,
+    "current_single_review_tree_ruled_out_even_with_hindsight": true,
+    "interpretation": "Below the target rules out this fixed single-review response tree even with hindsight; reaching the bound does not establish a learnable or compute-efficient controller.",
+    "allowed_paths": [
+      "",
+      "repair",
+      "retry",
+      "repair/repair",
+      "repair/retry",
+      "retry/repair",
+      "retry/retry",
+      "guided",
+      "guided/reuse",
+      "retry/reuse"
+    ],
+    "test_used": false,
+    "fresh_validation": false,
+    "collection_complete_sha256": "991b36d3419201c6e2fb119b78fcc6641e1bcf78cbc31fcc94a478723cc9fa15",
+    "registration_sha256": "f4ad6d8f1d1c7b50355b0731aa3748a8f8976494af5f76b5859f6dc14bc73e67"
+  },
+  "development_ordinary_plus_strong_availability": {
+    "n": 256,
+    "scope": "Existing dev only; all ordinary root/late review paths are hindsight availability, not policy accuracy. No new inference; no reserved test access.",
+    "ordinary_paths": [
+      "",
+      "guided",
+      "guided/repair",
+      "guided/retry",
+      "guided/reviewed",
+      "repair",
+      "repair/repair",
+      "repair/retry",
+      "repair/reviewed",
+      "retry",
+      "retry/repair",
+      "retry/retry",
+      "retry/reviewed"
+    ],
+    "source_receipt_sha256": "30b2293fcd4e4d35b62140ae02d11e1cc527eb9b9339b145bd940e337cbfddb9",
+    "groups": {
+      "all": {
+        "n": 256,
+        "ordinary_available": 195,
+        "strong_available": 190,
+        "union_available": 204,
+        "ordinary_novel": 14
+      },
+      "math": {
+        "n": 128,
+        "ordinary_available": 126,
+        "strong_available": 126,
+        "union_available": 126,
+        "ordinary_novel": 0
+      },
+      "chemistry": {
+        "n": 64,
+        "ordinary_available": 31,
+        "strong_available": 32,
+        "union_available": 35,
+        "ordinary_novel": 3
+      },
+      "physics": {
+        "n": 64,
+        "ordinary_available": 38,
+        "strong_available": 32,
+        "union_available": 43,
+        "ordinary_novel": 11
+      }
+    },
+    "test_used": false
+  },
+  "expanded_neural_extraction": {
+    "status": "complete",
+    "total_rows": 5184,
+    "exact_parent_rows": 4224,
+    "new_rows": 960,
+    "completion_sha256": "5bd5fcbfaaa36acf0e8054c0b9d6bdfdd7fee145c733b3dda975b58f461c1113",
+    "scope": "TRAIN only; frozen old observer; CPU extraction; no controller result"
+  },
+  "scoring_observation_pilot": {
+    "status": "complete; primary observation screen failed; do not expand scoring features",
+    "training_questions": 64,
+    "nodes_per_question": 3,
+    "primary_registration_sha256": "c82b1f71d7911d93ef7c1444d73ffa1f2a32441d0443ce516def679056be9dc8",
+    "scope": "New paid observation; original answers unchanged; separate preregistered hypothetical completion availability",
+    "primary_summary_sha256": "184d3c016a5e9fcbd5cca62f6cab1d5fb161e8bfc95592c98e65b77de89f8ddd",
+    "secondary_summary_sha256": "96b465c535bff7d4bc805385be6b948bb2bd1e90d95af9e2e201e19567e3aafd"
+  },
+  "drop_review_standard_repair": {
+    "status": "complete; failed novelty screen; no expansion",
+    "training_questions": 64,
+    "correct": 18,
+    "retained_second_repair_correct": 32,
+    "paired_wins": 0,
+    "paired_losses": 14,
+    "novel_correct": 0,
+    "compute_ratio_vs_retained": 1.008752,
+    "summary_sha256": "d15e59fbf845b3d5eda97fd3c49a90ea3aad5f8870e94bc6a8e0b065637e22b5",
+    "scope": "TRAIN only; new repair action; no controller or fresh-validation claim"
+  },
+  "terminal_complete_training": {
+    "panels": {
+      "all_science": {
+        "questions": 256,
+        "methods": {
+          "Stop": {
+            "n": 256,
+            "correct": 45,
+            "accuracy": 0.17578125,
+            "valid": 173,
+            "mean_tokens": 437.98046875,
+            "mean_compute": 566.9650080906149,
+            "mean_solver_calls": 1.0,
+            "mean_answer_changing_continuations": 0.0
+          },
+          "Repair once": {
+            "n": 256,
+            "correct": 40,
+            "accuracy": 0.15625,
+            "valid": 108,
+            "mean_tokens": 1104.6015625,
+            "mean_compute": 1429.904935275081,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Repair twice": {
+            "n": 256,
+            "correct": 51,
+            "accuracy": 0.19921875,
+            "valid": 138,
+            "mean_tokens": 1881.17578125,
+            "mean_compute": 2435.179004854369,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Retry once": {
+            "n": 256,
+            "correct": 28,
+            "accuracy": 0.109375,
+            "valid": 78,
+            "mean_tokens": 1009.53515625,
+            "mean_compute": 1306.8416262135922,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Retry twice": {
+            "n": 256,
+            "correct": 34,
+            "accuracy": 0.1328125,
+            "valid": 89,
+            "mean_tokens": 1578.9375,
+            "mean_compute": 2043.9320388349515,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Complete": {
+            "n": 256,
+            "correct": 54,
+            "accuracy": 0.2109375,
+            "valid": 248,
+            "mean_tokens": 876.40625,
+            "mean_compute": 1134.5064724919093,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Stop if valid else Complete": {
+            "n": 256,
+            "correct": 55,
+            "accuracy": 0.21484375,
+            "valid": 248,
+            "mean_tokens": 592.07421875,
+            "mean_compute": 766.4391181229773,
+            "mean_solver_calls": 1.32421875,
+            "mean_answer_changing_continuations": 0.32421875
+          },
+          "Repair then Complete": {
+            "n": 256,
+            "correct": 62,
+            "accuracy": 0.2421875,
+            "valid": 247,
+            "mean_tokens": 1772.94140625,
+            "mean_compute": 2295.069781553398,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Repair then Complete if invalid": {
+            "n": 256,
+            "correct": 62,
+            "accuracy": 0.2421875,
+            "valid": 248,
+            "mean_tokens": 1544.4375,
+            "mean_compute": 1999.2718446601943,
+            "mean_solver_calls": 2.578125,
+            "mean_answer_changing_continuations": 1.578125
+          },
+          "Retry then Complete": {
+            "n": 256,
+            "correct": 62,
+            "accuracy": 0.2421875,
+            "valid": 251,
+            "mean_tokens": 1583.48828125,
+            "mean_compute": 2049.823017799353,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Retry then Complete if invalid": {
+            "n": 256,
+            "correct": 62,
+            "accuracy": 0.2421875,
+            "valid": 251,
+            "mean_tokens": 1443.4140625,
+            "mean_compute": 1868.4971682847897,
+            "mean_solver_calls": 2.6953125,
+            "mean_answer_changing_continuations": 1.6953125
+          }
+        },
+        "highest_original_baseline": "Repair twice",
+        "paired_vs_highest_original": {
+          "Complete": {
+            "wins": 28,
+            "losses": 25,
+            "mean_token_difference": -1004.76953125,
+            "mean_compute_ratio": 0.4658821672781941
+          },
+          "Stop if valid else Complete": {
+            "wins": 28,
+            "losses": 24,
+            "mean_token_difference": -1289.1015625,
+            "mean_compute_ratio": 0.3147362541296272
+          },
+          "Repair then Complete": {
+            "wins": 21,
+            "losses": 10,
+            "mean_token_difference": -108.234375,
+            "mean_compute_ratio": 0.9424645075283286
+          },
+          "Repair then Complete if invalid": {
+            "wins": 21,
+            "losses": 10,
+            "mean_token_difference": -336.73828125,
+            "mean_compute_ratio": 0.820995844935743
+          },
+          "Retry then Complete": {
+            "wins": 35,
+            "losses": 24,
+            "mean_token_difference": -297.6875,
+            "mean_compute_ratio": 0.8417545542702058
+          },
+          "Retry then Complete if invalid": {
+            "wins": 35,
+            "losses": 24,
+            "mean_token_difference": -437.76171875,
+            "mean_compute_ratio": 0.767293560169525
+          }
+        },
+        "original_seven_oracle_correct": 96,
+        "combined_ten_oracle_correct": 118,
+        "novel_correct_beyond_original_seven": 22
+      },
+      "chemistry": {
+        "questions": 128,
+        "methods": {
+          "Stop": {
+            "n": 128,
+            "correct": 24,
+            "accuracy": 0.1875,
+            "valid": 92,
+            "mean_tokens": 457.296875,
+            "mean_compute": 591.9700647249191,
+            "mean_solver_calls": 1.0,
+            "mean_answer_changing_continuations": 0.0
+          },
+          "Repair once": {
+            "n": 128,
+            "correct": 16,
+            "accuracy": 0.125,
+            "valid": 50,
+            "mean_tokens": 1146.046875,
+            "mean_compute": 1483.5558252427186,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Repair twice": {
+            "n": 128,
+            "correct": 24,
+            "accuracy": 0.1875,
+            "valid": 62,
+            "mean_tokens": 1948.8046875,
+            "mean_compute": 2522.724514563107,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Retry once": {
+            "n": 128,
+            "correct": 19,
+            "accuracy": 0.1484375,
+            "valid": 38,
+            "mean_tokens": 1050.3359375,
+            "mean_compute": 1359.6581715210357,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Retry twice": {
+            "n": 128,
+            "correct": 15,
+            "accuracy": 0.1171875,
+            "valid": 38,
+            "mean_tokens": 1643.8671875,
+            "mean_compute": 2127.9834142394825,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Complete": {
+            "n": 128,
+            "correct": 29,
+            "accuracy": 0.2265625,
+            "valid": 124,
+            "mean_tokens": 914.7578125,
+            "mean_compute": 1184.152508090615,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Stop if valid else Complete": {
+            "n": 128,
+            "correct": 30,
+            "accuracy": 0.234375,
+            "valid": 124,
+            "mean_tokens": 603.53125,
+            "mean_compute": 781.2702265372169,
+            "mean_solver_calls": 1.28125,
+            "mean_answer_changing_continuations": 0.28125
+          },
+          "Repair then Complete": {
+            "n": 128,
+            "correct": 30,
+            "accuracy": 0.234375,
+            "valid": 121,
+            "mean_tokens": 1836.671875,
+            "mean_compute": 2377.5687702265373,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Repair then Complete if invalid": {
+            "n": 128,
+            "correct": 30,
+            "accuracy": 0.234375,
+            "valid": 122,
+            "mean_tokens": 1626.578125,
+            "mean_compute": 2105.6027508090615,
+            "mean_solver_calls": 2.609375,
+            "mean_answer_changing_continuations": 1.609375
+          },
+          "Retry then Complete": {
+            "n": 128,
+            "correct": 36,
+            "accuracy": 0.28125,
+            "valid": 125,
+            "mean_tokens": 1645.75,
+            "mean_compute": 2130.42071197411,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Retry then Complete if invalid": {
+            "n": 128,
+            "correct": 36,
+            "accuracy": 0.28125,
+            "valid": 125,
+            "mean_tokens": 1506.5078125,
+            "mean_compute": 1950.1719255663431,
+            "mean_solver_calls": 2.703125,
+            "mean_answer_changing_continuations": 1.703125
+          }
+        },
+        "highest_original_baseline": "Stop",
+        "paired_vs_highest_original": {
+          "Complete": {
+            "wins": 6,
+            "losses": 1,
+            "mean_token_difference": 457.4609375,
+            "mean_compute_ratio": 2.0003587658454913
+          },
+          "Stop if valid else Complete": {
+            "wins": 6,
+            "losses": 0,
+            "mean_token_difference": 146.234375,
+            "mean_compute_ratio": 1.3197799569480986
+          },
+          "Repair then Complete": {
+            "wins": 10,
+            "losses": 4,
+            "mean_token_difference": 1379.375,
+            "mean_compute_ratio": 4.016366556189565
+          },
+          "Repair then Complete if invalid": {
+            "wins": 10,
+            "losses": 4,
+            "mean_token_difference": 1169.28125,
+            "mean_compute_ratio": 3.5569412649058667
+          },
+          "Retry then Complete": {
+            "wins": 19,
+            "losses": 7,
+            "mean_token_difference": 1188.453125,
+            "mean_compute_ratio": 3.5988656165647313
+          },
+          "Retry then Complete if invalid": {
+            "wins": 19,
+            "losses": 7,
+            "mean_token_difference": 1049.2109375,
+            "mean_compute_ratio": 3.294375918269724
+          }
+        },
+        "original_seven_oracle_correct": 48,
+        "combined_ten_oracle_correct": 58,
+        "novel_correct_beyond_original_seven": 10
+      },
+      "physics": {
+        "questions": 128,
+        "methods": {
+          "Stop": {
+            "n": 128,
+            "correct": 21,
+            "accuracy": 0.1640625,
+            "valid": 81,
+            "mean_tokens": 418.6640625,
+            "mean_compute": 541.9599514563107,
+            "mean_solver_calls": 1.0,
+            "mean_answer_changing_continuations": 0.0
+          },
+          "Repair once": {
+            "n": 128,
+            "correct": 24,
+            "accuracy": 0.1875,
+            "valid": 58,
+            "mean_tokens": 1063.15625,
+            "mean_compute": 1376.2540453074434,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Repair twice": {
+            "n": 128,
+            "correct": 27,
+            "accuracy": 0.2109375,
+            "valid": 76,
+            "mean_tokens": 1813.546875,
+            "mean_compute": 2347.633495145631,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Retry once": {
+            "n": 128,
+            "correct": 9,
+            "accuracy": 0.0703125,
+            "valid": 40,
+            "mean_tokens": 968.734375,
+            "mean_compute": 1254.025080906149,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Retry twice": {
+            "n": 128,
+            "correct": 19,
+            "accuracy": 0.1484375,
+            "valid": 51,
+            "mean_tokens": 1514.0078125,
+            "mean_compute": 1959.8806634304208,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Complete": {
+            "n": 128,
+            "correct": 25,
+            "accuracy": 0.1953125,
+            "valid": 124,
+            "mean_tokens": 838.0546875,
+            "mean_compute": 1084.860436893204,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Stop if valid else Complete": {
+            "n": 128,
+            "correct": 25,
+            "accuracy": 0.1953125,
+            "valid": 124,
+            "mean_tokens": 580.6171875,
+            "mean_compute": 751.6080097087379,
+            "mean_solver_calls": 1.3671875,
+            "mean_answer_changing_continuations": 0.3671875
+          },
+          "Repair then Complete": {
+            "n": 128,
+            "correct": 32,
+            "accuracy": 0.25,
+            "valid": 126,
+            "mean_tokens": 1709.2109375,
+            "mean_compute": 2212.570792880259,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Repair then Complete if invalid": {
+            "n": 128,
+            "correct": 32,
+            "accuracy": 0.25,
+            "valid": 126,
+            "mean_tokens": 1462.296875,
+            "mean_compute": 1892.940938511327,
+            "mean_solver_calls": 2.546875,
+            "mean_answer_changing_continuations": 1.546875
+          },
+          "Retry then Complete": {
+            "n": 128,
+            "correct": 26,
+            "accuracy": 0.203125,
+            "valid": 126,
+            "mean_tokens": 1521.2265625,
+            "mean_compute": 1969.2253236245956,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Retry then Complete if invalid": {
+            "n": 128,
+            "correct": 26,
+            "accuracy": 0.203125,
+            "valid": 126,
+            "mean_tokens": 1380.3203125,
+            "mean_compute": 1786.8224110032363,
+            "mean_solver_calls": 2.6875,
+            "mean_answer_changing_continuations": 1.6875
+          }
+        },
+        "highest_original_baseline": "Repair twice",
+        "paired_vs_highest_original": {
+          "Complete": {
+            "wins": 12,
+            "losses": 14,
+            "mean_token_difference": -975.4921875,
+            "mean_compute_ratio": 0.4621080927395384
+          },
+          "Stop if valid else Complete": {
+            "wins": 12,
+            "losses": 14,
+            "mean_token_difference": -1232.9296875,
+            "mean_compute_ratio": 0.32015559978288405
+          },
+          "Repair then Complete": {
+            "wins": 11,
+            "losses": 6,
+            "mean_token_difference": -104.3359375,
+            "mean_compute_ratio": 0.9424685741855997
+          },
+          "Repair then Complete if invalid": {
+            "wins": 11,
+            "losses": 6,
+            "mean_token_difference": -351.25,
+            "mean_compute_ratio": 0.8063187641620788
+          },
+          "Retry then Complete": {
+            "wins": 15,
+            "losses": 16,
+            "mean_token_difference": -292.3203125,
+            "mean_compute_ratio": 0.8388129270162924
+          },
+          "Retry then Complete if invalid": {
+            "wins": 15,
+            "losses": 16,
+            "mean_token_difference": -433.2265625,
+            "mean_compute_ratio": 0.7611164241343362
+          }
+        },
+        "original_seven_oracle_correct": 48,
+        "combined_ten_oracle_correct": 60,
+        "novel_correct_beyond_original_seven": 12
+      },
+      "original_pilot64": {
+        "questions": 64,
+        "methods": {
+          "Stop": {
+            "n": 64,
+            "correct": 13,
+            "accuracy": 0.203125,
+            "valid": 44,
+            "mean_tokens": 466.46875,
+            "mean_compute": 603.8430420711975,
+            "mean_solver_calls": 1.0,
+            "mean_answer_changing_continuations": 0.0
+          },
+          "Repair once": {
+            "n": 64,
+            "correct": 17,
+            "accuracy": 0.265625,
+            "valid": 31,
+            "mean_tokens": 1156.21875,
+            "mean_compute": 1496.7233009708739,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Repair twice": {
+            "n": 64,
+            "correct": 18,
+            "accuracy": 0.28125,
+            "valid": 33,
+            "mean_tokens": 1959.796875,
+            "mean_compute": 2536.953883495146,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Retry once": {
+            "n": 64,
+            "correct": 5,
+            "accuracy": 0.078125,
+            "valid": 21,
+            "mean_tokens": 1065.140625,
+            "mean_compute": 1378.8228155339807,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Retry twice": {
+            "n": 64,
+            "correct": 11,
+            "accuracy": 0.171875,
+            "valid": 27,
+            "mean_tokens": 1661.234375,
+            "mean_compute": 2150.465210355987,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Complete": {
+            "n": 64,
+            "correct": 12,
+            "accuracy": 0.1875,
+            "valid": 62,
+            "mean_tokens": 933.109375,
+            "mean_compute": 1207.90857605178,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Stop if valid else Complete": {
+            "n": 64,
+            "correct": 13,
+            "accuracy": 0.203125,
+            "valid": 62,
+            "mean_tokens": 639.984375,
+            "mean_compute": 828.4587378640778,
+            "mean_solver_calls": 1.3125,
+            "mean_answer_changing_continuations": 0.3125
+          },
+          "Repair then Complete": {
+            "n": 64,
+            "correct": 23,
+            "accuracy": 0.359375,
+            "valid": 60,
+            "mean_tokens": 1847.390625,
+            "mean_compute": 2391.444174757282,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Repair then Complete if invalid": {
+            "n": 64,
+            "correct": 23,
+            "accuracy": 0.359375,
+            "valid": 61,
+            "mean_tokens": 1570.234375,
+            "mean_compute": 2032.6658576051782,
+            "mean_solver_calls": 2.515625,
+            "mean_answer_changing_continuations": 1.515625
+          },
+          "Retry then Complete": {
+            "n": 64,
+            "correct": 17,
+            "accuracy": 0.265625,
+            "valid": 63,
+            "mean_tokens": 1666.171875,
+            "mean_compute": 2156.856796116505,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Retry then Complete if invalid": {
+            "n": 64,
+            "correct": 17,
+            "accuracy": 0.265625,
+            "valid": 63,
+            "mean_tokens": 1519.921875,
+            "mean_compute": 1967.5364077669904,
+            "mean_solver_calls": 2.671875,
+            "mean_answer_changing_continuations": 1.671875
+          }
+        },
+        "highest_original_baseline": "Repair twice",
+        "paired_vs_highest_original": {
+          "Complete": {
+            "wins": 5,
+            "losses": 11,
+            "mean_token_difference": -1026.6875,
+            "mean_compute_ratio": 0.47612555510376553
+          },
+          "Stop if valid else Complete": {
+            "wins": 5,
+            "losses": 10,
+            "mean_token_difference": -1319.8125,
+            "mean_compute_ratio": 0.3265564830538879
+          },
+          "Repair then Complete": {
+            "wins": 8,
+            "losses": 3,
+            "mean_token_difference": -112.40625,
+            "mean_compute_ratio": 0.9426439283407879
+          },
+          "Repair then Complete if invalid": {
+            "wins": 8,
+            "losses": 3,
+            "mean_token_difference": -389.5625,
+            "mean_compute_ratio": 0.801223022156314
+          },
+          "Retry then Complete": {
+            "wins": 8,
+            "losses": 9,
+            "mean_token_difference": -293.625,
+            "mean_compute_ratio": 0.8501757994690138
+          },
+          "Retry then Complete if invalid": {
+            "wins": 8,
+            "losses": 9,
+            "mean_token_difference": -439.875,
+            "mean_compute_ratio": 0.7755507187447678
+          }
+        },
+        "original_seven_oracle_correct": 29,
+        "combined_ten_oracle_correct": 35,
+        "novel_correct_beyond_original_seven": 6
+      },
+      "remaining192": {
+        "questions": 192,
+        "methods": {
+          "Stop": {
+            "n": 192,
+            "correct": 32,
+            "accuracy": 0.16666666666666666,
+            "valid": 129,
+            "mean_tokens": 428.484375,
+            "mean_compute": 554.6723300970874,
+            "mean_solver_calls": 1.0,
+            "mean_answer_changing_continuations": 0.0
+          },
+          "Repair once": {
+            "n": 192,
+            "correct": 23,
+            "accuracy": 0.11979166666666667,
+            "valid": 77,
+            "mean_tokens": 1087.3958333333333,
+            "mean_compute": 1407.6321467098167,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Repair twice": {
+            "n": 192,
+            "correct": 33,
+            "accuracy": 0.171875,
+            "valid": 105,
+            "mean_tokens": 1854.96875,
+            "mean_compute": 2401.2540453074434,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Retry once": {
+            "n": 192,
+            "correct": 23,
+            "accuracy": 0.11979166666666667,
+            "valid": 57,
+            "mean_tokens": 991.0,
+            "mean_compute": 1282.8478964401295,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Retry twice": {
+            "n": 192,
+            "correct": 23,
+            "accuracy": 0.11979166666666667,
+            "valid": 62,
+            "mean_tokens": 1551.5052083333333,
+            "mean_compute": 2008.420981661273,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Complete": {
+            "n": 192,
+            "correct": 42,
+            "accuracy": 0.21875,
+            "valid": 186,
+            "mean_tokens": 857.5052083333334,
+            "mean_compute": 1110.0391046386192,
+            "mean_solver_calls": 2.0,
+            "mean_answer_changing_continuations": 1.0
+          },
+          "Stop if valid else Complete": {
+            "n": 192,
+            "correct": 42,
+            "accuracy": 0.21875,
+            "valid": 186,
+            "mean_tokens": 576.1041666666666,
+            "mean_compute": 745.7659115426105,
+            "mean_solver_calls": 1.328125,
+            "mean_answer_changing_continuations": 0.328125
+          },
+          "Repair then Complete": {
+            "n": 192,
+            "correct": 39,
+            "accuracy": 0.203125,
+            "valid": 187,
+            "mean_tokens": 1748.125,
+            "mean_compute": 2262.94498381877,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Repair then Complete if invalid": {
+            "n": 192,
+            "correct": 39,
+            "accuracy": 0.203125,
+            "valid": 187,
+            "mean_tokens": 1535.8385416666667,
+            "mean_compute": 1988.1405070118662,
+            "mean_solver_calls": 2.5989583333333335,
+            "mean_answer_changing_continuations": 1.5989583333333333
+          },
+          "Retry then Complete": {
+            "n": 192,
+            "correct": 45,
+            "accuracy": 0.234375,
+            "valid": 188,
+            "mean_tokens": 1555.9270833333333,
+            "mean_compute": 2014.1450916936355,
+            "mean_solver_calls": 3.0,
+            "mean_answer_changing_continuations": 2.0
+          },
+          "Retry then Complete if invalid": {
+            "n": 192,
+            "correct": 45,
+            "accuracy": 0.234375,
+            "valid": 188,
+            "mean_tokens": 1417.9114583333333,
+            "mean_compute": 1835.4840884573896,
+            "mean_solver_calls": 2.703125,
+            "mean_answer_changing_continuations": 1.703125
+          }
+        },
+        "highest_original_baseline": "Repair twice",
+        "paired_vs_highest_original": {
+          "Complete": {
+            "wins": 23,
+            "losses": 14,
+            "mean_token_difference": -997.4635416666666,
+            "mean_compute_ratio": 0.4622747463176041
+          },
+          "Stop if valid else Complete": {
+            "wins": 23,
+            "losses": 14,
+            "mean_token_difference": -1278.8645833333335,
+            "mean_compute_ratio": 0.310573515950965
+          },
+          "Repair then Complete": {
+            "wins": 13,
+            "losses": 7,
+            "mean_token_difference": -106.84375,
+            "mean_compute_ratio": 0.9424013207769673
+          },
+          "Repair then Complete if invalid": {
+            "wins": 13,
+            "losses": 7,
+            "mean_token_difference": -319.13020833333326,
+            "mean_compute_ratio": 0.827959253581316
+          },
+          "Retry then Complete": {
+            "wins": 27,
+            "losses": 15,
+            "mean_token_difference": -299.04166666666674,
+            "mean_compute_ratio": 0.838788838536139
+          },
+          "Retry then Complete if invalid": {
+            "wins": 27,
+            "losses": 15,
+            "mean_token_difference": -437.05729166666674,
+            "mean_compute_ratio": 0.7643856309349327
+          }
+        },
+        "original_seven_oracle_correct": 67,
+        "combined_ten_oracle_correct": 83,
+        "novel_correct_beyond_original_seven": 16
+      }
+    },
+    "screen": {
+      "criteria": {
+        "novel_correct_beyond_original_seven_at_least": 16,
+        "scope": "TRAIN feasibility gate for fitting a new action model only; no A/C promotion or target/fresh claim"
+      },
+      "passed": true,
+      "controller_promoted": false,
+      "fixed_control_comparisons_descriptive_only": true
+    },
+    "questions": 256,
+    "new_physical_calls": 576,
+    "reused_physical_calls": 192,
+    "new_neural_calls": 0,
+    "new_teacher_calls": 0,
+    "acquisition_cost": {
+      "all_grid": {
+        "physical_calls": 768,
+        "input_tokens": 429496,
+        "output_tokens": 768,
+        "active_parameter_token_proxy": 556976.0517799353,
+        "summed_physical_latency_seconds": 598.5535864830017
+      },
+      "new": {
+        "physical_calls": 576,
+        "input_tokens": 317122,
+        "output_tokens": 576,
+        "active_parameter_token_proxy": 411259.54692556633,
+        "summed_physical_latency_seconds": 382.39797735214233
+      },
+      "reused": {
+        "physical_calls": 192,
+        "input_tokens": 112374,
+        "output_tokens": 192,
+        "active_parameter_token_proxy": 145716.50485436895,
+        "summed_physical_latency_seconds": 216.15560913085938
+      }
+    },
+    "training_only": true,
+    "test_used": false,
+    "controller_accuracy_claim": false,
+    "math_unchanged": true,
+    "summary_sha256": "e82aa4e1b4c76b46f6dc4a1862c74df452379f6664160e5be181a8bb4e604fb2"
+  },
+  "terminal_complete_POMDP_fit": {
+    "registration_sha256": "8c70470906cab89619937f349f8c71f1ef6c5189f1773b6c0ed1d5e7fc7ca979",
+    "model_sha256": "d66d565564aa8db13043755d742116870d92409e96b903bf9fc8c150d0c7a4ab",
+    "training_science_questions": 256,
+    "decision_nodes": 768,
+    "fit_receipt": {
+      "actions": [
+        "stop",
+        "repair",
+        "retry",
+        "complete"
+      ],
+      "actual_counterfactuals_accessed_at_inference": false,
+      "complete_is_terminal": true,
+      "decision_nodes": 768,
+      "future_observations": "Exact finite-observation two-step Bellman backup",
+      "maximum_additional_solver_calls": 2,
+      "observation_recipe": "Paid old-observer logits plus existing visible/numeric features; invalid fixability retained",
+      "paid_scoring_features_used": false,
+      "paired_questions": 256,
+      "question_grouped_folds": 3,
+      "registration_sha256": "8c70470906cab89619937f349f8c71f1ef6c5189f1773b6c0ed1d5e7fc7ca979",
+      "regularization": 0.1,
+      "schema": "science-terminal-completion-pomdp-v1",
+      "smoothing": 32.0,
+      "state_bits": [
+        "current_correct",
+        "repair_correct",
+        "retry_correct",
+        "complete_correct"
+      ],
+      "state_count": 16
+    },
+    "neural_calls": 0,
+    "cloud_calls": 0,
+    "development_or_test_records_read": false,
+    "controller_accuracy_claim": false,
+    "status": "Fixed CPU16-state TRAIN-only fit completed; DEV selection pending"
+  },
+  "expanded_fit": {
+    "status": "six C models and separate unevaluated plain A4 fitted; metadata variance normalization prediction-identical",
+    "training_questions": 512,
+    "reviewed_roots": 320,
+    "metadata_records": 448,
+    "parent_complete_sha256": "59cf566f1a518a571f5593a8f44e29a4ff65514fb0974070b5cfe3e74b5f02fa",
+    "normalization_complete_sha256": "cc2a901684bb9f947371a80259a962df31a59c3e9dcaa3ab1ec8735e75be1bcd",
+    "development_evaluation": "preparation; no result yet"
+  },
+  "science_grouped_training_v3": {
+    "status": "active; completed at least200/2160 updates",
+    "recipe_changed": false,
+    "operational_cache_release_every_steps": 5,
+    "final_checkpoint_only": true,
+    "recovery_checkpoint_is_not_result": true,
+    "test_used": false,
+    "bounded_operation_registration_sha256": "see private operation receipts",
+    "full_resume_registration_sha256": "71e36c7d82aa651e0c05586cddec47de6d2dcb8ada7321226855c6070a6b6e63"
   }
 }

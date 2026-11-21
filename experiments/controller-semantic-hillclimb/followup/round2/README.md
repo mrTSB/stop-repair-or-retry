@@ -348,12 +348,15 @@ criteria: 59 correct versus 70 for Repair once, 2.03% greater compute, and zero
 newly correct questions beyond the original seven-path union. The three
 validity heuristics also remain reported; no two-step expansion is selected.
 
-The next metadata comparison inherits the strongest completed A across seven
+The additional metadata comparison inherits the strongest completed A across seven
 registered families, retaining a completed science-v3 result if available.
 `stronger_metadata_review.py` preserves the learned mentor, transfer, and
 metadata adapter while changing the unqueried A component. Its staged
-development run compares all four fitted metadata parents on the same 256
-questions; each distinct observer's actual token slots remain charged.
+development run compared all four fitted metadata parents on the same 256
+questions; each distinct observer's actual token slots remained charged.
+Its best result is 174/256 at 3,644.52 compute units. The corresponding
+stronger-A semantic/reported-review comparison reaches 173/256 at 3,577.53.
+Neither replaces the retained 175/256 C.
 
 `prospective_metadata_freeze.py`, `prospective_metadata_parallel.py`, and
 `metadata_paid_audit.py` add an explicit prospective route for metadata C.
@@ -363,3 +366,104 @@ from paid inputs. Metadata CPU timings are recorded separately from the
 inference compute proxy. The full 2,048-decision development replay and
 8,192-decision blind confirmation remain required. Independent synthetic
 and saved-model provenance checks passed; no real freeze or test run occurred.
+
+The completed V4 observer produced 30,804 question-excluded observations over
+1,984 training questions. Its new A reaches 143/256 at 885.17 compute units;
+the nonlinear alternative also fails to displace the existing A. A therefore
+remains at 144/256 (56.25%) and 856.54 units. The neural and forecaster
+cross-fitting stages are not nested; their training diagnostics do not replace
+independent development or test evaluation.
+
+`development_retained_path_audit.py` completed the 105 missing compact-solver
+continuations needed to cover all ten distinct single-strong-review paths on
+all 128 development science questions. They add no newly solvable science
+question. The complete science hindsight union is 64/128, giving an optimistic
+overall ceiling of 192/256 (75.00%) even if every math question were solved.
+The C target against B's 177/256 requires at least 203/256 (79.30%). This rules
+out reaching the current development target by changing only the gate on this
+fixed response tree. It is an answer-availability bound, not policy accuracy
+or a claim about a new action protocol or the unopened fresh test.
+
+The already collected ordinary and late-review paths provide diversity. Their
+union with the strong-review tree contains a correct answer on 204/256
+development questions, including 78/128 science questions. Achieving the target
+would require selecting 203 of those 204 available answers before considering
+compute. A larger router alone consequently has very little error margin.
+
+All 192 additional training science review pairs are collected. The expanded
+fit uses all 512 plain training trees and 320 new-source reviewed roots
+(64 math, 128 chemistry, 128 physics), with 448 question-grouped metadata
+records. `extract_expanded_mentor.py` reuses 4,224 exact cached neural entries
+and extracts only 960 missing entries. `fit_expanded_mentor.py` registers a
+CPU-only weighted/calibrated POMDP fit. Within-subject question mass and
+50/25/25 subject weighting are explicit, so this is a new fitting recipe,
+not a pure more-data ablation. The saved plain four-state A artifact is
+unevaluated until a separate development evaluation is registered.
+
+The registered scoring pilot acquires one compact-solver continuation token
+on each of three paid prefixes for all 64 fixed science training questions.
+Its probabilities are new paid observations; historical full-token
+probabilities were not retained. Original answers remain unchanged in the
+primary diagnostic, and missing top-20 option probabilities are censored,
+not assigned zero. A separately preregistered secondary analysis checks
+hypothetical one-token completion availability after all 192 calls are sealed.
+It cannot report a controller improvement: promoting that completion would
+require a new answer-changing action, matched controls, and a new POMDP.
+Neither analysis uses development labels or the reserved fresh test.
+
+The scoring pilot is complete and fails its primary observation screen:
+same-question held-fold joint log loss increases from 1.6642 to 1.7165.
+Current-answer and repair Brier scores also worsen. The score-observation
+variant is not expanded. The separate completion analysis finds six newly
+solvable science training questions: the seven-path union increases from 29/64
+to 35/64. Repair followed by hypothetical completion gets 23/64 correct,
+versus 17/64 before completion; retry followed by completion gets 17/64,
+versus 5/64. These consume two continuation calls and average 2,391.44 and
+2,156.86 compute units, respectively. They are training action measurements,
+not A/C accuracy or fresh validation.
+
+`science_complete_actions.py` defines a separate, science-only action study
+over all 256 training science questions and all three eligible prefixes.
+It reuses all 192 identical pilot requests and acquires 576 remaining requests.
+Only an exact offered option letter is submittable. Complete costs one call
+and terminates; it cannot be followed by another action. The five original
+baselines and six additional fixed/validity controls remain reported. The
+fixed training feasibility screen requires at least 16 newly solvable questions
+beyond the original seven paths before fitting the new controller.
+
+`completion_pomdp.py` adds a genuine 16-state POMDP over correctness now,
+after repair, after retry, and after Complete. Its finite-observation Bellman
+backup preserves the two-continuation budget, retains fixability observations
+for invalid answers, and counts the cost of all paid observations. It does not
+use the failed scoring-probability features. Math retains its existing A;
+the science model uses only paired training labels and original paid features.
+The new fitting driver binds the complete physical-response ledger and the
+original observer provenance. Development evaluation is not yet run.
+
+The full training action grid is now sealed and passes that screen: the
+science union increases from 96/256 to 118/256, with 22 newly solvable cases
+(10 chemistry, 12 physics). Six came from the original pilot and 16 from the
+remaining 192 questions. A fixed Retry-then-Complete-if-invalid control obtains
+62/256 correct versus 51/256 for the strongest original science baseline,
+Repair twice, with 23.27% lower compute (1,868.50 versus 2,435.18 units).
+This simple control is retained explicitly; its gain cannot be attributed to
+learned planning. The single prespecified 16-state POMDP has been fitted with
+no new neural calls. Its separate development study freezes seven penalties,
+collects all 384 science completions before scoring, and reports both science
+controls and full-256 comparisons sharing exactly the same retained math A.
+No development accuracy for this new action study is available yet.
+
+The standard second repair with mentor feedback removed also failed its
+64-question science training screen: 18 correct versus 32 for retained
+repair, with zero paired wins and 14 losses. It added no newly solvable
+question and cost 0.88% more. This repair path is not expanded.
+
+The grouped science observer's resumable run paused safely at step 20 because
+unused MPS allocator cache exhausted the memory guard. A separately registered
+operational wrapper released unused cache before existing telemetry checks,
+preserving optimizer state, RNG, batches, and the training recipe. The bounded
+step-20-to-100 resume passed; only the final scheduled step 2,160 may become a
+deployment checkpoint. No intermediate recovery checkpoint selects a model.
+The subsequent full resume releases unused cache every five completed
+updates. Its first 50 updates maintained 54–63% free system memory; the
+fixed final checkpoint and auxiliary calibration remain pending.
