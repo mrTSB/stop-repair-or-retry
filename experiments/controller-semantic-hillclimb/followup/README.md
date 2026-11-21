@@ -8,7 +8,7 @@ points: A and B each exceed the strongest fixed reference by 10 points, and C
 exceeds the higher of A/B by 10 points while using less compute than B.
 
 The targets remain unmet. These are current **development** results on the same
-240 retired questions, before the root-review expansion finishes:
+240 retired questions; the 912-question confirmation has not been graded:
 
 | Method | Accuracy (%) | Weighted token compute proxy |
 |---|---:|---:|
@@ -21,9 +21,11 @@ The targets remain unmet. These are current **development** results on the same
 | Strong ordinary B | 86.25 | 1,624.98 |
 | Best C so far below B's compute | 87.92 | 1,461.19 |
 
-Deeper late reviews have reached 90.00% on development data at a compute proxy
-of 3,175.76. That candidate fails the compute target. Development and training
-pilot gains cannot establish a fresh-test win.
+The retained-mentor POMDP has reached 91.25% on development data at a compute
+proxy of 3,012.90. That candidate fails the compute target; its cheaper settings
+also fail to improve the retained hybrid. Larger ensembles, action-specific
+calibration, and deeper root/late reviews have not displaced the best eligible
+C. Development and training pilot gains cannot establish a fresh-test win.
 
 ## Data and protocol
 
@@ -74,6 +76,28 @@ and both plain final continuations. `root_medium_pomdp.py` tests a hybrid with
 one optional deeper root review; the second decision uses the POMDP. The new
 guided template, 128-token cap, and deeper review effort are explicit parts of
 this candidate. The compact model weights and ordinary references stay fixed.
+`root_controls.py` fills historical guided controls absent from sparse retired
+trajectories, keeping them separate from the new paired-training bank.
+
+The matched format control in `root_effort_controls.py` holds the 128-token
+answer-first repair prompt fixed: ordinary reviews yield 136/192 correct
+training repairs and deeper reviews yield 165/192. The original full guided
+repair yields 150/192 on the same questions. These matched training counts
+describe transfer into the compact solver, not held-out performance.
+
+`reuse_pairs.py` adds all 384 final repair counterfactuals for retaining the paid
+root review after either a guided response or a fresh retry. The eight-state
+POMDP in `mentor_pomdp.py` tracks difficulty, current correctness, and hidden
+mentor correctness. It updates on the joint neural signal and answer/proposal
+agreement, preserving the same two additional solver-call budget. The review
+is acquired once; a second guided repair reuses it without a new judge call.
+
+`fusion_pomdp.py` and `subject_fusion_pomdp.py` combine two observation models,
+charging both physical encoder passes. They are development alternatives, not
+an unreported source of free compute. `refine_all_solver.py` tests additional
+already-labeled solver outputs, with low-weight terminal responses and equal
+question weight; its three question-grouped folds remain unchanged. None of
+these variants may be selected using confirmation outcomes.
 
 ## Validation
 
@@ -90,6 +114,13 @@ questions to complete under the same freeze. Paired bootstrap resampling
 preserves each subject-by-source stratum and recomputes the highest baseline
 and higher A/B accuracy inside every draw. Every target gets its own pass/fail
 flag.
+
+The development audit has independently reconstructed both selected planners
+and passed 1,920 charge checks, 1,440 blinded paid-prefix replays, 480 training-only
+refit comparisons, and 51 regenerated neural observations. A new final selection
+must receive its own audit before fresh controller replay. `pack_confirmation.py`
+publishes only audited, explicitly allowed numeric outcomes and provenance;
+it never copies the raw question banks or neural caches.
 
 The compute proxy includes all solver input/output tokens, all physical review
 phases, and actual unpadded encoder token slots:

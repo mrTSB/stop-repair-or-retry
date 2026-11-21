@@ -45,7 +45,8 @@ def run(args):
     identity = {str(p): sha(p) for p in (
         args.data / 'train-observations.jsonl', args.data / 'train-late-observations.jsonl',
         args.examples / 'train.jsonl', args.verifier / 'contract.json', args.verifier / 'oof.npz',
-        args.root / 'train.jsonl', args.supplement / 'inputs.jsonl', args.supplement / 'metadata.jsonl',
+        args.root / 'contract.json', args.root / 'train.jsonl', args.supplement / 'manifest.json',
+        args.supplement / 'inputs.jsonl', args.supplement / 'metadata.jsonl',
         args.supplement / 'oof.npz', args.supplement / 'oof.receipt.json')}
     identity['semantic_code'] = sha(semantic.__file__)
     contract = args.output / 'identity.json'

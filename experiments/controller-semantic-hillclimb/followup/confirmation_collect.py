@@ -8,13 +8,14 @@ import json
 from pathlib import Path
 import threading
 
-from confirmation_common import evidence, models, run_policy, read, sha, verify_fixed_prefix
+from confirmation_common import evidence, models, run_policy, read, sha, verify_fixed_prefix, verify_special_banks
 from banks import committed, canonical_review
 from medium_late_pairs import APP, PROTOCOL, scoped
 from reasoning_pilot import short_repair
 from long_review_pilot import review as deeper_review
 from transfer_variants import actor
 from root_pairs import PROTOCOL as ROOT_PROTOCOL
+from reuse_pairs import PROTOCOL as REUSE_PROTOCOL
 from reasoning_pilot import inference as root_actor
 from late_pairs import judge_prompt, sanitized
 from review_pilot import inference
@@ -29,9 +30,12 @@ def run(args):
     if frozen['evidence'] != evidence(args.data):
         raise ValueError('Changed policy sources or development evidence')
     verify_fixed_prefix(frozen, args.data)
+    verify_special_banks(frozen, args.medium)
     audit = json.loads((args.output / 'development-audit.json').read_bytes())
     if not audit['passed'] or audit['freeze_sha256'] != sha(args.output / 'frozen.json'):
         raise ValueError('Complete independent development checks first')
+    if audit['training_only_refitted_outcomes'] != 480 or audit['independent_encoder_regenerations'] <= 0:
+        raise ValueError('Reconstruct both planners from training data and regenerate observations before fresh replay')
     fixed = json.loads((args.data / 'fixed-cache-complete.json').read_bytes())
     if fixed['questions'] != 912 or fixed['contract_sha256'] != frozen['fixed_cache_contract_sha256']:
         raise ValueError('Finish every prespecified fixed baseline response first')
@@ -39,7 +43,9 @@ def run(args):
     if len(rows) != 912:
         raise ValueError('Changed fresh panel')
     planners = models(frozen, args.output)
-    root_mode = frozen['selected']['C']['protocol'] == 'root-medium'
+    root_protocol = frozen['selected']['C']['protocol']
+    root_mode = root_protocol in ('root-medium', 'mentor-reuse')
+    reuse_mode = root_protocol == 'mentor-reuse'
     identity = {'freeze_sha256': sha(args.output / 'frozen.json'), 'questions': 912,
                 'rule': 'All references removed; no test correctness or question selection is consulted.'}
     metadata = args.data / 'test-collection.json'
@@ -56,6 +62,8 @@ def run(args):
     old.request = request
     paths = {'base': args.data / 'test-observations.jsonl',
              'late': args.data / 'test-late-observations.jsonl', 'medium': args.medium / 'test.jsonl'}
+    if reuse_mode:
+        paths['reuse'] = Path(frozen['reuse_bank']['directory']) / 'test.jsonl'
     paths['medium'].parent.mkdir(parents=True, exist_ok=True)
     cache_path = args.output / 'test-neural-cache.jsonl'
     recorded = {(r['family'], tuple(r['key'])) for r in committed(cache_path)}
@@ -105,9 +113,14 @@ def run(args):
                     deeper[p] = node
                 else:
                     deep_reviews[row['id'], p] = canonical_review(node)
+            if reuse_mode:
+                for (kind, p), node in local['reuse'].items():
+                    assert kind == 'solver' and p in ('guided/reuse', 'retry/reuse')
+                    deeper[p] = node
 
             def acquire(kind, path, protocol):
-                special = protocol in ('medium', 'root-medium')
+                special = protocol in ('medium', 'root-medium', 'mentor-reuse')
+                current_root = protocol in ('root-medium', 'mentor-reuse')
                 current = deeper if special else tree
                 if kind == 'judge' and path not in current:
                     acquire('solver', path, protocol)
@@ -116,14 +129,16 @@ def run(args):
                     if parent not in current:
                         acquire('solver', parent, protocol)
                     if path == 'guided':
-                        reviews = deep_reviews if protocol == 'root-medium' else original
+                        reviews = deep_reviews if current_root else original
                         if (row['id'], '') not in reviews:
-                            acquire('judge', '', 'root-medium' if protocol == 'root-medium' else 'original')
+                            acquire('judge', '', protocol if current_root else 'original')
+                    if path.endswith('/reuse') and (row['id'], '') not in deep_reviews:
+                        acquire('judge', '', protocol)
                     if path.endswith('/reviewed'):
                         reviews = deep_reviews if protocol == 'medium' else late
                         if (row['id'], parent) not in reviews:
                             acquire('judge', parent, protocol)
-                if protocol == 'root-medium' and kind == 'judge':
+                if current_root and kind == 'judge':
                     if path != '':
                         raise ValueError('The root hybrid cannot acquire a late LLM review')
                     node = deeper_review(request, row, deeper[''], 1024, 512)
@@ -131,7 +146,18 @@ def run(args):
                     node['backend'] = node['calls'][0]['backend']
                     deep_reviews[row['id'], ''] = canonical_review(node)
                     storage = 'medium'
-                elif protocol == 'root-medium' and kind == 'solver' and path.startswith('guided'):
+                elif protocol == 'mentor-reuse' and kind == 'solver' and path.endswith('/reuse'):
+                    parent = path.rsplit('/', 1)[0]
+                    if parent not in ('guided', 'retry'):
+                        raise ValueError('Unexpected mentor-reuse parent')
+                    formatted = short_repair(row, deeper[parent], deep_reviews[row['id'], ''])
+                    logical = 'repair/repair' if parent == 'guided' else 'retry/repair'
+                    seed = int(hashlib.sha256(f'{old.SEED}:{row["id"]}:{logical}'.encode()).hexdigest()[:8], 16) % 2**31
+                    node = actor(request, row, formatted, seed, 128)
+                    node['protocol'] = REUSE_PROTOCOL
+                    deeper[path] = node
+                    storage = 'reuse'
+                elif current_root and kind == 'solver' and path.startswith('guided'):
                     if path == 'guided':
                         formatted = short_repair(row, deeper[''], deep_reviews[row['id'], ''])
                         node = root_actor(request, row, formatted, False, 128)

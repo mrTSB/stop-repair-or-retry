@@ -21,7 +21,8 @@ from late_pairs import llm_policy
 from banks import ordinary, medium_view, committed
 
 RUNTIME = ('banks.py', 'binary_core.py', 'binary_pomdp.py', 'calibrated_pomdp.py', 'medium_pomdp.py',
-           'root_bank.py', 'root_pairs.py', 'root_medium_pomdp.py',
+           'root_bank.py', 'root_pairs.py', 'root_medium_pomdp.py', 'fusion_pomdp.py', 'subject_fusion_pomdp.py',
+           'mentor_pomdp.py', 'reuse_pairs.py',
            'medium_late_pairs.py', 'transfer_variants.py', 'confirmation_common.py',
            'confirmation.py', 'confirmation_collect.py', 'confirmation_audit.py')
 
@@ -37,15 +38,35 @@ def verify_fixed_prefix(frozen, data):
         raise ValueError('The prespecified fixed baseline response cache changed after freeze')
 
 
+def verify_special_banks(frozen, medium):
+    if Path(frozen['medium_directory']).resolve() != medium.resolve():
+        raise ValueError('Use the selected and frozen hybrid response bank')
+    for suffix, name in (('contract', 'contract.json'), ('bank', 'train.jsonl')):
+        if sha(medium / name) != frozen['medium_training_' + suffix + '_sha256']:
+            raise ValueError('Changed frozen hybrid training evidence')
+    expected = frozen['medium_development_bank_sha256']
+    if expected is not None and sha(medium / 'dev.jsonl') != expected:
+        raise ValueError('Changed frozen hybrid development evidence')
+    for name, digest in frozen.get('reuse_bank', {}).get('files', {}).items():
+        if sha(Path(frozen['reuse_bank']['directory']) / name) != digest:
+            raise ValueError('Changed frozen mentor-reuse evidence')
+
+
 def evidence(data):
     result = previous_evidence(data)
     result.update({'followup-code/' + name: sha(HERE / name) for name in RUNTIME})
     return result
 
 
-def load_banks(data, split, medium, protocol='medium'):
+def load_banks(data, split, medium, protocol='medium', reuse=None):
     rows, trees, original, late = ordinary(data, split)
-    if protocol == 'root-medium':
+    if protocol == 'mentor-reuse':
+        from mentor_pomdp import reuse_view
+        if reuse is None:
+            raise ValueError('Supply the frozen mentor-reuse bank')
+        deeper, reviews = reuse_view(rows, trees, committed(medium / (split + '.jsonl')),
+                                     committed(reuse / (split + '.jsonl')), validate=True)
+    elif protocol == 'root-medium':
         from root_bank import view
         deeper, reviews = view(rows, trees, committed(medium / (split + '.jsonl')), validate=True)
     elif protocol == 'medium':
@@ -60,6 +81,8 @@ def clear(model):
         for attr in ('_observed', '_current_context', '_review_context'):
             getattr(model, attr, {}).clear()
         getattr(model.classifier, '_probability_cache', {}).clear()
+        if hasattr(model, 'regular'):
+            clear(model.regular)
 
 
 def models(frozen, output, load_cache=True):
@@ -106,14 +129,14 @@ def models(frozen, output, load_cache=True):
 def run_policy(family, row, tree, original, late, deeper, deeper_reviews, model, configuration):
     protocol = configuration['protocol']
     if family == 'B':
-        if model is not None or protocol in ('medium', 'root-medium'):
+        if model is not None or protocol in ('medium', 'root-medium', 'mentor-reuse'):
             raise ValueError('Strong ordinary B stays an independent LLM-only reference')
         function = llm_policy if protocol == 'late' else evaluate_llm
         reviews = late if protocol == 'late' else original
         result = function(row, tree, reviews, configuration['settings'])
     else:
         module = importlib.import_module(configuration['module'])
-        special = protocol in ('medium', 'root-medium')
+        special = protocol in ('medium', 'root-medium', 'mentor-reuse')
         reviews = deeper_reviews if special else late if protocol == 'late' else original
         result = module.evaluate(row, deeper if special else tree, reviews,
                                  model, configuration['settings'], family)

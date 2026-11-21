@@ -157,6 +157,15 @@ def collect(args):
 
         with ThreadPoolExecutor(max_workers=2) as pool:
             list(pool.map(one, chosen))
+    completion = {'questions': len(chosen), 'responses': len(known),
+                  'contract_sha256': sha(contract), 'bank_sha256': sha(args.output / 'train.jsonl'),
+                  'fresh_data_used': False}
+    (args.output / 'collection-complete.json').write_text(json.dumps(completion, indent=2) + '\n')
+    missing_controls = sum('guided' not in trees[r['id']] for r in chosen)
+    if missing_controls:
+        print(json.dumps({**completion, 'historical_guided_controls_missing': missing_controls,
+                          'next': 'Run root_controls.py to complete every matched historical control and summary.'}), flush=True)
+        return
     methods = {}
     for name, getter in (
         ('original-guided', lambda r: trees[r['id']]['guided']),

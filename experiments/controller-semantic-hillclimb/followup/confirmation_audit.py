@@ -7,7 +7,7 @@ from pathlib import Path
 
 import numpy as np
 
-from confirmation_common import (BASELINES, evidence, load_banks, models, run_policy, verify_fixed_prefix,
+from confirmation_common import (BASELINES, evidence, load_banks, models, run_policy, verify_fixed_prefix, verify_special_banks,
                                  clear, read, sha, statistics)
 from banks import ordinary, variant_observations, medium_view
 from medium_pomdp import merged_observations
@@ -26,11 +26,18 @@ def refit(configuration, frozen_model, data, medium, examples, variants, supplem
     module = importlib.import_module(configuration['module'])
     kwargs = {'smoothing': frozen_model.fit_receipt['smoothing'],
               'semantic_review': frozen_model.review_observer is not None}
-    if configuration['protocol'] == 'root-medium':
+    if configuration['protocol'] in ('root-medium', 'mentor-reuse'):
         from root_bank import view
         from banks import committed
-        trees, reviews = view(rows, trees, committed(medium / 'train.jsonl'), validate=True)
-        metadata, outputs = module.training_observations(metadata, outputs, read(supplement / 'metadata.jsonl'),
+        if configuration['protocol'] == 'mentor-reuse':
+            from mentor_pomdp import reuse_view
+            trees, reviews = reuse_view(rows, trees, committed(medium / 'train.jsonl'),
+                                        committed(Path(configuration['reuse_directory']) / 'train.jsonl'), validate=True)
+            from root_medium_pomdp import training_observations
+        else:
+            trees, reviews = view(rows, trees, committed(medium / 'train.jsonl'), validate=True)
+            training_observations = module.training_observations
+        metadata, outputs = training_observations(metadata, outputs, read(supplement / 'metadata.jsonl'),
                                                          np.load(supplement / 'oof.npz'))
     elif configuration['protocol'] == 'medium':
         observations = variant_observations(medium, variants, 'medium-short')
@@ -53,9 +60,28 @@ def run(args):
     if frozen['evidence'] != evidence(args.data):
         raise ValueError('Frozen sources/development inputs changed')
     verify_fixed_prefix(frozen, args.data)
+    verify_special_banks(frozen, args.medium)
+    reuse = Path(frozen['reuse_bank']['directory']) if 'reuse_bank' in frozen else None
+    if reuse is not None:
+        for name, digest in frozen['reuse_bank']['files'].items():
+            assert sha(reuse / name) == digest
     rows, trees, original, late, deeper, deep_reviews = load_banks(
-        args.data, args.split, args.medium, frozen['selected']['C']['protocol'])
+        args.data, args.split, args.medium, frozen['selected']['C']['protocol'], reuse)
     planners = models(frozen, args.output, load_cache=args.split == 'test')
+    scored = None
+    if args.split == 'test':
+        scored = {(r['policy'], r['id']): r for r in read(args.output / 'test/per-question.jsonl')}
+        if len(scored) != len(rows) * 8:
+            raise ValueError('Incomplete scored result set')
+    for model in planners.values():
+        for d in model.dynamics.values():
+            for name in ('prior', 'initial', 'transition', 'emission', 'review', 'reviewed_transition',
+                         'reviewed_emission', 'mentor', 'last_transition'):
+                if not hasattr(d, name):
+                    continue
+                array = getattr(d, name)
+                assert np.isfinite(array).all() and (array >= 0).all()
+                assert np.allclose(array.sum(-1), 1.), name
     rebuilt = {}
     if args.split == 'dev' and args.refit:
         for family, model in planners.items():
@@ -68,7 +94,7 @@ def run(args):
     for family in (*BASELINES, 'A', 'B', 'C'):
         model = planners.get(family)
         config = frozen['selected'].get(family)
-        is_medium = config is not None and config['protocol'] in ('medium', 'root-medium')
+        is_medium = config is not None and config['protocol'] in ('medium', 'root-medium', 'mentor-reuse')
         bank = deeper if is_medium else trees
         reviews = deep_reviews if is_medium else late if config and config['protocol'] == 'late' else original
         items = []
@@ -81,6 +107,10 @@ def run(args):
 
         for row_index, row in enumerate(rows):
             item = policy(row, bank[row['id']], reviews)
+            if scored is not None:
+                expected = dict(scored[family, row['id']])
+                expected.pop('policy'); expected.pop('panel')
+                assert item == expected, ('saved outcome', family, row['id'])
             items.append(item)
             parts = item['path'].split('/') if item['path'] else []
             visited = [''] + ['/'.join(parts[:i]) for i in range(1, len(parts) + 1)]
@@ -91,6 +121,8 @@ def run(args):
             assert set(acquired) <= set(visited)
             if family == 'A':
                 assert acquired == []
+            if model is not None and model.fit_receipt.get('maximum_logical_reviews') == 1:
+                assert len(acquired) <= 1 and set(acquired) <= {''}
             paid_tree = {p: bank[row['id']][p] for p in visited}
             paid_reviews = {(row['id'], p): reviews[row['id'], p] for p in acquired}
             solver = sum(n['input_tokens'] + n['output_tokens'] for n in paid_tree.values())
@@ -107,16 +139,21 @@ def run(args):
             assert item.get('judge_physical_calls', 0) == physical
             encoder = 0.
             if model is not None:
-                expected_calls = len(decisions) + (len(acquired) if model.review_observer is not None else 0)
+                logical_calls = len(decisions) + (len(acquired) if model.review_observer is not None else 0)
+                components = model.classifier._recipe.get('component_count', 1)
+                expected_calls = logical_calls * components
                 expected_tokens = sum(model.classifier.values(row, d['path'], paid_tree)[3] for d in decisions)
                 if model.review_observer is not None:
                     expected_tokens += sum(model.classifier.values(row, p, paid_tree, n)[3]
                                            for (_, p), n in paid_reviews.items())
                 assert item['verifier_calls'] == expected_calls
-                assert item['verifier_tokens'] == item['verifier_token_slots'] == expected_tokens
+                assert item['verifier_tokens'] == item['verifier_token_slots'] == expected_tokens * components
                 encoder = model.classifier._recipe['parameters'] / 1e9 * expected_tokens
+                assert np.isclose(item['verifier_parameters_billions'], model.classifier._recipe['parameters'] / 1e9 / components)
+                if components > 1:
+                    assert item['verifier_total_parameters_billions'] == model.classifier._recipe['parameters'] / 1e9
                 state_count = len(next(iter(model.dynamics.values())).prior)
-                assert state_count in (2, 4)
+                assert state_count in (2, 4, 8)
                 for d in decisions:
                     assert len(d['belief']) == state_count
                     assert np.isclose(sum(d['belief']), 1.) and min(d['belief']) >= 0
@@ -158,6 +195,9 @@ def run(args):
                'freeze_sha256': sha(args.output / 'frozen.json'), 'independent_charge_checks': charge_checks,
                'blind_pruned_replays': blind_checks, 'training_only_refitted_outcomes': refit_checks,
                'independent_encoder_regenerations': regeneration_checks}
+    if args.split == 'test':
+        receipt.update(scored_summary_sha256=sha(args.output / 'test/summary.json'),
+                       scored_outcomes_sha256=sha(args.output / 'test/per-question.jsonl'))
     name = 'development-audit.json' if args.split == 'dev' else 'test-audit.json'
     (args.output / name).write_text(json.dumps(receipt, indent=2) + '\n')
     if args.split == 'dev':

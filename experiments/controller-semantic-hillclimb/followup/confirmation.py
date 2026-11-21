@@ -6,7 +6,7 @@ from pathlib import Path
 import pickle
 import shutil
 
-from confirmation_common import (HERE, BASELINES, evidence, load_banks, models, run_policy, verify_fixed_prefix,
+from confirmation_common import (HERE, BASELINES, evidence, load_banks, models, run_policy, verify_fixed_prefix, verify_special_banks,
                                  margins, criteria, read, sha, statistics)
 from study import fixed
 
@@ -28,7 +28,8 @@ def freeze(args):
         raise ValueError('Fresh/fitting overlap')
     candidates = []
     baselines = None
-    modules = ('dynamic_grounded_pomdp', 'binary_pomdp', 'calibrated_pomdp', 'root_medium_pomdp')
+    modules = ('dynamic_grounded_pomdp', 'binary_pomdp', 'calibrated_pomdp', 'root_medium_pomdp',
+               'fusion_pomdp', 'subject_fusion_pomdp', 'mentor_pomdp')
     for probe in args.probe:
         summary = json.loads((probe / 'summary.json').read_bytes())
         if summary['fresh_data_used']:
@@ -49,7 +50,8 @@ def freeze(args):
             current = candidate.get('module', module)
             if current not in (*modules, 'medium_pomdp'):
                 raise ValueError('Unknown policy implementation')
-            protocol = ('root-medium' if current == 'root_medium_pomdp' else
+            protocol = ('mentor-reuse' if current == 'mentor_pomdp' else
+                        'root-medium' if current == 'root_medium_pomdp' else
                         'medium' if current == 'medium_pomdp' else 'late' if candidate['late'] else 'original')
             candidates.append({**candidate, 'module': current, 'protocol': protocol, 'probe': str(probe)})
     best = lambda group: max(group, key=lambda r: (r['dev']['accuracy'], -r['dev']['mean_compute']))
@@ -60,7 +62,7 @@ def freeze(args):
     if not hybrids:
         raise ValueError('No hybrid fits the compute target on development data')
     c = best(hybrids)
-    special = args.root if c['protocol'] == 'root-medium' else args.medium
+    special = args.root if c['protocol'] in ('root-medium', 'mentor-reuse') else args.medium
     if special is None:
         raise ValueError('Supply the selected root-hybrid training bank with --root')
     selected = {'A': a, 'B': b, 'C': c}
@@ -79,8 +81,9 @@ def freeze(args):
             shutil.copytree(folder, args.output / relative)
             assets[key] = {'directory': relative, 'source_directory': str(folder),
                            'private_volume': 'srr-semantic-training-20261120',
-                           'remote': '/' + folder.parent.name + '/full',
-                           'files': {p.name: sha(p) for p in folder.iterdir() if p.is_file()},
+                           'remote': None if recipe.get('components') else '/' + folder.parent.name + '/full',
+                           'components': recipe.get('components'),
+                           'files': {str(p.relative_to(folder)): sha(p) for p in folder.rglob('*') if p.is_file()},
                            'recipe': recipe}
         model.classifier.directory = relative
         destination = args.output / 'models' / (family + '.pkl')
@@ -92,6 +95,7 @@ def freeze(args):
     payload = {'selected': selected, 'models': descriptors, 'observer_assets': assets,
                'evidence': evidence(args.data), 'data_directory': str(args.data),
                'medium_directory': str(special),
+               'medium_training_contract_sha256': sha(special / 'contract.json'),
                'medium_training_bank_sha256': sha(special / 'train.jsonl'),
                'medium_development_bank_sha256': sha(special / 'dev.jsonl') if (special / 'dev.jsonl').exists() else None,
                'questions': 912, 'baselines': BASELINES,
@@ -111,6 +115,10 @@ def freeze(args):
                'raw_data': 'GPQA text/options/reference answers and model rationales remain private in ignored runtime files. Publish only code, hashes, metrics, and sanitized costs/correctness.',
                'validation': 'All912reserved questions and each192/720source panel; paired subject-by-panel bootstrap with best baseline/A/B recomputed each draw.',
                'compute': '(4*all solver tokens +3*all physical LLM review tokens +encoder billions*actual token slots)/3.09. Also report raw tokens/calls and35Btotal-parameter sensitivity.'}
+    if c['protocol'] == 'mentor-reuse':
+        reuse = Path(c['reuse_directory'])
+        payload['reuse_bank'] = {'directory': str(reuse),
+                                 'files': {name: sha(reuse / name) for name in ('contract.json', 'train.jsonl', 'dev.jsonl')}}
     (args.output / 'frozen.json').write_text(json.dumps(payload, indent=2) + '\n')
     print(json.dumps({'selected': selected, 'targets': payload['development_targets'],
                       'freeze_sha256': sha(args.output / 'frozen.json')}), flush=True)
@@ -121,6 +129,7 @@ def score(args):
     if frozen['evidence'] != evidence(args.data):
         raise ValueError('Changed frozen sources/development evidence')
     verify_fixed_prefix(frozen, args.data)
+    verify_special_banks(frozen, args.medium)
     completion = json.loads((args.data / 'test-collection.json').read_bytes())
     if completion['freeze_sha256'] != sha(args.output / 'frozen.json') or completion['completed'] != 912:
         raise ValueError('Complete every frozen question before scoring')
@@ -130,8 +139,11 @@ def score(args):
                         ('medium_sha256', args.medium / 'test.jsonl')):
         if completion[field] != sha(path):
             raise ValueError('Changed completed test bank')
+    reuse = Path(frozen['reuse_bank']['directory']) if 'reuse_bank' in frozen else None
+    if reuse is not None and completion['reuse_sha256'] != sha(reuse / 'test.jsonl'):
+        raise ValueError('Changed completed mentor-reuse bank')
     rows, trees, original, late, deeper, deep_reviews = load_banks(
-        args.data, 'test', args.medium, frozen['selected']['C']['protocol'])
+        args.data, 'test', args.medium, frozen['selected']['C']['protocol'], reuse)
     planners = models(frozen, args.output)
     results = {name: [fixed(r, trees[r['id']], *setting) for r in rows] for name, setting in BASELINES.items()}
     for family in ('A', 'B', 'C'):
