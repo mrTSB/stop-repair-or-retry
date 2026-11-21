@@ -35,6 +35,60 @@ def outcome(path, tree, reviews, decisions, encoders=()):
 
 
 class ProspectiveTests(unittest.TestCase):
+    def test_forwarded_A_resolves_original_runtime_and_digest_bound_model(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            original = root / 'original'; original.mkdir()
+            forwarded = root / 'fusion'; forwarded.mkdir()
+            model = original / 'C1-smooth8.pkl'; model.write_bytes(b'original fitted planner')
+            (forwarded / model.name).write_bytes(b'wrong model with the same name')
+            candidate = {'model': model.stem}
+            identity = {'source_sha256': freeze.sha(freeze.HERE / 'development_continuous.py'),
+                        'model_sha256': {model.name: freeze.sha(model)}}
+            self.assertEqual(freeze.infer_a_module(candidate, identity, 'science_fusion_pomdp'), 'continuous_repairability')
+            resolved = freeze.resolve_a_model(candidate, identity, original / 'summary.json', forwarded, root)
+            self.assertEqual(resolved, model.resolve())
+            model.write_bytes(b'changed')
+            with self.assertRaisesRegex(ValueError, 'resolve recorded A'):
+                freeze.resolve_a_model(candidate, identity, original / 'summary.json', forwarded, root)
+
+    def test_stronger_base_provenance_binds_original_mentor_and_selected_A(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            def write(folder, name, data):
+                folder.mkdir(exist_ok=True)
+                path = folder / name
+                path.write_text(json.dumps(data))
+                return path
+            parent = root / 'parent'
+            parent_identity = write(parent, 'identity.json', {'source_sha256': freeze.sha(freeze.HERE / 'prepare_mixed_mentor.py'), 'model_files': {}})
+            parent_model = parent / 'mentor.pkl'; parent_model.write_bytes(b'original mentor')
+            parent_complete = write(parent, 'complete.json', {'identity_sha256': freeze.sha(parent_identity),
+                'models': [{'key': 'mentor', 'sha256': freeze.sha(parent_model)}]})
+            a = root / 'A'; a.mkdir()
+            a_model = a / 'model.pkl'; a_model.write_bytes(b'stronger plain A')
+            a_identity = write(a, 'identity.json', {})
+            candidate = {'model': 'model', 'settings': {'penalty': .01}}
+            a_summary = write(a, 'summary.json', {'selected_A': candidate})
+            selection = {'candidate': candidate, 'module': 'continuous_repairability', 'summary': str(a_summary),
+                         'summary_sha256': freeze.sha(a_summary), 'identity_sha256': freeze.sha(a_identity),
+                         'model_path': str(a_model), 'model_sha256': freeze.sha(a_model)}
+            child = root / 'child'
+            child_identity = write(child, 'identity.json', {'source_sha256': freeze.sha(freeze.HERE / 'development_stronger_base.py'),
+                'hybrid_sha256': freeze.sha(freeze.HERE / 'stronger_base_hybrid.py'), 'parent_mentor_directory': str(parent),
+                'stronger_base_parent_complete_sha256': freeze.sha(parent_complete), 'parent_identity_sha256': freeze.sha(parent_identity),
+                'base_selection': selection, 'development_or_test_used_for_mentor_refit': False,
+                'mentor_refitted': False, 'transfer_refitted': False, 'test_used': False})
+            write(child, 'complete.json', {'identity_sha256': freeze.sha(child_identity), 'base_A': candidate,
+                'parent_mentor_complete_sha256': freeze.sha(parent_complete),
+                'models': [{'key': 'strongbase-mentor', 'parent_sha256': freeze.sha(parent_model)}]})
+            _, files = freeze.fitting_chain(child, root)
+            self.assertIn(parent_model, files)
+            self.assertIn(a_model, files)
+            parent_model.write_bytes(b'changed mentor')
+            with self.assertRaisesRegex(ValueError, 'parent mentor model changed'):
+                freeze.fitting_chain(child, root)
+
     def test_shared_encoder_modes_charge_one_identical_paid_input(self):
         with tempfile.TemporaryDirectory() as directory:
             folder = Path(directory)

@@ -142,9 +142,31 @@ filtering. `matched_review_b.py` supplies an independent LLM-only control with
 the same strong retained-review protocol as C. Final comparisons retain the
 higher accuracy of ordinary and matched-review B.
 
-`prospective_freeze.py` and `prospective_audit.py` provide a staged freeze and
-paid-prefix audit, not a complete test collector/scorer. The freeze requires
-all development gaps, C's compute advantage, and completed matched-review B;
-it rejects choosing a weaker completed A to ease C's target. The audit reports
-logical reviews and physical API phases separately. Neither tool has opened
-test outcomes or established a fresh-data success.
+The mixed strong-review bank is complete. On its 128 new training questions,
+ordinary Repair twice obtains 72 correct answers, one strong guided repair
+89, and a second repair retaining that review 93. Of the 39 errors after the
+first guided repair, 34 also have an incorrect reviewer answer. These are
+training action diagnostics, not fitted-controller or fresh-test results.
+
+`stronger_base_hybrid.py` lets C inherit the strongest completed A forecaster
+and its selected posterior blend while preserving the fitted mentor dynamics
+and truth-preserving transfer. Separate observers incur separate charges;
+identical assets can share predictions. The development driver compares C
+against the strongest ordinary or matched-review B on all 256 questions.
+
+`prospective_freeze.py`, `prospective_audit.py`, `prospective_collect.py`, and
+`prospective_grade.py` implement the prospective confirmation pipeline. The
+freeze requires all development gaps, C's compute advantage, and completed
+matched-review B; it rejects choosing a weaker completed A to ease C's target.
+All 2,048 development decisions must then pass sequential replay and cost
+audits before test collection. All 8,192 test decisions must complete with
+blank references before grading can open the reserved answers. The report
+includes paired confidence intervals, recomputing the strongest baseline and
+A/B within each resample, plus source and subject breakdowns. Logical reviews
+and physical API phases are reported separately.
+
+Synthetic tests cover this pipeline, but a real model archive and complete
+development replay remain required before use. Some early A studies lack
+historical pickle digests; current archival and replay cannot establish that
+missing historical byte identity. No confirmation run has started and no new
+fresh-data success has been established.

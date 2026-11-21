@@ -9,6 +9,7 @@ import argparse
 from datetime import datetime, timezone
 import hashlib
 import importlib
+from importlib.metadata import version
 import json
 import math
 from pathlib import Path
@@ -24,8 +25,11 @@ from study_common import BASELINES
 import extended_acquire as old
 
 A_MODULES = {'repairability_pomdp': ('development_repairability',),
-             'continuous_repairability': ('development_continuous', 'development_factorized'),
-             'subject_science_pomdp': ('development_science_option',)}
+             'continuous_repairability': ('development_continuous', 'development_factorized', 'development_refined_observer'),
+             'subject_science_pomdp': ('development_science_option',),
+             'science_fusion_pomdp': ('development_science_fusion',)}
+C_MODULES = {'hybrid_repairability': ('development_mixed_mentor',),
+             'stronger_base_hybrid': ('development_stronger_base',)}
 
 
 def sha(path):
@@ -38,6 +42,11 @@ def sha(path):
 
 def read_json(path):
     return json.loads(Path(path).read_bytes())
+
+
+def runtime_environment():
+    return {'python': list(sys.version_info[:3]), 'packages': {name: version(name) for name in
+            ('numpy', 'torch', 'transformers', 'safetensors', 'scikit-learn', 'sentencepiece', 'protobuf')}}
 
 
 def best(values):
@@ -109,14 +118,25 @@ def source_manifest(root=ROOT):
 def observer_slots(model):
     """Find every live observer in single, subject-routed, and hybrid planners."""
     seen_models, seen_observers, result = set(), set(), []
+    def visit_observer(observer, path):
+        if id(observer) in seen_observers:
+            return
+        seen_observers.add(id(observer))
+        components = getattr(observer, 'components', None)
+        if components is not None:
+            for index, component in enumerate(components):
+                visit_observer(component, path + '.components.' + str(index))
+        elif hasattr(observer, 'directory'):
+            result.append((path, observer))
+        else:
+            raise ValueError('Unknown observer assets')
     def visit(current, path):
         if id(current) in seen_models:
             return
         seen_models.add(id(current))
         observer = getattr(current, 'classifier', None)
-        if observer is not None and hasattr(observer, 'directory') and id(observer) not in seen_observers:
-            seen_observers.add(id(observer))
-            result.append((path + '.classifier', observer))
+        if observer is not None:
+            visit_observer(observer, path + '.classifier')
         for name in ('base', 'mentor', 'regular'):
             child = getattr(current, name, None)
             if child is not None:
@@ -135,10 +155,12 @@ def validate_role(model, family, module):
     expected = {'repairability_pomdp': ('repairability_pomdp', 'Planner'),
                 'continuous_repairability': ('repairability_pomdp', 'Planner'),
                 'subject_science_pomdp': ('subject_science_pomdp', 'SubjectPlanner'),
-                'hybrid_repairability': ('hybrid_repairability', 'Planner')}[module]
+                'science_fusion_pomdp': ('subject_science_pomdp', 'SubjectPlanner'),
+                'hybrid_repairability': ('hybrid_repairability', 'Planner'),
+                'stronger_base_hybrid': ('stronger_base_hybrid', 'Planner')}[module]
     if (type(model).__module__, type(model).__name__) != expected:
         raise ValueError('Selected pickle does not implement its declared policy family')
-    if family == 'A' and module == 'subject_science_pomdp':
+    if family == 'A' and module in ('subject_science_pomdp', 'science_fusion_pomdp'):
         if set(model.models) != {'math', 'chemistry', 'physics'} or set(model.settings) != set(model.models):
             raise ValueError('Subject-routed A must cover each observed subject exactly once')
         for child in model.models.values():
@@ -153,6 +175,10 @@ def validate_role(model, family, module):
     elif family == 'C':
         if model.fit_receipt.get('state_count') != 16 or model.fit_receipt.get('maximum_reviews') != 1:
             raise ValueError('C must be the declared two-mode POMDP with one optional root LLM review')
+        if module == 'stronger_base_hybrid':
+            validate_role(model.base, 'A', model.base_module)
+            if not model.fit_receipt.get('parent_transfer_unchanged'):
+                raise ValueError('Stronger-base C changed the training-only mentor transfer')
 
 
 def verify_weight_folder(folder):
@@ -276,6 +302,32 @@ def fitting_chain(directory, registry_root, seen=None):
             raise ValueError('Mixed mentor fitting source changed')
         if any(sha(path) != digest for path, digest in identity['model_files'].items()):
             raise ValueError('C fitting policy dependencies changed')
+    elif 'stronger_base_parent_complete_sha256' in identity:
+        if identity['source_sha256'] != sha(HERE / 'development_stronger_base.py') or identity['hybrid_sha256'] != sha(HERE / 'stronger_base_hybrid.py'):
+            raise ValueError('Stronger-base construction source changed')
+        if any(identity.get(k) is not False for k in ('development_or_test_used_for_mentor_refit', 'mentor_refitted', 'transfer_refitted', 'test_used')):
+            raise ValueError('Stronger-base construction must preserve the training-only mentor')
+        parent = Path(identity['parent_mentor_directory'])
+        if sha(parent / 'complete.json') != identity['stronger_base_parent_complete_sha256'] or sha(parent / 'identity.json') != identity['parent_identity_sha256']:
+            raise ValueError('Stronger-base parent fitting evidence changed')
+        parent_complete, parent_files = fitting_chain(parent, registry_root, seen)
+        parent_models = {r['sha256']: parent / (r['key'] + '.pkl') for r in parent_complete['models']}
+        if any(sha(path) != digest for digest, path in parent_models.items()):
+            raise ValueError('Stronger-base parent mentor model changed')
+        if any(record['parent_sha256'] not in parent_models for record in complete['models']):
+            raise ValueError('Stronger-base model has an unregistered mentor parent')
+        selected = identity['base_selection']
+        for name, digest in ((selected['summary'], selected['summary_sha256']),
+                             (str(Path(selected['summary']).parent / 'identity.json'), selected['identity_sha256']),
+                             (selected['model_path'], selected['model_sha256'])):
+            if sha(name) != digest:
+                raise ValueError('Stronger-base selected A evidence changed')
+            files.append(Path(name))
+        if read_json(selected['summary'])['selected_A'] != selected['candidate'] or complete['base_A'] != selected['candidate']:
+            raise ValueError('Stronger-base A selection differs from its recorded development winner')
+        if complete['parent_mentor_complete_sha256'] != identity['stronger_base_parent_complete_sha256']:
+            raise ValueError('Stronger-base completion points to another mentor fit')
+        files += parent_files + list(parent_models.values())
     elif 'source_complete_sha256' in identity:
         if identity['source_sha256'] != sha(HERE / 'crossfit_mentor_emissions.py'):
             raise ValueError('Excluded-calibration fitting source changed')
@@ -302,21 +354,73 @@ def fitting_chain(directory, registry_root, seen=None):
     return complete, files
 
 
+def infer_a_module(candidate, identity, fallback=None):
+    if candidate.get('policy_module'):
+        module = candidate['policy_module']
+    else:
+        recorded = identity.get('source_sha256')
+        found = [module for module, drivers in A_MODULES.items() if any(
+            (recorded.get(driver + '.py') if isinstance(recorded, dict) else recorded) == sha(HERE / (driver + '.py'))
+            for driver in drivers)]
+        module = found[0] if len(found) == 1 else fallback
+    if module not in A_MODULES:
+        raise ValueError('Cannot resolve the retained A runtime module')
+    return module
+
+
+def resolve_a_model(candidate, identity, summary, preferred, registry):
+    if 'model_path' in candidate:
+        path = Path(candidate['model_path'])
+    else:
+        filename = candidate.get('pickle') or candidate['model'] + '.pkl'
+        digest = identity.get('model_sha256', {}).get(filename)
+        local = [preferred / filename, summary.parent / filename]
+        matches = [p for p in local if p.exists() and (digest is None or sha(p) == digest)]
+        if not matches and digest is not None:
+            matches = [p for p in registry.rglob(filename) if sha(p) == digest]
+        if not matches:
+            raise ValueError('Cannot resolve recorded A model assets')
+        path = matches[0]
+    expected = identity.get('model_sha256', {}).get(path.name)
+    if not path.is_file() or (expected is not None and sha(path) != expected):
+        raise ValueError('Selected A changed after development evaluation')
+    return path.resolve()
+
+
 def select_inputs(args):
     dev_sha = sha(args.data / 'splits/dev-questions.jsonl')
+    # Refined/fusion studies retain stronger existing A candidates explicitly.
+    # Resolve that recorded chain before locating its model and runtime module.
+    forwarded, seen = [], set()
+    while True:
+        path = args.a_summary.resolve()
+        if path in seen:
+            raise ValueError('Cyclic retained-A provenance')
+        seen.add(path)
+        summary = read_json(path)
+        candidate = summary['selected_A']
+        if 'source_summary' not in candidate:
+            break
+        target = Path(candidate['source_summary'])
+        if sha(target) != candidate['source_summary_sha256']:
+            raise ValueError('Retained stronger A source summary changed')
+        forwarded.append(str(path))
+        args.a_summary = target
     paths = {'A': args.a_summary, 'B': args.b_summary, 'C': args.c_summary}
     summaries = {family: read_json(path) for family, path in paths.items()}
     identities = {family: check_development_identity(path.parent, dev_sha) for family, path in paths.items()}
     for summary in summaries.values():
         check_no_test_used(summary)
     registry = development_registry(args.data.parent, dev_sha)
+    registry['forwarded_A_summaries'] = forwarded
     a = summaries['A']['selected_A']
     best_a = best([r['candidate'] for r in registry['A']])
     if (a['dev']['accuracy'], -a['dev']['mean_compute']) != (best_a['dev']['accuracy'], -best_a['dev']['mean_compute']):
         raise ValueError('A must be the strongest completed same-panel A; do not lower A to ease the C gap')
     if not any(r['summary'] == str(args.a_summary.resolve()) for r in registry['A']):
         raise ValueError('Selected A is outside the registered experiment area')
-    if args.a_module != 'subject_science_pomdp' and a != best(read_json(args.a_summary.parent / 'search.json')):
+    args.a_module = infer_a_module(a, identities['A'], getattr(args, 'a_module', None))
+    if args.a_module not in ('subject_science_pomdp', 'science_fusion_pomdp') and a != best(read_json(args.a_summary.parent / 'search.json')):
         raise ValueError('A summary does not retain its strongest development candidate')
     b_record = max(registry['B'], key=lambda r: (r['candidate']['dev']['accuracy'], -r['candidate']['dev']['mean_compute']))
     b = b_record['candidate']
@@ -325,6 +429,9 @@ def select_inputs(args):
     identities['B'] = check_development_identity(b_path.parent, dev_sha)
     c_search = read_json(args.c_summary.parent / 'search.json')
     c = best([r for r in c_search if r['dev']['mean_judge_calls'] > 0 and r['dev']['mean_compute'] < b['dev']['mean_compute']])
+    c_module = c.get('policy_module', 'hybrid_repairability')
+    if c_module not in C_MODULES:
+        raise ValueError('Unknown hybrid C runtime module')
     baselines = summaries['B']['baselines']
     for summary in (summaries['A'], summaries['C']):
         if set(summary['baselines']) != set(baselines):
@@ -333,15 +440,17 @@ def select_inputs(args):
             for key in ('n', 'correct', 'accuracy', 'mean_compute'):
                 if not math.isclose(values[key], summary['baselines'][name][key], abs_tol=1e-9):
                     raise ValueError('Development baseline outcomes differ across policies')
-    selected = {'A': {**a, 'family': 'A', 'module': args.a_module, 'protocol': 'plain', 'settings': a.get('settings', {})},
+    selected = {'A': {**a, 'family': 'A', 'module': args.a_module, 'protocol': 'plain', 'settings': a.get('settings', {}),
+                      'source_summary': str(args.a_summary.resolve())},
                 'B': {**b, 'family': 'B', 'source_summary': str(b_path.resolve())},
-                'C': {**c, 'family': 'C', 'module': 'hybrid_repairability', 'protocol': 'mixed-strong-root'}}
+                'C': {**c, 'family': 'C', 'module': c_module, 'protocol': 'mixed-strong-root',
+                      'source_summary': str(args.c_summary.resolve())}}
     checks = check_targets(selected, baselines)
     if not checks['all_required_passed']:
         raise ValueError('Development targets are not met; reserved test remains closed: ' + json.dumps(checks))
     expected_sources = {'A': A_MODULES[args.a_module],
                         'B': ('matched_review_b',) if b['module'] == 'matched_review_b' else ('development_b',),
-                        'C': ('development_mixed_mentor',)}
+                        'C': C_MODULES[c_module]}
     for family, modules in expected_sources.items():
         recorded = identities[family]['source_sha256']
         if not any((recorded.get(module + '.py') if isinstance(recorded, dict) else recorded) == sha(HERE / (module + '.py')) for module in modules):
@@ -351,17 +460,28 @@ def select_inputs(args):
             raise ValueError('A development dependency changed after evaluation')
         policy_module = importlib.import_module(selected[family]['module'])
         for name in ('policy_sha256', 'pomdp_sha256', 'hybrid_sha256'):
-            if name in identities[family] and identities[family][name] != sha(policy_module.__file__):
+            expected_module = importlib.import_module('repairability_pomdp') if name == 'pomdp_sha256' and family == 'A' else policy_module
+            if name == 'policy_sha256' and selected[family]['module'] == 'science_fusion_pomdp':
+                expected_module = importlib.import_module('continuous_repairability')
+            if name in identities[family] and identities[family][name] != sha(expected_module.__file__):
                 raise ValueError('Selected policy source differs from its development evaluation')
         for name, filename in (('factorized_sha256', 'factorized_repairability.py'),
                                ('core_sha256', 'repairability_pomdp.py'),
                                ('numeric_consistency_sha256', 'numeric_consistency.py'),
+                               ('fusion_sha256', 'science_fusion_pomdp.py'),
                                ('receipt_validator_sha256', 'development_mixed_mentor.py')):
             if name in identities[family] and identities[family][name] != sha(HERE / filename):
                 raise ValueError('Selected development dependency changed: ' + filename)
-    model_paths = {'A': args.a_models / (a.get('pickle') or (a['model'] + '.pkl')),
+    a_path = resolve_a_model(a, identities['A'], args.a_summary, args.a_models, args.data.parent)
+    model_paths = {'A': a_path,
                    'C': args.c_models / (c['model'] + '.pkl')}
     c_fitting, fit_files = fitting_chain(args.c_models, args.data.parent)
+    if identities['C']['models_sha256'] != sha(args.c_models / 'complete.json'):
+        raise ValueError('C development used a different completed model collection')
+    if c_module == 'stronger_base_hybrid':
+        base = read_json(args.c_models / 'identity.json')['base_selection']
+        if base['model_sha256'] != sha(a_path) or base['module'] != args.a_module or base['candidate'].get('settings', {}) != a.get('settings', {}):
+            raise ValueError('Stronger-base C must inherit the strongest selected A with its recorded settings')
     registry['evidence_files'].extend(str(p.resolve()) for p in fit_files)
     c_record = next(r for r in c_fitting['models'] if r['key'] == c['model'])
     if sha(model_paths['C']) != c_record['sha256']:
@@ -369,6 +489,12 @@ def select_inputs(args):
     recorded_models = identities['A'].get('model_sha256', {})
     if recorded_models and recorded_models.get(model_paths['A'].name) != sha(model_paths['A']):
         raise ValueError('Selected A changed after development evaluation')
+    registry['A_model_origin'] = {
+        'selected_pickle_sha256': sha(a_path),
+        'historical_evaluation_pickle_digest_available': a_path.name in recorded_models,
+        'historical_evaluation_pickle_digest': recorded_models.get(a_path.name),
+        'independent_training_reconstruction_performed': False,
+        'validation_required': 'Replay every selected development decision with the frozen model before test collection. This confirms current behavior and costs; missing historical pickle hashes cannot establish historical byte identity.'}
     return selected, baselines, checks, model_paths, identities, registry
 
 
@@ -392,7 +518,7 @@ def freeze(args):
                 raise ValueError('Finish and seal paired training/development collection before freezing')
     selected, baselines, checks, model_paths, identities, registry = select_inputs(args)
     # Runtime declarations are checked before unpickling selected local models.
-    for module in (*A_MODULES, 'hybrid_repairability'):
+    for module in (*A_MODULES, *C_MODULES):
         importlib.import_module(module)
     planners = {family: pickle.loads(path.read_bytes()) for family, path in model_paths.items()}
     for family, model in planners.items():
@@ -413,6 +539,20 @@ def freeze(args):
     for directory in (args.a_models, args.c_models, args.mentor_bank):
         evidence_paths.update(p for name in ('identity.json', 'complete.json', 'contract.json', 'training-neural.npz',
             'training-neural.jsonl', 'metadata.jsonl', 'neural.npz', 'neural-receipt.json') if (p := directory / name).exists())
+    a_directory = args.a_summary.parent
+    a_summary = read_json(args.a_summary)
+    for field, filename in (('oof_provenance_sha256', 'oof-provenance.json'),
+                             ('component_alignment_sha256', 'component-alignment.json')):
+        if field in a_summary and sha(a_directory / filename) != a_summary[field]:
+            raise ValueError('Selected A training alignment evidence changed')
+    for directory in {a_directory, model_paths['A'].parent}:
+        evidence_paths.update(p for name in ('identity.json', 'oof-provenance.json', 'oof-alignment.jsonl',
+            'component-alignment.json', 'training-neural.npz', 'training-neural.jsonl') if (p := directory / name).exists())
+    oof_path = a_directory / 'oof-provenance.json'
+    if oof_path.exists():
+        oof = read_json(oof_path)
+        if oof.get('alignment_sha256') != sha(a_directory / 'oof-alignment.jsonl'):
+            raise ValueError('Selected A excluded-fold alignment changed')
     evidence_paths.update(p for name in ('train-observations.jsonl', 'train-late-observations.jsonl',
         'dev-observations.jsonl', 'dev-late-observations.jsonl', 'train-plain-complete.json', 'dev-plain-complete.json',
         'train-ordinary-complete.json', 'dev-ordinary-complete.json', 'splits/selection.json') if (p := args.data / name).exists())
@@ -425,6 +565,23 @@ def freeze(args):
     for family, model in planners.items():
         descriptors[family] = archive_model(model, family, args.output, assets)
         descriptors[family]['selected_source_sha256'] = sha(model_paths[family])
+    corpora = {}
+    for asset in assets.values():
+        digest = asset['recipe'].get('corpus_sha256')
+        if digest is None or digest in corpora:
+            continue
+        source = ROOT / '.cache/semantic-textbooks'
+        if sha(source / 'passages.jsonl') != digest:
+            raise ValueError('Observer textbook corpus differs from its training recipe')
+        destination = args.output / 'corpora' / digest
+        destination.mkdir(parents=True)
+        files = {}
+        for name in ('manifest.json', 'passages.jsonl', 'tfidf.pkl'):
+            shutil.copy2(source / name, destination / name)
+            files[name] = sha(source / name)
+            if sha(destination / name) != files[name]:
+                raise ValueError('Failed to archive textbook retrieval assets')
+        corpora[digest] = {'directory': str(destination.relative_to(args.output)), 'files': files}
     for relative, digest in runtime.items():
         target = args.output / 'runtime' / relative
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -440,16 +597,18 @@ def freeze(args):
             if source.exists():
                 shutil.copy2(source, target / name)
                 selection_archives[str((target / name).relative_to(args.output))] = sha(target / name)
-    payload = {'schema': 'round2-prospective-freeze-v1', 'stage': 'frozen; collector and grading not yet implemented by this tool',
+    payload = {'schema': 'round2-prospective-freeze-v1', 'stage': 'frozen; awaiting verified development audit and blind collection',
                'created_at_utc': datetime.now(timezone.utc).isoformat(), 'questions': 1024,
                'reserved_question_sha256': reserved['sha256'], 'selection_manifest_sha256': sha(args.data / 'splits/selection.json'),
                'data_directory': str(args.data.resolve()), 'project_directory': str(ROOT),
                'selected': selected, 'development_baselines': baselines, 'development_checks': checks,
                'development_identities': identities, 'runtime_sources': runtime, 'evidence': evidence,
+               'runtime_environment': runtime_environment(),
+               'runtime_execution': 'Use hash-verified project sources at project_directory; archived source is a preservation copy. Observer checkpoints and textbook retrieval assets are relocated to their verified archive copies.',
                'completed_A_B_registry': registry,
                'selection_rule': 'Strongest completed same-panel A and independent B (ordinary or matched full-review); highest-accuracy queried C strictly cheaper than that B. No test outcomes used.',
                'selection_archives': selection_archives,
-               'models': descriptors, 'observer_assets': assets, 'baselines': BASELINES,
+               'models': descriptors, 'observer_assets': assets, 'corpora': corpora, 'baselines': BASELINES,
                'solver_digest': old.MODEL_DIGEST, 'reviewer_digest': old.JUDGE_DIGEST,
                'targets': {'units': 'percentage points', 'A_B_above_best_baseline': .1,
                            'C_above_best_A_B': .1, 'C_compute_strictly_below_B': True},
@@ -480,6 +639,8 @@ def verify(output, expected_sha=None):
         raise ValueError('Unknown prospective freeze')
     if not check_targets(frozen['selected'], frozen['development_baselines'])['all_required_passed']:
         raise ValueError('Frozen development targets do not pass')
+    if 'runtime_environment' in frozen and frozen['runtime_environment'] != runtime_environment():
+        raise ValueError('Python or inference package versions differ from the freeze')
     root, data = Path(frozen['project_directory']), Path(frozen['data_directory'])
     if sha(data / 'splits/test-questions.jsonl') != frozen['reserved_question_sha256']:
         raise ValueError('Reserved question file changed')
@@ -504,12 +665,18 @@ def verify(output, expected_sha=None):
             if sha(path) != digest:
                 raise ValueError('Observer fitting receipt changed')
         verify_weight_folder(folder)
+    for digest, corpus in frozen.get('corpora', {}).items():
+        for name, expected in corpus['files'].items():
+            if sha(output / corpus['directory'] / name) != expected:
+                raise ValueError('Archived textbook retrieval assets changed')
+        if sha(output / corpus['directory'] / 'passages.jsonl') != digest:
+            raise ValueError('Archived corpus does not match the observer profile')
     return frozen
 
 
 def load_models(output, device='cpu', expected_sha=None):
     frozen = verify(output, expected_sha)
-    for module in (*A_MODULES, 'hybrid_repairability'):
+    for module in (*A_MODULES, *C_MODULES):
         importlib.import_module(module)
     result = {}
     for family, descriptor in frozen['models'].items():
@@ -522,6 +689,12 @@ def load_models(output, device='cpu', expected_sha=None):
             observer = slots[mapping['slot']]
             observer.directory = str((output / frozen['observer_assets'][mapping['asset']]['directory']).resolve())
             observer.device = device
+            asset = frozen['observer_assets'][mapping['asset']]
+            corpus_sha = asset['recipe'].get('corpus_sha256')
+            if corpus_sha:
+                from evidence import Retriever
+                corpus = frozen['corpora'][corpus_sha]
+                observer._retriever = Retriever(output / corpus['directory'])
         result[family] = model
     return frozen, result
 

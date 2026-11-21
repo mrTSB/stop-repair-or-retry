@@ -119,7 +119,7 @@
     "science_questions_with_all_seven_wrong": 160
   },
   "new_test_reserved_questions": 1024,
-  "tests_passed": 47,
+  "tests_passed": 73,
   "primary_912_confirmation": "../artifacts/confirmation-912-v1/REPORT.md",
   "interpretation": "Development-selected results are not fresh confirmation; old912test remains retired.",
   "completed_followups": {
@@ -191,6 +191,321 @@
       "losses_vs_repair_once": 4,
       "mean_extra_input_tokens_vs_plain_repair": 100.4765625,
       "mean_cpu_retrieval_seconds": 0.0008890872395568294
+    },
+    "mixed_strong_review_training": {
+      "scope": "Training only; no policy result or fresh-data claim",
+      "mentor_contract_sha256": "929c7f1d76d7a9342625688d1a0247118b5e3ffb6c516142d4bdb641e72d3522",
+      "mentor_bank_sha256": "13be24c2d3f17f7b0cabc9c826c1afdfb12d9fd0d53b68953c55736440f9e888",
+      "groups": {
+        "all": {
+          "methods": {
+            "root": {
+              "correct": 84,
+              "n": 192,
+              "mean_node_tokens": 298.5104166666667
+            },
+            "repair_once": {
+              "correct": 111,
+              "n": 192,
+              "mean_node_tokens": 474.4427083333333
+            },
+            "repair_twice": {
+              "correct": 117,
+              "n": 192,
+              "mean_node_tokens": 559.59375
+            },
+            "retry_once": {
+              "correct": 87,
+              "n": 192,
+              "mean_node_tokens": 401.2395833333333
+            },
+            "retry_twice": {
+              "correct": 102,
+              "n": 192,
+              "mean_node_tokens": 403.0208333333333
+            },
+            "strong_guided": {
+              "correct": 145,
+              "n": 192,
+              "mean_node_tokens": 444.4166666666667
+            },
+            "retained_second_repair": {
+              "correct": 147,
+              "n": 192,
+              "mean_node_tokens": 425.8020833333333
+            },
+            "retained_after_retry": {
+              "correct": 147,
+              "n": 192,
+              "mean_node_tokens": 552.5
+            },
+            "mentor_answer": {
+              "correct": 149,
+              "n": 192,
+              "mean_node_tokens": 2897.7291666666665
+            }
+          },
+          "strong_guided_errors": 47,
+          "errors_with_wrong_mentor": 41
+        },
+        "new": {
+          "methods": {
+            "root": {
+              "correct": 52,
+              "n": 128,
+              "mean_node_tokens": 318.90625
+            },
+            "repair_once": {
+              "correct": 70,
+              "n": 128,
+              "mean_node_tokens": 497.34375
+            },
+            "repair_twice": {
+              "correct": 72,
+              "n": 128,
+              "mean_node_tokens": 584.4765625
+            },
+            "retry_once": {
+              "correct": 53,
+              "n": 128,
+              "mean_node_tokens": 421.1875
+            },
+            "retry_twice": {
+              "correct": 60,
+              "n": 128,
+              "mean_node_tokens": 426.2109375
+            },
+            "strong_guided": {
+              "correct": 89,
+              "n": 128,
+              "mean_node_tokens": 473.0625
+            },
+            "retained_second_repair": {
+              "correct": 93,
+              "n": 128,
+              "mean_node_tokens": 454.109375
+            },
+            "retained_after_retry": {
+              "correct": 90,
+              "n": 128,
+              "mean_node_tokens": 580.09375
+            },
+            "mentor_answer": {
+              "correct": 92,
+              "n": 128,
+              "mean_node_tokens": 2948.5234375
+            }
+          },
+          "strong_guided_errors": 39,
+          "errors_with_wrong_mentor": 34
+        },
+        "old": {
+          "methods": {
+            "root": {
+              "correct": 32,
+              "n": 64,
+              "mean_node_tokens": 257.71875
+            },
+            "repair_once": {
+              "correct": 41,
+              "n": 64,
+              "mean_node_tokens": 428.640625
+            },
+            "repair_twice": {
+              "correct": 45,
+              "n": 64,
+              "mean_node_tokens": 509.828125
+            },
+            "retry_once": {
+              "correct": 34,
+              "n": 64,
+              "mean_node_tokens": 361.34375
+            },
+            "retry_twice": {
+              "correct": 42,
+              "n": 64,
+              "mean_node_tokens": 356.640625
+            },
+            "strong_guided": {
+              "correct": 56,
+              "n": 64,
+              "mean_node_tokens": 387.125
+            },
+            "retained_second_repair": {
+              "correct": 54,
+              "n": 64,
+              "mean_node_tokens": 369.1875
+            },
+            "retained_after_retry": {
+              "correct": 57,
+              "n": 64,
+              "mean_node_tokens": 497.3125
+            },
+            "mentor_answer": {
+              "correct": 57,
+              "n": 64,
+              "mean_node_tokens": 2796.140625
+            }
+          },
+          "strong_guided_errors": 8,
+          "errors_with_wrong_mentor": 7
+        },
+        "new_math": {
+          "methods": {
+            "root": {
+              "correct": 39,
+              "n": 64,
+              "mean_node_tokens": 171.34375
+            },
+            "repair_once": {
+              "correct": 53,
+              "n": 64,
+              "mean_node_tokens": 304.9375
+            },
+            "repair_twice": {
+              "correct": 54,
+              "n": 64,
+              "mean_node_tokens": 365.375
+            },
+            "retry_once": {
+              "correct": 48,
+              "n": 64,
+              "mean_node_tokens": 243.703125
+            },
+            "retry_twice": {
+              "correct": 49,
+              "n": 64,
+              "mean_node_tokens": 256.328125
+            },
+            "strong_guided": {
+              "correct": 58,
+              "n": 64,
+              "mean_node_tokens": 290.59375
+            },
+            "retained_second_repair": {
+              "correct": 61,
+              "n": 64,
+              "mean_node_tokens": 285.78125
+            },
+            "retained_after_retry": {
+              "correct": 59,
+              "n": 64,
+              "mean_node_tokens": 368.59375
+            },
+            "mentor_answer": {
+              "correct": 61,
+              "n": 64,
+              "mean_node_tokens": 2616.34375
+            }
+          },
+          "strong_guided_errors": 6,
+          "errors_with_wrong_mentor": 3
+        },
+        "new_chemistry": {
+          "methods": {
+            "root": {
+              "correct": 8,
+              "n": 32,
+              "mean_node_tokens": 499.78125
+            },
+            "repair_once": {
+              "correct": 8,
+              "n": 32,
+              "mean_node_tokens": 724.5
+            },
+            "repair_twice": {
+              "correct": 8,
+              "n": 32,
+              "mean_node_tokens": 843.1875
+            },
+            "retry_once": {
+              "correct": 5,
+              "n": 32,
+              "mean_node_tokens": 636.53125
+            },
+            "retry_twice": {
+              "correct": 4,
+              "n": 32,
+              "mean_node_tokens": 638.25
+            },
+            "strong_guided": {
+              "correct": 13,
+              "n": 32,
+              "mean_node_tokens": 701.78125
+            },
+            "retained_second_repair": {
+              "correct": 13,
+              "n": 32,
+              "mean_node_tokens": 674.6875
+            },
+            "retained_after_retry": {
+              "correct": 13,
+              "n": 32,
+              "mean_node_tokens": 840.28125
+            },
+            "mentor_answer": {
+              "correct": 14,
+              "n": 32,
+              "mean_node_tokens": 3356.375
+            }
+          },
+          "strong_guided_errors": 19,
+          "errors_with_wrong_mentor": 18
+        },
+        "new_physics": {
+          "methods": {
+            "root": {
+              "correct": 5,
+              "n": 32,
+              "mean_node_tokens": 433.15625
+            },
+            "repair_once": {
+              "correct": 9,
+              "n": 32,
+              "mean_node_tokens": 655.0
+            },
+            "repair_twice": {
+              "correct": 10,
+              "n": 32,
+              "mean_node_tokens": 763.96875
+            },
+            "retry_once": {
+              "correct": 0,
+              "n": 32,
+              "mean_node_tokens": 560.8125
+            },
+            "retry_twice": {
+              "correct": 7,
+              "n": 32,
+              "mean_node_tokens": 553.9375
+            },
+            "strong_guided": {
+              "correct": 18,
+              "n": 32,
+              "mean_node_tokens": 609.28125
+            },
+            "retained_second_repair": {
+              "correct": 19,
+              "n": 32,
+              "mean_node_tokens": 570.1875
+            },
+            "retained_after_retry": {
+              "correct": 18,
+              "n": 32,
+              "mean_node_tokens": 742.90625
+            },
+            "mentor_answer": {
+              "correct": 17,
+              "n": 32,
+              "mean_node_tokens": 3205.03125
+            }
+          },
+          "strong_guided_errors": 14,
+          "errors_with_wrong_mentor": 13
+        }
+      },
+      "tokens": "Node-only diagnostic, not total trajectory or controller compute",
+      "test_used": false
     }
   },
   "matched_review_B": "Required before any final gap claim; independent LLM control with same strong review as C."

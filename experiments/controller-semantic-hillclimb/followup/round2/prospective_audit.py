@@ -90,9 +90,12 @@ def replay_paid_inputs(function, row, available_tree, available_reviews, family,
                 missing = error
                 if isinstance(error, KeyError):
                     key = error.args[0]
-                    if isinstance(key, str) and key in available_tree:
+                    allowed_paths = {'', 'repair', 'retry', 'guided'} | {
+                        first + '/' + last for first in ('repair', 'retry', 'guided')
+                        for last in ('repair', 'retry', 'reviewed', 'reuse')}
+                    if isinstance(key, str) and key in allowed_paths:
                         missing = MissingObservation('solver', key)
-                    elif isinstance(key, tuple) and key in available_reviews:
+                    elif isinstance(key, tuple) and len(key) == 2 and key[0] == row['id'] and key[1] in ('', 'repair', 'retry', 'guided'):
                         missing = MissingObservation('judge', key[1])
                     else:
                         raise
@@ -102,7 +105,7 @@ def replay_paid_inputs(function, row, available_tree, available_reviews, family,
                     if path in tree or parent != current or len(tree) >= 3:
                         raise ValueError('Policy requested a nonsequential or over-budget solver path') from missing
                     if path not in available_tree:
-                        raise
+                        raise missing
                     tree[path], current = available_tree[path], path
                 elif kind == 'judge':
                     key = safe['id'], path
@@ -110,7 +113,7 @@ def replay_paid_inputs(function, row, available_tree, available_reviews, family,
                     if key in reviews or path != current or len(reviews) >= maximum or (family == 'C' and path):
                         raise ValueError('Policy requested a forbidden review') from missing
                     if key not in available_reviews:
-                        raise
+                        raise missing
                     reviews[key] = available_reviews[key]
                 else:
                     raise ValueError('Unexpected observation type') from missing
