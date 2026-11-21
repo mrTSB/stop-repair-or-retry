@@ -223,6 +223,18 @@ same 1,440 auxiliary training questions for three epochs, keeps only the final
 checkpoint, and calibrates it after archive reload. The previous weights and
 their development result remain available for comparison.
 
+That continuation was stopped at 244/2,160 updates because concurrent local
+training caused severe memory pressure and swapping. Its partial artifacts are
+preserved, but it produced no deployable checkpoint or development result. A
+serialized restart with the same objective and schedule is queued. New
+`science_training_checkpoint.py` and `train_science_listwise_resumable.py`
+seal model, optimizer, scheduler, random-number state and batch position every
+100 completed updates. Interrupted training resumes the same fixed schedule;
+intermediate checkpoints are not candidates for model selection. The queue
+waits for the main observer, its A evaluation, and sufficient free memory.
+The main streaming observer completed all 32 training blocks and is archiving
+weights and regenerating excluded-question predictions.
+
 `fit_new_source_mentor.py` adds a source-matched hybrid fit using all 512 new
 training questions and exactly the 128 new strong-review pairs. It uniformly
 excludes the 64 old pairs, reuses 4,224 verified neural observations, and makes
@@ -286,3 +298,30 @@ The existing development panel has a perfect-hindsight ceiling of 165/256
 questions have any correct path. A needs at least 158/256 to exceed the best
 fixed baseline by ten points. This ceiling is an availability diagnostic,
 not an attainable policy score or an independent test result.
+
+All 512 ordinary training grids and 256 ordinary development grids are now
+complete. Ordinary B reaches 165/256 (64.45%), a 12.89-point margin over Repair
+twice, at 2,143.33 compute units. The original hybrid search reaches 173/256
+(67.58%) at 3,375.63 units; under B's compute ceiling, its selected C reaches
+162/256 (63.28%) at 2,058.77 units. The cross-fitted review variant also reaches
+162/256 below that ceiling, at 2,064.10 units. Neither meets C's accuracy target.
+The stronger matched-review B and additional hybrid comparisons remain active;
+these are intermediate development selections, not fresh-test results.
+
+`development_metadata_review.py` evaluates the explicit metadata-review POMDP
+on the entire development panel, after importing complete compatible response
+and neural caches. It seals all physical responses, errors, cache inputs,
+candidate results and selection together. Both mixed-source and new-source
+cohorts are queued, with the same strongest independently selected B reference.
+
+`science_mentor_expansion.py` registers strong-review pairs for all 192 remaining
+new training science questions, preserving the full set regardless of solver
+success. It stages collection after the current B and metadata-C comparisons.
+`finish_once_pilot.py` separately tests continuing the paid initial reasoning
+under the original 256-token compact-solver cap, on all 128 registered new
+mentor-training questions. This is a new repair-prompt study, with all five
+original controls retained; it is not an unchanged-gate improvement. It can
+advance only with at least seven net correct answers over the stronger
+one-step control, no greater average compute than Repair once, and four newly
+correct cases beyond the seven-path hindsight union. Neither staged collection
+uses reserved test questions or authorizes a fresh-test success claim.

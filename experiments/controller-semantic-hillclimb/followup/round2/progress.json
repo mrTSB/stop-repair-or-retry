@@ -173,7 +173,7 @@
     "science_questions_with_all_seven_wrong": 160
   },
   "new_test_reserved_questions": 1024,
-  "tests_passed": 181,
+  "tests_passed": 223,
   "primary_912_confirmation": "../artifacts/confirmation-912-v1/REPORT.md",
   "interpretation": "Development-selected results are not fresh confirmation; old912test remains retired.",
   "completed_followups": {
@@ -715,7 +715,7 @@
       "joint_loss_before": 2.99346,
       "joint_loss_after": 1.94504,
       "generalization_claim": false,
-      "full_1440_question_training": "Running; no completed development result"
+      "full_1440_question_training": "Resource-aborted at244/2160steps to resolve local memory pressure; no deployable checkpoint or development result. Same-recipe serialized restart with resumable checkpoints is being prepared."
     },
     "new_source_mentor_fit": {
       "training_questions": 512,
@@ -1426,5 +1426,298 @@
     "actual_run_started": false,
     "workers": 4,
     "maximum_cloud_gpus": 2
+  },
+  "resource_scheduling": {
+    "science_v2_steps_completed": 244,
+    "science_v2_steps_planned": 2160,
+    "science_v2_completed": false,
+    "science_v2_development_result": false,
+    "main_stream_training_preserved": true,
+    "serialized_science_restart_in_preparation": false,
+    "serialized_science_restart_queued": true,
+    "science_restart_uses_fixed_final_checkpoint": true,
+    "main_stream_training_blocks_completed": 32,
+    "main_stream_oof_verification_pending": true
+  },
+  "ordinary_grids": {
+    "training_questions": 512,
+    "development_questions": 256,
+    "logical_nodes_per_question": 17,
+    "completed": true
+  },
+  "development_B_ordinary": {
+    "B": {
+      "settings": {
+        "judge_stop": "agreement",
+        "reuse_review": false
+      },
+      "late": true,
+      "family": "B",
+      "dev": {
+        "n": 256,
+        "correct": 165,
+        "accuracy": 0.64453125,
+        "mean_compute": 2143.332827669903,
+        "mean_solver_tokens": 850.2421875,
+        "mean_judge_tokens": 1073.9765625,
+        "mean_judge_calls": 1.484375,
+        "mean_solver_calls": 1.6796875,
+        "mean_total_parameter_compute": 13265.420206310682,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      }
+    },
+    "baselines": {
+      "Stop": {
+        "n": 256,
+        "correct": 110,
+        "accuracy": 0.4296875,
+        "mean_compute": 381.39158576051784,
+        "mean_solver_tokens": 294.625,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.0,
+        "mean_total_parameter_compute": 381.39158576051784,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "Repair once": {
+        "n": 256,
+        "correct": 129,
+        "accuracy": 0.50390625,
+        "mean_compute": 990.2103559870551,
+        "mean_solver_tokens": 764.9375,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0,
+        "mean_total_parameter_compute": 990.2103559870551,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "Repair twice": {
+        "n": 256,
+        "correct": 132,
+        "accuracy": 0.515625,
+        "mean_compute": 1711.205501618123,
+        "mean_solver_tokens": 1321.90625,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0,
+        "mean_total_parameter_compute": 1711.205501618123,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "Retry once": {
+        "n": 256,
+        "correct": 127,
+        "accuracy": 0.49609375,
+        "mean_compute": 886.5594660194175,
+        "mean_solver_tokens": 684.8671875,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0,
+        "mean_total_parameter_compute": 886.5594660194175,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "Retry twice": {
+        "n": 256,
+        "correct": 123,
+        "accuracy": 0.48046875,
+        "mean_compute": 1394.6905339805826,
+        "mean_solver_tokens": 1077.3984375,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0,
+        "mean_total_parameter_compute": 1394.6905339805826,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      }
+    },
+    "development_questions": 256,
+    "test_used": false,
+    "B_above_highest_baseline": 0.12890625,
+    "data_receipt_sha256": "30b2293fcd4e4d35b62140ae02d11e1cc527eb9b9339b145bd940e337cbfddb9"
+  },
+  "development_C_completed": {
+    "development-mentor-v1": {
+      "development_questions": 256,
+      "best": {
+        "model": "smooth32-review0",
+        "settings": {
+          "by_subject": {
+            "math": {
+              "penalty": 0.0,
+              "threshold": 0.0
+            },
+            "chemistry": {
+              "penalty": 0.04,
+              "threshold": 0.03
+            },
+            "physics": {
+              "penalty": 0.02,
+              "threshold": 0.0
+            }
+          }
+        },
+        "selection_utility_penalty": 0.0,
+        "dev": {
+          "n": 256,
+          "correct": 173,
+          "accuracy": 0.67578125,
+          "mean_compute": 3375.6264661867017,
+          "mean_solver_tokens": 644.7734375,
+          "mean_judge_tokens": 2544.53125,
+          "mean_judge_calls": 0.875,
+          "mean_solver_calls": 1.7109375,
+          "mean_total_parameter_compute": 29726.759152270843,
+          "mean_verifier_tokens": 501.9453125,
+          "mean_verifier_token_slots": 501.9453125,
+          "mean_verifier_calls": 1.625
+        }
+      },
+      "selected_C": {
+        "model": "smooth8-review0",
+        "settings": {
+          "by_subject": {
+            "math": {
+              "penalty": 0.04,
+              "threshold": 0.0
+            },
+            "chemistry": {
+              "penalty": 0.08,
+              "threshold": 0.0
+            },
+            "physics": {
+              "penalty": 0.04,
+              "threshold": 0.03
+            }
+          }
+        },
+        "selection_utility_penalty": 0.04,
+        "dev": {
+          "n": 256,
+          "correct": 162,
+          "accuracy": 0.6328125,
+          "mean_compute": 2058.7731960873334,
+          "mean_solver_tokens": 602.6875,
+          "mean_judge_tokens": 1247.0234375,
+          "mean_judge_calls": 0.3984375,
+          "mean_solver_calls": 1.703125,
+          "mean_total_parameter_compute": 14972.931772139113,
+          "mean_verifier_tokens": 483.04296875,
+          "mean_verifier_token_slots": 483.04296875,
+          "mean_verifier_calls": 1.64453125
+        }
+      },
+      "C_compute_ceiling": 2143.332827669903,
+      "C_above_higher_A_B": -0.01171875,
+      "C_compute_saved_vs_B": 0.03945240351424917,
+      "test_used": false,
+      "summary_sha256": "e48a537c61c0f11fc11c7cf2195000649cdec4178f18689ec1a438445dcf5c77"
+    },
+    "development-mentor-crossfit-v2": {
+      "development_questions": 256,
+      "best": {
+        "model": "smooth32-review0",
+        "settings": {
+          "by_subject": {
+            "math": {
+              "penalty": 0.0,
+              "threshold": 0.0
+            },
+            "chemistry": {
+              "penalty": 0.04,
+              "threshold": 0.03
+            },
+            "physics": {
+              "penalty": 0.02,
+              "threshold": 0.0
+            }
+          }
+        },
+        "selection_utility_penalty": 0.0,
+        "dev": {
+          "n": 256,
+          "correct": 173,
+          "accuracy": 0.67578125,
+          "mean_compute": 3375.6264661867017,
+          "mean_solver_tokens": 644.7734375,
+          "mean_judge_tokens": 2544.53125,
+          "mean_judge_calls": 0.875,
+          "mean_solver_calls": 1.7109375,
+          "mean_total_parameter_compute": 29726.759152270843,
+          "mean_verifier_tokens": 501.9453125,
+          "mean_verifier_token_slots": 501.9453125,
+          "mean_verifier_calls": 1.625
+        }
+      },
+      "selected_C": {
+        "model": "smooth8-review0",
+        "settings": {
+          "by_subject": {
+            "math": {
+              "penalty": 0.04,
+              "threshold": 0.0
+            },
+            "chemistry": {
+              "penalty": 0.08,
+              "threshold": 0.0
+            },
+            "physics": {
+              "penalty": 0.04,
+              "threshold": 0.03
+            }
+          }
+        },
+        "selection_utility_penalty": 0.04,
+        "dev": {
+          "n": 256,
+          "correct": 162,
+          "accuracy": 0.6328125,
+          "mean_compute": 2064.098478060897,
+          "mean_solver_tokens": 606.63671875,
+          "mean_judge_tokens": 1247.0234375,
+          "mean_judge_calls": 0.3984375,
+          "mean_solver_calls": 1.7109375,
+          "mean_total_parameter_compute": 14978.257054112677,
+          "mean_verifier_tokens": 484.55859375,
+          "mean_verifier_token_slots": 484.55859375,
+          "mean_verifier_calls": 1.6484375
+        }
+      },
+      "C_compute_ceiling": 2143.332827669903,
+      "C_above_higher_A_B": -0.01171875,
+      "C_compute_saved_vs_B": 0.03696782346918315,
+      "test_used": false,
+      "summary_sha256": "fc64a2c6e08f554a0ba02086869041ce07f20d399ec4bcf9b33dc0e0c74a6bd3"
+    }
+  },
+  "queued_training_collections": {
+    "science_strong_review_expansion": {
+      "questions": 192,
+      "scope": "All remaining new TRAIN science questions; no outcome selection",
+      "registration_sha256": "54d4cdd7b908d5d211a34bda5272b85bf5aed2611dd16c4ada820704814bbb4c"
+    },
+    "finish_once_pilot": {
+      "questions": 128,
+      "scope": "Separate continuation-style repair prompt study; original controls retained",
+      "registration_sha256": "8a56ba90118c0b5cb1e5cad5b525e84bbc74eaa9568485da9d4f479af2769d56"
+    },
+    "waits_for": "Completed matched B and final metadata-newsource C replay seal"
+  },
+  "development_metadata_review": {
+    "cohorts": 2,
+    "models_per_cohort": 2,
+    "candidates_per_cohort": 52,
+    "questions": 256,
+    "status": "queued after compatible complete response/cache sources",
+    "test_used": false
   }
 }
