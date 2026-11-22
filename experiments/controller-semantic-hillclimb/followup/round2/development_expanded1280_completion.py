@@ -10,6 +10,7 @@ from threadpoolctl import threadpool_limits
 
 import development_nonlinear_completion as parent
 import fit_expanded1280_completion as trained
+import development_clustered_completion as retained_cluster
 
 io, original, routed, runtime, nested = parent.io, parent.original, parent.routed, parent.runtime, parent.nested
 previous = parent.previous
@@ -42,14 +43,25 @@ def inputs(args):
                 or io.read(Path(model.classifier.directory)/'recipe.json') != data[3]._recipe): raise ValueError('Fit identity changed')
         models[family] = model
     old = io.read(args.previous/'summary.json')
+    extra_spec = io.read(args.retain_a/'registration.json'); extra_done = io.read(args.retain_a/'complete.json')
+    if (extra_spec['schema'] != retained_cluster.SCHEMA or extra_done['schema'] != retained_cluster.SCHEMA
+            or extra_done['registration_sha256'] != io.sha(args.retain_a/'registration.json')
+            or extra_spec['dev_questions_sha256'] != spec['dev_questions_sha256']):
+        raise ValueError('Require the stronger completed clustered A on the identical panel')
+    io.verify(extra_spec['source_files']); io.verify(extra_spec['input_evidence'])
+    io.verify({str(args.retain_a/n): h for n, h in extra_done['artifacts'].items()})
+    extra = io.read(args.retain_a/'summary.json')
+    if extra['baselines'] != old['baselines'] or extra['test_used']: raise ValueError('Changed retained A controls/freshness')
     record = {'schema': SCHEMA, 'source_files': io.sources(sys.modules[__name__]),
         'input_evidence': {**spec['input_evidence'], **fit_spec['input_evidence'],
             **{str((args.previous/n).resolve()): h for n, h in done['artifacts'].items()},
             **{str((args.models/n).resolve()): h for n, h in fit_done['digests'].items()},
             str((args.previous/'complete.json').resolve()): io.sha(args.previous/'complete.json'),
-            str((args.models/'complete.json').resolve()): io.sha(args.models/'complete.json')},
-        'paths': {k: str(getattr(args, k).resolve()) for k in ('previous', 'models', 'output')},
-        'previous_A_candidates': [*spec['previous_A_candidates'], old['selected_A']],
+            str((args.models/'complete.json').resolve()): io.sha(args.models/'complete.json'),
+            **{str((args.retain_a/n).resolve()): h for n, h in extra_done['artifacts'].items()},
+            str((args.retain_a/'complete.json').resolve()): io.sha(args.retain_a/'complete.json')},
+        'paths': {k: str(getattr(args, k).resolve()) for k in ('previous', 'models', 'retain_a', 'output')},
+        'previous_A_candidates': [*spec['previous_A_candidates'], old['selected_A'], extra['selected_A']],
         'dev_questions_sha256': spec['dev_questions_sha256'], 'families': list(models),
         'penalties': list(original.PENALTIES), 'candidate_count': 8*len(models), 'development_questions': 256,
         'training_questions': 1280, 'new_neural_calls': 0, 'new_cloud_calls': 0, 'test_used': False,
@@ -110,7 +122,7 @@ def replay(args,data,models,values,parent_path,record):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__); p.add_argument('phase', choices=('register', 'replay'))
-    for n in ('previous', 'models', 'output'): p.add_argument('--'+n, type=Path, required=True)
+    for n in ('previous', 'models', 'retain_a', 'output'): p.add_argument('--'+n.replace('_', '-'), type=Path, required=True)
     p.add_argument('--registration-sha256'); args = p.parse_args()
     with previous.parent_io.no_test_reads(), original.guarded.no_model_calls(), threadpool_limits(limits=1):
         data, models, values, parent_path, record = inputs(args)

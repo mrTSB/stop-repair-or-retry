@@ -80,7 +80,7 @@ been used repeatedly for selection; this table is not fresh confirmation.
 | Repair twice | 132 | 51.56% | 1,711.21 |
 | Retry once | 127 | 49.61% | 886.56 |
 | Retry twice | 123 | 48.05% | 1,394.69 |
-| Best A: nonlinear-observation POMDP with terminal Complete action | 150 | 58.59% | 986.26 |
+| Best A: clustered-observation POMDP with terminal Complete action | 151 | 58.98% | 1,074.87 |
 | Best B: strong retained-review LLM | 177 | 69.14% | 3,772.86 |
 | Best C: expanded-data POMDP + LLM | 177 | 69.14% | 3,747.96 |
 
@@ -89,7 +89,7 @@ active parameters, normalized to 3.09 billion parameters. Both physical phases
 of a bounded review are billed. This is not measured FLOPs or wall-clock time;
 the full-35B reviewer sensitivity is also retained in the receipts.
 
-A is 7.03 percentage points above the strongest original baseline, B is 17.58
+A is 7.42 percentage points above the strongest original baseline, B is 17.58
 points above it, and C is 0.00 points above the stronger of A/B. A needs at least
 158 correct answers and C needs at least 203 on this panel. C saves only 0.66%
 compute relative to B. The requested accuracy gaps are not met.
@@ -97,7 +97,8 @@ compute relative to B. The requested accuracy gaps are not met.
 Complete is a separate answer-changing action with matched controls. The best
 such simple control, Repair then Complete if invalid, obtains 150/256 (58.59%)
 at 1,232.71 units, using exactly the same retained math A as the new POMDP.
-It matches best A's accuracy; A uses 19.99% less compute. The original five baselines
+Best A gets one more question correct and uses 12.80% less compute. The cheaper
+previous A remains at 150/256 and 986.26 units. The original five baselines
 remain unchanged, and all six new fixed/validity controls remain reported.
 The separately reserved 1,024-question test set has not been inferred or graded,
 and its labels have not been used for controller fitting or selection. Earlier
@@ -243,6 +244,24 @@ lower joint loss and lower mean marginal Brier permits development evaluation.
 Every old and new question remains in its whole-question fold; all new512
 held predictions are reported separately. No gain is claimed before completion.
 All 540 current regression tests pass in 34.27 seconds.
+
+A separate context-dependent LLM prior also fails its nested TRAIN screen.
+Both raw and dense variants worsen mentor correctness Brier and joint-state
+loss against a transfer model that also excludes each held question. They
+preserve A's current-correctness belief exactly and require no extra neural
+pass, but neither is promoted.
+
+A fixed clustered-observation study now preserves the same 30 POMDP symbols:
+24 valid and six invalid. Clusters use only square-root joint forecasts from
+excluded-question TRAIN children. The existing forest, transitions, costs,
+states, and exact finite Bellman backup stay unchanged; only the observation
+partition and its fitted emission table change. All sixteen development
+candidates complete. The selected dense model gains one answer to 151/256
+(58.98%) at 1,074.87 compute, versus retained 150/256 at 986.26. This is a
+0.39-point gain with 8.98% more compute than the cheaper prior A. All controls
+and original math decisions/costs reproduce exactly; no new inference was needed.
+A still needs seven more correct answers on this development panel to meet
+the requested margin. The full regression passes 545 tests.
 
 `science_proposal_headroom.py` separately tests the finalV3 option scorer on the
 same fixed64 original science training questions used for recent action pilots.

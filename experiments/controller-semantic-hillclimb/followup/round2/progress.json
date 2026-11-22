@@ -76,24 +76,24 @@
     },
     "A": {
       "dev": {
-        "accuracy": 0.5859375,
-        "correct": 150,
-        "mean_compute": 986.2646549469862,
+        "accuracy": 0.58984375,
+        "correct": 151,
+        "mean_compute": 1074.8716860203933,
         "mean_judge_calls": 0.0,
         "mean_judge_tokens": 0.0,
-        "mean_solver_calls": 2.0078125,
-        "mean_solver_tokens": 708.56640625,
-        "mean_total_parameter_compute": 986.2646549469862,
-        "mean_verifier_calls": 1.7109375,
-        "mean_verifier_token_slots": 491.109375,
-        "mean_verifier_tokens": 491.109375,
+        "mean_solver_calls": 2.125,
+        "mean_solver_tokens": 774.66015625,
+        "mean_total_parameter_compute": 1074.8716860203933,
+        "mean_verifier_calls": 1.75390625,
+        "mean_verifier_token_slots": 512.80078125,
+        "mean_verifier_tokens": 512.80078125,
         "n": 256
       },
       "family": "raw20_plus_project256",
       "key": "raw20_plus_project256-2",
-      "model_path": "runs/controller-semantic-followup/round2/development-nonlinear-completion-v1/raw20_plus_project256-2.pkl",
-      "model_sha256": "852dccac4ddbc7dc9ebf939c3a6cb114f69d7b1cb70a565f4fa42616fae54b27",
-      "policy_module": "completion_subject_pomdp",
+      "model_path": "runs/controller-semantic-followup/round2/development-clustered-completion-v1/raw20_plus_project256-2.pkl",
+      "model_sha256": "c21eace4998cf5ae2ed86316933233f26b60acb9c797e20dab70d207506bfb7a",
+      "policy_module": "clustered_completion_pomdp",
       "science_settings": {
         "penalty": 0.02
       },
@@ -193,7 +193,7 @@
       "smoothing": 32.0
     },
     "accuracy_gaps_percentage_points": {
-      "A_minus_best_original_baseline": 7.03125,
+      "A_minus_best_original_baseline": 7.421875,
       "B_minus_best_original_baseline": 17.578125,
       "C_minus_max_A_B": 0.0
     },
@@ -212,7 +212,8 @@
       "development-expanded-C-canonical-cost-v1": "317c49f79b73bdf23396181a9078b7009b7c1302d795e2b7664bf8b25bb7eab0",
       "development-regularized-completion-v1": "94ba47f196e60c49ce01ee8a2234db85d4f88cc4cdb75f7edb14a9f48495aba0",
       "development-auxiliary768-completion-v1": "d27ff6f9e109406f88db2f1a654389cda6c1362fe444360db0954f9f2e694e00",
-      "A": "f7823857eae47c406195ecbaa9154eae590d23ff906433b7b38b4c1805024705"
+      "A": "619898cb4b5c1f995fff8a4166c27345f0ab938e699e6659db307f0035b61c00",
+      "development-nonlinear-completion-v1": "f7823857eae47c406195ecbaa9154eae590d23ff906433b7b38b4c1805024705"
     },
     "matched_complete_controls": {
       "Complete": {
@@ -576,7 +577,8 @@
         }
       }
     },
-    "matched_control_math_rule": "Identical retained math A for all six added controls and all new A candidates"
+    "matched_control_math_rule": "Identical retained math A for all six added controls and all new A candidates",
+    "A_above_highest_baseline": 0.07421875
   },
   "test_inference_started": false,
   "status": "Targets not met; second disjoint paired-training block collecting",
@@ -7347,8 +7349,8 @@
     "promoted_to_development": false
   },
   "latest_regression": {
-    "tests": 540,
-    "seconds": 34.265,
+    "tests": 545,
+    "seconds": 35.388,
     "passed": true
   },
   "second_auxiliary_paired_block": {
@@ -7371,5 +7373,81 @@
     "model_or_controller_gain_claim": false,
     "automatic_cloud_scale_to_zero_in_finally": true,
     "followup": "1536 local old-V1 observation passes, nested four-setting forest fits screened on identical original768 held questions, then fullDEV if passed"
+  },
+  "contextual_mentor_prior": {
+    "controller_accuracy_claim": false,
+    "development_or_test_read": false,
+    "new_cloud_calls": 0,
+    "new_neural_calls": 0,
+    "questions": 256,
+    "reports": {
+      "raw20_control": {
+        "comparisons": {
+          "joint_log_loss": {
+            "contextual": 1.2222510394103756,
+            "delta": 0.028860859069024407,
+            "old_transfer": 1.1933901803413511,
+            "paired_question_CI95": [
+              -0.007184152511079877,
+              0.07181208465490484
+            ]
+          },
+          "mentor_Brier": {
+            "contextual": 0.23793340368802957,
+            "delta": 0.0069019150224399785,
+            "old_transfer": 0.2310314886655896,
+            "paired_question_CI95": [
+              -0.00043796856254707083,
+              0.01471346754386871
+            ]
+          }
+        },
+        "screen_passed": false
+      },
+      "raw20_plus_project256": {
+        "comparisons": {
+          "joint_log_loss": {
+            "contextual": 1.2102292149029021,
+            "delta": 0.01683903456155103,
+            "old_transfer": 1.1933901803413511,
+            "paired_question_CI95": [
+              -0.012092854085050026,
+              0.05401518765442195
+            ]
+          },
+          "mentor_Brier": {
+            "contextual": 0.2365661101655095,
+            "delta": 0.005534621499919873,
+            "old_transfer": 0.2310314886655896,
+            "paired_question_CI95": [
+              0.0008724104245736124,
+              0.010190119283352035
+            ]
+          }
+        },
+        "screen_passed": false
+      }
+    },
+    "schema": "contextual-mentor-prior-TRAIN-diagnostic-v1",
+    "registration_sha256": "3a7e886772086566aa5ff30c092d84c86be897873ab4ff3972760aea140b2968",
+    "promoted_to_development": false
+  },
+  "clustered_observation_study": {
+    "status": "complete",
+    "registration_sha256": "82a1aab2197a966842fde2a8805aa2423e1bf977df1971ac0e6a6c2eee795cae",
+    "training_questions": 768,
+    "valid_clusters": 24,
+    "invalid_clusters": 6,
+    "partition_uses_labels": false,
+    "forecasters_transitions_costs_unchanged": true,
+    "new_neural_calls": 0,
+    "new_cloud_calls": 0,
+    "fresh_validation": false,
+    "development_registration_sha256": "05e83b5a6f64e5ec95e309c263c2a909a73446180c2209a0b3b09042ca73fa94",
+    "best_correct": 151,
+    "best_compute": 1074.8716860203933,
+    "old_cheaper_A_correct": 150,
+    "old_cheaper_A_compute": 986.2646549469862,
+    "development_candidates": 16
   }
 }
