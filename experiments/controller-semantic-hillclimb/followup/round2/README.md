@@ -793,3 +793,36 @@ same sixteen-to-eight state transfer, LLM reviewer, reviewed-mode dynamics,
 math decisions, and all charged observation paths. Its 26 development candidates
 peak at 176/256, so the previous 177/256 C remains selected. The improved A does
 not establish an improved C. All 551 experiment regression tests pass.
+
+
+## Registered next observations and grounded-review pilot
+
+A smooth RBF-feature categorical forecaster also fails the TRAIN screen:
+nested joint log loss is 1.16909 versus 1.14784 for the retained forest, and
+mean-four marginal Brier is 0.131836 versus 0.129221. No development comparison
+or policy promotion follows.
+
+The new full-representation probe captures the frozen encoder's normalized
+1,024-dimensional text representation and existing 256-dimensional task
+projection in one forward. It extracts all 768 original science TRAIN prefixes
+locally on two CPU threads, with the original logits checked against the
+archived cache and every attempted chunk recorded durably. A separate nested
+three-C comparison will test compressed386 versus full1410 features. This is
+an observation experiment, not a new solver, larger runtime encoder, or claimed
+controller gain. Development/test inference is not part of this extraction.
+
+The registered grounded-review pilot adds question-only excerpts from the
+unchanged textbook index to the same 1,024-token reviewer. All 64 fixed science
+TRAIN questions have retrieved context. It preserves the 512-token answer cap,
+the compact solver and its two 128-token guided continuations, all old controls,
+and every added teacher input token in the cost calculation. Its maximum is
+256 physical calls on two existing-app GPUs. Durable request intents block
+unresolved automatic retries, and a finally block restores zero minimum
+containers. Acquisition is blocked until the second512 paired batch completes.
+The fixed screen requires six newly solvable questions beyond all registered
+prior paths and mean full-trajectory compute at most 1.25 times the retained
+strong-review control. Matched B and separate learned/fresh validation would
+still be required after a successful pilot. No cloud training is introduced.
+
+All 559 experiment tests pass; the actual grounded request journal also passes
+its complete-cohort replay and unresolved-request tests.

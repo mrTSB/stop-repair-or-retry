@@ -7349,9 +7349,9 @@
     "promoted_to_development": false
   },
   "latest_regression": {
-    "tests": 551,
+    "tests": 559,
     "passed": true,
-    "seconds": 35.249
+    "seconds": 39.334
   },
   "second_auxiliary_paired_block": {
     "status": "collecting",
@@ -7558,5 +7558,120 @@
     "new_cloud_calls": 0,
     "test_used": false,
     "promoted": false
+  },
+  "rbf_diagnostic": {
+    "cloud_calls": 0,
+    "controller_accuracy_claim": false,
+    "development_or_test_read": false,
+    "new_neural_calls": 0,
+    "paired_CI_scope": "Descriptive, fitted folds fixed",
+    "questions": 768,
+    "reports": {
+      "raw20_plus_project256": {
+        "comparisons": {
+          "Complete_Brier": {
+            "delta": 0.003055185331624147,
+            "paired_question_CI95": [
+              0.00033078211042919753,
+              0.005429617892435228
+            ],
+            "rbf": 0.186762501515919,
+            "retained_dense_forest": 0.18370731618429487
+          },
+          "current_Brier": {
+            "delta": 0.004238363394256653,
+            "paired_question_CI95": [
+              0.001365174729044599,
+              0.007084583036272382
+            ],
+            "rbf": 0.10856568872617062,
+            "retained_dense_forest": 0.10432732533191397
+          },
+          "joint_Brier": {
+            "delta": 0.004920102382549638,
+            "paired_question_CI95": [
+              0.0003575522997098456,
+              0.008991256333989842
+            ],
+            "rbf": 0.5134238009136783,
+            "retained_dense_forest": 0.5085036985311286
+          },
+          "joint_log_loss": {
+            "delta": 0.02124997889161286,
+            "paired_question_CI95": [
+              0.010536586984561608,
+              0.03145287326063443
+            ],
+            "rbf": 1.1690931760388301,
+            "retained_dense_forest": 1.1478431971472172
+          },
+          "mean_four_marginal_Brier": {
+            "delta": 0.002614804611230188,
+            "paired_question_CI95": [
+              0.0004027137780620901,
+              0.004545699715079101
+            ],
+            "rbf": 0.13183615022035855,
+            "retained_dense_forest": 0.12922134560912837
+          },
+          "repair_Brier": {
+            "delta": 0.001996189167198757,
+            "paired_question_CI95": [
+              -0.0005052192263133783,
+              0.004301189513057393
+            ],
+            "rbf": 0.13415991704224817,
+            "retained_dense_forest": 0.13216372787504943
+          },
+          "retry_Brier": {
+            "delta": 0.0011694805518411959,
+            "paired_question_CI95": [
+              -0.0004847623281371735,
+              0.0028300466604291807
+            ],
+            "rbf": 0.09785649359709651,
+            "retained_dense_forest": 0.09668701304525532
+          }
+        },
+        "screen_passed": false
+      }
+    },
+    "schema": "expanded768-rbf-joint-belief-TRAIN-v1",
+    "registration_sha256": "1e220215834802e1602e07b346cf224fb2ddfc23587cbb2d9e729e11dba28efa",
+    "promoted_to_development": false
+  },
+  "grounded_root_review_pilot": {
+    "status": "registered_not_collected",
+    "registration_sha256": "57e46cb6811948b0266e7993074c96b6b040d6a76c6305f7e2dcfb1a92133bdb",
+    "questions": 64,
+    "questions_with_textbook_context": 64,
+    "maximum_new_physical_calls": 256,
+    "max_cloud_gpus": 2,
+    "same_existing_inference_app": true,
+    "collect_only_after_second512_complete": true,
+    "automatic_min_containers_zero_finally": true,
+    "screen": {
+      "mean_second_trajectory_compute_over_rootstrong_retained_at_most": 1.25,
+      "novel_questions_beyond_registered_known_union_at_least": 6,
+      "scope": "TRAIN headroom of fixed textbook evidence; requires selective cost control, matched B, and fresh validation"
+    },
+    "test_used": false,
+    "controller_gain_claim": false
+  },
+  "full_semantic_probe": {
+    "status": "registered_extracting_locally",
+    "registration_sha256": "dbe117f228b74854b8af0f4e4629ee3face0d53ada3266aa8140cc48934ff856",
+    "training_questions": 256,
+    "neural_observations": 768,
+    "device": "cpu",
+    "threads": 2,
+    "online_extra_encoder_passes": 0,
+    "feature_dimensions": {
+      "compressed_control": 386,
+      "full": 1410
+    },
+    "encoder_weights_unchanged": true,
+    "development_or_test_used": false,
+    "controller_gain_claim": false
   }
 }
