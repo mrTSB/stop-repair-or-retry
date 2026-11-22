@@ -78,35 +78,33 @@
       "dev": {
         "accuracy": 0.5703125,
         "correct": 146,
-        "mean_compute": 1084.6377960206412,
+        "mean_compute": 943.9491522367668,
         "mean_judge_calls": 0.0,
         "mean_judge_tokens": 0.0,
-        "mean_solver_calls": 2.125,
-        "mean_solver_tokens": 781.5,
-        "mean_total_parameter_compute": 1084.6377960206412,
-        "mean_verifier_calls": 1.76171875,
-        "mean_verifier_token_slots": 519.2890625,
-        "mean_verifier_tokens": 519.2890625,
+        "mean_solver_calls": 1.9609375,
+        "mean_solver_tokens": 681.34765625,
+        "mean_total_parameter_compute": 943.9491522367668,
+        "mean_verifier_calls": 1.6015625,
+        "mean_verifier_token_slots": 440.73046875,
+        "mean_verifier_tokens": 440.73046875,
         "n": 256
       },
-      "embedded_settings": {
-        "math": {
-          "penalty": 0.02,
-          "posterior_weight": 0.5
-        },
-        "science": {
-          "penalty": 0.02
-        }
-      },
-      "key": "penalty-0.02",
-      "model_path": "runs/controller-semantic-followup/round2/development-completion-A-v1/completion-subject-A.pkl",
-      "model_sha256": "4637fdfbb70f16d8de9001c3880a42db9096ade3981deadc14d2437bf9194d69",
+      "family": "raw20_plus_project256",
+      "key": "raw20_plus_project256-7",
+      "model_path": "runs/controller-semantic-followup/round2/development-regularized-completion-v1/raw20_plus_project256-7.pkl",
+      "model_sha256": "3542e8e333b6e30e5a4eab5e05c6fe4a0c76edfc6bc608e7318dbe1603c8d84c",
       "policy_module": "completion_subject_pomdp",
       "science_settings": {
-        "penalty": 0.02
+        "by_subject": {
+          "chemistry": {
+            "penalty": 0.08
+          },
+          "physics": {
+            "penalty": 0.04
+          }
+        }
       },
-      "settings": {},
-      "source": "new-completion-POMDP"
+      "settings": {}
     },
     "B": {
       "dev": {
@@ -218,7 +216,8 @@
     "summary_sha256": {
       "development-completion-A-v1": "739594cea69e858f2a239bb1b1f351164772d3dc904c49ad3835ffa768f781cf",
       "development-completion-B-v1": "d98763660c588326b10897eec2ede913c4f0baeb1e6be0f66aa2cd20e7c0c2ff",
-      "development-expanded-C-canonical-cost-v1": "317c49f79b73bdf23396181a9078b7009b7c1302d795e2b7664bf8b25bb7eab0"
+      "development-expanded-C-canonical-cost-v1": "317c49f79b73bdf23396181a9078b7009b7c1302d795e2b7664bf8b25bb7eab0",
+      "development-regularized-completion-v1": "94ba47f196e60c49ce01ee8a2234db85d4f88cc4cdb75f7edb14a9f48495aba0"
     },
     "matched_complete_controls": {
       "Complete": {
@@ -6302,5 +6301,61 @@
     "workers": 4,
     "maximum_cloud_gpus": 2
   },
-  "fresh_data_boundary": "No test inference or grading; metadata-only reserved IDs and public-source stem hashes used solely to exclude training duplicates; no test reference fields decoded"
+  "fresh_data_boundary": "No test inference or grading; metadata-only reserved IDs and public-source stem hashes used solely to exclude training duplicates; no test reference fields decoded",
+  "regularized_complete_A": {
+    "status": "completed development comparison; same accuracy, lower compute",
+    "selected": {
+      "dev": {
+        "accuracy": 0.5703125,
+        "correct": 146,
+        "mean_compute": 943.9491522367668,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 1.9609375,
+        "mean_solver_tokens": 681.34765625,
+        "mean_total_parameter_compute": 943.9491522367668,
+        "mean_verifier_calls": 1.6015625,
+        "mean_verifier_token_slots": 440.73046875,
+        "mean_verifier_tokens": 440.73046875,
+        "n": 256
+      },
+      "family": "raw20_plus_project256",
+      "key": "raw20_plus_project256-7",
+      "model_path": "runs/controller-semantic-followup/round2/development-regularized-completion-v1/raw20_plus_project256-7.pkl",
+      "model_sha256": "3542e8e333b6e30e5a4eab5e05c6fe4a0c76edfc6bc608e7318dbe1603c8d84c",
+      "policy_module": "completion_subject_pomdp",
+      "science_settings": {
+        "by_subject": {
+          "chemistry": {
+            "penalty": 0.08
+          },
+          "physics": {
+            "penalty": 0.04
+          }
+        }
+      },
+      "settings": {}
+    },
+    "training_questions": 256,
+    "development_questions": 256,
+    "candidate_count": 16,
+    "parent_exactly_reproduced": true,
+    "all_original_and_matched_controls_recomputed": true,
+    "registration_sha256": "533ffb9dbb8cdf5445433ce29d14c26ac75b37c009209976d8479a10e65e2dcb",
+    "complete_sha256": "8d73256de12e14004e1df890985adb74944bcd4076c61cee8e7aa12fcff9c9c5",
+    "compute_fraction_saved_vs_previous_A": 0.1297102537824497,
+    "new_offline_neural_observations": 384,
+    "new_cloud_calls": 0,
+    "fresh_validation": false,
+    "test_used": false
+  },
+  "expanded_completion_pipeline": {
+    "status": "implemented and tested; awaiting full512 paired collection before extraction/fitting",
+    "combined_science_questions": 768,
+    "new_encoder_observations": 1536,
+    "new_encoder_training": false,
+    "features": "old excluded V1 raw20 plus same-forward project256",
+    "fit": "3outer and3inner whole-question folds; two feature families; exactComplete16 dynamics",
+    "test_used": false
+  }
 }

@@ -80,7 +80,7 @@ been used repeatedly for selection; this table is not fresh confirmation.
 | Repair twice | 132 | 51.56% | 1,711.21 |
 | Retry once | 127 | 49.61% | 886.56 |
 | Retry twice | 123 | 48.05% | 1,394.69 |
-| Best A: POMDP with terminal Complete action | 146 | 57.03% | 1,084.64 |
+| Best A: regularized POMDP with terminal Complete action | 146 | 57.03% | 943.95 |
 | Best B: strong retained-review LLM | 177 | 69.14% | 3,772.86 |
 | Best C: expanded-data POMDP + LLM | 177 | 69.14% | 3,747.96 |
 
@@ -99,7 +99,37 @@ such simple control, Repair then Complete if invalid, obtains 150/256 (58.59%)
 at 1,232.71 units, using exactly the same retained math A as the new POMDP.
 Its gain is not evidence for learned planning. The original five baselines
 remain unchanged, and all six new fixed/validity controls remain reported.
-The separately reserved 1,024-question test set is still untouched.
+The separately reserved 1,024-question test set has not been inferred or graded;
+its reference answers remain unopened. Metadata-only IDs and public-source stem
+hashes have been used solely to exclude training duplicates.
+
+`regularized_completion_pomdp.py` and `fit_regularized_completion.py` retain
+the exact sixteen-state dynamics and finite Bellman backup. Nested whole-question
+training folds select regularization for raw130 features and raw130 plus the
+existing encoder's project256 representation. The richer observation uses the
+same encoder forward, with actual trimmed input slots charged at runtime.
+`development_regularized_completion.py` evaluates sixteen fixed candidates on
+all256 development questions after sealing all384 science-prefix observations.
+Every original decision/cost and all five original/six matched controls reproduce
+exactly. The selected richer model retains146 correct while reducing the compute
+proxy by12.97% from the previous best A; it does not improve the accuracy gap.
+This proxy does not measure added CPU classifier latency or real FLOPs.
+
+`auxiliary_completion_features.py`, `fit_auxiliary_completion.py`, and
+`development_auxiliary_completion.py` prepare the next expansion to768 paired
+science training questions. All5120 new compact responses must finish and seal
+before feature extraction or label joining. The old V1 encoder excludes all
+auxiliary questions; the auxiliary-trained V3 encoder is not used for in-sample
+features. The1536 new prefix observations share raw20/project256 forwards, and
+three outer and three inner whole-question folds prevent sibling-branch leakage.
+Both feature families and the previous stronger A remain in the comparison.
+
+`science_proposal_headroom.py` separately tests the finalV3 option scorer on the
+same fixed64 original science training questions used for recent action pilots.
+All622 options are scored locally before grading. At least six correct proposals
+beyond all previously collected solver paths are required before considering
+new paired feedback acquisition. A proposal is not a compact-solver output or
+controller result, and no cloud calls are part of this diagnostic.
 
 ## Current continuation
 
