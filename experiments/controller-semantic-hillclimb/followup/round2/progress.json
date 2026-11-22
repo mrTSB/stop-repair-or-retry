@@ -7427,9 +7427,9 @@
     "test_inference_started": false
   },
   "latest_regression": {
-    "tests": 629,
-    "seconds": 40.519,
-    "status": "passed"
+    "tests": 634,
+    "seconds": 58.481,
+    "passed": true
   },
   "lexical_outcome_diagnostic": {
     "promoted": false,
@@ -9040,7 +9040,7 @@
     },
     "schema": "expanded768-split_forest-joint-belief-TRAIN-v1"
   },
-  "status": "Targets not met; expanded math and broader science retrieval screens completed without promotion; no active job",
+  "status": "Concrete checkpoint verified; contrastive review registered; C over80% target not achieved",
   "strong_late_review_pilot": {
     "controller_promoted": false,
     "coverage": {
@@ -10209,5 +10209,36 @@
       "screen_passed": false
     },
     "controller_promoted": false
+  },
+  "current_checkpoint": {
+    "manifest": "current_checkpoint.json",
+    "verifier": "concrete_checkpoint.py",
+    "verified": true,
+    "development_questions": 256,
+    "fresh_validation": false,
+    "A_correct": 153,
+    "B_correct": 177,
+    "C_correct": 177,
+    "C_new_target_minimum_correct_DEV": 205,
+    "fresh_test_reserved": 1024
+  },
+  "contrastive_review_pilot_v1": {
+    "status": "registered_not_started",
+    "registration": "dcb22843761f1fcecaa63a85ef6c575f2469848d17071361dbb35b707cdc4b6b",
+    "training_questions": 64,
+    "maximum_physical_calls": 320,
+    "phase_caps": [
+      640,
+      384,
+      512
+    ],
+    "compact_caps": [
+      128,
+      128
+    ],
+    "maximum_cloud_gpus": 2,
+    "cloud_training": false,
+    "test_used": false,
+    "promotion_requires": "Six novel correct TRAIN paths, at most1.25x cost, learned POMDP integration, strongest matched B and fresh validation"
   }
 }

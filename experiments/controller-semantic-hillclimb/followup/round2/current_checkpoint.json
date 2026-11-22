@@ -1,0 +1,256 @@
+{
+  "baselines": {
+    "Repair once": "Submit after one plain repair",
+    "Repair twice": "Submit after two plain repairs",
+    "Retry once": "Submit after one fresh-context retry",
+    "Retry twice": "Submit after two fresh-context retries",
+    "Stop": "Submit initial answer"
+  },
+  "compute": {
+    "formula": "(4*solver_tokens +3*reviewer_tokens +observer_billions*paid_token_slots)/3.09",
+    "scope": "Inference parameter-token proxy; every paid phase included; full35B sensitivity in rows; not FLOPs or wall time"
+  },
+  "evidence": {
+    "experiments/controller-semantic-hillclimb/followup/round2/concrete_checkpoint.py": "14e7f10a412231aa6dc0a9b8e39161464e7b705d55d6dcca54ec59693fd2f6af",
+    "experiments/controller-semantic-hillclimb/followup/round2/latest_results.json": "d8e1efd223a95d4f9816b52be08141ef92f5c15835a37ffde3a4a7a71b0f45c3",
+    "runs/controller-semantic-followup/round2/development-expanded-C-canonical-cost-v1/complete.json": "29a3c553487bb78955e46e135885b0c6225b951819543ba53a600b3d97fa42f0",
+    "runs/controller-semantic-followup/round2/development-expanded-C-canonical-cost-v1/private-paired-outcomes.jsonl": "8253d67b32f5e67b6d0a7b63f5a2877be74a8da67cff7264070c638826396b6a",
+    "runs/controller-semantic-followup/round2/development-expanded-C-canonical-cost-v1/registration.json": "8883d45e502daf432dbfe5758e6c0a28ccb0e56d21c7465b24e58378eabe34f0",
+    "runs/controller-semantic-followup/round2/development-expanded-C-canonical-cost-v1/search.json": "f4c556e2b5c06a1f6e3f1361092855d1270badd82867d33e01fe6f2ea89a9957",
+    "runs/controller-semantic-followup/round2/development-expanded-C-canonical-cost-v1/summary.json": "317c49f79b73bdf23396181a9078b7009b7c1302d795e2b7664bf8b25bb7eab0",
+    "runs/controller-semantic-followup/round2/development-expanded-mentor-v1/models/smooth32-review1.pkl": "439eb8035455edf8a0dbf11c56c17b6fe355167ba1f94c459132a0dd797653ba",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/complete.json": "5a19f4308de5c71b94732d470e0dda7447d30e219ba2bc8b6a8134fcf56f7e2d",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/identity.json": "69bf55c7750dab6b1323d1c8268be8de1d220998635d5200256b645e091e484d",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-0.pkl": "98b6e78369484ae7cef79bdb02ec62366ee46b6e535d34f7378dfebef9c24c6b",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-1.pkl": "9b0161a226d0e557ee1afb4d20ed7d87ae4af41b5a952d70ffef35dfa8cd8369",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-10.pkl": "2d44352d5a8bc6207b592aebc548ca3e1d2722971d81778fd201a55b364a77e8",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-11.pkl": "f41b6761a1e1c479f1053523166c877095cf570900ceab3918c9a5cdf22a91c2",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-12.pkl": "5a6bd9da0f4c7d8945f2fcf89abe72735a9bdaae996ee1e711f30c69d1c27356",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-13.pkl": "a18444206bdc76bfb6a4a4202fb9fb14451971b8a79f6be411ea02fe87f24a2c",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-14.pkl": "b56dabd512c3b4ed4f3bfd2d3d8fb3a33361d8494f68bf0b6d7f401fa776db17",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-15.pkl": "3db26f71abb6b4a4d1959e752f718c5daba464faadc9bf898de5531d7d8c75ef",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-16.pkl": "32485ddb4e3edd23033edccfd8c6cb1f0f3b57bae4245dcc7339704d0c113898",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-17.pkl": "921012ce063850506786737187205ee6afce6e3abc9fe168df29d2bc8849d49c",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-18.pkl": "38f1d24292d5ca18c6a0fbcd3b76317b8577d5a0972e5e47b0ffd0d5ffc58990",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-19.pkl": "0ab72644394d9a83fe2b4a52089d13fc44b2afc9b81ba04a4dd7177cf19a1bb3",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-2.pkl": "2d055c1138c166bcadd901edacc34636026d040e639ecda9ac2f8d553afb409f",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-20.pkl": "10c00cd2b1e009c1ad5f2a00cb44441a490a239224ad42ba1ffd88a8911e1f1e",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-3.pkl": "8071073f8336ada745429be70472436986e79f907bc7db7671dce29295699461",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-4.pkl": "950250b0b8e15fa98e517bb3f8d36236ba20b0a19b37efcece92cae9bc7c9100",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-5.pkl": "66908fe12f8de92a585b0805d5c4a396742551bd9e24c654d9dee51e6a1c6b85",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-6.pkl": "3a17a8088951532cf30971b84012ef39c25f5999ed5974eb6db67b4416b55838",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-7.pkl": "b66b0bc061c4edf7c8a4707d97e9c1e134a705eff550786eeb3ebcda4156028d",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-8.pkl": "85b9d003ff1abb155bda38c1098556edca678058d8219ec721238127d96c0d5b",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-9.pkl": "bc8fb7ddbaffae0d5e83debfc68d10d7cca2335e1714e4f199c76db7b7cc6894",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/private-candidate-items.json": "696a438805887658e2609c7391211088f23e65d7e7988dad719cacfae1bba268",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/registration.json": "4df4fcdfbbc56ebbe07a0fff433df9e3bfcf332f0751131c74806bb2b1afc824",
+    "runs/controller-semantic-followup/round2/development-math-specialization-v1/summary.json": "a31b20e4f55f0e675b4b21e22d10602719134b0df25eb3d70e12cbe3ebf3af56"
+  },
+  "fresh_test_reserved": 1024,
+  "identities": {
+    "A": {
+      "key": "math-1",
+      "math_settings": {
+        "penalty": 0.0,
+        "posterior_weight": 0.5
+      },
+      "model_path": "runs/controller-semantic-followup/round2/development-math-specialization-v1/math-1.pkl",
+      "model_sha256": "9b0161a226d0e557ee1afb4d20ed7d87ae4af41b5a952d70ffef35dfa8cd8369",
+      "policy_module": "continuous_completion_pomdp",
+      "science_settings": {
+        "penalty": 0.02,
+        "posterior_weight": 0.5
+      },
+      "settings": {}
+    },
+    "B": {
+      "family": "B",
+      "protocol": "matched-retained-1024-512-128",
+      "settings": {
+        "root_stop": "agreement",
+        "second_action": "reuse",
+        "second_stop": "never"
+      }
+    },
+    "C": {
+      "builder_module": "expanded_development_models",
+      "model": "smooth32-review1",
+      "model_path": "runs/controller-semantic-followup/round2/development-expanded-mentor-v1/models/smooth32-review1.pkl",
+      "model_sha256": "439eb8035455edf8a0dbf11c56c17b6fe355167ba1f94c459132a0dd797653ba",
+      "original_candidate_index": 125,
+      "policy_module": "stronger_base_hybrid",
+      "settings": {
+        "by_subject": {
+          "chemistry": {
+            "penalty": 0.0,
+            "threshold": 0.0
+          },
+          "math": {
+            "penalty": 0.0,
+            "threshold": 0.0
+          },
+          "physics": {
+            "penalty": 0.0,
+            "threshold": 0.08
+          }
+        }
+      },
+      "smoothing": 32.0
+    }
+  },
+  "model_calls": 0,
+  "reviewer": {
+    "digest": "3460ffeede5453ead027dbd2f821b12ad0aa3de54630971993babdb2165221f7",
+    "model": "qwen3.5:35b"
+  },
+  "rows": [
+    {
+      "accuracy": 0.4296875,
+      "correct": 110,
+      "mean_compute": 381.39158576051784,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 1.0,
+      "mean_solver_tokens": 294.625,
+      "mean_total_parameter_compute": 381.39158576051784,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Stop",
+      "n": 256
+    },
+    {
+      "accuracy": 0.50390625,
+      "correct": 129,
+      "mean_compute": 990.2103559870551,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_solver_tokens": 764.9375,
+      "mean_total_parameter_compute": 990.2103559870551,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Repair once",
+      "n": 256
+    },
+    {
+      "accuracy": 0.515625,
+      "correct": 132,
+      "mean_compute": 1711.205501618123,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_solver_tokens": 1321.90625,
+      "mean_total_parameter_compute": 1711.205501618123,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Repair twice",
+      "n": 256
+    },
+    {
+      "accuracy": 0.49609375,
+      "correct": 127,
+      "mean_compute": 886.5594660194175,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_solver_tokens": 684.8671875,
+      "mean_total_parameter_compute": 886.5594660194175,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Retry once",
+      "n": 256
+    },
+    {
+      "accuracy": 0.48046875,
+      "correct": 123,
+      "mean_compute": 1394.6905339805826,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_solver_tokens": 1077.3984375,
+      "mean_total_parameter_compute": 1394.6905339805826,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Retry twice",
+      "n": 256
+    },
+    {
+      "accuracy": 0.59765625,
+      "correct": 153,
+      "mean_compute": 1087.2748356677234,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 2.18359375,
+      "mean_solver_tokens": 783.23046875,
+      "mean_total_parameter_compute": 1087.2748356677234,
+      "mean_verifier_calls": 1.82421875,
+      "mean_verifier_token_slots": 522.11328125,
+      "mean_verifier_tokens": 522.11328125,
+      "method": "A",
+      "n": 256
+    },
+    {
+      "accuracy": 0.69140625,
+      "correct": 177,
+      "mean_compute": 3772.8610436893205,
+      "mean_judge_calls": 1.0,
+      "mean_judge_physical_calls": 1.99609375,
+      "mean_judge_tokens": 2883.21875,
+      "mean_solver_calls": 1.921875,
+      "mean_solver_tokens": 752.12109375,
+      "mean_total_parameter_compute": 33631.43709546926,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "B",
+      "n": 256
+    },
+    {
+      "accuracy": 0.69140625,
+      "correct": 177,
+      "mean_compute": 3747.9591164206718,
+      "mean_judge_calls": 0.890625,
+      "mean_judge_physical_calls": 1.77734375,
+      "mean_judge_tokens": 2583.9375,
+      "mean_metadata_calls": 0.0,
+      "mean_metadata_cpu_ms": 0.0,
+      "mean_review_neural_calls": 0.890625,
+      "mean_solver_calls": 2.0234375,
+      "mean_solver_tokens": 859.99609375,
+      "mean_total_parameter_compute": 30507.182417391545,
+      "mean_verifier_calls": 2.56640625,
+      "mean_verifier_token_slots": 896.59375,
+      "mean_verifier_tokens": 896.59375,
+      "method": "C",
+      "n": 256
+    }
+  ],
+  "schema": "concrete-completed-DEV-checkpoint-v1",
+  "solver": {
+    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+    "maximum_continuations": 2,
+    "model": "qwen3.5:4b"
+  },
+  "split": "Repeatedly reused256-question development; not fresh confirmation",
+  "targets": {
+    "A_minimum_correct_DEV": 158,
+    "B_minimum_correct_DEV": 158,
+    "C_accuracy_strictly_above": 0.8,
+    "C_compute_strictly_below_B": true,
+    "C_gap_above_best_A_B": 0.1,
+    "C_minimum_correct_DEV": 205,
+    "achieved": false
+  },
+  "test_access": false,
+  "verification": {
+    "A_C_recomputed_from_individual_outcomes": true,
+    "all_completed_artifact_hashes": true,
+    "baselines_B_bound_to_completed_aggregate_receipts": true,
+    "selected_model_hashes": true
+  }
+}

@@ -1343,3 +1343,41 @@ no full fit or DEV promotion follows. This is a conditional TRAIN diagnostic,
 not a full-controller or fresh-test result. No jobs remain active; all eight
 rows in latest_results.json remain unchanged and the1,024-question test stays
 reserved. The requested accuracy gaps remain unmet.
+
+## Concrete completed checkpoint and the next C target
+
+`current_checkpoint.json` pins the exact selected A/B/C settings, model hashes,
+all five baseline definitions, completed artifact hashes, and all eight rows.
+`concrete_checkpoint.py` verifies completed artifact bytes and independently
+recomputes A and C from all256 unique per-question records. Baselines and B
+are bound to their sealed aggregate receipts. Private models and question-level
+records remain ignored under `runs/`; the published manifest contains no raw
+questions, references, or responses. Verify the local checkpoint with:
+
+```sh
+uv run --no-project python experiments/controller-semantic-hillclimb/followup/round2/concrete_checkpoint.py verify
+```
+
+The user's new C target is strictly over80% accuracy, while retaining the
+ten-percentage-point margin above the strongest A/B and lower inference compute
+than B. With the retained B, this needs at least205/256 on development (28 more
+correct answers than the current177). Passing on repeatedly reused development
+would still require a frozen prospective evaluation on the reserved1,024
+questions. The checkpoint is a completed development result, not that freeze.
+
+`contrastive_review_protocol.py` tests a new training-only review protocol on
+the entire same64-question science cohort. The existing frozen LLM first
+spends640 tokens auditing all options without the current solution, then384
+checking counterexamples with its paid audit and the original solution, then512
+forming a bounded review decision. All original question text, choices, option
+order and letters remain intact. The compact solver still executes at most two
+unchanged128-token retained-review repairs with the same seeds and prompts.
+All three teacher phases are billed, including repeated inputs. The registered
+320-call pilot must add at least six correct questions beyond the complete
+50-question prior path union and cost at most1.25 times the retained control.
+These are training availability and cost screens, not controller accuracy.
+Promotion also requires learned POMDP integration and the strongest matched B
+with the same review capability. No development or test inference is permitted
+in this pilot; its runner uses only the existing app and at most two cloud GPUs.
+The complete regression suite passes634 tests in58.481 seconds before
+collection. The checkpoint's model/record verification also passes separately.
