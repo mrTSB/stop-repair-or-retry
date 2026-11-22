@@ -1279,3 +1279,12 @@ registered screen fails; no controller is promoted.
 The subsequent512-question math collector is registered and running. It uses
 the released existing-app capacity, so the two collection jobs do not overlap.
 The full regression suite passes625 tests in38.934 seconds.
+
+`fit_expanded_math.py` and `development_expanded_math.py` prepare the gated
+continuation after a successful training screen. The fit changes the math
+forecaster and its math-only observation likelihoods; the retained prior,
+transition and cost arrays remain identical. Development keeps the best A153,
+all previous stronger candidates, exact science decisions and all five original
+baselines. New candidates use distinct identities so a retained model cannot be
+confused with a new candidate. This complete pipeline passes626 tests; no new
+math fit or development result is claimed while collection is incomplete.
