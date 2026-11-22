@@ -76,33 +76,26 @@
     },
     "A": {
       "dev": {
-        "accuracy": 0.5703125,
-        "correct": 146,
-        "mean_compute": 943.9491522367668,
+        "accuracy": 0.5859375,
+        "correct": 150,
+        "mean_compute": 1057.8381038049959,
         "mean_judge_calls": 0.0,
         "mean_judge_tokens": 0.0,
-        "mean_solver_calls": 1.9609375,
-        "mean_solver_tokens": 681.34765625,
-        "mean_total_parameter_compute": 943.9491522367668,
-        "mean_verifier_calls": 1.6015625,
-        "mean_verifier_token_slots": 440.73046875,
-        "mean_verifier_tokens": 440.73046875,
+        "mean_solver_calls": 2.12109375,
+        "mean_solver_tokens": 762.05859375,
+        "mean_total_parameter_compute": 1057.8381038049959,
+        "mean_verifier_calls": 1.7421875,
+        "mean_verifier_token_slots": 507.671875,
+        "mean_verifier_tokens": 507.671875,
         "n": 256
       },
       "family": "raw20_plus_project256",
-      "key": "raw20_plus_project256-7",
-      "model_path": "runs/controller-semantic-followup/round2/development-regularized-completion-v1/raw20_plus_project256-7.pkl",
-      "model_sha256": "3542e8e333b6e30e5a4eab5e05c6fe4a0c76edfc6bc608e7318dbe1603c8d84c",
+      "key": "raw20_plus_project256-2",
+      "model_path": "runs/controller-semantic-followup/round2/development-auxiliary768-completion-v1/raw20_plus_project256-2.pkl",
+      "model_sha256": "edffc13e6df8821bb3f6ff8783d60131680181fdee23212185af2147f8922baf",
       "policy_module": "completion_subject_pomdp",
       "science_settings": {
-        "by_subject": {
-          "chemistry": {
-            "penalty": 0.08
-          },
-          "physics": {
-            "penalty": 0.04
-          }
-        }
+        "penalty": 0.02
       },
       "settings": {}
     },
@@ -200,7 +193,7 @@
       "smoothing": 32.0
     },
     "accuracy_gaps_percentage_points": {
-      "A_minus_best_original_baseline": 5.46875,
+      "A_minus_best_original_baseline": 7.03125,
       "B_minus_best_original_baseline": 17.578125,
       "C_minus_max_A_B": 0.0
     },
@@ -217,7 +210,8 @@
       "development-completion-A-v1": "739594cea69e858f2a239bb1b1f351164772d3dc904c49ad3835ffa768f781cf",
       "development-completion-B-v1": "d98763660c588326b10897eec2ede913c4f0baeb1e6be0f66aa2cd20e7c0c2ff",
       "development-expanded-C-canonical-cost-v1": "317c49f79b73bdf23396181a9078b7009b7c1302d795e2b7664bf8b25bb7eab0",
-      "development-regularized-completion-v1": "94ba47f196e60c49ce01ee8a2234db85d4f88cc4cdb75f7edb14a9f48495aba0"
+      "development-regularized-completion-v1": "94ba47f196e60c49ce01ee8a2234db85d4f88cc4cdb75f7edb14a9f48495aba0",
+      "development-auxiliary768-completion-v1": "d27ff6f9e109406f88db2f1a654389cda6c1362fe444360db0954f9f2e694e00"
     },
     "matched_complete_controls": {
       "Complete": {
@@ -5810,7 +5804,7 @@
     "development_or_test_read": false,
     "summary_sha256": "8438b29f6c5a17ecfa9c20b6a6f69ffaf58f47fec89ec9608d10f7c121b154b1"
   },
-  "tests_scope": "494 full round2 tests plus2 focused proposal-headroom tests; all passed. No original experiment sources edited.",
+  "tests_scope": "502 tests passed; complete round2 regression, 34.348 seconds; no new fresh inference or grading",
   "fixed_half_completion_A": {
     "summary_sha256": "51ead7b35646f51bc75b7ac622b00eaaec58f91994ab80e1e82043925d428940",
     "fresh_validation": false,
@@ -6292,16 +6286,33 @@
     "summary_sha256": "a8435ab382bb32c887157c48e40191b2efcf1e6f3d93d78c415001bafb86d301"
   },
   "auxiliary_paired_extension": {
-    "status": "registered; collection active, no results yet",
+    "status": "complete, full5120-cell grid sealed",
     "training_questions": 512,
     "maximum_physical_compact_calls": 5120,
     "calibration_questions_excluded": 160,
     "observer": "old frozenV1; richer observation promotion requires separate validation",
     "registration_sha256": "85df63e9b869af0b40224e5386e324fab1062fdd574ee6e9d238342055d7d1e4",
     "workers": 4,
-    "maximum_cloud_gpus": 2
+    "maximum_cloud_gpus": 2,
+    "acquisition_compute": 4163354.0453074435,
+    "acquisition_tokens": {
+      "input_tokens": 2496543,
+      "output_tokens": 719648
+    },
+    "complete_sha256": "71b5f5a147b88688cc02a83a6cf3b48f6e9c2bbe73c8aee0231444ca92656cd5",
+    "coverage": {
+      "expected_cells": 5120,
+      "logical_actions": 5120,
+      "neural_calls": 0,
+      "physical_attempts": 5120,
+      "physical_calls": 5120,
+      "questions": 512,
+      "review_calls": 0
+    },
+    "training_accuracy_claim": false,
+    "transport_error_records": 0
   },
-  "fresh_data_boundary": "No test inference or grading; metadata-only reserved IDs and public-source stem hashes used solely to exclude training duplicates; no test reference fields decoded",
+  "fresh_data_boundary": "No test inference or grading and no use of test labels for controller fitting/selection. Earlier reservation/exclusion utilities decoded full protected records while using IDs/question stems for deduplication; never-opened/never-decoded wording is withdrawn. Later capacity projection and current training/dev commands do not decode test references.",
   "regularized_complete_A": {
     "status": "completed development comparison; same accuracy, lower compute",
     "selected": {
@@ -6384,13 +6395,44 @@
     }
   },
   "expanded_completion_pipeline": {
-    "status": "implemented and tested; awaiting full512 paired collection before extraction/fitting",
+    "status": "full collection, features, nested fits and development replay complete",
     "combined_science_questions": 768,
     "new_encoder_observations": 1536,
     "new_encoder_training": false,
     "features": "old excluded V1 raw20 plus same-forward project256",
     "fit": "3outer and3inner whole-question folds; two feature families; exactComplete16 dynamics",
-    "test_used": false
+    "test_used": false,
+    "accuracy_gain_points_vs_previous": 1.5625,
+    "best_A": {
+      "dev": {
+        "accuracy": 0.5859375,
+        "correct": 150,
+        "mean_compute": 1057.8381038049959,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 2.12109375,
+        "mean_solver_tokens": 762.05859375,
+        "mean_total_parameter_compute": 1057.8381038049959,
+        "mean_verifier_calls": 1.7421875,
+        "mean_verifier_token_slots": 507.671875,
+        "mean_verifier_tokens": 507.671875,
+        "n": 256
+      },
+      "family": "raw20_plus_project256",
+      "key": "raw20_plus_project256-2",
+      "model_path": "runs/controller-semantic-followup/round2/development-auxiliary768-completion-v1/raw20_plus_project256-2.pkl",
+      "model_sha256": "edffc13e6df8821bb3f6ff8783d60131680181fdee23212185af2147f8922baf",
+      "policy_module": "completion_subject_pomdp",
+      "science_settings": {
+        "penalty": 0.02
+      },
+      "settings": {}
+    },
+    "dev_complete_sha256": "9f5c6fc47f25a9a26f27b5003bb5e2011e1c651a427d3a637ab0439f970cbc83",
+    "dev_registration_sha256": "d968fa28c0bc5e54a099c74bfe5171db84873c23f4417b70b064b88bf46252e6",
+    "feature_registration_sha256": "12df6efa85a82f7f3b45e24da4cbc769cf4519909e79000de49a13d900ab8759",
+    "fit_complete_sha256": "d1b5505a1a6d1e3c373ee31525a3b4844e96b8e87a023f8084cfe44a40abdcab",
+    "fresh_validation": false
   },
   "science_V3_proposal_headroom": {
     "controller_accuracy_claim": false,
@@ -6424,5 +6466,174 @@
     "source_complete_sha256": "2961147229628b4e616345eafad4e5d27cf1f158b1456e48f38418e81c75e8eb",
     "availability_scope": "Declared controls only: plain7, Complete3, strong-root, ordinary including late review, strong-late and blind-first pilots. Other older pilot variants are not in this union; adding them cannot increase the four novel proposals.",
     "registration_sha256": "06362adf9f2d9089f93bd6e552bc76ad8088188836a1dc212e1579b0258223a2"
+  },
+  "factorized_completion_diagnostic": {
+    "cloud_calls": 0,
+    "conditional_independence_approximation": true,
+    "controller_accuracy_claim": false,
+    "development_or_test_read": false,
+    "new_neural_calls": 0,
+    "paired_CI_scope": "Descriptive question bootstrap with fitted folds fixed",
+    "reports": {
+      "raw20_control": {
+        "comparisons": {
+          "Complete_Brier": {
+            "categorical": 0.18893882223203895,
+            "delta": -0.004072188495332242,
+            "factorized": 0.1848666337367067,
+            "paired_question_CI95": [
+              -0.00808983620456494,
+              7.16224520140033e-05
+            ]
+          },
+          "current_Brier": {
+            "categorical": 0.10894446591716929,
+            "delta": -0.0019263888147256535,
+            "factorized": 0.10701807710244365,
+            "paired_question_CI95": [
+              -0.005341566050549669,
+              0.0013283690312348995
+            ]
+          },
+          "joint_Brier": {
+            "categorical": 0.5163889152008294,
+            "delta": 0.07241597771720025,
+            "factorized": 0.5888048929180295,
+            "paired_question_CI95": [
+              0.0597209892347637,
+              0.08436089352738982
+            ]
+          },
+          "joint_log_loss": {
+            "categorical": 1.1662630393876308,
+            "delta": 0.4477454829453644,
+            "factorized": 1.6140085223329952,
+            "paired_question_CI95": [
+              0.39739820174827234,
+              0.5026042561581677
+            ]
+          },
+          "mean_four_marginal_Brier": {
+            "categorical": 0.1327667083552279,
+            "delta": -0.002668598252295378,
+            "factorized": 0.13009811010293254,
+            "paired_question_CI95": [
+              -0.005549342272080128,
+              0.0001190149067195546
+            ]
+          },
+          "repair_Brier": {
+            "categorical": 0.13458070873078887,
+            "delta": -0.002653135943723067,
+            "factorized": 0.1319275727870658,
+            "paired_question_CI95": [
+              -0.006191469427467125,
+              0.0004960351667705306
+            ]
+          },
+          "retry_Brier": {
+            "categorical": 0.09860283654091459,
+            "delta": -0.002022679755400554,
+            "factorized": 0.09658015678551404,
+            "paired_question_CI95": [
+              -0.0045065650185977975,
+              0.0005039780504414082
+            ]
+          }
+        },
+        "screen_passed": false
+      },
+      "raw20_plus_project256": {
+        "comparisons": {
+          "Complete_Brier": {
+            "categorical": 0.18582952287095159,
+            "delta": -0.0002860420713589745,
+            "factorized": 0.1855434807995926,
+            "paired_question_CI95": [
+              -0.001725103735092955,
+              0.001230483359623587
+            ]
+          },
+          "current_Brier": {
+            "categorical": 0.10679793723178382,
+            "delta": 0.0004192758743438599,
+            "factorized": 0.10721721310612767,
+            "paired_question_CI95": [
+              -0.0006377540480810148,
+              0.0014252452365192665
+            ]
+          },
+          "joint_Brier": {
+            "categorical": 0.5112698446078205,
+            "delta": 0.07878890322291754,
+            "factorized": 0.5900587478307381,
+            "paired_question_CI95": [
+              0.06704814203262503,
+              0.0904053580940716
+            ]
+          },
+          "joint_log_loss": {
+            "categorical": 1.1585617921752995,
+            "delta": 0.46350542214902263,
+            "factorized": 1.6220672143243222,
+            "paired_question_CI95": [
+              0.4139792575582414,
+              0.5180461931548953
+            ]
+          },
+          "mean_four_marginal_Brier": {
+            "categorical": 0.13097783206925903,
+            "delta": -6.436257453931076e-06,
+            "factorized": 0.1309713958118051,
+            "paired_question_CI95": [
+              -0.0006529118006395084,
+              0.0006728301545940321
+            ]
+          },
+          "repair_Brier": {
+            "categorical": 0.13371187760874237,
+            "delta": -0.00022228575162503708,
+            "factorized": 0.13348959185711734,
+            "paired_question_CI95": [
+              -0.0012562946141755707,
+              0.0008364406711016923
+            ]
+          },
+          "retry_Brier": {
+            "categorical": 0.09757199056555838,
+            "delta": 6.330691882442629e-05,
+            "factorized": 0.09763529748438278,
+            "paired_question_CI95": [
+              -0.0006492172287712565,
+              0.0007714351375307011
+            ]
+          }
+        },
+        "screen_passed": false
+      }
+    },
+    "schema": "expanded768-factorized-belief-TRAIN-diagnostic-v1",
+    "training_questions": 768
+  },
+  "freshness_source_audit": {
+    "finding": "reserve_science_aux reads full records for IDs/stems; science_auxiliary_data reads full protected records for IDs; labels are not used by those exclusion loops. Reservation constructs labeled splits from official source.",
+    "method": "Source-only inspection; no test file opened by this audit",
+    "prior_never_decoded_claim_supported": false,
+    "sources": {
+      "reserve.py": "81775d1e6c2149bd91541d844070e7336cf6d4f67d8a35da2096ec9676618289",
+      "reserve_science_aux.py": "6b9767bf38d0a787c9fd3b1b91797ea1b27a5894eb78da744a45179c5063ca37",
+      "science_auxiliary_data.py": "8a060949227ff4404dbe810532aafc4c21a6f76d40148c7371a1f74246e34273"
+    },
+    "test_inference_or_grading": false
+  },
+  "quantile_completion_diagnostic": {
+    "accuracy_or_compute_improved": false,
+    "best_correct": 150,
+    "candidates": 16,
+    "fresh_validation": false,
+    "questions": 256,
+    "registration_sha256": "7d19c18b4fa6357d9c0bf7c85cd4880a5b7dfc9659247415ac2d42e6026ffefa",
+    "selected_previous_A_retained": true,
+    "training_fit_registration_sha256": "46ebe4a39eeb5f16801504121fb4063928ad0b773124ff8be7bd61ec61eed977"
   }
 }

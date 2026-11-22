@@ -80,7 +80,7 @@ been used repeatedly for selection; this table is not fresh confirmation.
 | Repair twice | 132 | 51.56% | 1,711.21 |
 | Retry once | 127 | 49.61% | 886.56 |
 | Retry twice | 123 | 48.05% | 1,394.69 |
-| Best A: regularized POMDP with terminal Complete action | 146 | 57.03% | 943.95 |
+| Best A: expanded-data POMDP with terminal Complete action | 150 | 58.59% | 1,057.84 |
 | Best B: strong retained-review LLM | 177 | 69.14% | 3,772.86 |
 | Best C: expanded-data POMDP + LLM | 177 | 69.14% | 3,747.96 |
 
@@ -89,7 +89,7 @@ active parameters, normalized to 3.09 billion parameters. Both physical phases
 of a bounded review are billed. This is not measured FLOPs or wall-clock time;
 the full-35B reviewer sensitivity is also retained in the receipts.
 
-A is 5.47 percentage points above the strongest original baseline, B is 17.58
+A is 7.03 percentage points above the strongest original baseline, B is 17.58
 points above it, and C is 0.00 points above the stronger of A/B. A needs at least
 158 correct answers and C needs at least 203 on this panel. C saves only 0.66%
 compute relative to B. The requested accuracy gaps are not met.
@@ -97,11 +97,15 @@ compute relative to B. The requested accuracy gaps are not met.
 Complete is a separate answer-changing action with matched controls. The best
 such simple control, Repair then Complete if invalid, obtains 150/256 (58.59%)
 at 1,232.71 units, using exactly the same retained math A as the new POMDP.
-Its gain is not evidence for learned planning. The original five baselines
+It matches best A's accuracy; A uses 14.19% less compute. The original five baselines
 remain unchanged, and all six new fixed/validity controls remain reported.
-The separately reserved 1,024-question test set has not been inferred or graded;
-its reference answers remain unopened. Metadata-only IDs and public-source stem
-hashes have been used solely to exclude training duplicates.
+The separately reserved 1,024-question test set has not been inferred or graded,
+and its labels have not been used for controller fitting or selection. Earlier
+reservation/exclusion utilities decoded full protected records while using IDs
+and question text for deduplication (`reserve_science_aux.py` and
+`science_auxiliary_data.py`). Therefore "never opened/decoded" is too strong.
+The later capacity audit projected IDs and public-source stems only, and the
+current training/development commands explicitly block test-question reads.
 
 `regularized_completion_pomdp.py` and `fit_regularized_completion.py` retain
 the exact sixteen-state dynamics and finite Bellman backup. Nested whole-question
@@ -123,6 +127,25 @@ auxiliary questions; the auxiliary-trained V3 encoder is not used for in-sample
 features. The1536 new prefix observations share raw20/project256 forwards, and
 three outer and three inner whole-question folds prevent sibling-branch leakage.
 Both feature families and the previous stronger A remain in the comparison.
+The512-question collection is now complete:5120 physical calls and5120 logical
+responses, zero recorded transport errors,2,496,543 input tokens and719,648 output
+tokens. These are offline data-acquisition costs, not per-question policy costs.
+All1536 new observation passes, nested fits, and sixteen development candidates
+are complete. The dense386 model at the single global science penalty0.02
+improves A to150/256 (58.59%) at1,057.84 compute, a1.56-point accuracy gain over
+the previous146/256. The cheaper146/256 model at943.95 remains a retained
+tradeoff. The accuracy target still requires eight additional correct answers.
+
+`diagnose_factorized_completion.py` tests four independent binary correctness
+heads as another sixteen-state belief model. Nested TRAIN marginal Brier scores
+improve slightly, but joint log loss worsens from1.166 to1.614 for raw130 and
+from1.159 to1.622 for dense386. Both fail the registered joint-loss guard, so
+neither is promoted to development. `quantile_completion_pomdp.py` instead
+retains the joint forecaster and tests TRAIN-derived observation thresholds;
+its original-threshold parity tests reproduce all old dynamics and charges.
+All sixteen quantile candidates have now completed development evaluation.
+They do not improve the retained 150/256 model's accuracy or compute, so the
+previous model remains selected. The full round2 regression passes 502 tests.
 
 `science_proposal_headroom.py` separately tests the finalV3 option scorer on the
 same fixed64 original science training questions used for recent action pilots.
@@ -134,7 +157,7 @@ pilot variants are not in this union, and adding them could only reduce novelty.
 No feedback cloud calls are promoted. A proposal is not a compact-solver output
 or controller result. Its mean paid observer compute was404.59 units.
 
-## Current continuation
+## Earlier continuation records
 
 The shorter review pilot is complete: on the same 192 training questions,
 256-token reasoning produced 123 correct short-guided repairs, and 512-token
