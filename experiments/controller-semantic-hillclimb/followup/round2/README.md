@@ -1161,3 +1161,25 @@ The pilot is registered and collecting up to256 physical calls on at most two
 existing-app cloud GPUs, with no cloud training. The frozen corpus cannot be
 rebuilt implicitly. Tests cover bounded queries, immutable indexes, paid-only
 inputs, original compact payloads, all256 physical receipts and tamper rejection.
+
+## Persistent difficulty in A's hidden state
+
+`difficulty_completion_pomdp.py` adds a persistent hidden difficulty bit to
+the four existing correctness bits, yielding32 states. Difficulty means fewer
+than three correct endpoints among the ten paired TRAIN responses. This label
+is training supervision only; inference predicts it from the same paid frozen
+observer features. Transition support preserves difficulty and enforces that
+next current correctness equals the selected action's outcome bit. The same
+finite two-step Bellman backup, action protocol and30-symbol correctness
+observation kernel remain; realized beliefs use the declared0.5 posterior blend.
+
+`difficulty_completion_diagnostic.py` registers a full-policy comparison with
+three outer question folds and three inner emission folds. All forecasts,
+priors, transitions, emissions and cost estimates exclude the held question.
+Both raw130 and dense386 inputs use the fixed96-tree,depth8,leaf24 recipe.
+Fitting uses1280 science TRAIN questions; all methods are compared on the same
+768-question common held cohort. The comparator is the strongest accuracy
+result among all three sealed prior whole-policy controls. Promotion requires
+at least two points more accuracy and no higher compute. The experiment is
+running on local CPU, with no new neural/cloud calls or DEV/TEST reads. All613
+regression tests pass; no full model or new controller result is claimed.

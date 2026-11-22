@@ -9725,5 +9725,23 @@
     "required_novel_questions": 6,
     "fresh_validation": false,
     "promoted": false
+  },
+  "difficulty_completion_diagnostic": {
+    "status": "registered_running_local_CPU",
+    "registration": "e5ffde45261a3a5b85d72e585cadb61c12e276728dc220d75c2ce380e63cfa48",
+    "training_questions": 1280,
+    "common_held_questions": 768,
+    "states": 32,
+    "latent_difficulty": "Fewer than3/10 paired TRAIN endpoints correct; hidden and constant at inference",
+    "families": [
+      "raw20_control",
+      "raw20_plus_project256"
+    ],
+    "comparison": "Strongest of all three prior whole-policy controls",
+    "screen": "At least2pp higher accuracy and no higher compute",
+    "cloud_calls": 0,
+    "new_neural_calls": 0,
+    "fresh_validation": false,
+    "promoted": false
   }
 }
