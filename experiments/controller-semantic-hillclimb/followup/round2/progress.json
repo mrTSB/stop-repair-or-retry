@@ -5544,13 +5544,15 @@
     "questions": 64,
     "registration": "77acbeae86529322e8d669713c1669d9a4c9b0a80fca9ef8d0e7393714facec5",
     "solver_continuations": 2,
-    "status": "registered_not_collected",
+    "status": "registered_collecting",
     "teacher_phase_caps": [
       64,
       960,
       512
     ],
-    "training_only": true
+    "training_only": true,
+    "session": 70314,
+    "log": "/private/tmp/srr-evidence-first-collect.log"
   },
   "example_review_pilot": {
     "cloud_training": false,
@@ -7364,9 +7366,9 @@
     "test_inference_started": false
   },
   "latest_regression": {
-    "passed": true,
-    "seconds": 39.334,
-    "tests": 559
+    "tests": 625,
+    "seconds": 39,
+    "status": "passed"
   },
   "lexical_outcome_diagnostic": {
     "promoted": false,
@@ -9885,7 +9887,7 @@
     "training_only": true
   },
   "test_inference_started": false,
-  "tests_passed": 496,
+  "tests_passed": 625,
   "tests_scope": "515 full round2 tests passed in34.066seconds; no new fresh inference or grading",
   "training_example_pool": {
     "cloud_calls": 0,
@@ -9965,5 +9967,19 @@
     },
     "scope": "TRAIN only; no fresh claim",
     "status": "completed_no_screen_passed"
+  },
+  "auxiliary_math512": {
+    "status": "reserved_and_collector_preflight_passed",
+    "reservation_sha256": "8027ea5c8153a1c749e8033eaca793f47ff24d55220b03103ca37095c68a9744",
+    "questions": 512,
+    "maximum_physical_calls": 3584,
+    "paths_per_question": 7,
+    "review_calls": 0,
+    "maximum_cloud_gpus": 2,
+    "protected_reference_values_decoded": false,
+    "frozen_observer_overlap": 0,
+    "unused_disjoint_math": 3710,
+    "collection_priority": "After the active evidence-first pilot finishes and releases capacity",
+    "local_feature_and_nested_fit_pipeline": "prepared_not_run"
   }
 }

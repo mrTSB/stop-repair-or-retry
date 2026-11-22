@@ -1235,3 +1235,35 @@ validate a learned POMDP hybrid on fresh data. This registration is not a result
 `latest_results.json` records the eight-row development table and target checks
 from verified sealed artifacts. It explicitly distinguishes reused development
 selection from the reserved1,024-question fresh test.
+
+
+## Additional paired math training data
+
+`reserve_math_auxiliary.py` has sealed512 additional GSM8K TRAIN questions,
+selected by fixed hash before inference. Historical and reserved IDs/stems,
+near duplicates, and the frozen observer's training membership are excluded.
+Protected JSON records expose only IDs/question text through a field projector;
+reference values are skipped without decoding. The pinned Arrow source is
+projected to its question column before conversion to Python. This adds no
+fresh test inference or grading and leaves3,710 eligible math questions unused.
+
+`collect_auxiliary_math_pairs.py` prepares all seven ordinary solver branches
+for every selected question: at most3,584 physical calls, no reviewer calls,
+the original128-token root and256-token continuation caps, unchanged prompts,
+seeds, temperatures and frozen compact weights. It cannot start before the
+evidence-first pilot seals and releases its workers. Each physical attempt is
+durable before dispatch, failed answers are retained, and unresolved requests
+block automatic replay. No labels or training results have been collected yet.
+The goal is to expand math-specific POMDP training from256 to768 questions;
+selection will use whole-question folds and keep the stronger existing A.
+
+`math_auxiliary_features.py` prepares local CPU extraction from the same frozen
+observer, with one raw20/project256 forward per paid prefix and actual token
+slots recorded. `expanded_math_diagnostic.py` prepares three outer and three
+inner whole-question folds on all768 math questions. It compares with retained
+A's forecast procedure on the same original256 held math questions. All512
+new reference rows are joined only after their complete paid collection;
+Arrow row selection precedes conversion of reference values to Python. The
+registered screen requires lower joint loss and marginal Brier, at least a
+two-point conditional-decision accuracy gain, and at most10% extra compute.
+This screen is preliminary; it does not claim full-controller or fresh accuracy.
