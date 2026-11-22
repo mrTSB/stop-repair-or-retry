@@ -6258,19 +6258,49 @@
     "controller_promoted": false
   },
   "blind_first_review_pilot": {
-    "status": "registered; collection started, no results yet",
+    "status": "completed; screen failed; no promotion",
     "registration_sha256": "074b9cedb39d06005426bdc1c76e7960118692e838855eb1a32d6df715f7613f",
     "training_questions": 64,
     "maximum_physical_calls": 256,
     "maximum_cloud_gpus": 2,
-    "test_used": false
+    "test_used": false,
+    "screen": {
+      "checks": {
+        "at_least6_novel_questions": false,
+        "second_trajectory_compute_at_most1p25": true
+      },
+      "controller_promoted": false,
+      "criteria": {
+        "mean_second_trajectory_compute_over_rootstrong_retained_at_most": 1.25,
+        "novel_questions_beyond_registered_full_known_union_at_least": 6,
+        "registered_known_union_questions": 48,
+        "scope": "TRAIN action headroom only; no controller, causal anchoring-only or fresh-data claim"
+      },
+      "hindsight_availability_only": true,
+      "passed": false,
+      "ratio_to_rootstrong_retained": 0.974637496040302,
+      "second_trajectory_mean_compute": 5305.2639563106795
+    },
+    "coverage": {
+      "first_guided": 64,
+      "logical_reviews": 64,
+      "physical_calls": 256,
+      "physical_compact_calls": 128,
+      "physical_teacher_phases": 128,
+      "questions": 64,
+      "second_repairs": 64
+    },
+    "summary_sha256": "a8435ab382bb32c887157c48e40191b2efcf1e6f3d93d78c415001bafb86d301"
   },
   "auxiliary_paired_extension": {
-    "status": "prepared/tested, not registered or launched",
+    "status": "registered; collection active, no results yet",
     "training_questions": 512,
     "maximum_physical_compact_calls": 5120,
     "calibration_questions_excluded": 160,
-    "observer": "old frozenV1; richer observation promotion requires separate validation"
+    "observer": "old frozenV1; richer observation promotion requires separate validation",
+    "registration_sha256": "85df63e9b869af0b40224e5386e324fab1062fdd574ee6e9d238342055d7d1e4",
+    "workers": 4,
+    "maximum_cloud_gpus": 2
   },
   "fresh_data_boundary": "No test inference or grading; metadata-only reserved IDs and public-source stem hashes used solely to exclude training duplicates; no test reference fields decoded"
 }

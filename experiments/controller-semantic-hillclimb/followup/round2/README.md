@@ -573,9 +573,19 @@ A new 64-question pilot is registered to generate independent reviewer
 reasoning before exposing the original compact solution. It always pays for
 two teacher phases and two compact continuations, for 256 physical calls in
 total. It must add at least six questions beyond the entire known 48/64 union
-and cost at most 1.25 times retained root review. Collection has started;
-there is no result or promotion yet. A 512-question auxiliary-TRAIN paired
-extension is separately prepared and tested, but has not been launched.
+and cost at most 1.25 times retained root review. The completed pilot fails
+the novelty criterion. Its first guided repair gets 23/64 correct and its
+second gets 22/64, below the original retained-review control's 32/64. The
+second trajectory costs 5,305.26 units, a 2.54% saving that does not offset the
+accuracy loss. This protocol is not promoted.
+
+The separately registered 512-question auxiliary-TRAIN paired extension is
+now collecting all seven original and three Complete paths, with a maximum
+of 5,120 compact calls, four request workers, and at most two cloud GPUs.
+Its 256 chemistry and 256 physics questions come from the sealed auxiliary
+training pool; all 160 calibration questions are excluded. This will expand
+the paired science training set from 256 to 768 questions. No fit or accuracy
+claim is available from the additional data yet.
 
 The latest full regression passes 481 tests. No fresh test inference or grading
 has occurred. A capacity audit used reserved IDs and hashed public-source
