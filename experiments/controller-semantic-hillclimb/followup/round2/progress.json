@@ -579,7 +579,7 @@
     "matched_control_math_rule": "Identical retained math A for all six added controls and all new A candidates"
   },
   "test_inference_started": false,
-  "status": "Targets not met; latest bounded local and cloud experiments completed",
+  "status": "Targets not met; second disjoint paired-training block collecting",
   "development_A": {
     "selected_A": {
       "dev": {
@@ -7347,8 +7347,29 @@
     "promoted_to_development": false
   },
   "latest_regression": {
-    "tests": 530,
-    "seconds": 34.627,
+    "tests": 540,
+    "seconds": 34.265,
     "passed": true
+  },
+  "second_auxiliary_paired_block": {
+    "status": "collecting",
+    "registration_sha256": "5f81371338d572780f5b7fc837f6755a9cca99c5a9b04e9e8e752fd61bd17214",
+    "questions": 512,
+    "chemistry": 256,
+    "physics": 256,
+    "maximum_physical_calls": 5120,
+    "max_cloud_gpus": 2,
+    "cloud_training": false,
+    "same_compact_solver": true,
+    "same_original_seven_and_Complete_three_paths": true,
+    "prior_paired_question_overlap": 0,
+    "calibration_questions_excluded": 160,
+    "selection": "Same fixed within-subject TRAIN hash order, ranks256:512; no outcome selection",
+    "combined_science_training_questions_after_completion": 1280,
+    "new_reservation": false,
+    "protected_split_records_read": false,
+    "model_or_controller_gain_claim": false,
+    "automatic_cloud_scale_to_zero_in_finally": true,
+    "followup": "1536 local old-V1 observation passes, nested four-setting forest fits screened on identical original768 held questions, then fullDEV if passed"
   }
 }

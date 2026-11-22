@@ -228,6 +228,22 @@ incremental integration experiment. The conditional binary-chain joint model als
 joint loss rises to 1.26176 and mean marginal Brier to 0.13571, compared with
 1.14784 and 0.12922 for the retained forest. No development promotion follows. All 530 regression tests pass in 34.63 seconds.
 
+The next data expansion is collecting a second disjoint 512-question block
+from the already reserved 1,440-question auxiliary TRAIN pool. It takes ranks
+256:512 in each subject under the same fixed hash order, excluding the first
+512 paired questions and all 160 calibration questions. The 5,120-call grid
+uses the unchanged compact solver, seven plain paths, and three Complete paths.
+At most two existing-app GPUs run; a `finally` block restores zero minimum
+containers. No cloud training or new test inference is scheduled.
+
+The prepared follow-up extracts 1,536 old-V1 observations locally, joins all
+1,280 paired science training questions, and compares expanded forests against
+the retained forest on the exact same original 768 held questions. Only a
+lower joint loss and lower mean marginal Brier permits development evaluation.
+Every old and new question remains in its whole-question fold; all new512
+held predictions are reported separately. No gain is claimed before completion.
+All 540 current regression tests pass in 34.27 seconds.
+
 `science_proposal_headroom.py` separately tests the finalV3 option scorer on the
 same fixed64 original science training questions used for recent action pilots.
 All622 options were scored locally before grading. The final model proposed17/64
