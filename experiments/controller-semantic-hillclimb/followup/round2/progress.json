@@ -8953,7 +8953,7 @@
     "full_model_fitted": false,
     "fresh_validation": false,
     "scope": "Conditional last-step TRAIN screen; no full-controller claim",
-    "regression_tests": 576
+    "regression_tests": 588
   },
   "review_portfolio_diagnostic": {
     "status": "completed_failed_screen",
@@ -9229,5 +9229,19 @@
     "original_and_clustered_kernels": true,
     "solver_unchanged": true,
     "fresh_validation": false
+  },
+  "arithmetic_review_pilot": {
+    "status": "registered_collecting",
+    "registration": "738da32bcb6984e9451299da36b4116b11511e6ba1eec2a3a21c5ff842f0322d",
+    "questions": 64,
+    "scope": "Exploratory TRAIN new-path headroom, not a controller or fresh result",
+    "new_capability": "Bounded scalar arithmetic within frozen reviewer protocol",
+    "physical_call_budget": 256,
+    "maximum_cloud_gpus": 2,
+    "cloud_training": false,
+    "compact_weights_prompts_caps_and_seeds_unchanged": true,
+    "calculator_CPU_outside_parameter_token_proxy": true,
+    "matched_B_same_tool_required": true,
+    "regression_tests": 588
   }
 }

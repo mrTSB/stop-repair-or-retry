@@ -976,3 +976,27 @@ protocol's36/64 and above the retained rootstrong control's5443.32 compute.
 The other recipes get31,28 and30 correct. This is a negative routing feasibility
 result on TRAIN, not a new POMDP or fresh controller result. It causes no new
 cloud calls, no new encoder calls and no change to selected C.
+
+## Bounded arithmetic review pilot
+
+The separately registered `arithmetic_review_runner.py` pilot adds an explicit
+numerical tool to the frozen reviewer. Its1024-token reasoning phase may request
+up to8 bounded scalar expressions; the mandatory512-token decision phase sees
+their values or errors. The tool interprets a whitelist of arithmetic AST nodes
+and unary math functions without evaluating arbitrary code or accessing files,
+network or references. This is floating-point arithmetic, not a symbolic solver.
+The compact model, its128-token guided prompts, original paired seeds and
+two-continuation limit stay unchanged. It receives the existing answer/check
+packet from the reviewer. All teacher/tool-output input tokens and compact calls
+are charged; calculator CPU time is reported separately from the token proxy.
+
+The pilot keeps all64 previously registered TRAIN questions and allows exactly
+128 physical teacher phases plus128 compact calls, on at most two existing-app
+GPUs. It preserves durable attempts, errors and wrong completions, and restores
+min0/max2 capacity in a finally block. It must add at least six solves beyond
+the50-question union of every prior registered path and use at most1.25 times
+the retained strong-review trajectory compute. Those are acquisition screens,
+not the final C accuracy/compute requirements. Matched B must receive identical
+calculator availability if this capability is promoted. No controller or fresh
+result has been claimed. All588 tests pass, including complete256-request
+synthetic replay, tool tamper detection, numerical bounds and paid-prefix checks.
