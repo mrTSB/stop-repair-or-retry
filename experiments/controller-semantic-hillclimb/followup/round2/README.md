@@ -1381,3 +1381,10 @@ with the same review capability. No development or test inference is permitted
 in this pilot; its runner uses only the existing app and at most two cloud GPUs.
 The complete regression suite passes634 tests in58.481 seconds before
 collection. The checkpoint's model/record verification also passes separately.
+
+`c80_targets.py` implements the accuracy margins using integer correct counts,
+so rounding cannot turn exactly80% into a pass. It retains the original A/B
+requirements, requires lower C compute, and raises C's target when matched B
+improves. Four separate boundary/integrity tests pass. `current_targets.json`
+records the current failures and the exact remaining counts; development
+success can never set its fresh-confirmation flag.

@@ -9040,7 +9040,7 @@
     },
     "schema": "expanded768-split_forest-joint-belief-TRAIN-v1"
   },
-  "status": "Concrete checkpoint verified; contrastive review registered; C over80% target not achieved",
+  "status": "Concrete checkpoint verified; contrastive review collecting; C over80% target not achieved",
   "strong_late_review_pilot": {
     "controller_promoted": false,
     "coverage": {
@@ -10223,7 +10223,7 @@
     "fresh_test_reserved": 1024
   },
   "contrastive_review_pilot_v1": {
-    "status": "registered_not_started",
+    "status": "collecting",
     "registration": "dcb22843761f1fcecaa63a85ef6c575f2469848d17071361dbb35b707cdc4b6b",
     "training_questions": 64,
     "maximum_physical_calls": 320,
@@ -10240,5 +10240,33 @@
     "cloud_training": false,
     "test_used": false,
     "promotion_requires": "Six novel correct TRAIN paths, at most1.25x cost, learned POMDP integration, strongest matched B and fresh validation"
+  },
+  "current_objective": {
+    "n": 256,
+    "checks": {
+      "A_gap_at_least10pp": false,
+      "B_gap_at_least10pp": true,
+      "C_gap_at_least10pp": false,
+      "C_accuracy_strictly_over80percent": false,
+      "C_compute_strictly_below_B": true
+    },
+    "all_metrics_passed": false,
+    "fresh_validation": false,
+    "fresh_targets_confirmed": false,
+    "minimum_correct": {
+      "A": 158,
+      "B": 158,
+      "C": 205
+    },
+    "additional_correct_needed": {
+      "A": 5,
+      "B": 0,
+      "C": 28
+    },
+    "accuracy_targets_feasible_on_this_panel": true
+  },
+  "target_checker_tests": {
+    "tests": 4,
+    "passed": true
   }
 }

@@ -1,0 +1,24 @@
+{
+  "accuracy_targets_feasible_on_this_panel": true,
+  "additional_correct_needed": {
+    "A": 5,
+    "B": 0,
+    "C": 28
+  },
+  "all_metrics_passed": false,
+  "checks": {
+    "A_gap_at_least10pp": false,
+    "B_gap_at_least10pp": true,
+    "C_accuracy_strictly_over80percent": false,
+    "C_compute_strictly_below_B": true,
+    "C_gap_at_least10pp": false
+  },
+  "fresh_targets_confirmed": false,
+  "fresh_validation": false,
+  "minimum_correct": {
+    "A": 158,
+    "B": 158,
+    "C": 205
+  },
+  "n": 256
+}
