@@ -8941,7 +8941,7 @@
     "promoted": false
   },
   "joint_outcome_observer": {
-    "status": "registered_training",
+    "status": "completed_failed_screen",
     "registration": "0964e6257a7805bdaa2366f1b1bc9a03e41555a30ff3a3954173d1cc4b85ef7b",
     "training_questions": 1280,
     "observations": 3840,
@@ -8953,7 +8953,62 @@
     "full_model_fitted": false,
     "fresh_validation": false,
     "scope": "Conditional last-step TRAIN screen; no full-controller claim",
-    "regression_tests": 595
+    "regression_tests": 595,
+    "summary": {
+      "candidate": {
+        "accuracy": 0.256640625,
+        "correct": 657,
+        "mean_compute": 2086.4262430568283,
+        "n": 2560
+      },
+      "cloud_calls": 0,
+      "control": {
+        "accuracy": 0.258203125,
+        "correct": 661,
+        "mean_compute": 2006.2777437524921,
+        "n": 2560
+      },
+      "development_or_test_read": false,
+      "forecast_losses": {
+        "candidate": {
+          "Complete_Brier": 0.19050873000512641,
+          "current_Brier": 0.11284383478549026,
+          "joint_Brier": 0.5150392374022718,
+          "joint_log_loss": 1.152336424353856,
+          "mean_four_marginal_Brier": 0.13504897923674086,
+          "repair_Brier": 0.13529697493363818,
+          "retry_Brier": 0.10154637722270854
+        },
+        "control": {
+          "Complete_Brier": 0.18520369238366904,
+          "current_Brier": 0.1092537543839541,
+          "joint_Brier": 0.506804185586483,
+          "joint_log_loss": 1.1295687658926548,
+          "mean_four_marginal_Brier": 0.13143839041010752,
+          "repair_Brier": 0.1316060455076315,
+          "retry_Brier": 0.09969006936517548
+        }
+      },
+      "fresh_validation": false,
+      "full_controller_claim": false,
+      "full_model_fitted": false,
+      "local_training": true,
+      "offline_training_excluded_from_inference_proxy": true,
+      "parameters": 434305808,
+      "schema": "local-joint16-observer-science1280-TRAIN-v1",
+      "screen": {
+        "conditional_accuracy_gain": -0.0015624999999999667,
+        "conditional_compute_ratio": 1.0399488553137355,
+        "paired_question_accuracy_CI95": [
+          -0.00390625,
+          0.000390625
+        ],
+        "passed": false
+      }
+    },
+    "promoted": false,
+    "full_fit_started": false,
+    "development_evaluation_started": false
   },
   "review_portfolio_diagnostic": {
     "status": "completed_failed_screen",
@@ -9224,7 +9279,7 @@
     "promoted": false
   },
   "joint_observer_full_fit_preparation": {
-    "status": "code_prepared_not_run",
+    "status": "code_prepared_not_run_screen_failed",
     "requires_passed_joint_observer_screen": true,
     "original_and_clustered_kernels": true,
     "solver_unchanged": true,
@@ -9317,7 +9372,7 @@
     "cloud_calls": 0
   },
   "example_review_pilot": {
-    "status": "registered_collecting",
+    "status": "completed_failed_screen",
     "registration": "03bb16debb656cb00a6f84e5b628725493d25b5d208ec679e7fdae06ac3b266c",
     "questions": 64,
     "maximum_physical_calls": 256,
@@ -9328,6 +9383,131 @@
     "compact_prompts_caps_seeds_weights_unchanged": true,
     "matched_B_same_examples_required": true,
     "regression_tests": 595,
-    "fresh_validation": false
+    "fresh_validation": false,
+    "screen": {
+      "checks": {
+        "at_least6_novel_questions": false,
+        "second_trajectory_compute_at_most1p25": true
+      },
+      "controller_promoted": false,
+      "criteria": {
+        "mean_second_trajectory_compute_over_rootstrong_retained_at_most": 1.25,
+        "novel_questions_beyond_registered_known_union_at_least": 6,
+        "scope": "TRAIN headroom of disjoint labeled examples; matched B, learned policy and fresh validation required"
+      },
+      "hindsight_availability_only": true,
+      "passed": false,
+      "ratio_to_rootstrong_retained": 1.0500366475269653,
+      "second_trajectory_mean_compute": 5715.685679611651
+    },
+    "novel_questions": 0,
+    "coverage": {
+      "first_guided": 64,
+      "logical_reviews": 64,
+      "physical_calls": 256,
+      "physical_compact_calls": 128,
+      "physical_teacher_phases": 128,
+      "questions": 64,
+      "second_repairs": 64
+    },
+    "retrieval_CPU": {
+      "included_in_parameter_token_proxy": false,
+      "index_setup_excluded": true,
+      "max_question_ms": 4.58485420094803,
+      "mean_ms": 2.6781593796840752,
+      "repetitions_per_question": 10
+    },
+    "promoted": false,
+    "methods": {
+      "Example1024 first guided": {
+        "accuracy": 0.453125,
+        "correct": 29,
+        "correct_review_wrong_compact": 1,
+        "mean_compute": 4930.370145631068,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 2.0,
+        "mean_review_input_tokens": 2446.09375,
+        "mean_review_output_tokens": 1155.5,
+        "mean_solver_calls": 2.0,
+        "mean_solver_input_tokens": 951.609375,
+        "mean_solver_output_tokens": 155.90625,
+        "mean_total_parameter_compute": 42228.428398058255,
+        "n": 64,
+        "review_correct": 29,
+        "wrong_review_correct_compact": 1
+      },
+      "Example1024 retained second repair": {
+        "accuracy": 0.4375,
+        "correct": 28,
+        "correct_review_wrong_compact": 1,
+        "mean_compute": 5715.685679611651,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 2.0,
+        "mean_review_input_tokens": 2446.09375,
+        "mean_review_output_tokens": 1155.5,
+        "mean_solver_calls": 3.0,
+        "mean_solver_input_tokens": 1499.65625,
+        "mean_solver_output_tokens": 214.515625,
+        "mean_total_parameter_compute": 43013.74393203884,
+        "n": 64,
+        "review_correct": 29,
+        "wrong_review_correct_compact": 0
+      }
+    }
+  },
+  "lexical_outcome_diagnostic": {
+    "status": "completed_failed_screen",
+    "registration": "1686d2b537c1af379e6206dc9de2da1b5876508fb5ec74910064a66ce0f3175f",
+    "questions": 1280,
+    "promoted": false,
+    "summary": {
+      "candidate": {
+        "accuracy": 0.258203125,
+        "correct": 661,
+        "mean_compute": 2114.802723525955,
+        "n": 2560
+      },
+      "cloud_calls": 0,
+      "control": {
+        "accuracy": 0.258203125,
+        "correct": 661,
+        "mean_compute": 2006.2777437524921,
+        "n": 2560
+      },
+      "development_or_test_read": false,
+      "forecast_losses": {
+        "candidate": {
+          "Complete_Brier": 0.1849289333557523,
+          "current_Brier": 0.1098594067741177,
+          "joint_Brier": 0.5069900472074089,
+          "joint_log_loss": 1.1306100220331037,
+          "mean_four_marginal_Brier": 0.13121013439537726,
+          "repair_Brier": 0.13096146103424647,
+          "retry_Brier": 0.09909073641739265
+        },
+        "control": {
+          "Complete_Brier": 0.18520369238366904,
+          "current_Brier": 0.1092537543839541,
+          "joint_Brier": 0.506804185586483,
+          "joint_log_loss": 1.1295687658926548,
+          "mean_four_marginal_Brier": 0.13143839041010752,
+          "repair_Brier": 0.1316060455076315,
+          "retry_Brier": 0.09969006936517548
+        }
+      },
+      "fresh_validation": false,
+      "full_model_fitted": false,
+      "new_neural_calls": 0,
+      "schema": "sparse-paid-text-joint16-outcome-TRAIN-v1",
+      "screen": {
+        "compute_ratio": 1.054092699832517,
+        "conditional_accuracy_gain": 0.0,
+        "paired_question_accuracy_CI95": [
+          -0.002734375,
+          0.002734375
+        ],
+        "passed": false
+      }
+    }
   }
 }

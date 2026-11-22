@@ -948,7 +948,7 @@ the excluded-question forest control's compute. It is not a complete controller
 comparison. A passing screen would still require full fitting, full-policy
 development evaluation and fresh validation. Training is local; there are no
 cloud calls, development/test reads or full deployable model in this stage.
-The registration is sealed and training is in progress. All576 tests pass,
+The registered training has completed; its negative result is recorded below. All576 tests passed,
 including invalid-state support, checkpoint round-trip, excluded-question
 cost fitting and whole-question fold checks. The selected A/B/C stay unchanged.
 
@@ -1035,6 +1035,36 @@ continuation, conditional second teacher phase, compact prompts/seeds and
 two-continuation limit remain intact. All evidence tokens are charged; retrieval
 CPU timing is reported separately. Matched B receives the same examples if
 promoted. The entire64-question cohort and known50-question union remain the
-screen. Collection is in progress on at most two existing GPUs, with no cloud
-training. All595 tests pass, including cohort exclusion, public-only retrieval,
+screen. Collection completed on at most two existing GPUs, with no cloud
+training. All595 tests passed, including cohort exclusion, public-only retrieval,
 reference isolation, full physical replay and scoped protocol restoration.
+
+The local joint observer completed all three excluded-question folds and failed
+its conditional decision screen:657/2560 correct (25.664%) versus661/2560
+(25.820%) for the retained forest control, at2086.43 versus2006.28 compute
+(3.995% higher). Joint log loss worsens1.12957→1.15234 and mean-four Brier
+0.13144→0.13505. The paired-question accuracy-difference interval is
+[-0.391,+0.039] percentage points. These are conditional TRAIN decisions, not
+full-controller or fresh results. All checkpoints and forecasts are preserved;
+the prepared full fit and development comparison are not run after this failure.
+
+The disjoint-example pilot completed all256 physical calls with zero transport
+errors and restored min0/max2 cloud capacity. Its first guided answer gets29/64
+and its retained second repair28/64 at5715.69 compute, versus5443.32 for the
+retained strong control. It adds zero correct questions beyond the50-question
+prior union, failing the registered novelty screen. Mean retrieval CPU time is
+2.678ms per question, reported separately. No controller is promoted.
+
+## Sparse lexical outcome diagnostic
+
+`lexical_outcome_diagnostic.py` tests paid question/root/current wording plus
+the existing130 numeric features. All1280 science TRAIN questions use three
+whole-question outer folds and three inner folds for vocabulary, scaling and
+regularization selection. No additional neural or cloud calls occur.
+
+The conditional last-step screen matches the control at661/2560 correct but
+uses2114.80 compute versus2006.28 (5.409% more). Its paired-question accuracy
+difference interval is[-0.273,+0.273] percentage points. It fails the required
+two-point gain and no-higher-compute screen; no full fit or DEV comparison is
+run. All597 regression tests pass. Selected A/B/C and fresh validation remain
+unchanged.
