@@ -80,7 +80,7 @@ been used repeatedly for selection; this table is not fresh confirmation.
 | Repair twice | 132 | 51.56% | 1,711.21 |
 | Retry once | 127 | 49.61% | 886.56 |
 | Retry twice | 123 | 48.05% | 1,394.69 |
-| Best A: expanded-data POMDP with terminal Complete action | 150 | 58.59% | 1,057.84 |
+| Best A: nonlinear-observation POMDP with terminal Complete action | 150 | 58.59% | 986.26 |
 | Best B: strong retained-review LLM | 177 | 69.14% | 3,772.86 |
 | Best C: expanded-data POMDP + LLM | 177 | 69.14% | 3,747.96 |
 
@@ -97,7 +97,7 @@ compute relative to B. The requested accuracy gaps are not met.
 Complete is a separate answer-changing action with matched controls. The best
 such simple control, Repair then Complete if invalid, obtains 150/256 (58.59%)
 at 1,232.71 units, using exactly the same retained math A as the new POMDP.
-It matches best A's accuracy; A uses 14.19% less compute. The original five baselines
+It matches best A's accuracy; A uses 19.99% less compute. The original five baselines
 remain unchanged, and all six new fixed/validity controls remain reported.
 The separately reserved 1,024-question test set has not been inferred or graded,
 and its labels have not been used for controller fitting or selection. Earlier
@@ -146,6 +146,48 @@ its original-threshold parity tests reproduce all old dynamics and charges.
 All sixteen quantile candidates have now completed development evaluation.
 They do not improve the retained 150/256 model's accuracy or compute, so the
 previous model remains selected. The full round2 regression passes 502 tests.
+
+The subsequent nonlinear categorical observation study passes its nested TRAIN
+screen. Both shallow forest procedures improve joint loss from 1.15856 to about
+1.1479; the dense procedure reduces mean marginal Brier from 0.13098 to 0.12922.
+The paired uncertainty intervals still include no improvement. All sixteen
+development candidates are retained. The selected forest-observation POMDP
+keeps 150/256 correct and lowers the compute proxy to 986.26, a 6.77% saving
+against the preceding 150/256 model. It still has sixteen hidden states and an
+exact finite Bellman backup. The forest's CPU work is outside the token and
+parameter proxy; this does not establish a wall-clock speedup.
+On all 384 cached science decision nodes, five single-thread CPU timing passes
+measure about 1.890 ms per forest forecast versus 0.074 ms for the preceding
+categorical head. These timings include probability normalization but exclude
+feature construction, the encoder, and Bellman planning.
+
+`science_review_critic.py` evaluates every original TRAIN science root review.
+The final V3 option observer excludes these 256 questions from neural training.
+Whole-question-held calibration improves review-correctness AUC from 0.5478 to
+0.6282 and Brier from 0.2320 to 0.2233. Both the option-only and combined critics
+pass the declared prediction screen; their Brier-difference intervals include
+zero. Their separately fitted hybrid POMDPs use TRAIN-derived review bins and
+charge each observer forward. All 52 development candidates finish, but peak
+at 176/256, below retained C's 177/256. They are not promoted.
+
+The first critic replay stopped on a missing archived old-observer value.
+`development_critic_review_extended.py` preserves that run and supplies all
+seven missing old-observer passes. It reuses the 128 completed new-critic
+passes and imports 56 missing branches from already sealed canonical solver
+receipts or exact retry aliases. No new solver/reviewer call was needed. The
+previous C and every math decision and charge reproduce exactly.
+
+All checked cached first-phase reviews exhausted the 1,024-token reasoning
+cap. A new fixed 64-question TRAIN pilot tests 4,096 thinking tokens with the
+same root prompt, reviewer weights, seeds, and compact repair protocol. It
+allows at most 256 physical calls and two existing-app cloud GPUs. Novelty is
+measured against the prior plain, Complete, retained and late paths plus 400
+answers from six additional completed pilot banks. Its acquisition screen
+requires at least six newly solvable questions and a trajectory cost ratio at
+most 2.5. This relaxed pilot screen is not the final efficiency criterion:
+any promoted C must still cost less than the strongest matched B, which must
+be offered the new protocol too. No fresh test inference or grading is started.
+The full round2 regression passes 515 tests in 34.07 seconds.
 
 `science_proposal_headroom.py` separately tests the finalV3 option scorer on the
 same fixed64 original science training questions used for recent action pilots.

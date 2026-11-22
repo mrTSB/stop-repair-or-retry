@@ -78,21 +78,21 @@
       "dev": {
         "accuracy": 0.5859375,
         "correct": 150,
-        "mean_compute": 1057.8381038049959,
+        "mean_compute": 986.2646549469862,
         "mean_judge_calls": 0.0,
         "mean_judge_tokens": 0.0,
-        "mean_solver_calls": 2.12109375,
-        "mean_solver_tokens": 762.05859375,
-        "mean_total_parameter_compute": 1057.8381038049959,
-        "mean_verifier_calls": 1.7421875,
-        "mean_verifier_token_slots": 507.671875,
-        "mean_verifier_tokens": 507.671875,
+        "mean_solver_calls": 2.0078125,
+        "mean_solver_tokens": 708.56640625,
+        "mean_total_parameter_compute": 986.2646549469862,
+        "mean_verifier_calls": 1.7109375,
+        "mean_verifier_token_slots": 491.109375,
+        "mean_verifier_tokens": 491.109375,
         "n": 256
       },
       "family": "raw20_plus_project256",
       "key": "raw20_plus_project256-2",
-      "model_path": "runs/controller-semantic-followup/round2/development-auxiliary768-completion-v1/raw20_plus_project256-2.pkl",
-      "model_sha256": "edffc13e6df8821bb3f6ff8783d60131680181fdee23212185af2147f8922baf",
+      "model_path": "runs/controller-semantic-followup/round2/development-nonlinear-completion-v1/raw20_plus_project256-2.pkl",
+      "model_sha256": "852dccac4ddbc7dc9ebf939c3a6cb114f69d7b1cb70a565f4fa42616fae54b27",
       "policy_module": "completion_subject_pomdp",
       "science_settings": {
         "penalty": 0.02
@@ -211,7 +211,8 @@
       "development-completion-B-v1": "d98763660c588326b10897eec2ede913c4f0baeb1e6be0f66aa2cd20e7c0c2ff",
       "development-expanded-C-canonical-cost-v1": "317c49f79b73bdf23396181a9078b7009b7c1302d795e2b7664bf8b25bb7eab0",
       "development-regularized-completion-v1": "94ba47f196e60c49ce01ee8a2234db85d4f88cc4cdb75f7edb14a9f48495aba0",
-      "development-auxiliary768-completion-v1": "d27ff6f9e109406f88db2f1a654389cda6c1362fe444360db0954f9f2e694e00"
+      "development-auxiliary768-completion-v1": "d27ff6f9e109406f88db2f1a654389cda6c1362fe444360db0954f9f2e694e00",
+      "A": "f7823857eae47c406195ecbaa9154eae590d23ff906433b7b38b4c1805024705"
     },
     "matched_complete_controls": {
       "Complete": {
@@ -5804,7 +5805,7 @@
     "development_or_test_read": false,
     "summary_sha256": "8438b29f6c5a17ecfa9c20b6a6f69ffaf58f47fec89ec9608d10f7c121b154b1"
   },
-  "tests_scope": "502 tests passed; complete round2 regression, 34.348 seconds; no new fresh inference or grading",
+  "tests_scope": "515 full round2 tests passed in34.066seconds; no new fresh inference or grading",
   "fixed_half_completion_A": {
     "summary_sha256": "51ead7b35646f51bc75b7ac622b00eaaec58f91994ab80e1e82043925d428940",
     "fresh_validation": false,
@@ -6635,5 +6636,369 @@
     "registration_sha256": "7d19c18b4fa6357d9c0bf7c85cd4880a5b7dfc9659247415ac2d42e6026ffefa",
     "selected_previous_A_retained": true,
     "training_fit_registration_sha256": "46ebe4a39eeb5f16801504121fb4063928ad0b773124ff8be7bd61ec61eed977"
+  },
+  "nonlinear_completion_diagnostic": {
+    "cloud_calls": 0,
+    "controller_accuracy_claim": false,
+    "development_or_test_read": false,
+    "new_neural_calls": 0,
+    "paired_CI_scope": "Descriptive, fitted folds fixed",
+    "questions": 768,
+    "reports": {
+      "raw20_control": {
+        "comparisons": {
+          "Complete_Brier": {
+            "delta": -0.0008906125698970179,
+            "nonlinear": 0.18493891030105455,
+            "paired_question_CI95": [
+              -0.0035216244624823472,
+              0.0018632990573824737
+            ],
+            "retained_dense_categorical": 0.18582952287095159
+          },
+          "current_Brier": {
+            "delta": -0.0013798407999108672,
+            "nonlinear": 0.10541809643187294,
+            "paired_question_CI95": [
+              -0.004037876016521292,
+              0.0012821971372639401
+            ],
+            "retained_dense_categorical": 0.10679793723178382
+          },
+          "joint_Brier": {
+            "delta": -0.0012815544409979674,
+            "nonlinear": 0.5099882901668226,
+            "paired_question_CI95": [
+              -0.005519677610291519,
+              0.003249756332583184
+            ],
+            "retained_dense_categorical": 0.5112698446078205
+          },
+          "joint_log_loss": {
+            "delta": -0.010621289541650836,
+            "nonlinear": 1.147940502633649,
+            "paired_question_CI95": [
+              -0.025954978098731582,
+              0.0026047533033455067
+            ],
+            "retained_dense_categorical": 1.1585617921752995
+          },
+          "mean_four_marginal_Brier": {
+            "delta": -0.00089260431976037,
+            "nonlinear": 0.13008522774949866,
+            "paired_question_CI95": [
+              -0.0029674924930608295,
+              0.0012349816869834452
+            ],
+            "retained_dense_categorical": 0.13097783206925903
+          },
+          "repair_Brier": {
+            "delta": -0.0006417324987248144,
+            "nonlinear": 0.13307014511001758,
+            "paired_question_CI95": [
+              -0.0031445473822782084,
+              0.002009660798555591
+            ],
+            "retained_dense_categorical": 0.13371187760874237
+          },
+          "retry_Brier": {
+            "delta": -0.0006582314105087796,
+            "nonlinear": 0.09691375915504957,
+            "paired_question_CI95": [
+              -0.002397368612532061,
+              0.001136900521654111
+            ],
+            "retained_dense_categorical": 0.09757199056555838
+          }
+        },
+        "screen_passed": true
+      },
+      "raw20_plus_project256": {
+        "comparisons": {
+          "Complete_Brier": {
+            "delta": -0.002122206686656735,
+            "nonlinear": 0.18370731618429487,
+            "paired_question_CI95": [
+              -0.004457848243867273,
+              0.00038837574455954975
+            ],
+            "retained_dense_categorical": 0.18582952287095159
+          },
+          "current_Brier": {
+            "delta": -0.0024706118998698403,
+            "nonlinear": 0.10432732533191397,
+            "paired_question_CI95": [
+              -0.00466528886100647,
+              -0.00015923475205558297
+            ],
+            "retained_dense_categorical": 0.10679793723178382
+          },
+          "joint_Brier": {
+            "delta": -0.002766146076691804,
+            "nonlinear": 0.5085036985311286,
+            "paired_question_CI95": [
+              -0.006521257271705349,
+              0.0011930699921308165
+            ],
+            "retained_dense_categorical": 0.5112698446078205
+          },
+          "joint_log_loss": {
+            "delta": -0.010718595028082402,
+            "nonlinear": 1.1478431971472172,
+            "paired_question_CI95": [
+              -0.024439808596076324,
+              0.0013467352655453836
+            ],
+            "retained_dense_categorical": 1.1585617921752995
+          },
+          "mean_four_marginal_Brier": {
+            "delta": -0.0017564864601306441,
+            "nonlinear": 0.12922134560912837,
+            "paired_question_CI95": [
+              -0.0034745979784844925,
+              3.6266190540625326e-05
+            ],
+            "retained_dense_categorical": 0.13097783206925903
+          },
+          "repair_Brier": {
+            "delta": -0.0015481497336929581,
+            "nonlinear": 0.13216372787504943,
+            "paired_question_CI95": [
+              -0.0035982513884128473,
+              0.0006641341493958175
+            ],
+            "retained_dense_categorical": 0.13371187760874237
+          },
+          "retry_Brier": {
+            "delta": -0.0008849775203030459,
+            "nonlinear": 0.09668701304525532,
+            "paired_question_CI95": [
+              -0.0021564870548150426,
+              0.00044121802208752544
+            ],
+            "retained_dense_categorical": 0.09757199056555838
+          }
+        },
+        "screen_passed": true
+      }
+    },
+    "schema": "expanded768-nonlinear-joint-belief-TRAIN-v1"
+  },
+  "nonlinear_completion_development": {
+    "registration_sha256": "fbe33f4cf959bbb5d7fd9499aea2350540b981ca52dff2abb4d1d87524b6f185",
+    "model_sha256": "852dccac4ddbc7dc9ebf939c3a6cb114f69d7b1cb70a565f4fa42616fae54b27",
+    "correct": 150,
+    "questions": 256,
+    "mean_compute": 986.2646549469862,
+    "compute_reduction_vs_previous_150": 0.06766011604286437,
+    "all_candidates": [
+      {
+        "key": "raw20_control-0",
+        "correct": 147,
+        "compute": 1405.479426459026
+      },
+      {
+        "key": "raw20_control-1",
+        "correct": 148,
+        "compute": 1128.137240980709
+      },
+      {
+        "key": "raw20_control-2",
+        "correct": 147,
+        "compute": 873.9299510445389
+      },
+      {
+        "key": "raw20_control-3",
+        "correct": 144,
+        "compute": 706.4029158021187
+      },
+      {
+        "key": "raw20_control-4",
+        "correct": 144,
+        "compute": 690.5211711367465
+      },
+      {
+        "key": "raw20_control-5",
+        "correct": 144,
+        "compute": 690.5211711367465
+      },
+      {
+        "key": "raw20_control-6",
+        "correct": 144,
+        "compute": 690.5211711367465
+      },
+      {
+        "key": "raw20_control-7",
+        "correct": 149,
+        "compute": 1007.77413860358
+      },
+      {
+        "key": "raw20_plus_project256-0",
+        "correct": 148,
+        "compute": 1361.063361368118
+      },
+      {
+        "key": "raw20_plus_project256-1",
+        "correct": 149,
+        "compute": 1139.114345360361
+      },
+      {
+        "key": "raw20_plus_project256-2",
+        "correct": 150,
+        "compute": 986.2646549469862
+      },
+      {
+        "key": "raw20_plus_project256-3",
+        "correct": 145,
+        "compute": 727.1593903369437
+      },
+      {
+        "key": "raw20_plus_project256-4",
+        "correct": 144,
+        "compute": 690.5211711367465
+      },
+      {
+        "key": "raw20_plus_project256-5",
+        "correct": 144,
+        "compute": 688.6249332726688
+      },
+      {
+        "key": "raw20_plus_project256-6",
+        "correct": 144,
+        "compute": 677.0199575445135
+      },
+      {
+        "key": "raw20_plus_project256-7",
+        "correct": 150,
+        "compute": 986.2646549469862
+      }
+    ],
+    "fresh_validation": false,
+    "head_cpu_timing": {
+      "clock": "process_time_ns",
+      "cloud_calls": 0,
+      "new_neural_calls": 0,
+      "observations": 384,
+      "repeats": 5,
+      "schema": "nonlinear-A-CPU-forecast-timing-v1",
+      "scope": "Forecast probabilities and16-state normalization only; excludes features, neural forward, Bellman backup. Not total latency.",
+      "test_used": false,
+      "threads": 1,
+      "timings": {
+        "previous_categorical": {
+          "five_repeat_mean_ms": [
+            0.07371875,
+            0.0733984375,
+            0.073359375,
+            0.07405468750000001,
+            0.07304947916666667
+          ],
+          "mean_head_cpu_ms": 0.07351614583333334,
+          "model_sha256": "edffc13e6df8821bb3f6ff8783d60131680181fdee23212185af2147f8922baf"
+        },
+        "selected_forest": {
+          "five_repeat_mean_ms": [
+            1.8840755208333333,
+            1.8802994791666665,
+            1.8821119791666667,
+            1.8853125000000002,
+            1.9172265625
+          ],
+          "mean_head_cpu_ms": 1.8898052083333332,
+          "model_sha256": "852dccac4ddbc7dc9ebf939c3a6cb114f69d7b1cb70a565f4fa42616fae54b27"
+        }
+      },
+      "warmup": 10
+    }
+  },
+  "review_critic_diagnostic": {
+    "combined_cost": "Runtime must charge both old and option observer forwards for each review",
+    "complete_sha256": "09c19b75be45432b626bdcd6f17b34198b042ca359a2bad82875e8ce8ed6d705",
+    "controller_accuracy_claim": false,
+    "development_or_test_read": false,
+    "fresh_validation": false,
+    "mean_new_observer_compute": 40.17107639261226,
+    "new_cloud_calls": 0,
+    "new_solver_answer_availability": false,
+    "questions": 256,
+    "reports": {
+      "combined": {
+        "Brier_delta_vs_old": -0.009001324785634356,
+        "OOF_AUC": 0.6258908139915005,
+        "OOF_Brier": 0.2229574261249743,
+        "paired_Brier_delta_CI95": [
+          -0.02035128168171886,
+          0.0023379105722905478
+        ],
+        "screen_passed": true,
+        "subject_Brier": {
+          "chemistry": 0.22860984117344996,
+          "physics": 0.21730501107649866
+        }
+      },
+      "old": {
+        "Brier_delta_vs_old": 0.0,
+        "OOF_AUC": 0.5478260869565218,
+        "OOF_Brier": 0.23195875091060866,
+        "paired_Brier_delta_CI95": [
+          0.0,
+          0.0
+        ],
+        "screen_passed": false,
+        "subject_Brier": {
+          "chemistry": 0.23911607238454896,
+          "physics": 0.2248014294366683
+        }
+      },
+      "option": {
+        "Brier_delta_vs_old": -0.008697300438847986,
+        "OOF_AUC": 0.6282445243543643,
+        "OOF_Brier": 0.22326145047176066,
+        "paired_Brier_delta_CI95": [
+          -0.021051073562009276,
+          0.003476618131012883
+        ],
+        "screen_passed": true,
+        "subject_Brier": {
+          "chemistry": 0.2292122009781107,
+          "physics": 0.21731069996541064
+        }
+      }
+    },
+    "review_correct": 95,
+    "schema": "science-root-review-critic-TRAIN-v1"
+  },
+  "review_critic_development": {
+    "registration_sha256": "6961fb7a79c3499494940ef67b8e3b94a611b78cbfda2c0756496d53a3350d8b",
+    "candidate_count": 52,
+    "best_new_correct": 176,
+    "retained_C_correct": 177,
+    "questions": 256,
+    "new_review_observer_forwards": 128,
+    "additional_old_observer_forwards": 7,
+    "old_missing_solver_branches_imported": 56,
+    "new_cloud_calls": 0,
+    "earlier_failed_missing_cache_replay_preserved": true,
+    "all_math_and_previous_C_exactly_reproduced": true,
+    "fresh_validation": false
+  },
+  "long4096_review_pilot": {
+    "status": "collecting",
+    "questions": 64,
+    "maximum_physical_calls": 256,
+    "existing_app": "srr-followup-solver-20261120",
+    "maximum_cloud_gpus": 2,
+    "cloud_training": false,
+    "maximum_solver_continuations": 2,
+    "extra_prior_control_answers": 400,
+    "new_data_selection": false,
+    "training_only": true,
+    "fresh_validation": false,
+    "screen": {
+      "new_correct_questions_beyond_registered_prior_union": 6,
+      "maximum_acquisition_trajectory_cost_ratio": 2.5
+    },
+    "note": "Acquisition screen only. Final C must still be cheaper than strongest matched B.",
+    "registration_sha256": "d85816cbb93686429ae30c70128070c70a4616f0ca9d8f449e6c03f86653c173"
   }
 }
