@@ -1317,3 +1317,10 @@ lecture sources. Other prompt differences include changed TF-IDF relevance
 scores, so not every changed prompt represents new factual content. The same
 six-novel-question/1.25-cost screen and strongest matched-B requirement remain.
 The full regression suite passes629 tests in40.519 seconds.
+
+The math paired collection is complete:512 questions,3,584 physical/logical
+responses, zero transport errors,573,320 input tokens and374,202 output tokens.
+It restores min0/max2 capacity. All1,536 old-encoder observations are separately
+registered for local CPU extraction. The broader-corpus reviewer pilot starts
+only after this release; no cloud training is performed. These acquisition
+counts are offline costs, not controller accuracy or per-question inference cost.

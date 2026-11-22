@@ -10030,7 +10030,7 @@
     "status": "completed_no_screen_passed"
   },
   "auxiliary_math512": {
-    "status": "registered_collecting",
+    "status": "paired_collection_complete_local_features_registered",
     "reservation_sha256": "8027ea5c8153a1c749e8033eaca793f47ff24d55220b03103ca37095c68a9744",
     "questions": 512,
     "maximum_physical_calls": 3584,
@@ -10045,7 +10045,22 @@
     "collection_registration": "43b2e752a9ad614cd8c34ba21ec6fd40dac977d58cb299bf31399dbd4faec396",
     "session": 41842,
     "log": "/private/tmp/srr-math-pair-collect.log",
-    "gated_fit_and_development": "prepared_not_run"
+    "gated_fit_and_development": "prepared_not_run",
+    "coverage": {
+      "expected_cells": 3584,
+      "logical_actions": 3584,
+      "neural_calls": 0,
+      "physical_attempts": 3584,
+      "physical_calls": 3584,
+      "questions": 512,
+      "review_calls": 0
+    },
+    "acquisition_tokens": {
+      "input_tokens": 573320,
+      "output_tokens": 374202
+    },
+    "transport_error_records": 0,
+    "feature_registration": "33f5fe517f42a787a4419f8e1d46264b992453e03a526a9362945edcbdc42ae2"
   },
   "broad_textbook_corpus": {
     "status": "complete",
@@ -10061,7 +10076,7 @@
     "model_calls": 0
   },
   "broad_evidence_review_pilot_v4": {
-    "status": "registered_waiting_for_math_collection",
+    "status": "registered_collecting",
     "registration": "ecfb8916627ac0d4bdf0c7aa49563f485c596f3d7267d8ef9c3f26a6a8d77dd6",
     "reused_physical_calls": 64,
     "maximum_new_physical_calls": 256,
@@ -10076,6 +10091,8 @@
       "model_calls": 0
     },
     "corpus_passages_sha256": "bf00b4f5a103ee869a85c7e803ec2fdb56fde336721d9118bf38b2d4e0c02c46",
-    "controller_promoted": false
+    "controller_promoted": false,
+    "session": 41920,
+    "log": "/private/tmp/srr-broad-review-collect.log"
   }
 }
