@@ -80,7 +80,7 @@ been used repeatedly for selection; this table is not fresh confirmation.
 | Repair twice | 132 | 51.56% | 1,711.21 |
 | Retry once | 127 | 49.61% | 886.56 |
 | Retry twice | 123 | 48.05% | 1,394.69 |
-| Best A: clustered-observation POMDP with terminal Complete action | 151 | 58.98% | 1,074.87 |
+| Best A: clustered-observation POMDP with posterior blend and terminal Complete | 152 | 59.38% | 1,048.61 |
 | Best B: strong retained-review LLM | 177 | 69.14% | 3,772.86 |
 | Best C: expanded-data POMDP + LLM | 177 | 69.14% | 3,747.96 |
 
@@ -89,7 +89,7 @@ active parameters, normalized to 3.09 billion parameters. Both physical phases
 of a bounded review are billed. This is not measured FLOPs or wall-clock time;
 the full-35B reviewer sensitivity is also retained in the receipts.
 
-A is 7.42 percentage points above the strongest original baseline, B is 17.58
+A is 7.81 percentage points above the strongest original baseline, B is 17.58
 points above it, and C is 0.00 points above the stronger of A/B. A needs at least
 158 correct answers and C needs at least 203 on this panel. C saves only 0.66%
 compute relative to B. The requested accuracy gaps are not met.
@@ -97,7 +97,7 @@ compute relative to B. The requested accuracy gaps are not met.
 Complete is a separate answer-changing action with matched controls. The best
 such simple control, Repair then Complete if invalid, obtains 150/256 (58.59%)
 at 1,232.71 units, using exactly the same retained math A as the new POMDP.
-Best A gets one more question correct and uses 12.80% less compute. The cheaper
+Best A gets two more questions correct and uses 14.93% less compute. The cheaper
 previous A remains at 150/256 and 986.26 units. The original five baselines
 remain unchanged, and all six new fixed/validity controls remain reported.
 The separately reserved 1,024-question test set has not been inferred or graded,
@@ -763,3 +763,33 @@ The latest full regression passes 481 tests. No fresh test inference or grading
 has occurred. A capacity audit used reserved IDs and hashed public-source
 stems solely to exclude overlapping training questions; it did not decode
 test references or use test outcomes.
+
+
+## Continuous belief and split-optimized forest follow-up
+
+The separately registered posterior-blend comparison uses the same clustered
+TRAIN observation model and exact finite-observation future-value backup. At
+an observed child, it mixes the finite-filter belief with the full sixteen-state
+forecast of the paid root/child history. This is an approximate belief estimator,
+not an exact continuous-emission Bayesian filter. The zero-weight control
+reproduces every previous development decision and charge exactly. All math
+outputs and all original/matched controls also reproduce exactly.
+
+Of 32 registered development candidates, the dense model with posterior weight
+0.5 and science penalty 0.02 reaches 152/256 at 1,048.61 compute units. It improves
+the previous 151-answer A while using 2.44% less compute. The cheaper 150-answer
+A remains retained. No new neural or cloud inference was needed. This reused
+panel remains development data; A still needs six additional correct answers
+to pass its required gap here, and fresh validation has not started.
+
+A separate split-optimized RandomForest comparison fails its TRAIN screen.
+Nested joint log loss worsens from 1.14784 to 1.15678, although mean-four marginal
+Brier improves slightly from 0.129221 to 0.128970. Its registered requirement
+was improvement in both, so no development promotion follows. The complete
+negative result and whole-question fold receipts are retained.
+
+The matching continuous-A hybrid comparison is also complete. It retains the
+same sixteen-to-eight state transfer, LLM reviewer, reviewed-mode dynamics,
+math decisions, and all charged observation paths. Its 26 development candidates
+peak at 176/256, so the previous 177/256 C remains selected. The improved A does
+not establish an improved C. All 551 experiment regression tests pass.

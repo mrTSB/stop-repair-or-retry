@@ -11,6 +11,7 @@ from threadpoolctl import threadpool_limits
 import development_nonlinear_completion as parent
 import fit_expanded1280_completion as trained
 import development_clustered_completion as retained_cluster
+import development_continuous_completion as retained_continuous
 
 io, original, routed, runtime, nested = parent.io, parent.original, parent.routed, parent.runtime, parent.nested
 previous = parent.previous
@@ -44,10 +45,11 @@ def inputs(args):
         models[family] = model
     old = io.read(args.previous/'summary.json')
     extra_spec = io.read(args.retain_a/'registration.json'); extra_done = io.read(args.retain_a/'complete.json')
-    if (extra_spec['schema'] != retained_cluster.SCHEMA or extra_done['schema'] != retained_cluster.SCHEMA
+    if (extra_spec['schema'] not in (retained_cluster.SCHEMA, retained_continuous.SCHEMA)
+            or extra_done['schema'] != extra_spec['schema']
             or extra_done['registration_sha256'] != io.sha(args.retain_a/'registration.json')
             or extra_spec['dev_questions_sha256'] != spec['dev_questions_sha256']):
-        raise ValueError('Require the stronger completed clustered A on the identical panel')
+        raise ValueError('Require the stronger completed clustered or continuous A on the identical panel')
     io.verify(extra_spec['source_files']); io.verify(extra_spec['input_evidence'])
     io.verify({str(args.retain_a/n): h for n, h in extra_done['artifacts'].items()})
     extra = io.read(args.retain_a/'summary.json')

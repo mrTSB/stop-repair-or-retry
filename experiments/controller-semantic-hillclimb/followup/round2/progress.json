@@ -76,26 +76,26 @@
     },
     "A": {
       "dev": {
-        "accuracy": 0.58984375,
-        "correct": 151,
-        "mean_compute": 1074.8716860203933,
+        "accuracy": 0.59375,
+        "correct": 152,
+        "mean_compute": 1048.6125840786458,
         "mean_judge_calls": 0.0,
         "mean_judge_tokens": 0.0,
-        "mean_solver_calls": 2.125,
-        "mean_solver_tokens": 774.66015625,
-        "mean_total_parameter_compute": 1074.8716860203933,
+        "mean_solver_calls": 2.08203125,
+        "mean_solver_tokens": 754.375,
+        "mean_total_parameter_compute": 1048.6125840786458,
         "mean_verifier_calls": 1.75390625,
         "mean_verifier_token_slots": 512.80078125,
         "mean_verifier_tokens": 512.80078125,
         "n": 256
       },
-      "family": "raw20_plus_project256",
-      "key": "raw20_plus_project256-2",
-      "model_path": "runs/controller-semantic-followup/round2/development-clustered-completion-v1/raw20_plus_project256-2.pkl",
-      "model_sha256": "c21eace4998cf5ae2ed86316933233f26b60acb9c797e20dab70d207506bfb7a",
-      "policy_module": "clustered_completion_pomdp",
+      "key": "raw20_plus_project256-w0.5-2",
+      "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-continuous-completion-v1/raw20_plus_project256-w0.5-2.pkl",
+      "model_sha256": "637e41e0f138ac8efca95c887621db4e15060566cd03eb7a79eef6a87c46f7fe",
+      "policy_module": "continuous_completion_pomdp",
       "science_settings": {
-        "penalty": 0.02
+        "penalty": 0.02,
+        "posterior_weight": 0.5
       },
       "settings": {}
     },
@@ -193,7 +193,7 @@
       "smoothing": 32.0
     },
     "accuracy_gaps_percentage_points": {
-      "A_minus_best_original_baseline": 7.421875,
+      "A_minus_best_original_baseline": 7.8125,
       "B_minus_best_original_baseline": 17.578125,
       "C_minus_max_A_B": 0.0
     },
@@ -212,7 +212,7 @@
       "development-expanded-C-canonical-cost-v1": "317c49f79b73bdf23396181a9078b7009b7c1302d795e2b7664bf8b25bb7eab0",
       "development-regularized-completion-v1": "94ba47f196e60c49ce01ee8a2234db85d4f88cc4cdb75f7edb14a9f48495aba0",
       "development-auxiliary768-completion-v1": "d27ff6f9e109406f88db2f1a654389cda6c1362fe444360db0954f9f2e694e00",
-      "A": "619898cb4b5c1f995fff8a4166c27345f0ab938e699e6659db307f0035b61c00",
+      "A": "8da4cfb7d3ecb4765b84ca2a60d3682ca48666d021447a1a07b444af79e55e7a",
       "development-nonlinear-completion-v1": "f7823857eae47c406195ecbaa9154eae590d23ff906433b7b38b4c1805024705"
     },
     "matched_complete_controls": {
@@ -578,7 +578,7 @@
       }
     },
     "matched_control_math_rule": "Identical retained math A for all six added controls and all new A candidates",
-    "A_above_highest_baseline": 0.07421875
+    "A_above_highest_baseline": 0.078125
   },
   "test_inference_started": false,
   "status": "Targets not met; second disjoint paired-training block collecting",
@@ -7349,9 +7349,9 @@
     "promoted_to_development": false
   },
   "latest_regression": {
-    "tests": 545,
-    "seconds": 35.388,
-    "passed": true
+    "tests": 551,
+    "passed": true,
+    "seconds": 35.249
   },
   "second_auxiliary_paired_block": {
     "status": "collecting",
@@ -7449,5 +7449,114 @@
     "old_cheaper_A_correct": 150,
     "old_cheaper_A_compute": 986.2646549469862,
     "development_candidates": 16
+  },
+  "continuous_completion_study": {
+    "status": "complete",
+    "registration_sha256": "9e19474d4354fd761244231525d7a7750da4cf3e9b9445a0e33b49201bb5b4ea",
+    "development_candidates": 32,
+    "new_best_correct": 152,
+    "new_best_compute": 1048.6125840786458,
+    "new_neural_calls": 0,
+    "new_cloud_calls": 0,
+    "test_used": false,
+    "belief_estimator": "Half finite filter and half paid-history posterior; approximate, not exact Bayesian filtering",
+    "finite_future_Bellman_unchanged": true,
+    "zero_weight_exact_reproduction": true,
+    "math_unchanged": true
+  },
+  "split_forest_diagnostic": {
+    "cloud_calls": 0,
+    "controller_accuracy_claim": false,
+    "development_or_test_read": false,
+    "new_neural_calls": 0,
+    "paired_CI_scope": "Descriptive, fitted folds fixed",
+    "questions": 768,
+    "reports": {
+      "raw20_plus_project256": {
+        "comparisons": {
+          "Complete_Brier": {
+            "delta": -0.0003074576200717968,
+            "paired_question_CI95": [
+              -0.002324004141557594,
+              0.001706703837829614
+            ],
+            "retained_dense_forest": 0.18370731618429487,
+            "split_forest": 0.18339985856422303
+          },
+          "current_Brier": {
+            "delta": -0.00048244874272995253,
+            "paired_question_CI95": [
+              -0.0024570466004810326,
+              0.0014027549409305743
+            ],
+            "retained_dense_forest": 0.10432732533191397,
+            "split_forest": 0.10384487658918401
+          },
+          "joint_Brier": {
+            "delta": 0.0008044573892359825,
+            "paired_question_CI95": [
+              -0.002591711115888042,
+              0.004051232079496694
+            ],
+            "retained_dense_forest": 0.5085036985311286,
+            "split_forest": 0.5093081559203648
+          },
+          "joint_log_loss": {
+            "delta": 0.008941535041008536,
+            "paired_question_CI95": [
+              0.0012651092223136433,
+              0.01709465366353693
+            ],
+            "retained_dense_forest": 1.1478431971472172,
+            "split_forest": 1.1567847321882259
+          },
+          "mean_four_marginal_Brier": {
+            "delta": -0.00025120179625533944,
+            "paired_question_CI95": [
+              -0.0016820664348882336,
+              0.0011929820096409302
+            ],
+            "retained_dense_forest": 0.12922134560912837,
+            "split_forest": 0.12897014381287306
+          },
+          "repair_Brier": {
+            "delta": -0.00014972304320650222,
+            "paired_question_CI95": [
+              -0.0019413579358680646,
+              0.0015733545577909906
+            ],
+            "retained_dense_forest": 0.13216372787504943,
+            "split_forest": 0.13201400483184292
+          },
+          "retry_Brier": {
+            "delta": -6.517777901310645e-05,
+            "paired_question_CI95": [
+              -0.0012118642968854756,
+              0.0010979789117700042
+            ],
+            "retained_dense_forest": 0.09668701304525532,
+            "split_forest": 0.09662183526624221
+          }
+        },
+        "screen_passed": false
+      }
+    },
+    "schema": "expanded768-split_forest-joint-belief-TRAIN-v1",
+    "registration_sha256": "6c4a035e9d852fc39bae124ad218ad2e18282c0ddca96ed4f3065f0ced7eaf2c",
+    "promoted_to_development": false
+  },
+  "continuous_completion_hybrid_study": {
+    "status": "complete",
+    "registration_sha256": "4e90c9b7f14bdf9933d454014a66cf6f5ec63ed398743d897a7ba8fd14777fe9",
+    "development_candidates": 26,
+    "new_best_correct": 176,
+    "retained_C_correct": 177,
+    "retained_C_compute": 3747.9591164206718,
+    "strongest_matched_B_retained": true,
+    "math_exactly_preserved": true,
+    "new_neural_calls": 0,
+    "new_cloud_calls": 0,
+    "test_used": false,
+    "promoted": false
   }
 }
