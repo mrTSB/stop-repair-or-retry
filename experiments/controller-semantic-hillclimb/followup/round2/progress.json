@@ -9712,7 +9712,7 @@
     }
   },
   "active_textbook_review_pilot": {
-    "status": "registered_collecting",
+    "status": "completed_failed_screen",
     "registration": "327179f3844a4a48c2ed58ccf32823478fcae867b52af5f614a111234ad78e79",
     "questions": 64,
     "maximum_physical_calls": 256,
@@ -9724,10 +9724,77 @@
     "known_prior_union": 50,
     "required_novel_questions": 6,
     "fresh_validation": false,
-    "promoted": false
+    "promoted": false,
+    "screen": {
+      "checks": {
+        "at_least6_novel_questions": false,
+        "second_trajectory_compute_at_most1p25": true
+      },
+      "controller_promoted": false,
+      "criteria": {
+        "mean_second_trajectory_compute_over_rootstrong_retained_at_most": 1.25,
+        "novel_questions_beyond_registered_known_union_at_least": 6,
+        "scope": "TRAIN action headroom only; Active local textbook retrieval is an explicitly new review capability, available to matched B too"
+      },
+      "hindsight_availability_only": true,
+      "passed": false,
+      "ratio_to_rootstrong_retained": 1.0262784598934853,
+      "second_trajectory_mean_compute": 5586.362257281554
+    },
+    "novel_questions": 0,
+    "active_retrieval": {
+      "included_in_parameter_token_proxy": false,
+      "max_question_replay_cpu_ms": 3.1105333007872105,
+      "mean_replay_cpu_ms": 0.5106434295157669,
+      "passages": 3,
+      "queries": 47,
+      "questions_with_passages": 1,
+      "questions_with_queries": 45,
+      "repetitions_per_question": 10
+    },
+    "methods": {
+      "Active textbook first guided": {
+        "accuracy": 0.34375,
+        "correct": 22,
+        "correct_review_wrong_compact": 0,
+        "mean_compute": 4785.553195792881,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 2.0,
+        "mean_review_input_tokens": 2191.84375,
+        "mean_review_output_tokens": 1244.171875,
+        "mean_solver_calls": 2.0,
+        "mean_solver_input_tokens": 965.234375,
+        "mean_solver_output_tokens": 154.59375,
+        "mean_total_parameter_compute": 40368.88652912621,
+        "n": 64,
+        "review_correct": 18,
+        "wrong_review_correct_compact": 4
+      },
+      "Active textbook retained second repair": {
+        "accuracy": 0.359375,
+        "correct": 23,
+        "correct_review_wrong_compact": 0,
+        "mean_compute": 5586.362257281554,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 2.0,
+        "mean_review_input_tokens": 2191.84375,
+        "mean_review_output_tokens": 1244.171875,
+        "mean_solver_calls": 3.0,
+        "mean_solver_input_tokens": 1525.578125,
+        "mean_solver_output_tokens": 212.875,
+        "mean_total_parameter_compute": 41169.69559061489,
+        "n": 64,
+        "review_correct": 18,
+        "wrong_review_correct_compact": 5
+      }
+    },
+    "placeholder_queries": {
+      "query": 21,
+      "...": 24
+    }
   },
   "difficulty_completion_diagnostic": {
-    "status": "registered_running_local_CPU",
+    "status": "completed_no_screen_passed",
     "registration": "e5ffde45261a3a5b85d72e585cadb61c12e276728dc220d75c2ce380e63cfa48",
     "training_questions": 1280,
     "common_held_questions": 768,
@@ -9741,6 +9808,80 @@
     "screen": "At least2pp higher accuracy and no higher compute",
     "cloud_calls": 0,
     "new_neural_calls": 0,
+    "fresh_validation": false,
+    "promoted": false,
+    "summary": {
+      "cloud_calls": 0,
+      "common_questions": 768,
+      "control_metrics": {
+        "expanded1280_dense": {
+          "accuracy": 0.2552083333333333,
+          "correct": 196,
+          "mean_compute": 1260.428106758829,
+          "n": 768
+        },
+        "expanded1280_raw": {
+          "accuracy": 0.2526041666666667,
+          "correct": 194,
+          "mean_compute": 1234.61074305029,
+          "n": 768
+        },
+        "retained768_dense": {
+          "accuracy": 0.2513020833333333,
+          "correct": 193,
+          "mean_compute": 1586.2649173062518,
+          "n": 768
+        }
+      },
+      "development_or_test_read": false,
+      "fresh_validation": false,
+      "new_neural_calls": 0,
+      "reports": {
+        "raw20_control": {
+          "accuracy_delta": 0.0026041666666666665,
+          "accuracy_delta_CI95": [
+            -0.01171875,
+            0.016927083333333332
+          ],
+          "compute_delta": 62.709959907696195,
+          "metrics": {
+            "accuracy": 0.2578125,
+            "correct": 198,
+            "mean_compute": 1323.1380666665252,
+            "n": 768
+          },
+          "screen_passed": false
+        },
+        "raw20_plus_project256": {
+          "accuracy_delta": 0.006510416666666667,
+          "accuracy_delta_CI95": [
+            -0.006510416666666667,
+            0.01953125
+          ],
+          "compute_delta": 117.29551160525385,
+          "metrics": {
+            "accuracy": 0.26171875,
+            "correct": 201,
+            "mean_compute": 1377.7236183640828,
+            "n": 768
+          },
+          "screen_passed": false
+        }
+      },
+      "schema": "persistent-difficulty-Complete32-whole-policy-TRAIN-v1",
+      "strongest_control": "expanded1280_dense"
+    }
+  },
+  "active_textbook_review_pilot_v2": {
+    "status": "registered_collecting",
+    "registration": "96d07e809dbe79a0c0a709b4788b934449e8b8b9387db2295ff946ac15f47e82",
+    "questions": 64,
+    "maximum_physical_calls": 256,
+    "maximum_cloud_gpus": 2,
+    "cloud_training": false,
+    "change": "Prefilled query, placeholder rejection, explicit bounded public-question fallback",
+    "first_pilot_preserved_and_in_known_union": true,
+    "matched_B_same_retrieval_required": true,
     "fresh_validation": false,
     "promoted": false
   }

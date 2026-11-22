@@ -1157,7 +1157,7 @@ promoted. The unchanged screen requires at least six newly correct questions
 beyond all prior50 available solves and at most1.25 times the retained strong
 trajectory cost. This is a headroom pilot, not a controller or fresh result.
 
-The pilot is registered and collecting up to256 physical calls on at most two
+The pilot completed256 physical calls on at most two
 existing-app cloud GPUs, with no cloud training. The frozen corpus cannot be
 rebuilt implicitly. Tests cover bounded queries, immutable indexes, paid-only
 inputs, original compact payloads, all256 physical receipts and tamper rejection.
@@ -1181,5 +1181,30 @@ Fitting uses1280 science TRAIN questions; all methods are compared on the same
 768-question common held cohort. The comparator is the strongest accuracy
 result among all three sealed prior whole-policy controls. Promotion requires
 at least two points more accuracy and no higher compute. The experiment is
-running on local CPU, with no new neural/cloud calls or DEV/TEST reads. All613
+completed on local CPU, with no new neural/cloud calls or DEV/TEST reads. All613
 regression tests pass; no full model or new controller result is claimed.
+
+The persistent-difficulty screen fails for both feature families. Raw features
+obtain198/768 at1323.14 compute and dense features201/768 at1377.72, versus the
+strongest previous control's196/768 at1260.43. The best gain is0.651 percentage
+points with9.306% more compute; its paired accuracy-difference interval is
+[-0.651,+1.953] points. Neither meets the two-point/no-higher-compute screen.
+No full fit or development selection follows this negative result.
+
+The first active-retrieval pilot fails:22/64 after one guided answer and23/64
+after two, at5586.36 compute for the latter. It adds zero solves beyond the
+50-question prior union and restores min0/max2 capacity.45 questions request
+47 searches, but only one question receives passages. Inspection identifies
+45 literal placeholder queries:21 instances of `query` and24 of `...`. No
+query exceeded the character cap. This is an observed protocol failure, not
+evidence that relevant active retrieval cannot help. Its entire result remains
+preserved.
+
+The separately versioned `active_textbook_review_runner_v2.py` pre-fills the
+opening search tag, explicitly asks for scientific keywords, and rejects
+placeholder/punctuation-only tags before they consume the two-query budget.
+If no usable completed query exists, it retrieves from the public original
+question stem (at most800 characters), with the fallback recorded explicitly.
+The corpus, model weights,1024/512/128/128 budgets, compact prompts/seeds,
+64-question cohort and six-novel-solve screen remain unchanged. This version
+retains the failed first pilot in its known availability union.
