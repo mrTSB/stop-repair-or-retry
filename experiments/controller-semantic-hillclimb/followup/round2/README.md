@@ -189,6 +189,45 @@ any promoted C must still cost less than the strongest matched B, which must
 be offered the new protocol too. No fresh test inference or grading is started.
 The full round2 regression passes 515 tests in 34.07 seconds.
 
+The longer-review pilot completed all 64 questions with 240 physical calls.
+It obtains 36/64 correct at both compact endpoints, versus 32/64 for retained
+short review, but costs 9,886.07 units for the second endpoint (81.62% more).
+It adds no questions beyond the full registered 50/64 prior union, below the
+six-question screen. No expansion or C promotion follows. The cloud app was
+returned to zero minimum containers, retaining the two-GPU maximum.
+
+A separate fixed half-categorical/half-forest belief ensemble slightly reduces
+joint TRAIN loss but worsens mean marginal Brier from 0.12922 to 0.12955. It
+fails the declared two-metric screen and is not promoted to development.
+
+A nested training-only correctness-sensor diagnostic slightly improves joint
+loss (1.09839 to 1.09620) and current-answer Brier (0.09543 to 0.09525).
+Its paired intervals include zero. The resulting A remains an exact sixteen-state
+POMDP with the same 768-question transition fit; the additional V3 sensor and
+calibrator use only the original 256 science training questions excluded from
+V3 neural training. All 199 valid science-prefix sensor passes and eight development candidates
+are now complete. They peak at 148/256, so the retained 150/256 A remains
+selected. Every visited sensor pass is charged. The original math decisions,
+charges, and original/matched controls reproduce exactly.
+
+A bounded two-setting boosted categorical model also fails its nested TRAIN
+screen: joint loss rises from 1.14784 to 1.18864 and mean marginal Brier from
+0.12922 to 0.13208. It receives no development promotion.
+
+A separate Complete16/mentor8 hybrid now joins the current forest A to the
+retained LLM-review dynamics using a truth-preserving transfer learned from
+all 256 original science training questions. This explicitly changes the
+unqueried mode from eight to sixteen states. The first registered fit stopped
+on a missing legacy `state_bits` receipt field; its files remain preserved.
+Version two verifies the actual regularized-A schema and shared state core.
+All 26 development candidates complete and peak at 176/256, below retained
+C at 177/256. The strongest matched B, all baselines, prior C, and exact math
+decisions and costs are preserved. No new inference call was needed. Its current
+answer-availability ceiling remains below the final C target; this is an
+incremental integration experiment. The conditional binary-chain joint model also fails its nested training screen:
+joint loss rises to 1.26176 and mean marginal Brier to 0.13571, compared with
+1.14784 and 0.12922 for the retained forest. No development promotion follows. All 530 regression tests pass in 34.63 seconds.
+
 `science_proposal_headroom.py` separately tests the finalV3 option scorer on the
 same fixed64 original science training questions used for recent action pilots.
 All622 options were scored locally before grading. The final model proposed17/64
