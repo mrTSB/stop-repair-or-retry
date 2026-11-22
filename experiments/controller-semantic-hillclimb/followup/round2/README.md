@@ -9,7 +9,7 @@ The targets remain percentage points: A and B must each exceed the highest
 accuracy of Stop, Repair once, Repair twice, Retry once, and Retry twice by ten
 points. C must exceed the higher of A/B by ten points. C must also be cheaper
 than B under the declared inference compute proxy. A remains a POMDP with no
-LLM review, B remains the independently selected ordinary LLM controller, and
+LLM review, B remains the strongest independently selected LLM controller, and
 C remains a POMDP with paid observations from the same LLM reviewer. The compact
 solver weights, initial prompt, plain repair/retry templates, decoding, and
 two-continuation horizon remain fixed.
@@ -67,6 +67,39 @@ must be made on development data.
 
 Runtime files live in `runs/controller-semantic-followup/round2/`. No new test
 scores are available. Use `uv` for Python; dependency pins match the parent.
+
+## Latest completed comparison
+
+All rows below use the same 256 development questions. These questions have
+been used repeatedly for selection; this table is not fresh confirmation.
+
+| Method | Correct / 256 | Accuracy | Mean compute proxy |
+| --- | ---: | ---: | ---: |
+| Stop | 110 | 42.97% | 381.39 |
+| Repair once | 129 | 50.39% | 990.21 |
+| Repair twice | 132 | 51.56% | 1,711.21 |
+| Retry once | 127 | 49.61% | 886.56 |
+| Retry twice | 123 | 48.05% | 1,394.69 |
+| Best A: POMDP with terminal Complete action | 146 | 57.03% | 1,084.64 |
+| Best B: strong retained-review LLM | 177 | 69.14% | 3,772.86 |
+| Best C: expanded-data POMDP + LLM | 177 | 69.14% | 3,747.96 |
+
+The proxy counts all paid solver, reviewer, and observer tokens weighted by
+active parameters, normalized to 3.09 billion parameters. Both physical phases
+of a bounded review are billed. This is not measured FLOPs or wall-clock time;
+the full-35B reviewer sensitivity is also retained in the receipts.
+
+A is 5.47 percentage points above the strongest original baseline, B is 17.58
+points above it, and C is 0.00 points above the stronger of A/B. A needs at least
+158 correct answers and C needs at least 203 on this panel. C saves only 0.66%
+compute relative to B. The requested accuracy gaps are not met.
+
+Complete is a separate answer-changing action with matched controls. The best
+such simple control, Repair then Complete if invalid, obtains 150/256 (58.59%)
+at 1,232.71 units, using exactly the same retained math A as the new POMDP.
+Its gain is not evidence for learned planning. The original five baselines
+remain unchanged, and all six new fixed/validity controls remain reported.
+The separately reserved 1,024-question test set is still untouched.
 
 ## Current continuation
 
@@ -397,8 +430,8 @@ records. `extract_expanded_mentor.py` reuses 4,224 exact cached neural entries
 and extracts only 960 missing entries. `fit_expanded_mentor.py` registers a
 CPU-only weighted/calibrated POMDP fit. Within-subject question mass and
 50/25/25 subject weighting are explicit, so this is a new fitting recipe,
-not a pure more-data ablation. The saved plain four-state A artifact is
-unevaluated until a separate development evaluation is registered.
+not a pure more-data ablation. Its separately registered plain four-state A
+evaluation reaches 139/256 and does not replace the stronger completed A.
 
 The registered scoring pilot acquires one compact-solver continuation token
 on each of three paid prefixes for all 64 fixed science training questions.
@@ -438,7 +471,8 @@ for invalid answers, and counts the cost of all paid observations. It does not
 use the failed scoring-probability features. Math retains its existing A;
 the science model uses only paired training labels and original paid features.
 The new fitting driver binds the complete physical-response ledger and the
-original observer provenance. Development evaluation is not yet run.
+original observer provenance. Its separate development evaluation is reported
+below.
 
 The full training action grid is now sealed and passes that screen: the
 science union increases from 96/256 to 118/256, with 22 newly solvable cases
@@ -451,7 +485,14 @@ learned planning. The single prespecified 16-state POMDP has been fitted with
 no new neural calls. Its separate development study freezes seven penalties,
 collects all 384 science completions before scoring, and reports both science
 controls and full-256 comparisons sharing exactly the same retained math A.
-No development accuracy for this new action study is available yet.
+The completed development selection obtains 146/256 (57.03%) at 1,084.64
+compute units, versus the earlier A's 144/256. However, the matched
+Repair-then-Complete-if-invalid control obtains 150/256 (58.59%) at 1,232.71,
+using exactly the same retained math A in both full-panel comparisons. The
+learned planner therefore does not outperform this new simple control on
+accuracy. Its margin over the original best baseline is 5.47 points, below
+the required ten. All six matched controls and their science-only panels
+remain reported. None of these are fresh-test results.
 
 The standard second repair with mentor feedback removed also failed its
 64-question science training screen: 18 correct versus 32 for retained
@@ -467,3 +508,39 @@ deployment checkpoint. No intermediate recovery checkpoint selects a model.
 The subsequent full resume releases unused cache every five completed
 updates. Its first 50 updates maintained 54–63% free system memory; the
 fixed final checkpoint and auxiliary calibration remain pending.
+
+The expanded 320-root hybrid fit finishes at 177/256 (69.14%), matching B's
+accuracy, with 3,747.93 compute units under its collected receipts. It issued
+50 compact retry/reuse requests that duplicated the prior availability audit:
+36 text/token receipts differ, but all parsed answers agree. Because the
+apparent compute saving against B is only 0.66%, all 156 candidate policies
+were replayed using the earlier canonical receipts. Every decision, answer,
+and encoder charge remained identical. The selected policy was unchanged,
+and its canonical compute is 3,747.96, still only 0.66% cheaper than B.
+The original run remains preserved; the 50 duplicate acquisition calls
+(33,839 input and 3,147 output tokens) are disclosed separately. A pure
+four-state POMDP fitted from the expanded data reaches only 139/256, so it
+does not replace A. A's and C's required accuracy gaps remain unmet, and the fresh
+1,024-question set is still untouched.
+
+The separately registered Complete-enabled B comparison evaluates 24 fixed
+LLM-only science rules and retains both earlier B families. It reproduces the
+strong original B's 177/256 and compute exactly. The best new rule gets 175/256
+at 3,586.37 units, so it does not replace B or lower C's required threshold.
+
+The full development availability audit finds correct science answers on
+42/128 questions in the original tree, 55/128 after adding Complete, 64/128
+in the strong-review tree, and 70/128 in their combined tree. Even perfect math
+would yield only 198/256, below C's required 203. A new transfer fit on that
+unchanged tree is held; a training-only pilot will test strong review after a
+paid first repair or retry instead of at the root. This is a new review-timing
+protocol and requires matched controls before a controller claim.
+
+The fixed training-only V4 observation diagnostic also fails its screen:
+joint log loss increases from 1.391802 to 1.399549, and mean four-marginal Brier
+increases from 0.140674 to 0.142630. It uses all 256 training science questions
+and 768 decision nodes, with no new inference or development/test reads.
+The neural and forecaster folds are not nested, so these remain diagnostic
+training results. No V4 promotion is made. A separate richer-observation study
+is being prepared to expose the old frozen observer's 256 hidden features
+from its existing forward pass.

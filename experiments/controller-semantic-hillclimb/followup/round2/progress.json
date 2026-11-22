@@ -1,171 +1,1069 @@
 {
+  "latest_completed_comparison": {
+    "scope": "Repeatedly used development panel, not fresh confirmation",
+    "development_questions": 256,
+    "baselines": {
+      "Repair once": {
+        "accuracy": 0.50390625,
+        "correct": 129,
+        "mean_compute": 990.2103559870551,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 2.0,
+        "mean_solver_tokens": 764.9375,
+        "mean_total_parameter_compute": 990.2103559870551,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      },
+      "Repair twice": {
+        "accuracy": 0.515625,
+        "correct": 132,
+        "mean_compute": 1711.205501618123,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 3.0,
+        "mean_solver_tokens": 1321.90625,
+        "mean_total_parameter_compute": 1711.205501618123,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      },
+      "Retry once": {
+        "accuracy": 0.49609375,
+        "correct": 127,
+        "mean_compute": 886.5594660194175,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 2.0,
+        "mean_solver_tokens": 684.8671875,
+        "mean_total_parameter_compute": 886.5594660194175,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      },
+      "Retry twice": {
+        "accuracy": 0.48046875,
+        "correct": 123,
+        "mean_compute": 1394.6905339805826,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 3.0,
+        "mean_solver_tokens": 1077.3984375,
+        "mean_total_parameter_compute": 1394.6905339805826,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      },
+      "Stop": {
+        "accuracy": 0.4296875,
+        "correct": 110,
+        "mean_compute": 381.39158576051784,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 1.0,
+        "mean_solver_tokens": 294.625,
+        "mean_total_parameter_compute": 381.39158576051784,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      }
+    },
+    "A": {
+      "dev": {
+        "accuracy": 0.5703125,
+        "correct": 146,
+        "mean_compute": 1084.6377960206412,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 2.125,
+        "mean_solver_tokens": 781.5,
+        "mean_total_parameter_compute": 1084.6377960206412,
+        "mean_verifier_calls": 1.76171875,
+        "mean_verifier_token_slots": 519.2890625,
+        "mean_verifier_tokens": 519.2890625,
+        "n": 256
+      },
+      "embedded_settings": {
+        "math": {
+          "penalty": 0.02,
+          "posterior_weight": 0.5
+        },
+        "science": {
+          "penalty": 0.02
+        }
+      },
+      "key": "penalty-0.02",
+      "model_path": "runs/controller-semantic-followup/round2/development-completion-A-v1/completion-subject-A.pkl",
+      "model_sha256": "4637fdfbb70f16d8de9001c3880a42db9096ade3981deadc14d2437bf9194d69",
+      "policy_module": "completion_subject_pomdp",
+      "science_settings": {
+        "penalty": 0.02
+      },
+      "settings": {},
+      "source": "new-completion-POMDP"
+    },
+    "B": {
+      "dev": {
+        "accuracy": 0.69140625,
+        "correct": 177,
+        "mean_compute": 3772.8610436893205,
+        "mean_judge_calls": 1.0,
+        "mean_judge_physical_calls": 1.99609375,
+        "mean_judge_tokens": 2883.21875,
+        "mean_solver_calls": 1.921875,
+        "mean_solver_tokens": 752.12109375,
+        "mean_total_parameter_compute": 33631.43709546926,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      },
+      "family": "B",
+      "original_name": "matched_B",
+      "protocol": "matched-retained-1024-512-128",
+      "settings": {
+        "root_stop": "agreement",
+        "second_action": "reuse",
+        "second_stop": "never"
+      },
+      "source_summary": "runs/controller-semantic-followup/round2/development-matched-review-B-v1/summary.json",
+      "source_summary_sha256": "a30ac28c462d3b54d5c565b964f2dff28402f40d600a7c157821762a69a5fea9"
+    },
+    "C": {
+      "builder_module": "expanded_development_models",
+      "dev": {
+        "accuracy": 0.69140625,
+        "correct": 177,
+        "mean_compute": 3747.9591164206718,
+        "mean_judge_calls": 0.890625,
+        "mean_judge_physical_calls": 1.77734375,
+        "mean_judge_tokens": 2583.9375,
+        "mean_metadata_calls": 0.0,
+        "mean_metadata_cpu_ms": 0.0,
+        "mean_review_neural_calls": 0.890625,
+        "mean_solver_calls": 2.0234375,
+        "mean_solver_tokens": 859.99609375,
+        "mean_total_parameter_compute": 30507.182417391545,
+        "mean_verifier_calls": 2.56640625,
+        "mean_verifier_token_slots": 896.59375,
+        "mean_verifier_tokens": 896.59375,
+        "n": 256
+      },
+      "metadata_review": false,
+      "model": "smooth32-review1",
+      "model_path": "runs/controller-semantic-followup/round2/development-expanded-mentor-v1/models/smooth32-review1.pkl",
+      "model_sha256": "439eb8035455edf8a0dbf11c56c17b6fe355167ba1f94c459132a0dd797653ba",
+      "original_candidate_index": 125,
+      "original_dev": {
+        "accuracy": 0.69140625,
+        "correct": 177,
+        "mean_compute": 3747.9338332491507,
+        "mean_judge_calls": 0.890625,
+        "mean_judge_physical_calls": 1.77734375,
+        "mean_judge_tokens": 2583.9375,
+        "mean_metadata_calls": 0.0,
+        "mean_metadata_cpu_ms": 0.0,
+        "mean_review_neural_calls": 0.890625,
+        "mean_solver_calls": 2.0234375,
+        "mean_solver_tokens": 859.9765625,
+        "mean_total_parameter_compute": 30507.157134220026,
+        "mean_verifier_calls": 2.56640625,
+        "mean_verifier_token_slots": 896.59375,
+        "mean_verifier_tokens": 896.59375,
+        "n": 256
+      },
+      "policy_module": "stronger_base_hybrid",
+      "retained_from_previous": false,
+      "same_decisions_answers_and_encoder_ledgers": true,
+      "selection_utility_penalty": 0.0,
+      "semantic_review": true,
+      "settings": {
+        "by_subject": {
+          "chemistry": {
+            "penalty": 0.0,
+            "threshold": 0.0
+          },
+          "math": {
+            "penalty": 0.0,
+            "threshold": 0.0
+          },
+          "physics": {
+            "penalty": 0.0,
+            "threshold": 0.08
+          }
+        }
+      },
+      "smoothing": 32.0
+    },
+    "accuracy_gaps_percentage_points": {
+      "A_minus_best_original_baseline": 5.46875,
+      "B_minus_best_original_baseline": 17.578125,
+      "C_minus_max_A_B": 0.0
+    },
+    "required_correct": {
+      "A": 158,
+      "B": 158,
+      "C": 203
+    },
+    "C_compute_fraction_saved_vs_B": 0.006600276813878647,
+    "all_targets_met": false,
+    "fresh_validation": false,
+    "test_inference_started": false,
+    "summary_sha256": {
+      "development-completion-A-v1": "739594cea69e858f2a239bb1b1f351164772d3dc904c49ad3835ffa768f781cf",
+      "development-completion-B-v1": "d98763660c588326b10897eec2ede913c4f0baeb1e6be0f66aa2cd20e7c0c2ff",
+      "development-expanded-C-canonical-cost-v1": "317c49f79b73bdf23396181a9078b7009b7c1302d795e2b7664bf8b25bb7eab0"
+    },
+    "matched_complete_controls": {
+      "Complete": {
+        "full256_with_retained_math_A": {
+          "accuracy": 0.5625,
+          "correct": 144,
+          "mean_compute": 843.0260808964604,
+          "mean_judge_calls": 0.0,
+          "mean_judge_tokens": 0.0,
+          "mean_solver_calls": 2.00390625,
+          "mean_solver_tokens": 638.56640625,
+          "mean_total_parameter_compute": 843.0260808964604,
+          "mean_verifier_calls": 0.9296875,
+          "mean_verifier_token_slots": 116.703125,
+          "mean_verifier_tokens": 116.703125,
+          "n": 256
+        },
+        "science": {
+          "all": {
+            "accuracy": 0.2109375,
+            "correct": 27,
+            "mean_compute": 1098.1593851132684,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.0,
+            "mean_solver_tokens": 848.328125,
+            "mean_total_parameter_compute": 1098.1593851132684,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 128
+          },
+          "chemistry": {
+            "accuracy": 0.1875,
+            "correct": 12,
+            "mean_compute": 1055.3802588996764,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.0,
+            "mean_solver_tokens": 815.28125,
+            "mean_total_parameter_compute": 1055.3802588996764,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          },
+          "physics": {
+            "accuracy": 0.234375,
+            "correct": 15,
+            "mean_compute": 1140.9385113268609,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.0,
+            "mean_solver_tokens": 881.375,
+            "mean_total_parameter_compute": 1140.9385113268609,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          }
+        }
+      },
+      "Repair then Complete": {
+        "full256_with_retained_math_A": {
+          "accuracy": 0.5859375,
+          "correct": 150,
+          "mean_compute": 1409.247763744357,
+          "mean_judge_calls": 0.0,
+          "mean_judge_tokens": 0.0,
+          "mean_solver_calls": 2.50390625,
+          "mean_solver_tokens": 1075.97265625,
+          "mean_total_parameter_compute": 1409.247763744357,
+          "mean_verifier_calls": 0.9296875,
+          "mean_verifier_token_slots": 116.703125,
+          "mean_verifier_tokens": 116.703125,
+          "n": 256
+        },
+        "science": {
+          "all": {
+            "accuracy": 0.2578125,
+            "correct": 33,
+            "mean_compute": 2230.6027508090615,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 3.0,
+            "mean_solver_tokens": 1723.140625,
+            "mean_total_parameter_compute": 2230.6027508090615,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 128
+          },
+          "chemistry": {
+            "accuracy": 0.234375,
+            "correct": 15,
+            "mean_compute": 2167.374595469256,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 3.0,
+            "mean_solver_tokens": 1674.296875,
+            "mean_total_parameter_compute": 2167.374595469256,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          },
+          "physics": {
+            "accuracy": 0.28125,
+            "correct": 18,
+            "mean_compute": 2293.830906148867,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 3.0,
+            "mean_solver_tokens": 1771.984375,
+            "mean_total_parameter_compute": 2293.830906148867,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          }
+        }
+      },
+      "Repair then Complete if invalid": {
+        "full256_with_retained_math_A": {
+          "accuracy": 0.5859375,
+          "correct": 150,
+          "mean_compute": 1232.7105469158778,
+          "mean_judge_calls": 0.0,
+          "mean_judge_tokens": 0.0,
+          "mean_solver_calls": 2.25,
+          "mean_solver_tokens": 939.59765625,
+          "mean_total_parameter_compute": 1232.7105469158778,
+          "mean_verifier_calls": 0.9296875,
+          "mean_verifier_token_slots": 116.703125,
+          "mean_verifier_tokens": 116.703125,
+          "n": 256
+        },
+        "science": {
+          "all": {
+            "accuracy": 0.2578125,
+            "correct": 33,
+            "mean_compute": 1877.5283171521037,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.4921875,
+            "mean_solver_tokens": 1450.390625,
+            "mean_total_parameter_compute": 1877.5283171521037,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 128
+          },
+          "chemistry": {
+            "accuracy": 0.234375,
+            "correct": 15,
+            "mean_compute": 1839.6440129449838,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.515625,
+            "mean_solver_tokens": 1421.125,
+            "mean_total_parameter_compute": 1839.6440129449838,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          },
+          "physics": {
+            "accuracy": 0.28125,
+            "correct": 18,
+            "mean_compute": 1915.4126213592235,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.46875,
+            "mean_solver_tokens": 1479.65625,
+            "mean_total_parameter_compute": 1915.4126213592235,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          }
+        }
+      },
+      "Retry then Complete": {
+        "full256_with_retained_math_A": {
+          "accuracy": 0.5703125,
+          "correct": 146,
+          "mean_compute": 1291.7315825145834,
+          "mean_judge_calls": 0.0,
+          "mean_judge_tokens": 0.0,
+          "mean_solver_calls": 2.50390625,
+          "mean_solver_tokens": 985.19140625,
+          "mean_total_parameter_compute": 1291.7315825145834,
+          "mean_verifier_calls": 0.9296875,
+          "mean_verifier_token_slots": 116.703125,
+          "mean_verifier_tokens": 116.703125,
+          "n": 256
+        },
+        "science": {
+          "all": {
+            "accuracy": 0.2265625,
+            "correct": 29,
+            "mean_compute": 1995.5703883495146,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 3.0,
+            "mean_solver_tokens": 1541.578125,
+            "mean_total_parameter_compute": 1995.5703883495146,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 128
+          },
+          "chemistry": {
+            "accuracy": 0.21875,
+            "correct": 14,
+            "mean_compute": 1913.6731391585763,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 3.0,
+            "mean_solver_tokens": 1478.3125,
+            "mean_total_parameter_compute": 1913.6731391585763,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          },
+          "physics": {
+            "accuracy": 0.234375,
+            "correct": 15,
+            "mean_compute": 2077.4676375404533,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 3.0,
+            "mean_solver_tokens": 1604.84375,
+            "mean_total_parameter_compute": 2077.4676375404533,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          }
+        }
+      },
+      "Retry then Complete if invalid": {
+        "full256_with_retained_math_A": {
+          "accuracy": 0.56640625,
+          "correct": 145,
+          "mean_compute": 1204.909171511347,
+          "mean_judge_calls": 0.0,
+          "mean_judge_tokens": 0.0,
+          "mean_solver_calls": 2.33984375,
+          "mean_solver_tokens": 918.12109375,
+          "mean_total_parameter_compute": 1204.909171511347,
+          "mean_verifier_calls": 0.9296875,
+          "mean_verifier_token_slots": 116.703125,
+          "mean_verifier_tokens": 116.703125,
+          "n": 256
+        },
+        "science": {
+          "all": {
+            "accuracy": 0.21875,
+            "correct": 28,
+            "mean_compute": 1821.9255663430422,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.671875,
+            "mean_solver_tokens": 1407.4375,
+            "mean_total_parameter_compute": 1821.9255663430422,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 128
+          },
+          "chemistry": {
+            "accuracy": 0.21875,
+            "correct": 14,
+            "mean_compute": 1718.406148867314,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.625,
+            "mean_solver_tokens": 1327.46875,
+            "mean_total_parameter_compute": 1718.406148867314,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          },
+          "physics": {
+            "accuracy": 0.21875,
+            "correct": 14,
+            "mean_compute": 1925.4449838187702,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.71875,
+            "mean_solver_tokens": 1487.40625,
+            "mean_total_parameter_compute": 1925.4449838187702,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          }
+        }
+      },
+      "Stop if valid else Complete": {
+        "full256_with_retained_math_A": {
+          "accuracy": 0.5625,
+          "correct": 144,
+          "mean_compute": 657.1998268511529,
+          "mean_judge_calls": 0.0,
+          "mean_judge_tokens": 0.0,
+          "mean_solver_calls": 1.64453125,
+          "mean_solver_tokens": 495.015625,
+          "mean_total_parameter_compute": 657.1998268511529,
+          "mean_verifier_calls": 0.9296875,
+          "mean_verifier_token_slots": 116.703125,
+          "mean_verifier_tokens": 116.703125,
+          "n": 256
+        },
+        "science": {
+          "all": {
+            "accuracy": 0.2109375,
+            "correct": 27,
+            "mean_compute": 726.5068770226537,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 1.28125,
+            "mean_solver_tokens": 561.2265625,
+            "mean_total_parameter_compute": 726.5068770226537,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 128
+          },
+          "chemistry": {
+            "accuracy": 0.1875,
+            "correct": 12,
+            "mean_compute": 724.7370550161813,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 1.328125,
+            "mean_solver_tokens": 559.859375,
+            "mean_total_parameter_compute": 724.7370550161813,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          },
+          "physics": {
+            "accuracy": 0.234375,
+            "correct": 15,
+            "mean_compute": 728.2766990291262,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 1.234375,
+            "mean_solver_tokens": 562.59375,
+            "mean_total_parameter_compute": 728.2766990291262,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          }
+        }
+      }
+    },
+    "matched_control_math_rule": "Identical retained math A for all six added controls and all new A candidates"
+  },
   "test_inference_started": false,
   "status": "Targets not met; experiments active",
   "development_A": {
     "selected_A": {
       "dev": {
-        "n": 256,
-        "correct": 144,
-        "accuracy": 0.5625,
-        "mean_compute": 856.5434598089403,
-        "mean_solver_tokens": 627.23046875,
-        "mean_judge_tokens": 0.0,
+        "accuracy": 0.5703125,
+        "correct": 146,
+        "mean_compute": 1084.6377960206412,
         "mean_judge_calls": 0.0,
-        "mean_solver_calls": 1.80078125,
-        "mean_total_parameter_compute": 856.5434598089403,
-        "mean_verifier_tokens": 317.28125,
-        "mean_verifier_token_slots": 317.28125,
-        "mean_verifier_calls": 1.609375
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 2.125,
+        "mean_solver_tokens": 781.5,
+        "mean_total_parameter_compute": 1084.6377960206412,
+        "mean_verifier_calls": 1.76171875,
+        "mean_verifier_token_slots": 519.2890625,
+        "mean_verifier_tokens": 519.2890625,
+        "n": 256
       },
-      "subject_choices": {
+      "embedded_settings": {
         "math": {
-          "observer": "old-semantic-v1",
-          "model": "runs/controller-semantic-followup/round2/development-repairability-v1/C0.1-smooth32.pkl",
-          "settings": {
-            "penalty": 0.02,
-            "posterior_weight": 0.5
-          },
-          "dev": {
-            "n": 128,
-            "correct": 117,
-            "accuracy": 0.9140625,
-            "mean_compute": 587.8927766796521,
-            "mean_solver_tokens": 428.8046875,
-            "mean_judge_tokens": 0.0,
-            "mean_judge_calls": 0.0,
-            "mean_solver_calls": 2.0078125,
-            "mean_total_parameter_compute": 587.8927766796521,
-            "mean_verifier_tokens": 233.40625,
-            "mean_verifier_token_slots": 233.40625,
-            "mean_verifier_calls": 1.859375
-          }
+          "penalty": 0.02,
+          "posterior_weight": 0.5
         },
-        "chemistry": {
-          "observer": "auxiliary-science-option-v1",
-          "model": "runs/controller-semantic-followup/round2/development-science-option-v1/science-C1-smooth8.pkl",
-          "settings": {
-            "penalty": 0.02,
-            "posterior_weight": 0.0
-          },
-          "dev": {
-            "n": 64,
-            "correct": 14,
-            "accuracy": 0.21875,
-            "mean_compute": 1598.446842226416,
-            "mean_solver_tokens": 1183.25,
-            "mean_judge_tokens": 0.0,
-            "mean_judge_calls": 0.0,
-            "mean_solver_calls": 2.15625,
-            "mean_total_parameter_compute": 1598.446842226416,
-            "mean_verifier_tokens": 474.78125,
-            "mean_verifier_token_slots": 474.78125,
-            "mean_verifier_calls": 1.6875
-          }
+        "science": {
+          "penalty": 0.02
+        }
+      },
+      "key": "penalty-0.02",
+      "model_path": "runs/controller-semantic-followup/round2/development-completion-A-v1/completion-subject-A.pkl",
+      "model_sha256": "4637fdfbb70f16d8de9001c3880a42db9096ade3981deadc14d2437bf9194d69",
+      "policy_module": "completion_subject_pomdp",
+      "science_settings": {
+        "penalty": 0.02
+      },
+      "settings": {},
+      "source": "new-completion-POMDP"
+    },
+    "baselines": {
+      "Repair once": {
+        "accuracy": 0.50390625,
+        "correct": 129,
+        "mean_compute": 990.2103559870551,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 2.0,
+        "mean_solver_tokens": 764.9375,
+        "mean_total_parameter_compute": 990.2103559870551,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      },
+      "Repair twice": {
+        "accuracy": 0.515625,
+        "correct": 132,
+        "mean_compute": 1711.205501618123,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 3.0,
+        "mean_solver_tokens": 1321.90625,
+        "mean_total_parameter_compute": 1711.205501618123,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      },
+      "Retry once": {
+        "accuracy": 0.49609375,
+        "correct": 127,
+        "mean_compute": 886.5594660194175,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 2.0,
+        "mean_solver_tokens": 684.8671875,
+        "mean_total_parameter_compute": 886.5594660194175,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      },
+      "Retry twice": {
+        "accuracy": 0.48046875,
+        "correct": 123,
+        "mean_compute": 1394.6905339805826,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 3.0,
+        "mean_solver_tokens": 1077.3984375,
+        "mean_total_parameter_compute": 1394.6905339805826,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      },
+      "Stop": {
+        "accuracy": 0.4296875,
+        "correct": 110,
+        "mean_compute": 381.39158576051784,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 1.0,
+        "mean_solver_tokens": 294.625,
+        "mean_total_parameter_compute": 381.39158576051784,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      }
+    },
+    "A_above_highest_baseline": 0.0546875,
+    "A_plus_10_points": false,
+    "best_matched_complete_control_accuracy": 0.5859375,
+    "completion_A_above_best_matched_control": -0.015625,
+    "matched_complete_controls": {
+      "Complete": {
+        "full256_with_retained_math_A": {
+          "accuracy": 0.5625,
+          "correct": 144,
+          "mean_compute": 843.0260808964604,
+          "mean_judge_calls": 0.0,
+          "mean_judge_tokens": 0.0,
+          "mean_solver_calls": 2.00390625,
+          "mean_solver_tokens": 638.56640625,
+          "mean_total_parameter_compute": 843.0260808964604,
+          "mean_verifier_calls": 0.9296875,
+          "mean_verifier_token_slots": 116.703125,
+          "mean_verifier_tokens": 116.703125,
+          "n": 256
         },
-        "physics": {
-          "observer": "auxiliary-science-option-v1",
-          "model": "runs/controller-semantic-followup/round2/development-science-option-v1/science-C0.1-smooth32.pkl",
-          "settings": {
-            "penalty": 0.24,
-            "posterior_weight": 0.0
-          },
-          "dev": {
-            "n": 64,
-            "correct": 13,
-            "accuracy": 0.203125,
-            "mean_compute": 651.9414436500404,
-            "mean_solver_tokens": 468.0625,
-            "mean_judge_tokens": 0.0,
+        "science": {
+          "all": {
+            "accuracy": 0.2109375,
+            "correct": 27,
+            "mean_compute": 1098.1593851132684,
             "mean_judge_calls": 0.0,
-            "mean_solver_calls": 1.03125,
-            "mean_total_parameter_compute": 651.9414436500404,
-            "mean_verifier_tokens": 327.53125,
-            "mean_verifier_token_slots": 327.53125,
-            "mean_verifier_calls": 1.03125
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.0,
+            "mean_solver_tokens": 848.328125,
+            "mean_total_parameter_compute": 1098.1593851132684,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 128
+          },
+          "chemistry": {
+            "accuracy": 0.1875,
+            "correct": 12,
+            "mean_compute": 1055.3802588996764,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.0,
+            "mean_solver_tokens": 815.28125,
+            "mean_total_parameter_compute": 1055.3802588996764,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          },
+          "physics": {
+            "accuracy": 0.234375,
+            "correct": 15,
+            "mean_compute": 1140.9385113268609,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.0,
+            "mean_solver_tokens": 881.375,
+            "mean_total_parameter_compute": 1140.9385113268609,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
           }
         }
       },
-      "pickle": "selected-A.pkl"
-    },
-    "baselines": {
-      "Stop": {
-        "n": 256,
-        "correct": 110,
-        "accuracy": 0.4296875,
-        "mean_compute": 381.39158576051784,
-        "mean_solver_tokens": 294.625,
-        "mean_judge_tokens": 0.0,
-        "mean_judge_calls": 0.0,
-        "mean_solver_calls": 1.0,
-        "mean_total_parameter_compute": 381.39158576051784,
-        "mean_verifier_tokens": 0.0,
-        "mean_verifier_token_slots": 0.0,
-        "mean_verifier_calls": 0.0
+      "Repair then Complete": {
+        "full256_with_retained_math_A": {
+          "accuracy": 0.5859375,
+          "correct": 150,
+          "mean_compute": 1409.247763744357,
+          "mean_judge_calls": 0.0,
+          "mean_judge_tokens": 0.0,
+          "mean_solver_calls": 2.50390625,
+          "mean_solver_tokens": 1075.97265625,
+          "mean_total_parameter_compute": 1409.247763744357,
+          "mean_verifier_calls": 0.9296875,
+          "mean_verifier_token_slots": 116.703125,
+          "mean_verifier_tokens": 116.703125,
+          "n": 256
+        },
+        "science": {
+          "all": {
+            "accuracy": 0.2578125,
+            "correct": 33,
+            "mean_compute": 2230.6027508090615,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 3.0,
+            "mean_solver_tokens": 1723.140625,
+            "mean_total_parameter_compute": 2230.6027508090615,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 128
+          },
+          "chemistry": {
+            "accuracy": 0.234375,
+            "correct": 15,
+            "mean_compute": 2167.374595469256,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 3.0,
+            "mean_solver_tokens": 1674.296875,
+            "mean_total_parameter_compute": 2167.374595469256,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          },
+          "physics": {
+            "accuracy": 0.28125,
+            "correct": 18,
+            "mean_compute": 2293.830906148867,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 3.0,
+            "mean_solver_tokens": 1771.984375,
+            "mean_total_parameter_compute": 2293.830906148867,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          }
+        }
       },
-      "Repair once": {
-        "n": 256,
-        "correct": 129,
-        "accuracy": 0.50390625,
-        "mean_compute": 990.2103559870551,
-        "mean_solver_tokens": 764.9375,
-        "mean_judge_tokens": 0.0,
-        "mean_judge_calls": 0.0,
-        "mean_solver_calls": 2.0,
-        "mean_total_parameter_compute": 990.2103559870551,
-        "mean_verifier_tokens": 0.0,
-        "mean_verifier_token_slots": 0.0,
-        "mean_verifier_calls": 0.0
+      "Repair then Complete if invalid": {
+        "full256_with_retained_math_A": {
+          "accuracy": 0.5859375,
+          "correct": 150,
+          "mean_compute": 1232.7105469158778,
+          "mean_judge_calls": 0.0,
+          "mean_judge_tokens": 0.0,
+          "mean_solver_calls": 2.25,
+          "mean_solver_tokens": 939.59765625,
+          "mean_total_parameter_compute": 1232.7105469158778,
+          "mean_verifier_calls": 0.9296875,
+          "mean_verifier_token_slots": 116.703125,
+          "mean_verifier_tokens": 116.703125,
+          "n": 256
+        },
+        "science": {
+          "all": {
+            "accuracy": 0.2578125,
+            "correct": 33,
+            "mean_compute": 1877.5283171521037,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.4921875,
+            "mean_solver_tokens": 1450.390625,
+            "mean_total_parameter_compute": 1877.5283171521037,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 128
+          },
+          "chemistry": {
+            "accuracy": 0.234375,
+            "correct": 15,
+            "mean_compute": 1839.6440129449838,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.515625,
+            "mean_solver_tokens": 1421.125,
+            "mean_total_parameter_compute": 1839.6440129449838,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          },
+          "physics": {
+            "accuracy": 0.28125,
+            "correct": 18,
+            "mean_compute": 1915.4126213592235,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.46875,
+            "mean_solver_tokens": 1479.65625,
+            "mean_total_parameter_compute": 1915.4126213592235,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          }
+        }
       },
-      "Repair twice": {
-        "n": 256,
-        "correct": 132,
-        "accuracy": 0.515625,
-        "mean_compute": 1711.205501618123,
-        "mean_solver_tokens": 1321.90625,
-        "mean_judge_tokens": 0.0,
-        "mean_judge_calls": 0.0,
-        "mean_solver_calls": 3.0,
-        "mean_total_parameter_compute": 1711.205501618123,
-        "mean_verifier_tokens": 0.0,
-        "mean_verifier_token_slots": 0.0,
-        "mean_verifier_calls": 0.0
+      "Retry then Complete": {
+        "full256_with_retained_math_A": {
+          "accuracy": 0.5703125,
+          "correct": 146,
+          "mean_compute": 1291.7315825145834,
+          "mean_judge_calls": 0.0,
+          "mean_judge_tokens": 0.0,
+          "mean_solver_calls": 2.50390625,
+          "mean_solver_tokens": 985.19140625,
+          "mean_total_parameter_compute": 1291.7315825145834,
+          "mean_verifier_calls": 0.9296875,
+          "mean_verifier_token_slots": 116.703125,
+          "mean_verifier_tokens": 116.703125,
+          "n": 256
+        },
+        "science": {
+          "all": {
+            "accuracy": 0.2265625,
+            "correct": 29,
+            "mean_compute": 1995.5703883495146,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 3.0,
+            "mean_solver_tokens": 1541.578125,
+            "mean_total_parameter_compute": 1995.5703883495146,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 128
+          },
+          "chemistry": {
+            "accuracy": 0.21875,
+            "correct": 14,
+            "mean_compute": 1913.6731391585763,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 3.0,
+            "mean_solver_tokens": 1478.3125,
+            "mean_total_parameter_compute": 1913.6731391585763,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          },
+          "physics": {
+            "accuracy": 0.234375,
+            "correct": 15,
+            "mean_compute": 2077.4676375404533,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 3.0,
+            "mean_solver_tokens": 1604.84375,
+            "mean_total_parameter_compute": 2077.4676375404533,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          }
+        }
       },
-      "Retry once": {
-        "n": 256,
-        "correct": 127,
-        "accuracy": 0.49609375,
-        "mean_compute": 886.5594660194175,
-        "mean_solver_tokens": 684.8671875,
-        "mean_judge_tokens": 0.0,
-        "mean_judge_calls": 0.0,
-        "mean_solver_calls": 2.0,
-        "mean_total_parameter_compute": 886.5594660194175,
-        "mean_verifier_tokens": 0.0,
-        "mean_verifier_token_slots": 0.0,
-        "mean_verifier_calls": 0.0
+      "Retry then Complete if invalid": {
+        "full256_with_retained_math_A": {
+          "accuracy": 0.56640625,
+          "correct": 145,
+          "mean_compute": 1204.909171511347,
+          "mean_judge_calls": 0.0,
+          "mean_judge_tokens": 0.0,
+          "mean_solver_calls": 2.33984375,
+          "mean_solver_tokens": 918.12109375,
+          "mean_total_parameter_compute": 1204.909171511347,
+          "mean_verifier_calls": 0.9296875,
+          "mean_verifier_token_slots": 116.703125,
+          "mean_verifier_tokens": 116.703125,
+          "n": 256
+        },
+        "science": {
+          "all": {
+            "accuracy": 0.21875,
+            "correct": 28,
+            "mean_compute": 1821.9255663430422,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.671875,
+            "mean_solver_tokens": 1407.4375,
+            "mean_total_parameter_compute": 1821.9255663430422,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 128
+          },
+          "chemistry": {
+            "accuracy": 0.21875,
+            "correct": 14,
+            "mean_compute": 1718.406148867314,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.625,
+            "mean_solver_tokens": 1327.46875,
+            "mean_total_parameter_compute": 1718.406148867314,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          },
+          "physics": {
+            "accuracy": 0.21875,
+            "correct": 14,
+            "mean_compute": 1925.4449838187702,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 2.71875,
+            "mean_solver_tokens": 1487.40625,
+            "mean_total_parameter_compute": 1925.4449838187702,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          }
+        }
       },
-      "Retry twice": {
-        "n": 256,
-        "correct": 123,
-        "accuracy": 0.48046875,
-        "mean_compute": 1394.6905339805826,
-        "mean_solver_tokens": 1077.3984375,
-        "mean_judge_tokens": 0.0,
-        "mean_judge_calls": 0.0,
-        "mean_solver_calls": 3.0,
-        "mean_total_parameter_compute": 1394.6905339805826,
-        "mean_verifier_tokens": 0.0,
-        "mean_verifier_token_slots": 0.0,
-        "mean_verifier_calls": 0.0
+      "Stop if valid else Complete": {
+        "full256_with_retained_math_A": {
+          "accuracy": 0.5625,
+          "correct": 144,
+          "mean_compute": 657.1998268511529,
+          "mean_judge_calls": 0.0,
+          "mean_judge_tokens": 0.0,
+          "mean_solver_calls": 1.64453125,
+          "mean_solver_tokens": 495.015625,
+          "mean_total_parameter_compute": 657.1998268511529,
+          "mean_verifier_calls": 0.9296875,
+          "mean_verifier_token_slots": 116.703125,
+          "mean_verifier_tokens": 116.703125,
+          "n": 256
+        },
+        "science": {
+          "all": {
+            "accuracy": 0.2109375,
+            "correct": 27,
+            "mean_compute": 726.5068770226537,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 1.28125,
+            "mean_solver_tokens": 561.2265625,
+            "mean_total_parameter_compute": 726.5068770226537,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 128
+          },
+          "chemistry": {
+            "accuracy": 0.1875,
+            "correct": 12,
+            "mean_compute": 724.7370550161813,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 1.328125,
+            "mean_solver_tokens": 559.859375,
+            "mean_total_parameter_compute": 724.7370550161813,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          },
+          "physics": {
+            "accuracy": 0.234375,
+            "correct": 15,
+            "mean_compute": 728.2766990291262,
+            "mean_judge_calls": 0.0,
+            "mean_judge_tokens": 0.0,
+            "mean_solver_calls": 1.234375,
+            "mean_solver_tokens": 562.59375,
+            "mean_total_parameter_compute": 728.2766990291262,
+            "mean_verifier_calls": 0.0,
+            "mean_verifier_token_slots": 0.0,
+            "mean_verifier_tokens": 0.0,
+            "n": 64
+          }
+        }
       }
     },
-    "test_used": false,
-    "development_questions": 256,
-    "A_above_highest_baseline": 0.046875,
-    "A_plus_10_points": false,
-    "source": "development-science-option-v1",
-    "final_comparison_still_pending": true,
-    "pending_family": "science-listwise-v3 only; other seven completed"
+    "matched_control_math_rule": "Identical retained math A for all six added controls and all new A candidates",
+    "new_cloud_calls": 0,
+    "new_neural_calls": 0,
+    "fresh_validation": false,
+    "test_used": false
   },
   "training_only_headroom": {
     "n": 512,
@@ -174,7 +1072,7 @@
     "science_questions_with_all_seven_wrong": 160
   },
   "new_test_reserved_questions": 1024,
-  "tests_passed": 350,
+  "tests_passed": 423,
   "primary_912_confirmation": "../artifacts/confirmation-912-v1/REPORT.md",
   "interpretation": "Development-selected results are not fresh confirmation; old912test remains retired.",
   "completed_followups": {
@@ -2489,7 +3387,7 @@
           "mean_verifier_token_slots": 462.4609375,
           "mean_verifier_calls": 1.62890625
         },
-        "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-refined-observer-v1/v4-C1-smooth8.pkl",
+        "model_path": "runs/controller-semantic-followup/round2/development-refined-observer-v1/v4-C1-smooth8.pkl",
         "policy_module": "continuous_repairability"
       },
       "selected_A": {
@@ -2510,7 +3408,7 @@
         "subject_choices": {
           "math": {
             "observer": "old-semantic-v1",
-            "model": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-repairability-v1/C0.1-smooth32.pkl",
+            "model": "runs/controller-semantic-followup/round2/development-repairability-v1/C0.1-smooth32.pkl",
             "settings": {
               "penalty": 0.02,
               "posterior_weight": 0.5
@@ -2532,7 +3430,7 @@
           },
           "chemistry": {
             "observer": "auxiliary-science-option-v1",
-            "model": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-science-option-v1/science-C1-smooth8.pkl",
+            "model": "runs/controller-semantic-followup/round2/development-science-option-v1/science-C1-smooth8.pkl",
             "settings": {
               "penalty": 0.02,
               "posterior_weight": 0.0
@@ -2554,7 +3452,7 @@
           },
           "physics": {
             "observer": "auxiliary-science-option-v1",
-            "model": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-science-option-v1/science-C0.1-smooth32.pkl",
+            "model": "runs/controller-semantic-followup/round2/development-science-option-v1/science-C0.1-smooth32.pkl",
             "settings": {
               "penalty": 0.24,
               "posterior_weight": 0.0
@@ -2576,7 +3474,7 @@
           }
         },
         "pickle": "selected-A.pkl",
-        "source_summary": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-science-option-v1/summary.json",
+        "source_summary": "runs/controller-semantic-followup/round2/development-science-option-v1/summary.json",
         "source_summary_sha256": "949a71f7a2388d20f616aa62afdeedea8fb68c4f87d48a75828109f9244f244a"
       },
       "development_questions": 256,
@@ -2630,7 +3528,7 @@
       "development_questions": 256,
       "selected_C": {
         "model": "newsource-metadata-smooth32",
-        "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-metadata-strongest-A-v1/models/newsource-metadata-smooth32.pkl",
+        "model_path": "runs/controller-semantic-followup/round2/development-metadata-strongest-A-v1/models/newsource-metadata-smooth32.pkl",
         "policy_module": "metadata_review_hybrid",
         "builder_module": "stronger_metadata_review",
         "cohort": "newsource",
@@ -3106,7 +4004,7 @@
       "development_questions": 256,
       "best": {
         "model": "metadata-smooth32",
-        "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/mentor-models-metadata-mixed-v1/metadata-smooth32.pkl",
+        "model_path": "runs/controller-semantic-followup/round2/mentor-models-metadata-mixed-v1/metadata-smooth32.pkl",
         "policy_module": "metadata_review_hybrid",
         "settings": {
           "by_subject": {
@@ -3146,7 +4044,7 @@
       },
       "selected_C": {
         "model": "metadata-smooth32",
-        "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/mentor-models-metadata-mixed-v1/metadata-smooth32.pkl",
+        "model_path": "runs/controller-semantic-followup/round2/mentor-models-metadata-mixed-v1/metadata-smooth32.pkl",
         "policy_module": "metadata_review_hybrid",
         "settings": {
           "by_subject": {
@@ -3191,7 +4089,7 @@
       "development_questions": 256,
       "best": {
         "model": "metadata-smooth32",
-        "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/mentor-models-metadata-newsource-v1/metadata-smooth32.pkl",
+        "model_path": "runs/controller-semantic-followup/round2/mentor-models-metadata-newsource-v1/metadata-smooth32.pkl",
         "policy_module": "metadata_review_hybrid",
         "settings": {
           "by_subject": {
@@ -3231,7 +4129,7 @@
       },
       "selected_C": {
         "model": "metadata-smooth32",
-        "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/mentor-models-metadata-newsource-v1/metadata-smooth32.pkl",
+        "model_path": "runs/controller-semantic-followup/round2/mentor-models-metadata-newsource-v1/metadata-smooth32.pkl",
         "policy_module": "metadata_review_hybrid",
         "settings": {
           "by_subject": {
@@ -3271,6 +4169,83 @@
       },
       "test_used": false,
       "scope": "All256 development; best A global comparison still pending"
+    },
+    "development-expanded-mentor-v1": {
+      "selected_C": {
+        "builder_module": "expanded_development_models",
+        "dev": {
+          "accuracy": 0.69140625,
+          "correct": 177,
+          "mean_compute": 3747.9591164206718,
+          "mean_judge_calls": 0.890625,
+          "mean_judge_physical_calls": 1.77734375,
+          "mean_judge_tokens": 2583.9375,
+          "mean_metadata_calls": 0.0,
+          "mean_metadata_cpu_ms": 0.0,
+          "mean_review_neural_calls": 0.890625,
+          "mean_solver_calls": 2.0234375,
+          "mean_solver_tokens": 859.99609375,
+          "mean_total_parameter_compute": 30507.182417391545,
+          "mean_verifier_calls": 2.56640625,
+          "mean_verifier_token_slots": 896.59375,
+          "mean_verifier_tokens": 896.59375,
+          "n": 256
+        },
+        "metadata_review": false,
+        "model": "smooth32-review1",
+        "model_path": "runs/controller-semantic-followup/round2/development-expanded-mentor-v1/models/smooth32-review1.pkl",
+        "model_sha256": "439eb8035455edf8a0dbf11c56c17b6fe355167ba1f94c459132a0dd797653ba",
+        "original_candidate_index": 125,
+        "original_dev": {
+          "accuracy": 0.69140625,
+          "correct": 177,
+          "mean_compute": 3747.9338332491507,
+          "mean_judge_calls": 0.890625,
+          "mean_judge_physical_calls": 1.77734375,
+          "mean_judge_tokens": 2583.9375,
+          "mean_metadata_calls": 0.0,
+          "mean_metadata_cpu_ms": 0.0,
+          "mean_review_neural_calls": 0.890625,
+          "mean_solver_calls": 2.0234375,
+          "mean_solver_tokens": 859.9765625,
+          "mean_total_parameter_compute": 30507.157134220026,
+          "mean_verifier_calls": 2.56640625,
+          "mean_verifier_token_slots": 896.59375,
+          "mean_verifier_tokens": 896.59375,
+          "n": 256
+        },
+        "policy_module": "stronger_base_hybrid",
+        "retained_from_previous": false,
+        "same_decisions_answers_and_encoder_ledgers": true,
+        "selection_utility_penalty": 0.0,
+        "semantic_review": true,
+        "settings": {
+          "by_subject": {
+            "chemistry": {
+              "penalty": 0.0,
+              "threshold": 0.0
+            },
+            "math": {
+              "penalty": 0.0,
+              "threshold": 0.0
+            },
+            "physics": {
+              "penalty": 0.0,
+              "threshold": 0.08
+            }
+          }
+        },
+        "smoothing": 32.0
+      },
+      "development_questions": 256,
+      "fresh_validation": false,
+      "canonical_summary_sha256": "317c49f79b73bdf23396181a9078b7009b7c1302d795e2b7664bf8b25bb7eab0",
+      "all_decisions_answers_and_encoder_ledgers_identical": true,
+      "C_compute_saved_vs_B": 0.006600276813878647,
+      "C_above_higher_A_B": 0.0,
+      "duplicate_acquisition_calls": 50,
+      "duplicate_acquisition_input_tokens": 33839,
+      "duplicate_acquisition_output_tokens": 3147
     }
   },
   "queued_training_collections": {
@@ -4462,19 +5437,19 @@
     "cloud_calls": 0,
     "development_or_test_records_read": false,
     "controller_accuracy_claim": false,
-    "status": "Fixed CPU16-state TRAIN-only fit completed; DEV selection pending"
+    "status": "Fixed TRAIN-only16-state fit and separate full256 DEV evaluation completed; selected A146/256, below target and simple matched control150/256"
   },
   "expanded_fit": {
-    "status": "six C models and separate unevaluated plain A4 fitted; metadata variance normalization prediction-identical",
+    "status": "Six C and plain A4 models fitted and evaluated; selected C177/256, A4 139/256",
     "training_questions": 512,
     "reviewed_roots": 320,
     "metadata_records": 448,
     "parent_complete_sha256": "59cf566f1a518a571f5593a8f44e29a4ff65514fb0974070b5cfe3e74b5f02fa",
     "normalization_complete_sha256": "cc2a901684bb9f947371a80259a962df31a59c3e9dcaa3ab1ec8735e75be1bcd",
-    "development_evaluation": "preparation; no result yet"
+    "development_evaluation": "Completed; canonical C replay preserves all decisions/answers and selection"
   },
   "science_grouped_training_v3": {
-    "status": "active; completed at least200/2160 updates",
+    "status": "active; completed at least800/2160 updates; only final checkpoint accepted",
     "recipe_changed": false,
     "operational_cache_release_every_steps": 5,
     "final_checkpoint_only": true,
@@ -4482,5 +5457,359 @@
     "test_used": false,
     "bounded_operation_registration_sha256": "see private operation receipts",
     "full_resume_registration_sha256": "71e36c7d82aa651e0c05586cddec47de6d2dcb8ada7321226855c6070a6b6e63"
-  }
+  },
+  "development_A_before_complete_action": {
+    "selected_A": {
+      "dev": {
+        "n": 256,
+        "correct": 144,
+        "accuracy": 0.5625,
+        "mean_compute": 856.5434598089403,
+        "mean_solver_tokens": 627.23046875,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.80078125,
+        "mean_total_parameter_compute": 856.5434598089403,
+        "mean_verifier_tokens": 317.28125,
+        "mean_verifier_token_slots": 317.28125,
+        "mean_verifier_calls": 1.609375
+      },
+      "subject_choices": {
+        "math": {
+          "observer": "old-semantic-v1",
+          "model": "runs/controller-semantic-followup/round2/development-repairability-v1/C0.1-smooth32.pkl",
+          "settings": {
+            "penalty": 0.02,
+            "posterior_weight": 0.5
+          },
+          "dev": {
+            "n": 128,
+            "correct": 117,
+            "accuracy": 0.9140625,
+            "mean_compute": 587.8927766796521,
+            "mean_solver_tokens": 428.8046875,
+            "mean_judge_tokens": 0.0,
+            "mean_judge_calls": 0.0,
+            "mean_solver_calls": 2.0078125,
+            "mean_total_parameter_compute": 587.8927766796521,
+            "mean_verifier_tokens": 233.40625,
+            "mean_verifier_token_slots": 233.40625,
+            "mean_verifier_calls": 1.859375
+          }
+        },
+        "chemistry": {
+          "observer": "auxiliary-science-option-v1",
+          "model": "runs/controller-semantic-followup/round2/development-science-option-v1/science-C1-smooth8.pkl",
+          "settings": {
+            "penalty": 0.02,
+            "posterior_weight": 0.0
+          },
+          "dev": {
+            "n": 64,
+            "correct": 14,
+            "accuracy": 0.21875,
+            "mean_compute": 1598.446842226416,
+            "mean_solver_tokens": 1183.25,
+            "mean_judge_tokens": 0.0,
+            "mean_judge_calls": 0.0,
+            "mean_solver_calls": 2.15625,
+            "mean_total_parameter_compute": 1598.446842226416,
+            "mean_verifier_tokens": 474.78125,
+            "mean_verifier_token_slots": 474.78125,
+            "mean_verifier_calls": 1.6875
+          }
+        },
+        "physics": {
+          "observer": "auxiliary-science-option-v1",
+          "model": "runs/controller-semantic-followup/round2/development-science-option-v1/science-C0.1-smooth32.pkl",
+          "settings": {
+            "penalty": 0.24,
+            "posterior_weight": 0.0
+          },
+          "dev": {
+            "n": 64,
+            "correct": 13,
+            "accuracy": 0.203125,
+            "mean_compute": 651.9414436500404,
+            "mean_solver_tokens": 468.0625,
+            "mean_judge_tokens": 0.0,
+            "mean_judge_calls": 0.0,
+            "mean_solver_calls": 1.03125,
+            "mean_total_parameter_compute": 651.9414436500404,
+            "mean_verifier_tokens": 327.53125,
+            "mean_verifier_token_slots": 327.53125,
+            "mean_verifier_calls": 1.03125
+          }
+        }
+      },
+      "pickle": "selected-A.pkl"
+    },
+    "baselines": {
+      "Stop": {
+        "n": 256,
+        "correct": 110,
+        "accuracy": 0.4296875,
+        "mean_compute": 381.39158576051784,
+        "mean_solver_tokens": 294.625,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.0,
+        "mean_total_parameter_compute": 381.39158576051784,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "Repair once": {
+        "n": 256,
+        "correct": 129,
+        "accuracy": 0.50390625,
+        "mean_compute": 990.2103559870551,
+        "mean_solver_tokens": 764.9375,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0,
+        "mean_total_parameter_compute": 990.2103559870551,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "Repair twice": {
+        "n": 256,
+        "correct": 132,
+        "accuracy": 0.515625,
+        "mean_compute": 1711.205501618123,
+        "mean_solver_tokens": 1321.90625,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0,
+        "mean_total_parameter_compute": 1711.205501618123,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "Retry once": {
+        "n": 256,
+        "correct": 127,
+        "accuracy": 0.49609375,
+        "mean_compute": 886.5594660194175,
+        "mean_solver_tokens": 684.8671875,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 2.0,
+        "mean_total_parameter_compute": 886.5594660194175,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      },
+      "Retry twice": {
+        "n": 256,
+        "correct": 123,
+        "accuracy": 0.48046875,
+        "mean_compute": 1394.6905339805826,
+        "mean_solver_tokens": 1077.3984375,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 3.0,
+        "mean_total_parameter_compute": 1394.6905339805826,
+        "mean_verifier_tokens": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_calls": 0.0
+      }
+    },
+    "test_used": false,
+    "development_questions": 256,
+    "A_above_highest_baseline": 0.046875,
+    "A_plus_10_points": false,
+    "source": "development-science-option-v1",
+    "final_comparison_still_pending": true,
+    "pending_family": "science-listwise-v3 only; other seven completed"
+  },
+  "development_B_complete_comparison": {
+    "B": {
+      "dev": {
+        "accuracy": 0.69140625,
+        "correct": 177,
+        "mean_compute": 3772.8610436893205,
+        "mean_judge_calls": 1.0,
+        "mean_judge_physical_calls": 1.99609375,
+        "mean_judge_tokens": 2883.21875,
+        "mean_solver_calls": 1.921875,
+        "mean_solver_tokens": 752.12109375,
+        "mean_total_parameter_compute": 33631.43709546926,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      },
+      "family": "B",
+      "original_name": "matched_B",
+      "protocol": "matched-retained-1024-512-128",
+      "settings": {
+        "root_stop": "agreement",
+        "second_action": "reuse",
+        "second_stop": "never"
+      },
+      "source_summary": "runs/controller-semantic-followup/round2/development-matched-review-B-v1/summary.json",
+      "source_summary_sha256": "a30ac28c462d3b54d5c565b964f2dff28402f40d600a7c157821762a69a5fea9"
+    },
+    "new_best_B": {
+      "dev": {
+        "accuracy": 0.68359375,
+        "correct": 175,
+        "mean_completion_calls": 0.0,
+        "mean_compute": 3586.372370550162,
+        "mean_judge_calls": 1.0,
+        "mean_judge_physical_calls": 1.99609375,
+        "mean_judge_tokens": 2883.21875,
+        "mean_solver_calls": 1.6640625,
+        "mean_solver_tokens": 608.05859375,
+        "mean_total_parameter_compute": 33444.9484223301,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      },
+      "family": "B",
+      "policy_module": "completion_matched_b",
+      "protocol": "complete-enabled-LLM-B-development-v1",
+      "retained_math_B": {
+        "dev": {
+          "accuracy": 0.69140625,
+          "correct": 177,
+          "mean_compute": 3772.8610436893205,
+          "mean_judge_calls": 1.0,
+          "mean_judge_physical_calls": 1.99609375,
+          "mean_judge_tokens": 2883.21875,
+          "mean_solver_calls": 1.921875,
+          "mean_solver_tokens": 752.12109375,
+          "mean_total_parameter_compute": 33631.43709546926,
+          "mean_verifier_calls": 0.0,
+          "mean_verifier_token_slots": 0.0,
+          "mean_verifier_tokens": 0.0,
+          "n": 256
+        },
+        "family": "B",
+        "protocol": "matched-retained-1024-512-128",
+        "settings": {
+          "root_stop": "agreement",
+          "second_action": "reuse",
+          "second_stop": "never"
+        }
+      },
+      "settings": {
+        "first_repair": "guided",
+        "ordinary_completion": "always",
+        "root_stop": "agreement"
+      }
+    },
+    "original_B_exactly_reproduced": true,
+    "original_five_baselines_unchanged": true,
+    "development_questions": 256,
+    "fresh_validation": false,
+    "new_cloud_calls": 0,
+    "new_neural_calls": 0,
+    "registration_sha256": "1887d95315f00453ae04502e911140cd001d0134d4e3a7806e29144835872f27",
+    "test_used": false
+  },
+  "development_combined_complete_strong_availability": {
+    "science_questions": 128,
+    "original7": 42,
+    "plain_plus_complete": 55,
+    "strong10": 64,
+    "combined13": 70,
+    "optimistic_with_perfect_math": 198,
+    "C_required": 203,
+    "policy_accuracy_claim": false,
+    "fresh_validation": false,
+    "current_tree_C_fit_held": true
+  },
+  "V4_complete_observation_diagnostic": {
+    "training_questions": 256,
+    "decision_nodes": 768,
+    "panels": {
+      "all/all": {
+        "nodes": 768,
+        "variants": {
+          "V4_question_excluded_raw20": {
+            "Complete_Brier": 0.20390289313375887,
+            "current_Brier": 0.11827784507443974,
+            "joint_Brier": 0.5690353250398473,
+            "joint_log_loss": 1.3995486642883375,
+            "mean_four_marginal_Brier": 0.1426302898547376,
+            "repair_Brier": 0.14943585961814146,
+            "retry_Brier": 0.09890456159261042
+          },
+          "old_V1_raw20": {
+            "Complete_Brier": 0.2033561488732887,
+            "current_Brier": 0.1175519297786319,
+            "joint_Brier": 0.5672720566420413,
+            "joint_log_loss": 1.3918020169880527,
+            "mean_four_marginal_Brier": 0.14067425441886847,
+            "repair_Brier": 0.14389385547770636,
+            "retry_Brier": 0.09789508354584686
+          }
+        }
+      }
+    },
+    "comparisons": {
+      "Complete_Brier": {
+        "V4_minus_old": 0.0005467442604701312,
+        "paired_question_CI95": [
+          -0.00708529892026241,
+          0.0075014366138986465
+        ]
+      },
+      "current_Brier": {
+        "V4_minus_old": 0.000725915295807861,
+        "paired_question_CI95": [
+          -0.004649281743457936,
+          0.0062510539015917885
+        ]
+      },
+      "joint_Brier": {
+        "V4_minus_old": 0.0017632683978061965,
+        "paired_question_CI95": [
+          -0.01140804342663315,
+          0.014911622436679544
+        ]
+      },
+      "joint_log_loss": {
+        "V4_minus_old": 0.007746647300284833,
+        "paired_question_CI95": [
+          -0.024354659139201037,
+          0.04170881119754816
+        ]
+      },
+      "mean_four_marginal_Brier": {
+        "V4_minus_old": 0.001956035435869162,
+        "paired_question_CI95": [
+          -0.0024698099480346494,
+          0.006780731716395233
+        ]
+      },
+      "repair_Brier": {
+        "V4_minus_old": 0.005542004140435092,
+        "paired_question_CI95": [
+          -0.00028899867570516093,
+          0.012091716469459361
+        ]
+      },
+      "retry_Brier": {
+        "V4_minus_old": 0.001009478046763562,
+        "paired_question_CI95": [
+          -0.0021476583650226135,
+          0.004688810811685908
+        ]
+      }
+    },
+    "screen_passed": false,
+    "promoted": false,
+    "nested_crossfit": false,
+    "crossfit_limitation": "Every neural feature comes from the checkpoint excluding its question hash-fold. The forecaster separately cross-fits by the same question groups. This is not nested CV: held-out forecaster labels may have trained neural models producing other folds features. Training OOF metrics are diagnostics; only held-out development/test assess the final policy.",
+    "new_cloud_calls": 0,
+    "new_neural_calls": 0,
+    "development_or_test_read": false,
+    "summary_sha256": "8438b29f6c5a17ecfa9c20b6a6f69ffaf58f47fec89ec9608d10f7c121b154b1"
+  },
+  "tests_scope": "Full round2 regression423 tests passed in37.181seconds; newer strong-late/dense pilots remain separately under preparation"
 }
