@@ -9524,5 +9524,18 @@
     "solver_unchanged": true,
     "pretraining_overlap_not_independently_established": true,
     "promoted": false
+  },
+  "reward_math_diagnostic": {
+    "status": "registered_collecting_local_observations",
+    "registration": "ba588938bea693a91a7217ccb92a9ea63ceed5272e830241bf9fa7fa8eabebb8",
+    "questions": 256,
+    "observations": 768,
+    "scope": "Independent conditional math TRAIN screen",
+    "same_frozen_reward_model": true,
+    "replaced_old_neural_features": true,
+    "old_control_input_token_counts_reconstructed_exactly": true,
+    "cloud_calls": 0,
+    "fresh_validation": false,
+    "promoted": false
   }
 }

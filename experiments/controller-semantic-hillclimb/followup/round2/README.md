@@ -1094,3 +1094,12 @@ pretraining-disjointness claim is made. Inputs above1536 tokens preserve their
 first768 and last768 tokens, with every truncation reported. Only paid question
 and current response enter this scorer, without references or future branches.
 The experiment is registered and collecting locally; A/B/C remain unchanged.
+
+`reward_math_diagnostic.py` separately registers the same observer for all256
+math TRAIN questions (768 paid prefixes). It compares against the retained
+nested math-specialized forecasts with the same two-point/1.10-cost conditional
+screen. Eight current/repair/retry states are preserved; Complete is not added
+to math. Original training caches lack token counts, so their exact verified
+inputs are re-tokenized locally to bill actual lengths, without neural calls.
+The current scorer replaces the old neural features and is fully charged.
+No development/test questions enter either observer screen.
