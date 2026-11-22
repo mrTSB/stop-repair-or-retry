@@ -1208,3 +1208,30 @@ question stem (at most800 characters), with the fallback recorded explicitly.
 The corpus, model weights,1024/512/128/128 budgets, compact prompts/seeds,
 64-question cohort and six-novel-solve screen remain unchanged. This version
 retains the failed first pilot in its known availability union.
+
+
+The corrected active-retrieval V2 pilot also fails its acquisition screen. All64
+questions finish with256 physical calls and zero transport errors; capacity
+returns to min0/max2. Real queries now deliver passages to63/64 questions
+(126 passages, only one question-stem fallback). The first and second compact
+answers score28/64 and29/64, respectively; their union is30/64. They add zero
+questions beyond the registered50-question known union. The second trajectory
+costs5,933.51 units,9.01% above the original strong retained-review control.
+Retrieval replay averages1.213 ms per question on the local CPU. Better evidence
+delivery alone has not improved answer availability, and no controller is promoted.
+
+`evidence_first_review_runner.py` registers a distinct timing test on the same
+complete64-question TRAIN cohort: a64-token question-only concept query, local
+retrieval,960-token reasoning with evidence already visible, then512-token
+decision. Total reviewer output allocation remains1,536 tokens, but all three
+physical prompts and outputs are charged. Both128-token compact continuations
+retain their exact prompts, seeds and settings. The new durable journal permits
+at most320 physical attempts, at most two existing-app GPUs, and no automatic
+request retry. The registered known union includes both prior active-retrieval
+pilots; promotion still requires six novel questions and a cost ratio at most1.25.
+Every promoted comparison must offer the same capability to B and subsequently
+validate a learned POMDP hybrid on fresh data. This registration is not a result.
+
+`latest_results.json` records the eight-row development table and target checks
+from verified sealed artifacts. It explicitly distinguishes reused development
+selection from the reserved1,024-question fresh test.

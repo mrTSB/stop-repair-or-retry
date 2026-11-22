@@ -1,0 +1,94 @@
+{
+  "schema": "latest-verified-development-results-v1",
+  "split": "Repeatedly reused development; not fresh confirmation",
+  "test_inference_or_grading": false,
+  "fresh_test_reserved_questions": 1024,
+  "compute_units": "Parameter-weighted paid input/output tokens normalized to3.09B; not FLOPs or wall time",
+  "rows": [
+    {
+      "method": "Stop",
+      "n": 256,
+      "correct": 110,
+      "accuracy_percent": 42.96875,
+      "mean_compute_proxy": 381.39158576051784
+    },
+    {
+      "method": "Repair once",
+      "n": 256,
+      "correct": 129,
+      "accuracy_percent": 50.390625,
+      "mean_compute_proxy": 990.2103559870551
+    },
+    {
+      "method": "Repair twice",
+      "n": 256,
+      "correct": 132,
+      "accuracy_percent": 51.5625,
+      "mean_compute_proxy": 1711.205501618123
+    },
+    {
+      "method": "Retry once",
+      "n": 256,
+      "correct": 127,
+      "accuracy_percent": 49.609375,
+      "mean_compute_proxy": 886.5594660194175
+    },
+    {
+      "method": "Retry twice",
+      "n": 256,
+      "correct": 123,
+      "accuracy_percent": 48.046875,
+      "mean_compute_proxy": 1394.6905339805826
+    },
+    {
+      "method": "A",
+      "n": 256,
+      "correct": 153,
+      "accuracy_percent": 59.765625,
+      "mean_compute_proxy": 1087.2748356677234
+    },
+    {
+      "method": "B",
+      "n": 256,
+      "correct": 177,
+      "accuracy_percent": 69.140625,
+      "mean_compute_proxy": 3772.8610436893205
+    },
+    {
+      "method": "C",
+      "n": 256,
+      "correct": 177,
+      "accuracy_percent": 69.140625,
+      "mean_compute_proxy": 3747.9591164206718
+    }
+  ],
+  "targets": {
+    "gaps": {
+      "A_above_highest_baseline": 0.08203125,
+      "B_above_highest_baseline": 0.17578125,
+      "C_above_highest_A_B": 0.0
+    },
+    "criteria": {
+      "A_above_highest_baseline": false,
+      "B_above_highest_baseline": true,
+      "C_above_highest_A_B": false,
+      "C_compute_below_B": true
+    },
+    "all_required_passed": false,
+    "C_compute_fraction_saved_vs_B": 0.006600276813878647
+  },
+  "source_evidence": {
+    "development-math-specialization-v1": {
+      "complete_sha256": "5a19f4308de5c71b94732d470e0dda7447d30e219ba2bc8b6a8134fcf56f7e2d",
+      "summary_sha256": "a31b20e4f55f0e675b4b21e22d10602719134b0df25eb3d70e12cbe3ebf3af56"
+    },
+    "development-expanded-C-canonical-cost-v1": {
+      "complete_sha256": "29a3c553487bb78955e46e135885b0c6225b951819543ba53a600b3d97fa42f0",
+      "summary_sha256": "317c49f79b73bdf23396181a9078b7009b7c1302d795e2b7664bf8b25bb7eab0"
+    }
+  },
+  "additional_correct_needed_on_this_panel": {
+    "A": 5,
+    "C": 26
+  }
+}
