@@ -1000,3 +1000,12 @@ not the final C accuracy/compute requirements. Matched B must receive identical
 calculator availability if this capability is promoted. No controller or fresh
 result has been claimed. All588 tests pass, including complete256-request
 synthetic replay, tool tamper detection, numerical bounds and paid-prefix checks.
+
+`development_joint_observer.py` prepares the subsequent full256 DEV comparison
+only if the joint observer passes its TRAIN screen and completes the full fit.
+It verifies those prerequisites before decoding development records. The
+retained A153 decisions, all five baselines and matched controls must reproduce
+exactly. It would cache384 new science observations and compare32 fixed
+original/clustered-kernel settings, charging only observations purchased by each
+policy. The best prior A remains eligible. This adapter is prepared, not run;
+all590 regression tests pass, and no fresh inference is authorized by this code.
