@@ -1071,7 +1071,7 @@
     "science_questions_with_all_seven_wrong": 160
   },
   "new_test_reserved_questions": 1024,
-  "tests_passed": 481,
+  "tests_passed": 496,
   "primary_912_confirmation": "../artifacts/confirmation-912-v1/REPORT.md",
   "interpretation": "Development-selected results are not fresh confirmation; old912test remains retired.",
   "completed_followups": {
@@ -5810,7 +5810,7 @@
     "development_or_test_read": false,
     "summary_sha256": "8438b29f6c5a17ecfa9c20b6a6f69ffaf58f47fec89ec9608d10f7c121b154b1"
   },
-  "tests_scope": "Full resumed round2 regression481 tests passed in33.030seconds",
+  "tests_scope": "494 full round2 tests plus2 focused proposal-headroom tests; all passed. No original experiment sources edited.",
   "fixed_half_completion_A": {
     "summary_sha256": "51ead7b35646f51bc75b7ac622b00eaaec58f91994ab80e1e82043925d428940",
     "fresh_validation": false,
@@ -6347,7 +6347,41 @@
     "new_offline_neural_observations": 384,
     "new_cloud_calls": 0,
     "fresh_validation": false,
-    "test_used": false
+    "test_used": false,
+    "head_CPU_timing": {
+      "new_cloud_calls": 0,
+      "new_neural_calls": 0,
+      "observations": 384,
+      "repeats": 5,
+      "schema": "selected-regularized-A-head-CPU-timing-v1",
+      "scope": "Logistic forecast and16-state normalization only; excludes features, encoder and Bellman backup; not full inference latency",
+      "selected_model_sha256": "3542e8e333b6e30e5a4eab5e05c6fe4a0c76edfc6bc608e7318dbe1603c8d84c",
+      "test_used": false,
+      "threads": 1,
+      "timings": {
+        "previous_raw130": {
+          "five_repeat_means_ms": [
+            0.07859375,
+            0.0778671875,
+            0.07951562499999999,
+            0.07893229166666667,
+            0.07872135416666666
+          ],
+          "mean_head_cpu_ms_per_observation": 0.07872604166666666
+        },
+        "selected_dense386": {
+          "five_repeat_means_ms": [
+            0.07421614583333333,
+            0.074390625,
+            0.07513541666666666,
+            0.07429947916666667,
+            0.0737265625
+          ],
+          "mean_head_cpu_ms_per_observation": 0.07435364583333334
+        }
+      },
+      "warmup": 10
+    }
   },
   "expanded_completion_pipeline": {
     "status": "implemented and tested; awaiting full512 paired collection before extraction/fitting",
@@ -6357,5 +6391,38 @@
     "features": "old excluded V1 raw20 plus same-forward project256",
     "fit": "3outer and3inner whole-question folds; two feature families; exactComplete16 dynamics",
     "test_used": false
+  },
+  "science_V3_proposal_headroom": {
+    "controller_accuracy_claim": false,
+    "development_or_test_read": false,
+    "fresh_validation": false,
+    "interpretation": "An option proposal is not a compact solver answer. Even a passed screen needs paid paired feedback and learned validation.",
+    "mean_proposal_encoder_compute": 404.5865972682646,
+    "new_cloud_calls": 0,
+    "reports": {
+      "all": {
+        "existing_solver_union": 49,
+        "n": 64,
+        "novel_proposals": 4,
+        "proposal_correct": 17
+      },
+      "chemistry": {
+        "existing_solver_union": 23,
+        "n": 32,
+        "novel_proposals": 4,
+        "proposal_correct": 8
+      },
+      "physics": {
+        "existing_solver_union": 26,
+        "n": 32,
+        "novel_proposals": 0,
+        "proposal_correct": 9
+      }
+    },
+    "schema": "final-V3-option-proposal-TRAIN-headroom-v1",
+    "screen_passed": false,
+    "source_complete_sha256": "2961147229628b4e616345eafad4e5d27cf1f158b1456e48f38418e81c75e8eb",
+    "availability_scope": "Declared controls only: plain7, Complete3, strong-root, ordinary including late review, strong-late and blind-first pilots. Other older pilot variants are not in this union; adding them cannot increase the four novel proposals.",
+    "registration_sha256": "06362adf9f2d9089f93bd6e552bc76ad8088188836a1dc212e1579b0258223a2"
   }
 }

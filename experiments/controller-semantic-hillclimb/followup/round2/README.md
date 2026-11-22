@@ -126,10 +126,13 @@ Both feature families and the previous stronger A remain in the comparison.
 
 `science_proposal_headroom.py` separately tests the finalV3 option scorer on the
 same fixed64 original science training questions used for recent action pilots.
-All622 options are scored locally before grading. At least six correct proposals
-beyond all previously collected solver paths are required before considering
-new paired feedback acquisition. A proposal is not a compact-solver output or
-controller result, and no cloud calls are part of this diagnostic.
+All622 options were scored locally before grading. The final model proposed17/64
+correct options, including four beyond the declared cached controls, below the
+registered six-question expansion gate. These controls include plain, Complete,
+strong-root, ordinary late-review, strong-late, and blind-first paths; some older
+pilot variants are not in this union, and adding them could only reduce novelty.
+No feedback cloud calls are promoted. A proposal is not a compact-solver output
+or controller result. Its mean paid observer compute was404.59 units.
 
 ## Current continuation
 
