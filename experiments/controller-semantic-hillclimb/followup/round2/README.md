@@ -1009,3 +1009,32 @@ exactly. It would cache384 new science observations and compare32 fixed
 original/clustered-kernel settings, charging only observations purchased by each
 policy. The best prior A remains eligible. This adapter is prepared, not run;
 all590 regression tests pass, and no fresh inference is authorized by this code.
+
+The arithmetic pilot completed all256 physical calls and restored min0/max2
+capacity. It scores23/64 after one guided repair and22/64 after two, at5513.87
+compute for the latter versus5443.32 for the retained strong control. It adds
+zero correct questions beyond the50-question prior union. Only three questions
+requested calculator expressions (four expressions, three valid). Mean measured
+calculator replay time is0.00163ms per question, outside the token proxy. The
+pilot fails its novelty screen and is not promoted.
+
+## Disjoint supervised training examples
+
+`training_example_pool.py` builds a private1216-question demonstration pool from
+the sealed1280 science TRAIN cohort, excluding every question in the64-question
+pilot. Each example contains its question stem and the correct offered answer
+content from TRAIN labels, without a generated rationale. TFIDF retrieval uses
+only the current question stem and observed subject, excludes equal stems and
+fivegram Jaccard similarity at least0.3, and supplies one example with at most
+120 stem words and60 answer words. No current/pilot reference can be retrieved.
+
+The separately registered `example_review_runner.py` pilot explicitly supplies
+these other TRAIN reference contents as in-context supervision. It does not
+claim reference-free textbook retrieval. The original1024/512 bounded-review
+continuation, conditional second teacher phase, compact prompts/seeds and
+two-continuation limit remain intact. All evidence tokens are charged; retrieval
+CPU timing is reported separately. Matched B receives the same examples if
+promoted. The entire64-question cohort and known50-question union remain the
+screen. Collection is in progress on at most two existing GPUs, with no cloud
+training. All595 tests pass, including cohort exclusion, public-only retrieval,
+reference isolation, full physical replay and scoped protocol restoration.
