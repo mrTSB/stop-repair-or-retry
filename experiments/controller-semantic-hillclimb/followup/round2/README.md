@@ -1288,3 +1288,32 @@ all previous stronger candidates, exact science decisions and all five original
 baselines. New candidates use distinct identities so a retained model cannot be
 confused with a new candidate. This complete pipeline passes626 tests; no new
 math fit or development result is claimed while collection is incomplete.
+
+
+## Broader reference corpus, separate pilot
+
+`broad_textbook_corpus.py` seals a question-independent five-course expansion:
+[Organic Chemistry I](https://ocw.mit.edu/courses/5-12-organic-chemistry-i-spring-2003/pages/lecture-handouts/),
+[Organic Chemistry II](https://ocw.mit.edu/courses/5-13-organic-chemistry-ii-fall-2006/pages/lecture-notes/),
+[Quantum Physics III](https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/pages/lecture-notes/),
+[Electromagnetism II](https://ocw.mit.edu/courses/8-07-electromagnetism-ii-fall-2012/pages/lecture-notes/),
+and [Applied Nuclear Physics](https://ocw.mit.edu/courses/22-02-introduction-to-applied-nuclear-physics-spring-2012/pages/lecture-notes/).
+Only lecture-page materials are followed. Explicit answer keys, exams, assignments
+and two third-party journal papers are excluded. The private corpus preserves
+source attribution and extraction coverage. It adds1,591 passages from72 PDFs:
+178 chemistry and1,413 physics passages. Seven documents yield no qualifying text
+chunks; their coverage receipts remain. Chemical structures and equations are
+not reconstructed, so this is a material limitation of the text-only extraction.
+No benchmark records or model calls selected or built the corpus.
+
+`broad_evidence_review_runner.py` registers a separate corpus-only comparison
+with the exact64/960/512 reviewer budget and two unchanged compact continuations.
+All64 identical paid query calls are reused;256 new physical calls are allowed
+after the512-question math collector finishes. All320 phases/continuations are
+charged at inference even when reused. Exact full compatible trajectories would
+also be reused. Here, all remaining serialized prompts differ: an answer-free
+audit finds17 questions with changed passage content,11 receiving newly added
+lecture sources. Other prompt differences include changed TF-IDF relevance
+scores, so not every changed prompt represents new factual content. The same
+six-novel-question/1.25-cost screen and strongest matched-B requirement remain.
+The full regression suite passes629 tests in40.519 seconds.

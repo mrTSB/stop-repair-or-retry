@@ -7427,8 +7427,8 @@
     "test_inference_started": false
   },
   "latest_regression": {
-    "tests": 626,
-    "seconds": 38.843,
+    "tests": 629,
+    "seconds": 40.519,
     "status": "passed"
   },
   "lexical_outcome_diagnostic": {
@@ -9948,7 +9948,7 @@
     "training_only": true
   },
   "test_inference_started": false,
-  "tests_passed": 626,
+  "tests_passed": 629,
   "tests_scope": "515 full round2 tests passed in34.066seconds; no new fresh inference or grading",
   "training_example_pool": {
     "cloud_calls": 0,
@@ -10046,5 +10046,36 @@
     "session": 41842,
     "log": "/private/tmp/srr-math-pair-collect.log",
     "gated_fit_and_development": "prepared_not_run"
+  },
+  "broad_textbook_corpus": {
+    "status": "complete",
+    "documents": 72,
+    "new_passages": 1591,
+    "new_by_subject": {
+      "chemistry": 178,
+      "physics": 1413
+    },
+    "zero_extractable_text_documents": 7,
+    "sha256": "bf00b4f5a103ee869a85c7e803ec2fdb56fde336721d9118bf38b2d4e0c02c46",
+    "benchmark_records_read": false,
+    "model_calls": 0
+  },
+  "broad_evidence_review_pilot_v4": {
+    "status": "registered_waiting_for_math_collection",
+    "registration": "ecfb8916627ac0d4bdf0c7aa49563f485c596f3d7267d8ef9c3f26a6a8d77dd6",
+    "reused_physical_calls": 64,
+    "maximum_new_physical_calls": 256,
+    "full_inference_calls_per_question": 5,
+    "retrieval_content_audit": {
+      "questions": 64,
+      "passage_contents_changed": 17,
+      "questions_receiving_new_lecture_sources": 11,
+      "distinct_added_sources_retrieved": 7,
+      "reference_values_read": false,
+      "correctness_used": false,
+      "model_calls": 0
+    },
+    "corpus_passages_sha256": "bf00b4f5a103ee869a85c7e803ec2fdb56fde336721d9118bf38b2d4e0c02c46",
+    "controller_promoted": false
   }
 }
