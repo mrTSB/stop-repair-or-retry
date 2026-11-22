@@ -1388,3 +1388,40 @@ requirements, requires lower C compute, and raises C's target when matched B
 improves. Four separate boundary/integrity tests pass. `current_targets.json`
 records the current failures and the exact remaining counts; development
 success can never set its fresh-confirmation flag.
+
+The contrastive pilot finishes all320 physical calls with zero transport errors
+and fails. Its first and second compact answers score21/64 and22/64; their union
+is23/64 and adds zero questions beyond the50-question prior union. The second
+trajectory costs6,536.66 units,20.09% above retained root review. It passes the
+pilot cost bound but fails novelty, so no C model is promoted. Capacity returns
+to min0/max2; the checkpoint remains A153/B177/C177 and fresh validation stays
+reserved.
+
+The separate semantic index uses the author's
+[BGE-small-en-v1.5 recipe](https://huggingface.co/BAAI/bge-small-en-v1.5), pinned
+to revision`5c38ec7c405ec4b44b94cc5a9bb96e735b38267a` (MIT license). All11,165
+frozen textbook passages are encoded locally on CPU using33,360,000 parameters,
+CLS pooling and L2 normalization into384 dimensions. The698 offline forwards
+use2,640,352 actual padded token slots (1,644,293 nonpadding tokens); no benchmark
+questions or labels select/build the index, and no model is trained. Three
+general-topic retrieval smoke checks pass. Raw textbook and model assets remain
+private under`runs/` with their existing attribution and licenses.
+
+`dense_grounded_protocol.py` separately registers the original grounded1024/512
+review format with a new dense/lexical observation. The public question stem
+alone queries the index, with no LLM query phase. Fixed reciprocal-rank fusion
+combines the top60 dense and lexical passages within the same subject, then
+keeps two distinct sources capped at85 words each. All64 actual query forwards
+use6,192 token slots; they cost66.84955 units in total and are charged in both
+inference proxies even on a replay-cache hit. Every physical reviewer/solver
+phase remains billed. The index-build cost is reported separately as offline
+preparation.
+
+The new runner reuses28 compatible physical responses, choosing the earliest
+exact request receipt across the fixed prior banks by timestamp and hash. It
+permits at most228 new calls and preserves the original compact prompts, caps,
+seeds, frozen weights and two-continuation horizon. Full physical replay checks
+the new query receipts; grading adds their cost before evaluating the same
+six-novel-question/1.25-cost screen. A matched B with the same new observation,
+a learned hybrid and frozen fresh validation remain necessary for any claimed
+controller gain. This registration and the index do not establish such a gain.

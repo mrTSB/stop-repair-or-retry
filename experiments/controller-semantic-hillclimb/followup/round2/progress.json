@@ -9040,7 +9040,7 @@
     },
     "schema": "expanded768-split_forest-joint-belief-TRAIN-v1"
   },
-  "status": "Concrete checkpoint verified; contrastive review collecting; C over80% target not achieved",
+  "status": "Concrete checkpoint verified; contrastive review failed; semantic grounded pilot registered; >80% C not achieved",
   "strong_late_review_pilot": {
     "controller_promoted": false,
     "coverage": {
@@ -10223,7 +10223,7 @@
     "fresh_test_reserved": 1024
   },
   "contrastive_review_pilot_v1": {
-    "status": "collecting",
+    "status": "completed_failed_screen",
     "registration": "dcb22843761f1fcecaa63a85ef6c575f2469848d17071361dbb35b707cdc4b6b",
     "training_questions": 64,
     "maximum_physical_calls": 320,
@@ -10239,7 +10239,62 @@
     "maximum_cloud_gpus": 2,
     "cloud_training": false,
     "test_used": false,
-    "promotion_requires": "Six novel correct TRAIN paths, at most1.25x cost, learned POMDP integration, strongest matched B and fresh validation"
+    "promotion_requires": "Six novel correct TRAIN paths, at most1.25x cost, learned POMDP integration, strongest matched B and fresh validation",
+    "methods": {
+      "Contrastive first guided": {
+        "accuracy": 0.328125,
+        "correct": 21,
+        "correct_review_wrong_compact": 0,
+        "mean_compute": 5741.530137540453,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 3.0,
+        "mean_review_input_tokens": 3158.109375,
+        "mean_review_output_tokens": 1268.9375,
+        "mean_solver_calls": 2.0,
+        "mean_solver_input_tokens": 959.171875,
+        "mean_solver_output_tokens": 155.875,
+        "mean_total_parameter_compute": 51587.97026699029,
+        "n": 64,
+        "review_correct": 16,
+        "wrong_review_correct_compact": 5
+      },
+      "Contrastive retained second repair": {
+        "accuracy": 0.34375,
+        "correct": 22,
+        "correct_review_wrong_compact": 0,
+        "mean_compute": 6536.6555420711975,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 3.0,
+        "mean_review_input_tokens": 3158.109375,
+        "mean_review_output_tokens": 1268.9375,
+        "mean_solver_calls": 3.0,
+        "mean_solver_input_tokens": 1514.734375,
+        "mean_solver_output_tokens": 214.546875,
+        "mean_total_parameter_compute": 52383.09567152104,
+        "n": 64,
+        "review_correct": 16,
+        "wrong_review_correct_compact": 6
+      }
+    },
+    "novel_questions": 0,
+    "new_two_endpoint_union": 23,
+    "screen": {
+      "checks": {
+        "at_least6_novel_questions": false,
+        "second_trajectory_compute_at_most1p25": true
+      },
+      "controller_promoted": false,
+      "criteria": {
+        "mean_second_trajectory_compute_over_rootstrong_retained_at_most": 1.25,
+        "novel_questions_beyond_registered_known_union_at_least": 6,
+        "scope": "TRAIN answer availability only; requires learned POMDP integration, strongest matched B and fresh validation"
+      },
+      "hindsight_availability_only": true,
+      "passed": false,
+      "ratio_to_rootstrong_retained": 1.2008581745351243,
+      "second_trajectory_mean_compute": 6536.6555420711975
+    },
+    "transport_error_records": 0
   },
   "current_objective": {
     "n": 256,
@@ -10268,5 +10323,39 @@
   "target_checker_tests": {
     "tests": 4,
     "passed": true
+  },
+  "semantic_textbook_index": {
+    "benchmark_records_read": false,
+    "cloud_calls": 0,
+    "dimensions": 384,
+    "forward_calls": 698,
+    "model_parameters": 33360000,
+    "offline_forward_token_slots": 2640352,
+    "offline_nonpadding_tokens": 1644293,
+    "passages": 11165,
+    "schema": "question-independent-BGE-small-textbook-index-v1",
+    "training": false,
+    "status": "complete",
+    "registration": "5589072fa77c58e5a7f3bd2f92d7d050431b7bb48da0fa8dde249263ff8cd0c2",
+    "general_topic_smoke_queries": 3,
+    "smoke_passed": true
+  },
+  "dense_grounded_pilot_v1": {
+    "status": "registered_not_started",
+    "registration": "c1c9714feba6c9bdff325ae4fe5a49fc1a995770875a62d2d476295e6935ff16",
+    "training_questions": 64,
+    "reused_physical_calls": 28,
+    "maximum_new_physical_calls": 228,
+    "local_query_observations": {
+      "actual_local_query_forwards_this_process": 64,
+      "charged_query_observations": 64,
+      "charged_query_token_slots": 6192,
+      "receipts_sha256": "f623814cb95f9a5ea464a9e5055b40c7ff6ac06530325ecf8681506d64e5f926",
+      "total_inference_query_compute": 66.84955339805825,
+      "unique_query_inputs": 64
+    },
+    "test_used": false,
+    "maximum_cloud_gpus": 2,
+    "cloud_training": false
   }
 }
