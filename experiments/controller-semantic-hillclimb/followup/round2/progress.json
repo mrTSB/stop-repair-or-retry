@@ -5537,22 +5537,83 @@
     "training_questions": 64
   },
   "evidence_first_review_pilot_v3": {
-    "existing_app_only": true,
-    "fresh_validation": false,
-    "maximum_cloud_gpus": 2,
-    "maximum_physical_calls": 320,
-    "questions": 64,
+    "status": "completed_failed_screen",
     "registration": "77acbeae86529322e8d669713c1669d9a4c9b0a80fca9ef8d0e7393714facec5",
-    "solver_continuations": 2,
-    "status": "registered_collecting",
-    "teacher_phase_caps": [
-      64,
-      960,
-      512
-    ],
-    "training_only": true,
-    "session": 70314,
-    "log": "/private/tmp/srr-evidence-first-collect.log"
+    "methods": {
+      "Evidence-first V3 first guided": {
+        "accuracy": 0.375,
+        "correct": 24,
+        "correct_review_wrong_compact": 0,
+        "mean_compute": 5857.90857605178,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 3.0,
+        "mean_review_input_tokens": 3285.84375,
+        "mean_review_output_tokens": 1234.15625,
+        "mean_solver_calls": 2.0,
+        "mean_solver_input_tokens": 983.90625,
+        "mean_solver_output_tokens": 151.328125,
+        "mean_total_parameter_compute": 52666.97006472492,
+        "n": 64,
+        "review_correct": 21,
+        "wrong_review_correct_compact": 3
+      },
+      "Evidence-first V3 retained second repair": {
+        "accuracy": 0.390625,
+        "correct": 25,
+        "correct_review_wrong_compact": 0,
+        "mean_compute": 6679.2071197411005,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 3.0,
+        "mean_review_input_tokens": 3285.84375,
+        "mean_review_output_tokens": 1234.15625,
+        "mean_solver_calls": 3.0,
+        "mean_solver_input_tokens": 1559.625,
+        "mean_solver_output_tokens": 210.0625,
+        "mean_total_parameter_compute": 53488.26860841424,
+        "n": 64,
+        "review_correct": 21,
+        "wrong_review_correct_compact": 4
+      }
+    },
+    "novel_questions": 0,
+    "new_two_endpoint_union": 26,
+    "screen": {
+      "checks": {
+        "at_least6_novel_questions": false,
+        "second_trajectory_compute_at_most1p25": true
+      },
+      "controller_promoted": false,
+      "criteria": {
+        "mean_second_trajectory_compute_over_rootstrong_retained_at_most": 1.25,
+        "novel_questions_beyond_registered_known_union_at_least": 6,
+        "scope": "TRAIN action headroom only; Active local textbook retrieval is an explicitly new review capability, available to matched B too"
+      },
+      "hindsight_availability_only": true,
+      "passed": false,
+      "ratio_to_rootstrong_retained": 1.2270465251734604,
+      "second_trajectory_mean_compute": 6679.2071197411005
+    },
+    "active_retrieval": {
+      "included_in_parameter_token_proxy": false,
+      "max_question_replay_cpu_ms": 1.4599500107578933,
+      "mean_replay_cpu_ms": 1.1744649787942762,
+      "passages": 127,
+      "public_question_fallbacks": 0,
+      "queries": 64,
+      "questions_with_passages": 64,
+      "questions_with_queries": 64,
+      "repetitions_per_question": 10
+    },
+    "coverage": {
+      "first_guided": 64,
+      "logical_reviews": 64,
+      "physical_calls": 320,
+      "physical_compact_calls": 128,
+      "physical_teacher_phases": 192,
+      "questions": 64,
+      "second_repairs": 64
+    },
+    "transport_error_records": 0
   },
   "example_review_pilot": {
     "cloud_training": false,
@@ -7367,7 +7428,7 @@
   },
   "latest_regression": {
     "tests": 625,
-    "seconds": 39,
+    "seconds": 38.934,
     "status": "passed"
   },
   "lexical_outcome_diagnostic": {
@@ -9969,7 +10030,7 @@
     "status": "completed_no_screen_passed"
   },
   "auxiliary_math512": {
-    "status": "reserved_and_collector_preflight_passed",
+    "status": "registered_collecting",
     "reservation_sha256": "8027ea5c8153a1c749e8033eaca793f47ff24d55220b03103ca37095c68a9744",
     "questions": 512,
     "maximum_physical_calls": 3584,
@@ -9980,6 +10041,9 @@
     "frozen_observer_overlap": 0,
     "unused_disjoint_math": 3710,
     "collection_priority": "After the active evidence-first pilot finishes and releases capacity",
-    "local_feature_and_nested_fit_pipeline": "prepared_not_run"
+    "local_feature_and_nested_fit_pipeline": "prepared_not_run",
+    "collection_registration": "43b2e752a9ad614cd8c34ba21ec6fd40dac977d58cb299bf31399dbd4faec396",
+    "session": 41842,
+    "log": "/private/tmp/srr-math-pair-collect.log"
   }
 }

@@ -1267,3 +1267,15 @@ Arrow row selection precedes conversion of reference values to Python. The
 registered screen requires lower joint loss and marginal Brier, at least a
 two-point conditional-decision accuracy gain, and at most10% extra compute.
 This screen is preliminary; it does not claim full-controller or fresh accuracy.
+
+The evidence-first timing pilot completed all320 physical calls with zero
+transport errors and restored min0/max2 capacity. All64 questions received
+passages (127 total, no fallback). Accuracy was24/64 after one compact repair
+and25/64 after the second; the two-endpoint union was26/64. It added zero
+questions beyond the50-question known union. Its second trajectory cost was
+6,679.21 units,22.70% above the original strong retained-review control. The
+registered screen fails; no controller is promoted.
+
+The subsequent512-question math collector is registered and running. It uses
+the released existing-app capacity, so the two collection jobs do not overlap.
+The full regression suite passes625 tests in38.934 seconds.
