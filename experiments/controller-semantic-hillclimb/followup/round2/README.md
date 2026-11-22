@@ -894,3 +894,36 @@ The new registration binds the adapter, original sources, and the failed
 predecessor registration; it refuses a predecessor with any inference artifacts.
 This corrected pilot is collecting on at most two existing-app GPUs while
 feature extraction runs locally. No pilot outcome or fresh result is claimed.
+
+## Completed expanded-data and retrieval comparisons
+
+The1280-question likelihood screen passed only raw130: common768 held-question
+joint loss improved1.14784→1.12983 and mean-four Brier0.12922→0.12899 (the latter
+interval includes zero). Dense386 failed the Brier criterion. All32 registered
+raw130 development candidates completed; their best was147/256, so the stronger
+A153 is retained. The original and retained parent decisions, five baselines,
+and matched controls reproduced exactly.
+
+The original-corpus grounded pilot scored31/64 at5771.52 compute units versus
+the strong retained control's32/64 at5443.32. It added zero solves beyond the
+50-question union of all prior paths. The separate expanded-corpus pilot scored
+32/64 at5789.64 and also added zero novel solves. Both failed the registered
+six-new-solve screen. `advanced_grounded_runner.py` reused 180 identical physical
+responses covering 45 unchanged trajectories; only 76 calls were new, while all
+256 recorded responses are still charged for inference. Both
+collectors restored min0/max2 capacity. Neither experiment changes selected C.
+
+`policy_crossfit_diagnostic.py` separately tests complete POMDP decisions with
+outer question folds excluded from every forecaster, transition, emission and
+cost fit. Inner question folds generate emission forecasts. On the identical
+768 held TRAIN questions, the fixed old768 dense recipe gets193 correct at
+1586.26 compute; expanded1280 raw gets194 at1234.61, and expanded1280 dense gets
+196 at1260.43. Both save compute but miss the prespecified two-percentage-point
+accuracy screen. This is exploratory TRAIN evidence, not fresh confirmation or
+a replacement for the failed likelihood screen.
+
+`mlp_completion_forecast.py` and `mlp_policy_crossfit.py` next test a small64-unit
+regularized CPU head on the same cached observations and whole-policy folds.
+The434M encoder is frozen and never called; no cloud training or new solver
+inference occurs. Head latency is explicitly outside the token-based compute
+proxy. This study is registered/in progress and has not promoted a controller.
