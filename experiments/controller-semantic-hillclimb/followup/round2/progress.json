@@ -76,22 +76,26 @@
     },
     "A": {
       "dev": {
-        "accuracy": 0.59375,
-        "correct": 152,
-        "mean_compute": 1048.6125840786458,
+        "accuracy": 0.59765625,
+        "correct": 153,
+        "mean_compute": 1087.2748356677234,
         "mean_judge_calls": 0.0,
         "mean_judge_tokens": 0.0,
-        "mean_solver_calls": 2.08203125,
-        "mean_solver_tokens": 754.375,
-        "mean_total_parameter_compute": 1048.6125840786458,
-        "mean_verifier_calls": 1.75390625,
-        "mean_verifier_token_slots": 512.80078125,
-        "mean_verifier_tokens": 512.80078125,
+        "mean_solver_calls": 2.18359375,
+        "mean_solver_tokens": 783.23046875,
+        "mean_total_parameter_compute": 1087.2748356677234,
+        "mean_verifier_calls": 1.82421875,
+        "mean_verifier_token_slots": 522.11328125,
+        "mean_verifier_tokens": 522.11328125,
         "n": 256
       },
-      "key": "raw20_plus_project256-w0.5-2",
-      "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-continuous-completion-v1/raw20_plus_project256-w0.5-2.pkl",
-      "model_sha256": "637e41e0f138ac8efca95c887621db4e15060566cd03eb7a79eef6a87c46f7fe",
+      "key": "math-1",
+      "math_settings": {
+        "penalty": 0.0,
+        "posterior_weight": 0.5
+      },
+      "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-math-specialization-v1/math-1.pkl",
+      "model_sha256": "9b0161a226d0e557ee1afb4d20ed7d87ae4af41b5a952d70ffef35dfa8cd8369",
       "policy_module": "continuous_completion_pomdp",
       "science_settings": {
         "penalty": 0.02,
@@ -193,7 +197,7 @@
       "smoothing": 32.0
     },
     "accuracy_gaps_percentage_points": {
-      "A_minus_best_original_baseline": 7.8125,
+      "A_minus_best_original_baseline": 8.203125,
       "B_minus_best_original_baseline": 17.578125,
       "C_minus_max_A_B": 0.0
     },
@@ -212,23 +216,24 @@
       "development-expanded-C-canonical-cost-v1": "317c49f79b73bdf23396181a9078b7009b7c1302d795e2b7664bf8b25bb7eab0",
       "development-regularized-completion-v1": "94ba47f196e60c49ce01ee8a2234db85d4f88cc4cdb75f7edb14a9f48495aba0",
       "development-auxiliary768-completion-v1": "d27ff6f9e109406f88db2f1a654389cda6c1362fe444360db0954f9f2e694e00",
-      "A": "8da4cfb7d3ecb4765b84ca2a60d3682ca48666d021447a1a07b444af79e55e7a",
-      "development-nonlinear-completion-v1": "f7823857eae47c406195ecbaa9154eae590d23ff906433b7b38b4c1805024705"
+      "A": "a31b20e4f55f0e675b4b21e22d10602719134b0df25eb3d70e12cbe3ebf3af56",
+      "development-nonlinear-completion-v1": "f7823857eae47c406195ecbaa9154eae590d23ff906433b7b38b4c1805024705",
+      "development-math-specialization-v1": "a31b20e4f55f0e675b4b21e22d10602719134b0df25eb3d70e12cbe3ebf3af56"
     },
     "matched_complete_controls": {
       "Complete": {
         "full256_with_retained_math_A": {
-          "accuracy": 0.5625,
-          "correct": 144,
-          "mean_compute": 843.0260808964604,
+          "accuracy": 0.56640625,
+          "correct": 145,
+          "mean_compute": 881.688332485538,
           "mean_judge_calls": 0.0,
           "mean_judge_tokens": 0.0,
-          "mean_solver_calls": 2.00390625,
-          "mean_solver_tokens": 638.56640625,
-          "mean_total_parameter_compute": 843.0260808964604,
-          "mean_verifier_calls": 0.9296875,
-          "mean_verifier_token_slots": 116.703125,
-          "mean_verifier_tokens": 116.703125,
+          "mean_solver_calls": 2.10546875,
+          "mean_solver_tokens": 667.421875,
+          "mean_total_parameter_compute": 881.688332485538,
+          "mean_verifier_calls": 1.0,
+          "mean_verifier_token_slots": 126.015625,
+          "mean_verifier_tokens": 126.015625,
           "n": 256
         },
         "science": {
@@ -278,17 +283,17 @@
       },
       "Repair then Complete": {
         "full256_with_retained_math_A": {
-          "accuracy": 0.5859375,
-          "correct": 150,
-          "mean_compute": 1409.247763744357,
+          "accuracy": 0.58984375,
+          "correct": 151,
+          "mean_compute": 1447.9100153334343,
           "mean_judge_calls": 0.0,
           "mean_judge_tokens": 0.0,
-          "mean_solver_calls": 2.50390625,
-          "mean_solver_tokens": 1075.97265625,
-          "mean_total_parameter_compute": 1409.247763744357,
-          "mean_verifier_calls": 0.9296875,
-          "mean_verifier_token_slots": 116.703125,
-          "mean_verifier_tokens": 116.703125,
+          "mean_solver_calls": 2.60546875,
+          "mean_solver_tokens": 1104.828125,
+          "mean_total_parameter_compute": 1447.9100153334343,
+          "mean_verifier_calls": 1.0,
+          "mean_verifier_token_slots": 126.015625,
+          "mean_verifier_tokens": 126.015625,
           "n": 256
         },
         "science": {
@@ -338,17 +343,17 @@
       },
       "Repair then Complete if invalid": {
         "full256_with_retained_math_A": {
-          "accuracy": 0.5859375,
-          "correct": 150,
-          "mean_compute": 1232.7105469158778,
+          "accuracy": 0.58984375,
+          "correct": 151,
+          "mean_compute": 1271.3727985049554,
           "mean_judge_calls": 0.0,
           "mean_judge_tokens": 0.0,
-          "mean_solver_calls": 2.25,
-          "mean_solver_tokens": 939.59765625,
-          "mean_total_parameter_compute": 1232.7105469158778,
-          "mean_verifier_calls": 0.9296875,
-          "mean_verifier_token_slots": 116.703125,
-          "mean_verifier_tokens": 116.703125,
+          "mean_solver_calls": 2.3515625,
+          "mean_solver_tokens": 968.453125,
+          "mean_total_parameter_compute": 1271.3727985049554,
+          "mean_verifier_calls": 1.0,
+          "mean_verifier_token_slots": 126.015625,
+          "mean_verifier_tokens": 126.015625,
           "n": 256
         },
         "science": {
@@ -398,17 +403,17 @@
       },
       "Retry then Complete": {
         "full256_with_retained_math_A": {
-          "accuracy": 0.5703125,
-          "correct": 146,
-          "mean_compute": 1291.7315825145834,
+          "accuracy": 0.57421875,
+          "correct": 147,
+          "mean_compute": 1330.393834103661,
           "mean_judge_calls": 0.0,
           "mean_judge_tokens": 0.0,
-          "mean_solver_calls": 2.50390625,
-          "mean_solver_tokens": 985.19140625,
-          "mean_total_parameter_compute": 1291.7315825145834,
-          "mean_verifier_calls": 0.9296875,
-          "mean_verifier_token_slots": 116.703125,
-          "mean_verifier_tokens": 116.703125,
+          "mean_solver_calls": 2.60546875,
+          "mean_solver_tokens": 1014.046875,
+          "mean_total_parameter_compute": 1330.393834103661,
+          "mean_verifier_calls": 1.0,
+          "mean_verifier_token_slots": 126.015625,
+          "mean_verifier_tokens": 126.015625,
           "n": 256
         },
         "science": {
@@ -458,17 +463,17 @@
       },
       "Retry then Complete if invalid": {
         "full256_with_retained_math_A": {
-          "accuracy": 0.56640625,
-          "correct": 145,
-          "mean_compute": 1204.909171511347,
+          "accuracy": 0.5703125,
+          "correct": 146,
+          "mean_compute": 1243.571423100425,
           "mean_judge_calls": 0.0,
           "mean_judge_tokens": 0.0,
-          "mean_solver_calls": 2.33984375,
-          "mean_solver_tokens": 918.12109375,
-          "mean_total_parameter_compute": 1204.909171511347,
-          "mean_verifier_calls": 0.9296875,
-          "mean_verifier_token_slots": 116.703125,
-          "mean_verifier_tokens": 116.703125,
+          "mean_solver_calls": 2.44140625,
+          "mean_solver_tokens": 946.9765625,
+          "mean_total_parameter_compute": 1243.571423100425,
+          "mean_verifier_calls": 1.0,
+          "mean_verifier_token_slots": 126.015625,
+          "mean_verifier_tokens": 126.015625,
           "n": 256
         },
         "science": {
@@ -518,17 +523,17 @@
       },
       "Stop if valid else Complete": {
         "full256_with_retained_math_A": {
-          "accuracy": 0.5625,
-          "correct": 144,
-          "mean_compute": 657.1998268511529,
+          "accuracy": 0.56640625,
+          "correct": 145,
+          "mean_compute": 695.8620784402306,
           "mean_judge_calls": 0.0,
           "mean_judge_tokens": 0.0,
-          "mean_solver_calls": 1.64453125,
-          "mean_solver_tokens": 495.015625,
-          "mean_total_parameter_compute": 657.1998268511529,
-          "mean_verifier_calls": 0.9296875,
-          "mean_verifier_token_slots": 116.703125,
-          "mean_verifier_tokens": 116.703125,
+          "mean_solver_calls": 1.74609375,
+          "mean_solver_tokens": 523.87109375,
+          "mean_total_parameter_compute": 695.8620784402306,
+          "mean_verifier_calls": 1.0,
+          "mean_verifier_token_slots": 126.015625,
+          "mean_verifier_tokens": 126.015625,
           "n": 256
         },
         "science": {
@@ -578,7 +583,32 @@
       }
     },
     "matched_control_math_rule": "Identical retained math A for all six added controls and all new A candidates",
-    "A_above_highest_baseline": 0.078125
+    "A_above_highest_baseline": 0.08203125,
+    "previous_A_before_math_specialization": {
+      "dev": {
+        "accuracy": 0.59375,
+        "correct": 152,
+        "mean_compute": 1048.6125840786458,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 2.08203125,
+        "mean_solver_tokens": 754.375,
+        "mean_total_parameter_compute": 1048.6125840786458,
+        "mean_verifier_calls": 1.75390625,
+        "mean_verifier_token_slots": 512.80078125,
+        "mean_verifier_tokens": 512.80078125,
+        "n": 256
+      },
+      "key": "raw20_plus_project256-w0.5-2",
+      "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-continuous-completion-v1/raw20_plus_project256-w0.5-2.pkl",
+      "model_sha256": "637e41e0f138ac8efca95c887621db4e15060566cd03eb7a79eef6a87c46f7fe",
+      "policy_module": "continuous_completion_pomdp",
+      "science_settings": {
+        "penalty": 0.02,
+        "posterior_weight": 0.5
+      },
+      "settings": {}
+    }
   },
   "test_inference_started": false,
   "status": "Targets not met; second disjoint paired-training block collecting",
@@ -7659,7 +7689,7 @@
     "controller_gain_claim": false
   },
   "full_semantic_probe": {
-    "status": "registered_extracting_locally",
+    "status": "complete_training_screen_failed",
     "registration_sha256": "dbe117f228b74854b8af0f4e4629ee3face0d53ada3266aa8140cc48934ff856",
     "training_questions": 256,
     "neural_observations": 768,
@@ -7672,6 +7702,190 @@
     },
     "encoder_weights_unchanged": true,
     "development_or_test_used": false,
-    "controller_gain_claim": false
+    "controller_gain_claim": false,
+    "diagnostic_registration_sha256": "945ede6732d8df303953c94d06ca441be38d5be8fff4f93f805347900477f5c8",
+    "screen_passed": false,
+    "promoted_to_development": false,
+    "parity_failed_logits": 0,
+    "maximum_raw_logit_difference": 3.719329833984375e-05,
+    "reports": {
+      "comparisons": {
+        "Complete_Brier": {
+          "dense_minus_control": 0.0038066074969444687,
+          "paired_question_CI95": [
+            -0.0005284582152199478,
+            0.008394411306527707
+          ]
+        },
+        "current_Brier": {
+          "dense_minus_control": 0.001578308628528,
+          "paired_question_CI95": [
+            -0.0025647160634031875,
+            0.006049814705188682
+          ]
+        },
+        "joint_Brier": {
+          "dense_minus_control": 0.006889438657604218,
+          "paired_question_CI95": [
+            -0.0005211830126435636,
+            0.014773743126672428
+          ]
+        },
+        "joint_log_loss": {
+          "dense_minus_control": 0.008016182809781638,
+          "paired_question_CI95": [
+            -0.010145781989035072,
+            0.027616993154599784
+          ]
+        },
+        "mean_four_marginal_Brier": {
+          "dense_minus_control": 0.0024763999495155146,
+          "paired_question_CI95": [
+            -0.0007764342996220198,
+            0.005921981463442598
+          ]
+        },
+        "repair_Brier": {
+          "dense_minus_control": 0.001542904090825759,
+          "paired_question_CI95": [
+            -0.0021675927833139214,
+            0.005737471739476582
+          ]
+        },
+        "retry_Brier": {
+          "dense_minus_control": 0.0029777795817638245,
+          "paired_question_CI95": [
+            0.00020515595348094204,
+            0.006129033287940594
+          ]
+        }
+      },
+      "controller_accuracy_claim": false,
+      "encoder_excluded_all_new512_questions": true,
+      "fresh_validation": false,
+      "nested_forecaster_model_selection": true,
+      "nested_hyperparameter_selection": true,
+      "neural_refitting": false,
+      "panels": {
+        "all": {
+          "raw20_plus_project256": {
+            "Complete_Brier": 0.17169290816786212,
+            "current_Brier": 0.09973063672855337,
+            "joint_Brier": 0.4903466942445758,
+            "joint_log_loss": 1.141228629983446,
+            "mean_four_marginal_Brier": 0.1232479385164067,
+            "repair_Brier": 0.1315215368873269,
+            "retry_Brier": 0.09004667228188441
+          },
+          "raw20_project256_full1024": {
+            "Complete_Brier": 0.1754995156648066,
+            "current_Brier": 0.10130894535708139,
+            "joint_Brier": 0.49723613290217994,
+            "joint_log_loss": 1.1492448127932275,
+            "mean_four_marginal_Brier": 0.12572433846592224,
+            "repair_Brier": 0.13306444097815268,
+            "retry_Brier": 0.09302445186364823
+          }
+        },
+        "chemistry": {
+          "raw20_plus_project256": {
+            "Complete_Brier": 0.1821473081618977,
+            "current_Brier": 0.10370580889899073,
+            "joint_Brier": 0.4910954904627008,
+            "joint_log_loss": 1.1303703162819507,
+            "mean_four_marginal_Brier": 0.1267431433914571,
+            "repair_Brier": 0.12765762449500886,
+            "retry_Brier": 0.09346183200993106
+          },
+          "raw20_project256_full1024": {
+            "Complete_Brier": 0.18990938449713213,
+            "current_Brier": 0.10770150323851757,
+            "joint_Brier": 0.5058726491650004,
+            "joint_log_loss": 1.1513209752249447,
+            "mean_four_marginal_Brier": 0.1320479094050799,
+            "repair_Brier": 0.13051246570777586,
+            "retry_Brier": 0.10006828417689406
+          }
+        },
+        "physics": {
+          "raw20_plus_project256": {
+            "Complete_Brier": 0.1612385081738266,
+            "current_Brier": 0.09575546455811602,
+            "joint_Brier": 0.48959789802645065,
+            "joint_log_loss": 1.1520869436849412,
+            "mean_four_marginal_Brier": 0.11975273364135634,
+            "repair_Brier": 0.13538544927964494,
+            "retry_Brier": 0.08663151255383778
+          },
+          "raw20_project256_full1024": {
+            "Complete_Brier": 0.1610896468324811,
+            "current_Brier": 0.0949163874756452,
+            "joint_Brier": 0.4885996166393595,
+            "joint_log_loss": 1.1471686503615104,
+            "mean_four_marginal_Brier": 0.11940076752676454,
+            "repair_Brier": 0.13561641624852946,
+            "retry_Brier": 0.08598061955040241
+          }
+        }
+      },
+      "prior_fixed_C_dense_failure_replaced": false,
+      "screen_passed": false,
+      "screen_scope": "Both point estimates must improve; paired question CIs are descriptive with fitted folds held fixed",
+      "second_stage_question_excluded": true
+    }
+  },
+  "math_specialization_study": {
+    "status": "Completed TRAIN nested screen, fit, and reused DEV comparison; no fresh validation",
+    "registration_sha256": "4df4fcdfbbc56ebbe07a0fff433df9e3bfcf332f0751131c74806bb2b1afc824",
+    "selected_A": {
+      "dev": {
+        "accuracy": 0.59765625,
+        "correct": 153,
+        "mean_compute": 1087.2748356677234,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 2.18359375,
+        "mean_solver_tokens": 783.23046875,
+        "mean_total_parameter_compute": 1087.2748356677234,
+        "mean_verifier_calls": 1.82421875,
+        "mean_verifier_token_slots": 522.11328125,
+        "mean_verifier_tokens": 522.11328125,
+        "n": 256
+      },
+      "key": "math-1",
+      "math_settings": {
+        "penalty": 0.0,
+        "posterior_weight": 0.5
+      },
+      "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-math-specialization-v1/math-1.pkl",
+      "model_sha256": "9b0161a226d0e557ee1afb4d20ed7d87ae4af41b5a952d70ffef35dfa8cd8369",
+      "policy_module": "continuous_completion_pomdp",
+      "science_settings": {
+        "penalty": 0.02,
+        "posterior_weight": 0.5
+      },
+      "settings": {}
+    },
+    "math_metrics": {
+      "accuracy": 0.921875,
+      "correct": 118,
+      "mean_compute": 665.2172798578074,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 2.2109375,
+      "mean_solver_tokens": 486.515625,
+      "mean_total_parameter_compute": 665.2172798578074,
+      "mean_verifier_calls": 2.0,
+      "mean_verifier_token_slots": 252.03125,
+      "mean_verifier_tokens": 252.03125,
+      "n": 128
+    },
+    "science_policy_exactly_retained": true,
+    "joint_loss_before": 1.00323773,
+    "joint_loss_after": 0.92018555,
+    "mean_three_Brier_before": 0.10867937,
+    "mean_three_Brier_after": 0.10412742,
+    "current_Brier_worsened": true,
+    "test_used": false
   }
 }

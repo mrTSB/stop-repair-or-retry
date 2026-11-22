@@ -15,6 +15,7 @@ from threadpoolctl import threadpool_limits
 import expanded1280_completion_data as dataset
 import nonlinear_completion_forecast as forecast
 import regularized_completion_pomdp as runtime
+import clustered_completion_pomdp as clustered
 
 io, fixed, nested = dataset.io, dataset.fixed, dataset.nested
 SCHEMA = 'expanded1280-forest-Complete16-TRAIN-fit-v1'
@@ -52,6 +53,7 @@ def inputs(args):
         'valid_sha256': fixed.array_sha(data['valid']), 'feature_sha256': {k: fixed.array_sha(v) for k, v in data['features'].items()},
         'bootstrap_draws': 2000, 'bootstrap_seed': 238031, 'smoothing': 32., 'state_count': 16,
         'maximum_solver_continuations': 2, 'new_neural_calls': 0, 'cloud_calls': 0,
+        'additional_observation_partition': 'Same24valid/6invalid KMeans on nested TRAIN child forecasts; refit emissions only',
         'development_or_test_read': False, 'controller_accuracy_claim': False}
     return rows, trees, observer, data, control, record
 
@@ -69,7 +71,7 @@ def comparison(labels, old, new, records):
 
 
 def fit(args, rows, trees, observer, data, control, record):
-    models, reports, oof, folds = {}, {}, {}, {}
+    models, reports, oof, folds, clustered_models = {}, {}, {}, {}, {}
     for family in nested.FAMILIES:
         p = np.full((3840, 16), np.nan); folds[family] = []
         for fold in range(3):
@@ -94,13 +96,16 @@ def fit(args, rows, trees, observer, data, control, record):
                  'final_settings': selected, 'final_inner_search': scores, 'expanded1280': True})
             path = args.output/(family+'.pkl'); io.atomic_bytes(path, pickle.dumps(policy, protocol=5))
             models[family] = {'model_sha256': io.sha(path), 'fit_receipt': policy.fit_receipt}
+            variant = clustered.rebin(policy, rows, trees, data['records'], p)
+            path = args.output/(family+'-clustered.pkl'); io.atomic_bytes(path, pickle.dumps(variant, protocol=5))
+            clustered_models[family] = {'model_sha256': io.sha(path), 'fit_receipt': variant.fit_receipt}
     io.npz(args.output/'private-oof.npz', oof); io.write(args.output/'fold-receipts.json', folds)
-    io.write(args.output/'summary.json', {'schema': SCHEMA, 'reports': reports, 'models': models,
+    io.write(args.output/'summary.json', {'schema': SCHEMA, 'reports': reports, 'models': models, 'clustered_models': clustered_models,
         'training_questions': 1280, 'controller_accuracy_claim': False, 'development_or_test_read': False,
         'paired_CI_scope': 'Descriptive, fitted folds fixed'})
     io.verify(record['source_files']); io.verify(record['input_evidence'])
     io.write(args.output/'complete.json', {'schema': SCHEMA, 'registration_sha256': args.registration_sha256,
-        'models': models, 'training_questions': 1280, 'any_screen_passed': bool(models), 'new_neural_calls': 0,
+        'models': models, 'clustered_models': clustered_models, 'training_questions': 1280, 'any_screen_passed': bool(models), 'new_neural_calls': 0,
         'cloud_calls': 0, 'development_or_test_read': False,
         'digests': {p.name: io.sha(p) for p in args.output.iterdir() if p.is_file() and not p.name.startswith('.')}})
     print({'complete': True, 'passed_families': list(models), 'reports': reports}, flush=True)

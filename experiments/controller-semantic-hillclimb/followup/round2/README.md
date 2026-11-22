@@ -80,7 +80,7 @@ been used repeatedly for selection; this table is not fresh confirmation.
 | Repair twice | 132 | 51.56% | 1,711.21 |
 | Retry once | 127 | 49.61% | 886.56 |
 | Retry twice | 123 | 48.05% | 1,394.69 |
-| Best A: clustered-observation POMDP with posterior blend and terminal Complete | 152 | 59.38% | 1,048.61 |
+| Best A: math-specialized POMDP with clustered science observations and terminal Complete | 153 | 59.77% | 1,087.27 |
 | Best B: strong retained-review LLM | 177 | 69.14% | 3,772.86 |
 | Best C: expanded-data POMDP + LLM | 177 | 69.14% | 3,747.96 |
 
@@ -89,16 +89,16 @@ active parameters, normalized to 3.09 billion parameters. Both physical phases
 of a bounded review are billed. This is not measured FLOPs or wall-clock time;
 the full-35B reviewer sensitivity is also retained in the receipts.
 
-A is 7.81 percentage points above the strongest original baseline, B is 17.58
+A is 8.20 percentage points above the strongest original baseline, B is 17.58
 points above it, and C is 0.00 points above the stronger of A/B. A needs at least
 158 correct answers and C needs at least 203 on this panel. C saves only 0.66%
 compute relative to B. The requested accuracy gaps are not met.
 
 Complete is a separate answer-changing action with matched controls. The best
-such simple control, Repair then Complete if invalid, obtains 150/256 (58.59%)
-at 1,232.71 units, using exactly the same retained math A as the new POMDP.
-Best A gets two more questions correct and uses 14.93% less compute. The cheaper
-previous A remains at 150/256 and 986.26 units. The original five baselines
+such simple control, Repair then Complete if invalid, obtains 151/256 (58.98%)
+at 1,271.37 units, using exactly the same retained math A as the new POMDP.
+Best A gets two more questions correct and uses 14.48% less compute. Cheaper
+previous A policies remain at 152/256 and 1,048.61 units, and 150/256 and 986.26 units. The original five baselines
 remain unchanged, and all six new fixed/validity controls remain reported.
 The separately reserved 1,024-question test set has not been inferred or graded,
 and its labels have not been used for controller fitting or selection. Earlier
@@ -826,3 +826,36 @@ still be required after a successful pilot. No cloud training is introduced.
 
 All 559 experiment tests pass; the actual grounded request journal also passes
 its complete-cohort replay and unresolved-request tests.
+
+The full1024 extraction and nested TRAIN diagnostic are complete. All 15,360
+original logits pass the fixed parity bound; maximum absolute difference is
+0.0000372. Full features worsen joint log loss from 1.14123 to 1.14924 and
+mean-four marginal Brier from 0.123248 to 0.125724 on the same original256
+held-question training comparison. The screen fails, so no auxiliary expansion,
+development evaluation, or online full-representation adapter is promoted.
+
+## Math-specific forecaster
+
+A nested three-outer/three-inner whole-question TRAIN screen compares the
+pooled forecaster with math-only logistic/forest alternatives. The selected
+math forecaster lowers joint loss from 1.00324 to 0.92019 and average three-bit
+Brier from 0.10868 to 0.10413; current-answer Brier alone worsens slightly.
+The resulting POMDP preserves prior, transition and cost arrays, refits the
+matched emission model, and keeps the strongest science policy unchanged.
+Twenty-one registered development settings select 153/256 overall, including
+118/128 math. This is one more correct answer than A152 at 3.69% more compute.
+All five original baselines reproduce exactly; matched Complete controls use
+the identical new math policy. This remains development selection, not a fresh
+result, and does not meet the requested accuracy gaps.
+
+Before the second512 labels are joined or the1280 fit is registered, the next
+comparison has been extended to retain this selected math policy. Passing
+TRAIN forecasters will each retain the original observation partition and a
+24-valid/6-invalid clustered partition fitted from nested TRAIN predictions.
+Development replay will compare posterior weights0 and0.5, seven global
+science penalties and one subject combination per configuration (at most64
+candidates). This compares additional data together with the already tested
+observation recipes; gains cannot be attributed to data alone. Original and
+stronger retained A decisions/costs must reproduce exactly, and the six matched
+controls use the identical retained math policy. No new feature encoder or
+cloud inference is introduced by this comparison.
