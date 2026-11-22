@@ -9511,7 +9511,7 @@
     }
   },
   "reward_outcome_diagnostic": {
-    "status": "registered_collecting_local_observations",
+    "status": "completed_failed_screen",
     "registration": "ee049fd32cc6cb507adcf0d51c9bfaaf4622ab5a07903c31265e97550ca04823",
     "model": "Skywork/Skywork-Reward-V2-Qwen3-1.7B",
     "revision": "e51ea3e08fb81326c3b812a7ff0cb9cee83e59cc",
@@ -9523,7 +9523,66 @@
     "cloud_calls": 0,
     "solver_unchanged": true,
     "pretraining_overlap_not_independently_established": true,
-    "promoted": false
+    "promoted": false,
+    "summary": {
+      "candidate": {
+        "accuracy": 0.256640625,
+        "correct": 657,
+        "mean_compute": 2283.8967094288673,
+        "n": 2560
+      },
+      "cloud_calls": 0,
+      "control": {
+        "accuracy": 0.258203125,
+        "correct": 661,
+        "mean_compute": 2006.2777437524921,
+        "n": 2560
+      },
+      "development_or_test_read": false,
+      "features": {
+        "dtype": "float32",
+        "input_tokens": 1904421,
+        "model_revision": "e51ea3e08fb81326c3b812a7ff0cb9cee83e59cc",
+        "observations": 3840,
+        "original_input_tokens": 1915090,
+        "parameters": 1720577024,
+        "seconds": 1275.2888068329776,
+        "truncated": 34
+      },
+      "forecast_losses": {
+        "candidate": {
+          "Complete_Brier": 0.1858935949726369,
+          "current_Brier": 0.11050399100197549,
+          "joint_Brier": 0.507592385889499,
+          "joint_log_loss": 1.1326295618196238,
+          "mean_four_marginal_Brier": 0.13221234886594924,
+          "repair_Brier": 0.13227080563827734,
+          "retry_Brier": 0.10018100385090721
+        },
+        "control": {
+          "Complete_Brier": 0.18520369238366904,
+          "current_Brier": 0.1092537543839541,
+          "joint_Brier": 0.506804185586483,
+          "joint_log_loss": 1.1295687658926548,
+          "mean_four_marginal_Brier": 0.13143839041010752,
+          "repair_Brier": 0.1316060455076315,
+          "retry_Brier": 0.09969006936517548
+        }
+      },
+      "fresh_validation": false,
+      "full_controller_claim": false,
+      "pretraining_overlap_not_independently_established": true,
+      "schema": "frozen-reward-science1280-conditional-TRAIN-v1",
+      "screen": {
+        "accuracy_gain": -0.0015624999999999667,
+        "compute_ratio": 1.138375140999732,
+        "paired_question_accuracy_CI95": [
+          -0.00390625,
+          0.000390625
+        ],
+        "passed": false
+      }
+    }
   },
   "reward_math_diagnostic": {
     "status": "completed_failed_screen",
@@ -9593,7 +9652,7 @@
     }
   },
   "reward_review_diagnostic": {
-    "status": "registered_collecting_local_observations",
+    "status": "completed_failed_screen",
     "registration": "0a7bc406b105d94f1c812de882b4066ffa389fc8edc1e27d950fd1d16e237c87",
     "questions": 256,
     "scope": "TRAIN paid-review sensor comparison against strongest prior critic",
@@ -9601,6 +9660,69 @@
     "new_answer_paths": false,
     "new_cloud_calls": 0,
     "full_controller_claim": false,
+    "fresh_validation": false,
+    "promoted": false,
+    "summary": {
+      "development_or_test_read": false,
+      "features": {
+        "dtype": "float32",
+        "input_tokens": 358304,
+        "model_revision": "e51ea3e08fb81326c3b812a7ff0cb9cee83e59cc",
+        "observations": 256,
+        "original_input_tokens": 373432,
+        "parameters": 1720577024,
+        "seconds": 350.57002920797095,
+        "truncated": 58
+      },
+      "fresh_validation": false,
+      "full_controller_claim": false,
+      "mean_new_observer_compute": 779.340652820712,
+      "new_answer_paths": false,
+      "new_cloud_calls": 0,
+      "questions": 256,
+      "reports": {
+        "combined": {
+          "AUC": 0.6258908139915005,
+          "Brier": 0.2229574261249743
+        },
+        "old": {
+          "AUC": 0.5478260869565218,
+          "Brier": 0.23195875091060866
+        },
+        "option": {
+          "AUC": 0.6282445243543643,
+          "Brier": 0.22326145047176066
+        },
+        "reward": {
+          "AUC": 0.6050997057862046,
+          "Brier": 0.23048517268702334
+        }
+      },
+      "schema": "frozen-reward-paid-review256-TRAIN-v1",
+      "screen": {
+        "AUC_gain_vs_strongest": -0.02079110820529584,
+        "Brier_delta_vs_strongest": 0.007527746562049048,
+        "paired_question_Brier_delta_CI95": [
+          -0.01166199446312319,
+          0.02540940457889014
+        ],
+        "passed": false
+      },
+      "strongest_prior": "combined"
+    }
+  },
+  "active_textbook_review_pilot": {
+    "status": "registered_collecting",
+    "registration": "327179f3844a4a48c2ed58ccf32823478fcae867b52af5f614a111234ad78e79",
+    "questions": 64,
+    "maximum_physical_calls": 256,
+    "maximum_cloud_gpus": 2,
+    "cloud_training": false,
+    "solver_weights_prompts_seeds_caps_unchanged": true,
+    "new_capability": "Paid review reasoning requests up to2 local textbook queries before final decision",
+    "matched_B_same_retrieval_required": true,
+    "known_prior_union": 50,
+    "required_novel_questions": 6,
     "fresh_validation": false,
     "promoted": false
   }

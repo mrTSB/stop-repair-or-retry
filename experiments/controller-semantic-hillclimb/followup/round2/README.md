@@ -1093,7 +1093,7 @@ this project's source questions has not been independently established. No
 pretraining-disjointness claim is made. Inputs above1536 tokens preserve their
 first768 and last768 tokens, with every truncation reported. Only paid question
 and current response enter this scorer, without references or future branches.
-The experiment is registered and collecting locally; A/B/C remain unchanged.
+The experiment has completed; its negative result is reported below. A/B/C remain unchanged.
 
 `reward_math_diagnostic.py` separately registers the same observer for all256
 math TRAIN questions (768 paid prefixes). It compares against the retained
@@ -1123,8 +1123,41 @@ among all three prior excluded-question critics (old, option, combined), not
 only the weakest control. The screen requires Brier improvement of at least
 0.005 and strictly higher AUC.
 
-This trial is registered and collecting locally, with no new cloud calls. It
+This trial has completed with no new cloud calls; its negative result is reported below. It
 creates no new correct-answer paths. Its1.72B scorer cost is additive to all
 paid LLM phases and other solver observations; a successful prediction screen
 would still require full POMDP integration and development accuracy/compute
 validation against the strongest B. No controller or fresh result is claimed.
+
+Both remaining reward-model screens failed. The science outcome trial gets
+657/2560 conditional decisions correct versus661/2560, at2283.90 versus2006.28
+compute (13.84% more). It scores3,840 inputs, of which34 exceed the input cap.
+The review critic has Brier0.23049 and AUC0.60510, versus0.22296 and0.62589 for
+the strongest prior combined critic. Its Brier difference is+0.00753, with
+paired95% interval[-0.01166,+0.02541]. Mean additional scorer cost is779.34 per
+paid review;58/256 review inputs exceed the cap. These critics are not promoted
+and no full controller fit or DEV comparison follows. All605 tests pass.
+The selected A/B/C and all five baselines remain unchanged.
+
+## Active textbook retrieval pilot
+
+`active_textbook_review_runner.py` tests a new review capability on the entire
+same64-question TRAIN science cohort. The frozen reviewer starts its1024-token
+reasoning phase with up to two concept queries, then its512-token decision phase
+receives local textbook evidence. The sealed OpenStax+MIT corpus is unchanged;
+no benchmark references, web searches or neural retrieval are used. Queries
+are capped at200 characters; subject-filtered TFIDF returns at most three unique
+85-word excerpts across both queries. Missing results and errors remain visible.
+
+The compact128-token guided and retained repairs keep their original prompts,
+weights, temperatures and paired seeds, with at most two answer-changing calls.
+Every teacher phase and evidence token is charged. Retrieval CPU time is reported
+separately. The matched B must receive the same active retrieval capability if
+promoted. The unchanged screen requires at least six newly correct questions
+beyond all prior50 available solves and at most1.25 times the retained strong
+trajectory cost. This is a headroom pilot, not a controller or fresh result.
+
+The pilot is registered and collecting up to256 physical calls on at most two
+existing-app cloud GPUs, with no cloud training. The frozen corpus cannot be
+rebuilt implicitly. Tests cover bounded queries, immutable indexes, paid-only
+inputs, original compact payloads, all256 physical receipts and tamper rejection.
