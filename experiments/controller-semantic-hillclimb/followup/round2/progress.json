@@ -7427,8 +7427,8 @@
     "test_inference_started": false
   },
   "latest_regression": {
-    "tests": 634,
-    "seconds": 58.481,
+    "tests": 650,
+    "seconds": 80.913,
     "passed": true
   },
   "lexical_outcome_diagnostic": {
@@ -9040,7 +9040,7 @@
     },
     "schema": "expanded768-split_forest-joint-belief-TRAIN-v1"
   },
-  "status": "Concrete checkpoint verified; contrastive review failed; semantic grounded pilot registered; >80% C not achieved",
+  "status": "Independently audited A153/B179/C177 on reused DEV; >80% C target unmet; both new review pilots failed; no active cloud job",
   "strong_late_review_pilot": {
     "controller_promoted": false,
     "coverage": {
@@ -10297,28 +10297,28 @@
     "transport_error_records": 0
   },
   "current_objective": {
-    "n": 256,
-    "checks": {
-      "A_gap_at_least10pp": false,
-      "B_gap_at_least10pp": true,
-      "C_gap_at_least10pp": false,
-      "C_accuracy_strictly_over80percent": false,
-      "C_compute_strictly_below_B": true
-    },
-    "all_metrics_passed": false,
-    "fresh_validation": false,
-    "fresh_targets_confirmed": false,
-    "minimum_correct": {
-      "A": 158,
-      "B": 158,
-      "C": 205
-    },
+    "accuracy_targets_feasible_on_this_panel": true,
     "additional_correct_needed": {
       "A": 5,
       "B": 0,
       "C": 28
     },
-    "accuracy_targets_feasible_on_this_panel": true
+    "all_metrics_passed": false,
+    "checks": {
+      "A_gap_at_least10pp": false,
+      "B_gap_at_least10pp": true,
+      "C_accuracy_strictly_over80percent": false,
+      "C_compute_strictly_below_B": true,
+      "C_gap_at_least10pp": false
+    },
+    "fresh_targets_confirmed": false,
+    "fresh_validation": false,
+    "minimum_correct": {
+      "A": 158,
+      "B": 158,
+      "C": 205
+    },
+    "n": 256
   },
   "target_checker_tests": {
     "tests": 4,
@@ -10341,7 +10341,7 @@
     "smoke_passed": true
   },
   "dense_grounded_pilot_v1": {
-    "status": "registered_not_started",
+    "status": "completed_failed_screen",
     "registration": "c1c9714feba6c9bdff325ae4fe5a49fc1a995770875a62d2d476295e6935ff16",
     "training_questions": 64,
     "reused_physical_calls": 28,
@@ -10356,6 +10356,207 @@
     },
     "test_used": false,
     "maximum_cloud_gpus": 2,
-    "cloud_training": false
+    "cloud_training": false,
+    "methods": {
+      "Dense grounded first guided": {
+        "accuracy": 0.5,
+        "correct": 32,
+        "correct_review_wrong_compact": 1,
+        "mean_compute": 5029.973529126214,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 2.0,
+        "mean_retrieval_query_compute": 1.0445242718446601,
+        "mean_retrieval_query_forwards": 1.0,
+        "mean_retrieval_query_token_slots": 96.75,
+        "mean_review_input_tokens": 2582.390625,
+        "mean_review_output_tokens": 1137.59375,
+        "mean_solver_calls": 2.0,
+        "mean_solver_input_tokens": 943.78125,
+        "mean_solver_output_tokens": 151.078125,
+        "mean_total_parameter_compute": 43554.083561488675,
+        "n": 64,
+        "review_correct": 30,
+        "wrong_review_correct_compact": 3
+      },
+      "Dense grounded retained second repair": {
+        "accuracy": 0.515625,
+        "correct": 33,
+        "correct_review_wrong_compact": 1,
+        "mean_compute": 5797.509936893204,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 2.0,
+        "mean_retrieval_query_compute": 1.0445242718446601,
+        "mean_retrieval_query_forwards": 1.0,
+        "mean_retrieval_query_token_slots": 96.75,
+        "mean_review_input_tokens": 2582.390625,
+        "mean_review_output_tokens": 1137.59375,
+        "mean_solver_calls": 3.0,
+        "mean_solver_input_tokens": 1479.15625,
+        "mean_solver_output_tokens": 208.625,
+        "mean_total_parameter_compute": 44321.61996925566,
+        "n": 64,
+        "review_correct": 30,
+        "wrong_review_correct_compact": 4
+      }
+    },
+    "novel_questions": 0,
+    "new_two_endpoint_union": 33,
+    "screen": {
+      "all_query_encoder_compute_included": true,
+      "checks": {
+        "at_least6_novel_questions": false,
+        "second_trajectory_compute_at_most1p25": true
+      },
+      "controller_promoted": false,
+      "criteria": {
+        "mean_second_trajectory_compute_over_rootstrong_retained_at_most": 1.25,
+        "novel_questions_beyond_registered_known_union_at_least": 6,
+        "scope": "TRAIN headroom of a new paid dense/lexical observation; requires matched B, learned POMDP integration and fresh validation"
+      },
+      "hindsight_availability_only": true,
+      "passed": false,
+      "ratio_to_rootstrong_retained": 1.0650686968065095,
+      "second_trajectory_mean_compute": 5797.509936893204
+    },
+    "transport_error_records": 0
+  },
+  "latest_verified_checkpoint": "verified_subject_checkpoint_v1.json",
+  "latest_verified_rows": [
+    {
+      "accuracy": 0.4296875,
+      "correct": 110,
+      "mean_compute": 381.39158576051784,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 1.0,
+      "mean_solver_tokens": 294.625,
+      "mean_total_parameter_compute": 381.39158576051784,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Stop",
+      "n": 256
+    },
+    {
+      "accuracy": 0.50390625,
+      "correct": 129,
+      "mean_compute": 990.2103559870551,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_solver_tokens": 764.9375,
+      "mean_total_parameter_compute": 990.2103559870551,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Repair once",
+      "n": 256
+    },
+    {
+      "accuracy": 0.515625,
+      "correct": 132,
+      "mean_compute": 1711.205501618123,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_solver_tokens": 1321.90625,
+      "mean_total_parameter_compute": 1711.205501618123,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Repair twice",
+      "n": 256
+    },
+    {
+      "accuracy": 0.49609375,
+      "correct": 127,
+      "mean_compute": 886.5594660194175,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_solver_tokens": 684.8671875,
+      "mean_total_parameter_compute": 886.5594660194175,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Retry once",
+      "n": 256
+    },
+    {
+      "accuracy": 0.48046875,
+      "correct": 123,
+      "mean_compute": 1394.6905339805826,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_solver_tokens": 1077.3984375,
+      "mean_total_parameter_compute": 1394.6905339805826,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Retry twice",
+      "n": 256
+    },
+    {
+      "accuracy": 0.59765625,
+      "correct": 153,
+      "mean_compute": 1087.2748356677234,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 2.18359375,
+      "mean_solver_tokens": 783.23046875,
+      "mean_total_parameter_compute": 1087.2748356677234,
+      "mean_verifier_calls": 1.82421875,
+      "mean_verifier_token_slots": 522.11328125,
+      "mean_verifier_tokens": 522.11328125,
+      "method": "A",
+      "n": 256
+    },
+    {
+      "accuracy": 0.69921875,
+      "correct": 179,
+      "mean_compute": 3858.2777103559874,
+      "mean_judge_calls": 1.0,
+      "mean_judge_physical_calls": 1.99609375,
+      "mean_judge_tokens": 2883.21875,
+      "mean_solver_calls": 1.97265625,
+      "mean_solver_tokens": 818.10546875,
+      "mean_total_parameter_compute": 33716.85376213593,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "B",
+      "n": 256
+    },
+    {
+      "accuracy": 0.69140625,
+      "correct": 177,
+      "mean_compute": 3739.67310122229,
+      "mean_judge_calls": 0.890625,
+      "mean_judge_physical_calls": 1.77734375,
+      "mean_judge_tokens": 2583.9375,
+      "mean_metadata_calls": 0.0,
+      "mean_metadata_cpu_ms": 0.0,
+      "mean_review_neural_calls": 0.890625,
+      "mean_solver_calls": 2.0078125,
+      "mean_solver_tokens": 853.78515625,
+      "mean_total_parameter_compute": 30498.896402193164,
+      "mean_verifier_calls": 2.5625,
+      "mean_verifier_token_slots": 894.84375,
+      "mean_verifier_tokens": 894.84375,
+      "method": "C",
+      "n": 256
+    }
+  ],
+  "subject_expert_composition": {
+    "status": "complete_independently_audited",
+    "registration": "638ec420b3c05d4eea55dbe935d144255b4e8b4bc53ce3e191934c488764d074",
+    "B_correct": 179,
+    "C_correct": 177,
+    "C_mean_compute": 3739.67310122229,
+    "B_mean_compute": 3858.2777103559874,
+    "new_cloud_calls": 0,
+    "new_neural_calls": 0,
+    "fresh_validation": false
   }
 }

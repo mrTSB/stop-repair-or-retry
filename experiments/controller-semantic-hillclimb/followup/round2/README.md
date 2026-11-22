@@ -81,18 +81,20 @@ been used repeatedly for selection; this table is not fresh confirmation.
 | Retry once | 127 | 49.61% | 886.56 |
 | Retry twice | 123 | 48.05% | 1,394.69 |
 | Best A: math-specialized POMDP with clustered science observations and terminal Complete | 153 | 59.77% | 1,087.27 |
-| Best B: strong retained-review LLM | 177 | 69.14% | 3,772.86 |
-| Best C: expanded-data POMDP + LLM | 177 | 69.14% | 3,747.96 |
+| Best B: subject-specific retained-review LLM | 179 | 69.92% | 3,858.28 |
+| Best C: subject-specific expanded-data POMDP + LLM | 177 | 69.14% | 3,739.67 |
 
 The proxy counts all paid solver, reviewer, and observer tokens weighted by
 active parameters, normalized to 3.09 billion parameters. Both physical phases
 of a bounded review are billed. This is not measured FLOPs or wall-clock time;
 the full-35B reviewer sensitivity is also retained in the receipts.
 
-A is 8.20 percentage points above the strongest original baseline, B is 17.58
-points above it, and C is 0.00 points above the stronger of A/B. A needs at least
-158 correct answers and C needs at least 203 on this panel. C saves only 0.66%
-compute relative to B. The requested accuracy gaps are not met.
+A is 8.20 percentage points above the strongest original baseline, B is18.36
+points above it, and C is0.78 points below the stronger of A/B. A needs at least
+158 correct answers and C needs at least205 on this panel to meet both the
+ten-point margin and the new strictly-over80% target. C saves3.07% compute
+relative to B. The requested accuracy targets are not met. The latest complete
+table, identities and independent audit are in`verified_subject_checkpoint_v1.json`.
 
 Complete is a separate answer-changing action with matched controls. The best
 such simple control, Repair then Complete if invalid, obtains 151/256 (58.98%)
@@ -1425,3 +1427,36 @@ the new query receipts; grading adds their cost before evaluating the same
 six-novel-question/1.25-cost screen. A matched B with the same new observation,
 a learned hybrid and frozen fresh validation remain necessary for any claimed
 controller gain. This registration and the index do not establish such a gain.
+
+The semantic-evidence pilot completes all256 physical calls (28 reused,228 new)
+with zero transport errors. Its first and second compact answers obtain32/64
+and33/64; their union is33/64 and adds zero questions beyond the existing50.
+The second trajectory costs5,797.51 units including the query encoder,6.51%
+above retained review. It fails novelty despite passing cost, so no semantic
+retrieval controller is promoted. Cloud capacity returns to min0/max2.
+
+The separate no-new-inference subject composition is complete. It gives both
+B and C the same observed subject as a routing feature. All36 LLM-only B rules
+remain available independently in each subject, improving B from177 to179/256
+at3,858.28 units. C chooses genuine frozen POMDP+LLM experts from all156 prior
+candidates using an exact accuracy/cost search. Its selected experts replay
+every actual decision and cost exactly from cached observations. The deployable
+`subject_expert_hybrid.Planner` still gets177/256, at3,739.67 units: a0.22%
+compute reduction from the previous C. Its3.07% saving versus the stronger B
+also reflects B's changed accuracy/cost point; it is not a3.07% C optimization.
+All650 regression tests pass in80.913 seconds.
+
+`audit_subject_checkpoint.py` independently checks artifact/model hashes,
+per-question aggregates, every C parent outcome, B's strongest subject rules,
+and C's optimal selection using a separate dynamic program. It seals
+`verified_subject_checkpoint_v1.json`, including exact settings and all eight
+table rows. The original`current_checkpoint.json`/`latest_results.json` remain
+immutable historical checkpoints. Verify the latest one with:
+
+```sh
+uv run --no-project python experiments/controller-semantic-hillclimb/followup/round2/audit_subject_checkpoint.py verify --run runs/controller-semantic-followup/round2/development-subject-experts-v1 --output experiments/controller-semantic-hillclimb/followup/round2/verified_subject_checkpoint_v1.json
+```
+
+These are still exploratory results selected on reused development. The
+1,024-question test remains reserved; the subject-expert runtime also needs an
+explicit prospective collector/freeze extension before fresh evaluation.

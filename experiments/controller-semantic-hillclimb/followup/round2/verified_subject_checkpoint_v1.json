@@ -1,0 +1,410 @@
+{
+  "C_compute_saved_vs_current_B": 0.030740298661071308,
+  "C_compute_saved_vs_prior_C": 0.0022108072529604117,
+  "audit": {
+    "B_same_subject_flexibility": true,
+    "C_selection_independent_dynamic_program": true,
+    "all_C_parent_outcomes_and_model_hashes": true,
+    "all_complete_artifact_hashes": true,
+    "individual_B_C_aggregates": true,
+    "runtime_selected_experts_replayed_without_neural_calls": true,
+    "source_and_input_hashes": true
+  },
+  "compute_proxy": "(4*solver_tokens +3*reviewer_tokens +observer_billions*actual_token_slots)/3.09; full35B sensitivity retained in rows; not measured FLOPs",
+  "evidence": {
+    "experiments/controller-semantic-hillclimb/followup/round2/audit_subject_checkpoint.py": "532b0a12e204c0cae819470a5d0bff71e098e736f6c3284819cc574d14d13fef",
+    "experiments/controller-semantic-hillclimb/followup/round2/c80_targets.py": "2a1554a9db658012c8915a9a1bd72a91b17243170138572e20055696b251515f",
+    "runs/controller-semantic-followup/round2/development-expanded-mentor-v1/models/smooth32-review1.pkl": "439eb8035455edf8a0dbf11c56c17b6fe355167ba1f94c459132a0dd797653ba",
+    "runs/controller-semantic-followup/round2/development-expanded-mentor-v1/models/smooth8-review1.pkl": "934ff4fb3a745521ad858ea55e4113497912662f23291dcb6445683764e6038c",
+    "runs/controller-semantic-followup/round2/development-subject-experts-v1/candidate-subject-metrics.json": "d1f9e7921b3446830b044c3781f94b1a399473b0d4ccb8dc5b0cd562844771c5",
+    "runs/controller-semantic-followup/round2/development-subject-experts-v1/complete.json": "8fb662889da59fdee12a20f99cc7512b3582240c927cbe73be161f4bbf73aa22",
+    "runs/controller-semantic-followup/round2/development-subject-experts-v1/hybrid.pkl": "74ab8c7eafe6bdab11bb0b8bf4b400e12631198eb8525ccce909c52ac66697eb",
+    "runs/controller-semantic-followup/round2/development-subject-experts-v1/private-selected-items.json": "793d836fab80ae8e463088fe9642defc952f4d9a2b969702ab9a9200a2a62b0f",
+    "runs/controller-semantic-followup/round2/development-subject-experts-v1/registration.json": "638ec420b3c05d4eea55dbe935d144255b4e8b4bc53ce3e191934c488764d074",
+    "runs/controller-semantic-followup/round2/development-subject-experts-v1/summary.json": "33b7ec722e12a7bb91600f670aa2b675c387cea4e1255e95e84ca9ba6697d713"
+  },
+  "fresh_test_reserved": 1024,
+  "fresh_validation": false,
+  "identities": {
+    "A": {
+      "dev": {
+        "accuracy": 0.59765625,
+        "correct": 153,
+        "mean_compute": 1087.2748356677234,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 2.18359375,
+        "mean_solver_tokens": 783.23046875,
+        "mean_total_parameter_compute": 1087.2748356677234,
+        "mean_verifier_calls": 1.82421875,
+        "mean_verifier_token_slots": 522.11328125,
+        "mean_verifier_tokens": 522.11328125,
+        "n": 256
+      },
+      "key": "math-1",
+      "math_settings": {
+        "penalty": 0.0,
+        "posterior_weight": 0.5
+      },
+      "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-math-specialization-v1/math-1.pkl",
+      "model_sha256": "9b0161a226d0e557ee1afb4d20ed7d87ae4af41b5a952d70ffef35dfa8cd8369",
+      "policy_module": "continuous_completion_pomdp",
+      "science_settings": {
+        "penalty": 0.02,
+        "posterior_weight": 0.5
+      },
+      "settings": {}
+    },
+    "B": {
+      "dev": {
+        "accuracy": 0.69921875,
+        "correct": 179,
+        "mean_compute": 3858.2777103559874,
+        "mean_judge_calls": 1.0,
+        "mean_judge_physical_calls": 1.99609375,
+        "mean_judge_tokens": 2883.21875,
+        "mean_solver_calls": 1.97265625,
+        "mean_solver_tokens": 818.10546875,
+        "mean_total_parameter_compute": 33716.85376213593,
+        "mean_verifier_calls": 0.0,
+        "mean_verifier_token_slots": 0.0,
+        "mean_verifier_tokens": 0.0,
+        "n": 256
+      },
+      "family": "B",
+      "policy_module": "subject_expert_hybrid.evaluate_B",
+      "settings": {
+        "by_subject": {
+          "chemistry": {
+            "root_stop": "agreement",
+            "second_action": "reuse",
+            "second_stop": "never"
+          },
+          "math": {
+            "root_stop": "action",
+            "second_action": "retry",
+            "second_stop": "agreement"
+          },
+          "physics": {
+            "root_stop": 0.995,
+            "second_action": "reuse",
+            "second_stop": "never"
+          }
+        }
+      },
+      "subject_rules": {
+        "chemistry": "B09",
+        "math": "B01",
+        "physics": "B27"
+      }
+    },
+    "C": {
+      "dev": {
+        "accuracy": 0.69140625,
+        "correct": 177,
+        "mean_compute": 3739.67310122229,
+        "mean_judge_calls": 0.890625,
+        "mean_judge_physical_calls": 1.77734375,
+        "mean_judge_tokens": 2583.9375,
+        "mean_metadata_calls": 0.0,
+        "mean_metadata_cpu_ms": 0.0,
+        "mean_review_neural_calls": 0.890625,
+        "mean_solver_calls": 2.0078125,
+        "mean_solver_tokens": 853.78515625,
+        "mean_total_parameter_compute": 30498.896402193164,
+        "mean_verifier_calls": 2.5625,
+        "mean_verifier_token_slots": 894.84375,
+        "mean_verifier_tokens": 894.84375,
+        "n": 256
+      },
+      "experts": {
+        "chemistry": {
+          "model": "smooth8-review1",
+          "model_sha256": "934ff4fb3a745521ad858ea55e4113497912662f23291dcb6445683764e6038c",
+          "original_candidate_index": 26,
+          "policy_module": "stronger_base_hybrid",
+          "settings": {
+            "penalty": 0.0,
+            "threshold": 0.0
+          }
+        },
+        "math": {
+          "model": "smooth32-review1",
+          "model_sha256": "439eb8035455edf8a0dbf11c56c17b6fe355167ba1f94c459132a0dd797653ba",
+          "original_candidate_index": 104,
+          "policy_module": "stronger_base_hybrid",
+          "settings": {
+            "penalty": 0.0,
+            "threshold": 0.0
+          }
+        },
+        "physics": {
+          "model": "smooth32-review1",
+          "model_sha256": "439eb8035455edf8a0dbf11c56c17b6fe355167ba1f94c459132a0dd797653ba",
+          "original_candidate_index": 106,
+          "policy_module": "stronger_base_hybrid",
+          "settings": {
+            "penalty": 0.0,
+            "threshold": 0.08
+          }
+        }
+      },
+      "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-subject-experts-v1/hybrid.pkl",
+      "model_sha256": "74ab8c7eafe6bdab11bb0b8bf4b400e12631198eb8525ccce909c52ac66697eb",
+      "policy_module": "subject_expert_hybrid",
+      "settings": {}
+    }
+  },
+  "prior_B": {
+    "dev": {
+      "accuracy": 0.69140625,
+      "correct": 177,
+      "mean_compute": 3772.8610436893205,
+      "mean_judge_calls": 1.0,
+      "mean_judge_physical_calls": 1.99609375,
+      "mean_judge_tokens": 2883.21875,
+      "mean_solver_calls": 1.921875,
+      "mean_solver_tokens": 752.12109375,
+      "mean_total_parameter_compute": 33631.43709546926,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "n": 256
+    },
+    "family": "B",
+    "protocol": "matched-retained-1024-512-128",
+    "settings": {
+      "root_stop": "agreement",
+      "second_action": "reuse",
+      "second_stop": "never"
+    }
+  },
+  "prior_C": {
+    "builder_module": "expanded_development_models",
+    "dev": {
+      "accuracy": 0.69140625,
+      "correct": 177,
+      "mean_compute": 3747.9591164206718,
+      "mean_judge_calls": 0.890625,
+      "mean_judge_physical_calls": 1.77734375,
+      "mean_judge_tokens": 2583.9375,
+      "mean_metadata_calls": 0.0,
+      "mean_metadata_cpu_ms": 0.0,
+      "mean_review_neural_calls": 0.890625,
+      "mean_solver_calls": 2.0234375,
+      "mean_solver_tokens": 859.99609375,
+      "mean_total_parameter_compute": 30507.182417391545,
+      "mean_verifier_calls": 2.56640625,
+      "mean_verifier_token_slots": 896.59375,
+      "mean_verifier_tokens": 896.59375,
+      "n": 256
+    },
+    "metadata_review": false,
+    "model": "smooth32-review1",
+    "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-expanded-mentor-v1/models/smooth32-review1.pkl",
+    "model_sha256": "439eb8035455edf8a0dbf11c56c17b6fe355167ba1f94c459132a0dd797653ba",
+    "original_candidate_index": 125,
+    "original_dev": {
+      "accuracy": 0.69140625,
+      "correct": 177,
+      "mean_compute": 3747.9338332491507,
+      "mean_judge_calls": 0.890625,
+      "mean_judge_physical_calls": 1.77734375,
+      "mean_judge_tokens": 2583.9375,
+      "mean_metadata_calls": 0.0,
+      "mean_metadata_cpu_ms": 0.0,
+      "mean_review_neural_calls": 0.890625,
+      "mean_solver_calls": 2.0234375,
+      "mean_solver_tokens": 859.9765625,
+      "mean_total_parameter_compute": 30507.157134220026,
+      "mean_verifier_calls": 2.56640625,
+      "mean_verifier_token_slots": 896.59375,
+      "mean_verifier_tokens": 896.59375,
+      "n": 256
+    },
+    "policy_module": "stronger_base_hybrid",
+    "retained_from_previous": false,
+    "same_decisions_answers_and_encoder_ledgers": true,
+    "selection_utility_penalty": 0.0,
+    "semantic_review": true,
+    "settings": {
+      "by_subject": {
+        "chemistry": {
+          "penalty": 0.0,
+          "threshold": 0.0
+        },
+        "math": {
+          "penalty": 0.0,
+          "threshold": 0.0
+        },
+        "physics": {
+          "penalty": 0.0,
+          "threshold": 0.08
+        }
+      }
+    },
+    "smoothing": 32.0
+  },
+  "reviewer": {
+    "digest": "3460ffeede5453ead027dbd2f821b12ad0aa3de54630971993babdb2165221f7",
+    "model": "qwen3.5:35b"
+  },
+  "rows": [
+    {
+      "accuracy": 0.4296875,
+      "correct": 110,
+      "mean_compute": 381.39158576051784,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 1.0,
+      "mean_solver_tokens": 294.625,
+      "mean_total_parameter_compute": 381.39158576051784,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Stop",
+      "n": 256
+    },
+    {
+      "accuracy": 0.50390625,
+      "correct": 129,
+      "mean_compute": 990.2103559870551,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_solver_tokens": 764.9375,
+      "mean_total_parameter_compute": 990.2103559870551,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Repair once",
+      "n": 256
+    },
+    {
+      "accuracy": 0.515625,
+      "correct": 132,
+      "mean_compute": 1711.205501618123,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_solver_tokens": 1321.90625,
+      "mean_total_parameter_compute": 1711.205501618123,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Repair twice",
+      "n": 256
+    },
+    {
+      "accuracy": 0.49609375,
+      "correct": 127,
+      "mean_compute": 886.5594660194175,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 2.0,
+      "mean_solver_tokens": 684.8671875,
+      "mean_total_parameter_compute": 886.5594660194175,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Retry once",
+      "n": 256
+    },
+    {
+      "accuracy": 0.48046875,
+      "correct": 123,
+      "mean_compute": 1394.6905339805826,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 3.0,
+      "mean_solver_tokens": 1077.3984375,
+      "mean_total_parameter_compute": 1394.6905339805826,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "Retry twice",
+      "n": 256
+    },
+    {
+      "accuracy": 0.59765625,
+      "correct": 153,
+      "mean_compute": 1087.2748356677234,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 2.18359375,
+      "mean_solver_tokens": 783.23046875,
+      "mean_total_parameter_compute": 1087.2748356677234,
+      "mean_verifier_calls": 1.82421875,
+      "mean_verifier_token_slots": 522.11328125,
+      "mean_verifier_tokens": 522.11328125,
+      "method": "A",
+      "n": 256
+    },
+    {
+      "accuracy": 0.69921875,
+      "correct": 179,
+      "mean_compute": 3858.2777103559874,
+      "mean_judge_calls": 1.0,
+      "mean_judge_physical_calls": 1.99609375,
+      "mean_judge_tokens": 2883.21875,
+      "mean_solver_calls": 1.97265625,
+      "mean_solver_tokens": 818.10546875,
+      "mean_total_parameter_compute": 33716.85376213593,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "method": "B",
+      "n": 256
+    },
+    {
+      "accuracy": 0.69140625,
+      "correct": 177,
+      "mean_compute": 3739.67310122229,
+      "mean_judge_calls": 0.890625,
+      "mean_judge_physical_calls": 1.77734375,
+      "mean_judge_tokens": 2583.9375,
+      "mean_metadata_calls": 0.0,
+      "mean_metadata_cpu_ms": 0.0,
+      "mean_review_neural_calls": 0.890625,
+      "mean_solver_calls": 2.0078125,
+      "mean_solver_tokens": 853.78515625,
+      "mean_total_parameter_compute": 30498.896402193164,
+      "mean_verifier_calls": 2.5625,
+      "mean_verifier_token_slots": 894.84375,
+      "mean_verifier_tokens": 894.84375,
+      "method": "C",
+      "n": 256
+    }
+  ],
+  "schema": "independently-audited-subject-expert-DEV-checkpoint-v1",
+  "solver": {
+    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+    "maximum_continuations": 2,
+    "model": "qwen3.5:4b"
+  },
+  "split": "Repeatedly reused256-question development; exploratory selection, not fresh confirmation",
+  "targets": {
+    "accuracy_targets_feasible_on_this_panel": true,
+    "additional_correct_needed": {
+      "A": 5,
+      "B": 0,
+      "C": 28
+    },
+    "all_metrics_passed": false,
+    "checks": {
+      "A_gap_at_least10pp": false,
+      "B_gap_at_least10pp": true,
+      "C_accuracy_strictly_over80percent": false,
+      "C_compute_strictly_below_B": true,
+      "C_gap_at_least10pp": false
+    },
+    "fresh_targets_confirmed": false,
+    "fresh_validation": false,
+    "minimum_correct": {
+      "A": 158,
+      "B": 158,
+      "C": 205
+    },
+    "n": 256
+  }
+}
