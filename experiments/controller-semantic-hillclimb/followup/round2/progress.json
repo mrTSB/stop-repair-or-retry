@@ -7887,5 +7887,22 @@
     "mean_three_Brier_after": 0.10412742,
     "current_Brier_worsened": true,
     "test_used": false
+  },
+  "advanced_textbook_corpus": {
+    "schema": "question-independent-OCW-lecture-corpus-v1",
+    "sha256": "d50a2ccb2a422cacf4a4bf5a491825b290dfb97b5917cb7451031e757222d052",
+    "base_passages": 6823,
+    "new_passages": 2751,
+    "documents": 112,
+    "new_by_subject": {
+      "chemistry": 1267,
+      "physics": 1484
+    },
+    "quality_limitations": "PDF equations and reading order may be degraded; no OCR; not evaluated on benchmark questions",
+    "benchmark_records_read": false,
+    "model_calls": 0,
+    "promoted": false,
+    "registered_new_pilot": false,
+    "complete_sha256": "a15a10e966796e2ed7c22c7bae13f7b29f6e92d6a5171eb0ae6f6379843874cc"
   }
 }

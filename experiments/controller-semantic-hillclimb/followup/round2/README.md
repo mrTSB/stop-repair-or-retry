@@ -859,3 +859,20 @@ observation recipes; gains cannot be attributed to data alone. Original and
 stronger retained A decisions/costs must reproduce exactly, and the six matched
 controls use the identical retained math policy. No new feature encoder or
 cloud inference is introduced by this comparison.
+
+## Separate expanded retrieval corpus
+
+`advanced_textbook_corpus.py` prepares a separate, question-independent corpus
+from all lecture PDF links in four fixed MIT OCW courses:
+[Quantum Physics II](https://ocw.mit.edu/courses/8-05-quantum-physics-ii-fall-2013/pages/lecture-notes/),
+[Statistical Mechanics I](https://ocw.mit.edu/courses/8-333-statistical-mechanics-i-statistical-mechanics-of-particles-fall-2013/pages/lecture-notes/),
+[Thermodynamics and Kinetics](https://ocw.mit.edu/courses/5-60-thermodynamics-kinetics-spring-2008/pages/lecture-notes/), and
+[Physical Chemistry](https://ocw.mit.edu/courses/5-61-physical-chemistry-fall-2017/pages/lecture-notes/).
+The build adds2,751 passages from112 PDFs to a copy of the original corpus.
+It extracts283,601 words and includes1,025 of1,146 pages under the registered
+minimum-text rule. PDF reading order and equations may be degraded; no OCR or
+question-level retrieval evaluation has been performed. Raw files, text,
+source hashes, author attribution, and CC BY-NC-SA4.0 notices remain in the
+private archive. No benchmark records or model calls were used to build it.
+The existing grounded-review pilot keeps its original corpus unchanged. This
+new corpus has not been promoted into any controller or registered new pilot.
