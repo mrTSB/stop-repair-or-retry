@@ -544,3 +544,40 @@ The neural and forecaster folds are not nested, so these remain diagnostic
 training results. No V4 promotion is made. A separate richer-observation study
 is being prepared to expose the old frozen observer's 256 hidden features
 from its existing forward pass.
+
+The grouped science observer completed all 2,160 scheduled updates. Its
+auxiliary calibration ranking improved to 47/160 (29.38%), but its separate
+development POMDP reaches only 145/256 (56.64%). The existing 146/256 A remains
+the accuracy leader. The fixed half-posterior blend also finishes at 146/256,
+with slightly higher compute (1,088.08); it does not replace the finite filter.
+
+The strong late-review pilot completes all 384 physical calls and fails its
+headroom screen. Review after repair obtains 28/64, review after retry 29/64,
+and retained root review 32/64. The new paths add three questions beyond the
+registered plain/Complete/root-review union, below the required six; they add
+only two beyond the broader union including ordinary late reviews. No expansion
+of this protocol is selected.
+
+All 768 richer-observation training rows pass the fixed numerical parity
+check. With the original C=0.1 regularization, adding 256 features worsens
+held-question prediction loss. A separate nested training study gives both
+feature families the same four regularization choices, with an optional
+fold-fitted PCA32 for the larger family. It selects C=0.001 without PCA for
+the larger family in all three outer folds. Joint loss improves from 1.178638
+for the tuned control to 1.141229, and mean marginal Brier improves from
+0.127284 to 0.123248. These are nested training diagnostics, not controller
+accuracy or fresh validation; the earlier failed fixed-C result is preserved.
+A deployable POMDP and separate development comparison remain required.
+
+A new 64-question pilot is registered to generate independent reviewer
+reasoning before exposing the original compact solution. It always pays for
+two teacher phases and two compact continuations, for 256 physical calls in
+total. It must add at least six questions beyond the entire known 48/64 union
+and cost at most 1.25 times retained root review. Collection has started;
+there is no result or promotion yet. A 512-question auxiliary-TRAIN paired
+extension is separately prepared and tested, but has not been launched.
+
+The latest full regression passes 481 tests. No fresh test inference or grading
+has occurred. A capacity audit used reserved IDs and hashed public-source
+stems solely to exclude overlapping training questions; it did not decode
+test references or use test outcomes.

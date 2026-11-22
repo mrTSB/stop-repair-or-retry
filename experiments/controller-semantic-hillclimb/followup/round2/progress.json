@@ -1072,7 +1072,7 @@
     "science_questions_with_all_seven_wrong": 160
   },
   "new_test_reserved_questions": 1024,
-  "tests_passed": 423,
+  "tests_passed": 481,
   "primary_912_confirmation": "../artifacts/confirmation-912-v1/REPORT.md",
   "interpretation": "Development-selected results are not fresh confirmation; old912test remains retired.",
   "completed_followups": {
@@ -5449,7 +5449,7 @@
     "development_evaluation": "Completed; canonical C replay preserves all decisions/answers and selection"
   },
   "science_grouped_training_v3": {
-    "status": "active; completed at least800/2160 updates; only final checkpoint accepted",
+    "status": "Complete2160steps; auxiliary calibration47/160; DEV145/256, original bestA146 retained",
     "recipe_changed": false,
     "operational_cache_release_every_steps": 5,
     "final_checkpoint_only": true,
@@ -5811,5 +5811,466 @@
     "development_or_test_read": false,
     "summary_sha256": "8438b29f6c5a17ecfa9c20b6a6f69ffaf58f47fec89ec9608d10f7c121b154b1"
   },
-  "tests_scope": "Full round2 regression423 tests passed in37.181seconds; newer strong-late/dense pilots remain separately under preparation"
+  "tests_scope": "Full resumed round2 regression481 tests passed in33.030seconds",
+  "fixed_half_completion_A": {
+    "summary_sha256": "51ead7b35646f51bc75b7ac622b00eaaec58f91994ab80e1e82043925d428940",
+    "fresh_validation": false,
+    "selected_A": {
+      "dev": {
+        "accuracy": 0.5703125,
+        "correct": 146,
+        "mean_compute": 1084.6377960206412,
+        "mean_judge_calls": 0.0,
+        "mean_judge_tokens": 0.0,
+        "mean_solver_calls": 2.125,
+        "mean_solver_tokens": 781.5,
+        "mean_total_parameter_compute": 1084.6377960206412,
+        "mean_verifier_calls": 1.76171875,
+        "mean_verifier_token_slots": 519.2890625,
+        "mean_verifier_tokens": 519.2890625,
+        "n": 256
+      },
+      "embedded_settings": {
+        "math": {
+          "penalty": 0.02,
+          "posterior_weight": 0.5
+        },
+        "science": {
+          "penalty": 0.02
+        }
+      },
+      "key": "penalty-0.02",
+      "model_path": "runs/controller-semantic-followup/round2/development-completion-A-v1/completion-subject-A.pkl",
+      "model_sha256": "4637fdfbb70f16d8de9001c3880a42db9096ade3981deadc14d2437bf9194d69",
+      "policy_module": "completion_subject_pomdp",
+      "science_settings": {
+        "penalty": 0.02
+      },
+      "settings": {},
+      "source": "new-completion-POMDP"
+    },
+    "new_neural_calls": 0,
+    "new_cloud_calls": 0,
+    "test_used": false
+  },
+  "dense_fixed_C_diagnostic": {
+    "summary_sha256": "84c54b66f595deae661533ff64a41965c6fc4e0461006ae4d947c7717c0a8d4f",
+    "fresh_validation": false,
+    "reports": {
+      "comparisons": {
+        "Complete_Brier": {
+          "dense_minus_control": 0.014645057363816187,
+          "paired_question_CI95": [
+            0.0021771176083646066,
+            0.027559294852307733
+          ]
+        },
+        "current_Brier": {
+          "dense_minus_control": 0.013149844601335243,
+          "paired_question_CI95": [
+            0.0017758757477634953,
+            0.024721323186487648
+          ]
+        },
+        "joint_Brier": {
+          "dense_minus_control": 0.037831625219987,
+          "paired_question_CI95": [
+            0.014094783544080608,
+            0.06260380226821015
+          ]
+        },
+        "joint_log_loss": {
+          "dense_minus_control": 0.15249277024694693,
+          "paired_question_CI95": [
+            0.0902095263077638,
+            0.21654054750315793
+          ]
+        },
+        "mean_four_marginal_Brier": {
+          "dense_minus_control": 0.011410989637079361,
+          "paired_question_CI95": [
+            0.002252084840490483,
+            0.021303950475300173
+          ]
+        },
+        "repair_Brier": {
+          "dense_minus_control": 0.008848797218258974,
+          "paired_question_CI95": [
+            -0.001005543122595896,
+            0.019118381998838318
+          ]
+        },
+        "retry_Brier": {
+          "dense_minus_control": 0.009000259364907046,
+          "paired_question_CI95": [
+            0.00038298623936235587,
+            0.019088358392993825
+          ]
+        }
+      },
+      "controller_accuracy_claim": false,
+      "encoder_excluded_all_new512_questions": true,
+      "fresh_validation": false,
+      "neural_refitting_or_nested_CV_claim": false,
+      "panels": {
+        "all": {
+          "raw20_control": {
+            "Complete_Brier": 0.20336240825893973,
+            "current_Brier": 0.11756802093091563,
+            "joint_Brier": 0.5672485548751044,
+            "joint_log_loss": 1.3916689836242124,
+            "mean_four_marginal_Brier": 0.14067788811447934,
+            "repair_Brier": 0.14389612508988864,
+            "retry_Brier": 0.09788499817817349
+          },
+          "raw20_plus_project256": {
+            "Complete_Brier": 0.21800746562275586,
+            "current_Brier": 0.13071786553225087,
+            "joint_Brier": 0.6050801800950915,
+            "joint_log_loss": 1.5441617538711594,
+            "mean_four_marginal_Brier": 0.15208887775155874,
+            "repair_Brier": 0.1527449223081476,
+            "retry_Brier": 0.10688525754308054
+          }
+        },
+        "chemistry": {
+          "raw20_control": {
+            "Complete_Brier": 0.22318083920872098,
+            "current_Brier": 0.13234809401418232,
+            "joint_Brier": 0.5752375359358821,
+            "joint_log_loss": 1.3866702719752269,
+            "mean_four_marginal_Brier": 0.15077868985398582,
+            "repair_Brier": 0.14590374907680578,
+            "retry_Brier": 0.10168207711623423
+          },
+          "raw20_plus_project256": {
+            "Complete_Brier": 0.23834593766333798,
+            "current_Brier": 0.1442307619018405,
+            "joint_Brier": 0.5984211932210012,
+            "joint_log_loss": 1.5065295154243248,
+            "mean_four_marginal_Brier": 0.1605001689460164,
+            "repair_Brier": 0.14883964352162612,
+            "retry_Brier": 0.11058433269726109
+          }
+        },
+        "physics": {
+          "raw20_control": {
+            "Complete_Brier": 0.1835439773091584,
+            "current_Brier": 0.10278794784764896,
+            "joint_Brier": 0.5592595738143268,
+            "joint_log_loss": 1.3966676952731982,
+            "mean_four_marginal_Brier": 0.1305770863749729,
+            "repair_Brier": 0.1418885011029715,
+            "retry_Brier": 0.09408791924011277
+          },
+          "raw20_plus_project256": {
+            "Complete_Brier": 0.19766899358217382,
+            "current_Brier": 0.11720496916266122,
+            "joint_Brier": 0.6117391669691816,
+            "joint_log_loss": 1.5817939923179942,
+            "mean_four_marginal_Brier": 0.14367758655710103,
+            "repair_Brier": 0.15665020109466912,
+            "retry_Brier": 0.10318618238889998
+          }
+        }
+      },
+      "screen_passed": false,
+      "screen_scope": "Both point estimates must improve; paired question CIs are descriptive with fitted folds held fixed",
+      "second_stage_question_excluded": true
+    }
+  },
+  "dense_nested_diagnostic": {
+    "summary_sha256": "97638bc2af84b56398819f2145e7073745964e63d612360cb7cee6058a1b70fc",
+    "fresh_validation": false,
+    "reports": {
+      "comparisons": {
+        "Complete_Brier": {
+          "dense_minus_control": -0.006836978226638883,
+          "paired_question_CI95": [
+            -0.012661530311461786,
+            -0.0014972542337093073
+          ]
+        },
+        "current_Brier": {
+          "dense_minus_control": -0.005052701073841631,
+          "paired_question_CI95": [
+            -0.009842421437736804,
+            -0.0006503798944277503
+          ]
+        },
+        "joint_Brier": {
+          "dense_minus_control": -0.012470750148950905,
+          "paired_question_CI95": [
+            -0.0234274974530564,
+            -0.002202490886751253
+          ]
+        },
+        "joint_log_loss": {
+          "dense_minus_control": -0.037409785697820525,
+          "paired_question_CI95": [
+            -0.06293901421556364,
+            -0.014903242856786274
+          ]
+        },
+        "mean_four_marginal_Brier": {
+          "dense_minus_control": -0.004036184992503635,
+          "paired_question_CI95": [
+            -0.008191171969896511,
+            -0.00030367378036785054
+          ]
+        },
+        "repair_Brier": {
+          "dense_minus_control": -0.002259906868523822,
+          "paired_question_CI95": [
+            -0.006425486222039363,
+            0.0018102911036087267
+          ]
+        },
+        "retry_Brier": {
+          "dense_minus_control": -0.0019951538010101987,
+          "paired_question_CI95": [
+            -0.0055131428370143575,
+            0.001443688670077861
+          ]
+        }
+      },
+      "controller_accuracy_claim": false,
+      "encoder_excluded_all_new512_questions": true,
+      "fresh_validation": false,
+      "nested_forecaster_model_selection": true,
+      "nested_hyperparameter_selection": true,
+      "neural_refitting": false,
+      "panels": {
+        "all": {
+          "raw20_control": {
+            "Complete_Brier": 0.17852988639450104,
+            "current_Brier": 0.10478333780239502,
+            "joint_Brier": 0.5028174443935267,
+            "joint_log_loss": 1.1786384156812664,
+            "mean_four_marginal_Brier": 0.12728412350891036,
+            "repair_Brier": 0.13378144375585074,
+            "retry_Brier": 0.09204182608289461
+          },
+          "raw20_plus_project256": {
+            "Complete_Brier": 0.17169290816786212,
+            "current_Brier": 0.09973063672855337,
+            "joint_Brier": 0.4903466942445758,
+            "joint_log_loss": 1.141228629983446,
+            "mean_four_marginal_Brier": 0.1232479385164067,
+            "repair_Brier": 0.1315215368873269,
+            "retry_Brier": 0.09004667228188441
+          }
+        },
+        "chemistry": {
+          "raw20_control": {
+            "Complete_Brier": 0.19235926121604366,
+            "current_Brier": 0.11128275675565429,
+            "joint_Brier": 0.5116926827425825,
+            "joint_log_loss": 1.1806769304187492,
+            "mean_four_marginal_Brier": 0.13374042008549789,
+            "repair_Brier": 0.13323265954087693,
+            "retry_Brier": 0.09808700282941672
+          },
+          "raw20_plus_project256": {
+            "Complete_Brier": 0.1821473081618977,
+            "current_Brier": 0.10370580889899073,
+            "joint_Brier": 0.4910954904627008,
+            "joint_log_loss": 1.1303703162819507,
+            "mean_four_marginal_Brier": 0.1267431433914571,
+            "repair_Brier": 0.12765762449500886,
+            "retry_Brier": 0.09346183200993106
+          }
+        },
+        "physics": {
+          "raw20_control": {
+            "Complete_Brier": 0.16470051157295837,
+            "current_Brier": 0.09828391884913575,
+            "joint_Brier": 0.49394220604447076,
+            "joint_log_loss": 1.1765999009437837,
+            "mean_four_marginal_Brier": 0.12082782693232279,
+            "repair_Brier": 0.13433022797082453,
+            "retry_Brier": 0.08599664933637252
+          },
+          "raw20_plus_project256": {
+            "Complete_Brier": 0.1612385081738266,
+            "current_Brier": 0.09575546455811602,
+            "joint_Brier": 0.48959789802645065,
+            "joint_log_loss": 1.1520869436849412,
+            "mean_four_marginal_Brier": 0.11975273364135634,
+            "repair_Brier": 0.13538544927964494,
+            "retry_Brier": 0.08663151255383778
+          }
+        }
+      },
+      "prior_fixed_C_dense_failure_replaced": false,
+      "screen_passed": true,
+      "screen_scope": "Both point estimates must improve; paired question CIs are descriptive with fitted folds held fixed",
+      "second_stage_question_excluded": true
+    },
+    "outer_selected_settings": {
+      "raw20_control": [
+        {
+          "C": 0.001,
+          "pca_components": null
+        },
+        {
+          "C": 0.01,
+          "pca_components": null
+        },
+        {
+          "C": 0.01,
+          "pca_components": null
+        }
+      ],
+      "raw20_plus_project256": [
+        {
+          "C": 0.001,
+          "pca_components": null
+        },
+        {
+          "C": 0.001,
+          "pca_components": null
+        },
+        {
+          "C": 0.001,
+          "pca_components": null
+        }
+      ]
+    },
+    "new_neural_calls": 0
+  },
+  "science_v3_completed_development": {
+    "summary_sha256": "5325679e68abb1b2bbda01d6fae489075ca274656fda82426475a027f080e2c9",
+    "fresh_validation": false,
+    "selected_A": {
+      "dev": {
+        "n": 256,
+        "correct": 145,
+        "accuracy": 0.56640625,
+        "mean_compute": 916.1266916248736,
+        "mean_solver_tokens": 672.1171875,
+        "mean_judge_tokens": 0.0,
+        "mean_judge_calls": 0.0,
+        "mean_solver_calls": 1.87109375,
+        "mean_total_parameter_compute": 916.1266916248736,
+        "mean_verifier_tokens": 327.79296875,
+        "mean_verifier_token_slots": 327.79296875,
+        "mean_verifier_calls": 1.6484375
+      },
+      "subject_choices": {
+        "math": {
+          "observer": "old-semantic-v1",
+          "model": "runs/controller-semantic-followup/round2/development-repairability-v1/C0.1-smooth32.pkl",
+          "settings": {
+            "penalty": 0.02,
+            "posterior_weight": 0.5
+          },
+          "dev": {
+            "n": 128,
+            "correct": 117,
+            "accuracy": 0.9140625,
+            "mean_compute": 587.8927766796521,
+            "mean_solver_tokens": 428.8046875,
+            "mean_judge_tokens": 0.0,
+            "mean_judge_calls": 0.0,
+            "mean_solver_calls": 2.0078125,
+            "mean_total_parameter_compute": 587.8927766796521,
+            "mean_verifier_tokens": 233.40625,
+            "mean_verifier_token_slots": 233.40625,
+            "mean_verifier_calls": 1.859375
+          }
+        },
+        "chemistry": {
+          "observer": "auxiliary-science-option-v1",
+          "model": "runs/controller-semantic-followup/round2/development-science-listwise-v3/science-C1-smooth32.pkl",
+          "settings": {
+            "penalty": 0.0,
+            "posterior_weight": 0.0
+          },
+          "dev": {
+            "n": 64,
+            "correct": 15,
+            "accuracy": 0.234375,
+            "mean_compute": 1806.1685287776093,
+            "mean_solver_tokens": 1339.984375,
+            "mean_judge_tokens": 0.0,
+            "mean_judge_calls": 0.0,
+            "mean_solver_calls": 2.390625,
+            "mean_total_parameter_compute": 1806.1685287776093,
+            "mean_verifier_tokens": 509.140625,
+            "mean_verifier_token_slots": 509.140625,
+            "mean_verifier_calls": 1.796875
+          }
+        },
+        "physics": {
+          "observer": "auxiliary-science-option-v1",
+          "model": "runs/controller-semantic-followup/round2/development-science-listwise-v3/science-C0.1-smooth8.pkl",
+          "settings": {
+            "penalty": 0.16,
+            "posterior_weight": 0.0
+          },
+          "dev": {
+            "n": 64,
+            "correct": 13,
+            "accuracy": 0.203125,
+            "mean_compute": 682.5526843625809,
+            "mean_solver_tokens": 490.875,
+            "mean_judge_tokens": 0.0,
+            "mean_judge_calls": 0.0,
+            "mean_solver_calls": 1.078125,
+            "mean_total_parameter_compute": 682.5526843625809,
+            "mean_verifier_tokens": 335.21875,
+            "mean_verifier_token_slots": 335.21875,
+            "mean_verifier_calls": 1.078125
+          }
+        }
+      },
+      "pickle": "selected-A.pkl"
+    },
+    "test_used": false
+  },
+  "strong_late_review_pilot": {
+    "summary_sha256": "1212e34938824b04be079a5a95a7dbebe37ba1bf2d919bcbcebfc196e1d93a57",
+    "screen": {
+      "checks": {
+        "at_least6_novel_questions": false,
+        "mean_full_compute_at_most_1p25_retained": true
+      },
+      "controller_promoted": false,
+      "criteria": {
+        "mean_all128_full_trajectory_compute_over_rootstrong_retained_at_most": 1.25,
+        "novel_questions_beyond_plain_Complete_rootstrong_at_least": 6,
+        "scope": "TRAIN action headroom only; no controller, fresh-data or learnability claim"
+      },
+      "mean_all128_late_trajectory_compute": 5837.092940938512,
+      "passed": false,
+      "ratio_to_rootstrong_retained": 1.0723405460992446,
+      "union_is_hindsight_not_learned_accuracy": true
+    },
+    "coverage": {
+      "compact_repairs": 128,
+      "logical_reviews": 128,
+      "physical_calls": 384,
+      "physical_review_phases": 256,
+      "questions": 64
+    },
+    "training_only": true,
+    "controller_promoted": false
+  },
+  "blind_first_review_pilot": {
+    "status": "registered; collection started, no results yet",
+    "registration_sha256": "074b9cedb39d06005426bdc1c76e7960118692e838855eb1a32d6df715f7613f",
+    "training_questions": 64,
+    "maximum_physical_calls": 256,
+    "maximum_cloud_gpus": 2,
+    "test_used": false
+  },
+  "auxiliary_paired_extension": {
+    "status": "prepared/tested, not registered or launched",
+    "training_questions": 512,
+    "maximum_physical_compact_calls": 5120,
+    "calibration_questions_excluded": 160,
+    "observer": "old frozenV1; richer observation promotion requires separate validation"
+  },
+  "fresh_data_boundary": "No test inference or grading; metadata-only reserved IDs and public-source stem hashes used solely to exclude training duplicates; no test reference fields decoded"
 }
