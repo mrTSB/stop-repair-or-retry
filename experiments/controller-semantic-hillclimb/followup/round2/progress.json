@@ -7427,8 +7427,8 @@
     "test_inference_started": false
   },
   "latest_regression": {
-    "tests": 650,
-    "seconds": 80.913,
+    "tests": 654,
+    "seconds": 68.478,
     "passed": true
   },
   "lexical_outcome_diagnostic": {
@@ -9040,7 +9040,7 @@
     },
     "schema": "expanded768-split_forest-joint-belief-TRAIN-v1"
   },
-  "status": "Independently audited A153/B179/C177 on reused DEV; >80% C target unmet; both new review pilots failed; no active cloud job",
+  "status": "Audited A153/B179/C177; history-aware terminal-repair pilot registered; >80% C target still unmet",
   "strong_late_review_pilot": {
     "controller_promoted": false,
     "coverage": {
@@ -10558,5 +10558,20 @@
     "new_cloud_calls": 0,
     "new_neural_calls": 0,
     "fresh_validation": false
+  },
+  "history_fusion_pilot_v1": {
+    "status": "registered_not_started",
+    "registration": "759a3bde8f301c2bfaffad1c6b17aa2e2a025f590e1803dc0a847661eea03139",
+    "questions": 64,
+    "new_solver_calls": 128,
+    "new_reviewer_calls": 0,
+    "new_neural_calls": 0,
+    "workers": 4,
+    "maximum_cloud_gpus": 2,
+    "cloud_training": false,
+    "test_used": false,
+    "new_repair_protocol_explicit": true,
+    "source_review_reasoning_excerpt_words": 160,
+    "all_archived_and_new_tokens_charged": true
   }
 }

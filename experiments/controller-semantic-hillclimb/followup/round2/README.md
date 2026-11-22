@@ -1460,3 +1460,26 @@ uv run --no-project python experiments/controller-semantic-hillclimb/followup/ro
 These are still exploratory results selected on reused development. The
 1,024-question test remains reserved; the subject-expert runtime also needs an
 explicit prospective collector/freeze extension before fresh evaluation.
+
+`history_fusion_protocol.py` registers a distinct terminal repair protocol,
+preserving the five ordinary baselines. After either the paid strong guided
+answer or ordinary independent retry, the same compact solver sees its root
+answer, that current answer, the original reviewer check and the last160 words
+of the paid first reviewer phase. All three arguments are explicitly fallible.
+Only this new repair context/instruction changes: output remains128 tokens,
+temperature0.65, context4,096 and the original second-repair branch seed. Each
+trajectory still has exactly two compact continuations after the initial solve.
+
+All64 training questions receive both new counterfactual terminal endpoints:
+128 new physical compact calls, zero new reviewer calls and zero new neural
+observer calls. Archived roots, complete logical reviewer-phase receipts and
+first continuations are reused exactly and fully billed at inference; no raw
+reviewer response is fabricated. Four request slots use at most two GPUs on
+the existing app, with minimum capacity restored to zero afterward. Durable
+attempts, physical/logical replay and reference/future exclusion are tested.
+Grading waits for the full128-endpoint seal. The screen still requires six
+newly solvable questions beyond the complete50-question prior union, with
+both endpoint mean costs at most1.25 times retained review. A matched B with
+this same new repair context and a separately fitted POMDP remain required
+before any controller or fresh-test claim. The full suite passes654 tests in
+68.478 seconds before collection.
