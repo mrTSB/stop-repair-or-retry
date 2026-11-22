@@ -1324,3 +1324,22 @@ It restores min0/max2 capacity. All1,536 old-encoder observations are separately
 registered for local CPU extraction. The broader-corpus reviewer pilot starts
 only after this release; no cloud training is performed. These acquisition
 counts are offline costs, not controller accuracy or per-question inference cost.
+
+The broader-corpus pilot completes and fails its registered screen. The first
+and second compact answers score23/64 and24/64; their union is24/64 and adds
+zero questions beyond the50-question prior union. All64 questions received
+passages. The second trajectory costs6,616.63 units,21.55% above the original
+strong retained-review control. The ledger contains64 reused and256 new
+physical calls, all charged at inference; transport errors are zero. Capacity
+returns to min0/max2. No controller is promoted and the fresh test stays reserved.
+
+The expanded math diagnostic completes after all1,536 local observations.
+It uses768 TRAIN questions with nested whole-question exclusion and compares
+the same512 conditional decisions against the retained specialized model.
+Joint log loss improves0.92019 to0.89440 and mean marginal Brier improves
+0.10413 to0.10120, but correct decisions fall446 to441 of512. Mean compute
+falls752.72 to727.39. The registered2pp accuracy-gain requirement fails, so
+no full fit or DEV promotion follows. This is a conditional TRAIN diagnostic,
+not a full-controller or fresh-test result. No jobs remain active; all eight
+rows in latest_results.json remain unchanged and the1,024-question test stays
+reserved. The requested accuracy gaps remain unmet.

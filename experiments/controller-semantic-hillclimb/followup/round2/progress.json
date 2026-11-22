@@ -9040,7 +9040,7 @@
     },
     "schema": "expanded768-split_forest-joint-belief-TRAIN-v1"
   },
-  "status": "Targets not met; second disjoint paired-training block collecting",
+  "status": "Targets not met; expanded math and broader science retrieval screens completed without promotion; no active job",
   "strong_late_review_pilot": {
     "controller_promoted": false,
     "coverage": {
@@ -10030,7 +10030,7 @@
     "status": "completed_no_screen_passed"
   },
   "auxiliary_math512": {
-    "status": "paired_collection_complete_local_features_registered",
+    "status": "paired_collection_and_local_features_complete; expanded TRAIN screen failed; no promotion",
     "reservation_sha256": "8027ea5c8153a1c749e8033eaca793f47ff24d55220b03103ca37095c68a9744",
     "questions": 512,
     "maximum_physical_calls": 3584,
@@ -10060,7 +10060,8 @@
       "output_tokens": 374202
     },
     "transport_error_records": 0,
-    "feature_registration": "33f5fe517f42a787a4419f8e1d46264b992453e03a526a9362945edcbdc42ae2"
+    "feature_registration": "33f5fe517f42a787a4419f8e1d46264b992453e03a526a9362945edcbdc42ae2",
+    "feature_observations_complete": 1536
   },
   "broad_textbook_corpus": {
     "status": "complete",
@@ -10076,23 +10077,137 @@
     "model_calls": 0
   },
   "broad_evidence_review_pilot_v4": {
-    "status": "registered_collecting",
+    "status": "completed_failed_screen",
     "registration": "ecfb8916627ac0d4bdf0c7aa49563f485c596f3d7267d8ef9c3f26a6a8d77dd6",
-    "reused_physical_calls": 64,
-    "maximum_new_physical_calls": 256,
-    "full_inference_calls_per_question": 5,
-    "retrieval_content_audit": {
-      "questions": 64,
-      "passage_contents_changed": 17,
-      "questions_receiving_new_lecture_sources": 11,
-      "distinct_added_sources_retrieved": 7,
-      "reference_values_read": false,
-      "correctness_used": false,
-      "model_calls": 0
+    "methods": {
+      "Broad evidence V4 first guided": {
+        "accuracy": 0.359375,
+        "correct": 23,
+        "correct_review_wrong_compact": 0,
+        "mean_compute": 5813.470873786408,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 3.0,
+        "mean_review_input_tokens": 3298.203125,
+        "mean_review_output_tokens": 1189.546875,
+        "mean_solver_calls": 2.0,
+        "mean_solver_input_tokens": 970.1875,
+        "mean_solver_output_tokens": 154.90625,
+        "mean_total_parameter_compute": 52288.551779935275,
+        "n": 64,
+        "review_correct": 19,
+        "wrong_review_correct_compact": 4
+      },
+      "Broad evidence V4 retained second repair": {
+        "accuracy": 0.375,
+        "correct": 24,
+        "correct_review_wrong_compact": 0,
+        "mean_compute": 6616.626213592233,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 3.0,
+        "mean_review_input_tokens": 3298.203125,
+        "mean_review_output_tokens": 1189.546875,
+        "mean_solver_calls": 3.0,
+        "mean_solver_input_tokens": 1535.796875,
+        "mean_solver_output_tokens": 209.734375,
+        "mean_total_parameter_compute": 53091.707119741106,
+        "n": 64,
+        "review_correct": 19,
+        "wrong_review_correct_compact": 5
+      }
     },
-    "corpus_passages_sha256": "bf00b4f5a103ee869a85c7e803ec2fdb56fde336721d9118bf38b2d4e0c02c46",
-    "controller_promoted": false,
-    "session": 41920,
-    "log": "/private/tmp/srr-broad-review-collect.log"
+    "novel_questions": 0,
+    "new_two_endpoint_union": 24,
+    "screen": {
+      "checks": {
+        "at_least6_novel_questions": false,
+        "second_trajectory_compute_at_most1p25": true
+      },
+      "controller_promoted": false,
+      "criteria": {
+        "mean_second_trajectory_compute_over_rootstrong_retained_at_most": 1.25,
+        "novel_questions_beyond_registered_known_union_at_least": 6,
+        "scope": "TRAIN action headroom only; Active local textbook retrieval is an explicitly new review capability, available to matched B too"
+      },
+      "hindsight_availability_only": true,
+      "passed": false,
+      "ratio_to_rootstrong_retained": 1.2155496989700605,
+      "second_trajectory_mean_compute": 6616.626213592233
+    },
+    "active_retrieval": {
+      "included_in_parameter_token_proxy": false,
+      "max_question_replay_cpu_ms": 2.1705041988752782,
+      "mean_replay_cpu_ms": 1.6244168638877454,
+      "passages": 127,
+      "public_question_fallbacks": 0,
+      "queries": 64,
+      "questions_with_passages": 64,
+      "questions_with_queries": 64,
+      "repetitions_per_question": 10
+    },
+    "coverage": {
+      "first_guided": 64,
+      "logical_reviews": 64,
+      "physical_calls": 320,
+      "physical_compact_calls": 128,
+      "physical_teacher_phases": 192,
+      "questions": 64,
+      "second_repairs": 64
+    },
+    "reused_physical_calls": 64,
+    "new_physical_calls": 256,
+    "transport_error_records": 0
+  },
+  "expanded_math768_diagnostic": {
+    "status": "completed_failed_screen",
+    "registration": "4e610e55db79133b4d62645e50ed64017783ef11c9b89ada8437d29aa21d2b92",
+    "training_questions": 768,
+    "summary": {
+      "candidate": {
+        "accuracy": 0.861328125,
+        "correct": 441,
+        "mean_compute": 727.3868235739433,
+        "n": 512
+      },
+      "cloud_calls": 0,
+      "control": {
+        "accuracy": 0.87109375,
+        "correct": 446,
+        "mean_compute": 752.7180331208688,
+        "n": 512
+      },
+      "development_or_test_read": false,
+      "forecast_losses": {
+        "control": {
+          "current_Brier": 0.0863786031307554,
+          "joint_log_loss": 0.9201855533913492,
+          "mean_three_marginal_Brier": 0.10412741853104039,
+          "repair_Brier": 0.1098966582748308,
+          "retry_Brier": 0.11610699418753495
+        },
+        "expanded": {
+          "current_Brier": 0.08313082268332414,
+          "joint_log_loss": 0.8943973215623191,
+          "mean_three_marginal_Brier": 0.10119626536338118,
+          "repair_Brier": 0.11096105071000445,
+          "retry_Brier": 0.10949692269681492
+        }
+      },
+      "fresh_validation": false,
+      "full_controller_claim": false,
+      "new_neural_calls": 0,
+      "paired_question_accuracy_CI95": [
+        -0.0234375,
+        0.001953125
+      ],
+      "schema": "expanded-math768-nested-outcome-TRAIN-v1",
+      "screen_checks": {
+        "compute_at_most1p10": true,
+        "conditional_gain_at_least2pp": false,
+        "joint_log_loss": true,
+        "mean_three_marginal_Brier": true
+      },
+      "screen_passed": false
+    },
+    "controller_promoted": false
   }
 }
