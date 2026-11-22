@@ -1103,3 +1103,28 @@ to math. Original training caches lack token counts, so their exact verified
 inputs are re-tokenized locally to bill actual lengths, without neural calls.
 The current scorer replaces the old neural features and is fully charged.
 No development/test questions enter either observer screen.
+
+The math reward screen completed:447/512 correct conditional decisions versus
+446/512 for the retained math forecaster (0.195 percentage points higher), at
+914.83 versus752.72 compute (21.54% more). Its paired-question accuracy
+difference interval is[-1.172,+1.563] points. All768 observations used127,773
+input tokens without truncation. The registered two-point/1.10-cost screen
+fails, so no full math fit or development comparison follows. All603 regression
+tests pass. This does not change the selected controllers.
+
+## Frozen reward review-critic screen
+
+`reward_review_diagnostic.py` separately tests the same frozen scorer on all256
+already-paid science TRAIN reviews. It receives the original question and the
+complete paid review text; references and future solver responses are excluded.
+Three outer whole-question folds contain independent three-fold selection of a
+score-only or32-component critic. The comparator is the strongest Brier result
+among all three prior excluded-question critics (old, option, combined), not
+only the weakest control. The screen requires Brier improvement of at least
+0.005 and strictly higher AUC.
+
+This trial is registered and collecting locally, with no new cloud calls. It
+creates no new correct-answer paths. Its1.72B scorer cost is additive to all
+paid LLM phases and other solver observations; a successful prediction screen
+would still require full POMDP integration and development accuracy/compute
+validation against the strongest B. No controller or fresh result is claimed.

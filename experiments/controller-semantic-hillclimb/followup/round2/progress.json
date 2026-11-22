@@ -9526,7 +9526,7 @@
     "promoted": false
   },
   "reward_math_diagnostic": {
-    "status": "registered_collecting_local_observations",
+    "status": "completed_failed_screen",
     "registration": "ba588938bea693a91a7217ccb92a9ea63ceed5272e830241bf9fa7fa8eabebb8",
     "questions": 256,
     "observations": 768,
@@ -9535,6 +9535,72 @@
     "replaced_old_neural_features": true,
     "old_control_input_token_counts_reconstructed_exactly": true,
     "cloud_calls": 0,
+    "fresh_validation": false,
+    "promoted": false,
+    "summary": {
+      "candidate": {
+        "accuracy": 0.873046875,
+        "correct": 447,
+        "mean_compute": 914.8331943559872,
+        "n": 512
+      },
+      "cloud_calls": 0,
+      "control": {
+        "accuracy": 0.87109375,
+        "correct": 446,
+        "mean_compute": 752.7180331208688,
+        "n": 512
+      },
+      "development_or_test_read": false,
+      "features": {
+        "dtype": "float32",
+        "input_tokens": 127773,
+        "model_revision": "e51ea3e08fb81326c3b812a7ff0cb9cee83e59cc",
+        "observations": 768,
+        "original_input_tokens": 127773,
+        "parameters": 1720577024,
+        "seconds": 173.37131395807955,
+        "truncated": 0
+      },
+      "forecast_losses": {
+        "candidate": {
+          "current_Brier": 0.08455047748053625,
+          "joint_log_loss": 0.9051206529188315,
+          "mean_three_marginal_Brier": 0.10058398154415332,
+          "repair_Brier": 0.10774503629873076,
+          "retry_Brier": 0.10945643085319291
+        },
+        "control": {
+          "current_Brier": 0.0863786031307554,
+          "joint_log_loss": 0.9201855533913492,
+          "mean_three_marginal_Brier": 0.10412741853104039,
+          "repair_Brier": 0.1098966582748308,
+          "retry_Brier": 0.11610699418753495
+        }
+      },
+      "fresh_validation": false,
+      "full_controller_claim": false,
+      "schema": "frozen-reward-math256-conditional-TRAIN-v1",
+      "screen": {
+        "accuracy_gain": 0.001953125,
+        "compute_ratio": 1.2153730269526923,
+        "paired_question_accuracy_CI95": [
+          -0.01171875,
+          0.015625
+        ],
+        "passed": false
+      }
+    }
+  },
+  "reward_review_diagnostic": {
+    "status": "registered_collecting_local_observations",
+    "registration": "0a7bc406b105d94f1c812de882b4066ffa389fc8edc1e27d950fd1d16e237c87",
+    "questions": 256,
+    "scope": "TRAIN paid-review sensor comparison against strongest prior critic",
+    "same_frozen_reward_model": true,
+    "new_answer_paths": false,
+    "new_cloud_calls": 0,
+    "full_controller_claim": false,
     "fresh_validation": false,
     "promoted": false
   }
