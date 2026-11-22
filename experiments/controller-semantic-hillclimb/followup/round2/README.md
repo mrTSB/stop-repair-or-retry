@@ -926,4 +926,53 @@ a replacement for the failed likelihood screen.
 regularized CPU head on the same cached observations and whole-policy folds.
 The434M encoder is frozen and never called; no cloud training or new solver
 inference occurs. Head latency is explicitly outside the token-based compute
-proxy. This study is registered/in progress and has not promoted a controller.
+proxy. The completed raw head gets198/768 at1886.19 compute and the dense head
+gets195/768 at1797.92, versus193/768 at1586.26 for the retained forest control.
+Both fail the registered accuracy-and-compute screen; neither is promoted.
+
+## Local joint-outcome observer adaptation
+
+`joint_outcome_observer.py` and `train_joint_outcome_observer.py` register one
+fixed local MPS recipe on the1280 science TRAIN questions. The last four layers
+of the existing434M discriminative observer and a new16-state head learn the
+joint correctness of the current answer, Repair, Retry and Complete. The
+observer never generates answers; the compact solver and response banks stay
+fixed. Three whole-question outer folds each train for exactly two epochs.
+The initializer excludes all1280 questions, and each held prediction reloads
+the saved, half-rounded excluded-fold checkpoint. A direct joint loss and
+marginal correctness loss replace the small frozen-feature classifiers.
+
+This first stage screens only conditional last-step POMDP decisions on TRAIN,
+requiring at least two percentage points higher accuracy and at most1.10 times
+the excluded-question forest control's compute. It is not a complete controller
+comparison. A passing screen would still require full fitting, full-policy
+development evaluation and fresh validation. Training is local; there are no
+cloud calls, development/test reads or full deployable model in this stage.
+The registration is sealed and training is in progress. All576 tests pass,
+including invalid-state support, checkpoint round-trip, excluded-question
+cost fitting and whole-question fold checks. The selected A/B/C stay unchanged.
+
+`joint_observer_pomdp.py` prepares paid-prefix inference and exact observer
+charges for a passing model. `fit_joint_observer_pomdp.py` refuses a failed or
+incomplete screen and would fit the same two-epoch recipe on all1280 TRAIN
+questions. Both original and clustered finite observation kernels retain the
+existing two-step Bellman backup. These preparation modules have not fitted or
+promoted a full model. Tests check that references and unpaid future states are
+rejected, changed paid roots invalidate the cache, and charging reuses the exact
+paid observations without adding or omitting inference calls.
+
+## Existing-review routing diagnostic
+
+`review_portfolio_diagnostic.py` tests whether the paid root alone can choose
+among existing review timings, budgets and retrieval protocols. It keeps all64
+registered science TRAIN questions and all fixed controls. Four fixed recipes
+(raw130/dense386 with regularized logistic/forest heads) predict outcomes and
+costs with whole questions excluded. No continuation or review text is visible
+before choosing its protocol. Full chosen-trajectory compute plus one root
+observer is charged; the small CPU head latency remains separate.
+
+All four fail. The best gets34/64 at6953.34 compute, below the strongest fixed
+protocol's36/64 and above the retained rootstrong control's5443.32 compute.
+The other recipes get31,28 and30 correct. This is a negative routing feasibility
+result on TRAIN, not a new POMDP or fresh controller result. It causes no new
+cloud calls, no new encoder calls and no change to selected C.

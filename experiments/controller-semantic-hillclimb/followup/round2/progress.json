@@ -8874,11 +8874,360 @@
     }
   },
   "mlp_policy_crossfit": {
-    "status": "registered_running",
+    "status": "completed_failed_screen",
     "registration": "ce744ece959700806cd4421a3555872903f5df27a7452c6ec0a17507fe1317b2",
     "encoder_training": false,
     "new_encoder_calls": 0,
     "cloud_calls": 0,
-    "scope": "Small CPU head; exploratory TRAIN whole-policy comparison"
+    "scope": "Small CPU head; exploratory TRAIN whole-policy comparison",
+    "summary": {
+      "cloud_calls": 0,
+      "common_questions": 768,
+      "compute_scope": "Same paid token proxy; additional tiny CPU head latency not represented",
+      "control": {
+        "accuracy": 0.2513020833333333,
+        "correct": 193,
+        "mean_compute": 1586.2649173062518,
+        "n": 768
+      },
+      "development_or_test_read": false,
+      "encoder_training": false,
+      "fresh_validation": false,
+      "new_encoder_calls": 0,
+      "reports": {
+        "expanded1280_MLP_dense": {
+          "accuracy_delta": 0.0026041666666666665,
+          "accuracy_delta_CI95": [
+            -0.016927083333333332,
+            0.020833333333333332
+          ],
+          "compute_delta": 211.65398023361988,
+          "compute_delta_CI95": [
+            162.0029105213138,
+            260.6834820585295
+          ],
+          "metrics": {
+            "accuracy": 0.25390625,
+            "correct": 195,
+            "mean_compute": 1797.9188975398718,
+            "n": 768
+          },
+          "screen_passed": false
+        },
+        "expanded1280_MLP_raw": {
+          "accuracy_delta": 0.006510416666666667,
+          "accuracy_delta_CI95": [
+            -0.013020833333333334,
+            0.026041666666666668
+          ],
+          "compute_delta": 299.9200888343211,
+          "compute_delta_CI95": [
+            240.22304757933287,
+            359.92839489120934
+          ],
+          "metrics": {
+            "accuracy": 0.2578125,
+            "correct": 198,
+            "mean_compute": 1886.1850061405728,
+            "n": 768
+          },
+          "screen_passed": false
+        }
+      },
+      "schema": "small-MLP-whole-POMDP-crossfit-TRAIN-v1",
+      "small_head_fitting": true,
+      "uncertainty_scope": "Descriptive paired question intervals with fitted folds fixed"
+    },
+    "promoted": false
+  },
+  "joint_outcome_observer": {
+    "status": "registered_training",
+    "registration": "0964e6257a7805bdaa2366f1b1bc9a03e41555a30ff3a3954173d1cc4b85ef7b",
+    "training_questions": 1280,
+    "observations": 3840,
+    "whole_question_outer_folds": 3,
+    "epochs": 2,
+    "local_device": "mps",
+    "cloud_calls": 0,
+    "solver_unchanged": true,
+    "full_model_fitted": false,
+    "fresh_validation": false,
+    "scope": "Conditional last-step TRAIN screen; no full-controller claim",
+    "regression_tests": 576
+  },
+  "review_portfolio_diagnostic": {
+    "status": "completed_failed_screen",
+    "registration": "938296f76819fad881067fc7fd3c13b49a5fa826c36fe243d126653ee8551866",
+    "summary": {
+      "cloud_calls": 0,
+      "controller_promoted": false,
+      "development_or_test_read": false,
+      "fixed_controls": {
+        "Advanced Grounded1024 first guided": {
+          "accuracy": 0.453125,
+          "correct": 29,
+          "mean_compute": 5006.588794498382,
+          "n": 64
+        },
+        "Advanced Grounded1024 retained second repair": {
+          "accuracy": 0.5,
+          "correct": 32,
+          "mean_compute": 5789.6389563106795,
+          "n": 64
+        },
+        "Blind-first guided": {
+          "accuracy": 0.359375,
+          "correct": 23,
+          "mean_compute": 4513.961367313916,
+          "n": 64
+        },
+        "Blind-first retained second repair": {
+          "accuracy": 0.34375,
+          "correct": 22,
+          "mean_compute": 5305.26395631068,
+          "n": 64
+        },
+        "Complete": {
+          "accuracy": 0.1875,
+          "correct": 12,
+          "mean_compute": 1207.9085760517798,
+          "n": 64
+        },
+        "Grounded1024 first guided": {
+          "accuracy": 0.453125,
+          "correct": 29,
+          "mean_compute": 4991.039644012945,
+          "n": 64
+        },
+        "Grounded1024 retained second repair": {
+          "accuracy": 0.484375,
+          "correct": 31,
+          "mean_compute": 5771.521035598706,
+          "n": 64
+        },
+        "Long4096 first guided": {
+          "accuracy": 0.5625,
+          "correct": 36,
+          "mean_compute": 9142.885315533982,
+          "n": 64
+        },
+        "Long4096 retained second repair": {
+          "accuracy": 0.5625,
+          "correct": 36,
+          "mean_compute": 9886.06897249191,
+          "n": 64
+        },
+        "Ordinary late after repair": {
+          "accuracy": 0.328125,
+          "correct": 21,
+          "mean_compute": 3731.6646440129452,
+          "n": 64
+        },
+        "Ordinary late after retry": {
+          "accuracy": 0.3125,
+          "correct": 20,
+          "mean_compute": 3677.7255258899677,
+          "n": 64
+        },
+        "Repair once": {
+          "accuracy": 0.265625,
+          "correct": 17,
+          "mean_compute": 1496.7233009708739,
+          "n": 64
+        },
+        "Repair then Complete": {
+          "accuracy": 0.359375,
+          "correct": 23,
+          "mean_compute": 2391.444174757282,
+          "n": 64
+        },
+        "Repair then Complete if invalid": {
+          "accuracy": 0.359375,
+          "correct": 23,
+          "mean_compute": 2032.6658576051782,
+          "n": 64
+        },
+        "Repair twice": {
+          "accuracy": 0.28125,
+          "correct": 18,
+          "mean_compute": 2536.9538834951454,
+          "n": 64
+        },
+        "Retry once": {
+          "accuracy": 0.078125,
+          "correct": 5,
+          "mean_compute": 1378.8228155339807,
+          "n": 64
+        },
+        "Retry then Complete": {
+          "accuracy": 0.265625,
+          "correct": 17,
+          "mean_compute": 2156.856796116505,
+          "n": 64
+        },
+        "Retry then Complete if invalid": {
+          "accuracy": 0.265625,
+          "correct": 17,
+          "mean_compute": 1967.5364077669906,
+          "n": 64
+        },
+        "Retry twice": {
+          "accuracy": 0.171875,
+          "correct": 11,
+          "mean_compute": 2150.465210355987,
+          "n": 64
+        },
+        "Stop": {
+          "accuracy": 0.203125,
+          "correct": 13,
+          "mean_compute": 603.8430420711974,
+          "n": 64
+        },
+        "Stop if valid else Complete": {
+          "accuracy": 0.203125,
+          "correct": 13,
+          "mean_compute": 828.4587378640778,
+          "n": 64
+        },
+        "Strong first guided": {
+          "accuracy": 0.484375,
+          "correct": 31,
+          "mean_compute": 4637.575849514564,
+          "n": 64
+        },
+        "Strong late after repair": {
+          "accuracy": 0.4375,
+          "correct": 28,
+          "mean_compute": 5863.875404530745,
+          "n": 64
+        },
+        "Strong late after retry": {
+          "accuracy": 0.453125,
+          "correct": 29,
+          "mean_compute": 5810.310477346278,
+          "n": 64
+        },
+        "Strong repair after retry": {
+          "accuracy": 0.484375,
+          "correct": 31,
+          "mean_compute": 5588.688309061488,
+          "n": 64
+        },
+        "Strong retained second repair": {
+          "accuracy": 0.5,
+          "correct": 32,
+          "mean_compute": 5443.320186084144,
+          "n": 64
+        }
+      },
+      "fresh_validation": false,
+      "highest_fixed_accuracy_control": "Long4096 first guided",
+      "hindsight_protocol_union": 50,
+      "new_neural_calls": 0,
+      "reports": {
+        "raw20_control-forest": {
+          "above_best_fixed": -0.03125,
+          "accuracy": 0.53125,
+          "below_retained_rootstrong_compute": false,
+          "chosen_protocol_counts": {
+            "Advanced Grounded1024 retained second repair": 4,
+            "Grounded1024 first guided": 5,
+            "Long4096 first guided": 11,
+            "Long4096 retained second repair": 12,
+            "Repair then Complete if invalid": 6,
+            "Strong first guided": 6,
+            "Strong retained second repair": 20
+          },
+          "correct": 34,
+          "mean_compute": 6953.342790334567,
+          "n": 64,
+          "screen_passed": false
+        },
+        "raw20_control-linear": {
+          "above_best_fixed": -0.078125,
+          "accuracy": 0.484375,
+          "below_retained_rootstrong_compute": false,
+          "chosen_protocol_counts": {
+            "Blind-first guided": 2,
+            "Grounded1024 first guided": 2,
+            "Grounded1024 retained second repair": 3,
+            "Long4096 first guided": 13,
+            "Long4096 retained second repair": 10,
+            "Ordinary late after repair": 1,
+            "Repair then Complete if invalid": 5,
+            "Strong first guided": 2,
+            "Strong late after repair": 3,
+            "Strong late after retry": 3,
+            "Strong repair after retry": 1,
+            "Strong retained second repair": 19
+          },
+          "correct": 31,
+          "mean_compute": 7040.210711046542,
+          "n": 64,
+          "screen_passed": false
+        },
+        "raw20_plus_project256-forest": {
+          "above_best_fixed": -0.09375,
+          "accuracy": 0.46875,
+          "below_retained_rootstrong_compute": false,
+          "chosen_protocol_counts": {
+            "Advanced Grounded1024 first guided": 1,
+            "Advanced Grounded1024 retained second repair": 2,
+            "Grounded1024 first guided": 1,
+            "Grounded1024 retained second repair": 4,
+            "Long4096 first guided": 13,
+            "Long4096 retained second repair": 11,
+            "Repair once": 3,
+            "Repair then Complete if invalid": 4,
+            "Strong first guided": 2,
+            "Strong late after repair": 1,
+            "Strong late after retry": 2,
+            "Strong repair after retry": 1,
+            "Strong retained second repair": 19
+          },
+          "correct": 30,
+          "mean_compute": 7003.459092923564,
+          "n": 64,
+          "screen_passed": false
+        },
+        "raw20_plus_project256-linear": {
+          "above_best_fixed": -0.125,
+          "accuracy": 0.4375,
+          "below_retained_rootstrong_compute": false,
+          "chosen_protocol_counts": {
+            "Advanced Grounded1024 retained second repair": 2,
+            "Blind-first guided": 3,
+            "Grounded1024 first guided": 3,
+            "Grounded1024 retained second repair": 3,
+            "Long4096 first guided": 9,
+            "Long4096 retained second repair": 8,
+            "Ordinary late after repair": 2,
+            "Repair once": 2,
+            "Repair then Complete if invalid": 4,
+            "Repair twice": 1,
+            "Retry then Complete if invalid": 1,
+            "Strong first guided": 8,
+            "Strong late after repair": 4,
+            "Strong late after retry": 1,
+            "Strong repair after retry": 1,
+            "Strong retained second repair": 12
+          },
+          "correct": 28,
+          "mean_compute": 6288.086924638776,
+          "n": 64,
+          "screen_passed": false
+        }
+      },
+      "retained_rootstrong_compute_ceiling": 5443.320186084144,
+      "schema": "paid-root-review-portfolio-crossfit-TRAIN-v1"
+    },
+    "promoted": false
+  },
+  "joint_observer_full_fit_preparation": {
+    "status": "code_prepared_not_run",
+    "requires_passed_joint_observer_screen": true,
+    "original_and_clustered_kernels": true,
+    "solver_unchanged": true,
+    "fresh_validation": false
   }
 }
