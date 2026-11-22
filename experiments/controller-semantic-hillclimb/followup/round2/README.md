@@ -876,3 +876,21 @@ source hashes, author attribution, and CC BY-NC-SA4.0 notices remain in the
 private archive. No benchmark records or model calls were used to build it.
 The existing grounded-review pilot keeps its original corpus unchanged. This
 new corpus has not been promoted into any controller or registered new pilot.
+
+## Second paired block and grounded runner
+
+The second512-question paired block is complete:5,120 logical responses,
+5,120 physical calls/attempts, zero transport errors,2,391,479 input tokens and
+703,412 output tokens. These acquisition costs are separate from inference
+compute. The collector restored min0/max2 capacity. Registered local feature
+extraction is in progress before the expanded1280 fit.
+
+The first grounded runner failed before any inference because its prerequisite
+check treated structured `input_evidence` metadata as a flat file manifest.
+`grounded_review_runner_v2.py` verifies `input_evidence.files` instead, retaining
+every completion/capacity check and exactly the original prompts, cohort,
+budgets and scoring. The original source and empty registration remain intact.
+The new registration binds the adapter, original sources, and the failed
+predecessor registration; it refuses a predecessor with any inference artifacts.
+This corrected pilot is collecting on at most two existing-app GPUs while
+feature extraction runs locally. No pilot outcome or fresh result is claimed.

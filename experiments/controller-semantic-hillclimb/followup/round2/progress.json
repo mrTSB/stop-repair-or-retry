@@ -7384,7 +7384,7 @@
     "seconds": 39.334
   },
   "second_auxiliary_paired_block": {
-    "status": "collecting",
+    "status": "completed_all5120_ungraded; local feature extraction running",
     "registration_sha256": "5f81371338d572780f5b7fc837f6755a9cca99c5a9b04e9e8e752fd61bd17214",
     "questions": 512,
     "chemistry": 256,
@@ -7671,7 +7671,7 @@
     "promoted_to_development": false
   },
   "grounded_root_review_pilot": {
-    "status": "registered_not_collected",
+    "status": "v1_failed_before_inference_nested_evidence_validation",
     "registration_sha256": "57e46cb6811948b0266e7993074c96b6b040d6a76c6305f7e2dcfb1a92133bdb",
     "questions": 64,
     "questions_with_textbook_context": 64,
@@ -7904,5 +7904,34 @@
     "promoted": false,
     "registered_new_pilot": false,
     "complete_sha256": "a15a10e966796e2ed7c22c7bae13f7b29f6e92d6a5171eb0ae6f6379843874cc"
+  },
+  "second512_collection_completed": {
+    "coverage": {
+      "expected_cells": 5120,
+      "logical_actions": 5120,
+      "neural_calls": 0,
+      "physical_attempts": 5120,
+      "physical_calls": 5120,
+      "questions": 512,
+      "review_calls": 0
+    },
+    "acquisition_tokens": {
+      "input_tokens": 2391479,
+      "output_tokens": 703412
+    },
+    "acquisition_compute": 4006331.3915857607,
+    "transport_error_records": 0,
+    "test_used": false,
+    "scored": false,
+    "complete_sha256": "0f138ec812de030a48f74c576423b8aa0e7282af4834b7c2509e2e36e296190a"
+  },
+  "grounded_root_review_runner_v2": {
+    "status": "collecting",
+    "registration_sha256": "b310a870c6b9e47f6c8fada6328b8c72269e0c851326f5b0dd428d74029993a2",
+    "previous_registration_preserved": true,
+    "same_prompts_cohort_budgets": true,
+    "maximum_cloud_gpus": 2,
+    "test_used": false,
+    "results_available": false
   }
 }
