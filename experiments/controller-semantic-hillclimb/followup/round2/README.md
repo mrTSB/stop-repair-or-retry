@@ -1068,3 +1068,29 @@ difference interval is[-0.273,+0.273] percentage points. It fails the required
 two-point gain and no-higher-compute screen; no full fit or DEV comparison is
 run. All597 regression tests pass. Selected A/B/C and fresh validation remain
 unchanged.
+
+## Frozen reward observation screen
+
+`reward_outcome_diagnostic.py` registers a local-only inference screen using
+[Skywork-Reward-V2-Qwen3-1.7B](https://huggingface.co/Skywork/Skywork-Reward-V2-Qwen3-1.7B),
+pinned to `e51ea3e08fb81326c3b812a7ff0cb9cee83e59cc` (Apache-2.0). This
+discriminative observer scores the paid current response to the public question;
+it generates no answers. Its1,720,577,024 parameters replace the old neural
+observer, with all current input tokens charged. The110 visible numeric features
+remain, while all20 old neural outputs are excluded. The compact solver is
+unchanged. No cloud calls or cloud training occur.
+
+All1280 science TRAIN questions and3840 root/repair/retry observations are
+registered before scoring. Three whole-question outer folds select a score-only
+forest or a32-component representation with regularized logistic prediction,
+using three inner folds. Scaling, PCA, priors and classifiers exclude held
+questions. A conditional last-decision screen requires at least two points
+more accuracy and at most1.10 times the retained forest control's compute.
+This is a feasibility screen, not a full-controller or fresh comparison.
+
+The official model card reports26million preference pairs; exact overlap with
+this project's source questions has not been independently established. No
+pretraining-disjointness claim is made. Inputs above1536 tokens preserve their
+first768 and last768 tokens, with every truncation reported. Only paid question
+and current response enter this scorer, without references or future branches.
+The experiment is registered and collecting locally; A/B/C remain unchanged.

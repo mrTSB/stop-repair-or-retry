@@ -9509,5 +9509,20 @@
         "passed": false
       }
     }
+  },
+  "reward_outcome_diagnostic": {
+    "status": "registered_collecting_local_observations",
+    "registration": "ee049fd32cc6cb507adcf0d51c9bfaaf4622ab5a07903c31265e97550ca04823",
+    "model": "Skywork/Skywork-Reward-V2-Qwen3-1.7B",
+    "revision": "e51ea3e08fb81326c3b812a7ff0cb9cee83e59cc",
+    "parameters": 1720577024,
+    "questions": 1280,
+    "observations": 3840,
+    "scope": "Conditional TRAIN feasibility; no full controller or fresh claim",
+    "local_inference": true,
+    "cloud_calls": 0,
+    "solver_unchanged": true,
+    "pretraining_overlap_not_independently_established": true,
+    "promoted": false
   }
 }
