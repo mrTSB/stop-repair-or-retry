@@ -9040,7 +9040,7 @@
     },
     "schema": "expanded768-split_forest-joint-belief-TRAIN-v1"
   },
-  "status": "Audited A153/B179/C177; history-aware terminal-repair pilot registered; >80% C target still unmet",
+  "status": "Audited A153/B179/C177; three new repair/review pilots failed; generic same-weight vision-binding check active; >80% C unmet",
   "strong_late_review_pilot": {
     "controller_promoted": false,
     "coverage": {
@@ -10420,7 +10420,7 @@
     },
     "transport_error_records": 0
   },
-  "latest_verified_checkpoint": "verified_subject_checkpoint_v1.json",
+  "latest_verified_checkpoint": "verified_bayesian_checkpoint_v1.json",
   "latest_verified_rows": [
     {
       "accuracy": 0.4296875,
@@ -10531,19 +10531,7 @@
     {
       "accuracy": 0.69140625,
       "correct": 177,
-      "mean_compute": 3739.67310122229,
-      "mean_judge_calls": 0.890625,
-      "mean_judge_physical_calls": 1.77734375,
-      "mean_judge_tokens": 2583.9375,
-      "mean_metadata_calls": 0.0,
-      "mean_metadata_cpu_ms": 0.0,
-      "mean_review_neural_calls": 0.890625,
-      "mean_solver_calls": 2.0078125,
-      "mean_solver_tokens": 853.78515625,
-      "mean_total_parameter_compute": 30498.896402193164,
-      "mean_verifier_calls": 2.5625,
-      "mean_verifier_token_slots": 894.84375,
-      "mean_verifier_tokens": 894.84375,
+      "mean_compute": 3728.5754404183053,
       "method": "C",
       "n": 256
     }
@@ -10560,7 +10548,7 @@
     "fresh_validation": false
   },
   "history_fusion_pilot_v1": {
-    "status": "registered_not_started",
+    "status": "completed_failed_screen",
     "registration": "759a3bde8f301c2bfaffad1c6b17aa2e2a025f590e1803dc0a847661eea03139",
     "questions": 64,
     "new_solver_calls": 128,
@@ -10572,6 +10560,146 @@
     "test_used": false,
     "new_repair_protocol_explicit": true,
     "source_review_reasoning_excerpt_words": 160,
-    "all_archived_and_new_tokens_charged": true
+    "all_archived_and_new_tokens_charged": true,
+    "methods": {
+      "History fusion after guided": {
+        "accuracy": 0.40625,
+        "correct": 26,
+        "mean_compute": 6144.473098705502,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 2.0,
+        "mean_review_input_tokens": 2106.421875,
+        "mean_review_output_tokens": 1174.28125,
+        "mean_solver_calls": 3.0,
+        "mean_solver_input_tokens": 2068.46875,
+        "mean_solver_output_tokens": 217.609375,
+        "mean_total_parameter_compute": 40119.39219255664,
+        "n": 64,
+        "review_correct": 31
+      },
+      "History fusion after retry": {
+        "accuracy": 0.390625,
+        "correct": 25,
+        "mean_compute": 6290.063713592233,
+        "mean_logical_review_calls": 1.0,
+        "mean_physical_review_calls": 2.0,
+        "mean_review_input_tokens": 2106.421875,
+        "mean_review_output_tokens": 1174.28125,
+        "mean_solver_calls": 3.0,
+        "mean_solver_input_tokens": 2012.25,
+        "mean_solver_output_tokens": 386.296875,
+        "mean_total_parameter_compute": 40264.98280744337,
+        "n": 64,
+        "review_correct": 31
+      }
+    },
+    "new_two_endpoint_union": 29,
+    "novel_questions": 0,
+    "screen": {
+      "checks": {
+        "at_least6_novel_questions": false,
+        "maximum_endpoint_compute_at_most1p25": true
+      },
+      "controller_promoted": false,
+      "criteria": {
+        "maximum_endpoint_mean_compute_over_rootstrong_retained_at_most": 1.25,
+        "novel_correct_questions_beyond_complete_prior_union_at_least": 6,
+        "scope": "TRAIN action availability only; new repair protocol requires matched B, learned POMDP integration and fresh validation"
+      },
+      "hindsight_availability_only": true,
+      "maximum_ratio_to_rootstrong_retained": 1.1555564432297758,
+      "passed": false
+    },
+    "transport_error_records": 0
+  },
+  "C_bayesian_model_uncertainty": {
+    "C": {
+      "accuracy": 0.69140625,
+      "correct": 177,
+      "mean_compute": 3728.5754404183053,
+      "n": 256
+    },
+    "fresh_validation": false,
+    "local_offline_feature_extraction": {
+      "actual_forward_token_slots": 43886,
+      "all_old_entries_verified_unchanged": true,
+      "cloud_calls": 0,
+      "model_fitting": false,
+      "new_keys": 187,
+      "new_local_neural_forwards": 144,
+      "parameters": 434306836,
+      "references_supplied_to_encoder": false,
+      "schema": "frozen-science-observer-whole-DEV-prefix-coverage-v1",
+      "test_used": false
+    },
+    "new_candidates": 36,
+    "new_cloud_calls": 0,
+    "previous_candidates_retained": 156,
+    "prior_C": {
+      "accuracy": 0.69140625,
+      "correct": 177,
+      "mean_compute": 3739.67310122229,
+      "mean_judge_calls": 0.890625,
+      "mean_judge_physical_calls": 1.77734375,
+      "mean_judge_tokens": 2583.9375,
+      "mean_metadata_calls": 0.0,
+      "mean_metadata_cpu_ms": 0.0,
+      "mean_review_neural_calls": 0.890625,
+      "mean_solver_calls": 2.0078125,
+      "mean_solver_tokens": 853.78515625,
+      "mean_total_parameter_compute": 30498.896402193164,
+      "mean_verifier_calls": 2.5625,
+      "mean_verifier_token_slots": 894.84375,
+      "mean_verifier_tokens": 894.84375,
+      "n": 256
+    },
+    "public_checkpoint": "verified_bayesian_checkpoint_v1.json",
+    "status": "completed_independently_audited_small_compute_gain_no_accuracy_gain",
+    "targets": {
+      "accuracy_targets_feasible_on_this_panel": true,
+      "additional_correct_needed": {
+        "A": 5,
+        "B": 0,
+        "C": 28
+      },
+      "all_metrics_passed": false,
+      "checks": {
+        "A_gap_at_least10pp": false,
+        "B_gap_at_least10pp": true,
+        "C_accuracy_strictly_over80percent": false,
+        "C_compute_strictly_below_B": true,
+        "C_gap_at_least10pp": false
+      },
+      "fresh_targets_confirmed": false,
+      "fresh_validation": false,
+      "minimum_correct": {
+        "A": 158,
+        "B": 158,
+        "C": 205
+      },
+      "n": 256
+    },
+    "test_used": false
+  },
+  "OCR_textbook_recovery": {
+    "cloud_pilot_skipped": true,
+    "controller_promoted": false,
+    "documents": 7,
+    "new_indexed_passages": 70,
+    "new_passages": 70,
+    "old_vectors_unchanged": 11165,
+    "pages": 74,
+    "public_summary": "evidence_recovery_v1.json",
+    "questions_checked": 64,
+    "status": "completed_no_retrieval_coverage_gain",
+    "training_question_contexts_changed": 0
+  },
+  "vision_preflight": {
+    "benchmark_questions_used": false,
+    "capacity_released": true,
+    "maximum_cloud_gpus": 2,
+    "physical_generations": 6,
+    "public_summary": "evidence_recovery_v1.json",
+    "status": "all_fixed_generic_checks_failed_no_benchmark_images"
   }
 }

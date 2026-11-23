@@ -1,0 +1,106 @@
+{
+  "controller_accuracy_claim": false,
+  "evidence": {
+    "runs/controller-semantic-followup/round2/data/dev-late-observations.jsonl": "40a86f13e77a5cb5383da6ffabd8755bc2339353f350483ec20a25afb6d947b3",
+    "runs/controller-semantic-followup/round2/data/dev-observations.jsonl": "ff2a4d8b37110ba9f6a2be7d8e3f1107ed6ca803ec3c92a3548bd8cd62a892c3",
+    "runs/controller-semantic-followup/round2/data/splits/dev-questions.jsonl": "68ae92907236b4f831bb14ca5c87a457e5a33dcaa984e6d42063bf0e257b5f31",
+    "runs/controller-semantic-followup/round2/development-complete-actions-v1/dev.jsonl": "cb3dd4d126d9e82037538bcc27d83d8b72ab21100675bf9d95b16c4e6623fe18",
+    "runs/controller-semantic-followup/round2/development-expanded-mentor-v1/dev-observations.jsonl": "0b38968e86c282e0ab0bf5b1bfa23d7d978de732c996b136349f46d9235bd542",
+    "runs/controller-semantic-followup/round2/development-retained-path-complete-v1/dev-observations.jsonl": "317315ee27bfab1e6ee0ad3e21a407bf359cdcef45574a6ddfdf59680d3f5ba0"
+  },
+  "reports": {
+    "plain": {
+      "all": {
+        "correct_answer_available": 165,
+        "fraction": 0.64453125,
+        "n": 256
+      },
+      "chemistry": {
+        "correct_answer_available": 21,
+        "fraction": 0.328125,
+        "n": 64
+      },
+      "math": {
+        "correct_answer_available": 123,
+        "fraction": 0.9609375,
+        "n": 128
+      },
+      "physics": {
+        "correct_answer_available": 21,
+        "fraction": 0.328125,
+        "n": 64
+      }
+    },
+    "plain+strong+complete": {
+      "all": {
+        "correct_answer_available": 196,
+        "fraction": 0.765625,
+        "n": 256
+      },
+      "chemistry": {
+        "correct_answer_available": 33,
+        "fraction": 0.515625,
+        "n": 64
+      },
+      "math": {
+        "correct_answer_available": 126,
+        "fraction": 0.984375,
+        "n": 128
+      },
+      "physics": {
+        "correct_answer_available": 37,
+        "fraction": 0.578125,
+        "n": 64
+      }
+    },
+    "plain+strong+complete+ordinary+ordinary_late_once": {
+      "all": {
+        "correct_answer_available": 206,
+        "fraction": 0.8046875,
+        "n": 256
+      },
+      "chemistry": {
+        "correct_answer_available": 36,
+        "fraction": 0.5625,
+        "n": 64
+      },
+      "math": {
+        "correct_answer_available": 126,
+        "fraction": 0.984375,
+        "n": 128
+      },
+      "physics": {
+        "correct_answer_available": 44,
+        "fraction": 0.6875,
+        "n": 64
+      }
+    },
+    "plain+strong+complete+ordinary+ordinary_late_once+ordinary_late_twice": {
+      "all": {
+        "correct_answer_available": 206,
+        "fraction": 0.8046875,
+        "n": 256
+      },
+      "chemistry": {
+        "correct_answer_available": 36,
+        "fraction": 0.5625,
+        "n": 64
+      },
+      "math": {
+        "correct_answer_available": 126,
+        "fraction": 0.984375,
+        "n": 128
+      },
+      "physics": {
+        "correct_answer_available": 44,
+        "fraction": 0.6875,
+        "n": 64
+      }
+    }
+  },
+  "schema": "reused-development-recorded-answer-headroom-audit-v1",
+  "scope": "Optimistic hindsight availability over recorded outputs, ignoring compute; reused DEV, not policy performance",
+  "scoring_source_sha256": "357e5f659b6bf3011e32c190ea79e5793fbfd3b42919c8274a0b56c7d3f849fa",
+  "source_sha256": "14d44b49edb04510e80a77be38bfd088b2d0f75362cc1c837ec1a84bace81b85",
+  "test_used": false
+}

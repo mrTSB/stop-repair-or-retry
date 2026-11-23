@@ -82,7 +82,7 @@ been used repeatedly for selection; this table is not fresh confirmation.
 | Retry twice | 123 | 48.05% | 1,394.69 |
 | Best A: math-specialized POMDP with clustered science observations and terminal Complete | 153 | 59.77% | 1,087.27 |
 | Best B: subject-specific retained-review LLM | 179 | 69.92% | 3,858.28 |
-| Best C: subject-specific expanded-data POMDP + LLM | 177 | 69.14% | 3,739.67 |
+| Best C: subject-specific POMDP + LLM, Bayesian model averaging for physics | 177 | 69.14% | 3,728.58 |
 
 The proxy counts all paid solver, reviewer, and observer tokens weighted by
 active parameters, normalized to 3.09 billion parameters. Both physical phases
@@ -92,9 +92,12 @@ the full-35B reviewer sensitivity is also retained in the receipts.
 A is 8.20 percentage points above the strongest original baseline, B is18.36
 points above it, and C is0.78 points below the stronger of A/B. A needs at least
 158 correct answers and C needs at least205 on this panel to meet both the
-ten-point margin and the new strictly-over80% target. C saves3.07% compute
+ten-point margin and the new strictly-over80% target. C saves3.36% compute
 relative to B. The requested accuracy targets are not met. The latest complete
-table, identities and independent audit are in`verified_subject_checkpoint_v1.json`.
+table, identities and independent audit are in`verified_bayesian_checkpoint_v1.json`.
+The preceding independently audited checkpoint remains unchanged in
+`verified_subject_checkpoint_v1.json`. This C update reduces its own compute
+by only0.30%, with no accuracy gain.
 
 Complete is a separate answer-changing action with matched controls. The best
 such simple control, Repair then Complete if invalid, obtains 151/256 (58.98%)
@@ -1483,3 +1486,113 @@ both endpoint mean costs at most1.25 times retained review. A matched B with
 this same new repair context and a separately fitted POMDP remain required
 before any controller or fresh-test claim. The full suite passes654 tests in
 68.478 seconds before collection.
+
+That history-fusion pilot is complete:128 new compact generations, zero new
+reviewer/observer calls and zero transport errors. Terminal repair after guided
+gets26/64 correct; after retry25/64. Their combined hindsight availability is
+29/64, adding zero questions beyond the frozen50-question prior union. The
+worst endpoint cost ratio is1.15556, passing the cost screen but failing the
+six-novel-question screen. No controller is promoted.
+
+## Reproducible C headroom and evidence recovery
+
+`audit_cached_headroom.py` and `cached_headroom_audit_v1.json` reproduce the
+availability bound using the original frozen numeric scorer, including its
+validity flag. The original seven-path pool contains a correct answer for
+165/256 reused DEV questions. Adding strong retained review and Complete
+raises that to196/256 (76.56%). Adding all ordinary-review and once-late paths
+raises it to206/256 (80.47%); a second ordinary review adds zero. These are
+optimistic hindsight bounds ignoring cost, not executable controller accuracy,
+fresh validation, or bounds on uncollected protocols. The >80% C target needs
+205/256, leaving only one selection error over the full recorded output pool.
+
+```bash
+uv run --no-project python experiments/controller-semantic-hillclimb/followup/round2/audit_cached_headroom.py --output experiments/controller-semantic-hillclimb/followup/round2/cached_headroom_audit_v1.json
+```
+
+`vision_binding_preflight.py`, `vision_native_preflight.py` and
+`vision_geometry_preflight.py` preserve six fixed generic technical generations
+using a synthetic image code. Manual/native formatting, square padding on the
+same35B reviewer, and original geometry on the same4B compact model all fail
+the exact code-reading check despite image-token receipts. No benchmark image
+run is authorized by these failures. Both frozen model digests are unchanged;
+the existing app uses at most two GPUs and releases minimum capacity to zero.
+These checks are technical diagnostics, never science accuracy measurements.
+
+Local macOS Vision OCR reads the same control image correctly. Accordingly,
+`ocr_textbook_corpus.py` and `textbook_ocr.swift` recover all74 pages from the
+seven already-frozen MIT lecture PDFs that had no extracted passages. The
+question-independent selection uses the old extraction-failure manifest.
+All page recognition results, confidences, source hashes and page images are
+preserved. There is no benchmark-conditioned filtering. The corpus appends70
+attributed machine transcripts to the byte-identical11,165-passage prefix.
+Chemical structures, equations and reading order may be degraded. Original
+authors/course/page/URLs and CC BY-NC-SA4.0 notices remain attached. Offline
+recognition requests CPU only and records10.13 seconds of OCR wall time plus
+47.86 seconds of rendering; the OS model parameter count is unknown, so no
+end-to-end compute reduction is claimed from that uncounted offline work.
+
+`ocr_dense_index.py` retains every old BGE vector identically and locally
+encodes only70 new passages in five forwards (14,916 padded token slots,
+33,360,000 frozen parameters). It refits the lexical index using the parent's
+settings and preserves all old files. The separately registered
+`ocr_retrieval_coverage.py` compares the same64 public TRAIN stems without
+decoding references or reading solver/reviewer outputs. One query vector is
+shared between the old/new comparison, with64 actual forwards and66.84955
+proxy units if used at inference. New OCR excerpts appear on zero questions;
+all64 context strings are unchanged. It fails the necessary coverage screen,
+so no redundant cloud review pilot is launched. No controller gain or fresh
+result is claimed. Aggregate provenance is in `evidence_recovery_v1.json`;
+raw PDFs, transcripts, model assets and responses remain private ignored files.
+
+## Bayesian model uncertainty in C
+
+`bayesian_model_hybrid.py` represents the queried hidden state as the static
+dynamics-model index times the original eight-state mentor state. The two
+parents are the existing TRAIN-fitted smooth8/smooth32 retained-review POMDPs.
+The original unqueried A remains the alternative. Review and child observations
+update both the hidden-state and model probabilities. Every Bellman backup
+sums model-state action values before maximizing a shared action; it cannot
+act as though the hidden model identity were observed. Only acquired roots,
+reviews and first continuations enter the observer. Distinct recipe/input
+forwards and every physical reviewer phase retain their complete bills.
+
+`development_bayesian_hybrid.py` preregisters36 rules: three fixed model priors,
+four cost penalties and three query thresholds. The first cache-only replay
+stops on an unavailable entry. The separate `development_bayesian_hybrid_v2.py`
+permits only exact serialized-input aliases within the same question, frozen
+model recipe and observer class. It fills164 keys; seven conflicting input
+identities are not reused. It also stops on remaining unavailable input. Both
+partial runs are retained and excluded from final comparative claims.
+
+`bayesian_observer_features.py` then registers every missing science root or
+available first-continuation input without filtering by correctness. It makes
+144 distinct frozen CPU forwards (43,886 token slots,434,306,836 parameters)
+to fill187 missing keys. No model training or cloud call occurs. Every old
+entry is independently verified unchanged. `development_bayesian_hybrid_v3.py`
+replays the same complete36-rule grid using that sealed bank, explicitly
+disclosing this offline extraction separately from its zero-forward replay.
+Every used observation retains its original full per-question inference charge.
+
+All156 previous C candidates remain eligible. The exact observed-subject
+accuracy/cost selector chooses the original math and chemistry experts and
+the25% smooth8 /75% smooth32 Bayesian hybrid for physics (penalty0,
+query threshold0.08). The selected runnable hybrid reproduces every decision
+and compute bill and obtains177/256,69.14%, at3,728.57544 units. This saves only
+0.29675% versus the preceding C and3.36166% versus the unchanged179/256 B.
+There is no accuracy improvement, no >80% result and no fresh validation.
+The four Bellman/Bayes tests and two exact-cache identity tests pass; the full
+regression suite passes663 tests in56.645 seconds.
+
+`audit_bayesian_hybrid.py` independently checks correctness and every
+solver/reviewer/observer component bill for all9,216 new candidate outcomes
+and the selected256 outcomes. An independent dynamic program verifies the
+192-candidate subject composition under the same strongest-B compute ceiling.
+The audit verifies the serialized hybrid hash, unchanged five baselines/A/B
+and exact integer target checks. Its public checkpoint is
+`verified_bayesian_checkpoint_v1.json`. All private inference banks and model
+files stay ignored. The separate1,024-question fresh set remains reserved.
+
+```bash
+uv run --with torch==2.9.0 --with transformers==4.57.1 --with scikit-learn==1.8.0 --with modal==1.6.4 --no-project python experiments/controller-semantic-hillclimb/followup/round2/audit_bayesian_hybrid.py --run runs/controller-semantic-followup/round2/development-bayesian-model-hybrid-v3 --output experiments/controller-semantic-hillclimb/followup/round2/verified_bayesian_checkpoint_v1.json
+```

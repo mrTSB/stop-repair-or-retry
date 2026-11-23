@@ -1,0 +1,211 @@
+{
+  "OCR_corpus": {
+    "CPU_only_requested": true,
+    "OCR_passages": 70,
+    "OCR_wall_seconds": 10.1329505443573,
+    "benchmark_records_read": false,
+    "cloud_calls": 0,
+    "documents": 7,
+    "license_notice": "New transcripts adapt frozen MIT OCW lectures under CC BY-NC-SA4.0; retain each source author, course, page and URL; original passage licenses unchanged",
+    "local_OCR_calls": 74,
+    "old_passages": 11165,
+    "old_passages_sha256": "bf00b4f5a103ee869a85c7e803ec2fdb56fde336721d9118bf38b2d4e0c02c46",
+    "pages_without_qualifying_OCR": [
+      {
+        "page": 13,
+        "source": "https://ocw.mit.edu/courses/8-07-electromagnetism-ii-fall-2012/4c8c6cd312d191f598cde03893a5f614_MIT8_07F12_ln11.pdf",
+        "words": 13
+      },
+      {
+        "page": 14,
+        "source": "https://ocw.mit.edu/courses/8-07-electromagnetism-ii-fall-2012/4c8c6cd312d191f598cde03893a5f614_MIT8_07F12_ln11.pdf",
+        "words": 12
+      },
+      {
+        "page": 20,
+        "source": "https://ocw.mit.edu/courses/8-07-electromagnetism-ii-fall-2012/4c8c6cd312d191f598cde03893a5f614_MIT8_07F12_ln11.pdf",
+        "words": 14
+      },
+      {
+        "page": 22,
+        "source": "https://ocw.mit.edu/courses/8-07-electromagnetism-ii-fall-2012/4c8c6cd312d191f598cde03893a5f614_MIT8_07F12_ln11.pdf",
+        "words": 12
+      },
+      {
+        "page": 4,
+        "source": "https://ocw.mit.edu/courses/8-07-electromagnetism-ii-fall-2012/9070df94553ec5622e72c42641250199_MIT8_07F12_ln5.pdf",
+        "words": 17
+      }
+    ],
+    "passages": 11235,
+    "quality_limitations": "Machine OCR may misread mathematical notation, chemical structures and reading order; original PDF/page evidence remains available",
+    "render_wall_seconds": 47.85842654109001,
+    "rendered_pages": 74,
+    "schema": "question-independent-zero-text-lecture-OCR-corpus-v1",
+    "sha256": "a1eb5710b05e93ce11ab335dbf2f10c2724f8ba34556a99c5852b4c24900d6d4",
+    "training": false
+  },
+  "assets": {
+    "OCR_corpus": {
+      "complete_sha256": "c8cb28651eeffd16cad4c50af0fc4ded2bbe353074bc3e85e6597477d372af70",
+      "path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/ocr-textbooks-v1",
+      "registration_sha256": "908323c206524b21c4c34f2c9f4af2fb45552c374485e73d052927412e48e1ba"
+    },
+    "answer_free_coverage": {
+      "complete_sha256": "f22ebf5583d411c8ae443185d97927b7e204e286e14fc7cda3a0306960bc6b59",
+      "path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/ocr-retrieval-coverage-v1",
+      "registration_sha256": "3f90dabf5c2ba8e568f1feb7763905673cd3d34c6d4f6964a8240fc486b7d90d"
+    },
+    "incremental_dense_index": {
+      "complete_sha256": "4bf4c5a13f083b0205dedb93cfca700cdc9b939a4ea58a144a6c47d76ade59dd",
+      "path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/ocr-dense-textbook-index-v1",
+      "registration_sha256": "8ae6a6b62e7aca6edf9d5e5a40b84b5ede8af5e0416783cb9c38b4343161fefa"
+    },
+    "vision_binding": {
+      "complete_sha256": "c80fac425457be379323b0e1317ef529396740a3e31a09fb3c136e45d4677c9b",
+      "path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/vision-binding-v1",
+      "registration_sha256": "23b162fc664462bcf694d647f1c2b89b30419a1d9acadd19e3cc96aff8e0bea6"
+    },
+    "vision_geometry": {
+      "complete_sha256": "7d09a254b413d580c484cb141f2e2fede0437526cab80297b38a2233cdbbc340",
+      "path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/vision-geometry-binding-v3",
+      "registration_sha256": "cca297f1b47799c7a65ff16ca0d8b205364d7e33e64f7d3c18845ff82d689fe2"
+    },
+    "vision_native": {
+      "complete_sha256": "460c1597ed349eb72d1efa846245afde17fcf6a7ee0b5a01fddaa733cbe568a2",
+      "path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/vision-native-binding-v2",
+      "registration_sha256": "9f01b244a3c477a037f6e5549e7b90f63c92964ff37dab52a9d1adbf20ed2fce"
+    }
+  },
+  "benchmark_image_calls": 0,
+  "cloud_training": false,
+  "controller_promoted": false,
+  "coverage": {
+    "OCR_excerpts": 0,
+    "actual_query_forwards": 64,
+    "cloud_calls": 0,
+    "context_changed_questions": 0,
+    "controller_accuracy_claim": false,
+    "development_used": false,
+    "new_OCR_evidence_questions": 0,
+    "preacquisition_screen_passed": false,
+    "query_compute_if_used_by_controller": 66.84955339805825,
+    "questions": 64,
+    "references_decoded": false,
+    "schema": "answer-free-OCR-retrieval-TRAIN-coverage-v1",
+    "solver_or_reviewer_outputs_read": false,
+    "test_used": false
+  },
+  "fresh_validation": false,
+  "generic_cloud_generations": 6,
+  "incremental_dense_index": {
+    "benchmark_records_read": false,
+    "cloud_calls": 0,
+    "forward_calls": 5,
+    "model_parameters": 33360000,
+    "new_vectors": 70,
+    "offline_forward_token_slots": 14916,
+    "old_vectors_reused": 11165,
+    "schema": "question-independent-incremental-OCR-BGE-index-v1",
+    "training": false
+  },
+  "schema": "recovered-textbook-evidence-and-technical-preflight-v1",
+  "test_inference_or_grading": false,
+  "vision_checks": {
+    "vision_binding": {
+      "benchmark_accuracy_claim": false,
+      "benchmark_question_read": false,
+      "checks": {
+        "code_not_in_text_control": true,
+        "image_token_count_consistent": true,
+        "visible_code_read": false
+      },
+      "input_count_delta": 371,
+      "metrics": {
+        "image": {
+          "eval_count": 10,
+          "eval_duration": 69942000,
+          "load_duration": 7195999,
+          "prompt_eval_cached_count": 0,
+          "prompt_eval_count": 395,
+          "prompt_eval_duration": 3889062000
+        },
+        "text_control": {
+          "eval_count": 9,
+          "eval_duration": 9350806000,
+          "load_duration": 64223890762,
+          "prompt_eval_cached_count": 0,
+          "prompt_eval_count": 24,
+          "prompt_eval_duration": 34780078000
+        }
+      },
+      "passed": false,
+      "physical_calls": 2,
+      "projected_image_slots": 368,
+      "schema": "generic-frozen-reviewer-vision-binding-v1",
+      "vision_encoder_compute_per_phase": 212.73555891779935,
+      "vision_parameters": 446571248,
+      "vision_patch_slots": 1472
+    },
+    "vision_geometry": {
+      "benchmark_accuracy_claim": false,
+      "benchmark_records_read": false,
+      "checks": {
+        "compact_original_geometry": {
+          "exact_code_read": false,
+          "image_tokens_present": true
+        },
+        "reviewer_square_padding": {
+          "exact_code_read": false,
+          "image_tokens_present": true
+        }
+      },
+      "metrics": {
+        "compact_original_geometry": {
+          "eval_count": 7,
+          "prompt_eval_cached_count": 0,
+          "prompt_eval_count": 394
+        },
+        "reviewer_square_padding": {
+          "eval_count": 6,
+          "prompt_eval_cached_count": 0,
+          "prompt_eval_count": 602
+        }
+      },
+      "passed_variants": [],
+      "physical_calls": 2,
+      "schema": "frozen-model-geometry-compatibility-preflight-v3"
+    },
+    "vision_native": {
+      "benchmark_accuracy_claim": false,
+      "benchmark_records_read": false,
+      "checks": {
+        "manual_raw_no_think": {
+          "exact_code_read": false,
+          "image_tokens_present": true
+        },
+        "native_no_think": {
+          "exact_code_read": false,
+          "image_tokens_present": true
+        }
+      },
+      "metrics": {
+        "manual_raw_no_think": {
+          "eval_count": 10,
+          "prompt_eval_cached_count": 0,
+          "prompt_eval_count": 395
+        },
+        "native_no_think": {
+          "eval_count": 4,
+          "prompt_eval_cached_count": 0,
+          "prompt_eval_count": 394
+        }
+      },
+      "passed": false,
+      "physical_calls": 2,
+      "prior_failure_preserved": true,
+      "schema": "frozen-reviewer-native-image-transport-preflight-v2",
+      "selected_transport": null
+    }
+  }
+}
