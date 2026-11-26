@@ -27,6 +27,8 @@ The extracted archive has one top-level `stop-repair-or-retry/` directory. `repr
 
 Install `uv`, GitHub CLI (`gh`), and `zstd`. Python 3.12.11 and the Python dependencies are obtained by `uv`; the dependency lock includes hashes and platform markers for macOS and Linux. Downloading/installing dependencies needs internet. Cached replay requires no inference service or credentials.
 
+For downloading without a GitHub account or GitHub CLI, download the release's `download.py` attachment and run `uv run --python 3.12.11 --no-project python download.py --destination abc-download`. It verifies every part and the combined archive. Then use the extraction/setup commands below, starting with `cat`.
+
 ```sh
 mkdir abc-download
 gh release download abc-runtime-2026-11-25 \
