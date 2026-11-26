@@ -1,0 +1,10 @@
+{
+  "archive_bytes": 70831581684,
+  "files": 38826,
+  "original_files_retained": 38803,
+  "packaging_source_commit": "bfbb133a569f9bcd326882c775862c33ec37f68c",
+  "parts": 36,
+  "passed": true,
+  "pretrained_initialization_families": 3,
+  "reserved_test_included": true
+}

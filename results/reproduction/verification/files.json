@@ -1,11 +1,13 @@
 {
-  "bytes": 100905014839,
-  "files": 38803,
+  "bytes": 102537523932,
+  "files": 38826,
   "latest_splits": {
     "dev": 256,
     "test": 1024,
     "train": 512
   },
+  "method": "Independent decompression of the final archive; all payload SHA-256 values checked",
+  "mutable_files_are_independent": true,
   "passed": true,
   "reserved_test_labels_included": true,
   "test_inference_or_grading": false

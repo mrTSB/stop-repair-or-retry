@@ -1,10 +1,5 @@
 name: Assemble complete A/B/C runtime
 on:
-  push:
-    branches: [codex/pomdp-abc-hillclimb]
-    paths:
-      - .github/workflows/assemble-runtime.yml
-      - scripts/reproduction/cloud_runtime.py
   workflow_dispatch:
 permissions:
   contents: write

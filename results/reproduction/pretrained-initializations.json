@@ -1,0 +1,107 @@
+[
+  {
+    "cache": ".cache/semantic-encoder/models--microsoft--deberta-v3-base/snapshots/8ccc9b6f36199bec6961081d44eb72fb3f7353f3/",
+    "files": {
+      "README.md": {
+        "sha256": "7e9ea69ca00d0609cc0e0b9cec76f9ba6ae71601244c4136a3f25bd02dce4c4d",
+        "size_bytes": 3472
+      },
+      "config.json": {
+        "sha256": "649f6a1ec33c6bdd9a6486d5c66019d461139e54957073eafe9bbc2d34c75b0b",
+        "size_bytes": 579
+      },
+      "pytorch_model.bin": {
+        "sha256": "691d48a2800b926a19e3051def466fc2cca4f59a15e42ce4a0cf7f1b380b5e33",
+        "size_bytes": 371146213
+      },
+      "spm.model": {
+        "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+        "size_bytes": 2464616
+      },
+      "tokenizer_config.json": {
+        "sha256": "3f3978e0c036f2c2588cac34a6047cbb0af0b0dc1814254e291028529805496d",
+        "size_bytes": 52
+      }
+    },
+    "repository": "microsoft/deberta-v3-base",
+    "revision": "8ccc9b6f36199bec6961081d44eb72fb3f7353f3"
+  },
+  {
+    "cache": ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-base-mnli-fever-anli/snapshots/6f5cf0a2b59cabb106aca4c287eed12e357e90eb/",
+    "files": {
+      "README.md": {
+        "sha256": "4ffce2b113463476777ccc8efd1f0ea0571510a96a2c84f2d2aab152951b13ca",
+        "size_bytes": 23571
+      },
+      "added_tokens.json": {
+        "sha256": "dc046d04c9b0ada7ae6f1dc89c465801799acdf0c9a6aab8c15a1b2d5ca4e91f",
+        "size_bytes": 23
+      },
+      "config.json": {
+        "sha256": "a6c616d6dabeacf90fd0e776c741d3f0f30a05533ccf0bd3b5b62e94cfaa8d57",
+        "size_bytes": 1090
+      },
+      "model.safetensors": {
+        "sha256": "06d6fd89edd4f97816831626daafbdb0b029cf63bae8edc0bccab1d64e2e7707",
+        "size_bytes": 368877646
+      },
+      "special_tokens_map.json": {
+        "sha256": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+        "size_bytes": 286
+      },
+      "spm.model": {
+        "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+        "size_bytes": 2464616
+      },
+      "tokenizer.json": {
+        "sha256": "05402ffae6dd382a8491b1d29bfc139bec5d332662e86a026f433ce54c25c202",
+        "size_bytes": 8656646
+      },
+      "tokenizer_config.json": {
+        "sha256": "557b3d33d3f41b81ad769244e506549e98a1857d41dd58160aacd4d98d710b5a",
+        "size_bytes": 1284
+      }
+    },
+    "repository": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "revision": "6f5cf0a2b59cabb106aca4c287eed12e357e90eb"
+  },
+  {
+    "cache": ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-large-mnli-fever-anli-ling-wanli/snapshots/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/",
+    "files": {
+      "README.md": {
+        "sha256": "216c3ac9ea77beec4e35a347c8b4edc47fbb3465e7c2a00dc923ae7b975cf346",
+        "size_bytes": 7580
+      },
+      "added_tokens.json": {
+        "sha256": "cd0141b19e809eb963a8f8244fad72530233f729e1f6960d281e1fbb3537b2fb",
+        "size_bytes": 18
+      },
+      "config.json": {
+        "sha256": "7f9d420b616691c5b575bab8839719aefbddc656d8e1316519414b097ce43e3d",
+        "size_bytes": 1056
+      },
+      "model.safetensors": {
+        "sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b",
+        "size_bytes": 870182606
+      },
+      "special_tokens_map.json": {
+        "sha256": "fcfbeb4e25cd37fb5b8030406394253b245230fd3b552750092bab7d24d827da",
+        "size_bytes": 156
+      },
+      "spm.model": {
+        "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+        "size_bytes": 2464616
+      },
+      "tokenizer.json": {
+        "sha256": "7aa118770f066a74530d161c7d0b994d0629cc0ff3a0df213f184192773f960a",
+        "size_bytes": 8648889
+      },
+      "tokenizer_config.json": {
+        "sha256": "556a192d83e3edb45a09a6207095dd9295c3b2279062e5cc430feac4cb7a0817",
+        "size_bytes": 395
+      }
+    },
+    "repository": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7"
+  }
+]

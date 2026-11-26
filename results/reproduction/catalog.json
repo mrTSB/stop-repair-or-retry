@@ -1,10 +1,13 @@
 {
+  "archive_parts": 36,
+  "archive_size_bytes": 70831581684,
   "artifact_counts": {
+    ".bin": 5,
     ".npy": 127,
     ".npz": 469,
     ".pkl": 550,
-    ".safetensors": 2241,
-    "tokenizer_files": 274
+    ".safetensors": 2243,
+    "tokenizer_files": 280
   },
   "inventory": "reproduction-files.json",
   "latest_round2_splits": {
@@ -12,7 +15,9 @@
     "reserved_test": 1024,
     "train": 512
   },
-  "payload_files": 38803,
+  "packaging_source_commit": "bfbb133a569f9bcd326882c775862c33ec37f68c",
+  "payload_files": 38826,
+  "pretrained_initialization_families": 3,
   "release": "https://github.com/mrTSB/stop-repair-or-retry/releases/tag/abc-runtime-2026-11-25",
   "reserved_test_labels_included": true,
   "snapshot_source_commit": "2ff80ef098a0ffece529af01d640f5ad24374621"

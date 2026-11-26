@@ -74047,6 +74047,70 @@
     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "size_bytes": 0
   },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-base-mnli-fever-anli/snapshots/6f5cf0a2b59cabb106aca4c287eed12e357e90eb/README.md": {
+    "sha256": "4ffce2b113463476777ccc8efd1f0ea0571510a96a2c84f2d2aab152951b13ca",
+    "size_bytes": 23571
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-base-mnli-fever-anli/snapshots/6f5cf0a2b59cabb106aca4c287eed12e357e90eb/added_tokens.json": {
+    "sha256": "dc046d04c9b0ada7ae6f1dc89c465801799acdf0c9a6aab8c15a1b2d5ca4e91f",
+    "size_bytes": 23
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-base-mnli-fever-anli/snapshots/6f5cf0a2b59cabb106aca4c287eed12e357e90eb/config.json": {
+    "sha256": "a6c616d6dabeacf90fd0e776c741d3f0f30a05533ccf0bd3b5b62e94cfaa8d57",
+    "size_bytes": 1090
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-base-mnli-fever-anli/snapshots/6f5cf0a2b59cabb106aca4c287eed12e357e90eb/model.safetensors": {
+    "sha256": "06d6fd89edd4f97816831626daafbdb0b029cf63bae8edc0bccab1d64e2e7707",
+    "size_bytes": 368877646
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-base-mnli-fever-anli/snapshots/6f5cf0a2b59cabb106aca4c287eed12e357e90eb/special_tokens_map.json": {
+    "sha256": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+    "size_bytes": 286
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-base-mnli-fever-anli/snapshots/6f5cf0a2b59cabb106aca4c287eed12e357e90eb/spm.model": {
+    "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+    "size_bytes": 2464616
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-base-mnli-fever-anli/snapshots/6f5cf0a2b59cabb106aca4c287eed12e357e90eb/tokenizer.json": {
+    "sha256": "05402ffae6dd382a8491b1d29bfc139bec5d332662e86a026f433ce54c25c202",
+    "size_bytes": 8656646
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-base-mnli-fever-anli/snapshots/6f5cf0a2b59cabb106aca4c287eed12e357e90eb/tokenizer_config.json": {
+    "sha256": "557b3d33d3f41b81ad769244e506549e98a1857d41dd58160aacd4d98d710b5a",
+    "size_bytes": 1284
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-large-mnli-fever-anli-ling-wanli/snapshots/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/README.md": {
+    "sha256": "216c3ac9ea77beec4e35a347c8b4edc47fbb3465e7c2a00dc923ae7b975cf346",
+    "size_bytes": 7580
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-large-mnli-fever-anli-ling-wanli/snapshots/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/added_tokens.json": {
+    "sha256": "cd0141b19e809eb963a8f8244fad72530233f729e1f6960d281e1fbb3537b2fb",
+    "size_bytes": 18
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-large-mnli-fever-anli-ling-wanli/snapshots/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/config.json": {
+    "sha256": "7f9d420b616691c5b575bab8839719aefbddc656d8e1316519414b097ce43e3d",
+    "size_bytes": 1056
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-large-mnli-fever-anli-ling-wanli/snapshots/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/model.safetensors": {
+    "sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b",
+    "size_bytes": 870182606
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-large-mnli-fever-anli-ling-wanli/snapshots/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/special_tokens_map.json": {
+    "sha256": "fcfbeb4e25cd37fb5b8030406394253b245230fd3b552750092bab7d24d827da",
+    "size_bytes": 156
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-large-mnli-fever-anli-ling-wanli/snapshots/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/spm.model": {
+    "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+    "size_bytes": 2464616
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-large-mnli-fever-anli-ling-wanli/snapshots/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/tokenizer.json": {
+    "sha256": "7aa118770f066a74530d161c7d0b994d0629cc0ff3a0df213f184192773f960a",
+    "size_bytes": 8648889
+  },
+  ".cache/semantic-encoder/models--MoritzLaurer--DeBERTa-v3-large-mnli-fever-anli-ling-wanli/snapshots/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/tokenizer_config.json": {
+    "sha256": "556a192d83e3edb45a09a6207095dd9295c3b2279062e5cc430feac4cb7a0817",
+    "size_bytes": 395
+  },
   ".cache/semantic-encoder/models--microsoft--deberta-v3-base/.no_exist/8ccc9b6f36199bec6961081d44eb72fb3f7353f3/added_tokens.json": {
     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "size_bytes": 0
@@ -74075,9 +74139,17 @@
     "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
     "size_bytes": 2464616
   },
+  ".cache/semantic-encoder/models--microsoft--deberta-v3-base/snapshots/8ccc9b6f36199bec6961081d44eb72fb3f7353f3/README.md": {
+    "sha256": "7e9ea69ca00d0609cc0e0b9cec76f9ba6ae71601244c4136a3f25bd02dce4c4d",
+    "size_bytes": 3472
+  },
   ".cache/semantic-encoder/models--microsoft--deberta-v3-base/snapshots/8ccc9b6f36199bec6961081d44eb72fb3f7353f3/config.json": {
     "sha256": "649f6a1ec33c6bdd9a6486d5c66019d461139e54957073eafe9bbc2d34c75b0b",
     "size_bytes": 579
+  },
+  ".cache/semantic-encoder/models--microsoft--deberta-v3-base/snapshots/8ccc9b6f36199bec6961081d44eb72fb3f7353f3/pytorch_model.bin": {
+    "sha256": "691d48a2800b926a19e3051def466fc2cca4f59a15e42ce4a0cf7f1b380b5e33",
+    "size_bytes": 371146213
   },
   ".cache/semantic-encoder/models--microsoft--deberta-v3-base/snapshots/8ccc9b6f36199bec6961081d44eb72fb3f7353f3/spm.model": {
     "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
@@ -76562,6 +76634,10 @@
   ".cache/webshop/web_agent_site/utils.py": {
     "sha256": "bdd6df3b869cf3fe028169add3611d1b811ae663ae4f79520617c26b20614970",
     "size_bytes": 1728
+  },
+  ".github/workflows/assemble-runtime.yml": {
+    "sha256": "f45244f8f1cbbccc49f8f46c55d3ab9cf894117ae1ea6d85a9021a2446fff7be",
+    "size_bytes": 1120
   },
   ".gitignore": {
     "sha256": "9facc45aaab5950aee18f2caa6cf601c68864320e9fe902354506082cb77edc2",
@@ -129055,6 +129131,10 @@
     "sha256": "b153cf02a000f4f96c2d22194092a3f852140debdcd72b74c6de288b8c44397b",
     "size_bytes": 329714
   },
+  "results/reproduction/pretrained-initializations.json": {
+    "sha256": "c023ac20f7be5d00a477650bbffbe379b642d23037a38abb95fcf29f23fa0573",
+    "size_bytes": 4036
+  },
   "results/reproduction/verification/bayesian-audit.json": {
     "sha256": "e505ac575ad77a467a1dd0b3a937c7703f834019500a60b952a885823b9dedd1",
     "size_bytes": 11289
@@ -155100,8 +155180,16 @@
     "size_bytes": 9200
   },
   "scripts/reproduction/build.py": {
-    "sha256": "685c68e3ed717ebda0869766d63ca85be9987289e36c2cd0eb11b4d56e542969",
-    "size_bytes": 6027
+    "sha256": "bd1670de3c5939fe789a3aadff0e19c49ae6bffc366e72750f112cb32358a1db",
+    "size_bytes": 6414
+  },
+  "scripts/reproduction/cloud_runtime.py": {
+    "sha256": "ead1d4209a4617033a8e5cbd0e007b9607e04083565c837635d78be7cb124890",
+    "size_bytes": 16712
+  },
+  "scripts/reproduction/download.py": {
+    "sha256": "7d34ebdbae2a3d02544130685a44c966b4a04b1c532ffb825eec09091d7afcc8",
+    "size_bytes": 2855
   },
   "scripts/reproduction/extend.py": {
     "sha256": "f141c7ebe6ce40a83e80b1430dff5480cb9a17b065b7cf20e8853b98c1104549",
@@ -155114,6 +155202,10 @@
   "scripts/reproduction/portable.py": {
     "sha256": "97e15d31b8e65214a497a4bd17b96a7e75fd9db679f9571079ebb0fe6f306ecb",
     "size_bytes": 4764
+  },
+  "scripts/reproduction/prepare_transport.py": {
+    "sha256": "a44e1ae54a72091961304d78670e0e7bf03914382e4dea2ba8ee3d589b1658e7",
+    "size_bytes": 3588
   },
   "scripts/reproduction/replay_latest.py": {
     "sha256": "ff12efd1edc483d253815b0757e9bd3cae91e158dde388e1552801a3b12c4a6c",
@@ -155136,8 +155228,8 @@
     "size_bytes": 1703
   },
   "scripts/reproduction/verify.py": {
-    "sha256": "d58eb8a09d16441d75fc82d359181c07e9bfd6105370d2e83a4a8a9db000c9f7",
-    "size_bytes": 2569
+    "sha256": "aba698de2b6edd20ecfc05b47313c83a73f6bccfc608800db3184e6d8537feae",
+    "size_bytes": 2801
   },
   "scripts/run_full_gsm8k_large.sh": {
     "sha256": "b52dda8ca90abb504bbbe8c7f2ca5a4103bc82019e054ad754be487680dd00f7",

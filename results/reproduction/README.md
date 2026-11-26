@@ -1,8 +1,8 @@
 # Complete A/B/C reproduction handoff
 
-Download the full runtime from the [2026-11-25 release](https://github.com/mrTSB/stop-repair-or-retry/releases/tag/abc-runtime-2026-11-25). The release contains one zstd tar archive split into numbered parts, `SHA256SUMS`, `archive.json`, a file-by-file SHA-256 manifest, and the bundle inventory. Download every part. The compressed archive is 69,249,674,958 bytes across 35 parts; the payload occupies about 101 GB before filesystem hard-link savings.
+Download the full runtime from the [2026-11-25 release](https://github.com/mrTSB/stop-repair-or-retry/releases/tag/abc-runtime-2026-11-25). The release contains one zstd tar archive split into numbered parts, `SHA256SUMS`, `archive.json`, a file-by-file SHA-256 manifest, and the bundle inventory. Download every part. The compressed archive is 70,831,581,684 bytes across 36 parts; the payload occupies about 103 GB before filesystem hard-link savings.
 
-This handoff includes the reserved test questions **and reference labels**, all local solver/reviewer response banks, intermediate and selected controllers, neural weights and tokenizers, feature arrays and prediction caches, raw dataset sources, retrieval corpora and indexes, configurations, registrations, completion receipts, source, and dependencies. Every file in the local `runs/`, `.cache/`, and historical `.venv/` is included, as are every installed Ollama model's manifests/blobs and the original GSM8K source caches outside the checkout. Identical file contents share tar hard links; each original path is retained. Existing experiment artifacts and frozen source remain byte-identical.
+This handoff includes the reserved test questions **and reference labels**, all local solver/reviewer response banks, intermediate and selected controllers, neural weights and tokenizers, feature arrays and prediction caches, raw dataset sources, retrieval corpora and indexes, configurations, registrations, completion receipts, source, and dependencies. Every file in the local `runs/`, `.cache/`, and historical `.venv/` is included, as are every installed Ollama model's manifests/blobs and the original GSM8K source caches outside the checkout. Identical immutable weight files share tar hard links; each original path is retained. Mutable journals, caches and lock files remain independent. Existing experiment artifacts and frozen source remain byte-identical.
 
 The latest experiment is `experiments/controller-semantic-hillclimb/followup/round2`, through the audited Bayesian C checkpoint. Its 512 training, 256 development and 1,024 reserved test questions are disjoint by ID. Latest development results are A 153/256, B 179/256, C 177/256. Development has been repeatedly used for selection. The 1,024-question set has no collected responses or grades; its empty response journals are included. Exporting and checking its labels does not produce a new evaluation.
 
@@ -27,7 +27,7 @@ The extracted archive has one top-level `stop-repair-or-retry/` directory. `repr
 
 Install `uv`, GitHub CLI (`gh`), and `zstd`. Python 3.12.11 and the Python dependencies are obtained by `uv`; the dependency lock includes hashes and platform markers for macOS and Linux. Downloading/installing dependencies needs internet. Cached replay requires no inference service or credentials.
 
-For downloading without a GitHub account or GitHub CLI, download the release's `download.py` attachment and run `uv run --python 3.12.11 --no-project python download.py --destination abc-download`. It verifies every part and the combined archive. Then use the extraction/setup commands below, starting with `cat`.
+For downloading without a GitHub account or GitHub CLI, download the release's `download.py` attachment and run `uv run --python 3.12.11 --no-project python download.py --destination abc-download`. It verifies every part and the combined archive. Then use the extraction/setup commands below.
 
 ```sh
 mkdir abc-download
@@ -36,8 +36,14 @@ gh release download abc-runtime-2026-11-25 \
   --pattern 'abc-runtime.tar.zst.part-*' \
   --pattern SHA256SUMS --pattern archive.json --dir abc-download
 (cd abc-download && shasum -a 256 -c SHA256SUMS)
-cat abc-download/abc-runtime.tar.zst.part-* | zstd -d | tar -xf -
-cd stop-repair-or-retry
+```
+
+Extract into a fresh directory:
+
+```sh
+mkdir abc-work
+cat abc-download/abc-runtime.tar.zst.part-* | zstd -d | tar -xf - -C abc-work
+cd abc-work/stop-repair-or-retry
 
 uv run --python 3.12.11 --no-project python scripts/reproduction/verify.py
 uv run --python 3.12.11 \
@@ -105,6 +111,18 @@ OLLAMA_MODELS="$PWD/external/ollama/models" \
 OLLAMA_HOST=127.0.0.1:11434 ollama serve
 ```
 
+Alternatively, serve the exact pinned worker image with Docker:
+
+```sh
+docker run --rm -p 127.0.0.1:11434:11434 \
+  -v "$PWD/external/ollama/models:/root/.ollama/models:ro" \
+  --entrypoint ollama ollama/ollama:0.40.16 serve
+```
+
+Linux hosts configured for NVIDIA containers can add `--gpus all`.
+
 The selected solver is `qwen3.5:4b`, manifest SHA-256 `2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd`; the reviewer is `qwen3.5:35b`, `3460ffeede5453ead027dbd2f821b12ad0aa3de54630971993babdb2165221f7`. All other local installed tags are also included. Cloud collection code and pinned worker images are preserved; using Modal requires the recipient's own configured account. Cached replay and refitting above need no Modal account. Source licenses and attribution remain in their dataset/model manifests and included license files.
 
-The complete export can be rebuilt with `scripts/reproduction/build.py` followed by `pack.py`. Keep the destination outside the source checkout. Neither export nor replay retunes a controller on the reserved test set.
+Producer-side local export uses `scripts/reproduction/build.py` followed by `pack.py`, with the destination outside the source checkout. Neither export nor replay retunes a controller on the reserved test set.
+
+The release was also assembled on GitHub to avoid re-uploading already-public model files over the producer's connection. `transport-public-sources.json` maps their exact SHA-256 values to immutable source URLs; `prepare_transport.py` transfers every other byte, and `cloud_runtime.py` embeds both kinds of input in the final full archive. Its separate decompression pass checks every archived file, and it compares every uploaded part against GitHub's SHA-256 digest before reporting completion.
