@@ -1,0 +1,34 @@
+name: Assemble complete A/B/C runtime
+on:
+  push:
+    branches: [codex/pomdp-abc-hillclimb]
+    paths:
+      - .github/workflows/assemble-runtime.yml
+      - scripts/reproduction/cloud_runtime.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare ephemeral assembly disk
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc
+          df -h .
+          curl -LsSf https://astral.sh/uv/0.8.12/install.sh | sh
+      - name: Wait for the verified transport seed
+        run: |
+          for attempt in $(seq 1 360); do
+            if gh release download abc-runtime-2026-11-25 --repo mrTSB/stop-repair-or-retry --pattern transport-ready.json; then
+              exit 0
+            fi
+            sleep 20
+          done
+          exit 1
+      - name: Assemble, verify, and upload every runtime file
+        run: ~/.local/bin/uv run --python 3.12.11 --no-project python scripts/reproduction/cloud_runtime.py
