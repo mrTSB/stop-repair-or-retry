@@ -81,6 +81,71 @@ class Hashed:
         return chunk
 
 
+def initializations(recipe, work):
+    """Include the pinned upstream checkpoints used to initialize all observers."""
+    files, objects = recipe['files'], recipe['objects']
+    additions, inventories = {}, []
+
+    def local(name, raw):
+        key = hashlib.sha256(raw).hexdigest()
+        (work/'objects'/key).write_bytes(raw)
+        objects[key] = {'size_bytes': len(raw), 'source': name}
+        files[name] = {'sha256': key, 'size_bytes': len(raw), 'mode': 0o644, 'mtime': 0}
+        return key
+
+    for repository, revision in (
+        ('microsoft/deberta-v3-base', '8ccc9b6f36199bec6961081d44eb72fb3f7353f3'),
+        ('MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli', '6f5cf0a2b59cabb106aca4c287eed12e357e90eb'),
+        ('MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli', 'b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7'),
+    ):
+        with urlopen(f'https://huggingface.co/api/models/{repository}/revision/{revision}?blobs=true', timeout=120) as stream:
+            metadata = json.load(stream)
+        if metadata['sha'] != revision:
+            raise ValueError('Pretrained initialization revision changed')
+        siblings = {s['rfilename']: s for s in metadata['siblings']}
+        weight = 'model.safetensors' if 'model.safetensors' in siblings else 'pytorch_model.bin'
+        if weight not in siblings:
+            raise ValueError('Pinned initialization has no supported checkpoint')
+        prefix = '.cache/semantic-encoder/models--'+repository.replace('/', '--')+'/snapshots/'+revision+'/'
+        record = {'repository': repository, 'revision': revision, 'cache': prefix, 'files': {}}
+        for name, sibling in siblings.items():
+            if '/' in name or not (name == weight or name.endswith('.json') or name in
+                                    ('spm.model', 'vocab.txt', 'merges.txt', 'README.md', 'LICENSE')):
+                continue
+            target = prefix+name
+            url = f'https://huggingface.co/{repository}/resolve/{revision}/{name}'
+            if target not in files:
+                if name == weight:
+                    key, size = sibling['lfs']['sha256'], sibling['lfs']['size']
+                    objects.setdefault(key, {'url': url, 'size_bytes': size, 'source': target})
+                    files[target] = {'sha256': key, 'size_bytes': size, 'mode': 0o644, 'mtime': 0}
+                else:
+                    with urlopen(url, timeout=120) as stream:
+                        local(target, stream.read())
+                additions[target] = {k: files[target][k] for k in ('sha256', 'size_bytes')}
+            record['files'][name] = {k: files[target][k] for k in ('sha256', 'size_bytes')}
+        inventories.append(record)
+    payload = (json.dumps(inventories, indent=2, sort_keys=True)+'\n').encode()
+    name = 'results/reproduction/pretrained-initializations.json'
+    local(name, payload)
+    additions[name] = {k: files[name][k] for k in ('sha256', 'size_bytes')}
+    original = json.loads((work/'objects'/files['reproduction-files.json']['sha256']).read_bytes())
+    original.update(additions)
+    local('reproduction-files.json', (json.dumps(original, indent=2, sort_keys=True)+'\n').encode())
+    meta = json.loads((work/'objects'/files['reproduction-bundle.json']['sha256']).read_bytes())
+    meta['source_snapshot_files'] = meta['files']
+    meta['files'] = len(original)
+    meta['logical_bytes'] = sum(v['size_bytes'] for v in original.values())
+    meta['unique_bytes'] = sum(v['size_bytes'] for v in {v['sha256']: v for v in original.values()}.values())
+    meta['pretrained_initializations'] = inventories
+    for name, value in additions.items():
+        group = meta['groups'].setdefault(name.split('/')[0], {'files': 0, 'bytes': 0})
+        group['files'] += 1; group['bytes'] += value['size_bytes']
+    meta['coverage'].append('Exact pinned upstream initialization checkpoints for all three DeBERTa observer families')
+    local('reproduction-bundle.json', (json.dumps(meta, indent=2, sort_keys=True)+'\n').encode())
+    return inventories
+
+
 def main():
     work = Path('runtime-assembly'); work.mkdir()
     seed = work/'seed'; seed.mkdir()
@@ -117,7 +182,9 @@ def main():
     raw = (work/'recipe.json').read_bytes()
     if hashlib.sha256(raw).hexdigest() != ready['recipe_sha256']:
         raise ValueError('Transport recipe changed')
-    recipe = json.loads(raw); files = recipe['files']
+    recipe = json.loads(raw)
+    added_initializations = initializations(recipe, work)
+    files = recipe['files']
     compressor = subprocess.Popen(['zstd', '-T2', '-3', '-c'], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     checker = subprocess.Popen(['zstd', '-d', '-c'], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     report = {}
@@ -218,9 +285,14 @@ def main():
     for name, value in (('archive.json', record), ('archive-verification.json', report)):
         path = work/name; path.write_text(json.dumps(value, indent=2)+'\n'); upload(path)
     path = work/'SHA256SUMS'; path.write_text(''.join(f'{p["sha256"]}  {p["name"]}\n' for p in parts)); upload(path)
+    for name in ('reproduction-files.json', 'reproduction-bundle.json', 'results/reproduction/pretrained-initializations.json'):
+        path = work/Path(name).name
+        path.write_bytes((work/'objects'/files[name]['sha256']).read_bytes())
+        upload(path)
     result = {'passed': True, 'source_commit': recipe['source_commit'], 'parts': len(parts),
               'all_remote_part_hashes_verified': True, 'archive_sha256': record['archive_sha256'],
-              'archive_size_bytes': record['archive_size_bytes'], 'payload_verification': report}
+              'archive_size_bytes': record['archive_size_bytes'], 'payload_verification': report,
+              'pretrained_initializations': added_initializations}
     path = work/'cloud-complete.json'; path.write_text(json.dumps(result, indent=2)+'\n'); upload(path)
     print(json.dumps(result), flush=True)
 
