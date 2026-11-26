@@ -5,6 +5,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from cloud_runtime import immutable_weight
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -17,8 +19,11 @@ def main():
         path = root / name
         if not path.resolve().is_relative_to(root):
             raise ValueError('File escapes the bundle: ' + name)
-        if path.stat().st_size != receipt['size_bytes']:
+        status = path.stat()
+        if status.st_size != receipt['size_bytes']:
             raise ValueError('File size differs: ' + name)
+        if status.st_nlink > 1 and not immutable_weight(name, status.st_size):
+            raise ValueError('Mutable file must have an independent inode: ' + name)
         with path.open('rb') as stream:
             actual = hashlib.file_digest(stream, 'sha256').hexdigest()
         if actual != receipt['sha256']:

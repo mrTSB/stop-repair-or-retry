@@ -5,6 +5,7 @@ import hashlib
 import http.client
 import io
 import json
+import os
 from pathlib import Path
 import subprocess
 import tarfile
@@ -131,6 +132,16 @@ def initializations(recipe, work):
                 additions[target] = {k: files[target][k] for k in ('sha256', 'size_bytes')}
             record['files'][name] = {k: files[target][k] for k in ('sha256', 'size_bytes')}
         inventories.append(record)
+    # Package the current handoff utilities, including the journal/lock inode
+    # safeguards. The scientific experiment source and original data stay exact.
+    for path in sorted(Path('scripts/reproduction').iterdir()):
+        if path.is_file() and path.suffix in ('.py', '.txt', '.in'):
+            name = str(path)
+            local(name, path.read_bytes())
+            additions[name] = {k: files[name][k] for k in ('sha256', 'size_bytes')}
+    path = Path('.github/workflows/assemble-runtime.yml')
+    local(str(path), path.read_bytes())
+    additions[str(path)] = {k: files[str(path)][k] for k in ('sha256', 'size_bytes')}
     payload = (json.dumps(inventories, indent=2, sort_keys=True)+'\n').encode()
     name = 'results/reproduction/pretrained-initializations.json'
     local(name, payload)
@@ -144,7 +155,9 @@ def initializations(recipe, work):
     meta['logical_bytes'] = sum(v['size_bytes'] for v in original.values())
     meta['unique_bytes'] = sum(v['size_bytes'] for v in {v['sha256']: v for v in original.values()}.values())
     meta['pretrained_initializations'] = inventories
-    for name, value in additions.items():
+    meta['packaging_source_commit'] = os.environ.get('GITHUB_SHA')
+    meta['groups'] = {}
+    for name, value in original.items():
         group = meta['groups'].setdefault(name.split('/')[0], {'files': 0, 'bytes': 0})
         group['files'] += 1; group['bytes'] += value['size_bytes']
     meta['coverage'].append('Exact pinned upstream initialization checkpoints for all three DeBERTa observer families')
@@ -302,6 +315,7 @@ def main():
         path.write_bytes((work/'objects'/files[name]['sha256']).read_bytes())
         upload(path)
     result = {'passed': True, 'source_commit': recipe['source_commit'], 'parts': len(parts),
+              'packaging_source_commit': os.environ.get('GITHUB_SHA'),
               'all_remote_part_hashes_verified': True, 'archive_sha256': record['archive_sha256'],
               'archive_size_bytes': record['archive_size_bytes'], 'payload_verification': report,
               'pretrained_initializations': added_initializations}
