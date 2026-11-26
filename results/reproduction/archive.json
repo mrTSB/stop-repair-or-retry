@@ -1,0 +1,183 @@
+{
+  "schema": "abc-runtime-release-parts-v1",
+  "archive_sha256": "9aa619630181235c0694464519c4a176d50e18471fd359965ef343f68594b766",
+  "archive_size_bytes": 69249674958,
+  "parts": [
+    {
+      "name": "abc-runtime.tar.zst.part-000",
+      "size_bytes": 1992294400,
+      "sha256": "46ac1e7b12e1ba4abfb8bff7f9b6224dfe7259ad35677b0dba3cd9ed48b62c3e"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-001",
+      "size_bytes": 1992294400,
+      "sha256": "5c93054f0d00d3104759c3964df58289a314ed2aec984ee662f242f9803762f1"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-002",
+      "size_bytes": 1992294400,
+      "sha256": "9fbdabf68e3525dbde7bac711183edbfa9b58908bf328deff9ad6a7f5beac84f"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-003",
+      "size_bytes": 1992294400,
+      "sha256": "488941e9de37d5f06d9a02e7c127ccda266c654cbe3f77d4d0c9925a40350e12"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-004",
+      "size_bytes": 1992294400,
+      "sha256": "78cd3d2d82de0e43e8b68754aacb465e31bca4ba23fdfe715f9c407cb8eee785"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-005",
+      "size_bytes": 1992294400,
+      "sha256": "869e118f4b80c0a4e3432098f801f61d2c719c1dc54508811f3d3e75dc51eb74"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-006",
+      "size_bytes": 1992294400,
+      "sha256": "877ab9a813edcef7fa39be96705ae43b4b1b52c110a78a2aa4b3aa870c9f6ae7"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-007",
+      "size_bytes": 1992294400,
+      "sha256": "b0853825860e47e914c0a71be0b0f509989bafe33dbb9051845b1c12b189f83c"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-008",
+      "size_bytes": 1992294400,
+      "sha256": "ebbcda3c6197378ea42d70a3679883ee3400cf60b27e61a636bec6cd6f24a873"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-009",
+      "size_bytes": 1992294400,
+      "sha256": "950955279e2d13071fc989173d1bfbc74c7a06474ef23ce21f57006c89ce88bd"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-010",
+      "size_bytes": 1992294400,
+      "sha256": "b60e74681159da5c5231e36cbf3c390e43f232dffc3371e5148126e0a7169695"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-011",
+      "size_bytes": 1992294400,
+      "sha256": "0757e0b9731cc26880c093bbb0c65837eed7d4f59f70590009b63667a01ae417"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-012",
+      "size_bytes": 1992294400,
+      "sha256": "03a4f9361e3e5d66daa7a65ef870bb1d33576a31a64271f3547f1c12c53105d2"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-013",
+      "size_bytes": 1992294400,
+      "sha256": "33e6c7cc68f0918f62bc21d7860b5012685d2aff4522202c1ccbc37ec59c6bb6"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-014",
+      "size_bytes": 1992294400,
+      "sha256": "4c46c2dc0b7e34f49446be97d8699093be27a163d7914c53d5eccd71172678d2"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-015",
+      "size_bytes": 1992294400,
+      "sha256": "e677c19ee3d3231ed002476aee4268d8bda90c8d151a386aca7a25c458dd0811"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-016",
+      "size_bytes": 1992294400,
+      "sha256": "335912c301cccd8c8b654aa6bdc7d5d59430677468b1e538e2e69f2403a9d611"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-017",
+      "size_bytes": 1992294400,
+      "sha256": "878b24720b6cfada2d4dc70e26396cebfe0c28c5ce4b7edcfe431e9b3eca352f"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-018",
+      "size_bytes": 1992294400,
+      "sha256": "f491d14c6d157f443582ec3bc0f188a7c94dd9a923dd135f3969042773de9f1e"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-019",
+      "size_bytes": 1992294400,
+      "sha256": "35792cdeacc5cb47247c22d1f3ae65206229dc57036fb706ab813554f56d5316"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-020",
+      "size_bytes": 1992294400,
+      "sha256": "d100a61948cfc429a8873e5379342807f15a59236b21c518bd919bd692221a0e"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-021",
+      "size_bytes": 1992294400,
+      "sha256": "f0f783e97987695f04957a9b3778b986f2df90924ecc51404c779f9fef8b683a"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-022",
+      "size_bytes": 1992294400,
+      "sha256": "1a14361abff60cbef7df5e07ea37926ef255cb430e69a179c4f8bd4579510f03"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-023",
+      "size_bytes": 1992294400,
+      "sha256": "f14561bdc064991adbe7f7477a973fc7752e68989f01cb16dd0f59197777d1c6"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-024",
+      "size_bytes": 1992294400,
+      "sha256": "d91584b42fabd65f3ba3344cf00c41adf7cf4bb4a53659a24e2d5811daec6e2c"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-025",
+      "size_bytes": 1992294400,
+      "sha256": "a816de0499e5042c883f31bcac8ab103b2b57e9b91e2598c52c2a9df9bb288a4"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-026",
+      "size_bytes": 1992294400,
+      "sha256": "97cc20da6fba5c5a9db3888d060107afb879a864447a9617376f569fb2d30f89"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-027",
+      "size_bytes": 1992294400,
+      "sha256": "fccc86826481dd7d3f35cf2621b1a9d9af34439ff008f902d3936f0cee5f29cf"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-028",
+      "size_bytes": 1992294400,
+      "sha256": "1614864b098310694135589de6ff1b0200ad0af7822a9cbec85303f3a62f7d06"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-029",
+      "size_bytes": 1992294400,
+      "sha256": "c74598f706e11d7fa7bf661a4d26b4ac171ed221a9da709b30a6efb638652f44"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-030",
+      "size_bytes": 1992294400,
+      "sha256": "b6fa7ef2287b818e48cdbecfadf1c652daddac90750312016b5dd85b0755e409"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-031",
+      "size_bytes": 1992294400,
+      "sha256": "83d3e9d10919e7ed183c640400b460e7e32df64b060ba5e03a3fc7a2799876c3"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-032",
+      "size_bytes": 1992294400,
+      "sha256": "6c4aecafca207be7cab1e6f2f0bb9bfe9af255878cea2a4e40c4792ad51e9ed6"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-033",
+      "size_bytes": 1992294400,
+      "sha256": "bda7056a1de59c373623a233e625e57a4acf962a018e60a1703e574bf0e7ac36"
+    },
+    {
+      "name": "abc-runtime.tar.zst.part-034",
+      "size_bytes": 1511665358,
+      "sha256": "f8dcc813f9fb1f1230f0126fe7d6bc40c3d13e4b626b47231f17f8e3950c7069"
+    }
+  ],
+  "source_commit": "2ff80ef098a0ffece529af01d640f5ad24374621"
+}

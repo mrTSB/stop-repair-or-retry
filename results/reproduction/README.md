@@ -1,6 +1,6 @@
 # Complete A/B/C reproduction handoff
 
-Download the full runtime from the [2026-11-25 release](https://github.com/mrTSB/stop-repair-or-retry/releases/tag/abc-runtime-2026-11-25). The release contains one zstd tar archive split into numbered parts, `SHA256SUMS`, `archive.json`, a file-by-file SHA-256 manifest, and the bundle inventory. Download every part.
+Download the full runtime from the [2026-11-25 release](https://github.com/mrTSB/stop-repair-or-retry/releases/tag/abc-runtime-2026-11-25). The release contains one zstd tar archive split into numbered parts, `SHA256SUMS`, `archive.json`, a file-by-file SHA-256 manifest, and the bundle inventory. Download every part. The compressed archive is 69,249,674,958 bytes across 35 parts; the payload occupies about 101 GB before filesystem hard-link savings.
 
 This handoff includes the reserved test questions **and reference labels**, all local solver/reviewer response banks, intermediate and selected controllers, neural weights and tokenizers, feature arrays and prediction caches, raw dataset sources, retrieval corpora and indexes, configurations, registrations, completion receipts, source, and dependencies. Every file in the local `runs/`, `.cache/`, and historical `.venv/` is included, as are every installed Ollama model's manifests/blobs and the original GSM8K source caches outside the checkout. Identical file contents share tar hard links; each original path is retained. Existing experiment artifacts and frozen source remain byte-identical.
 

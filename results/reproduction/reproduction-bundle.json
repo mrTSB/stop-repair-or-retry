@@ -1,0 +1,120 @@
+{
+  "coverage": [
+    "All tracked repository files and reproduction tools",
+    "Every file under runs/, .cache/ and .venv/, including selected, intermediate and failed candidates",
+    "Every locally installed Ollama model manifest and referenced blob",
+    "Original GSM8K Arrow and Hugging Face dataset caches"
+  ],
+  "created_at_utc": "2026-11-26T00:57:15.762559+00:00",
+  "file_manifest": "reproduction-files.json",
+  "files": 38803,
+  "groups": {
+    ".cache": {
+      "bytes": 8501951658,
+      "files": 19141
+    },
+    ".gitignore": {
+      "bytes": 61,
+      "files": 1
+    },
+    ".venv": {
+      "bytes": 586859920,
+      "files": 11969
+    },
+    "README.md": {
+      "bytes": 12227,
+      "files": 1
+    },
+    "data": {
+      "bytes": 233,
+      "files": 3
+    },
+    "experiments": {
+      "bytes": 15082782,
+      "files": 807
+    },
+    "external": {
+      "bytes": 55865931858,
+      "files": 61
+    },
+    "pyproject.toml": {
+      "bytes": 463,
+      "files": 1
+    },
+    "results": {
+      "bytes": 59831360,
+      "files": 285
+    },
+    "runs": {
+      "bytes": 35874398362,
+      "files": 6496
+    },
+    "scripts": {
+      "bytes": 255344,
+      "files": 24
+    },
+    "src": {
+      "bytes": 81902,
+      "files": 12
+    },
+    "tests": {
+      "bytes": 13633,
+      "files": 1
+    },
+    "uv.lock": {
+      "bytes": 595036,
+      "files": 1
+    }
+  },
+  "latest_splits": {
+    "dev": {
+      "file": "runs/controller-semantic-followup/round2/data/splits/dev-questions.jsonl",
+      "n": 256,
+      "sha256": "68ae92907236b4f831bb14ca5c87a457e5a33dcaa984e6d42063bf0e257b5f31",
+      "size_bytes": 165844,
+      "subjects": {
+        "chemistry": 64,
+        "math": 128,
+        "physics": 64
+      }
+    },
+    "test": {
+      "file": "runs/controller-semantic-followup/round2/data/splits/test-questions.jsonl",
+      "n": 1024,
+      "sha256": "424ea00684a055ba5409f75acf11a4209b3665bb2b0afbf30f0daf0ef91ae7b7",
+      "size_bytes": 680806,
+      "subjects": {
+        "chemistry": 256,
+        "math": 512,
+        "physics": 256
+      }
+    },
+    "train": {
+      "file": "runs/controller-semantic-followup/round2/data/splits/train-questions.jsonl",
+      "n": 512,
+      "sha256": "b153cf02a000f4f96c2d22194092a3f852140debdcd72b74c6de288b8c44397b",
+      "size_bytes": 329714,
+      "subjects": {
+        "chemistry": 128,
+        "math": 256,
+        "physics": 128
+      }
+    }
+  },
+  "logical_bytes": 100905014839,
+  "path_mappings": {
+    "/Users/tanvirb/.cache/huggingface/datasets/openai___gsm8k": "external/huggingface/datasets/openai___gsm8k",
+    "/Users/tanvirb/.cache/huggingface/hub/datasets--openai--gsm8k": "external/huggingface/hub/datasets--openai--gsm8k",
+    "/Users/tanvirb/.ollama/models": "external/ollama/models",
+    "/Users/tanvirb/Documents/Code/stop-repair-or-retry": "."
+  },
+  "reserved_test_included_with_labels": true,
+  "reserved_test_inference_or_grading_performed_by_export": false,
+  "schema": "complete-abc-reproduction-bundle-v1",
+  "selected_inference_manifests": {
+    "qwen3.5:35b": "3460ffeede5453ead027dbd2f821b12ad0aa3de54630971993babdb2165221f7",
+    "qwen3.5:4b": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd"
+  },
+  "source_commit": "2ff80ef098a0ffece529af01d640f5ad24374621",
+  "unique_bytes": 77887180923
+}

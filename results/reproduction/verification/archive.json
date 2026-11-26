@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "payload_files": 38803,
+  "archive_file_entries": 38805,
+  "logical_bytes_checked": 100913763505,
+  "all_payload_sha256_checked": true,
+  "missing_files": 0
+}

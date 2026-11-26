@@ -1,0 +1,19 @@
+{
+  "artifact_counts": {
+    ".npy": 127,
+    ".npz": 469,
+    ".pkl": 550,
+    ".safetensors": 2241,
+    "tokenizer_files": 274
+  },
+  "inventory": "reproduction-files.json",
+  "latest_round2_splits": {
+    "dev": 256,
+    "reserved_test": 1024,
+    "train": 512
+  },
+  "payload_files": 38803,
+  "release": "https://github.com/mrTSB/stop-repair-or-retry/releases/tag/abc-runtime-2026-11-25",
+  "reserved_test_labels_included": true,
+  "snapshot_source_commit": "2ff80ef098a0ffece529af01d640f5ad24374621"
+}
