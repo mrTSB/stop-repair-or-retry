@@ -1,0 +1,12 @@
+# The documented experiment environment; keep separate from the older root lock.
+numpy==2.5.4
+scikit-learn==1.8.0
+torch==2.9.0
+transformers==4.57.1
+safetensors==0.6.2
+sentencepiece==0.2.1
+protobuf==5.29.5
+modal==1.6.4
+pyarrow==26.0.0
+pillow
+pypdf

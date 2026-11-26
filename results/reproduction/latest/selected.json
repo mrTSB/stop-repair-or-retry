@@ -1,0 +1,213 @@
+{
+  "A": {
+    "dev": {
+      "accuracy": 0.59765625,
+      "correct": 153,
+      "mean_compute": 1087.2748356677234,
+      "mean_judge_calls": 0.0,
+      "mean_judge_tokens": 0.0,
+      "mean_solver_calls": 2.18359375,
+      "mean_solver_tokens": 783.23046875,
+      "mean_total_parameter_compute": 1087.2748356677234,
+      "mean_verifier_calls": 1.82421875,
+      "mean_verifier_token_slots": 522.11328125,
+      "mean_verifier_tokens": 522.11328125,
+      "n": 256
+    },
+    "key": "math-1",
+    "math_settings": {
+      "penalty": 0.0,
+      "posterior_weight": 0.5
+    },
+    "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-math-specialization-v1/math-1.pkl",
+    "model_sha256": "9b0161a226d0e557ee1afb4d20ed7d87ae4af41b5a952d70ffef35dfa8cd8369",
+    "policy_module": "continuous_completion_pomdp",
+    "science_settings": {
+      "penalty": 0.02,
+      "posterior_weight": 0.5
+    },
+    "settings": {}
+  },
+  "B": {
+    "dev": {
+      "accuracy": 0.69921875,
+      "correct": 179,
+      "mean_compute": 3858.2777103559874,
+      "mean_judge_calls": 1.0,
+      "mean_judge_physical_calls": 1.99609375,
+      "mean_judge_tokens": 2883.21875,
+      "mean_solver_calls": 1.97265625,
+      "mean_solver_tokens": 818.10546875,
+      "mean_total_parameter_compute": 33716.85376213593,
+      "mean_verifier_calls": 0.0,
+      "mean_verifier_token_slots": 0.0,
+      "mean_verifier_tokens": 0.0,
+      "n": 256
+    },
+    "family": "B",
+    "policy_module": "subject_expert_hybrid.evaluate_B",
+    "settings": {
+      "by_subject": {
+        "chemistry": {
+          "root_stop": "agreement",
+          "second_action": "reuse",
+          "second_stop": "never"
+        },
+        "math": {
+          "root_stop": "action",
+          "second_action": "retry",
+          "second_stop": "agreement"
+        },
+        "physics": {
+          "root_stop": 0.995,
+          "second_action": "reuse",
+          "second_stop": "never"
+        }
+      }
+    },
+    "subject_rules": {
+      "chemistry": "B09",
+      "math": "B01",
+      "physics": "B27"
+    }
+  },
+  "C": {
+    "dev": {
+      "accuracy": 0.69140625,
+      "correct": 177,
+      "mean_compute": 3728.5754404183053,
+      "n": 256
+    },
+    "experts": {
+      "chemistry": {
+        "builder_module": "expanded_development_models",
+        "dev": {
+          "accuracy": 0.6875,
+          "correct": 176,
+          "mean_compute": 3792.446029078884,
+          "mean_judge_calls": 0.9140625,
+          "mean_judge_physical_calls": 1.82421875,
+          "mean_judge_tokens": 2652.77734375,
+          "mean_metadata_calls": 0.0,
+          "mean_metadata_cpu_ms": 0.0,
+          "mean_review_neural_calls": 0.9140625,
+          "mean_solver_calls": 1.9765625,
+          "mean_solver_tokens": 842.125,
+          "mean_total_parameter_compute": 31264.573860794095,
+          "mean_verifier_calls": 2.56640625,
+          "mean_verifier_token_slots": 902.1875,
+          "mean_verifier_tokens": 902.1875,
+          "n": 256
+        },
+        "metadata_review": false,
+        "model": "smooth8-review1",
+        "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-expanded-mentor-v1/models/smooth8-review1.pkl",
+        "model_sha256": "934ff4fb3a745521ad858ea55e4113497912662f23291dcb6445683764e6038c",
+        "original_candidate_index": 26,
+        "original_dev": {
+          "accuracy": 0.6875,
+          "correct": 176,
+          "mean_compute": 3792.7848235772653,
+          "mean_judge_calls": 0.9140625,
+          "mean_judge_physical_calls": 1.82421875,
+          "mean_judge_tokens": 2652.77734375,
+          "mean_metadata_calls": 0.0,
+          "mean_metadata_cpu_ms": 0.0,
+          "mean_review_neural_calls": 0.9140625,
+          "mean_solver_calls": 1.9765625,
+          "mean_solver_tokens": 842.38671875,
+          "mean_total_parameter_compute": 31264.912655292475,
+          "mean_verifier_calls": 2.56640625,
+          "mean_verifier_token_slots": 902.1875,
+          "mean_verifier_tokens": 902.1875,
+          "n": 256
+        },
+        "policy_module": "stronger_base_hybrid",
+        "retained_from_previous": false,
+        "same_decisions_answers_and_encoder_ledgers": true,
+        "semantic_review": true,
+        "settings": {
+          "penalty": 0.0,
+          "threshold": 0.0
+        },
+        "smoothing": 8.0
+      },
+      "math": {
+        "builder_module": "expanded_development_models",
+        "dev": {
+          "accuracy": 0.69140625,
+          "correct": 177,
+          "mean_compute": 3785.4071203800872,
+          "mean_judge_calls": 0.90234375,
+          "mean_judge_physical_calls": 1.80078125,
+          "mean_judge_tokens": 2622.53125,
+          "mean_metadata_calls": 0.0,
+          "mean_metadata_cpu_ms": 0.0,
+          "mean_review_neural_calls": 0.90234375,
+          "mean_solver_calls": 2.0234375,
+          "mean_solver_tokens": 859.28125,
+          "mean_total_parameter_compute": 30944.306796755493,
+          "mean_verifier_calls": 2.578125,
+          "mean_verifier_token_slots": 903.0234375,
+          "mean_verifier_tokens": 903.0234375,
+          "n": 256
+        },
+        "metadata_review": false,
+        "model": "smooth32-review1",
+        "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-expanded-mentor-v1/models/smooth32-review1.pkl",
+        "model_sha256": "439eb8035455edf8a0dbf11c56c17b6fe355167ba1f94c459132a0dd797653ba",
+        "original_candidate_index": 104,
+        "original_dev": {
+          "accuracy": 0.69140625,
+          "correct": 177,
+          "mean_compute": 3785.381837208566,
+          "mean_judge_calls": 0.90234375,
+          "mean_judge_physical_calls": 1.80078125,
+          "mean_judge_tokens": 2622.53125,
+          "mean_metadata_calls": 0.0,
+          "mean_metadata_cpu_ms": 0.0,
+          "mean_review_neural_calls": 0.90234375,
+          "mean_solver_calls": 2.0234375,
+          "mean_solver_tokens": 859.26171875,
+          "mean_total_parameter_compute": 30944.28151358397,
+          "mean_verifier_calls": 2.578125,
+          "mean_verifier_token_slots": 903.0234375,
+          "mean_verifier_tokens": 903.0234375,
+          "n": 256
+        },
+        "policy_module": "stronger_base_hybrid",
+        "retained_from_previous": false,
+        "same_decisions_answers_and_encoder_ledgers": true,
+        "semantic_review": true,
+        "settings": {
+          "penalty": 0.0,
+          "threshold": 0.0
+        },
+        "smoothing": 32.0
+      },
+      "physics": {
+        "dev": {
+          "accuracy": 0.6640625,
+          "correct": 170,
+          "mean_compute": 2857.3206949163937,
+          "n": 256
+        },
+        "model": "ensemble-0.25",
+        "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-bayesian-model-hybrid-v3/models/ensemble-0.25.pkl",
+        "model_sha256": "f7fdecb165888246da72a80c4ac148cba81b66805283fc6a1084f15c82c7ba3c",
+        "original_candidate_index": 158,
+        "policy_module": "bayesian_model_hybrid",
+        "settings": {
+          "penalty": 0.0,
+          "threshold": 0.08
+        }
+      }
+    },
+    "model_path": "/Users/tanvirb/Documents/Code/stop-repair-or-retry/runs/controller-semantic-followup/round2/development-bayesian-model-hybrid-v3/hybrid.pkl",
+    "model_sha256": "0dfd18ba8582f8259e091732d869cb8bd7441fe703a09422387218fc655f59a2",
+    "policy_module": "bayesian_model_hybrid.routed"
+  },
+  "reserved_test_inferred_or_graded": false,
+  "reserved_test_questions": 1024,
+  "split": "Repeatedly reused 256-question development; not fresh confirmation"
+}

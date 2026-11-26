@@ -1,0 +1,67 @@
+{
+  "blind_paid_replays": 768,
+  "fresh_validation": false,
+  "new_model_calls": 0,
+  "new_training": false,
+  "passed": true,
+  "policy_outcomes": 2048,
+  "rows": [
+    {
+      "accuracy": 0.4296875,
+      "correct": 110,
+      "mean_compute": 381.39158576051784,
+      "method": "Stop",
+      "n": 256
+    },
+    {
+      "accuracy": 0.50390625,
+      "correct": 129,
+      "mean_compute": 990.2103559870551,
+      "method": "Repair once",
+      "n": 256
+    },
+    {
+      "accuracy": 0.515625,
+      "correct": 132,
+      "mean_compute": 1711.205501618123,
+      "method": "Repair twice",
+      "n": 256
+    },
+    {
+      "accuracy": 0.49609375,
+      "correct": 127,
+      "mean_compute": 886.5594660194175,
+      "method": "Retry once",
+      "n": 256
+    },
+    {
+      "accuracy": 0.48046875,
+      "correct": 123,
+      "mean_compute": 1394.6905339805826,
+      "method": "Retry twice",
+      "n": 256
+    },
+    {
+      "accuracy": 0.59765625,
+      "correct": 153,
+      "mean_compute": 1087.2748356677234,
+      "method": "A",
+      "n": 256
+    },
+    {
+      "accuracy": 0.69921875,
+      "correct": 179,
+      "mean_compute": 3858.2777103559874,
+      "method": "B",
+      "n": 256
+    },
+    {
+      "accuracy": 0.69140625,
+      "correct": 177,
+      "mean_compute": 3728.5754404183053,
+      "method": "C",
+      "n": 256
+    }
+  ],
+  "test_used": false
+}

@@ -1,0 +1,1 @@
+{"passed": true, "observer_class": "dynamic_grounded_pomdp.Observer", "output_shapes": [[4], [8], [8]], "token_slots": 78, "device": "cpu", "training_example": true, "reference_supplied_to_encoder": false, "test_used": false}

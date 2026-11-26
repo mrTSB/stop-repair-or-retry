@@ -1,0 +1,43 @@
+{
+  "dev": {
+    "accuracy": 0.69921875,
+    "correct": 179,
+    "mean_compute": 3858.2777103559874,
+    "mean_judge_calls": 1.0,
+    "mean_judge_physical_calls": 1.99609375,
+    "mean_judge_tokens": 2883.21875,
+    "mean_solver_calls": 1.97265625,
+    "mean_solver_tokens": 818.10546875,
+    "mean_total_parameter_compute": 33716.85376213593,
+    "mean_verifier_calls": 0.0,
+    "mean_verifier_token_slots": 0.0,
+    "mean_verifier_tokens": 0.0,
+    "n": 256
+  },
+  "family": "B",
+  "policy_module": "subject_expert_hybrid.evaluate_B",
+  "settings": {
+    "by_subject": {
+      "chemistry": {
+        "root_stop": "agreement",
+        "second_action": "reuse",
+        "second_stop": "never"
+      },
+      "math": {
+        "root_stop": "action",
+        "second_action": "retry",
+        "second_stop": "agreement"
+      },
+      "physics": {
+        "root_stop": 0.995,
+        "second_action": "reuse",
+        "second_stop": "never"
+      }
+    }
+  },
+  "subject_rules": {
+    "chemistry": "B09",
+    "math": "B01",
+    "physics": "B27"
+  }
+}

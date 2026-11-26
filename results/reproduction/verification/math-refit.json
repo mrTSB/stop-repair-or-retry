@@ -1,0 +1,76 @@
+{
+  "cloud_calls": 0,
+  "development_or_test_read": false,
+  "digests": {
+    "math.pkl": "de03c563b3e6ad3513c9e184f2c99b3a019beadfd553daa05276a8c065400693",
+    "registration.json": "f1e48d6ded146f4ec083603c2884680f4892c20019f24c86ad38b3c23d128446"
+  },
+  "fit_receipt": {
+    "actual_counterfactuals_accessed_at_inference": false,
+    "calibration_C": 0.1,
+    "decision_nodes": 1536,
+    "emission_fit_math_only": true,
+    "final_inner_search": [
+      {
+        "joint_log_loss": 0.9695470891727128,
+        "setting": {
+          "C": 0.001,
+          "kind": "linear"
+        }
+      },
+      {
+        "joint_log_loss": 0.907773039014284,
+        "setting": {
+          "C": 0.01,
+          "kind": "linear"
+        }
+      },
+      {
+        "joint_log_loss": 1.0119341081593094,
+        "setting": {
+          "C": 0.1,
+          "kind": "linear"
+        }
+      },
+      {
+        "joint_log_loss": 0.9110068131369671,
+        "setting": {
+          "kind": "forest",
+          "leaf": 8
+        }
+      },
+      {
+        "joint_log_loss": 0.9235878919558939,
+        "setting": {
+          "kind": "forest",
+          "leaf": 24
+        }
+      }
+    ],
+    "forecaster_settings": {
+      "C": 0.01,
+      "kind": "linear"
+    },
+    "future_observations": "Learned finite observation distribution; exact two-step backup",
+    "grouped_forecast_folds": 3,
+    "nested_emission_forecasts": true,
+    "observation_forecast_math_questions": 256,
+    "paired_questions": 512,
+    "prior_transition_cost_unchanged": true,
+    "registration_sha256": "f1e48d6ded146f4ec083603c2884680f4892c20019f24c86ad38b3c23d128446",
+    "schema": "math-specialized-eight-state-fit-v1",
+    "smoothing": 32.0,
+    "solver_budget": "Two additional calls; latest answer submitted",
+    "state_bits": [
+      "current_correct",
+      "repair_correct",
+      "retry_correct"
+    ],
+    "state_count": 8,
+    "structural_dynamics_pooled_training_questions": 512
+  },
+  "model_sha256": "de03c563b3e6ad3513c9e184f2c99b3a019beadfd553daa05276a8c065400693",
+  "new_neural_calls": 0,
+  "registration_sha256": "f1e48d6ded146f4ec083603c2884680f4892c20019f24c86ad38b3c23d128446",
+  "schema": "math-specialized-eight-state-fit-v1"
+}

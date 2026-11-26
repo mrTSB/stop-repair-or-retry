@@ -1,0 +1,18 @@
+{
+  "at_utc": "2026-11-21T08:57:00.027755+00:00",
+  "reason": "Prioritize all512paired plain branches for the repairability POMDP, then complete every ordinary-review pair. No questions or completed responses removed or selected by grade.",
+  "files": {
+    "train-observations.jsonl": {
+      "before_bytes": 1886333,
+      "sha256": "77d1baf922c49719fa61c458649ac9fb2e85af0910efed9820b39384153e26e6",
+      "retained_complete_bytes": 1886333,
+      "records": 1404
+    },
+    "train-late-observations.jsonl": {
+      "before_bytes": 1192148,
+      "sha256": "8f0102bd0d061e33387d0b06a8bfe1c34549d40685968e1ab51cc710f22ef0bf",
+      "retained_complete_bytes": 1192148,
+      "records": 751
+    }
+  }
+}

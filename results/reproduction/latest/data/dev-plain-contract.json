@@ -1,0 +1,27 @@
+{
+  "source_sha256": "6156f8bad0ebed23b18edb750c18740f8da85b34ee9f5c9171fc4dc954363061",
+  "split_sha256": "68ae92907236b4f831bb14ca5c87a457e5a33dcaa984e6d42063bf0e257b5f31",
+  "solver_digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+  "reviewer_digest": "3460ffeede5453ead027dbd2f821b12ad0aa3de54630971993babdb2165221f7",
+  "mode": "plain",
+  "plain_paths": [
+    "",
+    "repair",
+    "retry",
+    "repair/repair",
+    "repair/retry",
+    "retry/repair",
+    "retry/retry"
+  ],
+  "ordinary_guided_paths": [
+    "guided",
+    "guided/repair",
+    "guided/retry"
+  ],
+  "initial_cap": 128,
+  "continuation_cap": 256,
+  "review_cap": 512,
+  "app": "srr-followup-solver-20261120",
+  "max_cloud_gpus": 2,
+  "reference_answers_used_for_inference": false
+}

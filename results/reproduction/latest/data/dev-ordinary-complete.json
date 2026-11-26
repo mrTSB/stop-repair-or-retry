@@ -1,0 +1,9 @@
+{
+  "questions": 256,
+  "contract_sha256": "47dccaa0026b9cf2c06ce739b78e7ee08342911c14830da4c2d589a68c298ebd",
+  "base_bank_sha256": "ff2a4d8b37110ba9f6a2be7d8e3f1107ed6ca803ec3c92a3548bd8cd62a892c3",
+  "late_bank_sha256": "40a86f13e77a5cb5383da6ffabd8755bc2339353f350483ec20a25afb6d947b3",
+  "base_records": 2816,
+  "late_records": 1536,
+  "references_supplied": false
+}

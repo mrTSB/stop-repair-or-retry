@@ -1,0 +1,111 @@
+{
+  "registered_at_utc": "2026-11-21T07:51:35.291228+00:00",
+  "seed": 2026112103,
+  "source_extension": "New SuperGPQA chemistry/physics, unused GSM8K math; separate from the retired912 study.",
+  "selection": "Fixed hashes before inference; 50/25/25 mix; test reserved first. No model results used.",
+  "science": {
+    "repo": "m-a-p/SuperGPQA",
+    "revision": "4430d4458112c7d4497fdcf94d7cc223313d6acf",
+    "sha256": "28b998e70205ee95e540317b5adc06a06552a3961fb50b153df126b833f7a910",
+    "license": "ODC-BY; original referenced-source licenses also apply",
+    "url": "https://huggingface.co/datasets/m-a-p/SuperGPQA",
+    "option_order": "Preserved official order and labeled option; no distractors removed."
+  },
+  "math_sha256": "6146bca074f4c6c5e07de7e96cc968adab3833dbdafeda21830f27558eea3d9b",
+  "history_files": {
+    "results/cached-tree-dataset/data/dev-questions.jsonl": "971717669ac2bc10eaa351601993243276aa0d00a6dbd983de6a65beb37415fa",
+    "results/cached-tree-dataset/data/test-questions.jsonl": "c862e506f0385f10d635284fa02ab033b987016dd3bf2b7a112c93da5299bc2e",
+    "results/cached-tree-dataset/data/train-questions.jsonl": "9add2802765e4cf80d946bc854ea0d746a260c0d68cd6a5c682c306765975190",
+    "results/controller-hillclimb/pomdp-abc/data/splits/dev-questions.jsonl": "4467bf30def8d91e18d054f1101e0d29a9740678ef711f5660d6fc0d84090ef4",
+    "results/controller-hillclimb/pomdp-abc/data/splits/test-questions.jsonl": "b9aed14f36469c177c4f61e31bdbb102a69794dde75ed787a5a29faead4d38e1",
+    "results/controller-hillclimb/pomdp-abc/data/splits/train-questions.jsonl": "fc24ce265c0a81ff6c3b243f2b02c5a1aedd2dd28d937b4422c79d85c576fd10",
+    "results/controller-hillclimb/pomdp-abc/guided-repair/data/splits/dev-questions.jsonl": "25c9a21e27724ecc9bd1f49aa79271e4490e1da01f79ccf02cae251056c06adc",
+    "results/controller-hillclimb/pomdp-abc/guided-repair/data/splits/test-questions.jsonl": "87872f54fd21882289c348ab28f5c6664137b285839e2e7b48ff0e1114a7cc66",
+    "results/controller-hillclimb/pomdp-abc/guided-repair/data/splits/train-questions.jsonl": "beec992fe9931397c350c29049ccc5b08963da23ddcae331177ea95da0c07d04",
+    "results/controller-hillclimb/pomdp-abc/hybrid-margin/data/splits/dev-questions.jsonl": "123e972b16524067732c78c97e366d3b6d4a39b73eba8fe877a5224947c3f789",
+    "results/controller-hillclimb/pomdp-abc/hybrid-margin/data/splits/test-questions.jsonl": "a007da94bdb3d3197c70017791a3f4c572d42d7f41b625045b179fad4b782d3e",
+    "results/controller-hillclimb/pomdp-abc/hybrid-margin/data/splits/train-questions.jsonl": "ca132b6399d372044d6089db8c023733499774d101965cd98b5b92a8d422ca97",
+    "results/controller-hillclimb/retry-gate/data/splits/test-questions.jsonl": "384399193fc092a754113411966ae7211a723b88ca41cd8e99529bf973af5295",
+    "results/controller-hillclimb/retry-gate/data/splits/train-questions.jsonl": "8516edc55d425d2ef011aa69d395a136500d6e3bf6fa3d65ad24e13a4255aca0",
+    "results/controller-hillclimb/retry-gate/paired-uplift/data/splits/dev-questions.jsonl": "4e607b29635720d8373330013d3f5b0664101d3571b053af9b636cb95bdf6b98",
+    "results/controller-hillclimb/retry-gate/paired-uplift/data/splits/test-questions.jsonl": "91aa43c55a1fe8306e3ac87c0fb3cde7b5fda23cf81bf255f73ff888792bb29d",
+    "results/controller-hillclimb/retry-gate/paired-uplift/data/splits/train-questions.jsonl": "d39c9711fe171d39711a0823b5f942e53f57d4dbfe940eb004592d58c38f7a70",
+    "results/controller-hillclimb/retry-gate/paired-uplift/margin-gate/data/splits/dev-questions.jsonl": "f8a3ce107546cdebbba51732a313ac0c195ef5c702d3bef56f503b3606b2982f",
+    "results/controller-hillclimb/retry-gate/paired-uplift/margin-gate/data/splits/test-questions.jsonl": "97c15e8f228ecae53691a62bf9f532059f6704bbf59b85ee1e5e3c410c7574ec",
+    "runs/controller-hillclimb/pomdp-abc/guided-repair/extended/splits/dev-questions.jsonl": "25c9a21e27724ecc9bd1f49aa79271e4490e1da01f79ccf02cae251056c06adc",
+    "runs/controller-hillclimb/pomdp-abc/guided-repair/extended/splits/test-questions.jsonl": "87872f54fd21882289c348ab28f5c6664137b285839e2e7b48ff0e1114a7cc66",
+    "runs/controller-hillclimb/pomdp-abc/guided-repair/extended/splits/train-questions.jsonl": "beec992fe9931397c350c29049ccc5b08963da23ddcae331177ea95da0c07d04",
+    "runs/controller-hillclimb/pomdp-abc/hybrid-margin/data/splits/dev-questions.jsonl": "123e972b16524067732c78c97e366d3b6d4a39b73eba8fe877a5224947c3f789",
+    "runs/controller-hillclimb/pomdp-abc/hybrid-margin/data/splits/test-questions.jsonl": "a007da94bdb3d3197c70017791a3f4c572d42d7f41b625045b179fad4b782d3e",
+    "runs/controller-hillclimb/pomdp-abc/hybrid-margin/data/splits/train-questions.jsonl": "ca132b6399d372044d6089db8c023733499774d101965cd98b5b92a8d422ca97",
+    "runs/controller-hillclimb/pomdp-abc/splits/dev-questions.jsonl": "4467bf30def8d91e18d054f1101e0d29a9740678ef711f5660d6fc0d84090ef4",
+    "runs/controller-hillclimb/pomdp-abc/splits/test-questions.jsonl": "b9aed14f36469c177c4f61e31bdbb102a69794dde75ed787a5a29faead4d38e1",
+    "runs/controller-hillclimb/pomdp-abc/splits/train-questions.jsonl": "fc24ce265c0a81ff6c3b243f2b02c5a1aedd2dd28d937b4422c79d85c576fd10",
+    "runs/controller-hillclimb/retry-gate/confidence/expanded-questions/test-questions.jsonl": "fde16e587bae0de8cac00a909ea955f0943901278b8a652c22285c8ef1e0e42c",
+    "runs/controller-hillclimb/retry-gate/confidence/expanded-questions/train-questions.jsonl": "8516edc55d425d2ef011aa69d395a136500d6e3bf6fa3d65ad24e13a4255aca0",
+    "runs/controller-hillclimb/retry-gate/confidence/novel-questions.jsonl": "f2962bef9fe0335baa49c1ff2b6a7687be4d0b7483d7041148426b30e0a3a9fc",
+    "runs/controller-hillclimb/retry-gate/paired-uplift/margin-gate/splits/dev-questions.jsonl": "f8a3ce107546cdebbba51732a313ac0c195ef5c702d3bef56f503b3606b2982f",
+    "runs/controller-hillclimb/retry-gate/paired-uplift/margin-gate/splits/test-questions.jsonl": "97c15e8f228ecae53691a62bf9f532059f6704bbf59b85ee1e5e3c410c7574ec",
+    "runs/controller-hillclimb/retry-gate/paired-uplift/smoke/splits/dev-questions.jsonl": "d19609f8ae0e63397341bab46b74a2264f839635538a4f300e6b365ec3acf7c3",
+    "runs/controller-hillclimb/retry-gate/paired-uplift/smoke/splits/test-questions.jsonl": "336a36c46d98806ec0dea061d5e14db3e2a99fed4e650ececda2f41b2dedd9c0",
+    "runs/controller-hillclimb/retry-gate/paired-uplift/smoke/splits/train-questions.jsonl": "b4ccd865d43ca495ed3d7560eacd6ae0dba06928a6bf086ed3d8a34a0238c951",
+    "runs/controller-hillclimb/retry-gate/paired-uplift/splits/dev-questions.jsonl": "4e607b29635720d8373330013d3f5b0664101d3571b053af9b636cb95bdf6b98",
+    "runs/controller-hillclimb/retry-gate/paired-uplift/splits/test-questions.jsonl": "91aa43c55a1fe8306e3ac87c0fb3cde7b5fda23cf81bf255f73ff888792bb29d",
+    "runs/controller-hillclimb/retry-gate/paired-uplift/splits/train-questions.jsonl": "d39c9711fe171d39711a0823b5f942e53f57d4dbfe940eb004592d58c38f7a70",
+    "runs/controller-hillclimb/retry-gate/splits/test-questions.jsonl": "384399193fc092a754113411966ae7211a723b88ca41cd8e99529bf973af5295",
+    "runs/controller-hillclimb/retry-gate/splits/train-questions.jsonl": "8516edc55d425d2ef011aa69d395a136500d6e3bf6fa3d65ad24e13a4255aca0",
+    "runs/controller-semantic-followup/context-confirmation-data/splits/dev-questions.jsonl": "0e83364f3df300efb07332fdf20709d5f1bbd7f982dde65b5d93c7697afd8e1d",
+    "runs/controller-semantic-followup/context-confirmation-data/splits/test-questions.jsonl": "d5619e64dbc8ac4c9a95b59912d789f6da4cc391e6ec1a93dfbc326c195794fe",
+    "runs/controller-semantic-followup/context-confirmation-data/splits/train-questions.jsonl": "871782ea53dd030f43b76977bf76f995c6f88cd4099da230b8115c8ed29ecc26",
+    "runs/controller-semantic-followup/data/splits/dev-questions.jsonl": "0e83364f3df300efb07332fdf20709d5f1bbd7f982dde65b5d93c7697afd8e1d",
+    "runs/controller-semantic-followup/data/splits/test-questions.jsonl": "3aaf12736ee4e39f22f7dd14217f9737cff37d939dfc4c85b17000ae48f4cb44",
+    "runs/controller-semantic-followup/data/splits/train-questions.jsonl": "871782ea53dd030f43b76977bf76f995c6f88cd4099da230b8115c8ed29ecc26",
+    "runs/controller-semantic-followup/future-review-development-data/splits/dev-questions.jsonl": "0e83364f3df300efb07332fdf20709d5f1bbd7f982dde65b5d93c7697afd8e1d",
+    "runs/controller-semantic-followup/future-review-development-data/splits/train-questions.jsonl": "871782ea53dd030f43b76977bf76f995c6f88cd4099da230b8115c8ed29ecc26",
+    "runs/controller-semantic-followup/joint-data/splits/dev-questions.jsonl": "0e83364f3df300efb07332fdf20709d5f1bbd7f982dde65b5d93c7697afd8e1d",
+    "runs/controller-semantic-followup/joint-data/splits/test-questions.jsonl": "d5619e64dbc8ac4c9a95b59912d789f6da4cc391e6ec1a93dfbc326c195794fe",
+    "runs/controller-semantic-followup/joint-data/splits/train-questions.jsonl": "871782ea53dd030f43b76977bf76f995c6f88cd4099da230b8115c8ed29ecc26",
+    "runs/controller-semantic-hillclimb/data/splits/dev-questions.jsonl": "0e83364f3df300efb07332fdf20709d5f1bbd7f982dde65b5d93c7697afd8e1d",
+    "runs/controller-semantic-hillclimb/data/splits/test-questions.jsonl": "dabd081c916927693658fe4d8d02fd5d65a4f585d3fc64b12abfd659bfcf0366",
+    "runs/controller-semantic-hillclimb/data/splits/train-questions.jsonl": "871782ea53dd030f43b76977bf76f995c6f88cd4099da230b8115c8ed29ecc26"
+  },
+  "deduplication": "Recorded IDs, archived normalized stems, and >=85% word-fivegram overlap with comparable length.",
+  "exclusions": {
+    "historical_or_within_pool_duplicate": 2604
+  },
+  "unused_pool": {
+    "chemistry": 1682,
+    "physics": 2683,
+    "math": 5118
+  },
+  "raw_examples_publishable": false,
+  "splits": {
+    "test": {
+      "n": 1024,
+      "sha256": "424ea00684a055ba5409f75acf11a4209b3665bb2b0afbf30f0daf0ef91ae7b7",
+      "subjects": {
+        "math": 512,
+        "chemistry": 256,
+        "physics": 256
+      }
+    },
+    "dev": {
+      "n": 256,
+      "sha256": "68ae92907236b4f831bb14ca5c87a457e5a33dcaa984e6d42063bf0e257b5f31",
+      "subjects": {
+        "physics": 64,
+        "chemistry": 64,
+        "math": 128
+      }
+    },
+    "train": {
+      "n": 512,
+      "sha256": "b153cf02a000f4f96c2d22194092a3f852140debdcd72b74c6de288b8c44397b",
+      "subjects": {
+        "chemistry": 128,
+        "math": 256,
+        "physics": 128
+      }
+    }
+  }
+}

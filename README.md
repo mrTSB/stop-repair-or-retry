@@ -2,6 +2,8 @@
 
 A reproducible starting point for the CS238 proposal: generate paired solver trajectories, fit lightweight controllers on training questions, select policy parameters on development questions, and evaluate on held-out questions.
 
+The [complete A/B/C reproduction handoff](results/reproduction/README.md) includes the latest labeled splits and selected controllers in Git, plus a downloadable full runtime archive with all response banks, intermediate models, observer assets, source datasets, and the reserved test set. It provides portable setup, replay, audit, and refitting commands.
+
 Aggregated benchmark reports are indexed in [`results/benchmark-baselines/README.md`](results/benchmark-baselines/README.md).
 
 The [cached math/science dataset and characterization](results/cached-tree-dataset/README.md) includes 560 complete solver trees, explicit 100/60/400 train/dev/test splits, and five fixed baseline results. It is a standalone dataset contribution, with no new controller claims.
