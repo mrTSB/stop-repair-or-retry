@@ -17,6 +17,12 @@ TAG = 'abc-runtime-2026-11-25'
 RELEASE = 458824938
 
 
+def immutable_weight(name, size):
+    return size > 0 and (name.endswith(('.safetensors', '.gguf', '/pytorch_model.bin'))
+                         or name.startswith('external/ollama/models/blobs/')
+                         or (name.startswith('.cache/') and '/blobs/' in name))
+
+
 def gh(*args):
     return subprocess.check_output(['gh', *args], text=True)
 
@@ -196,10 +202,13 @@ def main():
                     key = entry['sha256']; obj = recipe['objects'][key]
                     info = tarfile.TarInfo('stop-repair-or-retry/'+name)
                     info.mode = entry['mode']; info.mtime = entry['mtime']
-                    if key in seen:
+                    shared = immutable_weight(name, entry['size_bytes'])
+                    if shared and key in seen:
                         info.type = tarfile.LNKTYPE; info.linkname = seen[key]; tar.addfile(info)
                         continue
-                    seen[key] = info.name; info.size = entry['size_bytes']
+                    if shared:
+                        seen[key] = info.name
+                    info.size = entry['size_bytes']
                     source = Remote(obj['url'], info.size) if 'url' in obj else (work/'objects'/key).open('rb')
                     hashed = Hashed(source)
                     try:
@@ -223,6 +232,8 @@ def main():
                     if name in seen or name not in files:
                         raise ValueError('Unexpected or duplicate final archive file')
                     if member.islnk():
+                        if not immutable_weight(name, files[name]['size_bytes']):
+                            raise ValueError('Mutable files must retain independent inodes: '+name)
                         actual = seen[member.linkname.removeprefix('stop-repair-or-retry/')]
                     elif member.isfile():
                         actual = {'sha256': hashlib.file_digest(tar.extractfile(member), 'sha256').hexdigest(),
@@ -237,6 +248,7 @@ def main():
                 raise ValueError('Final archive omissions')
             report.update(passed=True, archive_file_entries=len(seen), payload_files=len(seen)-2,
                           all_payload_sha256_checked=True, missing_files=0,
+                          mutable_files_are_independent=True,
                           logical_bytes_checked=sum(v['size_bytes'] for v in seen.values()))
         except BaseException as e:
             errors.append(e)

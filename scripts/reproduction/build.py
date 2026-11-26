@@ -58,6 +58,7 @@ def main():
                 sources[str(Path(relative) / path.relative_to(source))] = path
     entries = {}
     content = {}
+    shared_weights = {}
     counts, sizes = Counter(), Counter()
     for index, (relative, source) in enumerate(sorted(sources.items()), 1):
         target = destination / relative
@@ -69,13 +70,19 @@ def main():
         if (before.st_size, before.st_mtime_ns) != (after.st_size, after.st_mtime_ns):
             raise RuntimeError('Runtime changed while snapshotting: ' + str(source))
         key = digest, before.st_size
-        # Copies are independent of the original checkout; identical bytes in
-        # the snapshot share an inode and a tar hard-link entry.
-        if key in content:
-            os.link(content[key], target)
+        # Mutable journals, caches and lock files must remain independent.
+        # Only immutable model content shares snapshot/tar inodes.
+        immutable = before.st_size > 0 and (
+            relative.endswith(('.safetensors', '.gguf', '/pytorch_model.bin'))
+            or relative.startswith('external/ollama/models/blobs/')
+            or (relative.startswith('.cache/') and '/blobs/' in relative))
+        if immutable and key in shared_weights:
+            os.link(shared_weights[key], target)
         else:
             shutil.copy2(resolved, target)
-            content[key] = target
+        content.setdefault(key, target)
+        if immutable:
+            shared_weights[key] = target
         entries[relative] = {'sha256': digest, 'size_bytes': before.st_size}
         group = relative.split('/')[0]
         counts[group] += 1
