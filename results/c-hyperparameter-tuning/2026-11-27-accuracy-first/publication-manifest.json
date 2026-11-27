@@ -1,0 +1,23 @@
+{
+  "REPORT.md": "96df4a9fff916590bd0ecfc78e7aae9b23942ac0881c95b79c4bcc34fbadbe0f",
+  "accuracy-compute.pdf": "142fdb0ab86fd9457fca839f145840842c1ca0e0ced87bd8095b61f513ab9808",
+  "accuracy-compute.png": "cc588c950cdaa5310df979c73edff78d916e28e2a61dcaf7a8e42dbb20bb2e05",
+  "analysis.json": "bdaa6268b79ae08c024570e59eb58d30e0396588851ce4575081e10ae5a7a7d9",
+  "analysis.log": "c4dac2f4771835e727e8972a8f2cc8c551dc82ad1518f601482da912d0610ecd",
+  "audit.json": "916fbf09c2de547a99ba812319c9961dda7e109327b9905ba45a14fdda7ca66b",
+  "audit.log": "c120d3ba0bd682ad6f070c33f97fb2e281faafa8df15f683fc384f4193e0167b",
+  "candidate-metrics.json.gz": "c73f2b7239dcf9e89f4a64ff30d5029b36d29b5fcf5b8ea089470aaf59865ae1",
+  "candidate-outcomes.json.gz": "de120fb40e257cb4d41bcb995e292c564af3f90129c7a5ee0adc11ed42fbc503",
+  "changed-questions.json": "29f4f62f5386861880187091974898ff81711277bd602ef1dc06e4bc04e844a5",
+  "complete.json": "113cbfa77044d63e854f83ce24a018b2a24d4ea55d44dd760c356fcde7d0e150",
+  "fold-sensitivity.pdf": "b7925b2ee5f4804a81de4d4c055a747aa5a681d9e329298258ab259b5566dc5e",
+  "fold-sensitivity.png": "5ec196b03b6b82b33ad364f290d4a0663847550ec1b6add64565c2ecb733f67d",
+  "hybrid.pkl": "dd06a48c608ac375f5f6e6f1837d9c252520cd6190e3d36df3d5c84f76176cba",
+  "packaging.json": "cf8fb02928986629073315487951e0858a89cc66da0ebf945600c3b63c99cbe9",
+  "per-question.json": "030ecbcbf374c62d20b00dde517c43f3ba28635575052c175122957be60c0087",
+  "registration.json": "11c2ab41b9e5e254c7162bc26d26970818d50ae2e34d7a35e35cf6b09c4d0351",
+  "run.log": "36057ae7edf9c3047c44219d7aedcc64b22130e2bd890ab4948d4667dce3506b",
+  "summary.json": "66a9a88e77066eefaa12ee24ea703ffaefa8835e2dc3f2dd97381bfd95611c8f",
+  "verify-after.json": "5582cc366150c128d3d7e3de5a283c7b708225968d8e8ac56a49c215925fa5c8",
+  "verify-before.json": "5582cc366150c128d3d7e3de5a283c7b708225968d8e8ac56a49c215925fa5c8"
+}

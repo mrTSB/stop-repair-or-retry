@@ -7,8 +7,11 @@ The first search improves the **repeatedly reused development-panel** result fro
 | Run | Objective | Development result | Evidence |
 | --- | --- | --- | --- |
 | [2026-11-27 cost-constrained](2026-11-27-cost-constrained/REPORT.md) | Highest accuracy at no greater compute than original C | 178/256; compute 3330.65 | Full grid, checkpoint, per-question outputs, audit and integrity receipts |
+| [2026-11-27 accuracy-first](2026-11-27-accuracy-first/REPORT.md) | Highest accuracy without a compute ceiling | 178/256; compute 3255.71; no further accuracy gain | 61,098 subject candidates, full outcomes, checkpoint, audit, plots and fold sensitivity |
 
-A subsequent accuracy-first experiment will be added here with its full search definition and results, including negative findings.
+The [accuracy-first refinement](2026-11-27-accuracy-first/REPORT.md) evaluated 61,098 subject settings with no compute ceiling and found **no additional accuracy gain**: 178/256 at 3255.71 compute, with fold sensitivity 169/256 versus original C's 177/256. It improves the compute proxy further, not the established accuracy result. Neither candidate is independently validated.
+
+The repository contains complete reports, predeclared search settings, all candidate outcomes, saved checkpoints, standalone audits, reproducible plotting code and development-only charts. No new paid compute or reserved-test evaluation was used.
 
 ## Relationship to existing work
 

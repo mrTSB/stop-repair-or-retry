@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "saved_checkpoint_reloaded": true,
+  "only_existing_hyperparameters_changed": true,
+  "exact_original_model_recovered_after_reverting_settings_and_prior_weights": true,
+  "direct_replays": 256,
+  "blinded_paid_replays": 256,
+  "independent_correctness_and_billing": true,
+  "metrics": {
+    "n": 256,
+    "correct": 178,
+    "accuracy": 0.6953125,
+    "mean_compute": 3255.7082301521186
+  },
+  "test_used": false,
+  "new_model_calls": 0,
+  "source_sha256": "5c77abc920e08d1e63b7dc023e66b049edb64b0f1a52e5ecb67a69eae455fa02",
+  "checkpoint_sha256": "dd06a48c608ac375f5f6e6f1837d9c252520cd6190e3d36df3d5c84f76176cba"
+}

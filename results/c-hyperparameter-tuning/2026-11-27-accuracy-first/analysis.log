@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "subject_results": {
+    "math": {
+      "candidate_count": 2399,
+      "max_correct": 124,
+      "n": 128
+    },
+    "chemistry": {
+      "candidate_count": 2196,
+      "max_correct": 28,
+      "n": 64
+    },
+    "physics": {
+      "candidate_count": 56503,
+      "max_correct": 26,
+      "n": 64
+    }
+  },
+  "accuracy_gain_correct_vs_original_C": 1,
+  "accuracy_gain_correct_vs_prior_tuned_C": 0,
+  "accuracy_difference_correct_vs_B": -1,
+  "compute_reduction_percent_vs_original_C": 12.682248698530717,
+  "compute_reduction_percent_vs_B": 15.617576686782153,
+  "wins_vs_original_C": 1,
+  "losses_vs_original_C": 0,
+  "changed_paths_or_bills": 67,
+  "fold_selected_correct": 169,
+  "fold_reference_correct": 177,
+  "fold_selected_mean_compute": 3076.6986342690334,
+  "fresh_validation": false,
+  "test_used": false
+}
