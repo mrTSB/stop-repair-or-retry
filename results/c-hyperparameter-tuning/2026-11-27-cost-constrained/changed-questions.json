@@ -1,0 +1,470 @@
+[
+  {
+    "id": "supergpqa-4231be33ca5542daa9cf29b4c0d2ec5d",
+    "subject": "physics",
+    "old_path": "",
+    "new_path": "",
+    "old_correct": 0,
+    "new_correct": 0,
+    "compute_difference": -2863.2249514666664
+  },
+  {
+    "id": "gsm8k-train-03629",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2600.118155350162
+  },
+  {
+    "id": "gsm8k-train-05230",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "repair",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2220.9198830731393
+  },
+  {
+    "id": "supergpqa-410696f43a994300985c8be0ef615f89",
+    "subject": "physics",
+    "old_path": "guided",
+    "new_path": "",
+    "old_correct": 0,
+    "new_correct": 0,
+    "compute_difference": -811.1213915961166
+  },
+  {
+    "id": "supergpqa-44d5f4b5102b4f39ad185f27bcd34036",
+    "subject": "physics",
+    "old_path": "retry/reuse",
+    "new_path": "",
+    "old_correct": 0,
+    "new_correct": 0,
+    "compute_difference": -1361.2832038938514
+  },
+  {
+    "id": "gsm8k-train-00874",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2496.234660204531
+  },
+  {
+    "id": "gsm8k-train-04977",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "repair",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2198.508287641424
+  },
+  {
+    "id": "supergpqa-0518fa0342ca4273be2e976390fb4090",
+    "subject": "physics",
+    "old_path": "retry/reuse",
+    "new_path": "guided",
+    "old_correct": 0,
+    "new_correct": 0,
+    "compute_difference": -952.6917550317139
+  },
+  {
+    "id": "gsm8k-train-02021",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2318.3863989889965
+  },
+  {
+    "id": "gsm8k-train-06594",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2488.4676699132688
+  },
+  {
+    "id": "supergpqa-65f7366f1b7d401fbbd6a227abb166b5",
+    "subject": "physics",
+    "old_path": "guided/reuse",
+    "new_path": "",
+    "old_correct": 0,
+    "new_correct": 0,
+    "compute_difference": -1104.1729024530741
+  },
+  {
+    "id": "supergpqa-d9dc1bdadcfb462c99f175d00d8f1fa4",
+    "subject": "physics",
+    "old_path": "guided/reuse",
+    "new_path": "",
+    "old_correct": 0,
+    "new_correct": 0,
+    "compute_difference": -3897.3413960919097
+  },
+  {
+    "id": "supergpqa-94fc741590db49cc878f229d894c732a",
+    "subject": "physics",
+    "old_path": "retry/reuse",
+    "new_path": "guided",
+    "old_correct": 0,
+    "new_correct": 0,
+    "compute_difference": -632.2112831223303
+  },
+  {
+    "id": "gsm8k-train-06161",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2275.880551623301
+  },
+  {
+    "id": "gsm8k-train-03814",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2284.4447949618125
+  },
+  {
+    "id": "gsm8k-train-03804",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2252.5630465669906
+  },
+  {
+    "id": "supergpqa-19a333c23f1e4438a1757351309f411a",
+    "subject": "physics",
+    "old_path": "retry/reuse",
+    "new_path": "guided",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -970.8737864077666
+  },
+  {
+    "id": "gsm8k-train-06189",
+    "subject": "math",
+    "old_path": "guided",
+    "new_path": "repair/repair",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2267.180493474434
+  },
+  {
+    "id": "gsm8k-train-04283",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2196.2889766705503
+  },
+  {
+    "id": "supergpqa-f8d8c836110e4606801bbb9afcd709e8",
+    "subject": "physics",
+    "old_path": "retry/reuse",
+    "new_path": "guided",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -899.6763754045305
+  },
+  {
+    "id": "gsm8k-train-04208",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2263.0595859961168
+  },
+  {
+    "id": "gsm8k-train-00713",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2293.4767566200644
+  },
+  {
+    "id": "gsm8k-train-00761",
+    "subject": "math",
+    "old_path": "guided/reuse",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -3067.4816737553397
+  },
+  {
+    "id": "gsm8k-train-01659",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "repair",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2249.5228656660197
+  },
+  {
+    "id": "gsm8k-train-06900",
+    "subject": "math",
+    "old_path": "guided/reuse",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -3389.7751611275085
+  },
+  {
+    "id": "gsm8k-train-01249",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2287.9361600000007
+  },
+  {
+    "id": "gsm8k-train-02495",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2306.467801636246
+  },
+  {
+    "id": "gsm8k-train-00126",
+    "subject": "math",
+    "old_path": "retry/repair",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -350.80906148867314
+  },
+  {
+    "id": "gsm8k-train-06872",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2212.9473762459543
+  },
+  {
+    "id": "supergpqa-c7136da0c9ba438db171cdd15f132027",
+    "subject": "physics",
+    "old_path": "retry/reuse",
+    "new_path": "guided/reuse",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -322.3300970873788
+  },
+  {
+    "id": "gsm8k-train-04858",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2332.8065846291265
+  },
+  {
+    "id": "gsm8k-train-02894",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "repair/repair",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -1854.547313987055
+  },
+  {
+    "id": "gsm8k-train-02745",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2276.0860681592235
+  },
+  {
+    "id": "gsm8k-train-05628",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2259.911921086084
+  },
+  {
+    "id": "gsm8k-train-00348",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "repair/repair",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -1752.0504396181234
+  },
+  {
+    "id": "gsm8k-train-03746",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2296.53347170356
+  },
+  {
+    "id": "gsm8k-train-01535",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2242.9428897475727
+  },
+  {
+    "id": "gsm8k-train-03544",
+    "subject": "math",
+    "old_path": "guided",
+    "new_path": "repair/repair",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2171.0970569851133
+  },
+  {
+    "id": "gsm8k-train-01382",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2204.052425611651
+  },
+  {
+    "id": "gsm8k-train-05697",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2263.4422646213598
+  },
+  {
+    "id": "gsm8k-train-00643",
+    "subject": "math",
+    "old_path": "guided",
+    "new_path": "",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -523.3187012699027
+  },
+  {
+    "id": "supergpqa-b6bf84e999bb4a90989d7d775a6c94f3",
+    "subject": "physics",
+    "old_path": "retry/reuse",
+    "new_path": "guided/reuse",
+    "old_correct": 0,
+    "new_correct": 0,
+    "compute_difference": -103.53862244919037
+  },
+  {
+    "id": "gsm8k-train-04593",
+    "subject": "math",
+    "old_path": "guided",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2591.67556142136
+  },
+  {
+    "id": "gsm8k-train-02747",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2522.4482524375408
+  },
+  {
+    "id": "supergpqa-6d3213af6f1a47f480d54d3b54f156e4",
+    "subject": "chemistry",
+    "old_path": "guided",
+    "new_path": "",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -583.6735275792876
+  },
+  {
+    "id": "gsm8k-train-03066",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2269.9182978809063
+  },
+  {
+    "id": "gsm8k-train-01184",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2310.0477477190934
+  },
+  {
+    "id": "gsm8k-train-06127",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2236.2247302368933
+  },
+  {
+    "id": "gsm8k-train-01554",
+    "subject": "math",
+    "old_path": "guided",
+    "new_path": "retry/repair",
+    "old_correct": 0,
+    "new_correct": 1,
+    "compute_difference": -1794.60234818123
+  },
+  {
+    "id": "gsm8k-train-02962",
+    "subject": "math",
+    "old_path": "guided",
+    "new_path": "",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -492.7538955715213
+  },
+  {
+    "id": "gsm8k-train-05946",
+    "subject": "math",
+    "old_path": "",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2252.22051900712
+  },
+  {
+    "id": "gsm8k-train-00783",
+    "subject": "math",
+    "old_path": "guided",
+    "new_path": "retry",
+    "old_correct": 1,
+    "new_correct": 1,
+    "compute_difference": -2700.794931555987
+  }
+]

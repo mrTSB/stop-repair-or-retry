@@ -1,0 +1,185 @@
+{
+  "passed": true,
+  "baseline_C": {
+    "accuracy": 0.69140625,
+    "correct": 177,
+    "mean_compute": 3728.5754404183053,
+    "n": 256
+  },
+  "tuned_C": {
+    "n": 256,
+    "correct": 178,
+    "accuracy": 0.6953125,
+    "mean_compute": 3330.645424500263
+  },
+  "B": {
+    "accuracy": 0.69921875,
+    "correct": 179,
+    "mean_compute": 3858.2777103559874,
+    "mean_judge_calls": 1.0,
+    "mean_judge_physical_calls": 1.99609375,
+    "mean_judge_tokens": 2883.21875,
+    "mean_solver_calls": 1.97265625,
+    "mean_solver_tokens": 818.10546875,
+    "mean_total_parameter_compute": 33716.85376213593,
+    "mean_verifier_calls": 0.0,
+    "mean_verifier_token_slots": 0.0,
+    "mean_verifier_tokens": 0.0,
+    "n": 256
+  },
+  "selected": {
+    "math": {
+      "settings": {
+        "penalty": 0.005,
+        "threshold": 0.0
+      },
+      "weight": null
+    },
+    "chemistry": {
+      "settings": {
+        "penalty": 0.0005,
+        "threshold": 0.0
+      },
+      "weight": null
+    },
+    "physics": {
+      "settings": {
+        "penalty": 0.01,
+        "threshold": 0.06
+      },
+      "weight": 0.1
+    }
+  },
+  "subject_candidate_counts": {
+    "math": 181,
+    "chemistry": 181,
+    "physics": 1441
+  },
+  "alternative_under_B_ceiling": {
+    "metrics": {
+      "n": 256,
+      "correct": 178,
+      "accuracy": 0.6953125,
+      "mean_compute": 3330.645424500263
+    },
+    "settings": {
+      "math": {
+        "settings": {
+          "penalty": 0.005,
+          "threshold": 0.0
+        },
+        "weight": null
+      },
+      "chemistry": {
+        "settings": {
+          "penalty": 0.0005,
+          "threshold": 0.0
+        },
+        "weight": null
+      },
+      "physics": {
+        "settings": {
+          "penalty": 0.01,
+          "threshold": 0.06
+        },
+        "weight": 0.1
+      }
+    }
+  },
+  "selection_sensitivity_four_dev_folds": [
+    {
+      "fold": 0,
+      "tuned": {
+        "n": 64,
+        "correct": 41,
+        "accuracy": 0.640625,
+        "mean_compute": 2969.4074622796115
+      },
+      "baseline": {
+        "n": 64,
+        "correct": 43,
+        "accuracy": 0.671875,
+        "mean_compute": 3672.961643075263
+      },
+      "selected_indices": {
+        "math": 101,
+        "chemistry": 116,
+        "physics": 110
+      }
+    },
+    {
+      "fold": 1,
+      "tuned": {
+        "n": 64,
+        "correct": 43,
+        "accuracy": 0.671875,
+        "mean_compute": 3360.1095929644216
+      },
+      "baseline": {
+        "n": 64,
+        "correct": 43,
+        "accuracy": 0.671875,
+        "mean_compute": 3778.0005071669907
+      },
+      "selected_indices": {
+        "math": 44,
+        "chemistry": 21,
+        "physics": 110
+      }
+    },
+    {
+      "fold": 2,
+      "tuned": {
+        "n": 64,
+        "correct": 43,
+        "accuracy": 0.671875,
+        "mean_compute": 3328.175636540049
+      },
+      "baseline": {
+        "n": 64,
+        "correct": 43,
+        "accuracy": 0.671875,
+        "mean_compute": 3805.9304762385923
+      },
+      "selected_indices": {
+        "math": 81,
+        "chemistry": 21,
+        "physics": 110
+      }
+    },
+    {
+      "fold": 3,
+      "tuned": {
+        "n": 64,
+        "correct": 44,
+        "accuracy": 0.6875,
+        "mean_compute": 3088.8759895736653
+      },
+      "baseline": {
+        "n": 64,
+        "correct": 48,
+        "accuracy": 0.75,
+        "mean_compute": 3657.409135192375
+      },
+      "selected_indices": {
+        "math": 81,
+        "chemistry": 116,
+        "physics": 1026
+      }
+    }
+  ],
+  "fresh_validation": false,
+  "test_used": false,
+  "architecture_changed": false,
+  "new_model_calls": 0,
+  "cloud_cost": 0,
+  "checks": {
+    "baseline_reproduced": true,
+    "direct_selected_replays": 256,
+    "blinded_paid_replays": 256,
+    "independent_billing_and_correctness": true,
+    "independent_selection_check": true
+  },
+  "model_sha256": "2e45bc0b8fc32ccc71b9d003dbdb69c3dbfd2a53d107ae9c4af31d3063f87bd2",
+  "source_sha256": "45e35cc16f3cc327c95ac75c8b09a9fda83e26e924439b07dde933031986ee6d"
+}

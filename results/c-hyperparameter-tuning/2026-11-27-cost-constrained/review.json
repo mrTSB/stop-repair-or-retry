@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "accuracy_gain_pp": 0.390625,
+  "compute_reduction_percent": 10.672441050928526,
+  "dev_fold_correct": 171,
+  "baseline_dev_fold_correct": 177,
+  "fresh_validation": false,
+  "original_inputs_unchanged": true,
+  "architecture_unchanged_verified": true,
+  "recommendation": "Retain as exploratory candidate; accuracy gain not robust in fold sensitivity; original checkpoint preserved"
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "digests": {
+    "candidate-metrics.json": "ce73c338d4bf424981c204c5cfc9541b138433ee1811ada7baa040b5aef67b0c",
+    "summary.json": "dc3bd93ef96b259c2e50e420baea2c95c43149597f0cb1cd21b53ef2bfda0252",
+    "per-question.json": "06a86284371d476cc3957c4f4bcd2033a2614309cf0a2a8026ed080909fdd6f4",
+    "candidate-outcomes.json": "71345b4af7410520f6f021e7b757b4d5c169dbc4afa17bb7c390ce1cccc59501",
+    "changed-questions.json": "48403e6995ae7bc6c9051abb2f2ad81b779f204f2cc636299fba2928e3447b42",
+    "registration.json": "572315c5e47b55d184b10682e5a75884ec4a1659b92b60b36035286436014b1a",
+    "hybrid.pkl": "2e45bc0b8fc32ccc71b9d003dbdb69c3dbfd2a53d107ae9c4af31d3063f87bd2"
+  },
+  "test_used": false
+}

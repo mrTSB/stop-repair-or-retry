@@ -1,0 +1,10 @@
+{
+  "lossless_compression": {
+    "candidate-outcomes.json.gz": {
+      "decompressed_name": "candidate-outcomes.json",
+      "decompressed_sha256": "71345b4af7410520f6f021e7b757b4d5c169dbc4afa17bb7c390ce1cccc59501",
+      "sha256": "e70468a3b0384297fd9694dbf4f7c93be0f51a149fa54823d18174b3488504b1"
+    }
+  },
+  "all_result_files_included": true
+}
